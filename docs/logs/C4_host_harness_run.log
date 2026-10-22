@@ -1,0 +1,7 @@
+﻿ReXGlue PPC instruction tests, soft MMU + split u64, 1585 cases
+host: desktop (Clang 19.1.7)
+RESULT passed=1585 failed=0 (exceptions=0 guard=0) total=1585 time_us=109162
+BENCH (each case repeated, time per call in microseconds)
+BENCH bench.test_bench_int reps=50 failed=0 us_per_call=151.0
+BENCH bench.test_bench_fp reps=50 failed=0 us_per_call=82.1
+BENCH bench.test_bench_fma reps=50 failed=0 us_per_call=194.7

@@ -1,0 +1,64 @@
+﻿[0/2] Re-checking globbed directories...
+[1/8] Assembling instr_vmx128.s
+[2/8] Linking instr_vmx128.bin
+[3/8] Generating symbol map for instr_vmx128
+[4/8] Generating Catch2 test code with rexglue
+ReXGlue v0.10.0.0-dev.unknown - Xbox 360 Recompilation Toolkit
+
+
+
+Recompiling PPC tests:
+
+  Bin dir:    C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64/tests/ppc/bin
+
+  ASM dir:    C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/ppc/asm
+
+  Output dir: C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64/tests/ppc/generated
+
+
+
+Done in 0.5s.
+
+[5/8] Building CXX object tests/ppc/CMakeFiles/ppc_tests.dir/Release/generated/ppc_test_functions.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64/tests/ppc/generated/ppc_test_functions.cpp:4:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64/tests/ppc/generated\ppc_config.h:8:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ppc.h:14:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/hook.h:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ppc/function.h:28:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/kernel_state.h:27:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/vfs.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/device.h:17:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/entry.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem.h:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/string.h:20:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/memory.h:27:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/xmemory.h:256:48: warning: unused parameter 'host_page_number' [-Wunused-parameter]
+
+  256 |   virtual bool IsHostPageWriteWatched(uint32_t host_page_number) const { return false; }
+
+      |                                                ^
+
+1 warning generated.
+
+[6/8] Building CXX object tests/ppc/CMakeFiles/ppc_tests.dir/Release/generated/ppc_test_cases.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64/tests/ppc/generated/ppc_test_cases.cpp:8:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64/tests/ppc/generated\ppc_config.h:8:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ppc.h:14:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/hook.h:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ppc/function.h:28:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/kernel_state.h:27:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/vfs.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/device.h:17:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/entry.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem.h:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/string.h:20:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/memory.h:27:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/xmemory.h:256:48: warning: unused parameter 'host_page_number' [-Wunused-parameter]
+
+  256 |   virtual bool IsHostPageWriteWatched(uint32_t host_page_number) const { return false; }
+
+      |                                                ^
+
+1 warning generated.
+
+[7/8] Linking CXX executable "C:\Users\minoo\Downloads\PORT NARUTO STORM 2 PS VITA\rexglue\out\win-amd64\Release\ppc_tests.exe"

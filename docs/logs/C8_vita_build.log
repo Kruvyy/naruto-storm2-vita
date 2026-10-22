@@ -1,0 +1,19 @@
+﻿[1/10] Converting Catch2 test cases for the Vita runner
+converted 1585 test cases
+
+[2/10] Building CXX object CMakeFiles/ppc_tests_vita.dir/C_/Users/minoo/Downloads/PORT_NARUTO_STORM_2_PS_VITA/rexglue/out/build/win-amd64/tests/ppc/generated/ppc_test_functions.cpp.obj
+[3/10] Building CXX object CMakeFiles/ppc_tests_vita.dir/vita_test_cases.cpp.obj
+[4/10] Linking CXX executable ppc_tests_vita
+FAILED: ppc_tests_vita 
+C:\Windows\system32\cmd.exe /C "cd . && C:\vitasdk\bin\arm-vita-eabi-g++.exe -Wl,-q -O3 -DNDEBUG -Wl,-z,nocopyreloc CMakeFiles/ppc_tests_vita.dir/src/harness.cpp.obj CMakeFiles/ppc_tests_vita.dir/C_/Users/minoo/Downloads/PORT_NARUTO_STORM_2_PS_VITA/rexglue/out/build/win-amd64/tests/ppc/generated/ppc_test_functions.cpp.obj CMakeFiles/ppc_tests_vita.dir/vita_test_cases.cpp.obj -o ppc_tests_vita  -lSceDisplay_stub  -lSceCtrl_stub  -lSceSysmem_stub  -lSceIofilemgr_stub  -lSceLibKernel_stub  -lSceKernelThreadMgr_stub  -lSceProcessmgr_stub  -lpthread && cd ."
+C:/vitasdk/bin/../lib/gcc/arm-vita-eabi/15.2.0/../../../../arm-vita-eabi/bin/ld.exe: CMakeFiles/ppc_tests_vita.dir/C_/Users/minoo/Downloads/PORT_NARUTO_STORM_2_PS_VITA/rexglue/out/build/win-amd64/tests/ppc/generated/ppc_test_functions.cpp.obj: in function `__imp__instr_vrfin_82010000':
+ppc_test_functions.cpp:(.text+0x307ec): undefined reference to `roundevenf'
+C:/vitasdk/bin/../lib/gcc/arm-vita-eabi/15.2.0/../../../../arm-vita-eabi/bin/ld.exe: ppc_test_functions.cpp:(.text+0x307fc): undefined reference to `roundevenf'
+C:/vitasdk/bin/../lib/gcc/arm-vita-eabi/15.2.0/../../../../arm-vita-eabi/bin/ld.exe: ppc_test_functions.cpp:(.text+0x3080c): undefined reference to `roundevenf'
+C:/vitasdk/bin/../lib/gcc/arm-vita-eabi/15.2.0/../../../../arm-vita-eabi/bin/ld.exe: ppc_test_functions.cpp:(.text+0x3081c): undefined reference to `roundevenf'
+C:/vitasdk/bin/../lib/gcc/arm-vita-eabi/15.2.0/../../../../arm-vita-eabi/bin/ld.exe: CMakeFiles/ppc_tests_vita.dir/C_/Users/minoo/Downloads/PORT_NARUTO_STORM_2_PS_VITA/rexglue/out/build/win-amd64/tests/ppc/generated/ppc_test_functions.cpp.obj: in function `__imp__instr_vrfin_82010008':
+ppc_test_functions.cpp:(.text+0x3086c): undefined reference to `roundevenf'
+C:/vitasdk/bin/../lib/gcc/arm-vita-eabi/15.2.0/../../../../arm-vita-eabi/bin/ld.exe: CMakeFiles/ppc_tests_vita.dir/C_/Users/minoo/Downloads/PORT_NARUTO_STORM_2_PS_VITA/rexglue/out/build/win-amd64/tests/ppc/generated/ppc_test_functions.cpp.obj:ppc_test_functions.cpp:(.text+0x3087c): more undefined references to `roundevenf' follow
+
+collect2.exe: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.

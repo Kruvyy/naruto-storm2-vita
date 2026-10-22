@@ -1,0 +1,17 @@
+# ReXGlue is its own git repository (branch vita-arm32).
+/rexglue/
+
+# Proprietary game data and everything derived from it: never commit.
+/storm2/game/
+/storm2/generated/
+/storm2/generated_prev/
+/storm2/image_dump/
+/storm2/out/
+
+# Build trees and packages.
+/vita/*/build-*/
+/dist/
+
+# Large or derived logs (kept locally).
+/docs/logs/D3_codegen_trace*.log
+/docs/logs/*_detail.log

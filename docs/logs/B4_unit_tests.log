@@ -1,0 +1,70 @@
+﻿Randomness seeded to: 0
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+unit_tests.exe is a Catch2 v3.12.0 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+BitStream Write preserves surrounding bits
+-------------------------------------------------------------------------------
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/unit/core/stream_test.cpp(335)
+...............................................................................
+
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/unit/core/stream_test.cpp(336): SKIPPED:
+explicitly with message:
+  BitStream::Write is broken - doesn't byte-swap on store
+
+-------------------------------------------------------------------------------
+Depfile escapes characters make treats as syntax
+-------------------------------------------------------------------------------
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/unit/codegen/output_stamp_test.cpp(216)
+...............................................................................
+
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/unit/codegen/output_stamp_test.cpp(227): FAILED:
+  CHECK( content.find("has\ space.toml") != std::string::npos )
+with expansion:
+  18446744073709551615 (0xffffffffffffffff)
+  !=
+  18446744073709551615 (0xffffffffffffffff)
+
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/unit/codegen/output_stamp_test.cpp(228): FAILED:
+  CHECK( content.find("hash\#.toml") != std::string::npos )
+with expansion:
+  18446744073709551615 (0xffffffffffffffff)
+  !=
+  18446744073709551615 (0xffffffffffffffff)
+
+-------------------------------------------------------------------------------
+BitStream Write byte-aligned
+-------------------------------------------------------------------------------
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/unit/core/stream_test.cpp(296)
+...............................................................................
+
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/unit/core/stream_test.cpp(297): SKIPPED:
+explicitly with message:
+  BitStream::Write is broken - doesn't byte-swap on store
+
+-------------------------------------------------------------------------------
+BitStream Write non-byte-aligned
+-------------------------------------------------------------------------------
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/unit/core/stream_test.cpp(321)
+...............................................................................
+
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/unit/core/stream_test.cpp(322): SKIPPED:
+explicitly with message:
+  BitStream::Write is broken - doesn't byte-swap on store
+
+-------------------------------------------------------------------------------
+BitStream Write 16-bit value
+-------------------------------------------------------------------------------
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/unit/core/stream_test.cpp(309)
+...............................................................................
+
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/unit/core/stream_test.cpp(310): SKIPPED:
+explicitly with message:
+  BitStream::Write is broken - doesn't byte-swap on store
+
+================================================================================
+test cases: 214 | 209 passed | 1 failed | 4 skipped
+assertions: 881 | 879 passed | 2 failed
+

@@ -1,0 +1,32 @@
+﻿Randomness seeded to: 0
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ppc_tests.exe is a Catch2 v3.12.0 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+fpedge.test_fctidz
+-------------------------------------------------------------------------------
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64/tests/ppc/generated/ppc_test_cases.cpp(7705)
+...............................................................................
+
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64/tests/ppc/generated/ppc_test_cases.cpp(7747): FAILED:
+  REQUIRE( memory[0x10007220 + 0x0] == 0x7F )
+with expansion:
+  '�' == 127
+
+-------------------------------------------------------------------------------
+fpedge.test_fmadds_single_rounding
+-------------------------------------------------------------------------------
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64/tests/ppc/generated/ppc_test_cases.cpp(7889)
+...............................................................................
+
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64/tests/ppc/generated/ppc_test_cases.cpp(7927): FAILED:
+  REQUIRE( memory[0x10007518 + 0x4] == 0x20 )
+with expansion:
+  0 == 32
+
+===============================================================================
+test cases: 1509 | 1507 passed | 2 failed
+assertions: 5882 | 5880 passed | 2 failed
+

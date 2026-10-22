@@ -1,0 +1,369 @@
+﻿[0/2] Re-checking globbed directories...
+[1/44] Building CXX object src/ui/CMakeFiles/rexui.dir/Release/overlay/debug_overlay.cpp.obj
+[2/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/analyze.cpp.obj
+[3/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/test_support.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/test_support.cpp:12:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/codegen/test_support.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/module.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/memory.h:27:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/xmemory.h:256:48: warning: unused parameter 'host_page_number' [-Wunused-parameter]
+
+  256 |   virtual bool IsHostPageWriteWatched(uint32_t host_page_number) const { return false; }
+
+      |                                                ^
+
+1 warning generated.
+
+[4/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/instruction_dispatch.cpp.obj
+[5/44] Linking CXX shared library "C:\Users\minoo\Downloads\PORT NARUTO STORM 2 PS VITA\rexglue\out\win-amd64\Release\rexruntime.dll"
+[6/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/phase_discover.cpp.obj
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/phase_discover.cpp:274:6: warning: unused function 'functionPointerScan' [-Wunused-function]
+
+  274 | void functionPointerScan(CodegenContext& ctx) {
+
+      |      ^~~~~~~~~~~~~~~~~~~
+
+1 warning generated.
+
+[7/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/phase_register.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/phase_register.cpp:25:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/export_resolver.h:18:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/string.h:20:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/memory.h:27:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/xmemory.h:256:48: warning: unused parameter 'host_page_number' [-Wunused-parameter]
+
+  256 |   virtual bool IsHostPageWriteWatched(uint32_t host_page_number) const { return false; }
+
+      |                                                ^
+
+1 warning generated.
+
+[8/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/codegen.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/codegen.cpp:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/runtime.h:24:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/vfs.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/device.h:17:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/entry.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem.h:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/string.h:20:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/memory.h:27:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/xmemory.h:256:48: warning: unused parameter 'host_page_number' [-Wunused-parameter]
+
+  256 |   virtual bool IsHostPageWriteWatched(uint32_t host_page_number) const { return false; }
+
+      |                                                ^
+
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/codegen.cpp:53:3: warning: missing field 'graphics' initializer [-Wmissing-designated-field-initializers]
+
+   53 |   });
+
+      |   ^
+
+2 warnings generated.
+
+[9/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/phase_gapfill.cpp.obj
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/phase_gapfill.cpp:148:17: warning: variable 'containingFunc' set but not used [-Wunused-but-set-variable]
+
+  148 |       if (auto* containingFunc = graph.getFunctionContaining(segment.start)) {
+
+      |                 ^
+
+1 warning generated.
+
+[10/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/phase_scan.cpp.obj
+[11/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/function_scanner.cpp.obj
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/function_scanner.cpp:1240:58: warning: unused parameter 'addr' [-Wunused-parameter]
+ 1240 | bool isBlockTerminator(const DecodedInsn& insn, uint32_t addr, const CodeRegion& region,
+      |                                                          ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/function_scanner.cpp:1512:12: warning: variable 'writesToIndexReg' set but not used [-Wunused-but-set-variable]
+ 1512 |       bool writesToIndexReg = false;
+
+      |            ^
+
+2 warnings generated.
+
+[12/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/phase_merge.cpp.obj
+[13/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/phase_validate.cpp.obj
+[14/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/codegen_context.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/codegen_context.cpp:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/runtime.h:24:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/vfs.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/device.h:17:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/entry.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem.h:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/string.h:20:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/memory.h:27:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/xmemory.h:256:48: warning: unused parameter 'host_page_number' [-Wunused-parameter]
+
+  256 |   virtual bool IsHostPageWriteWatched(uint32_t host_page_number) const { return false; }
+
+      |                                                ^
+
+1 warning generated.
+
+[15/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/builders/context.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/builders/context.cpp:21:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/export_resolver.h:18:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/string.h:20:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/memory.h:27:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/xmemory.h:256:48: warning: unused parameter 'host_page_number' [-Wunused-parameter]
+
+  256 |   virtual bool IsHostPageWriteWatched(uint32_t host_page_number) const { return false; }
+
+      |                                                ^
+
+1 warning generated.
+
+[16/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/builders/arithmetic.cpp.obj
+[17/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/builders/control_flow.cpp.obj
+[18/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/config.cpp.obj
+[19/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/builders/comparison.cpp.obj
+[20/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/function_graph.cpp.obj
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/function_graph.cpp:487:8: warning: variable 'allRecompiled' set but not used [-Wunused-but-set-variable]
+  487 |   bool allRecompiled = true;
+      |        ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/function_graph.cpp:696:44: warning: unused parameter 'baseAddress' [-Wunused-parameter]
+  696 | void FunctionGraph::addCodeBuffer(uint32_t baseAddress, const uint8_t* data, size_t size) {
+      |                                            ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/function_graph.cpp:696:72: warning: unused parameter 'data' [-Wunused-parameter]
+  696 | void FunctionGraph::addCodeBuffer(uint32_t baseAddress, const uint8_t* data, size_t size) {
+      |                                                                        ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/function_graph.cpp:696:85: warning: unused parameter 'size' [-Wunused-parameter]
+  696 | void FunctionGraph::addCodeBuffer(uint32_t baseAddress, const uint8_t* data, size_t size) {
+      |                                                                                     ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/function_graph.cpp:707:54: warning: unused parameter 'addr' [-Wunused-parameter]
+  707 | const uint8_t* FunctionGraph::translateCode(uint32_t addr) const {
+      |                                                      ^
+5 warnings generated.
+
+[21/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/builders/logical.cpp.obj
+[22/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/manifest.cpp.obj
+[23/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/builders/memory.cpp.obj
+[24/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/builders/floating_point.cpp.obj
+[25/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/builders/system.cpp.obj
+[26/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/builders/vector.cpp.obj
+[27/44] Building CXX object tests/unit/CMakeFiles/unit_tests.dir/Release/codegen/classify_target_test.cpp.obj
+[28/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/codegen_writer.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/codegen_writer.cpp:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/runtime.h:24:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/vfs.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/device.h:17:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/entry.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem.h:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/string.h:20:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/memory.h:27:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/xmemory.h:256:48: warning: unused parameter 'host_page_number' [-Wunused-parameter]
+
+  256 |   virtual bool IsHostPageWriteWatched(uint32_t host_page_number) const { return false; }
+
+      |                                                ^
+
+1 warning generated.
+
+[29/44] Building CXX object tests/unit/CMakeFiles/unit_tests.dir/Release/codegen/output_stamp_test.cpp.obj
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/unit/codegen/output_stamp_test.cpp:227:26: warning: unknown escape sequence '\ ' [-Wunknown-escape-sequence]
+  227 |   CHECK(content.find("has\ space.toml") != std::string::npos);
+      |                          ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/thirdparty/catch2/src/catch2/..\catch2/catch_test_macros.hpp:141:99: note: expanded from macro 'CHECK'
+  141 |   #define CHECK( ... ) INTERNAL_CATCH_TEST( "CHECK", Catch::ResultDisposition::ContinueOnFailure, __VA_ARGS__ )
+      |                                                                                                   ^~~~~~~~~~~
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/thirdparty/catch2/src/catch2/..\catch2/internal/catch_test_macro_impl.hpp:50:70: note: expanded from macro 'INTERNAL_CATCH_TEST'
+   50 |             catchAssertionHandler.handleExpr( Catch::Decomposer() <= __VA_ARGS__ ); /* NOLINT(bugprone-chained-comparison) */ \
+      |                                                                      ^~~~~~~~~~~
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/unit/codegen/output_stamp_test.cpp:227:26: warning: unknown escape sequence '\ ' [-Wunknown-escape-sequence]
+  227 |   CHECK(content.find("has\ space.toml") != std::string::npos);
+      |                          ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/thirdparty/catch2/src/catch2/..\catch2/catch_test_macros.hpp:141:99: note: expanded from macro 'CHECK'
+  141 |   #define CHECK( ... ) INTERNAL_CATCH_TEST( "CHECK", Catch::ResultDisposition::ContinueOnFailure, __VA_ARGS__ )
+      |                                                                                                   ^~~~~~~~~~~
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/thirdparty/catch2/src/catch2/..\catch2/internal/catch_test_macro_impl.hpp:54:63: note: expanded from macro 'INTERNAL_CATCH_TEST'
+   54 |     } while( (void)0, (false) && static_cast<const bool&>( !!(__VA_ARGS__) ) ) // the expression here is never evaluated at runtime but it forces the compiler to give it a look
+      |                                                               ^~~~~~~~~~~
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/unit/codegen/output_stamp_test.cpp:228:27: warning: unknown escape sequence '\#' [-Wunknown-escape-sequence]
+  228 |   CHECK(content.find("hash\#.toml") != std::string::npos);
+      |                           ^~
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/thirdparty/catch2/src/catch2/..\catch2/catch_test_macros.hpp:141:99: note: expanded from macro 'CHECK'
+  141 |   #define CHECK( ... ) INTERNAL_CATCH_TEST( "CHECK", Catch::ResultDisposition::ContinueOnFailure, __VA_ARGS__ )
+      |                                                                                                   ^~~~~~~~~~~
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/thirdparty/catch2/src/catch2/..\catch2/internal/catch_test_macro_impl.hpp:50:70: note: expanded from macro 'INTERNAL_CATCH_TEST'
+   50 |             catchAssertionHandler.handleExpr( Catch::Decomposer() <= __VA_ARGS__ ); /* NOLINT(bugprone-chained-comparison) */ \
+      |                                                                      ^~~~~~~~~~~
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/unit/codegen/output_stamp_test.cpp:228:27: warning: unknown escape sequence '\#' [-Wunknown-escape-sequence]
+  228 |   CHECK(content.find("hash\#.toml") != std::string::npos);
+      |                           ^~
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/thirdparty/catch2/src/catch2/..\catch2/catch_test_macros.hpp:141:99: note: expanded from macro 'CHECK'
+  141 |   #define CHECK( ... ) INTERNAL_CATCH_TEST( "CHECK", Catch::ResultDisposition::ContinueOnFailure, __VA_ARGS__ )
+      |                                                                                                   ^~~~~~~~~~~
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/thirdparty/catch2/src/catch2/..\catch2/internal/catch_test_macro_impl.hpp:54:63: note: expanded from macro 'INTERNAL_CATCH_TEST'
+
+   54 |     } while( (void)0, (false) && static_cast<const bool&>( !!(__VA_ARGS__) ) ) // the expression here is never evaluated at runtime but it forces the compiler to give it a look
+
+      |                                                               ^~~~~~~~~~~
+
+4 warnings generated.
+
+[30/44] Building CXX object tests/unit/CMakeFiles/rexapp_compile_test.dir/Release/__/__/src/ui/rex_app.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/ui/rex_app.cpp:12:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/rex_app.h:24:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/runtime.h:24:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/vfs.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/device.h:17:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/entry.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem.h:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/string.h:20:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/memory.h:27:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/xmemory.h:256:48: warning: unused parameter 'host_page_number' [-Wunused-parameter]
+  256 |   virtual bool IsHostPageWriteWatched(uint32_t host_page_number) const { return false; }
+      |                                                ^
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/ui/rex_app.cpp:12:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/rex_app.h:99:42: warning: unused parameter 'config' [-Wunused-parameter]
+
+   99 |   virtual void OnPreSetup(RuntimeConfig& config) {}
+
+      |                                          ^
+
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/rex_app.h:102:44: warning: unused parameter 'xex_image' [-Wunused-parameter]
+
+  102 |   virtual void OnLoadXexImage(std::string& xex_image) {}
+
+      |                                            ^
+
+3 warnings generated.
+
+[31/44] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/Release/project_recompiler.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/project_recompiler.cpp:34:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/runtime.h:24:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/vfs.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/device.h:17:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/entry.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem.h:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/string.h:20:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/memory.h:27:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/xmemory.h:256:48: warning: unused parameter 'host_page_number' [-Wunused-parameter]
+
+  256 |   virtual bool IsHostPageWriteWatched(uint32_t host_page_number) const { return false; }
+
+      |                                                ^
+
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/codegen/project_recompiler.cpp:245:3: warning: missing field 'graphics' initializer [-Wmissing-designated-field-initializers]
+
+  245 |   });
+
+      |   ^
+
+2 warnings generated.
+
+[32/44] Linking CXX static library "C:\Users\minoo\Downloads\PORT NARUTO STORM 2 PS VITA\rexglue\out\win-amd64\Release\rexcodegen.lib"
+[33/44] Building CXX object src/rexglue/CMakeFiles/rexglue.dir/Release/main.cpp.obj
+[34/44] Building CXX object tests/unit/CMakeFiles/unit_tests.dir/Release/codegen/codegen_writer_test.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/unit/codegen/codegen_writer_test.cpp:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/codegen/test_support.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/module.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/memory.h:27:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/xmemory.h:256:48: warning: unused parameter 'host_page_number' [-Wunused-parameter]
+
+  256 |   virtual bool IsHostPageWriteWatched(uint32_t host_page_number) const { return false; }
+
+      |                                                ^
+
+1 warning generated.
+
+[35/44] Linking CXX executable "C:\Users\minoo\Downloads\PORT NARUTO STORM 2 PS VITA\rexglue\out\win-amd64\Release\unit_tests.exe"
+[36/44] Building CXX object src/rexglue/CMakeFiles/rexglue.dir/Release/commands/codegen_command.cpp.obj
+[37/44] Building CXX object src/rexglue/CMakeFiles/rexglue.dir/Release/commands/test_recompiler.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/rexglue/commands/test_recompiler.cpp:34:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/codegen/test_support.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/module.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/memory.h:27:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/xmemory.h:256:48: warning: unused parameter 'host_page_number' [-Wunused-parameter]
+
+  256 |   virtual bool IsHostPageWriteWatched(uint32_t host_page_number) const { return false; }
+
+      |                                                ^
+
+1 warning generated.
+
+[38/44] Building CXX object src/rexglue/CMakeFiles/rexglue.dir/Release/commands/init_command.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/rexglue/commands/init_command.cpp:27:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/runtime.h:24:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/vfs.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/device.h:17:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/entry.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem.h:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/string.h:20:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/memory.h:27:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/xmemory.h:256:48: warning: unused parameter 'host_page_number' [-Wunused-parameter]
+
+  256 |   virtual bool IsHostPageWriteWatched(uint32_t host_page_number) const { return false; }
+
+      |                                                ^
+
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/rexglue/commands/init_command.cpp:390:3: warning: missing field 'graphics' initializer [-Wmissing-designated-field-initializers]
+
+  390 |   });
+
+      |   ^
+
+2 warnings generated.
+
+[39/44] Linking CXX executable "C:\Users\minoo\Downloads\PORT NARUTO STORM 2 PS VITA\rexglue\out\win-amd64\Release\rexglue.exe"
+[40/44] Generating Catch2 test code with rexglue
+ReXGlue v0.10.0.0-dev.unknown - Xbox 360 Recompilation Toolkit
+
+
+
+Recompiling PPC tests:
+
+  Bin dir:    C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64/tests/ppc/bin
+
+  ASM dir:    C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/tests/ppc/asm
+
+  Output dir: C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64/tests/ppc/generated
+
+
+
+Done in 0.5s.
+
+[41/44] Building CXX object tests/ppc/CMakeFiles/ppc_tests.dir/Release/generated/ppc_test_functions.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64/tests/ppc/generated/ppc_test_functions.cpp:4:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64/tests/ppc/generated\ppc_config.h:8:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ppc.h:14:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/hook.h:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ppc/function.h:28:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/kernel_state.h:27:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/vfs.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/device.h:17:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/entry.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem.h:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/string.h:20:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/memory.h:27:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/xmemory.h:256:48: warning: unused parameter 'host_page_number' [-Wunused-parameter]
+
+  256 |   virtual bool IsHostPageWriteWatched(uint32_t host_page_number) const { return false; }
+
+      |                                                ^
+
+1 warning generated.
+
+[42/44] Building CXX object tests/ppc/CMakeFiles/ppc_tests.dir/Release/generated/ppc_test_cases.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64/tests/ppc/generated/ppc_test_cases.cpp:8:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64/tests/ppc/generated\ppc_config.h:8:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ppc.h:14:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/hook.h:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ppc/function.h:28:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/kernel_state.h:27:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/vfs.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/device.h:17:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem/entry.h:19:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/filesystem.h:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/string.h:20:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/memory.h:27:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/system/xmemory.h:256:48: warning: unused parameter 'host_page_number' [-Wunused-parameter]
+
+  256 |   virtual bool IsHostPageWriteWatched(uint32_t host_page_number) const { return false; }
+
+      |                                                ^
+
+1 warning generated.
+
+[43/44] Linking CXX executable "C:\Users\minoo\Downloads\PORT NARUTO STORM 2 PS VITA\rexglue\out\win-amd64\Release\ppc_tests.exe"
