@@ -25,6 +25,7 @@
 #if defined(__vita__)
 #include <psp2/ctrl.h>
 #include <psp2/display.h>
+#include <psp2/io/fcntl.h>
 #include <psp2/io/stat.h>
 #include <psp2/kernel/processmgr.h>
 #include <psp2/kernel/sysmem.h>
@@ -224,6 +225,8 @@ int main() {
 #if defined(__vita__)
   sceIoMkdir("ux0:data", 0777);
   sceIoMkdir("ux0:data/storm2port", 0777);
+  // Remove first: Vita3K did not truncate on "w", leaving stale tail lines.
+  sceIoRemove("ux0:data/storm2port/ppc_tests.log");
   g_log = std::fopen("ux0:data/storm2port/ppc_tests.log", "w");
   ScreenInit();
   Fill(0xFF00D0D0u, 0, 544);  // yellow: running

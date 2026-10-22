@@ -20,6 +20,12 @@ Commits na branch `vita-arm32` de `rexglue/`.
 | 10 | F/E | codegen | função `0x8280BA00` gera 1,3 MB de C++ (acima de `max_file_size_bytes`) | registrado; risco de memória do compilador no build ARM | — | — | 1 função |
 | 11 | A | análise de funções | funções-folha sem `.pdata`, alcançadas **só por ponteiros em dados** (thunks vcall/ajuste, tabelas de callbacks), não eram geradas → chamada pelo ponteiro aborta ("unregistered function"). Mesmo defeito do LB2 | corrigido (opção `scan_data_pointers`, desligada por padrão; ligada no Storm 2) | `find_data_only_functions.py`: 140 → 0; `check_storm2_codegen.ps1` | `7476ec5` | 140 funções; também resolveu o desvio `0x827BC720→6D4` |
 
+| 12 | A/E | `fctid`/`fctiw` fora do x86 | conversões portáteis do simde usam `round()` (empate para longe do zero, ignora o modo de arredondamento): `fctid(2,5)` dava 3 | corrigido (`ppc_fctid`/`ppc_fctiw`) | `fpedge.test_fctid`, `fpscr.test_fctid_modes`, `unit [fcti]` | `396acac` | 10 (`fctid`) |
+| 13 | A/E | `fctidz` fora do x86 | `simde_mm_cvttsd_si64` portátil é um cast sem checar a faixa (indefinido): `fctidz(−∞)` errado no ARM32 | corrigido (`ppc_fctidz`) | `fctixz.test_fctidz_10` | `396acac` | 730 |
+| 14 | E | FMA de dupla precisão no Vita | o `fma` do newlib do VitaSDK é `vmla.f64` (verificado por desmontagem de `libm.a`), com dois arredondamentos | corrigido (`ppc_soft_fma`; atalho sem FMA para `fmadds` com entradas simples) | `fpedge.test_f*_fused` (4), `unit [fma]` | `396acac` | 208 em dupla (`fmadd` 120, `fmsub` 66, `fnmsub` 22) |
+| 15 | T | Vita3K | `fopen(..., "w")` não truncou o log antigo, deixando linhas obsoletas no fim | contornado (o runner apaga o arquivo antes); não verificado no console | — | — | — |
+| 16 | A [H] | `vmaddfp`/`vnmsubfp` | o ReXGlue faz multiplicação e soma separadas (dois arredondamentos) em todas as plataformas; não se sabe se o VMX128 do Xenon funde a operação | hipótese, sem oráculo de hardware | — | — | 980 + 45 |
+
 ## Detalhes
 
 ### 1 — aliases de CR
@@ -43,6 +49,13 @@ Verificado com `scripts/pdata_query.py` (22.091 entradas na `.pdata`) e `scripts
 - `0x825D0910` e `0x825D1220`: thunks `r3 = &global; b 0x825DAFC0`, alcançados a partir do seletor em `0x825D9BC0`.
 
 O ReXGlue registra como função nova apenas destinos de `bl` (`phase_discover.cpp:115`), de propósito, porque um `b` para fora pode ser parte da mesma função. A correção no gerador (promover destinos de `b` fora de qualquer região conhecida) fica como melhoria futura, a validar contra o LB2 e o Storm 2.
+
+### 12–14 — primeira execução em ARMv7 (Vita3K)
+O usuário rodou o VPK no **Vita3K** (emulador; log em `docs/logs/C11_vita3k_ppc_tests.log`): 1582/1585, com 3 falhas: `fctixz.test_fctidz_10`, `fpedge.test_fmadd_fused` e `fpedge.test_fctid`. Nenhuma travou o app, e a página-guarda ficou intacta.
+- Causas confirmadas: no código-fonte do simde (`sse2.h`, ramos não-x86 de `cvtsd_si*`/`cvttsd_si64`) e na desmontagem de `lib_a-s_fma.o` do newlib (`vmla.f64 d2, d0, d1`).
+- Depois da correção: **1588/1588 no Vita3K** (`docs/logs/C16_vita3k_ppc_tests.log`).
+- Durante a correção, o teste de casos-limite pegou um bug no meu primeiro rascunho da FMA de software: produto finito que estoura para ∞ somado a z = −∞ dava NaN em vez de −∞. Foi corrigido antes do commit.
+- Os itens 12 e 13 também afetariam ARM64, já que os ramos portáteis do simde são os mesmos.
 
 ### 9 — desvios em blocos fundidos
 `sub_824A42D8` termina com `b 0x824A4460`, e o código-folha em `0x824A4460` (uma busca em lista ligada, sem `.pdata`) foi fundido nela. Entre as duas existe a função `.pdata` `0x824A43F8`. Para o desvio em `0x824A4484`, `getFunctionContaining()` (função com início mais próximo abaixo) devolvia `0x824A43F8`, que não contém o endereço. Resultado: `TargetKind::Unknown` → `REX_FATAL`. Com a correção, os builders informam a função que estão emitindo, e os dois pontos viraram `goto loc_824A4498` / `goto loc_824A447C`.

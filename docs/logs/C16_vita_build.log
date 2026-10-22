@@ -1,0 +1,11 @@
+﻿[1/8] Building CXX object CMakeFiles/ppc_tests_vita.dir/src/harness.cpp.obj
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/vita/ppc_tests/src/harness.cpp:132:28: warning: 'rex_guest_func_table' initialized and declared 'extern'
+  132 | extern "C" PPCFunc* const* rex_guest_func_table = nullptr;
+      |                            ^~~~~~~~~~~~~~~~~~~~
+[2/8] Linking CXX executable ppc_tests_vita
+[3/8] Converting to Sony ELF ppc_tests_vita.velf
+[4/8] Creating SELF eboot.bin
+[5/8] C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\minoo\Downloads\PORT NARUTO STORM 2 PS VITA\vita\ppc_tests\build-vita" && C:\Users\minoo\p3tools\cmake\bin\cmake.exe -E copy "C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/vita/ppc_tests/build-vita/eboot.bin.out" eboot.bin"
+[6/8] Generating param.sfo for rexglue_ppc_tests.vpk
+[7/8] Building vpk rexglue_ppc_tests.vpk
+[8/8] C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\minoo\Downloads\PORT NARUTO STORM 2 PS VITA\vita\ppc_tests\build-vita" && C:\Users\minoo\p3tools\cmake\bin\cmake.exe -E copy "C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/vita/ppc_tests/build-vita/rexglue_ppc_tests.vpk.out" rexglue_ppc_tests.vpk"
