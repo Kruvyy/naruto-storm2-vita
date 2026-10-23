@@ -1,0 +1,13 @@
+ReXGlue codegen register-model benchmark - desktop host (Clang 19.1.7)
+variant v0: base: every register in PPCContext (current Storm 2 build)
+variant v1: ctr/xer/cr/reserved as locals
+variant v2: v1 + r0/r2/r11/r12/f0/v32-63 as locals
+variant v3: v2 + non-volatile r14-31/f14-31/v14-31/v64-127 as locals
+variant v4: v3 + skip_lr + skip_msr
+CHECK passed=30 failed=0 total=30
+BENCH best of 3 sweeps; us per call (M guest instr/s) [speedup vs v0]
+BENCH int     | v0     150.8 us ( 489.1 M/s) [1.00x] | v1     146.6 us ( 503.1 M/s) [1.03x] | v2     146.2 us ( 504.2 M/s) [1.03x] | v3     146.3 us ( 503.8 M/s) [1.03x] | v4     146.3 us ( 504.0 M/s) [1.03x]
+BENCH fp      | v0      81.8 us ( 200.4 M/s) [1.00x] | v1      80.7 us ( 203.1 M/s) [1.01x] | v2      84.2 us ( 194.6 M/s) [0.97x] | v3      81.2 us ( 201.8 M/s) [1.01x] | v4      80.7 us ( 203.1 M/s) [1.01x]
+BENCH fma     | v0     147.3 us (  83.5 M/s) [1.00x] | v1     153.0 us (  80.4 M/s) [0.96x] | v2     151.2 us (  81.3 M/s) [0.97x] | v3     152.0 us (  80.9 M/s) [0.97x] | v4     148.2 us (  82.9 M/s) [0.99x]
+BENCH struct  | v0     201.8 us ( 670.2 M/s) [1.00x] | v1     195.3 us ( 692.5 M/s) [1.03x] | v2     174.0 us ( 777.2 M/s) [1.16x] | v3     168.2 us ( 804.0 M/s) [1.20x] | v4     168.1 us ( 804.5 M/s) [1.20x]
+BENCH vec3    | v0     104.8 us (  98.9 M/s) [1.00x] | v1     102.4 us ( 101.1 M/s) [1.02x] | v2     100.5 us ( 103.1 M/s) [1.04x] | v3     100.2 us ( 103.4 M/s) [1.05x] | v4     103.8 us (  99.8 M/s) [1.01x]

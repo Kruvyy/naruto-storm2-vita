@@ -16,3 +16,9 @@
 # Large or derived logs (kept locally).
 /docs/logs/D3_codegen_trace*.log
 /docs/logs/*_detail.log
+
+# Generated benchmark variants (vita/bench/tools/make_variants.py).
+/vita/bench/gen/
+
+# Python bytecode caches.
+__pycache__/

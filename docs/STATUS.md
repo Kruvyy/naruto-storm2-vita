@@ -111,6 +111,17 @@ Leitura para o Vita:
 - [H] **Renderização:** a espera pela GPU (`F8000068`) pode virar uma espera bloqueante, liberando um núcleo.
 - [P] **GPU no Vita:** sem renderizador GXM, o custo é desconhecido. Renderizar em 960×544 (57 % dos pixels de 1280×720) alivia a GPU, não a CPU.
 
+## Benchmark das opções do codegen (`vita/bench`, `dist/rexglue_bench.vpk`)
+O mesmo código PPC é gerado em 5 variantes de modelo de registros: v0 padrão; v1 `ctr/xer/cr` locais; v2 + `r0/r2/r11/r12`; v3 + não voláteis; v4 + `skip_lr/skip_msr`. O programa confere as 5 variantes e mede o tempo de cada uma, intercaladas, ficando com o melhor de 3 rodadas. Há dois laços novos com formato de código de jogo: `struct` (não voláteis, pilha, chamadas, `cr6`) e `vec3` (matriz em `f14–f25`, `fmadds`). Os valores esperados vêm do modelo Python independente.
+
+| Ambiente | Verificação | Ganho da melhor variante sobre v0 |
+|---|---|---|
+| PC (clang x64, MMU por software) | 30/30 | `struct` 1,20× (v3); `int` 1,03×; `fp`/`fma`/`vec3` ≤ 1,05× |
+| Vita3K (não representa o console) | 30/30 | `struct` 1,31× (v3); `int` 1,07×; demais ≤ 1,02× |
+| **PS Vita físico** | **pendente**: o usuário vai rodar e mandar `ux0:data/storm2port/bench.log` | |
+
+Logs: `docs/logs/E1_bench/`. [H] Com os dados do PC, as opções ajudam o código com chamadas e registros não voláteis (`struct`) e quase nada os laços de ponto flutuante. Se o Vita repetir esse padrão, as opções sozinhas não dão os 2–5× necessários para a lógica do jogo.
+
 ## Próximo bloqueio concreto (atualizado)
 A batalha foi medida (acima). Decisão pendente com o usuário. O portão 2 continua desfavorável para 30 quadros/s. A pergunta agora é se ganhos de 2–3× são possíveis. Experimentos mais baratos que respondem isso:
 1. Rodar no Vita físico o benchmark com as opções do codegen que mantêm registros em variáveis locais (`non_volatile_as_local`, `cr_as_local` etc.) e comparar com os 62,8 / 23,0 / 7,6 M instr/s atuais.
