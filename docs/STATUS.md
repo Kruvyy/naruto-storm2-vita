@@ -165,6 +165,27 @@ O Vita oferece ~256 MB de RAM principal mais 128 MB de CDRAM, esta usada pela GP
 - [V] O código cabe com folga.
 - [H] **A memória de dados do jogo é o problema**: o pico residente sozinho passa da RAM principal. Parte da memória "física" do convidado são recursos de GPU (texturas, vértices, alvos de renderização), que no Vita poderiam ir para a CDRAM. Isso precisa ser medido: quanto dos 208 MiB físicos é de GPU.
 
+## Quanto da memória do jogo é de GPU (batalha, `docs/logs/E6_batalha`)
+Instrumentação (`--gpu_swap_diag_interval`): o `SharedMemory` marca, por páginas de 4 KiB, cada trecho da memória física do convidado que a GPU emulada pede. As categorias são vértices, índices, textura, destino de resolve e memexport, e a união não conta a mesma página duas vezes. O "acumulado" vale desde o boot; a "janela" vale para o intervalo de 300 trocas (10 s). Textura só entra na janela quando é (re)carregada, então texturas estáticas aparecem no acumulado e não na janela. A batalha (Sasuke vs Neji, ~75–210 s) foi conferida nas capturas.
+
+| Medida | MiB |
+|---|---:|
+| GPU por janela de 10 s na batalha (união) | **~67**: vértices ~26, índices ~0,7, textura ~40, resolve ~40. Textura e resolve se sobrepõem: alvos de renderização resolvidos e lidos como textura a cada quadro |
+| GPU acumulado desde o boot (união) | **136**: textura 108, resolve 43, vértices 30, índices 1,7 |
+| Carregamento da batalha | +24 MiB de textura (80,6 → 104,2) |
+| Memória física do convidado residente | **192** (comprometida 348) |
+| Memória virtual do convidado residente | 92,6 |
+| **Total residente único** | **284,6**; outra batalha deu 311 |
+
+Leitura:
+- [V] Da memória física residente (192 MiB), entre ~67 MiB (usados pela GPU a cada 10 s) e 136 MiB (já usados alguma vez) são dados de GPU. O resto, de 56 a 125 MiB, mais os 92,6 MiB virtuais, é dado de CPU.
+- [H] No Vita, a GPU (GXM) pode ler a RAM principal mapeada, então os dados de GPU do convidado não precisam ir para a CDRAM. O problema é a **segunda cópia**: as texturas do Xenos são ladrilhadas e em formatos próprios, e um renderizador GXM precisa de cópias convertidas (de ~67 a 108 MiB, mais alvos de renderização). No PC é igual: a memória do convidado guarda a textura original e a GPU do host guarda a convertida.
+- [H] Conta para o Vita: código 28,8 + despacho 6,4 + convidado 284,6 ≈ **320 MiB, sem runtime e sem as cópias de GPU**, contra 256 MB de RAM principal mais 128 MB de CDRAM. A memória do convidado poderia ser dividida entre RAM principal e CDRAM, mas as cópias convertidas não cabem junto. Caminhos possíveis, todos alterando o comportamento visual ou o carregamento, e só justificáveis com medida:
+  1. **texturas em resolução menor** na conversão (metade da largura e da altura = 1/4 da memória);
+  2. **liberar ou descomprometer** páginas que o jogo reserva mas não toca (comprometida 348 contra residente 192: a diferença já não usa RAM física no PC, mas no Vita a MMU por software precisa de um modelo de alocação sob demanda equivalente);
+  3. **alvos de renderização a 960×544** em vez de 1280×720 (57 % dos pixels).
+- **Veredito do portão 1 [H]:** a memória não cabe com a abordagem direta (memória do convidado inteira mais as cópias convertidas). Só cabe com pelo menos uma das três medidas acima, e isso precisa ser demonstrado no Vita.
+
 ## Próximo bloqueio concreto (atualizado)
 A batalha foi medida (acima). Decisão pendente com o usuário. O portão 2 continua desfavorável para 30 quadros/s. A pergunta agora é se ganhos de 2–3× são possíveis. Experimentos mais baratos que respondem isso:
 1. Rodar no Vita físico o benchmark com as opções do codegen que mantêm registros em variáveis locais (`non_volatile_as_local`, `cr_as_local` etc.) e comparar com os 62,8 / 23,0 / 7,6 M instr/s atuais.
