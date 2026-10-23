@@ -1,0 +1,12 @@
+ninja exit:   tempo: 1.109 s
+pico de memoria dos compiladores: soma 3,31 GB, maior processo 1,60 GB
+[111/113] Building CXX object CMakeFiles/storm2_code.dir/C_/Users/minoo/Downloads/PORT_NARUTO_STORM_2_PS_VITA/storm2/generated_vita/default/storm2_recomp.99.cpp.obj
+[112/113] Building CXX object CMakeFiles/storm2_code.dir/C_/Users/minoo/Downloads/PORT_NARUTO_STORM_2_PS_VITA/storm2/generated_vita/default/storm2_recomp.84.cpp.obj
+ninja: build stopped: subcommand failed.
+FAILED: CMakeFiles/storm2_code.dir/C_/Users/minoo/Downloads/PORT_NARUTO_STORM_2_PS_VITA/storm2/generated_vita/default/storm2_register.cpp.obj 
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include/rex/system/xmemory.h:445:30: error: 'rex::runtime::MMIOReadCallback' has not been declared
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include/rex/system/xmemory.h:446:30: error: 'rex::runtime::MMIOWriteCallback' has not been declared
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include/rex/system/xmemory.h:449:12: error: 'MMIORange' in namespace 'rex::runtime' does not name a type; did you mean 'MMIOHandler'?
+ninja: build stopped: subcommand failed.
+
+[exited with code 0]

@@ -140,6 +140,31 @@ Leitura:
 - [H] **Thread principal:** precisa de ~127 M instr/s para 30 quadros/s. A ~68 M/s (v1, `struct`; 71,5 com v4), dá **~16–17 quadros/s** a 333 MHz. Se 500 MHz valerem e a CPU for o gargalo, ~20–25 quadros/s. O barramento e a memória não sobem com o overclock da CPU, então menos de 1,5×.
 - [H] **Áudio (`F80000B0`, ~169 M instr/s):** com o laço quente cheio de `fmadds` a ~8 M/s, recompilado ele não cabe nem em vários núcleos do Vita. A reescrita nativa das duas funções quentes (NEON, sem FMA exata, ou com uma FMA mais barata validada contra a original) **é obrigatória**, não opcional.
 
+## Marco E, passo 1: o código do jogo compila para o Vita (2026-10-23)
+`vita/storm2/CMakeLists.txt` compila o código gerado (`storm2_vita_manifest.toml`, saída em `storm2/generated_vita`, fora do git) com o VitaSDK (GCC 15.2, ARMv7, `-O2`, MMU por software, acessos de 64 bits divididos, modelo de registros v1) numa biblioteca estática. Ainda não há link: faltam o runtime do Vita, os imports do kernel/XAM, a GPU e o áudio.
+
+| Medida | Valor |
+|---|---|
+| Arquivos | **112 de 112 compilam sem erro**. O `storm2_register.cpp`, cola do runtime de PC que registra o módulo no KernelState, fica de fora e será substituído |
+| Tempo | 18,5 min com 6 processos (Ryzen 5 4500); pico de 1,6 GB num processo do GCC, 3,3 GB somados |
+| **Código ARM (text)** | **30 196 393 bytes ≈ 28,8 MiB**; dados 310 KB |
+| Expansão | 17,9 bytes de ARM por instrução PPC (1 686 509 instruções) |
+| `-Os` (amostra `storm2_recomp.32`) | 10 % menor que `-O2` (233 KB contra 259 KB); velocidade não medida |
+
+Orçamento de memória no Vita [H, a verificar com o runtime real]:
+
+| Parte | Tamanho |
+|---|---:|
+| Código do jogo | ~28,8 MiB |
+| Tabela de despacho indireto (1 ponteiro de 4 bytes por palavra de código, `REX_CODE_SIZE` 0x676294) | ~6,4 MiB |
+| Tabela de páginas da MMU por software (65 536 × 4 bytes) | 0,25 MiB |
+| Memória do convidado residente, pico medido no PC em batalha | **~311 MiB** (virtual 103 + física 208) |
+| **Soma, sem o runtime e sem a GPU** | **~346 MiB** |
+
+O Vita oferece ~256 MB de RAM principal mais 128 MB de CDRAM, esta usada pela GPU. Portanto:
+- [V] O código cabe com folga.
+- [H] **A memória de dados do jogo é o problema**: o pico residente sozinho passa da RAM principal. Parte da memória "física" do convidado são recursos de GPU (texturas, vértices, alvos de renderização), que no Vita poderiam ir para a CDRAM. Isso precisa ser medido: quanto dos 208 MiB físicos é de GPU.
+
 ## Próximo bloqueio concreto (atualizado)
 A batalha foi medida (acima). Decisão pendente com o usuário. O portão 2 continua desfavorável para 30 quadros/s. A pergunta agora é se ganhos de 2–3× são possíveis. Experimentos mais baratos que respondem isso:
 1. Rodar no Vita físico o benchmark com as opções do codegen que mantêm registros em variáveis locais (`non_volatile_as_local`, `cr_as_local` etc.) e comparar com os 62,8 / 23,0 / 7,6 M instr/s atuais.

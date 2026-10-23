@@ -1,0 +1,53 @@
+# PS Vita (ARM32) variant of storm2_manifest.toml: same analysis and register
+# model, no instruction counting (profiling only), separate output directory.
+# Keep in sync with storm2_manifest.toml.
+
+[project]
+name = "storm2"
+sdk_version = "0.10.0"
+game_root = "game"
+
+[entrypoint]
+file_path = "game/default.xex"
+out_directory_path = "generated_vita/default"
+includes = []
+# Profiling build: count executed guest instructions (per thread, summed at
+# each VdSwap with --perf_frame_stats). Turn off for normal builds.
+count_guest_instructions = false
+# Register model "v1" of vita/bench: CTR/XER/CR/reserved live in C++ locals
+# instead of PPCContext. Physical Vita: game-shaped integer code 1.16x faster
+# (struct loop, docs/logs/E1_bench/bench_vita_fisico.log).
+# non_argument_as_local (v2, 1.19x) and non_volatile_as_local (v3, 1.21x) BREAK
+# Storm 2: the game hangs at an early static screen (bisected, docs/bugs.md
+# item 21). Likely causes: __savevmx/__restvmx helpers take their address in
+# r12 (v2), and code shared between functions with live r14-r31 (v3).
+ctr_as_local = true
+xer_as_local = true
+cr_as_local = true
+reserved_as_local = true
+non_argument_as_local = false
+non_volatile_as_local = false
+
+# Register leaf functions reached only through pointers in data sections
+# (140 such addresses found by scripts/find_data_only_functions.py, e.g. vcall
+# thunks at 0x821DD460.. and the &#x parser at 0x827BC618 used from .rdata).
+[entrypoint.analysis]
+scan_data_pointers = true
+# Function addresses built in code with lis+addi/ori (pointer-to-member thunks
+# passed as arguments). Found after the first x64 run aborted calling 0x8224B8C0
+# (lis/addi'd 24 times, never stored in data); 6 such functions in Storm 2
+# (scripts/find_code_const_functions.py).
+scan_code_address_constants = true
+
+# Leaf functions without a .pdata entry that are reached only by tail calls
+# ("b", never "bl"), so ReXGlue's discovery does not register them.
+# Verified by disassembly (docs/bugs.md, item 8). Size is omitted on
+# purpose: a declared size is trusted as the function extent (CONFIG authority)
+# and wrong sizes truncated functions in the LEGO Batman 2 attempt.
+[entrypoint.functions]
+# lwz r3,80(r3); beqlr; b 0x826D6600   <- b from 0x8224B5F8 / 0x8224B610
+0x824B6480 = { name = "sub_824B6480" }
+# lis/addi r3 = 0x829A8980; b 0x825DAFC0   <- b from 0x825D9BE0
+0x825D0910 = { name = "sub_825D0910" }
+# lis/addi r3 = 0x829A9800; b 0x825DAFC0   <- b from 0x825D9BE4
+0x825D1220 = { name = "sub_825D1220" }
