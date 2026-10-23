@@ -35,6 +35,13 @@ Cada etapa só termina com a verificação indicada. Nada é dado como feito sem
 | B4 | **App `storm2` do Vita**: liga runtime, GPU nula e o código gerado (`vita/storm2`); dados do jogo em `ux0:data/storm2port/game`; entrada por `sceCtrl`; áudio desligado e registrado como desligado (sem decodificação XMA nesta fase); log de quadros/s, memória livre e CPU por thread | o VPK abre, chega ao menu e à batalha, e grava o log de medidas |
 | B5 | **Medida no console** | log do usuário: quadros/s de CPU em batalha, memória usada, threads |
 
+### Andamento
+- **B1 — feito no PC (2026-10-23).**
+  - `rex::graphics::null` (`include/rex/graphics/null/null_gpu.h`) e `--gpu_backend=null` (`--gpu_backend` é novo no `ReXApp`). Sem renderizar, o Storm 2 roda a 29,9 quadros/s, com ~121 desenhos e 31 resolves por quadro, os mesmos números do D3D12, e 25,4 M instruções por quadro (mediana; 30,8 M com D3D12, por causa de menos espera ativa pela GPU). Log: `docs/logs/E10_nullgpu_120s`.
+  - **Falta** chegar a uma batalha sem imagem.
+- **B1b (novo, necessário): gravação e reprodução de entrada.** Sem imagem, ninguém navega pelos menus, nem no PC nem no Vita. O runtime vai gravar o controle quadro a quadro numa sessão com imagem (`--input_record`) e reproduzir sem gráficos (`--input_replay`). Verificação: com D3D12 e capturas de tela, a reprodução chega à batalha; depois a mesma coisa com a GPU nula, conferindo pelo salto de memória e de custo da batalha. No Vita, a fase de carregamento leva outro número de quadros, então o roteiro precisa de folgas largas entre os passos de menu.
+- **Armadilha de build achada:** `rexglue codegen` reescreve `<pasta do manifesto>/generated/rexglue.cmake`. Com o manifesto do Vita em `storm2/`, o build do PC passou a compilar a cópia do Vita sem aviso. O manifesto do Vita agora fica em `storm2/vita/`, com saída em `storm2/vita/generated/`.
+
 Fora desta fase, documentado como pendente: renderização (GXM), áudio (reescrita NEON e XMA), tela SIM/NÃO (pode entrar em B4 se custar pouco).
 
 ## Riscos [H]

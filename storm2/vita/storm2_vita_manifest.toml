@@ -1,15 +1,17 @@
 # PS Vita (ARM32) variant of storm2_manifest.toml: same analysis and register
 # model, no instruction counting (profiling only), separate output directory.
-# Keep in sync with storm2_manifest.toml.
+# Keep in sync with storm2_manifest.toml. Lives in its own directory because
+# rexglue codegen rewrites <manifest dir>/generated/rexglue.cmake: run from
+# storm2/ it pointed the desktop build at the Vita copy (2026-10-23).
 
 [project]
 name = "storm2"
 sdk_version = "0.10.0"
-game_root = "game"
+game_root = "../game"
 
 [entrypoint]
-file_path = "game/default.xex"
-out_directory_path = "generated_vita/default"
+file_path = "../game/default.xex"
+out_directory_path = "generated/default"
 includes = []
 # Profiling build: count executed guest instructions (per thread, summed at
 # each VdSwap with --perf_frame_stats). Turn off for normal builds.

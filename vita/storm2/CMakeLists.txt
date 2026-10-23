@@ -3,8 +3,8 @@
 # static library, to find compile errors and measure code size before a Vita
 # runtime exists (no link yet: kernel/XAM imports, GPU and audio are missing).
 #
-# Input: storm2/generated_vita/default (rexglue codegen storm2_vita_manifest.toml;
-# derived from the game, never committed).
+# Input: storm2/vita/generated/default (run `rexglue codegen storm2_vita_manifest.toml`
+# from storm2/vita; derived from the game, never committed).
 #
 #   cmake -G Ninja -S vita/storm2 -B vita/storm2/build-vita \
 #     -DCMAKE_TOOLCHAIN_FILE=%VITASDK%/share/vita.toolchain.cmake [-DSTORM2_OPT=-O2]
@@ -20,7 +20,7 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 set(REXGLUE_DIR "${CMAKE_CURRENT_LIST_DIR}/../../rexglue" CACHE PATH "ReXGlue checkout")
-set(STORM2_GEN_DIR "${CMAKE_CURRENT_LIST_DIR}/../../storm2/generated_vita/default"
+set(STORM2_GEN_DIR "${CMAKE_CURRENT_LIST_DIR}/../../storm2/vita/generated/default"
     CACHE PATH "Generated Storm 2 code for the Vita")
 # Optimization level for the generated code (Release default of CMake is -O3).
 set(STORM2_OPT "-O2" CACHE STRING "Optimization flags for the generated code")
