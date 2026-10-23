@@ -9,16 +9,24 @@ game_root = "game"
 file_path = "game/default.xex"
 out_directory_path = "generated/default"
 includes = []
+# Profiling build: count executed guest instructions (per thread, summed at
+# each VdSwap with --perf_frame_stats). Turn off for normal builds.
+count_guest_instructions = true
 
 # Register leaf functions reached only through pointers in data sections
-# (160 such addresses found by scripts/find_data_only_functions.py, e.g. vcall
+# (140 such addresses found by scripts/find_data_only_functions.py, e.g. vcall
 # thunks at 0x821DD460.. and the &#x parser at 0x827BC618 used from .rdata).
 [entrypoint.analysis]
 scan_data_pointers = true
+# Function addresses built in code with lis+addi/ori (pointer-to-member thunks
+# passed as arguments). Found after the first x64 run aborted calling 0x8224B8C0
+# (lis/addi'd 24 times, never stored in data); 6 such functions in Storm 2
+# (scripts/find_code_const_functions.py).
+scan_code_address_constants = true
 
 # Leaf functions without a .pdata entry that are reached only by tail calls
 # ("b", never "bl"), so ReXGlue's discovery does not register them.
-# Verified by disassembly (docs/analise_codegen_storm2.md). Size is omitted on
+# Verified by disassembly (docs/bugs.md, item 8). Size is omitted on
 # purpose: a declared size is trusted as the function extent (CONFIG authority)
 # and wrong sizes truncated functions in the LEGO Batman 2 attempt.
 [entrypoint.functions]

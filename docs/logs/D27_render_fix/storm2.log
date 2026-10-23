@@ -1,0 +1,520 @@
+[2026-10-22 22:39:44.481] [info] [gpu] [t26384] DXGI adapter: AMD Radeon RX 6600 (vendor 0x1002, device 0x73FF)
+[2026-10-22 22:39:44.599] [info] [gpu] [t26384] Direct3D 12 device and OS features:
+* Max GPU virtual address bits per resource: 47
+* Non-zeroed heap creation: yes
+* Pixel-shader-specified stencil reference: yes
+* Programmable sample positions: tier 2
+* Rasterizer-ordered views: yes
+* Resource binding: tier 3
+* Tiled resources: tier 4
+* Unaligned block-compressed textures: yes
+[2026-10-22 22:39:44.691] [info] [sys] [t26384] Guest memory arena mapped: virtual base 0x0000000100000000, physical base 0x0000000200000000
+[2026-10-22 22:39:44.787] [info] [core] [t26384] Function table initialized for module: code=821C0000-82836294, image=82000000-82B30000
+[2026-10-22 22:39:44.890] [warning] [core] [t26384] SDL GameControllerDB: file 'gamecontrollerdb.txt' does not exist.
+[2026-10-22 22:39:44.890] [info] [core] [t26384] SDL input driver initialized successfully
+[2026-10-22 22:39:44.956] [info] [core] [t26384] Initializing shader storage for title 4E4D0819...
+[2026-10-22 22:39:44.960] [info] [gpu] [t4440] Translated 65 shaders from the storage in 2 milliseconds
+[2026-10-22 22:39:44.989] [info] [gpu] [t4440] Created 73 graphics pipelines (not including reading the descriptions) from the storage in 28 milliseconds
+[2026-10-22 22:39:44.999] [info] [gpu] [t27624] SetInterruptCallback(826A5998, 40005080)
+[2026-10-22 22:39:45.086] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:45.087] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:45.120] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:45.121] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:45.185] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:45.452] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:45.476] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:45.477] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:45.486] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:45.577] [info] [apu] [t27624] audio endpoint 'Realtek HD Audio 2nd output (Realtek(R) Audio)': 2 ch, 48000 Hz, format 0x8120; submitting 2 ch
+[2026-10-22 22:39:45.580] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:45.582] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:45.587] [info] [core] [t27624] SDL OnControllerDeviceAdded: "DualSense Wireless Controller", JoystickType(1), GameControllerType(6), VendorID(0x054C), ProductID(0x0CE6)
+[2026-10-22 22:39:45.587] [info] [core] [t27624] SDL OnControllerDeviceAdded: connection order 0, device 1.
+[2026-10-22 22:39:45.682] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:45.683] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:45.899] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:45.900] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:45.934] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:45.934] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:46.074] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:46.074] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:46.164] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:46.165] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:46.178] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:46.179] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:46.190] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:46.190] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:46.447] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:46.448] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:46.479] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:46.480] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:46.512] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:46.512] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:47.671] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:47.672] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.067] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.067] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.199] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.200] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.215] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.216] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.228] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.228] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.235] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.236] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.252] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.253] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.270] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.270] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.283] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.283] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.362] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.362] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.383] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.384] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.394] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.395] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.406] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.406] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.416] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.416] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.428] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.429] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.439] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.440] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.450] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.451] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.462] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.463] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.473] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.474] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.484] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.485] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.496] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.497] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.509] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.510] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.521] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.522] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.533] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.533] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.591] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.592] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.602] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.602] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.646] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.646] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.647] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.647] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.647] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.649] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.743] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.744] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.754] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.754] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.763] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:48.764] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:51.337] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:51.338] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:51.485] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:51.486] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:51.517] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:51.517] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:51.534] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:51.535] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:52.409] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:52.409] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:52.497] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:52.498] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:52.698] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:52.698] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:55.003] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:55.070] [error] [krnl] [t21472] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:55.337] [info] [gpu] [t4440] swap-diag: swap 300: draws 30385 (completed 26774), resolves 3587 (13368885248 bytes, hit frontbuffer yes), destinations: 0B000000+398000 0CB9A000+320000 0CEBA000+320000 0EBA2000+800000 0D1DA000+320000 0D4FA000+320000 0DC02000+320000 0DF22000+320000 0E562000+640000 0E242000+320000 126EF000+398000 | frontbuffer 0B000000 1280x720 format 6 | swap texture 1280x720 (unscaled 1280x720) dxgi 27 | gamma256 red[0,128,255]=0,558,1023 pwl red base[0,64,127]=0,33024,65472
+[2026-10-22 22:39:55.339] [info] [gpu] [t4440] swap-diag: draw prim 8 count 3 vs 1E6883FCCDE1F688 ps A4A965C189287B99 | vport scale 640 -320 1 offset 640 320 0 vte 00000300 | color clear 00000000 | vs c0-c3: 2 0 0 0 0 2 0 0 0 0 -1.90735e-06 0 0 0 0 1 | ps c0-c1: 1 0 0 0 0 1 0 0 | vertices: fetch 0 addr 1FB26918 size 21 words endian 2 stride 7 words: 00000000(0) 00000000(0) 3F800000(1) 3F800000(1) 3F800000(1) 3F800000(1) 3F800000(1) 44200000(640)
+[2026-10-22 22:39:55.340] [info] [gpu] [t4440] swap-diag: draw prim 4 count 6 vs D5E12A97B3A84881 ps A0B5089C468B8CE8 | vport scale 640 -360 1 offset 640 360 0 vte 00000400 | color clear 00000000 | vs c0-c3: 2 0 0 0 0 2 0 0 0 0 -1.90735e-06 0 0 0 0 1 | ps c0-c1: 1 0 0 0 0 1 0 0 | vertices: fetch 95 addr 1FC95000 size 30 words endian 2 stride 5 words: 00000000(0) 00000000(0) 00000000(0) 00000000(0) 00000000(0) 44A00000(1280) 00000000(0) 00000000(0)
+[2026-10-22 22:39:55.341] [info] [gpu] [t4440] swap-diag: draw prim 13 count 4 vs 2443876AABAE04D9 ps 6D868915601F3596 | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 2 0 0 0 0 2 0 0 0 0 1 0 0 0 -8.1 1 | ps c0-c1: 1 0 0 0 0 1 0 0 | vertices: fetch 95 addr 0C398000 size 2097152 words endian 2 stride 4 words: BF000000(-0.5) 3F000000(0.5) 00000000(0) 00000000(0) BF000000(-0.5) BF000000(-0.5) 00000000(0) 44200000(640)
+[2026-10-22 22:39:55.341] [info] [gpu] [t4440] swap-diag: draw prim 13 count 4 vs 2A53964AA9F4D66E ps A2147ED6ACF52DBF | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 1280 640 0 0 2 0 0 0 0 2 0 0 0 0 1 0 | ps c0-c1: 1 0 0 0 0 1 0 0 | vertices: fetch 95 addr 0C398080 size 2097120 words endian 2 stride 4 words: BF000000(-0.5) 3F000000(0.5) 00000000(0) 00000000(0) BF000000(-0.5) BF000000(-0.5) 00000000(0) 44200000(640)
+[2026-10-22 22:39:55.341] [info] [gpu] [t4440] swap-diag: draw prim 13 count 4 vs 5C3A02159BE6E884 ps 15741DBDE0A6290A | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 1280 640 0 0 2 0 0 0 0 2 0 0 0 0 1 0 | ps c0-c1: 1 0 0 0 0 1 0 0 | vertices: fetch 95 addr 0C398100 size 2097088 words endian 2 stride 4 words: BF000000(-0.5) 3F000000(0.5) 00000000(0) 00000000(0) BF000000(-0.5) BF000000(-0.5) 00000000(0) 44200000(640)
+[2026-10-22 22:39:55.341] [info] [gpu] [t4440] swap-diag: draw prim 13 count 4 vs 3DDE552C3BDAE2BF ps BCC460762FDFFFFC | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 1280 640 0 0 2 0 0 0 0 2 0 0 0 0 1 0 | ps c0-c1: 1 0 0 0 0 1 0 0 | vertices: fetch 95 addr 0C398180 size 2097056 words endian 2 stride 4 words: BF000000(-0.5) 3F000000(0.5) 00000000(0) 00000000(0) BF000000(-0.5) BF000000(-0.5) 00000000(0) 44200000(640)
+[2026-10-22 22:39:55.376] [info] [gpu] [t4440] swap-diag: swap 300 texture content (before gamma): 921600 texels of 4 bytes, lit 100.00%, channel means 0.9741 0.9958 0.9815 1.0000, max 1.0000, dxgi 27
+[2026-10-22 22:39:58.271] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:39:58.335] [error] [krnl] [t21472] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:01.002] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:01.068] [error] [krnl] [t21472] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:04.149] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:04.152] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:04.153] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:04.154] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:04.154] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:05.403] [info] [gpu] [t4440] swap-diag: swap 600: draws 38253 (completed 31584), resolves 6669 (25340608512 bytes, hit frontbuffer yes), destinations: 126EF000+398000 0EBA2000+800000 0D1DA000+320000 0CB9A000+320000 0CEBA000+320000 0D4FA000+320000 0DC02000+320000 0DF22000+320000 0B000000+398000 0E562000+640000 0E242000+320000 | frontbuffer 0B000000 1280x720 format 6 | swap texture 1280x720 (unscaled 1280x720) dxgi 27 | gamma256 red[0,128,255]=0,558,1023 pwl red base[0,64,127]=0,33024,65472
+[2026-10-22 22:40:05.403] [info] [gpu] [t4440] swap-diag: draw prim 8 count 3 vs 1E6883FCCDE1F688 ps A4A965C189287B99 | vport scale 640 -320 1 offset 640 320 0 vte 00000300 | color clear 00000000 | vs c0-c3: 2 0 0 0 0 2 0 0 0 0 -1.90735e-06 0 0 0 0 1 | ps c0-c1: 0 0 0 0 8.38861e+06 524280 524296 0 | vertices: fetch 0 addr 1FB51758 size 21 words endian 2 stride 7 words: 00000000(0) 00000000(0) 3F800000(1) 00000000(0) 00000000(0) 00000000(0) 3F800000(1) 44200000(640)
+[2026-10-22 22:40:05.404] [info] [gpu] [t4440] swap-diag: draw prim 13 count 4 vs 2443876AABAE04D9 ps 6D868915601F3596 | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 2 0 0 0 0 2 0 0 0 0 1 0 0 0 -8.1 1 | ps c0-c1: 0 0 0 0 8.38861e+06 524280 524296 0 | vertices: fetch 95 addr 0C398000 size 2097152 words endian 2 stride 4 words: BF000000(-0.5) 3F000000(0.5) 00000000(0) 00000000(0) BF000000(-0.5) BF000000(-0.5) 00000000(0) 44200000(640)
+[2026-10-22 22:40:05.404] [info] [gpu] [t4440] swap-diag: draw prim 13 count 4 vs 2A53964AA9F4D66E ps A2147ED6ACF52DBF | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 1280 640 0 0 2 0 0 0 0 2 0 0 0 0 1 0 | ps c0-c1: 1 0 0 0 0 1 0 0 | vertices: fetch 95 addr 0C398080 size 2097120 words endian 2 stride 4 words: BF000000(-0.5) 3F000000(0.5) 00000000(0) 00000000(0) BF000000(-0.5) BF000000(-0.5) 00000000(0) 44200000(640)
+[2026-10-22 22:40:05.404] [info] [gpu] [t4440] swap-diag: draw prim 13 count 4 vs 5C3A02159BE6E884 ps 15741DBDE0A6290A | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 1280 640 0 0 2 0 0 0 0 2 0 0 0 0 1 0 | ps c0-c1: 1 0 0 0 0 1 0 0 | vertices: fetch 95 addr 0C398100 size 2097088 words endian 2 stride 4 words: BF000000(-0.5) 3F000000(0.5) 00000000(0) 00000000(0) BF000000(-0.5) BF000000(-0.5) 00000000(0) 44200000(640)
+[2026-10-22 22:40:05.404] [info] [gpu] [t4440] swap-diag: draw prim 13 count 4 vs 3DDE552C3BDAE2BF ps BCC460762FDFFFFC | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 1280 640 0 0 2 0 0 0 0 2 0 0 0 0 1 0 | ps c0-c1: 1 0 0 0 0 1 0 0 | vertices: fetch 95 addr 0C398180 size 2097056 words endian 2 stride 4 words: BF000000(-0.5) 3F000000(0.5) 00000000(0) 00000000(0) BF000000(-0.5) BF000000(-0.5) 00000000(0) 44200000(640)
+[2026-10-22 22:40:05.404] [info] [gpu] [t4440] swap-diag: draw prim 13 count 4 vs 4124792F35086E42 ps 083B01342061346A | vport scale 160 -80 1 offset 240 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 1280 640 0 0 2 0 0 0 0 2 0 0 0 0 1 0 | ps c0-c1: 1 0 0 0 0 1 0 0 | vertices: fetch 95 addr 0C398200 size 2097024 words endian 2 stride 4 words: BF000000(-0.5) 3F000000(0.5) 00000000(0) 00000000(0) BF000000(-0.5) BF000000(-0.5) 00000000(0) 43200000(160)
+[2026-10-22 22:40:05.442] [info] [gpu] [t4440] swap-diag: swap 600 texture content (before gamma): 921600 texels of 4 bytes, lit 0.33%, channel means 0.0018 0.0018 0.0018 0.9986, max 1.0000, dxgi 27
+[2026-10-22 22:40:06.889] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:06.891] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:07.304] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:07.305] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:07.342] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:07.342] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:08.566] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:08.567] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:11.942] [error] [krnl] [t25620] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:15.468] [info] [gpu] [t4440] swap-diag: swap 900: draws 90016 (completed 78189), resolves 11827 (44367872000 bytes, hit frontbuffer yes), destinations: 0EBA2000+800000 0D1DA000+320000 0CB9A000+320000 0CEBA000+320000 0D4FA000+320000 0DC02000+320000 0DF22000+320000 0E562000+640000 0E242000+320000 0B000000+398000 | frontbuffer 0B000000 1280x720 format 6 | swap texture 1280x720 (unscaled 1280x720) dxgi 27 | gamma256 red[0,128,255]=0,558,1023 pwl red base[0,64,127]=0,33024,65472
+[2026-10-22 22:40:15.469] [info] [gpu] [t4440] swap-diag: draw prim 8 count 3 vs 1E6883FCCDE1F688 ps A4A965C189287B99 | vport scale 640 -320 1 offset 640 320 0 vte 00000300 | color clear 00000000 | vs c0-c3: 2 0 0 0 0 2 0 0 0 0 -1.90735e-06 0 0 0 0 1 | ps c0-c1: 0 0 0.357771 1.9996 2.5 1.25 0.5 1.9996 | vertices: fetch 0 addr 1FB65038 size 21 words endian 2 stride 7 words: 00000000(0) 00000000(0) 3F800000(1) 00000000(0) 00000000(0) 00000000(0) 3F800000(1) 44200000(640)
+[2026-10-22 22:40:15.469] [info] [gpu] [t4440] swap-diag: draw prim 6 count 1209 vs 46BCED343281907B ps A1EB7A303E163A5A | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 0.462745 1 1 0 0 0 0 0 0 0 0 0 1 1 1 1.00893e-42 | ps c0-c1: 0 0 0.357771 1.9996 2.5 1.25 0.5 1.9996 | vertices: fetch 95 addr 120AF250 size 55816 words endian 2 stride 8 words: C4C94B20(-1610.35) 424AC048(50.6878) 42A9C178(84.8779) 3505B48E(4.98091e-07) 3B3F3C00(0.002918) FFFFFFFF(-nan) 35AE34C0(1.29794e-06) 33AF3B8C(8.1599e-08)
+[2026-10-22 22:40:15.469] [info] [gpu] [t4440] swap-diag: draw prim 6 count 2265 vs 46BCED343281907B ps A1EB7A303E163A5A | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 0.462745 1 1 0 0 0 0 0 0 0 0 0 1 1 1 1.00893e-42 | ps c0-c1: 0 0 0.357771 1.9996 2.5 1.25 0.5 1.9996 | vertices: fetch 95 addr 120B68F0 size 48224 words endian 2 stride 8 words: C4A89C8E(-1348.89) 438D4CF0(282.601) 42D24320(105.131) BC000000(-0.0078125) 00003C00(2.15239e-41) FFFFFFFF(-nan) 350D2383(5.25783e-07) 2C5C38EB(3.12955e-12)
+[2026-10-22 22:40:15.469] [info] [gpu] [t4440] swap-diag: draw prim 6 count 1973 vs 46BCED343281907B ps A1EB7A303E163A5A | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 0.462745 1 1 0 0 0 0 0 0 0 0 0 1 1 1 1.00893e-42 | ps c0-c1: 0 0 0.357771 1.9996 2.5 1.25 0.5 1.9996 | vertices: fetch 95 addr 120C49F0 size 33824 words endian 2 stride 8 words: C4D120F2(-1673.03) C2B41E16(-90.0588) 43826F40(260.869) 3A923796(0.00111555) 35123C00(5.44765e-07) FFFFFFFF(-nan) 38FE392F(0.000121223) 2EC239F1(8.83239e-11)
+[2026-10-22 22:40:15.469] [info] [gpu] [t4440] swap-diag: draw prim 6 count 2538 vs 46BCED343281907B ps A1EB7A303E163A5A | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 0.462745 1 1 0 0 0 0 0 0 0 0 0 1 1 1 1.00893e-42 | ps c0-c1: 0 0 0.357771 1.9996 2.5 1.25 0.5 1.9996 | vertices: fetch 95 addr 120CCB70 size 25536 words endian 2 stride 8 words: C4D5C9B8(-1710.3) C3210E50(-161.056) 42DCB7B0(110.359) 00000000(0) BC003C00(-0.00782681) FFFFFFFF(-nan) 35F53B7D(1.82712e-06) 373C3BEC(1.12196e-05)
+[2026-10-22 22:40:15.469] [info] [gpu] [t4440] swap-diag: draw prim 6 count 134 vs 46BCED343281907B ps A1EB7A303E163A5A | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 0.462745 1 1 0 0 0 0 0 0 0 0 0 1 1 1 1.00893e-42 | ps c0-c1: 0 0 0.357771 1.9996 2.5 1.25 0.5 1.9996 | vertices: fetch 95 addr 120D99F0 size 12320 words endian 2 stride 8 words: C4975254(-1210.57) C3C2991B(-389.196) 42A01FB4(80.0619) 3AF20000(0.00184631) B7ED3C00(-2.82805e-05) FFFFFFFF(-nan) 45E53BB0(7335.46) 2B773A92(8.78333e-13)
+[2026-10-22 22:40:15.515] [info] [gpu] [t4440] swap-diag: swap 900 texture content (before gamma): 921600 texels of 4 bytes, lit 99.43%, channel means 0.8444 0.8190 0.5550 0.4544, max 1.0000, dxgi 27
+[2026-10-22 22:40:23.446] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:23.446] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:23.456] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:23.457] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:23.498] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:23.500] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.296] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.297] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.319] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.320] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.332] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.333] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.345] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.345] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.356] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.357] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.371] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.372] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.386] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.388] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.401] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.401] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.413] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.414] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.425] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.426] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.438] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.439] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.452] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.452] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.463] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.463] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.474] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.475] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.488] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.488] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.501] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.502] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.512] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.512] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.526] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.527] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.538] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.539] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.551] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.552] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.565] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.566] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.580] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.580] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.594] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.595] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.606] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.606] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.617] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.618] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.627] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.628] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.643] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.644] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.656] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.657] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.671] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.672] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.682] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.683] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.698] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.699] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.711] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.712] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.726] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.727] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.742] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.742] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.755] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.756] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.769] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.769] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.782] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.783] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.795] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.796] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.808] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.808] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.820] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.820] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.833] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.833] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.845] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.846] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.859] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:24.860] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:25.485] [info] [gpu] [t4440] swap-diag: swap 1200: draws 87193 (completed 76571), resolves 10620 (39626342400 bytes, hit frontbuffer yes), destinations: 0EBA2000+800000 0D1DA000+320000 0CB9A000+320000 0CEBA000+320000 0D4FA000+320000 0DC02000+320000 0DF22000+320000 0E562000+640000 0E242000+320000 0B000000+398000 | frontbuffer 0B000000 1280x720 format 6 | swap texture 1280x720 (unscaled 1280x720) dxgi 27 | gamma256 red[0,128,255]=0,558,1023 pwl red base[0,64,127]=0,33024,65472
+[2026-10-22 22:40:25.486] [info] [gpu] [t4440] swap-diag: draw prim 8 count 3 vs 1E6883FCCDE1F688 ps A4A965C189287B99 | vport scale 640 -320 1 offset 640 320 0 vte 00000300 | color clear 00000000 | vs c0-c3: 2 0 0 0 0 2 0 0 0 0 -1.90735e-06 0 0 0 0 1 | ps c0-c1: 0 0 0.223607 1.9996 4 2 0.5 1.9996 | vertices: fetch 0 addr 1FC67618 size 21 words endian 2 stride 7 words: 00000000(0) 00000000(0) 3F800000(1) 00000000(0) 00000000(0) 00000000(0) 3F800000(1) 44200000(640)
+[2026-10-22 22:40:25.487] [info] [gpu] [t4440] swap-diag: draw prim 13 count 4 vs 2443876AABAE04D9 ps 6D868915601F3596 | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 2 0 0 0 0 2 0 0 0 0 -1.00002 -1 0 0 0.100002 8.1 | ps c0-c1: 0 0 0.223607 1.9996 4 2 0.5 1.9996 | vertices: fetch 95 addr 0C398000 size 2097152 words endian 2 stride 4 words: BF000000(-0.5) 3F000000(0.5) 00000000(0) 00000000(0) BF000000(-0.5) BF000000(-0.5) 00000000(0) 44200000(640)
+[2026-10-22 22:40:25.487] [info] [gpu] [t4440] swap-diag: draw prim 6 count 32 vs 2E015B8427EBD8C5 ps E8EAE3AA51F7921E | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 0 1 1 0 0 0 0 0 0 0 0 0 1 1 1 4.48416e-44 | ps c0-c1: 0 0 0.223607 1.9996 4 2 0.5 1.9996 | vertices: fetch 95 addr 126EEC80 size 140 words endian 2 stride 7 words: C4200000(-640) C3B40002(-360) 00000000(0) 00000000(0) 3C003C00(0.00782681) FFEF6B29(-nan) 2368397A(1.25889e-17) C3A00000(-320)
+[2026-10-22 22:40:25.487] [info] [gpu] [t4440] swap-diag: draw prim 6 count 175 vs 2E015B8427EBD8C5 ps E8EAE3AA51F7921E | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 0 1 1 0 0 0 0 0 0 0 0 0 1 1 1 4.48416e-44 | ps c0-c1: 0 0 0.223607 1.9996 4 2 0.5 1.9996 | vertices: fetch 95 addr 12F2B160 size 668 words endian 2 stride 7 words: 00000000(0) C33D90F0(-189.566) 00000000(0) 00000000(0) 3C003C00(0.00782681) 98FDFDFD(-6.56554e-24) 000038FA(2.04393e-41) 00000000(0)
+[2026-10-22 22:40:25.487] [info] [gpu] [t4440] swap-diag: draw prim 6 count 125 vs 2E015B8427EBD8C5 ps E8EAE3AA51F7921E | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 0 1 1 0 0 0 0 0 0 0 0 0 1 1 1 4.48416e-44 | ps c0-c1: 0 0 0.223607 1.9996 4 2 0.5 1.9996 | vertices: fetch 95 addr 12F2BF80 size 492 words endian 2 stride 7 words: 4203A540(32.9114) C444B0FC(-786.765) 00000000(0) 00000000(0) 3C003C00(0.00782681) 00FFFFFF(2.35099e-38) 000037FC(2.00834e-41) 44160A32(600.159)
+[2026-10-22 22:40:25.487] [info] [gpu] [t4440] swap-diag: draw prim 6 count 125 vs 2E015B8427EBD8C5 ps E8EAE3AA51F7921E | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 0 1 1 0 0 0 0 0 0 0 0 0 1 1 1 4.48416e-44 | ps c0-c1: 0 0 0.223607 1.9996 4 2 0.5 1.9996 | vertices: fetch 95 addr 12F2C840 size 492 words endian 2 stride 7 words: 42A6E950(83.4557) C4413FC4(-772.996) 00000000(0) 00000000(0) 3C003C00(0.00782681) 00FDEBD9(2.3319e-38) 000037FC(2.00834e-41) 440B6369(557.553)
+[2026-10-22 22:40:25.533] [info] [gpu] [t4440] swap-diag: swap 1200 texture content (before gamma): 921600 texels of 4 bytes, lit 100.00%, channel means 0.9108 0.7017 0.2016 0.0000, max 0.7529, dxgi 27
+[2026-10-22 22:40:34.102] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:34.102] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:34.157] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:34.157] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:34.179] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:34.180] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:34.206] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:34.207] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:34.222] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:34.223] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:34.235] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:34.236] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:34.262] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:34.262] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:35.485] [info] [gpu] [t4440] swap-diag: swap 1500: draws 170320 (completed 166420), resolves 3900 (14460518400 bytes, hit frontbuffer yes), destinations: 0EBA2000+800000 0D1DA000+320000 0CB9A000+320000 0CEBA000+320000 0DC02000+320000 0B000000+398000 | frontbuffer 0B000000 1280x720 format 6 | swap texture 1280x720 (unscaled 1280x720) dxgi 27 | gamma256 red[0,128,255]=0,558,1023 pwl red base[0,64,127]=0,33024,65472
+[2026-10-22 22:40:35.486] [info] [gpu] [t4440] swap-diag: draw prim 8 count 3 vs 1E6883FCCDE1F688 ps A4A965C189287B99 | vport scale 640 -320 1 offset 640 320 0 vte 00000300 | color clear 00000000 | vs c0-c3: 2 0 0 0 0 2 0 0 0 0 -1.90735e-06 0 0 0 0 1 | ps c0-c1: 0 0 0.223607 1.9996 4 2 0.5 1.9996 | vertices: fetch 0 addr 1FBDF5B8 size 21 words endian 2 stride 7 words: 00000000(0) 00000000(0) 3F800000(1) 00000000(0) 00000000(0) 00000000(0) 3F800000(1) 44200000(640)
+[2026-10-22 22:40:35.487] [info] [gpu] [t4440] swap-diag: draw prim 13 count 4 vs 2443876AABAE04D9 ps 6D868915601F3596 | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 2 0 0 0 0 2 0 0 0 0 -1.00002 -1 0 0 0.100002 8.1 | ps c0-c1: 0 0 0.223607 1.9996 4 2 0.5 1.9996 | vertices: fetch 95 addr 0C398000 size 2097152 words endian 2 stride 4 words: BF000000(-0.5) 3F000000(0.5) 00000000(0) 00000000(0) BF000000(-0.5) BF000000(-0.5) 00000000(0) 44200000(640)
+[2026-10-22 22:40:35.488] [info] [gpu] [t4440] swap-diag: draw prim 13 count 4 vs 5C3A02159BE6E884 ps 15741DBDE0A6290A | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 1280 640 0 0 2 0 0 0 0 2 0 0 0 0 -1.00002 -1 | ps c0-c1: 0 0 0.223607 1.9996 4 2 0.5 1.9996 | vertices: fetch 95 addr 0C398080 size 2097120 words endian 2 stride 4 words: BF000000(-0.5) 3F000000(0.5) 00000000(0) 00000000(0) BF000000(-0.5) BF000000(-0.5) 00000000(0) 44200000(640)
+[2026-10-22 22:40:35.488] [info] [gpu] [t4440] swap-diag: draw prim 13 count 4 vs 4666C5A9092B03DD ps 7ABDFEFBCADB4BF9 | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 2 0 0 0 0 2 0 0 0 0 -1.00002 -1 0 0 92.0014 100 | ps c0-c1: 0 0 0.223607 1.9996 4 2 0.5 1.9996 | vertices: fetch 95 addr 0C398100 size 2097088 words endian 2 stride 4 words: BF000000(-0.5) 3F000000(0.5) 00000000(0) 00000000(0) BF000000(-0.5) BF000000(-0.5) 00000000(0) 44200000(640)
+[2026-10-22 22:40:35.488] [info] [gpu] [t4440] swap-diag: draw prim 6 count 29 vs 2E015B8427EBD8C5 ps E8EAE3AA51F7921E | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 0 1 1 0 0 0 0 0 3.40282e+38 3.40282e+38 0 0 1 1 1 1 | ps c0-c1: 0 0 0.223607 1.9996 4 2 0.5 1.9996 | vertices: fetch 95 addr 10EC5B00 size 100 words endian 2 stride 7 words: 00000000(0) 4433FFFF(720) 00000000(0) 00000000(0) BC003C00(-0.00782681) FF000000(-1.70141e+38) 35193BA5(5.70837e-07) 44A00001(1280)
+[2026-10-22 22:40:35.488] [info] [gpu] [t4440] swap-diag: draw prim 6 count 6 vs 2E015B8427EBD8C5 ps E8EAE3AA51F7921E | vport scale 640 -320 1 offset 640 320 0 vte 0000043F | color clear 00000000 | vs c0-c3: 0 1 1 0 0 0 0 0 3.40282e+38 3.40282e+38 0 0 1 1 1 0 | ps c0-c1: 0 0 0.223607 1.9996 4 2 0.5 1.9996 | vertices: fetch 95 addr 0DC01110 size 44 words endian 2 stride 7 words: 00000000(0) 4433FFFF(720) 00000000(0) 00000000(0) BC003C00(-0.00782681) FFFFFFFF(-nan) 00003C00(2.15239e-41) 44200002(640)
+[2026-10-22 22:40:35.527] [info] [gpu] [t4440] swap-diag: swap 1500 texture content (before gamma): 921600 texels of 4 bytes, lit 99.49%, channel means 0.2194 0.3821 0.5489 0.7590, max 1.0000, dxgi 27
+[2026-10-22 22:40:36.718] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.719] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.720] [warning] [krnl] [t26028] [NtCreateFile] FAILED: path='game:\data\spc\2nrtacc1.xfbin' -> 0xc000000f
+[2026-10-22 22:40:36.720] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.720] [warning] [krnl] [t26028] [NtCreateFile] FAILED: path='game:\data\spc\2nrtacc1.xfbin.z' -> 0xc000000f
+[2026-10-22 22:40:36.720] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.721] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.722] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.723] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.723] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.724] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.725] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.726] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.726] [warning] [krnl] [t26028] [NtCreateFile] FAILED: path='game:\data\spc\2skracc1.xfbin' -> 0xc000000f
+[2026-10-22 22:40:36.726] [warning] [krnl] [t26028] [NtCreateFile] FAILED: path='game:\data\spc\2skracc1.xfbin.z' -> 0xc000000f
+[2026-10-22 22:40:36.726] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.727] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.727] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.728] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.728] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.729] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.729] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.729] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.730] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.730] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.731] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.732] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.732] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.733] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.734] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.734] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.735] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.735] [warning] [krnl] [t26028] [NtCreateFile] FAILED: path='game:\data\spc\2ssveff1.xfbin' -> 0xc000000f
+[2026-10-22 22:40:36.735] [warning] [krnl] [t26028] [NtCreateFile] FAILED: path='game:\data\spc\2ssveff1.xfbin.z' -> 0xc000000f
+[2026-10-22 22:40:36.735] [warning] [krnl] [t26028] [NtCreateFile] FAILED: path='game:\data\spc\2ssvacc1.xfbin' -> 0xc000000f
+[2026-10-22 22:40:36.735] [warning] [krnl] [t26028] [NtCreateFile] FAILED: path='game:\data\spc\2ssvacc1.xfbin.z' -> 0xc000000f
+[2026-10-22 22:40:36.736] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.736] [warning] [krnl] [t26028] [NtCreateFile] FAILED: path='game:\data\spc\2skracc1.xfbin' -> 0xc000000f
+[2026-10-22 22:40:36.736] [warning] [krnl] [t26028] [NtCreateFile] FAILED: path='game:\data\spc\2skracc1.xfbin.z' -> 0xc000000f
+[2026-10-22 22:40:36.736] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.737] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.737] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.737] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.738] [warning] [krnl] [t26028] [NtCreateFile] FAILED: path='game:\data\spc\2nrtacc1.xfbin' -> 0xc000000f
+[2026-10-22 22:40:36.738] [warning] [krnl] [t26028] [NtCreateFile] FAILED: path='game:\data\spc\2nrtacc1.xfbin.z' -> 0xc000000f
+[2026-10-22 22:40:36.738] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.738] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.739] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.740] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.741] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.946] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:36.946] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.119] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.120] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.123] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.126] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.126] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.127] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.127] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.131] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.132] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.132] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.162] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.162] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.238] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.238] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.365] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.366] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.435] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.435] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.663] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.664] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.802] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.803] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.920] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.921] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.926] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.927] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.929] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.930] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.931] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.937] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.938] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.940] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.942] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.942] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.943] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.948] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.951] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.952] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.953] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.956] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.957] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.958] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.960] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:37.961] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.036] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.037] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.113] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.113] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.300] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.300] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.321] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.323] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.332] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.333] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.454] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.455] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.474] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.474] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.588] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.589] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.622] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.623] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.657] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.658] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.667] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.668] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.795] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.795] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.866] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.866] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.883] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:38.884] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.004] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.004] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.082] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.083] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.114] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.115] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.124] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.125] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.318] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.319] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.443] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.444] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.455] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.456] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.586] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.586] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.618] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.620] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.911] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:39.912] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.058] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.058] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.334] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.335] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.509] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.510] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.549] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.550] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.566] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.567] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.579] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.580] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.591] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.592] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.606] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.607] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.620] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.621] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.640] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.640] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.654] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.654] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.667] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.667] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.678] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.678] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.749] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.750] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.767] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.768] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.787] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.787] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.826] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:40.826] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:41.023] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:41.024] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:41.147] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:41.148] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:41.225] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:41.226] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:41.272] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:41.272] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:41.285] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:41.286] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:41.325] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:41.325] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:41.345] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:41.346] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:43.521] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:43.522] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:43.950] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:43.953] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:43.998] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:43.998] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.009] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.010] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.017] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.017] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.031] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.032] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.048] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.049] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.076] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.077] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.093] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.094] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.104] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.105] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.119] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.119] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.132] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.133] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.163] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.164] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.173] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.174] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.181] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.182] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.198] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-22 22:40:44.198] [error] [krnl] [t26028] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented

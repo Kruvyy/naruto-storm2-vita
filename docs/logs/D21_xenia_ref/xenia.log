@@ -1,0 +1,1698 @@
+i> 00004CF4 Build: netplay_canary_experimental@b5f6f6ed6 on Aug  1 2026
+i> 00004CF4 Storage root: E:\xenia_canary_windows_netplay
+i> 00004CF4 ----------- CONFIG DUMP -----------
+
+[APU]
+apu = "any"                                       	
+apu_max_queued_frames = 8                         	
+enable_xmp = true                                 	
+ffmpeg_verbose = false                            	
+mute = false                                      	
+use_dedicated_xma_thread = true                   	
+xma_decoder = "new"                               	
+
+[CPU]
+break_condition_gpr = -1                          	
+break_condition_op = "eq"                         	
+break_condition_truncate = true                   	
+break_condition_value = 0                         	
+break_on_debugbreak = true                        	
+break_on_instruction = 0                          	
+break_on_start = false                            	
+break_on_unimplemented_instructions = true        	
+clock_no_scaling = false                          	
+clock_source_raw = false                          	
+cpu = "any"                                       	
+debug_symbol_loader = false                       	
+debugprint_trap_log = false                       	
+disable_context_promotion = false                 	
+disable_instruction_infocache = false             	
+disable_prefetch_and_cachecontrol = true          	
+disassemble_functions = false                     	
+dump_translated_hir_functions = false             	
+elide_e0_check = false                            	
+emit_inline_mmio_checks = false                   	
+emit_mmio_aware_stores_for_recorded_exception_addresses = true	
+emit_source_annotations = false                   	
+enable_early_precompilation = false               	
+full_optimization_even_with_debug = false         	
+ignore_trap_instructions = true                   	
+ignore_undefined_externs = true                   	
+inline_loadclock = false                          	
+inline_mmio_access = true                         	
+load_module_map = ""                              	
+no_reserved_ops = false                           	
+no_round_to_single = false                        	
+permit_float_constant_evaluation = false          	
+pvr = 7407360                                     	
+record_mmio_access_exceptions = true              	
+store_all_context_values = false                  	
+trace_function_coverage = false                   	
+trace_function_data = false                       	
+trace_function_data_path = ""                     	
+trace_function_references = false                 	
+trace_functions = false                           	
+use_fast_dot_product = false                      	
+validate_hir = false                              	
+writable_code_segments = false                    	
+
+[Config]
+defaults_date = 2026040912                        	
+
+[Content]
+license_mask = 0                                  	
+
+[D3D12]
+d3d12_adapter = -1                                	
+d3d12_allow_variable_refresh_rate_and_tearing = true	
+d3d12_bindless = true                             	
+d3d12_break_on_error = false                      	
+d3d12_break_on_warning = false                    	
+d3d12_debug = false                               	
+d3d12_dxbc_disasm = false                         	
+d3d12_dxbc_disasm_dxilconv = false                	
+d3d12_pipeline_creation_threads = -1              	
+d3d12_queue_priority = 1                          	
+d3d12_submit_on_primary_buffer_end = true         	
+d3d12_tessellation_wireframe = false              	
+
+[Display]
+fullscreen = false                                	
+host_present_from_non_ui_thread = true            	
+postprocess_antialiasing = ""                     	
+postprocess_dither = true                         	
+postprocess_ffx_cas_additional_sharpness = 0      	
+postprocess_ffx_fsr_max_upsampling_passes = 4     	
+postprocess_ffx_fsr_sharpness_reduction = 0.20000000298023224	
+postprocess_scaling_and_sharpening = ""           	
+present_letterbox = true                          	
+present_render_pass_clear = true                  	
+present_safe_area_x = 100                         	
+present_safe_area_y = 100                         	
+
+[GPU]
+anisotropic_override = -1                         	
+async_shader_compilation = true                   	
+clear_memory_page_state = false                   	
+depth_float24_convert_in_pixel_shader = false     	
+depth_float24_round = false                       	
+depth_transfer_not_equal_test = true              	
+disassemble_pm4 = false                           	
+draw_resolution_scale_x = 1                       	
+draw_resolution_scale_y = 1                       	
+draw_resolution_scaled_texture_offsets = true     	
+dump_shaders = ""                                 	
+dxbc_source_map = false                           	
+dxbc_switch = true                                	
+execute_unclipped_draw_vs_on_cpu = true           	
+execute_unclipped_draw_vs_on_cpu_for_psi_render_backend = true	
+execute_unclipped_draw_vs_on_cpu_with_scissor = false	
+force_convert_line_loops_to_strips = false        	
+force_convert_quad_lists_to_triangle_lists = false	
+force_convert_triangle_fans_to_lists = false      	
+framerate_limit = 0                               	
+gamma_render_target_as_unorm16 = true             	
+gpu = "any"                                       	
+gpu_3d_to_2d_texture = true                       	
+gpu_allow_invalid_fetch_constants = true          	
+gpu_allow_invalid_upload_range = false            	
+half_pixel_offset = true                          	
+ignore_32bit_vertex_index_support = false         	
+log_guest_driven_gpu_register_written_values = false	
+log_ringbuffer_kickoff_initiator_bts = false      	
+mrt_edram_used_range_clamp_to_min = true          	
+native_2x_msaa = true                             	
+native_stencil_value_output = true                	
+native_stencil_value_output_d3d12_intel = false   	
+no_discard_stencil_in_transfer_pipelines = false  	
+non_seamless_cube_map = true                      	
+occlusion_query = "fast"                          	
+occlusion_query_fake_lower_threshold = 80         	
+occlusion_query_fake_upper_threshold = 100        	
+occlusion_query_querybatch_range = 0              	
+occlusion_query_saturation = 1                    	
+primitive_processor_cache_min_indices = 4096      	
+readback_memexport = false                        	
+readback_resolve = "none"                         	
+render_target_path_d3d12 = ""                     	
+render_target_path_vulkan = ""                    	
+resolve_resolution_scale_fill_half_pixel_offset = true	
+snorm16_render_target_full_range = true           	
+store_shaders = true                              	
+target_trace_file = ""                            	
+texture_cache_memory_limit_hard = 768             	
+texture_cache_memory_limit_render_to_texture = 24 	
+texture_cache_memory_limit_soft = 384             	
+texture_cache_memory_limit_soft_lifetime = 30     	
+tiled_shared_memory = true                        	
+trace_dump_path = ""                              	
+trace_gpu_prefix = "scratch/gpu/"                 	
+trace_gpu_stream = false                          	
+use_fuzzy_alpha_epsilon = false                   	
+vsync = true                                      	
+
+[General]
+allow_game_relative_writes = false                	
+allow_plugins = false                             	
+apply_patches = true                              	
+auto_check_updates = true                         	
+controller_hotkeys = false                        	
+debug = false                                     	
+disable_doubleclick_fullscreen = false            	
+discord = true                                    	
+launch_module = ""                                	
+notification_sound_path = ""                      	
+priority_class = 0                                	
+recent_titles_entry_amount = 10                   	
+time_scalar = 1                                   	
+
+[HACKS]
+ac6_ground_fix = false                            	
+
+[HID]
+guide_button = true                               	
+hid = "any"                                       	
+keyboard_mode = 0                                 	
+keyboard_user_index = 0                           	
+left_stick_deadzone_percentage = 0                	
+right_stick_deadzone_percentage = 0               	
+vibration = true                                  	
+
+[HID.WinKey]
+keybind_a = "0xBA"                                	
+keybind_b = "0xDE"                                	
+keybind_back = "Z"                                	
+keybind_dpad_down = "^S"                          	
+keybind_dpad_left = "^A"                          	
+keybind_dpad_right = "^D"                         	
+keybind_dpad_up = "^W"                            	
+keybind_guide = "0x08"                            	
+keybind_left_shoulder = "1"                       	
+keybind_left_thumb = "F"                          	
+keybind_left_thumb_down = "_S"                    	
+keybind_left_thumb_left = "_A"                    	
+keybind_left_thumb_right = "_D"                   	
+keybind_left_thumb_up = "_W"                      	
+keybind_left_trigger = "Q I"                      	
+keybind_right_shoulder = "3"                      	
+keybind_right_thumb = "K"                         	
+keybind_right_thumb_down = "0x28"                 	
+keybind_right_thumb_left = "0x25"                 	
+keybind_right_thumb_right = "0x27"                	
+keybind_right_thumb_up = "0x26"                   	
+keybind_right_trigger = "E O"                     	
+keybind_start = "X"                               	
+keybind_x = "L"                                   	
+keybind_y = "P"                                   	
+
+[Kernel]
+allow_avatar_initialization = false               	
+allow_incompatible_title_update = true            	
+apply_title_update = true                         	
+cl = ""                                           	
+console_type = 0                                  	
+default_achievements_backend = "GPD"              	
+ignore_thread_affinities = true                   	
+ignore_thread_priorities = false                  	
+kernel_build_version = 1888                       	
+kernel_cert_monitor = false                       	
+kernel_debug_monitor = false                      	
+kernel_display_gamma_power = 2.22222233           	
+kernel_display_gamma_type = 2                     	
+kernel_pix = false                                	
+staging_mode = false                              	
+
+[Live]
+api_address = "192.168.0.1:36000/"                	
+api_list = "https://xenia-netplay-2a0298c0e3f4.herokuapp.com/,"	
+bind_interface = false                            	
+discord_presence_user_index = 0                   	
+friends_xuids = ""                                	
+log_mask_ips = true                               	
+logging = false                                   	
+network_guid = "{A58A2EDD-10B7-42AE-A6A4-9F1A6B28BE1B}"	
+network_mode = 2                                  	
+stub_xlivebase = false                            	
+upnp = false                                      	
+upnp_root = ""                                    	
+xhttp = false                                     	
+xstorage_backend = true                           	
+xstorage_user_data_backend = false                	
+
+[Logging]
+enable_console = false                            	
+flush_log = true                                  	
+log_file = ""                                     	
+log_high_frequency_kernel_calls = false           	
+log_level = 2                                     	
+log_mask = 0                                      	
+log_string_format_kernel_calls = false            	
+log_to_debugprint = false                         	
+log_to_stdout = true                              	
+
+[Memory]
+ignore_offset_for_ranged_allocations = false      	
+protect_on_release = false                        	
+protect_zero = true                               	
+scribble_heap = false                             	
+scribble_heap_value = 0                           	
+writable_executable_memory = true                 	
+
+[Profiles]
+logged_profile_slot_0_xuid = ""                   	
+logged_profile_slot_1_xuid = ""                   	
+logged_profile_slot_2_xuid = ""                   	
+logged_profile_slot_3_xuid = ""                   	
+
+[SDL]
+mappings_file = "gamecontrollerdb.txt"            	
+
+[Storage]
+cache_root = ""                                   	
+content_root = ""                                 	
+force_mount_devkit = false                        	
+mount_cache = true                                	
+mount_memory_unit = false                         	
+mount_scratch = false                             	
+storage_root = ""                                 	
+
+[UI]
+custom_font_path = ""                             	
+font_size = 14                                    	
+headless = false                                  	
+imgui_debug = false                               	
+profiler_dpi_scaling = false                      	
+show_achievement_notification = false             	
+show_profiler = false                             	
+storage_selection_dialog = false                  	
+window_size_x = 1280                              	
+window_size_y = 720                               	
+
+[Video]
+avpack = 8                                        	
+custom_internal_display_resolution_x = 0          	
+custom_internal_display_resolution_y = 0          	
+enable_3d_mode = false                            	
+interlaced = false                                	
+
+[Vulkan]
+vulkan_allow_present_mode_fifo_relaxed = true     	
+vulkan_allow_present_mode_immediate = true        	
+vulkan_allow_present_mode_mailbox = true          	
+vulkan_device = -1                                	
+vulkan_log_debug_messages = true                  	
+vulkan_pipeline_creation_threads = -1             	
+vulkan_semaphore_reuse_workaround = false         	
+vulkan_sparse_shared_memory = true                	
+vulkan_validation = false                         	
+
+[Win32]
+win32_high_resolution_timer = true                	
+win32_mmcss = true                                	
+
+[x64]
+align_all_basic_blocks = 0                        	
+delay_via_maybeyield = false                      	
+enable_host_guest_stack_synchronization = true    	
+enable_incorrect_roundingmode_behavior = false    	
+enable_rmw_context_merging = false                	
+instrument_call_times = false                     	
+max_stackpoints = 65536                           	
+x64_extension_mask = -1                           	
+xop_arithmetic_right_shifts = false               	
+xop_compares = true                               	
+xop_left_shifts = false                           	
+xop_right_shifts = false                          	
+xop_rotates = false                               	
+----------- END OF CONFIG DUMP ----
+i> 00004CF4 Loaded config: E:\xenia_canary_windows_netplay\xenia-canary-netplay.config.toml
+i> 00004CF4 Content root: E:\xenia_canary_windows_netplay\content
+i> 00004CF4 Host cache root: E:\xenia_canary_windows_netplay\cache_host
+i> 00004CF4 Discovering network interfaces...
+i> 00004CF4 Found 2 network interfaces!
+i> 00004CF4 Network Interfaces:
+Radmin VPN {CCA4BB3A-2105-4625-9221-826881B3B104}: 26.128.71.70
+Ethernet {A58A2EDD-10B7-42AE-A6A4-9F1A6B28BE1B}: 192.168.1.130
+i> 00004CF4 Network Interface: Ethernet 192.168.1.130 (WAN Routing)
+i> 00002854 Setup: Initializing Memory...
+i> 00002854 Setup: Initializing Exports...
+i> 00002854 Setup: Initializing Processor...
+i> 00002854 Setup: Initializing Audio...
+i> 00002854 Setup: Initializing Graphics...
+i> 00002854 Setup: Initializing HID...
+i> 00002854 winkey: "0x08" binds key 0x8 to controller input GUIDE.
+i> 00002854 winkey: "^A" binds key 0x41 to controller input DPAD_LEFT.
+i> 00002854 winkey: "^D" binds key 0x44 to controller input DPAD_RIGHT.
+i> 00002854 winkey: "^S" binds key 0x53 to controller input DPAD_DOWN.
+i> 00002854 winkey: "^W" binds key 0x57 to controller input DPAD_UP.
+i> 00002854 winkey: "_A" binds key 0x41 to controller input LEFT_THUMB_LEFT.
+i> 00002854 winkey: "_D" binds key 0x44 to controller input LEFT_THUMB_RIGHT.
+i> 00002854 winkey: "_S" binds key 0x53 to controller input LEFT_THUMB_DOWN.
+i> 00002854 winkey: "_W" binds key 0x57 to controller input LEFT_THUMB_UP.
+i> 00002854 winkey: "F" binds key 0x46 to controller input LEFT_THUMB_PRESSED.
+i> 00002854 winkey: "0x26" binds key 0x26 to controller input RIGHT_THUMB_UP.
+i> 00002854 winkey: "0x28" binds key 0x28 to controller input RIGHT_THUMB_DOWN.
+i> 00002854 winkey: "0x27" binds key 0x27 to controller input RIGHT_THUMB_RIGHT.
+i> 00002854 winkey: "0x25" binds key 0x25 to controller input RIGHT_THUMB_LEFT.
+i> 00002854 winkey: "K" binds key 0x4B to controller input RIGHT_THUMB_PRESSED.
+i> 00002854 winkey: "L" binds key 0x4C to controller input X.
+i> 00002854 winkey: "0xDE" binds key 0xDE to controller input B.
+i> 00002854 winkey: "0xBA" binds key 0xBA to controller input A.
+i> 00002854 winkey: "P" binds key 0x50 to controller input Y.
+i> 00002854 winkey: "Q" binds key 0x51 to controller input LEFT_TRIGGER.
+i> 00002854 winkey: "I" binds key 0x49 to controller input LEFT_TRIGGER.
+i> 00002854 winkey: "E" binds key 0x45 to controller input RIGHT_TRIGGER.
+i> 00002854 winkey: "O" binds key 0x4F to controller input RIGHT_TRIGGER.
+i> 00002854 winkey: "Z" binds key 0x5A to controller input BACK.
+i> 00002854 winkey: "X" binds key 0x58 to controller input START.
+i> 00002854 winkey: "1" binds key 0x31 to controller input LEFT_SHOULDER.
+i> 00002854 winkey: "3" binds key 0x33 to controller input RIGHT_SHOULDER.
+i> 00004CF4 SDL Version 2.32.2 initialized.
+w> 00004CF4 SDL GameControllerDB: file 'gamecontrollerdb.txt' does not exist.
+i> 00002854 Setup: Initializing VFS...
+i> 00002854 PatchDB: Loaded patches for 0 titles
+i> 00002854 Setup: Initializing Kernel...
+i> 00002854 FindProfiles: Adding profile E0007E61525A512B to profile list
+i> 00002854 ProfileManager: Found 1 Profiles
+i> 00002854 LoadAccount: Loading Account: E0007E61525A512B
+F> 00002854 HostPathDevice::ResolvePath()
+w> 00002854 BaseHeap::AllocFixed attempting commit on unreserved page
+w> 00002854 BaseHeap::AllocFixed attempting commit on unreserved page
+w> 00002854 BaseHeap::AllocFixed attempting commit on unreserved page
+i> 00002854 Setup: Starting graphics_system...
+i> 00002854 DXGI adapter: AMD Radeon RX 6600 (vendor 0x1002, device 0x73FF)
+i> 00002854 Direct3D 12 device and OS features:
+* Max GPU virtual address bits per resource: 47
+* Non-zeroed heap creation: yes
+* Pixel-shader-specified stencil reference: yes
+* Programmable sample positions: tier 2
+* Rasterizer-ordered views: yes
+* Resource binding: tier 3
+* Tiled resources: tier 4
+* Unaligned block-compressed textures: yes
+i> 00002854 XThread01000010 (1) Stack: 70010000-70030000
+i> 00002854 XThread01000014 (2) Stack: 70050000-70070000
+i> 00002854 Setup: Starting audio_system...
+K> 01000010 XThread::Execute thid 1 (handle=01000010, 'GPU Commands (01000010)', native=00003CF0, <host>)
+K> 01000014 XThread::Execute thid 2 (handle=01000014, 'GPU Frame limiter (01000014)', native=00001AD8, <host>)
+i> 00002854 XThread01000018 (3) Stack: 70090000-700B0000
+i> 00002854 XThread0100001C (4) Stack: 700D0000-700F0000
+K> 01000018 XThread::Execute thid 3 (handle=01000018, 'XMA Decoder (01000018)', native=000029E0, <host>)
+K> 0100001C XThread::Execute thid 4 (handle=0100001C, 'Audio Worker (0100001C)', native=000038E0, <host>)
+i> 00004CF4 Loading module GAME:\default.xex
+F> 00004CF4 HostPathDevice::ResolvePath(\default.xex)
+i> 00001848 Update Available!
+i> 00001848 Updater: Current=b5f6f6ed6, Latest=55bb46bf6a, Date=Oct 21, 2026
+i> 00004CF4 Module \Device\Harddisk0\Partition1\default.xex:
+Module Hash: 76411A1623ED0040
+    Module Flags: 00000001
+      XEX_MODULE_TITLE
+Security Header:
+     Image Flags: 00000008
+       XEX_IMAGE_XGD2_MEDIA_ONLY
+    Load Address: 82000000
+      Image Size: 00B30000
+    Export Table: 00000000
+Optional Header Count: 15
+  XEX_HEADER_RESOURCE_INFO:
+    4E4D0819 82A90000-82B2A036, 630838b
+  XEX_HEADER_FILE_FORMAT_INFO:
+           Info Size: 40
+     Encryption Type: Normal
+    Compression Type: Basic
+          Data Size: 8617984
+          Zero Size: 32768
+  XEX_HEADER_ENTRY_POINT: 82563870
+  XEX_HEADER_IMAGE_BASE_ADDRESS: 82000000
+  XEX_HEADER_IMPORT_LIBRARIES:
+    xam.xex - 148 imports
+      Version: 2.0.11164.0
+      Min Version: 2.0.8955.0
+    xboxkrnl.exe - 322 imports
+      Version: 2.0.11164.0
+      Min Version: 2.0.8955.0
+  XEX_HEADER_CHECKSUM_TIMESTAMP:
+    Checksum : 00955B95
+    Time Stamp: 4C7A120F - Sun Aug 29 04:53:51 2010
+  XEX_HEADER_ORIGINAL_PE_NAME: xnarutoNext2_Release_A.exe
+  XEX_HEADER_STATIC_LIBRARIES:
+    XAPILIB  : 2.0.11164.0
+    XBOXKRNL : 2.0.11164.0
+    XNET     : 2.0.11164.0
+    XONLINE  : 2.0.11164.0
+    LIBCPMT  : 2.0.11164.0
+    XAUDIO2  : 2.0.11164.3
+    XAPOBA   : 2.0.11164.3
+    XMCORE   : 2.0.11164.0
+    XHV2     : 2.0.11164.0
+    XPARTY   : 2.0.11164.0
+    D3D9     : 2.0.11164.0
+    D3DX9    : 2.0.11164.0
+    XGRAPHC  : 2.0.11164.0
+    LINK     : 10.0.10224.0
+    C2       : 16.0.10224.0
+    C1       : 16.0.10224.0
+  XEX_HEADER_TLS_INFO:
+          Slot Count: 64
+    Raw Data Address: 82A84800
+           Data Size: 108
+       Raw Data Size: 108
+  XEX_HEADER_DEFAULT_STACK_SIZE: 262144
+  XEX_HEADER_SYSTEM_FLAGS: 00000600
+    XEX_SYSTEM_USES_GAME_VOICE_CHANNEL
+    XEX_SYSTEM_PAL50_INCOMPATIBLE
+  XEX_HEADER_EXECUTION_INFO:
+       Media ID: 6501C146
+       Title ID: 4E4D0819
+    Savegame ID: 4E4D0819
+    Disc Number / Total: 1 / 1
+  XEX_HEADER_GAME_RATINGS:
+          ESRB: Teen
+          PEGI: Unrated
+          PEGI-FI: Unrated
+          PEGI - PT: Unrated
+          BBFC: Unrated
+          CERO: Unrated
+          USK: Unrated
+          OFLC - AU: Unrated
+          OFLC - NZ: Unrated
+          KMRB: Unrated
+          Brazil: Unrated
+          FPB: Unrated
+  XEX_HEADER_LAN_KEY: 87 8E 20 3A C5 A4 EB 79 D8 A8 6F 33 39 FA D8 55
+  XEX_HEADER_XBOX360_LOGO:
+          Section Size: 1736
+          Logo Size: 1728
+Sections:
+    0 RODATA    1 pages    82000000 - 82010000 (65536 bytes)
+    1 RODATA    1 pages    82010000 - 82020000 (65536 bytes)
+    2 RODATA    1 pages    82020000 - 82030000 (65536 bytes)
+    3 RODATA    1 pages    82030000 - 82040000 (65536 bytes)
+    4 RODATA    1 pages    82040000 - 82050000 (65536 bytes)
+    5 RODATA    1 pages    82050000 - 82060000 (65536 bytes)
+    6 RODATA    1 pages    82060000 - 82070000 (65536 bytes)
+    7 RODATA    1 pages    82070000 - 82080000 (65536 bytes)
+    8 RODATA    1 pages    82080000 - 82090000 (65536 bytes)
+    9 RODATA    1 pages    82090000 - 820A0000 (65536 bytes)
+   10 RODATA    1 pages    820A0000 - 820B0000 (65536 bytes)
+   11 RODATA    1 pages    820B0000 - 820C0000 (65536 bytes)
+   12 RODATA    1 pages    820C0000 - 820D0000 (65536 bytes)
+   13 RODATA    1 pages    820D0000 - 820E0000 (65536 bytes)
+   14 RODATA    1 pages    820E0000 - 820F0000 (65536 bytes)
+   15 RODATA    1 pages    820F0000 - 82100000 (65536 bytes)
+   16 RODATA    1 pages    82100000 - 82110000 (65536 bytes)
+   17 RODATA    1 pages    82110000 - 82120000 (65536 bytes)
+   18 RODATA    1 pages    82120000 - 82130000 (65536 bytes)
+   19 RODATA    1 pages    82130000 - 82140000 (65536 bytes)
+   20 RODATA    1 pages    82140000 - 82150000 (65536 bytes)
+   21 RODATA    1 pages    82150000 - 82160000 (65536 bytes)
+   22 RODATA    1 pages    82160000 - 82170000 (65536 bytes)
+   23 RODATA    1 pages    82170000 - 82180000 (65536 bytes)
+   24 RODATA    1 pages    82180000 - 82190000 (65536 bytes)
+   25 RODATA    1 pages    82190000 - 821A0000 (65536 bytes)
+   26 RODATA    1 pages    821A0000 - 821B0000 (65536 bytes)
+   27 RODATA    1 pages    821B0000 - 821C0000 (65536 bytes)
+   28 CODE      1 pages    821C0000 - 821D0000 (65536 bytes)
+   29 CODE      1 pages    821D0000 - 821E0000 (65536 bytes)
+   30 CODE      1 pages    821E0000 - 821F0000 (65536 bytes)
+   31 CODE      1 pages    821F0000 - 82200000 (65536 bytes)
+   32 CODE      1 pages    82200000 - 82210000 (65536 bytes)
+   33 CODE      1 pages    82210000 - 82220000 (65536 bytes)
+   34 CODE      1 pages    82220000 - 82230000 (65536 bytes)
+   35 CODE      1 pages    82230000 - 82240000 (65536 bytes)
+   36 CODE      1 pages    82240000 - 82250000 (65536 bytes)
+   37 CODE      1 pages    82250000 - 82260000 (65536 bytes)
+   38 CODE      1 pages    82260000 - 82270000 (65536 bytes)
+   39 CODE      1 pages    82270000 - 82280000 (65536 bytes)
+   40 CODE      1 pages    82280000 - 82290000 (65536 bytes)
+   41 CODE      1 pages    82290000 - 822A0000 (65536 bytes)
+   42 CODE      1 pages    822A0000 - 822B0000 (65536 bytes)
+   43 CODE      1 pages    822B0000 - 822C0000 (65536 bytes)
+   44 CODE      1 pages    822C0000 - 822D0000 (65536 bytes)
+   45 CODE      1 pages    822D0000 - 822E0000 (65536 bytes)
+   46 CODE      1 pages    822E0000 - 822F0000 (65536 bytes)
+   47 CODE      1 pages    822F0000 - 82300000 (65536 bytes)
+   48 CODE      1 pages    82300000 - 82310000 (65536 bytes)
+   49 CODE      1 pages    82310000 - 82320000 (65536 bytes)
+   50 CODE      1 pages    82320000 - 82330000 (65536 bytes)
+   51 CODE      1 pages    82330000 - 82340000 (65536 bytes)
+   52 CODE      1 pages    82340000 - 82350000 (65536 bytes)
+   53 CODE      1 pages    82350000 - 82360000 (65536 bytes)
+   54 CODE      1 pages    82360000 - 82370000 (65536 bytes)
+   55 CODE      1 pages    82370000 - 82380000 (65536 bytes)
+   56 CODE      1 pages    82380000 - 82390000 (65536 bytes)
+   57 CODE      1 pages    82390000 - 823A0000 (65536 bytes)
+   58 CODE      1 pages    823A0000 - 823B0000 (65536 bytes)
+   59 CODE      1 pages    823B0000 - 823C0000 (65536 bytes)
+   60 CODE      1 pages    823C0000 - 823D0000 (65536 bytes)
+   61 CODE      1 pages    823D0000 - 823E0000 (65536 bytes)
+   62 CODE      1 pages    823E0000 - 823F0000 (65536 bytes)
+   63 CODE      1 pages    823F0000 - 82400000 (65536 bytes)
+   64 CODE      1 pages    82400000 - 82410000 (65536 bytes)
+   65 CODE      1 pages    82410000 - 82420000 (65536 bytes)
+   66 CODE      1 pages    82420000 - 82430000 (65536 bytes)
+   67 CODE      1 pages    82430000 - 82440000 (65536 bytes)
+   68 CODE      1 pages    82440000 - 82450000 (65536 bytes)
+   69 CODE      1 pages    82450000 - 82460000 (65536 bytes)
+   70 CODE      1 pages    82460000 - 82470000 (65536 bytes)
+   71 CODE      1 pages    82470000 - 82480000 (65536 bytes)
+   72 CODE      1 pages    82480000 - 82490000 (65536 bytes)
+   73 CODE      1 pages    82490000 - 824A0000 (65536 bytes)
+   74 CODE      1 pages    824A0000 - 824B0000 (65536 bytes)
+   75 CODE      1 pages    824B0000 - 824C0000 (65536 bytes)
+   76 CODE      1 pages    824C0000 - 824D0000 (65536 bytes)
+   77 CODE      1 pages    824D0000 - 824E0000 (65536 bytes)
+   78 CODE      1 pages    824E0000 - 824F0000 (65536 bytes)
+   79 CODE      1 pages    824F0000 - 82500000 (65536 bytes)
+   80 CODE      1 pages    82500000 - 82510000 (65536 bytes)
+   81 CODE      1 pages    82510000 - 82520000 (65536 bytes)
+   82 CODE      1 pages    82520000 - 82530000 (65536 bytes)
+   83 CODE      1 pages    82530000 - 82540000 (65536 bytes)
+   84 CODE      1 pages    82540000 - 82550000 (65536 bytes)
+   85 CODE      1 pages    82550000 - 82560000 (65536 bytes)
+   86 CODE      1 pages    82560000 - 82570000 (65536 bytes)
+   87 CODE      1 pages    82570000 - 82580000 (65536 bytes)
+   88 CODE      1 pages    82580000 - 82590000 (65536 bytes)
+   89 CODE      1 pages    82590000 - 825A0000 (65536 bytes)
+   90 CODE      1 pages    825A0000 - 825B0000 (65536 bytes)
+   91 CODE      1 pages    825B0000 - 825C0000 (65536 bytes)
+   92 CODE      1 pages    825C0000 - 825D0000 (65536 bytes)
+   93 CODE      1 pages    825D0000 - 825E0000 (65536 bytes)
+   94 CODE      1 pages    825E0000 - 825F0000 (65536 bytes)
+   95 CODE      1 pages    825F0000 - 82600000 (65536 bytes)
+   96 CODE      1 pages    82600000 - 82610000 (65536 bytes)
+   97 CODE      1 pages    82610000 - 82620000 (65536 bytes)
+   98 CODE      1 pages    82620000 - 82630000 (65536 bytes)
+   99 CODE      1 pages    82630000 - 82640000 (65536 bytes)
+  100 CODE      1 pages    82640000 - 82650000 (65536 bytes)
+  101 CODE      1 pages    82650000 - 82660000 (65536 bytes)
+  102 CODE      1 pages    82660000 - 82670000 (65536 bytes)
+  103 CODE      1 pages    82670000 - 82680000 (65536 bytes)
+  104 CODE      1 pages    82680000 - 82690000 (65536 bytes)
+  105 CODE      1 pages    82690000 - 826A0000 (65536 bytes)
+  106 CODE      1 pages    826A0000 - 826B0000 (65536 bytes)
+  107 CODE      1 pages    826B0000 - 826C0000 (65536 bytes)
+  108 CODE      1 pages    826C0000 - 826D0000 (65536 bytes)
+  109 CODE      1 pages    826D0000 - 826E0000 (65536 bytes)
+  110 CODE      1 pages    826E0000 - 826F0000 (65536 bytes)
+  111 CODE      1 pages    826F0000 - 82700000 (65536 bytes)
+  112 CODE      1 pages    82700000 - 82710000 (65536 bytes)
+  113 CODE      1 pages    82710000 - 82720000 (65536 bytes)
+  114 CODE      1 pages    82720000 - 82730000 (65536 bytes)
+  115 CODE      1 pages    82730000 - 82740000 (65536 bytes)
+  116 CODE      1 pages    82740000 - 82750000 (65536 bytes)
+  117 CODE      1 pages    82750000 - 82760000 (65536 bytes)
+  118 CODE      1 pages    82760000 - 82770000 (65536 bytes)
+  119 CODE      1 pages    82770000 - 82780000 (65536 bytes)
+  120 CODE      1 pages    82780000 - 82790000 (65536 bytes)
+  121 CODE      1 pages    82790000 - 827A0000 (65536 bytes)
+  122 CODE      1 pages    827A0000 - 827B0000 (65536 bytes)
+  123 CODE      1 pages    827B0000 - 827C0000 (65536 bytes)
+  124 CODE      1 pages    827C0000 - 827D0000 (65536 bytes)
+  125 CODE      1 pages    827D0000 - 827E0000 (65536 bytes)
+  126 CODE      1 pages    827E0000 - 827F0000 (65536 bytes)
+  127 CODE      1 pages    827F0000 - 82800000 (65536 bytes)
+  128 CODE      1 pages    82800000 - 82810000 (65536 bytes)
+  129 CODE      1 pages    82810000 - 82820000 (65536 bytes)
+  130 CODE      1 pages    82820000 - 82830000 (65536 bytes)
+  131 CODE      1 pages    82830000 - 82840000 (65536 bytes)
+  132 RWDATA    1 pages    82840000 - 82850000 (65536 bytes)
+  133 RWDATA    1 pages    82850000 - 82860000 (65536 bytes)
+  134 RWDATA    1 pages    82860000 - 82870000 (65536 bytes)
+  135 RWDATA    1 pages    82870000 - 82880000 (65536 bytes)
+  136 RWDATA    1 pages    82880000 - 82890000 (65536 bytes)
+  137 RWDATA    1 pages    82890000 - 828A0000 (65536 bytes)
+  138 RWDATA    1 pages    828A0000 - 828B0000 (65536 bytes)
+  139 RWDATA    1 pages    828B0000 - 828C0000 (65536 bytes)
+  140 RWDATA    1 pages    828C0000 - 828D0000 (65536 bytes)
+  141 RWDATA    1 pages    828D0000 - 828E0000 (65536 bytes)
+  142 RWDATA    1 pages    828E0000 - 828F0000 (65536 bytes)
+  143 RWDATA    1 pages    828F0000 - 82900000 (65536 bytes)
+  144 RWDATA    1 pages    82900000 - 82910000 (65536 bytes)
+  145 RWDATA    1 pages    82910000 - 82920000 (65536 bytes)
+  146 RWDATA    1 pages    82920000 - 82930000 (65536 bytes)
+  147 RWDATA    1 pages    82930000 - 82940000 (65536 bytes)
+  148 RWDATA    1 pages    82940000 - 82950000 (65536 bytes)
+  149 RWDATA    1 pages    82950000 - 82960000 (65536 bytes)
+  150 RWDATA    1 pages    82960000 - 82970000 (65536 bytes)
+  151 RWDATA    1 pages    82970000 - 82980000 (65536 bytes)
+  152 RWDATA    1 pages    82980000 - 82990000 (65536 bytes)
+  153 RWDATA    1 pages    82990000 - 829A0000 (65536 bytes)
+  154 RWDATA    1 pages    829A0000 - 829B0000 (65536 bytes)
+  155 RWDATA    1 pages    829B0000 - 829C0000 (65536 bytes)
+  156 RWDATA    1 pages    829C0000 - 829D0000 (65536 bytes)
+  157 RWDATA    1 pages    829D0000 - 829E0000 (65536 bytes)
+  158 RWDATA    1 pages    829E0000 - 829F0000 (65536 bytes)
+  159 RWDATA    1 pages    829F0000 - 82A00000 (65536 bytes)
+  160 RWDATA    1 pages    82A00000 - 82A10000 (65536 bytes)
+  161 RWDATA    1 pages    82A10000 - 82A20000 (65536 bytes)
+  162 RWDATA    1 pages    82A20000 - 82A30000 (65536 bytes)
+  163 RWDATA    1 pages    82A30000 - 82A40000 (65536 bytes)
+  164 RWDATA    1 pages    82A40000 - 82A50000 (65536 bytes)
+  165 RWDATA    1 pages    82A50000 - 82A60000 (65536 bytes)
+  166 RWDATA    1 pages    82A60000 - 82A70000 (65536 bytes)
+  167 RWDATA    1 pages    82A70000 - 82A80000 (65536 bytes)
+  168 RWDATA    1 pages    82A80000 - 82A90000 (65536 bytes)
+  169 RODATA    1 pages    82A90000 - 82AA0000 (65536 bytes)
+  170 RODATA    1 pages    82AA0000 - 82AB0000 (65536 bytes)
+  171 RODATA    1 pages    82AB0000 - 82AC0000 (65536 bytes)
+  172 RODATA    1 pages    82AC0000 - 82AD0000 (65536 bytes)
+  173 RODATA    1 pages    82AD0000 - 82AE0000 (65536 bytes)
+  174 RODATA    1 pages    82AE0000 - 82AF0000 (65536 bytes)
+  175 RODATA    1 pages    82AF0000 - 82B00000 (65536 bytes)
+  176 RODATA    1 pages    82B00000 - 82B10000 (65536 bytes)
+  177 RODATA    1 pages    82B10000 - 82B20000 (65536 bytes)
+  178 RODATA    1 pages    82B20000 - 82B30000 (65536 bytes)
+Imports:
+ xam - 74 imports
+   Version: 0.0.11164.32
+   Min Version: 0.0.8955.32
+
+         Total:   74
+         Known:  100% (74 known, 0 unknown)
+   Implemented:  100% (74 implemented, 0 unimplemented)
+
+   F 82000600 827DC89C 3CC ( 972)    XGetGameRegion
+   F 82000604 827DC8AC 28C ( 652)    XNotifyPositionUI
+   F 82000608 827DC8BC 1F7 ( 503)    XMsgStartIORequest
+   F 8200060C 827DC8CC 20E ( 526)    XamUserGetName
+   F 82000610 827DC8DC 210 ( 528)    XamUserGetSigninState
+   F 82000614 827DC8EC 213 ( 531)    XamUserAreUsersFriends
+   F 82000618 827DC8FC 212 ( 530)    XamUserCheckPrivilege
+   F 8200061C 827DC90C 282 ( 642)    XamGetSystemVersion
+   F 82000620 827DC91C 2F7 ( 759)    XamUserCreateStatsEnumerator
+   F 82000624 827DC92C 2EE ( 750)    XamUserCreateAchievementEnumerator
+   F 82000628 827DC93C 20A ( 522)    XamUserGetXUID
+   F 8200062C 827DC94C 2BC ( 700)    XamShowSigninUI
+   F 82000630 827DC95C 2BF ( 703)    XamShowFriendsUI
+   F 82000634 827DC96C 2D5 ( 725)    XamShowGamerCardUIForXUID
+   F 82000638 827DC97C 2CB ( 715)    XamShowDeviceSelectorUI
+   F 8200063C 827DC98C 2CA ( 714)    XamShowMessageBoxUI
+   F 82000640 827DC99C 250 ( 592)    XamEnumerate
+   F 82000644 827DC9AC 1F8 ( 504)    XMsgCancelIORequest
+   F 82000648 827DC9BC 259 ( 601)    XamContentCreateEx
+   F 8200064C 827DC9CC 25A ( 602)    XamContentClose
+   F 82000650 827DC9DC 25C ( 604)    XamContentCreateEnumerator
+   F 82000654 827DC9EC 25E ( 606)    XamContentGetDeviceData
+   F 82000658 827DC9FC 2DC ( 732)    XamShowMessageBoxUIEx
+   F 8200065C 827DCA0C 3CD ( 973)    XGetLanguage
+   F 82000660 827DCA1C 3CB ( 971)    XGetAVPack
+   F 82000664 827DCA2C 1A9 ( 425)    XamLoaderTerminateTitle
+   F 82000668 827DCA3C 280 ( 640)    XamGetExecutionId
+   F 8200066C 827DCFFC 227 ( 551)    XamUserGetSigninInfo
+   F 82000670 827DCFEC 198 ( 408)    XamInputGetKeystrokeEx
+   F 82000674 827DCFDC 192 ( 402)    XamInputSetState
+   F 82000678 827DCFCC 191 ( 401)    XamInputGetState
+   F 8200067C 827DCFBC 190 ( 400)    XamInputGetCapabilities
+   F 82000680 827DCFAC 1AF ( 431)    XamTaskSchedule
+   F 82000684 827DCF9C 1B1 ( 433)    XamTaskCloseHandle
+   F 82000688 827DCF8C 1B3 ( 435)    XamTaskShouldExit
+   F 8200068C 827DCF7C 3D1 ( 977)    XGetVideoMode
+   F 82000690 827DCF6C 30C ( 780)    XamVoiceCreate
+   F 82000694 827DCF5C 30E ( 782)    XamVoiceSubmitPacket
+   F 82000698 827DCF4C 30F ( 783)    XamVoiceClose
+   F 8200069C 827DCF3C 30D ( 781)    XamVoiceHeadsetPresent
+   F 820006A0 827DCF2C 219 ( 537)    XamUserReadProfileSettings
+   F 820006A4 827DCF1C 208 ( 520)    XamUserGetDeviceContext
+   F 820006A8 827DCF0C 28A ( 650)    XamNotifyCreateListener
+   F 820006AC 827DCEFC 28B ( 651)    XNotifyGetNext
+   F 820006B0 827DCEEC 070 ( 112)    NetDll_XnpLogonGetStatus
+   F 820006B4 827DCEDC 316 ( 790)    XamSessionCreateHandle
+   F 820006B8 827DCECC 317 ( 791)    XamSessionRefObjByHandle
+   F 820006BC 827DCEBC 1EA ( 490)    XamAlloc
+   F 820006C0 827DCEAC 1F4 ( 500)    XMsgInProcessCall
+   F 820006C4 827DCE9C 1EC ( 492)    XamFree
+   F 820006C8 827DCD1C 001 (   1)    NetDll_WSAStartup
+   F 820006CC 827DCD2C 002 (   2)    NetDll_WSACleanup
+   F 820006D0 827DCD3C 003 (   3)    NetDll_socket
+   F 820006D4 827DCD4C 004 (   4)    NetDll_closesocket
+   F 820006D8 827DCD5C 005 (   5)    NetDll_shutdown
+   F 820006DC 827DCD6C 006 (   6)    NetDll_ioctlsocket
+   F 820006E0 827DCD7C 007 (   7)    NetDll_setsockopt
+   F 820006E4 827DCD8C 00B (  11)    NetDll_bind
+   F 820006E8 827DCD9C 00C (  12)    NetDll_connect
+   F 820006EC 827DCDAC 00D (  13)    NetDll_listen
+   F 820006F0 827DCDBC 00E (  14)    NetDll_accept
+   F 820006F4 827DCDCC 00F (  15)    NetDll_select
+   F 820006F8 827DCDDC 012 (  18)    NetDll_recv
+   F 820006FC 827DCDEC 014 (  20)    NetDll_recvfrom
+   F 82000700 827DCDFC 016 (  22)    NetDll_send
+   F 82000704 827DCE0C 018 (  24)    NetDll_sendto
+   F 82000708 827DCE1C 01B (  27)    NetDll_WSAGetLastError
+   F 8200070C 827DCE2C 022 (  34)    NetDll___WSAFDIsSet
+   F 82000710 827DCE3C 039 (  57)    NetDll_XNetXnAddrToInAddr
+   F 82000714 827DCE4C 03C (  60)    NetDll_XNetInAddrToXnAddr
+   F 82000718 827DCE5C 045 (  69)    NetDll_XNetQosListen
+   F 8200071C 827DCE6C 046 (  70)    NetDll_XNetQosLookup
+   F 82000720 827DCE7C 047 (  71)    NetDll_XNetQosServiceLookup
+   F 82000724 827DCE8C 048 (  72)    NetDll_XNetQosRelease
+
+ xboxkrnl - 167 imports
+   Version: 0.0.11164.32
+   Min Version: 0.0.8955.32
+
+         Total:  167
+         Known:  100% (167 known, 0 unknown)
+   Implemented:   91% (152 implemented, 15 unimplemented)
+
+   F 8200072C 827DCD0C 136 ( 310)    RtlRaiseException
+   F 82000730 827DCCFC 0EE ( 238)    NtQueryVirtualMemory
+   F 82000734 827DCCEC 12E ( 302)    RtlInitializeCriticalSection
+   F 82000738 827DCCDC 11B ( 283)    RtlCompareMemoryUlong
+   F 8200073C 827DCCCC 0DC ( 220)    NtFreeVirtualMemory
+   F 82000740 827DCCBC 053 (  83)    KeBugCheckEx
+   F 82000744 827DCCAC 126 ( 294)    RtlFillMemoryUlong
+   F 82000748 827DCC9C 0CC ( 204)    NtAllocateVirtualMemory
+   V 8200074C          156 ( 342)    XboxHardwareInfo
+   F 82000750 827DCC8C 028 (  40)    HalReturnToFirmware
+   V 82000754          193 ( 403)    XexExecutableModuleHandle
+   F 82000758 827DCC7C 12B ( 299)    RtlImageXexHeaderField
+   F 8200075C 827DCC6C 125 ( 293)    RtlEnterCriticalSection
+   F 82000760 827DCC5C 130 ( 304)    RtlLeaveCriticalSection
+   V 82000764          1AE ( 430)    ExLoadedCommandLine
+   V 82000768          059 (  89)    KeDebugMonitorData
+   F 8200076C 827DCC4C 097 ( 151)    KeSetAffinityThread
+   F 82000770 827DCC3C 0E3 ( 227)    NtQueueApcThread
+   F 82000774 827DCC2C 0FC ( 252)    NtSuspendThread
+   F 82000778 827DCC1C 081 ( 129)    KeQueryBasePriorityThread
+   V 8200077C          01B (  27)    ExThreadObjectType
+   F 82000780 827DCC0C 110 ( 272)    ObReferenceObjectByHandle
+   F 82000784 827DCBFC 099 ( 153)    KeSetBasePriorityThread
+   F 82000788 827DCBEC 105 ( 261)    ObDereferenceObject
+   F 8200078C 827DCBDC 0DA ( 218)    NtDuplicateObject
+   F 82000790 827DCBCC 0F0 ( 240)    NtReadFile
+   F 82000794 827DCBBC 0F1 ( 241)    NtReadFileScatter
+   F 82000798 827DCBAC 0E4 ( 228)    NtQueryDirectoryFile
+   F 8200079C 827DCB9C 0EF ( 239)    NtQueryVolumeInformationFile
+   F 820007A0 827DCB8C 0E8 ( 232)    NtQueryInformationFile
+   F 820007A4 827DCB7C 0F7 ( 247)    NtSetInformationFile
+   F 820007A8 827DCB6C 0E7 ( 231)    NtQueryFullAttributesFile
+   F 820007AC 827DCB5C 199 ( 409)    XexLoadImage
+   F 820007B0 827DCB4C 197 ( 407)    XexGetProcedureAddress
+   F 820007B4 827DCB3C 1A1 ( 417)    XexUnloadImage
+   F 820007B8 827DCB2C 1A5 ( 421) !! __C_specific_handler
+   F 820007BC 827DCB1C 003 (   3)    DbgPrint
+   F 820007C0 827DCB0C 010 (  16)    ExGetXConfigSetting
+   F 820007C4 827DCAFC 0CF ( 207)    NtClose
+   F 820007C8 827DCAEC 0FF ( 255)    NtWriteFile
+   F 820007CC 827DCADC 0FD ( 253)    NtWaitForSingleObjectEx
+   F 820007D0 827DCACC 066 ( 102)    KeGetCurrentProcessType
+   F 820007D4 827DCABC 0D2 ( 210)    NtCreateFile
+   F 820007D8 827DCAAC 12C ( 300)    RtlInitAnsiString
+   F 820007DC 827DCA9C 0DF ( 223)    NtOpenFile
+   F 820007E0 827DCA8C 143 ( 323)    RtlUnicodeToMultiByteN
+   V 820007E4          0AD ( 173)    KeTimeStampBundle
+   F 820007E8 827DCA7C 0D1 ( 209)    NtCreateEvent
+   F 820007EC 827DCA6C 133 ( 307)    RtlMultiByteToUnicodeN
+   F 820007F0 827DCA5C 135 ( 309)    RtlNtStatusToDosError
+   F 820007F4 827DD00C 195 ( 405)    XexGetModuleHandle
+   F 820007F8 827DD01C 141 ( 321)    RtlTryEnterCriticalSection
+   F 820007FC 827DD02C 1F8 ( 504)    XAudioGetVoiceCategoryVolume
+   F 82000800 827DD03C 0BE ( 190)    MmGetPhysicalAddress
+   F 82000804 827DD04C 0C2 ( 194)    MmMapIoSpace
+   F 82000808 827DD05C 224 ( 548)    XMACreateContext
+   F 8200080C 827DD06C 226 ( 550)    XMAReleaseContext
+   F 82000810 827DD07C 083 ( 131)    KeQueryPerformanceFrequency
+   F 82000814 827DD08C 09D ( 157)    KeSetEvent
+   F 82000818 827DD09C 0B0 ( 176)    KeWaitForSingleObject
+   F 8200081C 827DD0AC 0AF ( 175)    KeWaitForMultipleObjects
+   F 82000820 827DD0BC 1F5 ( 501)    XAudioSubmitRenderDriverFrame
+   F 82000824 827DD0CC 1F4 ( 500)    XAudioUnregisterRenderDriverClient
+   F 82000828 827DD0DC 07D ( 125)    KeLeaveCriticalRegion
+   F 8200082C 827DD0EC 015 (  21)    ExRegisterTitleTerminateNotification
+   F 82000830 827DD0FC 05F (  95)    KeEnterCriticalRegion
+   F 82000834 827DD10C 1F3 ( 499)    XAudioRegisterRenderDriverClient
+   F 82000838 827DD11C 1FF ( 511)    XAudioGetSpeakerConfig
+   F 8200083C 827DD12C 0B4 ( 180)    KfReleaseSpinLock
+   F 82000840 827DD13C 0B1 ( 177)    KfAcquireSpinLock
+   F 82000844 827DD14C 052 (  82)    KeBugCheck
+   F 82000848 827DD15C 154 ( 340)    KeTlsGetValue
+   F 8200084C 827DD16C 155 ( 341)    KeTlsSetValue
+   F 82000850 827DD17C 153 ( 339)    KeTlsFree
+   F 82000854 827DD18C 152 ( 338)    KeTlsAlloc
+   F 82000858 827DD19C 147 ( 327) !! RtlUnwind
+   F 8200085C 827DD1AC 12F ( 303)    RtlInitializeCriticalSectionAndSpinCount
+   F 82000860 827DD1BC 0CE ( 206)    NtClearEvent
+   F 82000864 827DD1CC 0C4 ( 196)    MmQueryAddressProtect
+   F 82000868 827DD1DC 14D ( 333)    _vsnprintf
+   F 8200086C 827DD1EC 0F5 ( 245)    NtResumeThread
+   F 82000870 827DD1FC 0D5 ( 213)    NtCreateSemaphore
+   F 82000874 827DD20C 0F3 ( 243)    NtReleaseSemaphore
+   F 82000878 827DD21C 0FB ( 251)    NtSignalAndWaitForSingleObjectEx
+   F 8200087C 827DD22C 0FE ( 254)    NtWaitForMultipleObjectsEx
+   F 82000880 827DD23C 0F6 ( 246)    NtSetEvent
+   F 82000884 827DD24C 0CD ( 205)    NtCancelTimer
+   F 82000888 827DD25C 0FA ( 250)    NtSetTimerEx
+   F 8200088C 827DD26C 019 (  25)    ExTerminateThread
+   F 82000890 827DD27C 0D7 ( 215)    NtCreateTimer
+   F 82000894 827DD28C 00D (  13)    ExCreateThread
+   F 82000898 827DD29C 0F2 ( 242)    NtReleaseMutant
+   F 8200089C 827DD2AC 0BA ( 186)    MmAllocatePhysicalMemoryEx
+   F 820008A0 827DD2BC 0C5 ( 197)    MmQueryAllocationSize
+   F 820008A4 827DD2CC 0BD ( 189)    MmFreePhysicalMemory
+   F 820008A8 827DD2DC 0D4 ( 212)    NtCreateMutant
+   F 820008AC 827DD2EC 25A ( 602) !! StfsControlDevice
+   F 820008B0 827DD2FC 259 ( 601) !! StfsCreateDevice
+   F 820008B4 827DD30C 257 ( 599) !! XeKeysConsoleSignatureVerification
+   F 820008B8 827DD31C 192 ( 402)    XeCryptSha
+   F 820008BC 827DD32C 256 ( 598)    XeKeysConsolePrivateKeySign
+   F 820008C0 827DD33C 13A ( 314)    _snprintf
+   F 820008C4 827DD34C 0DB ( 219)    NtFlushBuffersFile
+   F 820008C8 827DD35C 03B (  59) !! IoDismountVolume
+   F 820008CC 827DD36C 103 ( 259)    ObCreateSymbolicLink
+   F 820008D0 827DD37C 104 ( 260)    ObDeleteSymbolicLink
+   F 820008D4 827DD38C 08F ( 143)    KeResetEvent
+   V 820008D8          158 ( 344)    XboxKrnlVersion
+   F 820008DC 827DD39C 140 ( 320)    RtlTimeToTimeFields
+   F 820008E0 827DD3AC 13F ( 319)    RtlTimeFieldsToTime
+   F 820008E4 827DD3BC 00F (  15)    ExFreePool
+   F 820008E8 827DD3CC 009 (   9)    ExAllocatePool
+   F 820008EC 827DD3DC 0C6 ( 198)    MmQueryStatistics
+   F 820008F0 827DD3EC 084 ( 132)    KeQuerySystemTime
+   F 820008F4 827DD3FC 127 ( 295)    RtlFreeAnsiString
+   F 820008F8 827DD40C 142 ( 322)    RtlUnicodeStringToAnsiString
+   F 820008FC 827DD41C 12D ( 301)    RtlInitUnicodeString
+   F 82000900 827DD42C 05A (  90)    KeDelayExecutionThread
+   F 82000904 827DD43C 041 (  65) !! IoInvalidDeviceRequest
+   F 82000908 827DD44C 10F ( 271)    ObReferenceObject
+   F 8200090C 827DD45C 037 (  55)    IoCreateDevice
+   F 82000910 827DD46C 039 (  57)    IoDeleteDevice
+   F 82000914 827DD47C 00B (  11)    ExAllocatePoolTypeWithTag
+   F 82000918 827DD48C 11D ( 285)    RtlCompareStringN
+   F 8200091C 827DD49C 035 (  53) !! IoCompleteRequest
+   F 82000920 827DD4AC 149 ( 329)    RtlUpcaseUnicodeChar
+   F 82000924 827DD4BC 109 ( 265) !! ObIsTitleObject
+   F 82000928 827DD4CC 034 (  52) !! IoCheckShareAccess
+   F 8200092C 827DD4DC 047 (  71) !! IoSetShareAccess
+   F 82000930 827DD4EC 045 (  69) !! IoRemoveShareAccess
+   F 82000934 827DD4FC 03C (  60) !! IoDismountVolumeByFileHandle
+   F 82000938 827DD50C 0D9 ( 217)    NtDeviceIoControlFile
+   F 8200093C 827DD51C 0C0 ( 192) !! MmLockAndMapSegmentArray
+   F 82000940 827DD52C 0C9 ( 201) !! MmUnlockAndUnmapSegmentArray
+   F 82000944 827DD53C 089 ( 137)    KeReleaseSpinLockFromRaisedIrql
+   F 82000948 827DD54C 04D (  77)    KeAcquireSpinLockAtRaisedIrql
+   V 8200094C          1BE ( 446)    VdGlobalDevice
+   V 82000950          1BF ( 447)    VdGlobalXamDevice
+   F 82000954 827DD55C 1DF ( 479)    KiApcNormalRoutineNop
+   F 82000958 827DD56C 1B6 ( 438)    VdEnableRingBufferRPtrWriteBack
+   F 8200095C 827DD57C 1C3 ( 451)    VdInitializeRingBuffer
+   F 82000960 827DD58C 1D9 ( 473)    VdSetSystemCommandBufferGpuIdentifierAddress
+   V 82000964          266 ( 614)    KeCertMonitorData
+   F 82000968 827DD59C 1C7 ( 455)    VdPersistDisplay
+   F 8200096C 827DD5AC 25B ( 603)    VdSwap
+   F 82000970 827DD5BC 1BD ( 445)    VdGetSystemCommandBuffer
+   F 82000974 827DD5CC 13B ( 315)    sprintf
+   F 82000978 827DD5DC 1B9 ( 441)    VdGetCurrentDisplayGamma
+   F 8200097C 827DD5EC 1B4 ( 436)    VdEnableDisableClockGating
+   F 82000980 827DD5FC 1DC ( 476)    VdShutdownEngines
+   F 82000984 827DD60C 1CA ( 458)    VdQueryVideoMode
+   F 82000988 827DD61C 1BA ( 442)    VdGetCurrentDisplayInformation
+   F 8200098C 827DD62C 1D3 ( 467)    VdSetDisplayMode
+   F 82000990 827DD63C 1D5 ( 469)    VdSetGraphicsInterruptCallback
+   F 82000994 827DD64C 1C2 ( 450)    VdInitializeEngines
+   F 82000998 827DD65C 1C6 ( 454)    VdIsHSIOTrainingSucceeded
+   F 8200099C 827DD66C 1C9 ( 457)    VdQueryVideoFlags
+   F 820009A0 827DD67C 1B1 ( 433)    VdCallGraphicsNotificationRoutines
+   V 820009A4          1C0 ( 448)    VdGpuClockInMHz
+   F 820009A8 827DD68C 1C5 ( 453)    VdInitializeScalerCommandBuffer
+   F 820009AC 827DD69C 269 ( 617)    VdRetrainEDRAM
+   F 820009B0 827DD6AC 26A ( 618)    VdRetrainEDRAMWorker
+   V 820009B4          1C1 ( 449)    VdHSIOCalibrationLock
+   F 820009B8 827DD6BC 06B ( 107)    KeLockL2
+   F 820009BC 827DD6CC 06C ( 108)    KeUnlockL2
+   F 820009C0 827DD6DC 06F ( 111)    KeInitializeDpc
+   F 820009C4 827DCA4C 194 ( 404)    XexCheckExecutablePrivilege
+
+i> 00004CF4 Title name: Naruto Storm 2
+i> 00004CF4 
+-------------------- ACHIEVEMENTS --------------------
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| ID | Title                        | Description                                                | Type       | Gamerscore |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 1  | Clear Prologue               | You've cleared the Prologue.                               | Checkpoint | 5          |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 2  | Clear Chapter One            | You've cleared Chapter One.                                | Checkpoint | 5          |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 3  | Clear Chapter Two            | You've cleared Chapter Two.                                | Checkpoint | 5          |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 4  | Clear Chapter Three          | You've cleared Chapter Three.                              | Checkpoint | 5          |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 5  | Clear Chapter Four           | You've cleared Chapter Four.                               | Checkpoint | 5          |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 7  | Clear Chapter Five           | You've cleared Chapter Five.                               | Checkpoint | 5          |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 8  | Clear Chapter Six            | You've cleared Chapter Six.                                | Checkpoint | 5          |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 9  | Clear Final Chapter          | You've cleared Final Chapter.                              | Checkpoint | 10         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 10 | Clear Fragment               | You've cleared Fragment.                                   | Completion | 10         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 11 | Naruto's Friends             | You can now use members of Naruto's generation.            | Unlock     | 5          |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 12 | Naruto's Teachers            | You can now use Kakashi, Yamato, Guy and Asuma.            | Unlock     | 5          |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 13 | Sand Village Friends         | You can now use Gaara, Kankuro, Temari and Chiyo.          | Unlock     | 5          |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 14 | The Legendary Sannin         | You can now use Jiraiya, Tsunade and Orochimaru.           | Unlock     | 5          |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 15 | Stealthy Akatsuki            | You can now use all members of the Akatsuki.               | Unlock     | 5          |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 16 | Hebi on the Move             | You can now use Sasuke, Suigetsu, Karin and Jugo.          | Unlock     | 5          |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 17 | Assassin from Tekken 6       | You can now use Lars.                                      | Unlock     | 10         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 18 | All ninja assemble!          | You can now use all characters.                            | Unlock     | 30         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 19 | Bell-Stealing Expert         | You've acquired S Rank in "The Bell-Stealing Drill".       | Event      | 20         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 20 | Village Guardian             | You've acquired S Rank in "Sand and Art Blast".            | Event      | 20         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 21 | At the mercy of Puppet Jutsu | You've acquired S Rank in "Sakura Dances".                 | Event      | 20         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 22 | Unstoppable Rampage          | You've acquired S Rank in "Forbidden Fury".                | Event      | 20         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 23 | Difference in Growth         | You've acquired S Rank in "Showdown Between Best Friends". | Event      | 20         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 24 | Fourth Hokage's Back         | You've acquired S Rank in "Sturm und Drang".               | Event      | 20         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 25 | Overflowing Hatred           | You've acquired S Rank in "The Two Uchiha".                | Event      | 20         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 26 | Overwhelming Sage            | You've acquired S Rank in "Battle Between the Sage God".   | Event      | 20         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 27 | Vision of a New Wind         | You've acquired S Rank in "Earth Shatter".                 | Event      | 20         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 28 | The Unknowable Moment        | You've seen all secret factors.                            | Event      | 100        |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 29 | Cursed dolls exterminated!   | You've retrieved all cursed dolls.                         | Event      | 10         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 30 | Oink!!                       | You've retrieved all Tonton's pearls.                      | Event      | 10         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 31 | Trial accomplished!          | You've cleared the 10 trials.                              | Event      | 10         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 32 | Request Master               | You've cleared all requests.                               | Event      | 10         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 33 | Ninja of Letters             | You've cleared all correspondence events.                  | Event      | 10         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 34 | All Friends Here!            | You've seen friendship events for everyone.                | Event      | 10         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 35 | Conquered all events!        | You've cleared all events.                                 | Event      | 50         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 36 | Nothing escapes you          | You've picked up 500 items.                                | Event      | 20         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 37 | Wealth to move nations!      | Saved up 999999 Ryo.                                       | Event      | 30         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 39 | Point Tycoon                 | You've saved up 999999 Storm Points.                       | Event      | 30         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 40 | I Love Ninja Tools!          | You've acquired all battle items.                          | Event      | 50         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 41 | General Store Booming!       | You've collected all collection items.                     | Event      | 50         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 42 | The First Edit               | Edited a Ninja Info Card.                                  | Event      | 5          |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 43 | Card Collector               | You've acquired all Ninja Info Cards.                      | Event      | 50         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 44 | Also Known As...             | You've gained 50 titles.                                   | Event      | 20         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 45 | Which name shall I use?      | You've acquired all titles.                                | Event      | 60         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 46 | Message Ninja shocked!       | You've collected all messenger birds.                      | Event      | 10         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 47 | Review Complete!             | You've seen all memories.                                  | Event      | 20         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 48 | Story Assembler              | Collected 100% of the stories.                             | Event      | 30         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 49 | Thanks for all your time!    | Your total play time is over 30 hours.                     | Event      | 20         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 50 | On the Path to Ninja!        | You've won 1 time in online Ranked Match battles.          | Event      | 30         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 51 | Dextrous Ninja               | You've won 10 times in online Ranked Match battles.        | Event      | 60         |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+| 52 | A perfect Storm Master.      | You've unlocked all achievements.                          | Completion | 0          |
++----+------------------------------+------------------------------------------------------------+------------+------------+
+i> 00004CF4 
+-------------------- PROPERTIES --------------------
++----------+-------------------+-------------+-----------+
+| ID       | Name              | Matchmaking | Data Size |
++----------+-------------------+-------------+-----------+
+| 10000001 | version           | True        | 4         |
++----------+-------------------+-------------+-----------+
+| 10000006 | NP                | True        | 4         |
++----------+-------------------+-------------+-----------+
+| 10000008 | <Translated text> | False       | 4         |
++----------+-------------------+-------------+-----------+
+| 10000009 | <Translated text> | False       | 4         |
++----------+-------------------+-------------+-----------+
+| 1000000A | <Translated text> | False       | 4         |
++----------+-------------------+-------------+-----------+
+| 1000000B | <Translated text> | False       | 4         |
++----------+-------------------+-------------+-----------+
+| 1000000C | <Translated text> | True        | 4         |
++----------+-------------------+-------------+-----------+
+| 1000000D | <Translated text> | True        | 4         |
++----------+-------------------+-------------+-----------+
+| 1000000E | <Translated text> | True        | 4         |
++----------+-------------------+-------------+-----------+
+| 10000010 | <String text>     | True        | 4         |
++----------+-------------------+-------------+-----------+
+| 10000011 | <String text>     | True        | 4         |
++----------+-------------------+-------------+-----------+
+| 10000012 | <String text>     | True        | 4         |
++----------+-------------------+-------------+-----------+
+| 10008001 | Rank              | False       | 4         |
++----------+-------------------+-------------+-----------+
+| 1000800A |                   | False       | 4         |
++----------+-------------------+-------------+-----------+
+| 1000800B |                   | False       | 4         |
++----------+-------------------+-------------+-----------+
+| 1000800C |                   | False       | 4         |
++----------+-------------------+-------------+-----------+
+| 1000800D |                   | False       | 4         |
++----------+-------------------+-------------+-----------+
+| 10008011 |                   | False       | 4         |
++----------+-------------------+-------------+-----------+
+| 10008101 | Gamer Zone        | True        | 4         |
++----------+-------------------+-------------+-----------+
+| 10008102 | Gamer Country     | True        | 4         |
++----------+-------------------+-------------+-----------+
+| 10008103 | Language          | True        | 4         |
++----------+-------------------+-------------+-----------+
+| 10008201 | Platform Type     | True        | 4         |
++----------+-------------------+-------------+-----------+
+| 10008202 | Platform Lock     | True        | 4         |
++----------+-------------------+-------------+-----------+
+| 20000003 | <Translated text> | False       | 8         |
++----------+-------------------+-------------+-----------+
+| 2000000F | <String text>     | True        | 8         |
++----------+-------------------+-------------+-----------+
+| 20008107 | Gamer PUID        | True        | 8         |
++----------+-------------------+-------------+-----------+
+| 20008108 | Affiliate Value   | True        | 8         |
++----------+-------------------+-------------+-----------+
+| 30008105 | Gamer Mu          | True        | 8         |
++----------+-------------------+-------------+-----------+
+| 30008106 | Gamer Sigma       | True        | 8         |
++----------+-------------------+-------------+-----------+
+| 40008002 | Gamer Name        | False       | 2         |
++----------+-------------------+-------------+-----------+
+| 40008109 | Gamer Host Name   | True        | 2         |
++----------+-------------------+-------------+-----------+
+| 50008104 | Gamer Rating      | True        | 4         |
++----------+-------------------+-------------+-----------+
+i> 00004CF4 
+-------------------- CONTEXTS --------------------
++----------+---------------+-------------+---------------+-----------+
+| ID       | Name          | Matchmaking | Default Value | Max Value |
++----------+---------------+-------------+---------------+-----------+
+| 00000000 | <String text> | False       | 0             | 8         |
++----------+---------------+-------------+---------------+-----------+
+| 00008001 |               | False       | 0             | 13        |
++----------+---------------+-------------+---------------+-----------+
+| 0000800A | Game Type     | True        | 0             | 1         |
++----------+---------------+-------------+---------------+-----------+
+| 0000800B |               | True        | 0             | 0         |
++----------+---------------+-------------+---------------+-----------+
+i> 00004CF4 
+-------------------- STATS VIEWS --------------------
++----------+-------------+------------------+---------+------------+--------+-----------+-------------+
+| ID       | View Type   | Name             | Skilled | Arbitrated | Hidden | Team View | Online Only |
++----------+-------------+------------------+---------+------------+--------+-----------+-------------+
+| 00000001 | Leaderboard | Ranking (Normal) | False   | True       | False  | False     | False       |
++----------+-------------+------------------+---------+------------+--------+-----------+-------------+
+| FFFF0000 | Leaderboard |                  | True    | False      | False  | False     | False       |
++----------+-------------+------------------+---------+------------+--------+-----------+-------------+
+i> 00004CF4 
+-------------------- PRESENCE MODES --------------------
++---------------+----------------+------------------+
+| Context Value | Contexts Count | Properties Count |
++---------------+----------------+------------------+
+| 0             | 0              | 0                |
++---------------+----------------+------------------+
+| 1             | 0              | 0                |
++---------------+----------------+------------------+
+| 2             | 0              | 0                |
++---------------+----------------+------------------+
+| 3             | 0              | 0                |
++---------------+----------------+------------------+
+| 4             | 0              | 0                |
++---------------+----------------+------------------+
+| 5             | 0              | 0                |
++---------------+----------------+------------------+
+| 6             | 0              | 0                |
++---------------+----------------+------------------+
+| 7             | 0              | 0                |
++---------------+----------------+------------------+
+| 8             | 0              | 0                |
++---------------+----------------+------------------+
+| 9             | 0              | 0                |
++---------------+----------------+------------------+
+| 10            | 1              | 0                |
++---------------+----------------+------------------+
+| 11            | 0              | 0                |
++---------------+----------------+------------------+
+| 12            | 0              | 0                |
++---------------+----------------+------------------+
+| 13            | 0              | 0                |
++---------------+----------------+------------------+
+i> 00004CF4 XThread01000020 (5) Stack: 70110000-70130000
+i> 00004CF4 KernelState: Launching module...
+i> 00004CF4 XThreadF8000008 (6) Stack: 70150000-70190000
+K> F8000008 XThread::Execute thid 6 (handle=F8000008, 'Main XThread (F8000008)', native=00004CA8)
+K> 01000020 XThread::Execute thid 5 (handle=01000020, 'Kernel Dispatch (01000020)', native=000025D0, <host>)
+i> F8000008 NetDll_WSAStartup
+i> 01000010 Loaded 0 shaders from storage
+i> 01000010 Loaded 0 pipeline descriptions, 0 shader translations needed
+!> 00001848 XLiveAPI::Get: CURL Error Code: 28
+!> F8000008 XLiveAPI:: Cannot reach API server.
+i> F8000008 XThreadF800003C (7) Stack: 701B0000-701F0000
+K> F800003C XThread::Execute thid 7 (handle=F800003C, 'XThread61A0 (F800003C)', native=000061A0)
+i> F8000008 XThreadF8000048 (8) Stack: 70210000-70250000
+K> F8000048 XThread::Execute thid 8 (handle=F8000048, 'XThread088C (F8000048)', native=0000088C)
+i> F8000008 XThreadF8000054 (9) Stack: 70270000-70280000
+i> F8000008 XThreadF8000058 (A) Stack: 702A0000-702B0000
+i> F8000008 XThreadF800005C (B) Stack: 702D0000-702E0000
+K> F8000054 XThread::Execute thid 9 (handle=F8000054, 'XThread2A74 (F8000054)', native=00002A74)
+K> F8000058 XThread::Execute thid 10 (handle=F8000058, 'XThread6324 (F8000058)', native=00006324)
+K> F800005C XThread::Execute thid 11 (handle=F800005C, 'XThread3CCC (F800005C)', native=00003CCC)
+i> F8000008 XThreadF8000060 (C) Stack: 70300000-70310000
+i> F8000008 XThreadF8000064 (D) Stack: 70330000-70340000
+K> F8000060 XThread::Execute thid 12 (handle=F8000060, 'XThread12F4 (F8000060)', native=000012F4)
+K> F8000064 XThread::Execute thid 13 (handle=F8000064, 'XThread3A44 (F8000064)', native=00003A44)
+i> F8000008 XThreadF8000074 (E) Stack: 70360000-70370000
+K> F8000074 XThread::Execute thid 14 (handle=F8000074, 'XThread474C (F8000074)', native=0000474C)
+i> F8000008 XThreadF800008C (F) Stack: 70390000-703D0000
+K> F800008C XThread::Execute thid 15 (handle=F800008C, 'XThread20B4 (F800008C)', native=000020B4)
+i> F8000008 Hardware scaler: width ratio 1:1, height ratio 1:1, final aspect ratio 16:9
+i> 01000010 Selecting generic AVX vastcpy.
+i> F8000008 XThreadF8000090 (10) Stack: 703F0000-70400000
+K> F8000090 XThread::Execute thid 16 (handle=F8000090, 'XThread17D4 (F8000090)', native=000017D4)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\font)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\font)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF8000098 (11) Stack: 70420000-70430000
+K> F8000098 XThread::Execute thid 17 (handle=F8000098, 'XThread3190 (F8000098)', native=00003190)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\font)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\font)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF8000098 (12) Stack: 70420000-70430000
+K> F8000098 XThread::Execute thid 18 (handle=F8000098, 'XThread3904 (F8000098)', native=00003904)
+F> F8000074 HostPathDevice::ResolvePath(\data\system)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\system)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\system)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\system)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF8000098 (13) Stack: 70420000-70430000
+K> F8000098 XThread::Execute thid 19 (handle=F8000098, 'XThread21B0 (F8000098)', native=000021B0)
+F> F8000074 HostPathDevice::ResolvePath(\data\sound\XENON)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\sound\XENON)
+i> F8000008 XThreadF8000098 (14) Stack: 70420000-70460000
+K> F8000098 XThread::Execute thid 20 (handle=F8000098, 'XThread1D78 (F8000098)', native=00001D78)
+i> F8000008 AudioSystem::RegisterClient: driver created for index=0, driver=0x1e3df7cbce0
+i> F8000008 AudioSystem::RegisterClient: client 0 registered successfully
+F> F8000074 HostPathDevice::ResolvePath(\data\sound\XENON)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\sound\XENON)
+i> F8000008 XThreadF80000B4 (15) Stack: 70480000-70490000
+K> F80000B4 XThread::Execute thid 21 (handle=F80000B4, 'XThread57F8 (F80000B4)', native=000057F8)
+i> F8000008 XThreadF80000B8 (16) Stack: 704B0000-704F0000
+i> F8000008 XThreadF80000BC (17) Stack: 70510000-70550000
+i> F8000008 XThreadF80000C0 (18) Stack: 70570000-705B0000
+K> F80000B8 XThread::Execute thid 22 (handle=F80000B8, 'XThread3854 (F80000B8)', native=00003854)
+K> F80000C0 XThread::Execute thid 24 (handle=F80000C0, 'XThread0A0C (F80000C0)', native=00000A0C)
+K> F80000BC XThread::Execute thid 23 (handle=F80000BC, 'XThread5FAC (F80000BC)', native=00005FAC)
+F> F8000074 HostPathDevice::ResolvePath(\data\sound\XENON)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\sound\XENON)
+i> F8000008 XThreadF80000E4 (19) Stack: 705D0000-705E0000
+i> F8000008 XThreadF80000E8 (1A) Stack: 70600000-70610000
+K> F80000E4 XThread::Execute thid 25 (handle=F80000E4, 'XThread3F78 (F80000E4)', native=00003F78)
+K> F80000E8 XThread::Execute thid 26 (handle=F80000E8, 'XThread5CDC (F80000E8)', native=00005CDC)
+i> 01000010 Skipping draw - pipeline not ready: VS 4666C5A9092B03DD mod 0000000000000003, PS 7ABDFEFBCADB4BF9 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 1E6883FCCDE1F688 mod 0000000000000001, PS A4A965C189287B99 mod 0021400000010001
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\cmn)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\cmn)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (1B) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 27 (handle=F80000F4, 'XThread1868 (F80000F4)', native=00001868)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\cmn\eng)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\cmn\eng)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\cmn\eng)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\cmn\eng)
+i> F8000090 XThreadF80000F4 (1C) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 28 (handle=F80000F4, 'XThread4608 (F80000F4)', native=00004608)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\font)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\font)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (1D) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 29 (handle=F80000F4, 'XThread5EB4 (F80000F4)', native=00005EB4)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\cmn\XENON)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\cmn\XENON)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (1E) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 30 (handle=F80000F4, 'XThread5EE0 (F80000F4)', native=00005EE0)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\cmn\XENON)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\cmn\XENON)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (1F) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 31 (handle=F80000F4, 'XThread0F70 (F80000F4)', native=00000F70)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (20) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 32 (handle=F80000F4, 'XThread262C (F80000F4)', native=0000262C)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\card)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\card)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (21) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 33 (handle=F80000F4, 'XThread0B74 (F80000F4)', native=00000B74)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\load)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\load)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (22) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 34 (handle=F80000F4, 'XThread6930 (F80000F4)', native=00006930)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\load)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\load)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (23) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 35 (handle=F80000F4, 'XThread29EC (F80000F4)', native=000029EC)
+F> F8000074 HostPathDevice::ResolvePath(\data\effect)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\effect)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (24) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 36 (handle=F80000F4, 'XThread5B2C (F80000F4)', native=00005B2C)
+i> 01000010 Skipping draw - pipeline not ready: VS 13B01BEA94678566 mod 0000000000000003, PS 7ABDFEFBCADB4BF9 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 13B01BEA94678566 mod 0000000000000003, PS 7ABDFEFBCADB4BF9 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 13B01BEA94678566 mod 0000000000000003, PS 7ABDFEFBCADB4BF9 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+i> 01000010 Skipping draw - pipeline not ready: VS 2E015B8427EBD8C5 mod 000000000000001F, PS E8EAE3AA51F7921E mod 002100000000001F
+F> F8000074 HostPathDevice::ResolvePath(\data\cmn)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\cmn)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (25) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 37 (handle=F80000F4, 'XThread53E4 (F80000F4)', native=000053E4)
+F> F8000074 HostPathDevice::ResolvePath(\data\skill)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\skill)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (26) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 38 (handle=F80000F4, 'XThread49D0 (F80000F4)', native=000049D0)
+F> F8000074 HostPathDevice::ResolvePath(\data\skill)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\skill)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (27) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 39 (handle=F80000F4, 'XThread1060 (F80000F4)', native=00001060)
+F> F8000074 HostPathDevice::ResolvePath(\data\skill)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\skill)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (28) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 40 (handle=F80000F4, 'XThread485C (F80000F4)', native=0000485C)
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (29) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 41 (handle=F80000F4, 'XThread34C0 (F80000F4)', native=000034C0)
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (2A) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 42 (handle=F80000F4, 'XThread3908 (F80000F4)', native=00003908)
+F> F8000074 HostPathDevice::ResolvePath(\data\stage)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\stage)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (2B) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 43 (handle=F80000F4, 'XThread5948 (F80000F4)', native=00005948)
+F> F8000074 HostPathDevice::ResolvePath(\data\stage)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\stage)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (2C) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 44 (handle=F80000F4, 'XThread58E8 (F80000F4)', native=000058E8)
+F> F8000074 HostPathDevice::ResolvePath(\data\event\XENON\eng)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\event\XENON\eng)
+F> F8000074 HostPathDevice::ResolvePath(\data\event\XENON\eng)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\event\XENON\eng)
+i> F8000090 XThreadF80000F4 (2D) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 45 (handle=F80000F4, 'XThread4AE8 (F80000F4)', native=00004AE8)
+F> F8000074 HostPathDevice::ResolvePath(\data\ia)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ia)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (2E) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 46 (handle=F80000F4, 'XThread48F8 (F80000F4)', native=000048F8)
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (2F) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 47 (handle=F80000F4, 'XThread66B8 (F80000F4)', native=000066B8)
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (30) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 48 (handle=F80000F4, 'XThread32AC (F80000F4)', native=000032AC)
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (31) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 49 (handle=F80000F4, 'XThread32B8 (F80000F4)', native=000032B8)
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (32) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 50 (handle=F80000F4, 'XThread533C (F80000F4)', native=0000533C)
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (33) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 51 (handle=F80000F4, 'XThread3C44 (F80000F4)', native=00003C44)
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (34) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 52 (handle=F80000F4, 'XThread3F88 (F80000F4)', native=00003F88)
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (35) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 53 (handle=F80000F4, 'XThread1DD8 (F80000F4)', native=00001DD8)
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (36) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 54 (handle=F80000F4, 'XThread3C34 (F80000F4)', native=00003C34)
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (37) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 55 (handle=F80000F4, 'XThread65C0 (F80000F4)', native=000065C0)
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (38) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 56 (handle=F80000F4, 'XThread6844 (F80000F4)', native=00006844)
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (39) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 57 (handle=F80000F4, 'XThread5BC4 (F80000F4)', native=00005BC4)
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (3A) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 58 (handle=F80000F4, 'XThread61BC (F80000F4)', native=000061BC)
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (3B) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 59 (handle=F80000F4, 'XThread2EE0 (F80000F4)', native=00002EE0)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\script)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\script)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (3C) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 60 (handle=F80000F4, 'XThread23CC (F80000F4)', native=000023CC)
+F> F8000074 HostPathDevice::ResolvePath(\data\ia)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ia)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (3D) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 61 (handle=F80000F4, 'XThread1380 (F80000F4)', native=00001380)
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg\script)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\rpg\script)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (3E) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 62 (handle=F80000F4, 'XThread5E10 (F80000F4)', native=00005E10)
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (3F) Stack: 70630000-70640000
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+K> F80000F4 XThread::Execute thid 63 (handle=F80000F4, 'XThread5054 (F80000F4)', native=00005054)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (40) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 64 (handle=F80000F4, 'XThread1E60 (F80000F4)', native=00001E60)
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (41) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 65 (handle=F80000F4, 'XThread54C0 (F80000F4)', native=000054C0)
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (42) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 66 (handle=F80000F4, 'XThread34F0 (F80000F4)', native=000034F0)
+i> 01000010 Skipping draw - pipeline not ready: VS 2443876AABAE04D9 mod 0000000000000003, PS 6D868915601F3596 mod 0021000000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 2A53964AA9F4D66E mod 0000000000000001, PS A2147ED6ACF52DBF mod 0021400300000001
+i> 01000010 Skipping draw - pipeline not ready: VS 5C3A02159BE6E884 mod 0000000000000003, PS 15741DBDE0A6290A mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 3DDE552C3BDAE2BF mod 0000000000000003, PS BCC460762FDFFFFC mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 4124792F35086E42 mod 000000000000000F, PS 083B01342061346A mod 002140000000000F
+i> 01000010 Skipping draw - pipeline not ready: VS 4124792F35086E42 mod 000000000000000F, PS 083B01342061346A mod 002140000000000F
+i> 01000010 Skipping draw - pipeline not ready: VS 1E6883FCCDE1F688 mod 0000000000000001, PS A4A965C189287B99 mod 0021400000000001
+i> 01000010 Skipping draw - pipeline not ready: VS 3DDE552C3BDAE2BF mod 0000000000000003, PS ECFA8AFC82759BAD mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 1E6883FCCDE1F688 mod 0000000000000001, PS A4A965C189287B99 mod 0021400000000001
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 1E6883FCCDE1F688 mod 0000000000000001, PS A4A965C189287B99 mod 0021400000000001
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 1E6883FCCDE1F688 mod 0000000000000001, PS A4A965C189287B99 mod 0021400000010001
+i> 01000010 Skipping draw - pipeline not ready: VS 1E6883FCCDE1F688 mod 0000000000000001, PS A4A965C189287B99 mod 0021400000000001
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS CF0D3867629B648A mod 000000000000000F, PS B62A1667D0BA6F26 mod 002140000000000F
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS D5019343FF423CC8 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS D5019343FF423CC8 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS DD881E5FDA628D88 mod 0000000000000003, PS 46AA46E4EB44BFF6 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 3DDE552C3BDAE2BF mod 0000000000000003, PS C60F811D2CD5F211 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 2443876AABAE04D9 mod 0000000000000003, PS 6D868915601F3596 mod 0021000000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS CF0D3867629B648A mod 000000000000000F, PS B62A1667D0BA6F26 mod 002140000000000F
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS D5019343FF423CC8 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS D5019343FF423CC8 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS DD881E5FDA628D88 mod 0000000000000003, PS 46AA46E4EB44BFF6 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 4666C5A9092B03DD mod 0000000000000003, PS 7ABDFEFBCADB4BF9 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 4666C5A9092B03DD mod 0000000000000003, PS 7ABDFEFBCADB4BF9 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 4666C5A9092B03DD mod 0000000000000003, PS 7ABDFEFBCADB4BF9 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 4666C5A9092B03DD mod 0000000000000003, PS 7ABDFEFBCADB4BF9 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 4666C5A9092B03DD mod 0000000000000003, PS 7ABDFEFBCADB4BF9 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 4666C5A9092B03DD mod 0000000000000003, PS 7ABDFEFBCADB4BF9 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 4666C5A9092B03DD mod 0000000000000003, PS 7ABDFEFBCADB4BF9 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 4666C5A9092B03DD mod 0000000000000003, PS 7ABDFEFBCADB4BF9 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 4666C5A9092B03DD mod 0000000000000003, PS 7ABDFEFBCADB4BF9 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 4666C5A9092B03DD mod 0000000000000003, PS 7ABDFEFBCADB4BF9 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 2443876AABAE04D9 mod 0000000000000003, PS 6D868915601F3596 mod 0021000000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS CF0D3867629B648A mod 000000000000000F, PS B62A1667D0BA6F26 mod 002140000000000F
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS D5019343FF423CC8 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS D5019343FF423CC8 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS DD881E5FDA628D88 mod 0000000000000003, PS 46AA46E4EB44BFF6 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 2443876AABAE04D9 mod 0000000000000003, PS 6D868915601F3596 mod 0021000000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS 389831C73DE85D45 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS CF0D3867629B648A mod 000000000000000F, PS B62A1667D0BA6F26 mod 002140000000000F
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS D5019343FF423CC8 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS F97B3D21465FD604 mod 0000000000000003, PS D5019343FF423CC8 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS DD881E5FDA628D88 mod 0000000000000003, PS 46AA46E4EB44BFF6 mod 0021400000000003
+i> 01000010 Skipping draw - pipeline not ready: VS 2443876AABAE04D9 mod 0000000000000003, PS 6D868915601F3596 mod 0021000000000003
+i> 01000010 Skipping draw - pipeline not ready: VS CF0D3867629B648A mod 000000000000000F, PS B62A1667D0BA6F26 mod 002140000000000F
+i> 01000010 Skipping draw - pipeline not ready: VS 2443876AABAE04D9 mod 0000000000000003, PS 6D868915601F3596 mod 0021000000000003
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\title\NA)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\title\NA)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\title\NA)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\title\NA)
+i> F8000090 XThreadF80000F4 (43) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 67 (handle=F80000F4, 'XThread2EB0 (F80000F4)', native=00002EB0)
+i> 01000010 Skipping draw - pipeline not ready: VS 4666C5A9092B03DD mod 0000000000000003, PS 7ABDFEFBCADB4BF9 mod 0021400000000003
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\title)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\title)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (44) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 68 (handle=F80000F4, 'XThread1600 (F80000F4)', native=00001600)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\title\XENON\eng)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\title\XENON\eng)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\title\XENON\eng)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\title\XENON\eng)
+i> F8000090 XThreadF80000F4 (45) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 69 (handle=F80000F4, 'XThread62B0 (F80000F4)', native=000062B0)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\mdsel)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\mdsel)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (46) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 70 (handle=F80000F4, 'XThread5764 (F80000F4)', native=00005764)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\mdsel\eng)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\mdsel\eng)
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\mdsel\eng)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\ui\mdsel\eng)
+i> F8000090 XThreadF80000F4 (47) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 71 (handle=F80000F4, 'XThread555C (F80000F4)', native=0000555C)
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (48) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 72 (handle=F80000F4, 'XThread1DEC (F80000F4)', native=00001DEC)
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\spc)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+i> F8000090 XThreadF80000F4 (49) Stack: 70630000-70640000
+K> F80000F4 XThread::Execute thid 73 (handle=F80000F4, 'XThread00DC (F80000F4)', native=000000DC)
+i> 01000010 Skipping draw - pipeline not ready: VS 13B01BEA94678566 mod 0000000000000003, PS 7ABDFEFBCADB4BF9 mod 0021400000000003
+F> F8000074 HostPathDevice::ResolvePath(\data\sound\XENON)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\sound\XENON)
+F> F8000048 HostPathDevice::ResolvePath(\data\movie\XENON)
+!> F8000048 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000048 HostPathDevice::ResolvePath(\data\movie\XENON)
+i> F8000048 XThreadF8000148 (4A) Stack: 70630000-70640000
+i> F8000048 XThreadF800014C (4B) Stack: 70660000-70670000
+i> F8000048 XThreadF8000150 (4C) Stack: 70690000-706A0000
+i> F8000048 XThreadF8000154 (4D) Stack: 706C0000-706D0000
+K> F800014C XThread::Execute thid 75 (handle=F800014C, 'XThread5340 (F800014C)', native=00005340)
+K> F8000148 XThread::Execute thid 74 (handle=F8000148, 'XThread2610 (F8000148)', native=00002610)
+K> F8000150 XThread::Execute thid 76 (handle=F8000150, 'XThread53DC (F8000150)', native=000053DC)
+i> 01000010 Skipping draw - pipeline not ready: VS D5E12A97B3A84881 mod 0000000000000001, PS A0B5089C468B8CE8 mod 0021400000000001
+K> F8000154 XThread::Execute thid 77 (handle=F8000154, 'XThread663C (F8000154)', native=0000663C)
+F> F8000074 HostPathDevice::ResolvePath(\data\sound\XENON)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\sound\XENON)
+F> F8000048 HostPathDevice::ResolvePath(\data\movie\XENON)
+!> F8000048 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000048 HostPathDevice::ResolvePath(\data\movie\XENON)
+i> F8000048 XThreadF8000150 (4E) Stack: 70630000-70640000
+i> F8000048 XThreadF8000154 (4F) Stack: 70660000-70670000
+i> F8000048 XThreadF8000178 (50) Stack: 70690000-706A0000
+i> F8000048 XThreadF800017C (51) Stack: 706C0000-706D0000
+K> F8000150 XThread::Execute thid 78 (handle=F8000150, 'XThread6AB8 (F8000150)', native=00006AB8)
+K> F8000154 XThread::Execute thid 79 (handle=F8000154, 'XThread1F9C (F8000154)', native=00001F9C)
+K> F8000178 XThread::Execute thid 80 (handle=F8000178, 'XThread620C (F8000178)', native=0000620C)
+K> F800017C XThread::Execute thid 81 (handle=F800017C, 'XThread19A4 (F800017C)', native=000019A4)
+F> F8000074 HostPathDevice::ResolvePath(\data\sound\XENON\US)
+!> F8000074 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000074 HostPathDevice::ResolvePath(\data\sound\XENON\US)
+i> 01000010 Skipping draw - pipeline not ready: VS 818B92470F80833E mod 0000000000000001, PS 1C5B744F4C81F9EB mod 0021400000000001
+i> 01000010 Skipping draw - pipeline not ready: VS 818B92470F80833E mod 0000000000000001, PS 1C5B744F4C81F9EB mod 0021400000000001
+F> F8000048 HostPathDevice::ResolvePath(\data\movie\XENON)
+!> F8000048 NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+F> F8000048 HostPathDevice::ResolvePath(\data\movie\XENON)
+i> F8000048 XThreadF80001A8 (52) Stack: 70630000-70640000
+i> F8000048 XThreadF80001AC (53) Stack: 70660000-70670000
+i> F8000048 XThreadF80001B0 (54) Stack: 70690000-706A0000
+i> F8000048 XThreadF80001B4 (55) Stack: 706C0000-706D0000
+K> F80001A8 XThread::Execute thid 82 (handle=F80001A8, 'XThread39F8 (F80001A8)', native=000039F8)
+K> F80001AC XThread::Execute thid 83 (handle=F80001AC, 'XThread63DC (F80001AC)', native=000063DC)
+K> F80001B0 XThread::Execute thid 84 (handle=F80001B0, 'XThread368C (F80001B0)', native=0000368C)

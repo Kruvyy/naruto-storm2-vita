@@ -1,0 +1,37 @@
+﻿Preset CMake variables:
+
+  CMAKE_BUILD_TYPE="Release"
+  CMAKE_CXX_COMPILER="clang++"
+  CMAKE_C_COMPILER="clang"
+
+-- The CXX compiler identification is Clang 19.1.7 with GNU-like command-line
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/LLVM/bin/clang++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - not found
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - no
+-- Found Threads: TRUE
+-- Found ReXGlue SDK 0.10.0.0-dev.unknown at C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/install/win-amd64/lib/cmake/rexglue
+-- Configuring done (3.6s)
+-- Generating done (0.2s)
+cmake : CMake Warning:
+No linha:1 caractere:403
++ ... e '\\','/'; cmake --preset win-amd64-release "-DCMAKE_PREFIX_PATH=$sd ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (CMake Warning::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  Manually-specified variables were not used by the project:
+
+    CMAKE_C_COMPILER
+
+
+-- Build files have been written to: C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/storm2/out/build/win-amd64-release

@@ -25,6 +25,9 @@ Commits na branch `vita-arm32` de `rexglue/`.
 | 14 | E | FMA de dupla precisão no Vita | o `fma` do newlib do VitaSDK é `vmla.f64` (verificado por desmontagem de `libm.a`), com dois arredondamentos | corrigido (`ppc_soft_fma`; atalho sem FMA para `fmadds` com entradas simples) | `fpedge.test_f*_fused` (4), `unit [fma]` | `396acac` | 208 em dupla (`fmadd` 120, `fmsub` 66, `fnmsub` 22) |
 | 15 | T | Vita3K | `fopen(..., "w")` não truncou o log antigo, deixando linhas obsoletas no fim | contornado (o runner apaga o arquivo antes); não verificado no console | — | — | — |
 | 16 | A [H] | `vmaddfp`/`vnmsubfp` | o ReXGlue faz multiplicação e soma separadas (dois arredondamentos) em todas as plataformas; não se sabe se o VMX128 do Xenon funde a operação | hipótese, sem oráculo de hardware | — | — | 980 + 45 |
+| 17 | A | análise de funções | funções sem `.pdata` cujo endereço só aparece no código como constante `lis`+`addi`/`ori` (ponteiro de callback passado em registrador) não eram geradas → `FATAL Call to invalid or unregistered function at guest address 0x8224B8C0` na 1ª execução do Storm 2 | corrigido (opção `scan_code_address_constants`, desligada por padrão; ligada no Storm 2) | `find_code_const_functions.py`: candidatos → 0; `check_storm2_codegen.ps1`; execução de 240 s sem FATAL (`docs/logs/D17_run3`) | `3023ce9` | 693 registros, +6 funções novas |
+| 18 | B | `NtQueryInformationFile` | a classe `XFileXctdCompressionInformation` não é implementada pelo runtime: devolve `X_STATUS_INVALID_PARAMETER` e registra erro | confirmado; o jogo segue em frente (provavelmente trata como arquivo não comprimido) [H] | — | — | ~260 chamadas em 240 s |
+| 19 | C | render targets D3D12 (caminho RTV) | **tela preta**: o padrão de `execute_unclipped_draw_vs_on_cpu` foi trocado de `true` (Xenia) para `false` no port do ReXGlue. Desenhos sem recorte (quads em espaço de tela, limpezas) passavam a "ocupar" a EDRAM inteira, e as transferências de posse entre render targets zeravam o conteúdo. O frontbuffer apresentado era 0 em todos os canais | corrigido (padrão `true` restaurado, com a descrição original) | `scripts/check_storm2_render.ps1` (falhava: 0 % aceso; passa: 100 %) | `d31d6c4` | todas as telas |
 
 ## Detalhes
 
@@ -74,3 +77,34 @@ Antes da correção, `0x827BC618` não existia no código gerado e uma metade de
 Depois: 0 candidatos; 2.633 registros feitos pela varredura (a maioria seria achada depois via `bl`); +136 funções no total (30.944 → 31.080 na tabela).
 
 **Risco residual [H]:** um alvo de tabela de saltos de uma função-folha sem `.pdata` poderia ser registrado como função. Mitigação: esses registros são `DISCOVERED` com xrefs e podem ser fundidos pela análise. Verificado no Storm 2: nenhum desvio não resolvido e nenhum `REX_FATAL` restante.
+
+### 17 — funções alcançadas só por constantes de endereço no código
+Na 1ª execução (`docs/logs/D14_run1/storm2.log`) o jogo abortou em `0x8224B8C0`, que não tem `.pdata`, não é alvo de `bl` e não aparece em seções de dados. O endereço é montado no código em 24 pontos e passado como argumento (r7/r8) de uma chamada, ou seja, é um callback. Exemplo verificado por desmontagem: `0x822365DC lis r9,0x8225` / `0x822365E4 addi r8,r9,-0x4740`, seguido de `bl`.
+
+A opção `[analysis] scan_code_address_constants` (`src/codegen/phase_register.cpp`) varre as seções executáveis atrás de `lis rD,hi` seguido, em até 8 instruções, de `addi`/`ori` sobre rD. O alvo precisa ser alinhado, executável, fora do interior de uma `.pdata`, não ser import nem função conhecida, e vir depois de um terminador (`blr`/`bctr`/`b`/padding). Pares seguidos de `mtctr` em até 5 instruções são ignorados, porque são bases de tabelas de `switch`. Os alvos são registrados como `DISCOVERED` (podem ser fundidos).
+
+Resultado: 693 registros, 6 funções novas, `scripts/find_code_const_functions.py` sem candidatos restantes, e a execução de 240 s chegou ao fim sem FATAL.
+
+**Risco residual [H]:** um par `lis`/`addi` que monta um endereço de dado dentro de `.text` (por exemplo, uma tabela) poderia virar função falsa. Mitigação: exige terminador antes do alvo, ignora bases de `switch` (`mtctr`) e registra como `DISCOVERED`. Verificado no Storm 2: o codegen continua sem `REX_FATAL` e sem desvios não resolvidos.
+
+### 19 — tela preta no build x64 (D3D12, caminho RTV)
+Sintoma: janela 100 % preta durante 300 s, com o jogo rodando. Não era fechamento: o processo só terminava quando o script o encerrava.
+
+Como foi isolado:
+1. Captura da janela por `PrintWindow` (`scripts/capture_storm2.ps1`): brilho médio 0,00 e 0,00 % de pixels não pretos em todas as amostras (`D20_cap`).
+2. Referência: o Xenia Canary (`E:\xenia_canary_windows_netplay`, mesma cópia do jogo, mesma GPU AMD, mesma escolha automática de caminho RTV) mostrou a interface e a abertura em tempo real (`D21_xenia_ref`). Isso também provou que o método de captura enxerga D3D12.
+3. Diagnóstico novo `--gpu_swap_diag_interval=N` (`src/graphics/d3d12/command_processor.cpp`, desligado por padrão). A cada N trocas ele registra desenhos, resolves e destinos, e lê de volta a textura apresentada. Resultado (`D23_swapdiag`): ~150 desenhos e ~31 resolves por quadro; um resolve grava no frontbuffer `0B000000`; a tabela de gama foi gravada pelo jogo (vermelho[128] = 558); **e o conteúdo da textura é 0 nos 4 canais**. Ou seja, a apresentação funcionava e apresentava um quadro vazio.
+4. Amostras de desenhos (`D24_drawdiag`): constantes de shader e vértices plausíveis, sem NaN nem lixo. Nada indicou erro de tradução da CPU.
+5. Testes A/B (`scripts/gpu_ab_storm2.ps1`, `D25_*`, `D26_*`):
+
+   | Variante | Resultado |
+   |---|---|
+   | `async_shader_compilation=false`, `direct_host_resolve=false`, `d3d12_readback_resolve=true`, `gamma_render_target_as_unorm16=false`, `mrt_edram_used_range_clamp_to_min=false` | continuou preto |
+   | `render_target_path_d3d12=rov` | só o texto "AGUARDE 100%" |
+   | `execute_unclipped_draw_vs_on_cpu=true` | imagem completa |
+
+Causa: em `src/graphics/util/draw_extent_estimator.cpp` o ReXGlue comentou o `DEFINE_bool(execute_unclipped_draw_vs_on_cpu, true, …)` do Xenia e declarou `REXCVAR_DEFINE_BOOL(…, false, …)`. Sem essa estimativa, um desenho sem recorte é tratado como se usasse até a EDRAM inteira, e as transferências de posse de faixas da EDRAM entre render targets do host apagavam os alvos que o jogo depois resolve.
+
+Correção: padrão `true` restaurado, com a descrição do Xenia. Depois dela, `scripts/check_storm2_render.ps1` sem opções extras: frontbuffer 100 % aceso, janela 96,7–99,4 % não preta, do logo da Dolby até "Batalha 1: Naruto vs Sasuke, AGUARDE 87%" (`D27_render_fix`). Suíte `ctest`: 3394/3395 (a falha é o item 6, anterior).
+
+**Auditoria de padrões** (`scripts/audit_cvar_defaults.py`): só 15 definições originais do Xenia ficaram comentadas no código. Depois da correção, a única divergência restante é `primitive_processor_cache_min_indices` (Xenia 4096, ReXGlue 0), que afeta só o cache de primitivas processadas, ou seja, custo de CPU, não a imagem. Ficou sem mudança, por falta de evidência de problema. **Limitação:** as demais cvars foram convertidas sem deixar o original. Uma auditoria completa exige o código-fonte do Xenia Canary, que não está nesta máquina.

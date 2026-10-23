@@ -1,0 +1,858 @@
+﻿[0/2] Re-checking globbed directories...
+[1/51] Building C object thirdparty/CMakeFiles/tiny-aes.dir/Release/tiny-aes-c/aes.c.obj
+[2/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/__/__/thirdparty/dxbc/DXBCChecksum.cpp.obj
+[3/51] Building C object thirdparty/sdl3/CMakeFiles/SDL3_test.dir/Release/src/test/SDL_test_assert.c.obj
+[4/51] Building C object thirdparty/sdl3/CMakeFiles/SDL3_test.dir/Release/src/test/SDL_test_font.c.obj
+[5/51] Building C object thirdparty/sdl3/CMakeFiles/SDL3_test.dir/Release/src/test/SDL_test_compare.c.obj
+[6/51] Building C object thirdparty/sdl3/CMakeFiles/SDL3_test.dir/Release/src/test/SDL_test_crc32.c.obj
+[7/51] Linking C static library "C:\Users\minoo\Downloads\PORT NARUTO STORM 2 PS VITA\rexglue\out\win-amd64\Release\tiny-aes.lib"
+[8/51] Building C object thirdparty/sdl3/CMakeFiles/SDL3_test.dir/Release/src/test/SDL_test_log.c.obj
+[9/51] Building C object thirdparty/sdl3/CMakeFiles/SDL3_test.dir/Release/src/test/SDL_test_fuzzer.c.obj
+[10/51] Building C object thirdparty/sdl3/CMakeFiles/SDL3_test.dir/Release/src/test/SDL_test_md5.c.obj
+[11/51] Building C object thirdparty/sdl3/CMakeFiles/SDL3_test.dir/Release/src/test/SDL_test_harness.c.obj
+[12/51] Building C object thirdparty/sdl3/CMakeFiles/SDL3_test.dir/Release/src/test/SDL_test_common.c.obj
+[13/51] Building C object thirdparty/sdl3/CMakeFiles/SDL3_test.dir/Release/src/test/SDL_test_memory.c.obj
+[14/51] Linking C static library "C:\Users\minoo\Downloads\PORT NARUTO STORM 2 PS VITA\rexglue\out\win-amd64\Release\SDL3_test.lib"
+[15/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/cmake_pch.hxx.pch
+[16/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/registers.cpp.obj
+[17/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/format/ucode.cpp.obj
+[18/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/sampler_info.cpp.obj
+[19/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/packet_disassembler.cpp.obj
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/packet_disassembler.cpp:86:59: warning: unused parameter 'base_ptr' [-Wunused-parameter]
+   86 | bool PacketDisassembler::DisasmPacketType2(const uint8_t* base_ptr, uint32_t packet,
+      |                                                           ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/packet_disassembler.cpp:86:78: warning: unused parameter 'packet' [-Wunused-parameter]
+   86 | bool PacketDisassembler::DisasmPacketType2(const uint8_t* base_ptr, uint32_t packet,
+
+      |                                                                              ^
+
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/packet_disassembler.cpp:305:16: warning: variable 'address' set but not used [-Wunused-but-set-variable]
+
+  305 |       uint32_t address = memory::load_and_swap<uint32_t>(ptr + 0);
+
+      |                ^
+
+3 warnings generated.
+
+[20/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/flags.cpp.obj
+[21/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/util/draw_extent_estimator.cpp.obj
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/util/draw_extent_estimator.cpp:281:28: warning: comparison of integers of different signs: 'int32_t' (aka 'int') and 'const uint32_t' (aka 'const unsigned int') [-Wsign-compare]
+  281 |         if (scissor_bottom >= xenos::kTexture2DCubeMaxWidthHeight) {
+      |             ~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/util/draw_extent_estimator.cpp:291:29: warning: comparison of integers of different signs: 'int32_t' (aka 'int') and 'const uint32_t' (aka 'const unsigned int') [-Wsign-compare]
+
+  291 |           if (scissor_right >= xenos::kTexture2DCubeMaxWidthHeight) {
+
+      |               ~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2 warnings generated.
+
+[22/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/pipeline/shader/shader.cpp.obj
+[23/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/util/draw.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/util/draw.cpp:18:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:223:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  223 |     bool base_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:226:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+
+  226 |     bool mips_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+
+      |                                                                      ^
+
+2 warnings generated.
+
+[24/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/pipeline/shader/translator_disasm.cpp.obj
+[25/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/pipeline/shader/interpreter.cpp.obj
+[26/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/shared_memory.cpp.obj
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/shared_memory.cpp:275:62: warning: unused parameter 'offset_allocations' [-Wunused-parameter]
+  275 | bool SharedMemory::AllocateSparseHostGpuMemoryRange(uint32_t offset_allocations,
+      |                                                              ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/shared_memory.cpp:276:62: warning: unused parameter 'length_allocations' [-Wunused-parameter]
+  276 |                                                     uint32_t length_allocations) {
+      |                                                              ^
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/shared_memory.cpp:19:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/shared_memory.h:158:9: warning: private field 'memory_data_provider_handle_' is not used [-Wunused-private-field]
+  158 |   void* memory_data_provider_handle_ = nullptr;
+
+      |         ^
+
+3 warnings generated.
+
+[27/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/primitive_processor.cpp.obj
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/primitive_processor.cpp:270:43: warning: loop variable 'cache_map_entry' of type 'const std::pair<CacheKey, size_t> &' (aka 'const pair<rex::graphics::PrimitiveProcessor::CacheKey, unsigned long long> &') binds to a temporary constructed from type 'reference' (aka 'std::pair<const rex::graphics::PrimitiveProcessor::CacheKey, unsigned long long> &') [-Wrange-loop-construct]
+  270 |   for (const std::pair<CacheKey, size_t>& cache_map_entry : cache_map_) {
+      |                                           ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/primitive_processor.cpp:270:8: note: use non-reference type 'std::pair<CacheKey, size_t>' (aka 'pair<rex::graphics::PrimitiveProcessor::CacheKey, unsigned long long>') to make construction explicit or type 'const value_type &' (aka 'const std::pair<const rex::graphics::PrimitiveProcessor::CacheKey, unsigned long long> &') to prevent copying
+  270 |   for (const std::pair<CacheKey, size_t>& cache_map_entry : cache_map_) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/primitive_processor.cpp:1242:75: warning: unused parameter 'index_transform' [-Wunused-parameter]
+ 1242 |                                          const PassthroughIndexTransform& index_transform) {
+      |                                                                           ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/primitive_processor.cpp:1252:75: warning: unused parameter 'index_transform' [-Wunused-parameter]
+
+ 1252 |                                          const PassthroughIndexTransform& index_transform) {
+
+      |                                                                           ^
+
+3 warnings generated.
+
+[28/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/pipeline/render_target/cache.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/render_target/cache.cpp:23:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/render_target/cache.h:187:9: warning: field 'draw_extent_estimator_' will be initialized after field 'draw_resolution_scale_x_' [-Wreorder-ctor]
+  187 |         draw_extent_estimator_(register_file, memory),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_x_(draw_resolution_scale_x)
+
+  188 |         draw_resolution_scale_x_(draw_resolution_scale_x),
+
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      |         draw_resolution_scale_y_(draw_resolution_scale_y)
+
+  189 |         draw_resolution_scale_y_(draw_resolution_scale_y) {
+
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      |         draw_extent_estimator_(register_file, memory)
+
+1 warning generated.
+
+[29/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/plugin_main.cpp.obj
+[30/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/pipeline/shader/translator.cpp.obj
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/translator.cpp:462:29: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long long') and 'int' [-Wsign-compare]
+  462 |   if (binding.binding_index == -1) {
+      |       ~~~~~~~~~~~~~~~~~~~~~ ^  ~~
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/translator.cpp:845:65: warning: unused parameter 'cf' [-Wunused-parameter]
+  845 | void ParseControlFlowReturn(const ControlFlowReturnInstruction& cf, uint32_t cf_index,
+
+      |                                                                 ^
+
+2 warnings generated.
+
+[31/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/pipeline/shader/dxbc.cpp.obj
+[32/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/graphics_system.cpp.obj
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/graphics_system.cpp:99:51: warning: unused parameter 'statically_from_ui_thread' [-Wunused-parameter]
+   99 |   auto loss_cb = [this](bool is_responsible, bool statically_from_ui_thread) {
+      |                                                   ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/graphics_system.cpp:223:50: warning: unused parameter 'ppc_context' [-Wunused-parameter]
+  223 | uint32_t GraphicsSystem::ReadRegisterThunk(void* ppc_context, GraphicsSystem* gs, uint32_t addr) {
+
+      |                                                  ^
+
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/graphics_system.cpp:227:47: warning: unused parameter 'ppc_context' [-Wunused-parameter]
+
+  227 | void GraphicsSystem::WriteRegisterThunk(void* ppc_context, GraphicsSystem* gs, uint32_t addr,
+
+      |                                               ^
+
+3 warnings generated.
+
+[33/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/pipeline/texture/cache.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/texture/cache.cpp:21:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:223:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  223 |     bool base_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:226:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  226 |     bool mips_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/texture/cache.cpp:690:51: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  690 |     const std::unique_lock<std::recursive_mutex>& global_lock) {
+      |                                                   ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/texture/cache.cpp:751:55: warning: unused parameter 'data' [-Wunused-parameter]
+  751 |                                  void* context, void* data, uint64_t argument,
+      |                                                       ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/texture/cache.cpp:752:39: warning: unused parameter 'invalidated_by_gpu' [-Wunused-parameter]
+  752 |                                  bool invalidated_by_gpu) {
+      |                                       ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/texture/cache.cpp:1075:51: warning: unused parameter 'global_lock' [-Wunused-parameter]
+ 1075 |     const std::unique_lock<std::recursive_mutex>& global_lock, uint32_t address_first,
+      |                                                   ^
+
+6 warnings generated.
+
+[34/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/command_processor.cpp.obj
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:157:77: warning: unused parameter 'cache_root' [-Wunused-parameter]
+  157 | void CommandProcessor::InitializeShaderStorage(const std::filesystem::path& cache_root,
+      |                                                                             ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:158:57: warning: unused parameter 'title_id' [-Wunused-parameter]
+  158 |                                                uint32_t title_id, bool blocking) {}
+      |                                                         ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:158:72: warning: unused parameter 'blocking' [-Wunused-parameter]
+  158 |                                                uint32_t title_id, bool blocking) {}
+      |                                                                        ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:726:63: warning: unused parameter 'reader' [-Wunused-parameter]
+  726 | bool CommandProcessor::ExecutePacketType2(memory::RingBuffer* reader, uint32_t packet) {
+      |                                                               ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:726:80: warning: unused parameter 'packet' [-Wunused-parameter]
+  726 | bool CommandProcessor::ExecutePacketType2(memory::RingBuffer* reader, uint32_t packet) {
+      |                                                                                ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:894:88: warning: unused parameter 'packet' [-Wunused-parameter]
+  894 | bool CommandProcessor::ExecutePacketType3_ME_INIT(memory::RingBuffer* reader, uint32_t packet,
+      |                                                                                        ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:905:84: warning: unused parameter 'packet' [-Wunused-parameter]
+  905 | bool CommandProcessor::ExecutePacketType3_NOP(memory::RingBuffer* reader, uint32_t packet,
+      |                                                                                    ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:913:90: warning: unused parameter 'packet' [-Wunused-parameter]
+  913 | bool CommandProcessor::ExecutePacketType3_INTERRUPT(memory::RingBuffer* reader, uint32_t packet,
+      |                                                                                          ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:914:62: warning: unused parameter 'count' [-Wunused-parameter]
+  914 |                                                     uint32_t count) {
+      |                                                              ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:929:88: warning: unused parameter 'packet' [-Wunused-parameter]
+  929 | bool CommandProcessor::ExecutePacketType3_XE_SWAP(memory::RingBuffer* reader, uint32_t packet,
+      |                                                                                        ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:968:68: warning: unused parameter 'packet' [-Wunused-parameter]
+  968 |                                                           uint32_t packet, uint32_t count) {
+      |                                                                    ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:968:85: warning: unused parameter 'count' [-Wunused-parameter]
+  968 |                                                           uint32_t packet, uint32_t count) {
+      |                                                                                     ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:978:93: warning: unused parameter 'packet' [-Wunused-parameter]
+  978 | bool CommandProcessor::ExecutePacketType3_WAIT_REG_MEM(memory::RingBuffer* reader, uint32_t packet,
+      |                                                                                             ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:979:65: warning: unused parameter 'count' [-Wunused-parameter]
+  979 |                                                        uint32_t count) {
+      |                                                                 ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1058:88: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1058 | bool CommandProcessor::ExecutePacketType3_REG_RMW(memory::RingBuffer* reader, uint32_t packet,
+      |                                                                                        ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1059:60: warning: unused parameter 'count' [-Wunused-parameter]
+ 1059 |                                                   uint32_t count) {
+      |                                                            ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1084:91: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1084 | bool CommandProcessor::ExecutePacketType3_REG_TO_MEM(memory::RingBuffer* reader, uint32_t packet,
+      |                                                                                           ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1085:63: warning: unused parameter 'count' [-Wunused-parameter]
+ 1085 |                                                      uint32_t count) {
+      |                                                               ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1102:90: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1102 | bool CommandProcessor::ExecutePacketType3_MEM_WRITE(memory::RingBuffer* reader, uint32_t packet,
+      |                                                                                          ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1118:91: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1118 | bool CommandProcessor::ExecutePacketType3_COND_WRITE(memory::RingBuffer* reader, uint32_t packet,
+      |                                                                                           ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1119:63: warning: unused parameter 'count' [-Wunused-parameter]
+ 1119 |                                                      uint32_t count) {
+      |                                                               ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1181:92: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1181 | bool CommandProcessor::ExecutePacketType3_EVENT_WRITE(memory::RingBuffer* reader, uint32_t packet,
+      |                                                                                            ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1198:68: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1198 |                                                           uint32_t packet, uint32_t count) {
+      |                                                                    ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1198:85: warning: unused parameter 'count' [-Wunused-parameter]
+ 1198 |                                                           uint32_t packet, uint32_t count) {
+      |                                                                                     ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1222:68: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1222 |                                                           uint32_t packet, uint32_t count) {
+      |                                                                    ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1222:85: warning: unused parameter 'count' [-Wunused-parameter]
+ 1222 |                                                           uint32_t packet, uint32_t count) {
+      |                                                                                     ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1250:68: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1250 |                                                           uint32_t packet, uint32_t count) {
+      |                                                                    ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1285:84: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1285 | bool CommandProcessor::ExecutePacketType3Draw(memory::RingBuffer* reader, uint32_t packet,
+      |                                                                                    ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1286:81: warning: unused parameter 'viz_query_condition' [-Wunused-parameter]
+ 1286 |                                               const char* opcode_name, uint32_t viz_query_condition,
+      |                                                                                 ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1431:93: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1431 | bool CommandProcessor::ExecutePacketType3_SET_CONSTANT(memory::RingBuffer* reader, uint32_t packet,
+      |                                                                                             ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1464:94: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1464 | bool CommandProcessor::ExecutePacketType3_SET_CONSTANT2(memory::RingBuffer* reader, uint32_t packet,
+      |                                                                                              ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1473:70: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1473 |                                                             uint32_t packet, uint32_t count) {
+      |                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1473:87: warning: unused parameter 'count' [-Wunused-parameter]
+ 1473 |                                                             uint32_t packet, uint32_t count) {
+      |                                                                                       ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1507:73: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1507 |                                                                uint32_t packet, uint32_t count) {
+      |                                                                         ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1514:88: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1514 | bool CommandProcessor::ExecutePacketType3_IM_LOAD(memory::RingBuffer* reader, uint32_t packet,
+      |                                                                                        ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1515:60: warning: unused parameter 'count' [-Wunused-parameter]
+ 1515 |                                                   uint32_t count) {
+      |                                                            ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1544:70: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1544 |                                                             uint32_t packet, uint32_t count) {
+      |                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1575:69: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1575 |                                                            uint32_t packet, uint32_t count) {
+      |                                                                     ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1575:86: warning: unused parameter 'count' [-Wunused-parameter]
+ 1575 |                                                            uint32_t packet, uint32_t count) {
+      |                                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/command_processor.cpp:1582:90: warning: unused parameter 'packet' [-Wunused-parameter]
+ 1582 | bool CommandProcessor::ExecutePacketType3_VIZ_QUERY(memory::RingBuffer* reader, uint32_t packet,
+
+      |                                                                                          ^
+
+40 warnings generated.
+
+[35/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/pipeline/shader/dxbc_translator.cpp.obj
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:72:7: warning: field 'draw_resolution_scale_y_' will be initialized after field 'emit_source_map_' [-Wreorder-ctor]
+   66 |       vendor_id_(vendor_id),
+      |       ~~~~~~~~~~~~~~~~~~~~~
+      |       emit_source_map_(force_emit_source_map || REXCVAR_GET(dxbc_source_map))
+   67 |       bindless_resources_used_(bindless_resources_used),
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |       vendor_id_(vendor_id)
+   68 |       edram_rov_used_(edram_rov_used),
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |       bindless_resources_used_(bindless_resources_used)
+   69 |       gamma_render_target_as_unorm8_(gamma_render_target_as_unorm8),
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |       edram_rov_used_(edram_rov_used)
+   70 |       msaa_2x_supported_(msaa_2x_supported),
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |       gamma_render_target_as_unorm8_(gamma_render_target_as_unorm8)
+   71 |       draw_resolution_scale_x_(draw_resolution_scale_x),
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |       msaa_2x_supported_(msaa_2x_supported)
+   72 |       draw_resolution_scale_y_(draw_resolution_scale_y),
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |       draw_resolution_scale_x_(draw_resolution_scale_x)
+   73 |       emit_source_map_(force_emit_source_map || REXCVAR_GET(dxbc_source_map)) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |       draw_resolution_scale_y_(draw_resolution_scale_y)
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1937:62: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1937 |     {"xe_flags", ShaderRdefTypeIndex::kUint, sizeof(uint32_t)},
+      |                                                              ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1938:85: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1938 |     {"xe_tessellation_factor_range", ShaderRdefTypeIndex::kFloat2, sizeof(float) * 2},
+      |                                                                                     ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1939:80: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1939 |     {"xe_line_loop_closing_index", ShaderRdefTypeIndex::kUint, sizeof(uint32_t)},
+      |                                                                                ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1941:76: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1941 |     {"xe_vertex_index_endian", ShaderRdefTypeIndex::kUint, sizeof(uint32_t)},
+      |                                                                            ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1942:75: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1942 |     {"xe_vertex_index_offset", ShaderRdefTypeIndex::kUint, sizeof(int32_t)},
+      |                                                                           ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1943:82: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1943 |     {"xe_vertex_index_min_max", ShaderRdefTypeIndex::kUint2, sizeof(uint32_t) * 2},
+      |                                                                                  ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1945:86: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1945 |     {"xe_user_clip_planes", ShaderRdefTypeIndex::kFloat4Array6, sizeof(float) * 4 * 6},
+      |                                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1947:69: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1947 |     {"xe_ndc_scale", ShaderRdefTypeIndex::kFloat3, sizeof(float) * 3},
+      |                                                                     ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1948:80: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1948 |     {"xe_point_vertex_diameter_min", ShaderRdefTypeIndex::kFloat, sizeof(float)},
+      |                                                                                ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1950:70: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1950 |     {"xe_ndc_offset", ShaderRdefTypeIndex::kFloat3, sizeof(float) * 3},
+      |                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1951:80: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1951 |     {"xe_point_vertex_diameter_max", ShaderRdefTypeIndex::kFloat, sizeof(float)},
+      |                                                                                ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1953:83: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1953 |     {"xe_point_constant_diameter", ShaderRdefTypeIndex::kFloat2, sizeof(float) * 2},
+      |                                                                                   ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1954:95: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1954 |     {"xe_point_screen_diameter_to_ndc_radius", ShaderRdefTypeIndex::kFloat2, sizeof(float) * 2},
+      |                                                                                               ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1956:94: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1956 |     {"xe_texture_swizzled_signs", ShaderRdefTypeIndex::kUint4Array2, sizeof(uint32_t) * 4 * 2},
+      |                                                                                              ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1958:83: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1958 |     {"xe_textures_resolution_scaled", ShaderRdefTypeIndex::kUint, sizeof(uint32_t)},
+      |                                                                                   ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1959:79: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1959 |     {"xe_sample_count_log2", ShaderRdefTypeIndex::kUint2, sizeof(uint32_t) * 2},
+      |                                                                               ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1960:75: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1960 |     {"xe_alpha_test_reference", ShaderRdefTypeIndex::kFloat, sizeof(float)},
+      |                                                                           ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1962:70: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1962 |     {"xe_alpha_to_mask", ShaderRdefTypeIndex::kUint, sizeof(uint32_t)},
+      |                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1963:93: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1963 |     {"xe_edram_32bpp_tile_pitch_dwords_scaled", ShaderRdefTypeIndex::kUint, sizeof(uint32_t)},
+      |                                                                                             ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1967:74: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1967 |     {"xe_color_exp_bias", ShaderRdefTypeIndex::kFloat4, sizeof(float) * 4},
+      |                                                                          ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1969:83: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1969 |     {"xe_edram_poly_offset_front", ShaderRdefTypeIndex::kFloat2, sizeof(float) * 2},
+      |                                                                                   ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1970:82: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1970 |     {"xe_edram_poly_offset_back", ShaderRdefTypeIndex::kFloat2, sizeof(float) * 2},
+      |                                                                                  ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1972:85: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1972 |     {"xe_edram_stencil", ShaderRdefTypeIndex::kUint4Array2, sizeof(uint32_t) * 4 * 2},
+      |                                                                                     ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1974:89: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1974 |     {"xe_edram_rt_base_dwords_scaled", ShaderRdefTypeIndex::kUint4, sizeof(uint32_t) * 4},
+      |                                                                                         ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1976:83: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1976 |     {"xe_edram_rt_format_flags", ShaderRdefTypeIndex::kUint4, sizeof(uint32_t) * 4},
+      |                                                                                   ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1978:84: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1978 |     {"xe_edram_rt_clamp", ShaderRdefTypeIndex::kFloat4Array4, sizeof(float) * 4 * 4},
+      |                                                                                    ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1980:90: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1980 |     {"xe_edram_rt_keep_mask", ShaderRdefTypeIndex::kUint4Array2, sizeof(uint32_t) * 4 * 2},
+      |                                                                                          ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1982:88: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1982 |     {"xe_edram_rt_blend_factors_ops", ShaderRdefTypeIndex::kUint4, sizeof(uint32_t) * 4},
+      |                                                                                        ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator.cpp:1984:80: warning: missing field 'padding_after' initializer [-Wmissing-field-initializers]
+ 1984 |     {"xe_edram_blend_constant", ShaderRdefTypeIndex::kFloat4, sizeof(float) * 4},
+
+      |                                                                                ^
+
+30 warnings generated.
+
+[36/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/pipeline/shader/dxbc_translator_alu.cpp.obj
+[37/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/pipeline/shader/dxbc_translator_fetch.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator_fetch.cpp:22:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/render_target/cache.h:187:9: warning: field 'draw_extent_estimator_' will be initialized after field 'draw_resolution_scale_x_' [-Wreorder-ctor]
+  187 |         draw_extent_estimator_(register_file, memory),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_x_(draw_resolution_scale_x)
+
+  188 |         draw_resolution_scale_x_(draw_resolution_scale_x),
+
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      |         draw_resolution_scale_y_(draw_resolution_scale_y)
+
+  189 |         draw_resolution_scale_y_(draw_resolution_scale_y) {
+
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      |         draw_extent_estimator_(register_file, memory)
+
+1 warning generated.
+
+[38/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/pipeline/shader/dxbc_translator_memexport.cpp.obj
+[39/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/pipeline/shader/dxbc_translator_om.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator_om.cpp:16:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/render_target/cache.h:187:9: warning: field 'draw_extent_estimator_' will be initialized after field 'draw_resolution_scale_x_' [-Wreorder-ctor]
+  187 |         draw_extent_estimator_(register_file, memory),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_x_(draw_resolution_scale_x)
+  188 |         draw_resolution_scale_x_(draw_resolution_scale_x),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_y_(draw_resolution_scale_y)
+  189 |         draw_resolution_scale_y_(draw_resolution_scale_y) {
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_extent_estimator_(register_file, memory)
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/pipeline/shader/dxbc_translator_om.cpp:18:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:223:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  223 |     bool base_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:226:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+
+  226 |     bool mips_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+
+      |                                                                      ^
+
+3 warnings generated.
+
+[40/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/d3d12/graphics_system.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/graphics_system.cpp:14:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:27:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/texture_cache.h:24:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:223:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  223 |     bool base_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:226:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  226 |     bool mips_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/graphics_system.cpp:14:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:29:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/render_target/cache.h:187:9: warning: field 'draw_extent_estimator_' will be initialized after field 'draw_resolution_scale_x_' [-Wreorder-ctor]
+  187 |         draw_extent_estimator_(register_file, memory),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_x_(draw_resolution_scale_x)
+  188 |         draw_resolution_scale_x_(draw_resolution_scale_x),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_y_(draw_resolution_scale_y)
+  189 |         draw_resolution_scale_y_(draw_resolution_scale_y) {
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_extent_estimator_(register_file, memory)
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/graphics_system.cpp:14:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:36:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:24:89: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   24 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesDefault = {D3D12_HEAP_TYPE_DEFAULT};
+      |                                                                                         ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:25:87: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   25 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesUpload = {D3D12_HEAP_TYPE_UPLOAD};
+      |                                                                                       ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:26:91: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+
+   26 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesReadback = {D3D12_HEAP_TYPE_READBACK};
+
+      |                                                                                           ^
+
+6 warnings generated.
+
+[41/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/d3d12/shader.cpp.obj
+[42/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/register_file.cpp.obj
+[43/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/d3d12/shared_memory.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/shared_memory.cpp:18:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:27:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/texture_cache.h:24:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:223:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  223 |     bool base_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:226:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  226 |     bool mips_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/shared_memory.cpp:18:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:29:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/render_target/cache.h:187:9: warning: field 'draw_extent_estimator_' will be initialized after field 'draw_resolution_scale_x_' [-Wreorder-ctor]
+  187 |         draw_extent_estimator_(register_file, memory),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_x_(draw_resolution_scale_x)
+  188 |         draw_resolution_scale_x_(draw_resolution_scale_x),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_y_(draw_resolution_scale_y)
+  189 |         draw_resolution_scale_y_(draw_resolution_scale_y) {
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_extent_estimator_(register_file, memory)
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/shared_memory.cpp:18:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:36:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:24:89: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   24 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesDefault = {D3D12_HEAP_TYPE_DEFAULT};
+      |                                                                                         ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:25:87: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   25 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesUpload = {D3D12_HEAP_TYPE_UPLOAD};
+      |                                                                                       ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:26:91: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+
+   26 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesReadback = {D3D12_HEAP_TYPE_READBACK};
+
+      |                                                                                           ^
+
+6 warnings generated.
+
+[44/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/d3d12/deferred_command_list.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/deferred_command_list.cpp:14:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:27:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/texture_cache.h:24:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:223:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  223 |     bool base_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:226:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  226 |     bool mips_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/deferred_command_list.cpp:14:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:29:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/render_target/cache.h:187:9: warning: field 'draw_extent_estimator_' will be initialized after field 'draw_resolution_scale_x_' [-Wreorder-ctor]
+  187 |         draw_extent_estimator_(register_file, memory),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_x_(draw_resolution_scale_x)
+  188 |         draw_resolution_scale_x_(draw_resolution_scale_x),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_y_(draw_resolution_scale_y)
+  189 |         draw_resolution_scale_y_(draw_resolution_scale_y) {
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_extent_estimator_(register_file, memory)
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/deferred_command_list.cpp:14:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:36:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:24:89: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   24 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesDefault = {D3D12_HEAP_TYPE_DEFAULT};
+      |                                                                                         ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:25:87: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   25 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesUpload = {D3D12_HEAP_TYPE_UPLOAD};
+      |                                                                                       ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:26:91: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+
+   26 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesReadback = {D3D12_HEAP_TYPE_READBACK};
+
+      |                                                                                           ^
+
+6 warnings generated.
+
+[45/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/d3d12/primitive_processor.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/primitive_processor.cpp:18:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:27:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/texture_cache.h:24:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:223:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  223 |     bool base_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:226:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  226 |     bool mips_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/primitive_processor.cpp:18:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:29:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/render_target/cache.h:187:9: warning: field 'draw_extent_estimator_' will be initialized after field 'draw_resolution_scale_x_' [-Wreorder-ctor]
+  187 |         draw_extent_estimator_(register_file, memory),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_x_(draw_resolution_scale_x)
+  188 |         draw_resolution_scale_x_(draw_resolution_scale_x),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_y_(draw_resolution_scale_y)
+  189 |         draw_resolution_scale_y_(draw_resolution_scale_y) {
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_extent_estimator_(register_file, memory)
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/primitive_processor.cpp:18:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:36:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:24:89: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   24 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesDefault = {D3D12_HEAP_TYPE_DEFAULT};
+      |                                                                                         ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:25:87: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   25 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesUpload = {D3D12_HEAP_TYPE_UPLOAD};
+      |                                                                                       ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:26:91: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+
+   26 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesReadback = {D3D12_HEAP_TYPE_READBACK};
+
+      |                                                                                           ^
+
+6 warnings generated.
+
+[46/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/d3d12/command_processor.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/command_processor.cpp:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:27:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/texture_cache.h:24:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:223:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  223 |     bool base_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:226:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  226 |     bool mips_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/command_processor.cpp:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:29:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/render_target/cache.h:187:9: warning: field 'draw_extent_estimator_' will be initialized after field 'draw_resolution_scale_x_' [-Wreorder-ctor]
+  187 |         draw_extent_estimator_(register_file, memory),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_x_(draw_resolution_scale_x)
+  188 |         draw_resolution_scale_x_(draw_resolution_scale_x),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_y_(draw_resolution_scale_y)
+  189 |         draw_resolution_scale_y_(draw_resolution_scale_y) {
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_extent_estimator_(register_file, memory)
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/command_processor.cpp:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:36:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:24:89: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   24 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesDefault = {D3D12_HEAP_TYPE_DEFAULT};
+      |                                                                                         ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:25:87: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   25 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesUpload = {D3D12_HEAP_TYPE_UPLOAD};
+      |                                                                                       ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:26:91: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   26 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesReadback = {D3D12_HEAP_TYPE_READBACK};
+      |                                                                                           ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/command_processor.cpp:172:48: warning: lambda capture 'kQueryFinished' is not required to be captured for this use [-Wunused-lambda-capture]
+  172 |   auto write_fallback_result = [sample_counts, kQueryFinished]() -> bool {
+      |                                              ~~^~~~~~~~~~~~~~
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/command_processor.cpp:1894:48: warning: unused parameter 'frontbuffer_ptr' [-Wunused-parameter]
+ 1894 | void D3D12CommandProcessor::IssueSwap(uint32_t frontbuffer_ptr, uint32_t frontbuffer_width,
+      |                                                ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/command_processor.cpp:2266:83: warning: unused parameter 'guest_address' [-Wunused-parameter]
+ 2266 | Shader* D3D12CommandProcessor::LoadShader(xenos::ShaderType shader_type, uint32_t guest_address,
+      |                                                                                   ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/command_processor.cpp:2271:60: warning: unused parameter 'primitive_type' [-Wunused-parameter]
+ 2271 | bool D3D12CommandProcessor::IssueDraw(xenos::PrimitiveType primitive_type, uint32_t index_count,
+      |                                                            ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/command_processor.cpp:2271:85: warning: unused parameter 'index_count' [-Wunused-parameter]
+ 2271 | bool D3D12CommandProcessor::IssueDraw(xenos::PrimitiveType primitive_type, uint32_t index_count,
+      |                                                                                     ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/command_processor.cpp:2272:56: warning: unused parameter 'index_buffer_info' [-Wunused-parameter]
+ 2272 |                                       IndexBufferInfo* index_buffer_info,
+      |                                                        ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/command_processor.cpp:2273:44: warning: unused parameter 'major_mode_explicit' [-Wunused-parameter]
+ 2273 |                                       bool major_mode_explicit) {
+      |                                            ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/command_processor.cpp:4923:14: warning: unused parameter 'sample_count_address' [-Wunused-parameter]
+ 4923 |     uint32_t sample_count_address, xenos::xe_gpu_depth_sample_counts* sample_counts) {
+      |              ^
+
+14 warnings generated.
+
+[47/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/d3d12/texture_cache.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/texture_cache.cpp:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:27:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/texture_cache.h:24:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:223:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  223 |     bool base_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:226:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  226 |     bool mips_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/texture_cache.cpp:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:29:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/render_target/cache.h:187:9: warning: field 'draw_extent_estimator_' will be initialized after field 'draw_resolution_scale_x_' [-Wreorder-ctor]
+  187 |         draw_extent_estimator_(register_file, memory),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_x_(draw_resolution_scale_x)
+  188 |         draw_resolution_scale_x_(draw_resolution_scale_x),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_y_(draw_resolution_scale_y)
+  189 |         draw_resolution_scale_y_(draw_resolution_scale_y) {
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_extent_estimator_(register_file, memory)
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/texture_cache.cpp:22:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:36:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:24:89: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   24 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesDefault = {D3D12_HEAP_TYPE_DEFAULT};
+      |                                                                                         ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:25:87: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   25 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesUpload = {D3D12_HEAP_TYPE_UPLOAD};
+      |                                                                                       ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:26:91: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   26 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesReadback = {D3D12_HEAP_TYPE_READBACK};
+      |                                                                                           ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/texture_cache.cpp:1852:28: warning: variable 'host_slice_size_base' is uninitialized when used here [-Wuninitialized]
+
+ 1852 |         uint32_t(is_base ? host_slice_size_base : host_slice_sizes_mips[level]);
+
+      |                            ^~~~~~~~~~~~~~~~~~~~
+
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/texture_cache.cpp:1638:30: note: initialize the variable 'host_slice_size_base' to silence this warning
+
+ 1638 |   UINT64 host_slice_size_base;
+
+      |                              ^
+
+      |                               = 0
+
+7 warnings generated.
+
+[48/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/d3d12/render_target_cache.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/render_target_cache.cpp:26:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:27:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/texture_cache.h:24:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:223:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  223 |     bool base_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:226:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  226 |     bool mips_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/render_target_cache.cpp:26:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:29:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/render_target/cache.h:187:9: warning: field 'draw_extent_estimator_' will be initialized after field 'draw_resolution_scale_x_' [-Wreorder-ctor]
+  187 |         draw_extent_estimator_(register_file, memory),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_x_(draw_resolution_scale_x)
+  188 |         draw_resolution_scale_x_(draw_resolution_scale_x),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_y_(draw_resolution_scale_y)
+  189 |         draw_resolution_scale_y_(draw_resolution_scale_y) {
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_extent_estimator_(register_file, memory)
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/render_target_cache.cpp:26:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:36:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:24:89: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   24 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesDefault = {D3D12_HEAP_TYPE_DEFAULT};
+      |                                                                                         ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:25:87: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   25 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesUpload = {D3D12_HEAP_TYPE_UPLOAD};
+      |                                                                                       ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:26:91: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+
+   26 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesReadback = {D3D12_HEAP_TYPE_READBACK};
+
+      |                                                                                           ^
+
+6 warnings generated.
+
+[49/51] Building CXX object src/graphics/CMakeFiles/rexgpu-xenos.dir/Release/d3d12/pipeline_cache.cpp.obj
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/pipeline_cache.cpp:33:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:27:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/texture_cache.h:24:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:223:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  223 |     bool base_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/texture/cache.h:226:70: warning: unused parameter 'global_lock' [-Wunused-parameter]
+  226 |     bool mips_outdated(const std::unique_lock<std::recursive_mutex>& global_lock) const {
+      |                                                                      ^
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/pipeline_cache.cpp:33:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:29:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/pipeline/render_target/cache.h:187:9: warning: field 'draw_extent_estimator_' will be initialized after field 'draw_resolution_scale_x_' [-Wreorder-ctor]
+  187 |         draw_extent_estimator_(register_file, memory),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_x_(draw_resolution_scale_x)
+  188 |         draw_resolution_scale_x_(draw_resolution_scale_x),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_resolution_scale_y_(draw_resolution_scale_y)
+  189 |         draw_resolution_scale_y_(draw_resolution_scale_y) {
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         draw_extent_estimator_(register_file, memory)
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/pipeline_cache.cpp:33:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/command_processor.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/pipeline_cache.h:29:
+In file included from C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/graphics/d3d12/render_target_cache.h:36:
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:24:89: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   24 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesDefault = {D3D12_HEAP_TYPE_DEFAULT};
+      |                                                                                         ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:25:87: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   25 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesUpload = {D3D12_HEAP_TYPE_UPLOAD};
+      |                                                                                       ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/include\rex/ui/d3d12/d3d12_util.h:26:91: warning: missing field 'CPUPageProperty' initializer [-Wmissing-field-initializers]
+   26 | inline constexpr D3D12_HEAP_PROPERTIES kHeapPropertiesReadback = {D3D12_HEAP_TYPE_READBACK};
+      |                                                                                           ^
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/pipeline_cache.cpp:105:32: warning: moving a temporary object prevents copy elision [-Wpessimizing-move]
+
+  105 |     depth_only_pixel_shader_ = std::move(shader_translator_->CreateDepthOnlyPixelShader());
+
+      |                                ^
+
+C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/src/graphics/d3d12/pipeline_cache.cpp:105:32: note: remove std::move call here
+
+  105 |     depth_only_pixel_shader_ = std::move(shader_translator_->CreateDepthOnlyPixelShader());
+
+      |                                ^~~~~~~~~~                                                ~
+
+7 warnings generated.
+
+[50/51] Linking CXX shared library "C:\Users\minoo\Downloads\PORT NARUTO STORM 2 PS VITA\rexglue\out\win-amd64\Release\rexgpu-xenos.dll"

@@ -15,4 +15,8 @@ $out = py -3 -I (Join-Path $PSScriptRoot 'find_data_only_functions.py') $dump $g
 "ponteiros em dados sem funcao: $out"
 if ($out -notmatch 'sem codigo gerado: 0$') { $fail++ }
 
+$out2 = py -3 -I (Join-Path $PSScriptRoot 'find_code_const_functions.py') $dump $gen | Select-Object -First 1
+"enderecos montados no codigo sem funcao: $out2"
+if ($out2 -notmatch 'sem funcao: 0$') { $fail++ }
+
 if ($fail -eq 0) { "OK" } else { "FALHOU ($fail)"; exit 1 }
