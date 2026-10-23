@@ -132,10 +132,12 @@ Vita físico, em M instruções PPC/s, v0 → melhor variante (`docs/logs/E1_ben
 
 **Clock:** o app leu do sistema, no início, **ARM 333 MHz, barramento 222, GPU 41 MHz**. O usuário informou overclock de 500 MHz. Ou o plugin não estava valendo para este app, ou a leitura veio antes de ele agir. Como os tempos batem com o teste anterior (`int` 1166 µs agora, 1174 µs antes), as duas medidas devem ter sido no mesmo clock, qualquer que seja. [P] Rodar de novo com o overclock confirmado para este app. Se os tempos caírem ~1,5×, o clock era 333 MHz.
 
+**No Storm 2 (2026-10-23):** v3 e v2 travam o jogo numa tela estática do início; v1 funciona (bisseção, bug 21). O manifesto passou a usar **v1** (`ctr/xer/cr/reserved` locais). Verificação: imagem normal (`docs/logs/E4_render_v1`), 240 s sem erro a 29,9 quadros/s (`E4_v1_240s`). Na v3 o executável caía de 61,6 para 52,9 MB.
+
 Leitura:
-- [V] As opções de registros locais dão ~1,2× no código com formato de jogo e nada no ponto flutuante. Vale ligá-las (v4) no Storm 2, mas sozinhas não bastam.
+- [V] As opções de registros locais dão ~1,2× no código com formato de jogo e nada no ponto flutuante. No Storm 2 só a v1 é segura por enquanto (1,16× no `struct`); sozinhas, elas não bastam.
 - [V] `fmadds` custa ~40 ciclos por instrução neste clock, por causa da FMA exata por software (bug 3 / bug 14). Na lógica do jogo isso pesa pouco: no código estático, `fmadds` é 0,28 % e `fmuls` 0,67 %. No **áudio** pesa muito: `sub_82599010` tem 45 `fmadds` e 31 `fmuls` no laço.
-- [H] **Thread principal:** precisa de ~127 M instr/s para 30 quadros/s. A ~71,5 M/s (v4, `struct`), dá **~17 quadros/s** a 333 MHz. Se 500 MHz valerem e a CPU for o gargalo, ~20–25 quadros/s. O barramento e a memória não sobem com o overclock da CPU, então menos de 1,5×.
+- [H] **Thread principal:** precisa de ~127 M instr/s para 30 quadros/s. A ~68 M/s (v1, `struct`; 71,5 com v4), dá **~16–17 quadros/s** a 333 MHz. Se 500 MHz valerem e a CPU for o gargalo, ~20–25 quadros/s. O barramento e a memória não sobem com o overclock da CPU, então menos de 1,5×.
 - [H] **Áudio (`F80000B0`, ~169 M instr/s):** com o laço quente cheio de `fmadds` a ~8 M/s, recompilado ele não cabe nem em vários núcleos do Vita. A reescrita nativa das duas funções quentes (NEON, sem FMA exata, ou com uma FMA mais barata validada contra a original) **é obrigatória**, não opcional.
 
 ## Próximo bloqueio concreto (atualizado)

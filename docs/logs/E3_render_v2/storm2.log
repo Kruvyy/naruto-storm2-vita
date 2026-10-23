@@ -1,0 +1,28 @@
+[2026-10-23 03:08:54.942] [info] [gpu] [t5196] DXGI adapter: AMD Radeon RX 6600 (vendor 0x1002, device 0x73FF)
+[2026-10-23 03:08:55.046] [info] [gpu] [t5196] Direct3D 12 device and OS features:
+* Max GPU virtual address bits per resource: 47
+* Non-zeroed heap creation: yes
+* Pixel-shader-specified stencil reference: yes
+* Programmable sample positions: tier 2
+* Rasterizer-ordered views: yes
+* Resource binding: tier 3
+* Tiled resources: tier 4
+* Unaligned block-compressed textures: yes
+[2026-10-23 03:08:55.157] [info] [sys] [t5196] Guest memory arena mapped: virtual base 0x0000000100000000, physical base 0x0000000200000000
+[2026-10-23 03:08:55.270] [info] [core] [t5196] Function table initialized for module: code=821C0000-82836294, image=82000000-82B30000
+[2026-10-23 03:08:55.379] [warning] [core] [t5196] SDL GameControllerDB: file 'gamecontrollerdb.txt' does not exist.
+[2026-10-23 03:08:55.379] [info] [core] [t5196] SDL input driver initialized successfully
+[2026-10-23 03:08:55.443] [info] [core] [t5196] Initializing shader storage for title 4E4D0819...
+[2026-10-23 03:08:55.448] [info] [gpu] [t13104] Translated 110 shaders from the storage in 3 milliseconds
+[2026-10-23 03:08:55.485] [info] [gpu] [t13104] Created 176 graphics pipelines (not including reading the descriptions) from the storage in 36 milliseconds
+[2026-10-23 03:08:55.500] [info] [gpu] [t17764] SetInterruptCallback(826A5998, 40005080)
+[2026-10-23 03:09:05.485] [info] [gpu] [t13104] swap-diag: swap 300: draws 8099 (completed 7775), resolves 300 (1130496000 bytes, hit frontbuffer yes), destinations: 0B000000+398000 | frontbuffer 0B000000 1280x720 format 6 | swap texture 1280x720 (unscaled 1280x720) dxgi 27 | gamma256 red[0,128,255]=0,462,1023 pwl red base[0,64,127]=0,33024,65472
+[2026-10-23 03:09:05.528] [info] [gpu] [t13104] swap-diag: swap 300 texture content (before gamma): 921600 texels of 4 bytes, lit 0.00%, channel means 0.0000 0.0000 0.0000 0.0000, max 0.0000, dxgi 27
+[2026-10-23 03:09:15.513] [info] [gpu] [t13104] swap-diag: swap 600: draws 8100 (completed 7800), resolves 300 (1130496000 bytes, hit frontbuffer yes), destinations: 0B000000+398000 | frontbuffer 0B000000 1280x720 format 6 | swap texture 1280x720 (unscaled 1280x720) dxgi 27 | gamma256 red[0,128,255]=0,462,1023 pwl red base[0,64,127]=0,33024,65472
+[2026-10-23 03:09:15.580] [info] [gpu] [t13104] swap-diag: swap 600 texture content (before gamma): 921600 texels of 4 bytes, lit 0.00%, channel means 0.0000 0.0000 0.0000 0.0000, max 0.0000, dxgi 27
+[2026-10-23 03:09:25.501] [info] [gpu] [t13104] swap-diag: swap 900: draws 8100 (completed 7800), resolves 300 (1130496000 bytes, hit frontbuffer yes), destinations: 0B000000+398000 | frontbuffer 0B000000 1280x720 format 6 | swap texture 1280x720 (unscaled 1280x720) dxgi 27 | gamma256 red[0,128,255]=0,462,1023 pwl red base[0,64,127]=0,33024,65472
+[2026-10-23 03:09:25.554] [info] [gpu] [t13104] swap-diag: swap 900 texture content (before gamma): 921600 texels of 4 bytes, lit 0.00%, channel means 0.0000 0.0000 0.0000 0.0000, max 0.0000, dxgi 27
+[2026-10-23 03:09:35.495] [info] [gpu] [t13104] swap-diag: swap 1200: draws 8100 (completed 7800), resolves 300 (1130496000 bytes, hit frontbuffer yes), destinations: 0B000000+398000 | frontbuffer 0B000000 1280x720 format 6 | swap texture 1280x720 (unscaled 1280x720) dxgi 27 | gamma256 red[0,128,255]=0,462,1023 pwl red base[0,64,127]=0,33024,65472
+[2026-10-23 03:09:35.548] [info] [gpu] [t13104] swap-diag: swap 1200 texture content (before gamma): 921600 texels of 4 bytes, lit 0.00%, channel means 0.0000 0.0000 0.0000 0.0000, max 0.0000, dxgi 27
+[2026-10-23 03:09:45.489] [info] [gpu] [t13104] swap-diag: swap 1500: draws 8100 (completed 7800), resolves 300 (1130496000 bytes, hit frontbuffer yes), destinations: 0B000000+398000 | frontbuffer 0B000000 1280x720 format 6 | swap texture 1280x720 (unscaled 1280x720) dxgi 27 | gamma256 red[0,128,255]=0,462,1023 pwl red base[0,64,127]=0,33024,65472
+[2026-10-23 03:09:45.542] [info] [gpu] [t13104] swap-diag: swap 1500 texture content (before gamma): 921600 texels of 4 bytes, lit 0.00%, channel means 0.0000 0.0000 0.0000 0.0000, max 0.0000, dxgi 27

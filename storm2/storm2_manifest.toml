@@ -12,6 +12,19 @@ includes = []
 # Profiling build: count executed guest instructions (per thread, summed at
 # each VdSwap with --perf_frame_stats). Turn off for normal builds.
 count_guest_instructions = true
+# Register model "v1" of vita/bench: CTR/XER/CR/reserved live in C++ locals
+# instead of PPCContext. Physical Vita: game-shaped integer code 1.16x faster
+# (struct loop, docs/logs/E1_bench/bench_vita_fisico.log).
+# non_argument_as_local (v2, 1.19x) and non_volatile_as_local (v3, 1.21x) BREAK
+# Storm 2: the game hangs at an early static screen (bisected, docs/bugs.md
+# item 21). Likely causes: __savevmx/__restvmx helpers take their address in
+# r12 (v2), and code shared between functions with live r14-r31 (v3).
+ctr_as_local = true
+xer_as_local = true
+cr_as_local = true
+reserved_as_local = true
+non_argument_as_local = false
+non_volatile_as_local = false
 
 # Register leaf functions reached only through pointers in data sections
 # (140 such addresses found by scripts/find_data_only_functions.py, e.g. vcall

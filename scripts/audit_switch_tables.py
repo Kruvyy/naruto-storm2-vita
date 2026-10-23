@@ -15,7 +15,8 @@ import re
 import sys
 
 FUNC_RE = re.compile(r"^DEFINE_REX_FUNC\((sub_[0-9A-F]+)\)")
-SWITCH_RE = re.compile(r"^\tswitch \(ctx\.r(\d+)\.u32\) \{")
+# ctx.rN, or a local rN when the register-as-local codegen options are on.
+SWITCH_RE = re.compile(r"^\tswitch \((?:ctx\.)?r(\d+)\.u32\) \{")
 CASE_RE = re.compile(r"^\tcase \d+:")
 LOAD_RE = re.compile(r"^\t// (lwzx|lbzx|lhzx) r(\d+),r(\d+),r(\d+)")
 CONST_RE = re.compile(r"^\t// (lis|addi) r(\d+),")
