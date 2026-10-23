@@ -118,9 +118,25 @@ O mesmo código PPC é gerado em 5 variantes de modelo de registros: v0 padrão;
 |---|---|---|
 | PC (clang x64, MMU por software) | 30/30 | `struct` 1,20× (v3); `int` 1,03×; `fp`/`fma`/`vec3` ≤ 1,05× |
 | Vita3K (não representa o console) | 30/30 | `struct` 1,31× (v3); `int` 1,07×; demais ≤ 1,02× |
-| **PS Vita físico** | **pendente**: o usuário vai rodar e mandar `ux0:data/storm2port/bench.log` | |
+| **PS Vita físico** (2026-10-23) | **30/30** (tela verde) | `struct` **1,21×** (v4); `int` 1,05×; `vec3` 1,04×; `fp`/`fma` ~1,00× |
 
-Logs: `docs/logs/E1_bench/`. [H] Com os dados do PC, as opções ajudam o código com chamadas e registros não voláteis (`struct`) e quase nada os laços de ponto flutuante. Se o Vita repetir esse padrão, as opções sozinhas não dão os 2–5× necessários para a lógica do jogo.
+Vita físico, em M instruções PPC/s, v0 → melhor variante (`docs/logs/E1_bench/bench_vita_fisico.log`):
+
+| Laço | v0 | melhor | Comentário |
+|---|---:|---:|---|
+| `int` (sintético) | 63,2 | 66,5 | igual à medida anterior (62,8) |
+| `struct` (formato de lógica de jogo) | 58,9 | **71,5** | o melhor representante da thread principal |
+| `fp` (`fmuls`/`fadds`) | 23,3 | 23,3 | |
+| `vec3` (matriz com `fmadds`) | 8,3 | 8,6 | **~7× mais lento que inteiros** |
+| `fma` | 7,7 | 7,8 | |
+
+**Clock:** o app leu do sistema, no início, **ARM 333 MHz, barramento 222, GPU 41 MHz**. O usuário informou overclock de 500 MHz. Ou o plugin não estava valendo para este app, ou a leitura veio antes de ele agir. Como os tempos batem com o teste anterior (`int` 1166 µs agora, 1174 µs antes), as duas medidas devem ter sido no mesmo clock, qualquer que seja. [P] Rodar de novo com o overclock confirmado para este app. Se os tempos caírem ~1,5×, o clock era 333 MHz.
+
+Leitura:
+- [V] As opções de registros locais dão ~1,2× no código com formato de jogo e nada no ponto flutuante. Vale ligá-las (v4) no Storm 2, mas sozinhas não bastam.
+- [V] `fmadds` custa ~40 ciclos por instrução neste clock, por causa da FMA exata por software (bug 3 / bug 14). Na lógica do jogo isso pesa pouco: no código estático, `fmadds` é 0,28 % e `fmuls` 0,67 %. No **áudio** pesa muito: `sub_82599010` tem 45 `fmadds` e 31 `fmuls` no laço.
+- [H] **Thread principal:** precisa de ~127 M instr/s para 30 quadros/s. A ~71,5 M/s (v4, `struct`), dá **~17 quadros/s** a 333 MHz. Se 500 MHz valerem e a CPU for o gargalo, ~20–25 quadros/s. O barramento e a memória não sobem com o overclock da CPU, então menos de 1,5×.
+- [H] **Áudio (`F80000B0`, ~169 M instr/s):** com o laço quente cheio de `fmadds` a ~8 M/s, recompilado ele não cabe nem em vários núcleos do Vita. A reescrita nativa das duas funções quentes (NEON, sem FMA exata, ou com uma FMA mais barata validada contra a original) **é obrigatória**, não opcional.
 
 ## Próximo bloqueio concreto (atualizado)
 A batalha foi medida (acima). Decisão pendente com o usuário. O portão 2 continua desfavorável para 30 quadros/s. A pergunta agora é se ganhos de 2–3× são possíveis. Experimentos mais baratos que respondem isso:

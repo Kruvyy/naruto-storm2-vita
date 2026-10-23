@@ -1,0 +1,14 @@
+ReXGlue codegen register-model benchmark - PS Vita (ARMv7, 15.2.0)
+clocks reported by the OS: ARM 333 MHz, bus 222 MHz, GPU 41 MHz (an overclock plugin may change these during the run)
+variant v0: base: every register in PPCContext (current Storm 2 build)
+variant v1: ctr/xer/cr/reserved as locals
+variant v2: v1 + r0/r2/r11/r12/f0/v32-63 as locals
+variant v3: v2 + non-volatile r14-31/f14-31/v14-31/v64-127 as locals
+variant v4: v3 + skip_lr + skip_msr
+CHECK passed=30 failed=0 total=30
+BENCH best of 3 sweeps; us per call (M guest instr/s) [speedup vs v0]
+BENCH int     | v0    1166.0 us (  63.2 M/s) [1.00x] | v1    1117.0 us (  66.0 M/s) [1.04x] | v2    1113.0 us (  66.2 M/s) [1.05x] | v3    1116.6 us (  66.0 M/s) [1.04x] | v4    1108.1 us (  66.5 M/s) [1.05x]
+BENCH fp      | v0     703.0 us (  23.3 M/s) [1.00x] | v1     708.7 us (  23.1 M/s) [0.99x] | v2     714.4 us (  22.9 M/s) [0.98x] | v3     704.5 us (  23.3 M/s) [1.00x] | v4     704.3 us (  23.3 M/s) [1.00x]
+BENCH fma     | v0    1600.4 us (   7.7 M/s) [1.00x] | v1    1593.3 us (   7.7 M/s) [1.00x] | v2    1589.5 us (   7.7 M/s) [1.01x] | v3    1580.8 us (   7.8 M/s) [1.01x] | v4    1590.4 us (   7.7 M/s) [1.01x]
+BENCH struct  | v0    2297.3 us (  58.9 M/s) [1.00x] | v1    1978.4 us (  68.4 M/s) [1.16x] | v2    1930.6 us (  70.1 M/s) [1.19x] | v3    1902.3 us (  71.1 M/s) [1.21x] | v4    1892.1 us (  71.5 M/s) [1.21x]
+BENCH vec3    | v0    1254.8 us (   8.3 M/s) [1.00x] | v1    1252.4 us (   8.3 M/s) [1.00x] | v2    1233.8 us (   8.4 M/s) [1.02x] | v3    1207.5 us (   8.6 M/s) [1.04x] | v4    1211.0 us (   8.6 M/s) [1.04x]
