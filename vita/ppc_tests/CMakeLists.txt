@@ -52,7 +52,9 @@ target_include_directories(ppc_tests_vita BEFORE PRIVATE
   ${REXGLUE_DIR}/include
   ${REXGLUE_DIR}/thirdparty/simde)
 
-target_compile_definitions(ppc_tests_vita PRIVATE REX_GUEST_SOFT_MMU REX_GUEST_SPLIT_U64)
+# The harness builds its own page table of 64 KiB pages (src/harness.cpp).
+target_compile_definitions(ppc_tests_vita PRIVATE REX_GUEST_SOFT_MMU REX_GUEST_SPLIT_U64
+                                                  REX_GUEST_PAGE_SHIFT=16)
 # -fwrapv: guest integer arithmetic wraps like the PPC; avoids signed-overflow UB.
 target_compile_options(ppc_tests_vita PRIVATE -fwrapv -Wno-unused-parameter -Wno-unused-variable)
 

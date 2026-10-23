@@ -1,6 +1,6 @@
 # Estado dos marcos
 
-Atualizado em 2026-10-22. Legenda: **feito** = verificado por execução; **compilado** = só compilou; **pendente**; **bloqueado** (com o motivo).
+Atualizado em 2026-10-23. Legenda: **feito** = verificado por execução; **compilado** = só compilou; **pendente**; **bloqueado** (com o motivo).
 
 | Marco | Estado | Evidência / falta |
 |---|---|---|
@@ -10,11 +10,12 @@ Atualizado em 2026-10-22. Legenda: **feito** = verificado por execução; **comp
 | D — Inicialização mínima do Storm 2 | **feito no host (x64)**, incluindo batalha medida (695 s sem travar, depois da correção do bug 20) | codegen completo (0 `REX_FATAL`, 0 não implementadas). Build x64 roda 300 s sem travar e sem fechar sozinho. Tabela de imports (`docs/imports.md`: 229 imports, 115 chamados, nenhum STUB chamado). Tela preta corrigida (bug 19): com as opções padrão a imagem aparece do logo da Dolby até o carregamento de "Batalha 1: Naruto vs Sasuke" (`docs/logs/D27_render_fix`; regressão `scripts/check_storm2_render.ps1`). Instruções por quadro e memória medidas **fora de batalha** (abaixo) |
 | E — Código e runtime no Vita | **passo 1 feito**: o código do jogo compila para ARM32 (28,8 MiB) | runtime do Vita não começado |
 | E–H | **opção B escolhida** (2026-10-23): runtime mínimo e jogo rodando no Vita sem gráficos | relatório: `docs/RELATORIO_VIABILIDADE.md`; plano e projeto da memória: **`docs/PLANO_RUNTIME_VITA.md`** (etapas B1–B5) |
+| B1/B1b/B2 (opção B) | **B1 feito no PC** (GPU nula); **B1b implementado** (gravação/reprodução de entrada; falta a sessão gravada); **B2 feito no PC** (memória por software) | B2: o Storm 2 com MMU por software e GPU nula roda igual ao arranjo plano por 120 s (30,0 quadros/s, mesmos desenhos/resolves, mesma memória, 0 escritas em memória liberada). Pede 483 MiB do host sem limites e 394 MiB com o bloco de 272 MiB limitado a 184 MiB. Testes `tests/soft_mmu` 12/12. Detalhes em `docs/PLANO_RUNTIME_VITA.md` |
 
 ## Cadeia ARM32 — o que foi preciso mudar no ReXGlue
 1. `platform.h`: `#error` para 32 bits → `REX_ARCH_ARM32`; Vita → `REX_PLATFORM_VITA`.
 2. `fpscr.h`: FPSCR do VFP; tabela host→convidado por plataforma (corrige a troca +∞/−∞ no ARM).
-3. Memória: `REX_GUEST_SOFT_MMU` (tabela de páginas de 64 KB) e `REX_GUEST_SPLIT_U64` (o LDRD do ARMv7 falha em endereço desalinhado).
+3. Memória: `REX_GUEST_SOFT_MMU` (tabela de páginas: 64 KiB nos harnesses `vita/ppc_tests` e `vita/bench`, 4 KiB no runtime desde a B2) e `REX_GUEST_SPLIT_U64` (o LDRD do ARMv7 falha em endereço desalinhado).
 4. `mulhd`/`mulhdu` sem `__int128`.
 5. `vsl` sem deslocamento imediato no NEON.
 6. Atributos `alias`/`weak` depois de `extern "C"`: o GCC os ignorava e nenhuma função gerada linkava.

@@ -44,7 +44,9 @@ foreach(v ${BENCH_VARIANTS})
     ${BENCH_GEN_DIR}/${v}
     ${REXGLUE_DIR}/include
     ${REXGLUE_DIR}/thirdparty/simde)
-  target_compile_definitions(bench_${v} PRIVATE REX_GUEST_SOFT_MMU REX_GUEST_SPLIT_U64)
+  # 64 KiB pages: the harness builds its own page table (src/bench_main.cpp).
+  target_compile_definitions(bench_${v} PRIVATE REX_GUEST_SOFT_MMU REX_GUEST_SPLIT_U64
+                                                REX_GUEST_PAGE_SHIFT=16)
   target_compile_options(bench_${v} PRIVATE -fwrapv -Wno-unused-parameter -Wno-unused-variable)
   if(NOT REX_VITA_BUILD)
     target_compile_options(bench_${v} PRIVATE -msse4.1 -mssse3)
@@ -52,7 +54,8 @@ foreach(v ${BENCH_VARIANTS})
   target_sources(bench_vita PRIVATE $<TARGET_OBJECTS:bench_${v}>)
 endforeach()
 
-target_compile_definitions(bench_vita PRIVATE REX_GUEST_SOFT_MMU REX_GUEST_SPLIT_U64)
+target_compile_definitions(bench_vita PRIVATE REX_GUEST_SOFT_MMU REX_GUEST_SPLIT_U64
+                                              REX_GUEST_PAGE_SHIFT=16)
 target_compile_options(bench_vita PRIVATE -fwrapv -Wno-unused-parameter -Wno-unused-variable)
 
 if(REX_VITA_BUILD)

@@ -83,6 +83,15 @@
             "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
         },
         {
+            "name": "win-amd64-softmmu",
+            "displayName": "Windows AMD64 Release, software MMU (run with --gpu_backend=null)",
+            "inherits": "windows-base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_PREFIX_PATH": "${sourceDir}/../rexglue/out/install/win-amd64-softmmu"
+            }
+        },
+        {
             "name": "win-amd64-release",
             "displayName": "Windows AMD64 Release",
             "inherits": "windows-base",

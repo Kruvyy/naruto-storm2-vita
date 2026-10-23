@@ -1,0 +1,33 @@
+Internal ctest changing into directory: C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64-softmmu
+Test project C:/Users/minoo/Downloads/PORT NARUTO STORM 2 PS VITA/rexglue/out/build/win-amd64-softmmu
+      Start  1: soft_mmu.The 0xE0000000 view is shifted by 4 KiB
+ 1/12 Test  #1: soft_mmu.The 0xE0000000 view is shifted by 4 KiB ...........................   Passed    0.03 sec
+      Start  2: soft_mmu.0x9xxxxxxx aliases 0x8xxxxxxx
+ 2/12 Test  #2: soft_mmu.0x9xxxxxxx aliases 0x8xxxxxxx .....................................   Passed    0.03 sec
+      Start  3: soft_mmu.A virtual allocation is one contiguous host block
+ 3/12 Test  #3: soft_mmu.A virtual allocation is one contiguous host block .................   Passed    0.03 sec
+      Start  4: soft_mmu.A region reserved without access is backed when first committed
+ 4/12 Test  #4: soft_mmu.A region reserved without access is backed when first committed ...   Passed    0.03 sec
+      Start  5: soft_mmu.Released memory reads zero and writes are reported, not kept
+ 5/12 Test  #5: soft_mmu.Released memory reads zero and writes are reported, not kept ......   Passed    0.03 sec
+      Start  6: soft_mmu.Zero, Fill and Copy work across separate blocks
+ 6/12 Test  #6: soft_mmu.Zero, Fill and Copy work across separate blocks ...................   Passed    0.03 sec
+      Start  7: soft_mmu.Views of physical memory share the physical block
+ 7/12 Test  #7: soft_mmu.Views of physical memory share the physical block .................   Passed    0.03 sec
+      Start  8: soft_mmu.Protect switches a page between its block and the fault page
+ 8/12 Test  #8: soft_mmu.Protect switches a page between its block and the fault page ......   Passed    0.03 sec
+      Start  9: soft_mmu.Unreserved virtual pages fault
+ 9/12 Test  #9: soft_mmu.Unreserved virtual pages fault ....................................   Passed    0.03 sec
+      Start 10: soft_mmu.A capped region backs only its limit
+10/12 Test #10: soft_mmu.A capped region backs only its limit ..............................   Passed    0.03 sec
+      Start 11: soft_mmu.Guest code base is the page table
+11/12 Test #11: soft_mmu.Guest code base is the page table .................................   Passed    0.03 sec
+      Start 12: soft_mmu.The dispatch table is a host array indexed per code word
+12/12 Test #12: soft_mmu.The dispatch table is a host array indexed per code word ..........   Passed    0.03 sec
+
+100% tests passed, 0 tests failed out of 12
+
+Label Time Summary:
+soft_mmu    =   0.35 sec*proc (12 tests)
+
+Total Test time (real) =   0.37 sec

@@ -6,14 +6,19 @@
 #   .\scripts\run_storm2_stats.ps1 -Nome D17_run3 -Segundos 240   (encerra sozinho)
 #   .\scripts\run_storm2_stats.ps1 -Nome batalha1 -Segundos 0     (espera voce fechar a janela)
 #   .\scripts\run_storm2_stats.ps1 -Nome batalha1 -Segundos 0 -Extra '--mnk_mode=true'  (teclado)
+#   .\scripts\run_storm2_stats.ps1 -Nome E12 -Build softmmu -Extra '--gpu_backend=null'
+#     (memoria por software, como no Vita; so funciona com a GPU nula)
 param(
   [Parameter(Mandatory)] [string] $Nome,
   [int] $Segundos = 240,
-  [string[]] $Extra = @()
+  [string[]] $Extra = @(),
+  [ValidateSet('release', 'softmmu')] [string] $Build = 'release'
 )
 $root = Split-Path -Parent $PSScriptRoot
-$bd = Join-Path $root 'storm2\out\build\win-amd64-release'
-$sdkbin = Join-Path $root 'rexglue\out\install\win-amd64\bin'
+$bd = Join-Path $root "storm2\out\build\win-amd64-$Build"
+$sdk = 'win-amd64'
+if ($Build -eq 'softmmu') { $sdk = 'win-amd64-softmmu' }
+$sdkbin = Join-Path $root "rexglue\out\install\$sdk\bin"
 Copy-Item (Join-Path $sdkbin 'rexruntime.dll'), (Join-Path $sdkbin 'rexgpu-xenos.dll') $bd -Force
 $run = (New-Item -ItemType Directory -Force (Join-Path $root "docs\logs\$Nome")).FullName
 $exe = Join-Path $bd 'storm2.exe'

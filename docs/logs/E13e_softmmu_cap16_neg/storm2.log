@@ -1,0 +1,20 @@
+[2026-10-23 08:08:21.730] [info] [gpu] [t2512] null GPU backend: guest command stream runs, nothing is rendered
+[2026-10-23 08:08:21.759] [info] [sys] [t2512] Guest memory: software MMU (4 KiB page table at 0x00000225D65A0000, 9.0 MiB of tables); each guest region gets its own host block
+[2026-10-23 08:08:21.849] [info] [gpu] [t2512] null GPU backend: guest command stream runs, nothing is rendered
+[2026-10-23 08:08:21.852] [info] [core] [t2512] Function table initialized for module: code=821C0000-82836294, image=82000000-82B30000
+[2026-10-23 08:08:22.016] [warning] [core] [t2512] SDL GameControllerDB: file 'gamecontrollerdb.txt' does not exist.
+[2026-10-23 08:08:22.016] [info] [core] [t2512] SDL input driver initialized successfully
+[2026-10-23 08:08:22.063] [info] [core] [t2512] Initializing shader storage for title 4E4D0819...
+[2026-10-23 08:08:22.075] [warning] [sys] [t23648] Software MMU: physical region 0B000000 (272.0 MiB) limited to 16.0 MiB of real memory
+[2026-10-23 08:08:22.078] [info] [gpu] [t23648] SetInterruptCallback(826A5998, 40005080)
+[2026-10-23 08:08:22.085] [critical] [core] [t23648] [FATAL] Software MMU: the guest wrote past the 16.0 MiB limit of physical region 0B000000 (272.0 MiB) at frame 1 (guard byte +0x1); raise it with --soft_mmu_caps
+[2026-10-23 08:10:08.639] [info] [gpu] [t8216] null GPU backend: guest command stream runs, nothing is rendered
+[2026-10-23 08:10:08.671] [info] [sys] [t8216] Guest memory: software MMU (4 KiB page table at 0x00000228271A0000, 9.0 MiB of tables); each guest region gets its own host block
+[2026-10-23 08:10:08.755] [info] [gpu] [t8216] null GPU backend: guest command stream runs, nothing is rendered
+[2026-10-23 08:10:08.758] [info] [core] [t8216] Function table initialized for module: code=821C0000-82836294, image=82000000-82B30000
+[2026-10-23 08:10:08.928] [warning] [core] [t8216] SDL GameControllerDB: file 'gamecontrollerdb.txt' does not exist.
+[2026-10-23 08:10:08.928] [info] [core] [t8216] SDL input driver initialized successfully
+[2026-10-23 08:10:08.973] [info] [core] [t8216] Initializing shader storage for title 4E4D0819...
+[2026-10-23 08:10:08.980] [warning] [sys] [t23576] Software MMU: physical memory at physical address 0B000000 (272.0 MiB) limited to 16.0 MiB of real memory
+[2026-10-23 08:10:08.983] [info] [gpu] [t23576] SetInterruptCallback(826A5998, 40005080)
+[2026-10-23 08:10:08.991] [critical] [core] [t23576] [FATAL] Software MMU: the guest wrote past the 16.0 MiB limit of physical region AB000000 (272.0 MiB) before frame 1 (guard byte +0x1); raise it with --soft_mmu_caps=0xAB000000=MiB

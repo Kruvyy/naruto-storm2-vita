@@ -17,11 +17,19 @@ Data: 2026-10-23. Objetivo (de `docs/RELATORIO_VIABILIDADE.md`, opção B): roda
 
    O Vita não tem paginação sob demanda para apps: um bloco ocupa RAM física ao ser alocado. Não dá para entregar os ~435 MiB reservados, mas dá para entregar **só o prefixo usado** dos dois blocos grandes.
 
-## Projeto da memória (MMU por software, páginas de 64 KiB)
-- O código gerado já usa a tabela `base[endereço >> 16]` (`REX_GUEST_SOFT_MMU`, validada com 1588/1588 no Vita).
-- **Cada alocação do convidado ganha um bloco contíguo de memória do host.** Alocações arredondadas e alinhadas a 64 KiB no runtime do Vita garantem que duas alocações nunca dividam uma página da tabela. Assim, todo acesso do runtime dentro de uma alocação continua contíguo no host, e as centenas de `TranslateVirtual` do kernel não mudam.
-- **Visões que repetem a memória física** (`0xA0000000`/`0xC0000000`/`0xE0000000`): várias entradas da tabela apontam para o mesmo bloco. O deslocamento de 4 KiB da visão `0xE0000000` vira `+0x1000` na entrada, com 4 KiB de folga no fim de cada bloco físico.
-- **Blocos grandes:** memória real só até um limite por bloco, e o resto aponta para uma **página-guarda**. Leituras ali dão zero, correto para memória reservada e não tocada. Uma escrita suja a guarda, e a verificação a cada quadro **para o programa com mensagem** (bloco e limite), sem corrupção silenciosa. Os limites iniciais saem das medidas de batalha, com margem.
+## Projeto da memória (MMU por software, páginas de 4 KiB)
+Implementado no ReXGlue como `REXGLUE_SOFT_MMU` (opção de CMake; preset `win-amd64-softmmu`). Desenho final, que substitui o de 64 KiB:
+- **Tabela de 4 KiB** (`base[endereço >> 12]`, 1M entradas). Páginas de 64 KiB não servem: a visão `0xE0000000` enxerga a memória física deslocada de `0x1000` (`E0000000 + x` → físico `x + 0x1000`), o que uma entrada de 64 KiB não representa. O template do gerador agora usa 12 por padrão; os harnesses `vita/ppc_tests` e `vita/bench` definem `REX_GUEST_PAGE_SHIFT=16`, porque montam a própria tabela. Custo da tabela: 4 MiB no Vita (8 MiB no PC), mais 0,5 MiB da tabela física.
+- **Cada região reservada ganha um bloco contíguo do host**, nos quatro heaps virtuais e no heap físico. Todo acesso que fica dentro de uma alocação do convidado fica dentro de um bloco, e os `TranslateVirtual` do kernel não mudam. Regiões reservadas sem acesso só ganham memória quando são usadas (comprometidas ou liberadas para leitura).
+- **Visões da memória física** (`0xA0000000`, `0xC0000000`, `0xE0000000` e `0x7F000000`, que são os primeiros 16 MiB) apontam para os blocos físicos. `0x9xxxxxxx` repete `0x8xxxxxxx`, como no arranjo plano.
+- **Proteção:** páginas sem acesso apontam para uma página que falha no PC. Somente leitura não é imposto.
+- **Páginas-guarda:**
+  - memória liberada e memória física sem alocação apontam para uma página de zeros compartilhada; uma escrita ali é registrada no log;
+  - cada região com limite (`--soft_mmu_caps=0xENDEREÇO=MiB,...`) tem a própria guarda, e uma escrita além do limite **para o programa com mensagem** (região e limite), sem corrupção silenciosa.
+  - As guardas são conferidas a cada `VdSwap`.
+- **Tabela de funções:** um vetor do host com um ponteiro por palavra de código, publicado ao código gerado por `rex_guest_func_table`. O runtime grava o endereço por `PPCImageInfo::guest_func_table_slot` e recusa a execução se código e runtime usarem modelos de memória diferentes. Limitação: um módulo recompilado por processo. Custo: (código + reserva de thunks) bytes no Vita, ~6,5 MiB no Storm 2.
+- **MMIO:** o acesso reconhecido pelo gerador passa por `REX_MM_*`. O resto cai numa janela sem acesso, que o tratador de falhas do PC completa e registra no log ("would crash" no Vita).
+- **Fora do modo por software:** D3D12/Vulkan (precisam da memória física num intervalo só do host e de proteção de escrita), savestates (`Memory::Save/Restore`) e testes do ReXGlue.
 - [H] Orçamento: ~43 MiB de blocos pequenos + prefixo do físico grande (~180 MiB em batalha, a medir) + ~32 MiB do virtual + 48 MiB do físico de 16 MB ≈ **300 MiB**, mais 35 MiB de código e tabelas. Passa dos ~256 MB padrão do Vita. [P] Verificar no console quanta RAM o app consegue com o modo de memória estendida (`ATTRIBUTE2` no `param.sfo`, usado por ports conhecidos), medindo com `sceKernelGetFreeMemorySize`. Se não bastar, a medida de CPU continua possível com um limite menor, até a página-guarda acusar.
 
 ## Etapas
@@ -40,6 +48,45 @@ Cada etapa só termina com a verificação indicada. Nada é dado como feito sem
   - `rex::graphics::null` (`include/rex/graphics/null/null_gpu.h`) e `--gpu_backend=null` (`--gpu_backend` é novo no `ReXApp`). Sem renderizar, o Storm 2 roda a 29,9 quadros/s, com ~121 desenhos e 31 resolves por quadro, os mesmos números do D3D12, e 25,4 M instruções por quadro (mediana; 30,8 M com D3D12, por causa de menos espera ativa pela GPU). Log: `docs/logs/E10_nullgpu_120s`.
   - **Falta** chegar a uma batalha sem imagem.
 - **B1b (novo, necessário): gravação e reprodução de entrada.** Sem imagem, ninguém navega pelos menus, nem no PC nem no Vita. O runtime vai gravar o controle quadro a quadro numa sessão com imagem (`--input_record`) e reproduzir sem gráficos (`--input_replay`). Verificação: com D3D12 e capturas de tela, a reprodução chega à batalha; depois a mesma coisa com a GPU nula, conferindo pelo salto de memória e de custo da batalha. No Vita, a fase de carregamento leva outro número de quadros, então o roteiro precisa de folgas largas entre os passos de menu.
+- **B2 — feito no PC (2026-10-23).** Memória por software no runtime (`REXGLUE_SOFT_MMU`, desenho acima), validada com a GPU nula.
+  - **Builds:**
+    - ReXGlue: preset `win-amd64-softmmu`, saída `rexglue/out/win-amd64-softmmu`, instalação `rexglue/out/install/win-amd64-softmmu`;
+    - Storm 2: preset `win-amd64-softmmu`;
+    - para rodar: `.\scripts\run_storm2_stats.ps1 -Build softmmu -Extra '--gpu_backend=null'`. O mesmo `-Build` existe em `capture_storm2.ps1` e `replay_session.ps1`.
+    - O runtime exporta `REX_GUEST_SOFT_MMU` para quem o usa, e `Runtime::Setup` recusa código gerado no outro modelo de memória.
+  - **Testes:** [V]
+    - novos `tests/soft_mmu` (12 casos: tabela = `GuestPtr`, bloco contíguo, página sem acesso, visões A0/C0/E0, deslocamento do E0, alias 0x9/0x8, `Protect`, reserva sem acesso, `Zero`/`Fill`/`Copy` entre blocos, memória liberada, limite com guarda, tabela de funções): 12/12 em 10 rodadas seguidas (`docs/logs/E12_soft_mmu_tests.log`);
+    - suíte normal: 3410/3411 (`docs/logs/E11_ctest_flat.log`; a falha é o bug 6, antiga). Os 1591 testes PPC no modo de tabela agora rodam com páginas de 4 KiB.
+  - **Storm 2, 120 s, GPU nula, mesmo binário de código** (`docs/logs/E13a_flat_null_120s` × `E13b_softmmu_null_120s`): [V]
+
+    | | arranjo plano | MMU por software |
+    |---|---:|---:|
+    | quadros/s | 30,0 | 30,0 |
+    | instruções por quadro (mediana) | 25,6 M | 25,2 M |
+    | desenhos / resolves a cada 600 quadros (depois do carregamento) | 72.600 / 18.600 | 72.600 / 18.600 |
+    | memória do convidado comprometida (pico) | 479,9 MiB | 479,9 MiB |
+    | erros no log | 115 × `NtQueryInformationFile` não implementado | os mesmos 115 |
+    | escritas em memória liberada / MMIO por falha de página | — | 0 / 0 |
+
+  - **Binários finais:** [V]
+    - `E13f_softmmu_final_120s` repete a tabela: 30,0 quadros/s, 25,1 M instruções por quadro, 0 escritas em memória liberada.
+    - A regressão de imagem do build normal com D3D12 (`check_storm2_render.ps1`, `E13g_render_flat`) passa. O interpretador de shader, usado por esse caminho, agora lê a memória por `TranslatePhysical`.
+  - **Memória do host com a MMU por software** (`E13c`): [V]
+    - 483 MiB em 569 blocos virtuais e 36 físicos, ou seja, toda a memória comprometida.
+    - Os 3 blocos grandes somam 390 MiB: físico `0xAB000000` 272 MiB, virtual `0x40F40000` 70 MiB e físico `0xDC000000` 48 MiB.
+    - Em seguida vêm `0xC0000000` (16 MiB), a imagem XEX (11,2 MiB) e blocos de 8 MiB ou menos.
+  - **Limites:** [V]
+    - `--soft_mmu_caps=0xAB000000=184` roda a tela de título com 394 MiB (`E13d`).
+    - Com `0xAB000000=16` o jogo para no quadro 1 com a mensagem "wrote past the 16.0 MiB limit of physical region AB000000 … raise it with --soft_mmu_caps=0xAB000000=MiB" (`E13e`; o log tem duas rodadas, a segunda com o texto final).
+  - **O que isso diz sobre o Vita:**
+    - [V] O mecanismo funciona e nenhum acesso do jogo ou do runtime atravessa blocos nessas execuções.
+    - [H] O limite por prefixo só reduz o bloco físico de 272 MiB. O virtual de 70 MiB tem um trecho usado no fim (`E7`), e o de 48 MiB é espalhado.
+    - Conta de memória no Vita:
+      - [V] 394 MiB de blocos com o limite de 184 MiB (medido na tela de título; os blocos fora dos 3 grandes somam ~66 MiB);
+      - [H] mais ~40 MiB de código e tabelas no Vita (28,8 de código, 4,5 das tabelas de páginas, 6,6 da tabela de funções);
+      - total ≈ **434 MiB**, se a batalha couber no mesmo limite.
+    - Isso continua acima dos ~256 MB padrão. Reduzir exige limites de dois trechos (começo e fim) no bloco de 70 MiB, ou memória do convidado menor no próprio jogo. [P] Medir no console quanta RAM o app consegue (B3/B4).
+  - **Fora da validação:** batalha (espera a gravação de entrada da B1b), D3D12 com MMU por software (recusado de propósito) e desempenho da tradução no PC (o jogo é limitado a 30 quadros/s; o custo no Vita já foi medido no benchmark).
 - **Armadilha de build achada:** `rexglue codegen` reescreve `<pasta do manifesto>/generated/rexglue.cmake`. Com o manifesto do Vita em `storm2/`, o build do PC passou a compilar a cópia do Vita sem aviso. O manifesto do Vita agora fica em `storm2/vita/`, com saída em `storm2/vita/generated/`.
 
 Fora desta fase, documentado como pendente: renderização (GXM), áudio (reescrita NEON e XMA), tela SIM/NÃO (pode entrar em B4 se custar pouco).
