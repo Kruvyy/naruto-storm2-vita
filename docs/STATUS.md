@@ -91,6 +91,26 @@ Leitura:
 - [H] No Vita, a 23–63 M instr/s por núcleo (portão 2), `F80000B0` sozinha limitaria o jogo a **~4–11 quadros/s**, mesmo com cada thread pesada num núcleo próprio. Isso é antes do custo da GPU emulada no Vita e antes da sobrecarga de sincronização do kernel emulado. Antes da investigação, a estimativa era de 15–35× abaixo do necessário; agora é **~3–7× abaixo** para a thread mais pesada.
 - [H] O vaivém de espera e sinal custa quase um núcleo inteiro do PC em chamadas ao sistema. No Vita, com as chamadas mais caras, ele roubaria tempo das outras threads. Alavanca: tratar em alto nível a espera do D3D pelo fence (`sub_826A5DC0`), trocando-a por uma espera bloqueante no evento que o processador de comandos sinaliza ao gravar o fence. Isso altera lógica original e só se justifica com a medida de desempenho.
 
+## Onde está o trabalho real em batalha (`docs/logs/batalha3`)
+Sessão de 185 s com o usuário jogando. `scripts/profile_session.ps1` capturou a janela e amostrou `F80000B0` e a thread principal por 8 s em cada ciclo. As fases foram conferidas nas capturas (`storm2/captures/batalha3`, fora do git): ciclo 2 título; 3 seleção de personagem; 4 carregamento; **5–7 batalha** (Kakashi vs Neji). Soma dos ciclos com `scripts/aggregate_profiles.py`:
+
+| Thread (batalha, ciclos 5–7) | CPU no PC | Concentração do tempo no código do jogo |
+|---|---:|---|
+| `F80000B0` | 20–24 % | **2 funções = 80 %** (`sub_82599010` 51,5 %, `sub_8281E500` 28,9 %); 10 funções = 90 %. Igual nos menus (ciclos 1–3: 49 % + 32 %) |
+| principal | 20–28 % | **espalhada**: 44 funções = 50 %, 194 = 80 %, 351 = 90 % (de 586 vistas) |
+
+O que cada função faz, pela desmontagem:
+- `sub_82599010`: 1014 instruções, um laço principal (`bdnz`), dominado por ponto flutuante simples (`lfs` 129, `stfs` 62, `fmadds` 45, `fmuls` 31).
+- `sub_8281E500`: 1030 instruções de inteiros (`rlwinm`, `add`, `srawi`), com 96 `dcbt` (prefetch de cache). Tem cara de decodificador.
+
+[H, evidência forte] `F80000B0` é o **motor de áudio**. Ela executa dezenas de funções em `0x82570000–0x8258E000`, a mesma região de `sub_825702B8`/`sub_825703C8` (`XMACreateContext`/`XMAReleaseContext`) e de `sub_8258A508` (`XAudioSubmitRenderDriverFrame`). O custo é constante em todas as fases e a thread passa ~80 % do tempo bloqueada esperando o próximo bloco. A thread principal quase não toca essa região.
+
+Leitura para o Vita:
+- [H] **Áudio:** o trabalho está em 2 funções. Reescrevê-las em código nativo com NEON (mixagem em float, decodificador), ou tratar o áudio em alto nível, pode reduzir várias vezes a thread hoje mais pesada. A troca precisa de teste de equivalência contra a função recompilada (mesma entrada, mesma saída).
+- [H] **Lógica do jogo (thread principal):** custo espalhado em centenas de funções, então reescrever à mão não resolve. A ~127 M instr/s (média da execução) e 23–63 M instr/s por núcleo do Vita, ela sozinha limita o jogo a **~5–15 quadros/s**. Chegar a 30 exige 2–5× de ganho geral do código recompilado no ARM32, e isso é o que precisa ser medido agora, com o benchmark e as opções do codegen no Vita físico.
+- [H] **Renderização:** a espera pela GPU (`F8000068`) pode virar uma espera bloqueante, liberando um núcleo.
+- [P] **GPU no Vita:** sem renderizador GXM, o custo é desconhecido. Renderizar em 960×544 (57 % dos pixels de 1280×720) alivia a GPU, não a CPU.
+
 ## Próximo bloqueio concreto (atualizado)
 A batalha foi medida (acima). Decisão pendente com o usuário. O portão 2 continua desfavorável para 30 quadros/s. A pergunta agora é se ganhos de 2–3× são possíveis. Experimentos mais baratos que respondem isso:
 1. Rodar no Vita físico o benchmark com as opções do codegen que mantêm registros em variáveis locais (`non_volatile_as_local`, `cr_as_local` etc.) e comparar com os 62,8 / 23,0 / 7,6 M instr/s atuais.

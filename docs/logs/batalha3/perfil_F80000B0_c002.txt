@@ -1,0 +1,22 @@
+﻿funcoes mapeadas pela tabela de despacho: 30620 de 30620
+thread nativa 9188 (F80000B0): 4499 amostras em 8,0 s
+CPU da thread: 22.0% de um nucleo (kernel 5.5%)
+amostras: jogo 18.3% | runtime 1.1% | windows 80.5% | outro 0.2%
+ 79.64%     3583  ntdll.dll!NtWaitForMultipleObjects
+  9.62%      433  sub_82599010
+  5.40%      243  sub_8281E500
+  0.82%       37  rexruntime.dll!??$HostToGuestFunction@$MP6AXV?$MappedPtr@X@rex@@@Z1?SwitchToFiber_entry@crt@kernel@2@YAX0@Z@ppc@rex@@YAXAEAUPPCContext@@PEAE@Z
+  0.51%       23  sub_82596178
+  0.40%       18  sub_8258C708
+  0.38%       17  sub_82595978
+  0.33%       15  ntdll.dll!NtSetEvent
+  0.33%       15  sub_8258DFD8
+  0.20%        9  ntdll.dll!NtWaitForAlertByThreadId
+  0.18%        8  ntdll.dll!RtlAllocateHeap
+  0.13%        6  sub_825906C0
+  0.13%        6  vcruntime140.dll
+  0.13%        6  sub_8258DBF0
+  0.09%        4  sub_825958C8
+--- amostras fora do jogo (runtime/Windows), pela funcao do jogo que chamou (primeiro retorno na pilha):
+ 81.71%     3676  (sem chamador do jogo na pilha)
+  0.02%        1  sub_82588B00

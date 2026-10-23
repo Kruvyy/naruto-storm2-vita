@@ -1,0 +1,30 @@
+﻿funcoes mapeadas pela tabela de despacho: 30620 de 30620
+thread nativa 19164 (Main XThread): 4555 amostras em 8,0 s
+CPU da thread: 19.1% de um nucleo (kernel 2.7%)
+amostras: jogo 14.2% | runtime 0.6% | windows 85.2% | outro 0.0%
+ 83.89%     3821  ntdll.dll!NtSignalAndWaitForSingleObject
+  0.81%       37  ntdll.dll!ZwQueryVirtualMemory
+  0.61%       28  sub_826164E0
+  0.57%       26  sub_82638CB8
+  0.55%       25  sub_8267CB60
+  0.50%       23  sub_825C9A38
+  0.35%       16  sub_82635D30
+  0.35%       16  sub_827B2578
+  0.29%       13  sub_821C05F0
+  0.26%       12  sub_82647060
+  0.26%       12  sub_82223B10
+  0.24%       11  sub_825E9290
+  0.24%       11  sub_825E9268
+  0.24%       11  sub_82675168
+  0.24%       11  sub_826476F8
+--- amostras fora do jogo (runtime/Windows), pela funcao do jogo que chamou (primeiro retorno na pilha):
+ 83.89%     3821  sub_82693390
+  0.88%       40  sub_825DD8D8
+  0.18%        8  sub_82564620
+  0.13%        6  sub_825CAFE0
+  0.13%        6  sub_826934B8
+  0.04%        2  sub_826938B8
+  0.04%        2  sub_825DF110
+  0.04%        2  sub_82660130
+  0.04%        2  sub_825CDE78
+  0.04%        2  sub_825D2570
