@@ -1,0 +1,1408 @@
+[2026-10-23 04:05:38.927] [info] [gpu] [t16564] DXGI adapter: AMD Radeon RX 6600 (vendor 0x1002, device 0x73FF)
+[2026-10-23 04:05:39.047] [info] [gpu] [t16564] Direct3D 12 device and OS features:
+* Max GPU virtual address bits per resource: 47
+* Non-zeroed heap creation: yes
+* Pixel-shader-specified stencil reference: yes
+* Programmable sample positions: tier 2
+* Rasterizer-ordered views: yes
+* Resource binding: tier 3
+* Tiled resources: tier 4
+* Unaligned block-compressed textures: yes
+[2026-10-23 04:05:39.136] [info] [sys] [t16564] Guest memory arena mapped: virtual base 0x0000000100000000, physical base 0x0000000200000000
+[2026-10-23 04:05:39.227] [info] [core] [t16564] Function table initialized for module: code=821C0000-82836294, image=82000000-82B30000
+[2026-10-23 04:05:39.331] [warning] [core] [t16564] SDL GameControllerDB: file 'gamecontrollerdb.txt' does not exist.
+[2026-10-23 04:05:39.331] [info] [core] [t16564] SDL input driver initialized successfully
+[2026-10-23 04:05:39.399] [info] [core] [t16564] Initializing shader storage for title 4E4D0819...
+[2026-10-23 04:05:39.406] [info] [gpu] [t16148] Translated 116 shaders from the storage in 3 milliseconds
+[2026-10-23 04:05:39.440] [info] [gpu] [t16148] Created 188 graphics pipelines (not including reading the descriptions) from the storage in 34 milliseconds
+[2026-10-23 04:05:39.441] [info] [krnl] [t10464] guest-alloc virtual addr=40000000 size=00100000 type=60002000 protect=00000003 page=10000
+[2026-10-23 04:05:39.441] [info] [krnl] [t10464] guest-alloc virtual addr=40000000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.447] [info] [krnl] [t10464] guest-alloc physical addr=DC000000 size=03000000 protect=80000004 page=1000000 min=00000000 max=FFFFFFFF align=1000000
+[2026-10-23 04:05:39.450] [info] [krnl] [t10464] guest-alloc physical addr=AB000000 size=11000000 protect=20000404 page=10000 min=00000000 max=FFFFFFFF align=10000
+[2026-10-23 04:05:39.450] [info] [krnl] [t10464] guest-alloc physical addr=FFC9E000 size=00008000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:39.450] [info] [krnl] [t10464] guest-alloc physical addr=BFA90000 size=00200000 protect=20000404 page=10000 min=00000000 max=FFFFFFFF align=10000
+[2026-10-23 04:05:39.451] [info] [krnl] [t10464] guest-alloc physical addr=FFC9C000 size=00002000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:39.452] [info] [gpu] [t10464] SetInterruptCallback(826A5998, 40005080)
+[2026-10-23 04:05:39.452] [info] [krnl] [t10464] guest-alloc physical addr=FFC9B000 size=00001000 protect=00000004 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:39.452] [info] [krnl] [t10464] guest-alloc physical addr=FFC9A000 size=00001000 protect=00000204 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:39.452] [info] [krnl] [t10464] guest-alloc physical addr=FFC99000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:39.452] [info] [krnl] [t10464] guest-alloc physical addr=FFC98000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:39.452] [info] [krnl] [t10464] guest-alloc physical addr=FFC96000 size=00002000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:39.453] [info] [krnl] [t10464] guest-alloc virtual addr=40010000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.453] [info] [krnl] [t10464] guest-alloc virtual addr=40020000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.455] [info] [krnl] [t10464] guest-alloc virtual addr=40100000 size=00120000 type=60801000 protect=00000003 page=10000
+[2026-10-23 04:05:39.457] [info] [krnl] [t10464] guest-free physical addr=BFA80000
+[2026-10-23 04:05:39.506] [info] [krnl] [t10464] guest-alloc virtual addr=40030000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.507] [info] [krnl] [t10464] guest-alloc virtual addr=40050000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.507] [info] [krnl] [t10464] guest-alloc virtual addr=40070000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.507] [info] [krnl] [t10464] guest-alloc virtual addr=40090000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.507] [info] [krnl] [t10464] guest-alloc virtual addr=400B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.507] [info] [krnl] [t10464] guest-free virtual addr=400C0000 size=00010000 type=00004000
+[2026-10-23 04:05:39.507] [info] [krnl] [t10464] guest-free virtual addr=400B0000 size=00010000 type=00004000
+[2026-10-23 04:05:39.507] [info] [krnl] [t10464] guest-free virtual addr=400A0000 size=00010000 type=00004000
+[2026-10-23 04:05:39.507] [info] [krnl] [t10464] guest-free virtual addr=40090000 size=00010000 type=00004000
+[2026-10-23 04:05:39.507] [info] [krnl] [t10464] guest-free virtual addr=40080000 size=00010000 type=00004000
+[2026-10-23 04:05:39.507] [info] [krnl] [t10464] guest-free virtual addr=40070000 size=00010000 type=00004000
+[2026-10-23 04:05:39.507] [info] [krnl] [t10464] guest-free virtual addr=40060000 size=00010000 type=00004000
+[2026-10-23 04:05:39.507] [info] [krnl] [t10464] guest-free virtual addr=40050000 size=00010000 type=00004000
+[2026-10-23 04:05:39.507] [info] [krnl] [t10464] guest-free virtual addr=40040000 size=00010000 type=00004000
+[2026-10-23 04:05:39.507] [info] [krnl] [t10464] guest-free virtual addr=40030000 size=00010000 type=00004000
+[2026-10-23 04:05:39.542] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:39.542] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:39.543] [info] [krnl] [t14600] guest-alloc virtual addr=40030000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.552] [info] [krnl] [t16896] guest-free virtual addr=40040000 size=00010000 type=00004000
+[2026-10-23 04:05:39.575] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:39.576] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:39.606] [info] [krnl] [t10464] guest-alloc virtual addr=40040000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.639] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:39.640] [info] [krnl] [t10464] guest-alloc virtual addr=40050000 size=00060000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.643] [info] [krnl] [t10464] guest-free virtual addr=400A0000 size=00010000 type=00004000
+[2026-10-23 04:05:39.824] [info] [krnl] [t10464] guest-free virtual addr=40050000 size=00050000 type=00004000
+[2026-10-23 04:05:39.825] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:39.825] [info] [krnl] [t10464] guest-alloc virtual addr=40050000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.829] [info] [krnl] [t10464] guest-free virtual addr=40050000 size=00020000 type=00004000
+[2026-10-23 04:05:39.839] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:39.840] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:39.849] [info] [krnl] [t10464] guest-alloc virtual addr=40220000 size=00810000 type=60801000 protect=00000003 page=10000
+[2026-10-23 04:05:39.850] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:39.850] [info] [krnl] [t10464] guest-alloc virtual addr=40050000 size=00030000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.850] [info] [krnl] [t10464] guest-free virtual addr=40070000 size=00010000 type=00004000
+[2026-10-23 04:05:39.851] [info] [krnl] [t10464] guest-alloc virtual addr=40070000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.851] [info] [krnl] [t10464] guest-free virtual addr=40070000 size=00010000 type=00004000
+[2026-10-23 04:05:39.851] [info] [krnl] [t10464] guest-alloc virtual addr=40070000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.935] [info] [apu] [t10464] audio endpoint 'Realtek HD Audio 2nd output (Realtek(R) Audio)': 2 ch, 48000 Hz, format 0x8120; submitting 2 ch
+[2026-10-23 04:05:39.936] [info] [krnl] [t10464] guest-alloc virtual addr=40A30000 size=00100000 type=60002000 protect=00000003 page=10000
+[2026-10-23 04:05:39.936] [info] [krnl] [t10464] guest-alloc virtual addr=40A30000 size=000A0000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.937] [info] [krnl] [t10464] guest-alloc virtual addr=40080000 size=00070000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.937] [info] [krnl] [t10464] guest-alloc virtual addr=40B30000 size=00200000 type=60002000 protect=00000003 page=10000
+[2026-10-23 04:05:39.938] [info] [krnl] [t10464] guest-alloc virtual addr=40B30000 size=000F0000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:39.939] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:39.941] [info] [krnl] [t10464] guest-alloc physical addr=FFA0F000 size=00080000 protect=00000004 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:39.941] [info] [krnl] [t10464] guest-alloc physical addr=FF98F000 size=00080000 protect=00000004 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:39.941] [info] [krnl] [t10464] guest-alloc physical addr=FF90F000 size=00080000 protect=00000004 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:39.942] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:39.942] [info] [krnl] [t10464] guest-alloc physical addr=FF60D000 size=00302000 protect=00000004 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:39.946] [info] [core] [t10464] SDL OnControllerDeviceAdded: "DualSense Wireless Controller", JoystickType(1), GameControllerType(6), VendorID(0x054C), ProductID(0x0CE6)
+[2026-10-23 04:05:39.946] [info] [core] [t10464] SDL OnControllerDeviceAdded: connection order 0, device 1.
+[2026-10-23 04:05:39.982] [info] [krnl] [t10464] guest-alloc virtual addr=40AD0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.006] [info] [krnl] [t10464] guest-alloc virtual addr=40D30000 size=00210000 type=60801000 protect=00000003 page=10000
+[2026-10-23 04:05:40.007] [info] [krnl] [t10464] guest-alloc virtual addr=40F40000 size=04610000 type=60801000 protect=00000003 page=10000
+[2026-10-23 04:05:40.012] [info] [krnl] [t10464] guest-alloc virtual addr=400F0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.013] [info] [krnl] [t10464] guest-alloc virtual addr=40AF0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.013] [info] [krnl] [t10464] guest-alloc virtual addr=40C20000 size=00050000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.015] [info] [krnl] [t10464] guest-alloc virtual addr=40B00000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.020] [info] [krnl] [t10464] guest-alloc virtual addr=40B10000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.022] [info] [krnl] [t10464] guest-alloc virtual addr=40C70000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.031] [info] [krnl] [t10464] guest-alloc virtual addr=40C90000 size=00030000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.035] [info] [krnl] [t10464] guest-alloc virtual addr=40B20000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.036] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.037] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.040] [info] [krnl] [t10512] guest-alloc virtual addr=40CC0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.042] [info] [krnl] [t10512] guest-alloc virtual addr=40CE0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.047] [info] [krnl] [t10512] guest-alloc virtual addr=40D00000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.054] [info] [krnl] [t16896] guest-free virtual addr=40D00000 size=00020000 type=00004000
+[2026-10-23 04:05:40.062] [info] [krnl] [t10512] guest-alloc virtual addr=40D00000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.068] [info] [krnl] [t10512] guest-alloc virtual addr=45550000 size=00400000 type=60002000 protect=00000003 page=10000
+[2026-10-23 04:05:40.068] [info] [krnl] [t10512] guest-alloc virtual addr=45550000 size=00030000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.073] [info] [krnl] [t10512] guest-alloc virtual addr=45580000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.113] [info] [krnl] [t16896] guest-free virtual addr=45560000 size=00010000 type=00004000
+[2026-10-23 04:05:40.114] [info] [krnl] [t16896] guest-free virtual addr=45570000 size=00010000 type=00004000
+[2026-10-23 04:05:40.116] [info] [krnl] [t16896] guest-free virtual addr=45580000 size=00020000 type=00004000
+[2026-10-23 04:05:40.201] [info] [krnl] [t16896] guest-free virtual addr=40CC0000 size=00020000 type=00004000
+[2026-10-23 04:05:40.249] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.250] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.286] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.287] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.290] [info] [krnl] [t16896] guest-alloc virtual addr=40CC0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.416] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.416] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.424] [info] [krnl] [t20336] guest-alloc virtual addr=45560000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.429] [info] [krnl] [t16896] guest-free virtual addr=45560000 size=00020000 type=00004000
+[2026-10-23 04:05:40.432] [info] [krnl] [t20336] guest-alloc virtual addr=45560000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.438] [info] [krnl] [t16896] guest-free virtual addr=45560000 size=00020000 type=00004000
+[2026-10-23 04:05:40.497] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.498] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.516] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.516] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.526] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.527] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.533] [info] [krnl] [t19908] guest-alloc virtual addr=45560000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.539] [info] [krnl] [t16896] guest-free virtual addr=45560000 size=00020000 type=00004000
+[2026-10-23 04:05:40.546] [info] [krnl] [t19908] guest-alloc virtual addr=45560000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.551] [info] [krnl] [t16896] guest-free virtual addr=45560000 size=00020000 type=00004000
+[2026-10-23 04:05:40.553] [info] [krnl] [t19908] guest-alloc virtual addr=45560000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.558] [info] [krnl] [t16896] guest-free virtual addr=45560000 size=00020000 type=00004000
+[2026-10-23 04:05:40.578] [info] [krnl] [t19908] guest-alloc virtual addr=45560000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.585] [info] [krnl] [t16896] guest-free virtual addr=45560000 size=00020000 type=00004000
+[2026-10-23 04:05:40.601] [info] [krnl] [t19908] guest-alloc virtual addr=45560000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.608] [info] [krnl] [t16896] guest-free virtual addr=45560000 size=00020000 type=00004000
+[2026-10-23 04:05:40.614] [info] [krnl] [t19908] guest-alloc virtual addr=45560000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.618] [info] [krnl] [t16896] guest-free virtual addr=45560000 size=00020000 type=00004000
+[2026-10-23 04:05:40.624] [info] [krnl] [t19908] guest-alloc virtual addr=45560000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.626] [info] [krnl] [t19908] guest-alloc virtual addr=45580000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.633] [info] [krnl] [t16896] guest-free virtual addr=45560000 size=00040000 type=00004000
+[2026-10-23 04:05:40.634] [info] [krnl] [t19908] guest-alloc virtual addr=45560000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.639] [info] [krnl] [t16896] guest-free virtual addr=45560000 size=00020000 type=00004000
+[2026-10-23 04:05:40.665] [info] [krnl] [t19908] guest-alloc virtual addr=45560000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.674] [info] [krnl] [t19908] guest-alloc virtual addr=45580000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.679] [info] [krnl] [t16896] guest-free virtual addr=45560000 size=00040000 type=00004000
+[2026-10-23 04:05:40.682] [info] [krnl] [t19908] guest-alloc virtual addr=45560000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.687] [info] [krnl] [t16896] guest-free virtual addr=45560000 size=00020000 type=00004000
+[2026-10-23 04:05:40.689] [info] [krnl] [t19908] guest-alloc virtual addr=45560000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.695] [info] [krnl] [t16896] guest-free virtual addr=45560000 size=00020000 type=00004000
+[2026-10-23 04:05:40.714] [info] [krnl] [t19908] guest-alloc virtual addr=45560000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.718] [info] [krnl] [t19908] guest-alloc virtual addr=45580000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.723] [info] [krnl] [t16896] guest-free virtual addr=45580000 size=00020000 type=00004000
+[2026-10-23 04:05:40.727] [info] [krnl] [t16896] guest-free virtual addr=45560000 size=00020000 type=00004000
+[2026-10-23 04:05:40.759] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.760] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.765] [info] [krnl] [t15808] guest-alloc virtual addr=45560000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.767] [info] [krnl] [t15808] guest-alloc virtual addr=45580000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.780] [info] [krnl] [t16896] guest-free virtual addr=45560000 size=00020000 type=00004000
+[2026-10-23 04:05:40.790] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.791] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.792] [info] [krnl] [t16896] guest-free virtual addr=45590000 size=00010000 type=00004000
+[2026-10-23 04:05:40.796] [info] [krnl] [t16016] guest-alloc virtual addr=45560000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.798] [info] [krnl] [t16016] guest-alloc virtual addr=45590000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.802] [info] [krnl] [t16016] guest-alloc virtual addr=455B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.822] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.822] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:40.828] [info] [krnl] [t25032] guest-alloc virtual addr=455D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.832] [info] [krnl] [t25032] guest-alloc virtual addr=455F0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.834] [info] [krnl] [t16896] guest-alloc virtual addr=40D20000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.836] [info] [krnl] [t25032] guest-alloc virtual addr=45610000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.838] [info] [krnl] [t25032] guest-alloc virtual addr=45630000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.841] [info] [krnl] [t10464] guest-alloc virtual addr=45650000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.842] [info] [krnl] [t10464] guest-alloc virtual addr=45660000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.843] [info] [krnl] [t10464] guest-alloc virtual addr=45670000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.843] [info] [krnl] [t25032] guest-alloc virtual addr=45680000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.844] [info] [krnl] [t10464] guest-alloc virtual addr=456A0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.844] [info] [krnl] [t10464] guest-alloc virtual addr=456B0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.845] [info] [krnl] [t10464] guest-alloc virtual addr=456C0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.845] [info] [krnl] [t25032] guest-alloc virtual addr=456D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.846] [info] [krnl] [t10464] guest-alloc virtual addr=456F0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.847] [info] [krnl] [t10464] guest-alloc virtual addr=45700000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.848] [info] [krnl] [t10464] guest-alloc virtual addr=45710000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.848] [info] [krnl] [t10464] guest-alloc virtual addr=45720000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.849] [info] [krnl] [t10464] guest-alloc virtual addr=45730000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.849] [info] [krnl] [t10464] guest-alloc virtual addr=45740000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.850] [info] [krnl] [t10464] guest-alloc virtual addr=45750000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.850] [info] [krnl] [t10464] guest-alloc virtual addr=45760000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.851] [info] [krnl] [t10464] guest-alloc virtual addr=45770000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.851] [info] [krnl] [t10464] guest-alloc virtual addr=45780000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:40.852] [info] [krnl] [t10464] guest-alloc virtual addr=45790000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:41.150] [info] [krnl] [t16896] guest-alloc virtual addr=457A0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:41.206] [info] [krnl] [t16896] guest-alloc virtual addr=457B0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:41.283] [info] [krnl] [t16896] guest-alloc virtual addr=457C0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:41.617] [info] [krnl] [t16896] guest-free virtual addr=455D0000 size=00010000 type=00004000
+[2026-10-23 04:05:41.836] [info] [krnl] [t16896] guest-free virtual addr=45610000 size=00020000 type=00004000
+[2026-10-23 04:05:41.901] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:41.902] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:41.905] [info] [krnl] [t27188] guest-alloc virtual addr=45610000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:41.907] [info] [krnl] [t27188] guest-alloc virtual addr=457D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:41.910] [info] [krnl] [t27188] guest-alloc virtual addr=457F0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:41.914] [info] [krnl] [t27188] guest-alloc virtual addr=45810000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:41.948] [info] [krnl] [t16896] guest-free virtual addr=45610000 size=00020000 type=00004000
+[2026-10-23 04:05:42.106] [info] [krnl] [t16896] guest-free virtual addr=457F0000 size=00010000 type=00004000
+[2026-10-23 04:05:42.286] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.287] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.287] [info] [krnl] [t16896] guest-free virtual addr=45810000 size=00010000 type=00004000
+[2026-10-23 04:05:42.289] [info] [krnl] [t16952] guest-alloc virtual addr=45610000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.419] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.420] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.435] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.437] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.448] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.448] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.457] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.457] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.475] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.476] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.478] [info] [krnl] [t19260] guest-alloc virtual addr=45830000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.480] [info] [krnl] [t19260] guest-alloc virtual addr=45850000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.485] [info] [krnl] [t16896] guest-alloc virtual addr=45870000 size=00040000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.487] [info] [krnl] [t16896] guest-free virtual addr=45830000 size=00020000 type=00004000
+[2026-10-23 04:05:42.492] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.493] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.504] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.504] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.510] [info] [krnl] [t18180] guest-alloc virtual addr=45830000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.512] [info] [krnl] [t18180] guest-alloc virtual addr=458B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.513] [info] [krnl] [t16896] guest-alloc virtual addr=45950000 size=00250000 type=60801000 protect=00000003 page=10000
+[2026-10-23 04:05:42.517] [info] [krnl] [t16896] guest-free virtual addr=45830000 size=00020000 type=00004000
+[2026-10-23 04:05:42.525] [info] [krnl] [t16896] guest-free virtual addr=458C0000 size=00010000 type=00004000
+[2026-10-23 04:05:42.527] [info] [krnl] [t18180] guest-alloc virtual addr=45830000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.527] [info] [krnl] [t16896] guest-free virtual addr=458B0000 size=00010000 type=00004000
+[2026-10-23 04:05:42.528] [info] [krnl] [t18180] guest-alloc virtual addr=458B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.532] [info] [krnl] [t16896] guest-free virtual addr=45830000 size=00020000 type=00004000
+[2026-10-23 04:05:42.540] [info] [krnl] [t16896] guest-free virtual addr=458C0000 size=00010000 type=00004000
+[2026-10-23 04:05:42.542] [info] [krnl] [t18180] guest-alloc virtual addr=45830000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.542] [info] [krnl] [t16896] guest-free virtual addr=458B0000 size=00010000 type=00004000
+[2026-10-23 04:05:42.544] [info] [krnl] [t18180] guest-alloc virtual addr=458B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.548] [info] [krnl] [t16896] guest-free virtual addr=45830000 size=00020000 type=00004000
+[2026-10-23 04:05:42.555] [info] [krnl] [t16896] guest-free virtual addr=458C0000 size=00010000 type=00004000
+[2026-10-23 04:05:42.557] [info] [krnl] [t18180] guest-alloc virtual addr=45830000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.557] [info] [krnl] [t16896] guest-free virtual addr=458B0000 size=00010000 type=00004000
+[2026-10-23 04:05:42.559] [info] [krnl] [t18180] guest-alloc virtual addr=458B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.562] [info] [krnl] [t16896] guest-free virtual addr=45830000 size=00020000 type=00004000
+[2026-10-23 04:05:42.569] [info] [krnl] [t16896] guest-free virtual addr=458C0000 size=00010000 type=00004000
+[2026-10-23 04:05:42.571] [info] [krnl] [t18180] guest-alloc virtual addr=45830000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.571] [info] [krnl] [t16896] guest-free virtual addr=458B0000 size=00010000 type=00004000
+[2026-10-23 04:05:42.573] [info] [krnl] [t18180] guest-alloc virtual addr=458B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.578] [info] [krnl] [t16896] guest-free virtual addr=45830000 size=00020000 type=00004000
+[2026-10-23 04:05:42.580] [info] [krnl] [t16896] guest-free virtual addr=458A0000 size=00030000 type=00004000
+[2026-10-23 04:05:42.584] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.585] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.604] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.605] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.615] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.616] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.628] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.628] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.639] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.639] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.643] [info] [krnl] [t16896] guest-alloc virtual addr=455D0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.650] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.651] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.662] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.663] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.673] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.673] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.682] [info] [krnl] [t16896] guest-alloc virtual addr=457F0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.685] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.685] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.697] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.698] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.708] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.708] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.717] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.718] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.721] [info] [krnl] [t15652] guest-alloc virtual addr=45830000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.726] [info] [krnl] [t16896] guest-alloc virtual addr=458A0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.729] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.730] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.730] [info] [krnl] [t16896] guest-free virtual addr=45830000 size=00020000 type=00004000
+[2026-10-23 04:05:42.740] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.741] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.751] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.752] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.814] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.814] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.822] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.823] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.826] [info] [krnl] [t16896] guest-alloc virtual addr=45810000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.841] [info] [krnl] [t10464] guest-alloc virtual addr=45830000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.843] [info] [krnl] [t10464] guest-alloc virtual addr=45840000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.844] [info] [krnl] [t10464] guest-alloc virtual addr=458C0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.844] [info] [krnl] [t10464] guest-alloc virtual addr=458D0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.845] [info] [krnl] [t10464] guest-alloc virtual addr=458E0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.846] [info] [krnl] [t10464] guest-alloc virtual addr=458F0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.847] [info] [krnl] [t10464] guest-alloc virtual addr=45900000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.848] [info] [krnl] [t10464] guest-alloc virtual addr=45910000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.849] [info] [krnl] [t10464] guest-alloc virtual addr=45920000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.850] [info] [krnl] [t10464] guest-alloc virtual addr=45930000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.850] [info] [krnl] [t10464] guest-alloc virtual addr=45940000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.851] [info] [krnl] [t10464] guest-alloc virtual addr=45BA0000 size=00800000 type=60002000 protect=00000003 page=10000
+[2026-10-23 04:05:42.851] [info] [krnl] [t10464] guest-alloc virtual addr=45BA0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.853] [info] [krnl] [t10464] guest-alloc virtual addr=45BC0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.854] [info] [krnl] [t10464] guest-alloc virtual addr=45BD0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.855] [info] [krnl] [t10464] guest-alloc virtual addr=45BE0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.856] [info] [krnl] [t10464] guest-alloc virtual addr=45BF0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.857] [info] [krnl] [t10464] guest-alloc virtual addr=45C00000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.858] [info] [krnl] [t10464] guest-alloc virtual addr=45C10000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.859] [info] [krnl] [t10464] guest-alloc virtual addr=45C20000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.860] [info] [krnl] [t10464] guest-alloc virtual addr=45C30000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.861] [info] [krnl] [t10464] guest-alloc virtual addr=45C40000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.862] [info] [krnl] [t10464] guest-alloc virtual addr=45C50000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.863] [info] [krnl] [t10464] guest-alloc virtual addr=45C60000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.864] [info] [krnl] [t10464] guest-alloc virtual addr=45C70000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.865] [info] [krnl] [t10464] guest-alloc virtual addr=45C80000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.866] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.867] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.868] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.868] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.869] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.869] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.870] [info] [krnl] [t10464] guest-alloc virtual addr=45C90000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.870] [info] [krnl] [t10464] guest-alloc virtual addr=45CA0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.871] [info] [krnl] [t10464] guest-alloc virtual addr=45CB0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:42.961] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.962] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.971] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.972] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.980] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:42.980] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:43.008] [info] [krnl] [t10464] guest-alloc virtual addr=45CC0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:43.008] [info] [krnl] [t10464] guest-alloc virtual addr=45CD0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:43.974] [info] [krnl] [t10464] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:43.974] [info] [krnl] [t10464] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:43.974] [info] [krnl] [t10464] guest-free virtual addr=456E0000 size=00010000 type=00004000
+[2026-10-23 04:05:43.974] [info] [krnl] [t10464] guest-free virtual addr=456B0000 size=00010000 type=00004000
+[2026-10-23 04:05:43.975] [info] [krnl] [t10464] guest-free virtual addr=45730000 size=00010000 type=00004000
+[2026-10-23 04:05:43.975] [info] [krnl] [t10464] guest-free virtual addr=45700000 size=00010000 type=00004000
+[2026-10-23 04:05:43.975] [info] [krnl] [t10464] guest-free virtual addr=45720000 size=00010000 type=00004000
+[2026-10-23 04:05:43.975] [info] [krnl] [t10464] guest-free virtual addr=45780000 size=00010000 type=00004000
+[2026-10-23 04:05:43.976] [info] [krnl] [t10464] guest-free virtual addr=45760000 size=00010000 type=00004000
+[2026-10-23 04:05:43.976] [info] [krnl] [t10464] guest-alloc virtual addr=463A0000 size=00100000 type=60002000 protect=00000003 page=10000
+[2026-10-23 04:05:43.976] [info] [krnl] [t10464] guest-alloc virtual addr=463A0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:43.976] [info] [krnl] [t10464] guest-free virtual addr=45770000 size=00010000 type=00004000
+[2026-10-23 04:05:43.976] [info] [krnl] [t10464] guest-free virtual addr=45690000 size=00010000 type=00004000
+[2026-10-23 04:05:43.976] [info] [krnl] [t10464] guest-free virtual addr=45740000 size=00010000 type=00004000
+[2026-10-23 04:05:44.007] [info] [krnl] [t10464] guest-alloc physical addr=FF605000 size=00008000 protect=00000004 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:45.675] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:45.676] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:45.679] [info] [krnl] [t13396] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.684] [info] [krnl] [t13396] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.690] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:45.703] [info] [krnl] [t16896] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:45.703] [info] [krnl] [t13396] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.707] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:45.709] [info] [krnl] [t13396] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.712] [info] [krnl] [t16896] guest-free virtual addr=45730000 size=00010000 type=00004000
+[2026-10-23 04:05:45.718] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00010000 type=00004000
+[2026-10-23 04:05:45.726] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:45.727] [info] [krnl] [t13396] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.729] [info] [krnl] [t16896] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:45.734] [info] [krnl] [t13396] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.739] [info] [krnl] [t16896] guest-free virtual addr=45730000 size=00010000 type=00004000
+[2026-10-23 04:05:45.742] [info] [krnl] [t13396] guest-alloc virtual addr=45730000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.745] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:45.747] [info] [krnl] [t16896] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:45.748] [info] [krnl] [t13396] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.753] [info] [krnl] [t16896] guest-free virtual addr=45740000 size=00010000 type=00004000
+[2026-10-23 04:05:45.757] [info] [krnl] [t16896] guest-free virtual addr=45730000 size=00010000 type=00004000
+[2026-10-23 04:05:45.758] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00010000 type=00004000
+[2026-10-23 04:05:45.766] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:45.767] [info] [krnl] [t13396] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.769] [info] [krnl] [t16896] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:45.774] [info] [krnl] [t16896] guest-free virtual addr=45730000 size=00010000 type=00004000
+[2026-10-23 04:05:45.777] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00010000 type=00004000
+[2026-10-23 04:05:45.778] [info] [krnl] [t13396] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.781] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00020000 type=00004000
+[2026-10-23 04:05:45.782] [info] [krnl] [t13396] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.790] [info] [krnl] [t13396] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.804] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:45.808] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:45.822] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:45.822] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:45.822] [info] [krnl] [t16896] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:45.850] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:45.851] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:45.854] [info] [krnl] [t25100] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.869] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:45.870] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:45.870] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00020000 type=00004000
+[2026-10-23 04:05:45.872] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.881] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.883] [info] [krnl] [t23616] guest-alloc virtual addr=45760000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.890] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:45.892] [info] [krnl] [t16896] guest-free virtual addr=45760000 size=00020000 type=00004000
+[2026-10-23 04:05:45.893] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.895] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:45.896] [info] [krnl] [t23616] guest-alloc virtual addr=45760000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.897] [info] [krnl] [t16896] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:45.898] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.905] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:45.908] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.908] [info] [krnl] [t16896] guest-free virtual addr=45760000 size=00020000 type=00004000
+[2026-10-23 04:05:45.913] [info] [krnl] [t16896] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:45.915] [info] [krnl] [t23616] guest-alloc virtual addr=45760000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.916] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:45.918] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.918] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:45.920] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.923] [info] [krnl] [t16896] guest-free virtual addr=45760000 size=00020000 type=00004000
+[2026-10-23 04:05:45.925] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:45.930] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.936] [info] [krnl] [t16896] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:45.937] [info] [krnl] [t23616] guest-alloc virtual addr=45760000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.938] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:45.940] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.940] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:45.942] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.943] [info] [krnl] [t16896] guest-free virtual addr=45760000 size=00020000 type=00004000
+[2026-10-23 04:05:45.945] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:45.955] [info] [krnl] [t16896] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:45.956] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.957] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:45.958] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.960] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:45.962] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00020000 type=00004000
+[2026-10-23 04:05:45.963] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.968] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00020000 type=00004000
+[2026-10-23 04:05:45.968] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.975] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00020000 type=00004000
+[2026-10-23 04:05:45.975] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.994] [info] [krnl] [t16896] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:45.995] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.995] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:45.997] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:45.999] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:46.001] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00020000 type=00004000
+[2026-10-23 04:05:46.002] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.013] [info] [krnl] [t16896] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:46.014] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.014] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:46.016] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.018] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:46.019] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00020000 type=00004000
+[2026-10-23 04:05:46.020] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.023] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00020000 type=00004000
+[2026-10-23 04:05:46.025] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.033] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.036] [info] [krnl] [t23616] guest-alloc virtual addr=45760000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.047] [info] [krnl] [t23616] guest-alloc virtual addr=45CE0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.048] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:46.050] [info] [krnl] [t16896] guest-free virtual addr=45760000 size=00020000 type=00004000
+[2026-10-23 04:05:46.051] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.058] [info] [krnl] [t23616] guest-alloc virtual addr=45760000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.060] [info] [krnl] [t23616] guest-alloc virtual addr=45D00000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.072] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:46.077] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.095] [info] [krnl] [t16896] guest-free virtual addr=45760000 size=00020000 type=00004000
+[2026-10-23 04:05:46.096] [info] [krnl] [t23616] guest-alloc virtual addr=45760000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.114] [info] [krnl] [t16896] guest-free virtual addr=45CE0000 size=00010000 type=00004000
+[2026-10-23 04:05:46.115] [info] [krnl] [t23616] guest-alloc virtual addr=45D20000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.118] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:46.124] [info] [krnl] [t16896] guest-free virtual addr=45760000 size=00020000 type=00004000
+[2026-10-23 04:05:46.125] [info] [krnl] [t16896] guest-free virtual addr=45CF0000 size=00010000 type=00004000
+[2026-10-23 04:05:46.127] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.134] [info] [krnl] [t23616] guest-alloc virtual addr=45760000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.138] [info] [krnl] [t16896] guest-free virtual addr=45D30000 size=00010000 type=00004000
+[2026-10-23 04:05:46.147] [info] [krnl] [t23616] guest-alloc virtual addr=45CE0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.148] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:46.152] [info] [krnl] [t16896] guest-free virtual addr=45760000 size=00020000 type=00004000
+[2026-10-23 04:05:46.154] [info] [krnl] [t16896] guest-free virtual addr=45D20000 size=00010000 type=00004000
+[2026-10-23 04:05:46.169] [info] [krnl] [t16896] guest-free virtual addr=45CF0000 size=00010000 type=00004000
+[2026-10-23 04:05:46.176] [info] [krnl] [t16896] guest-free virtual addr=45CE0000 size=00010000 type=00004000
+[2026-10-23 04:05:46.196] [info] [krnl] [t16896] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:46.199] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:46.202] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.209] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00020000 type=00004000
+[2026-10-23 04:05:46.222] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.226] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00020000 type=00004000
+[2026-10-23 04:05:46.246] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.251] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00020000 type=00004000
+[2026-10-23 04:05:46.254] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.258] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00020000 type=00004000
+[2026-10-23 04:05:46.265] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.269] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00020000 type=00004000
+[2026-10-23 04:05:46.285] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.289] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00020000 type=00004000
+[2026-10-23 04:05:46.292] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.300] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.312] [info] [krnl] [t23616] guest-alloc virtual addr=45760000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.315] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:46.318] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.323] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:46.324] [info] [krnl] [t23616] guest-alloc virtual addr=45CE0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.326] [info] [krnl] [t16896] guest-free virtual addr=45760000 size=00020000 type=00004000
+[2026-10-23 04:05:46.328] [info] [krnl] [t16896] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:46.334] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.334] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:46.339] [info] [krnl] [t16896] guest-free virtual addr=45CF0000 size=00010000 type=00004000
+[2026-10-23 04:05:46.341] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00020000 type=00004000
+[2026-10-23 04:05:46.342] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.345] [info] [krnl] [t16896] guest-free virtual addr=45CE0000 size=00010000 type=00004000
+[2026-10-23 04:05:46.366] [info] [krnl] [t16896] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:46.368] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.373] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:46.376] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.376] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:46.387] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:46.388] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.390] [info] [krnl] [t16896] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:46.394] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.396] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:46.419] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.421] [info] [krnl] [t23616] guest-alloc virtual addr=45760000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.423] [info] [krnl] [t23616] guest-alloc virtual addr=45CE0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.428] [info] [krnl] [t23616] guest-alloc virtual addr=45D20000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.498] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:46.499] [info] [krnl] [t16896] guest-free virtual addr=45760000 size=00020000 type=00004000
+[2026-10-23 04:05:46.501] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.504] [info] [krnl] [t16896] guest-free virtual addr=45CF0000 size=00010000 type=00004000
+[2026-10-23 04:05:46.506] [info] [krnl] [t23616] guest-alloc virtual addr=45760000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.517] [info] [krnl] [t16896] guest-free virtual addr=45D20000 size=00020000 type=00004000
+[2026-10-23 04:05:46.518] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:46.519] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.521] [info] [krnl] [t16896] guest-free virtual addr=45CE0000 size=00010000 type=00004000
+[2026-10-23 04:05:46.522] [info] [krnl] [t23616] guest-alloc virtual addr=45CE0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.523] [info] [krnl] [t16896] guest-free virtual addr=45760000 size=00020000 type=00004000
+[2026-10-23 04:05:46.529] [info] [krnl] [t16896] guest-free virtual addr=45650000 size=00010000 type=00004000
+[2026-10-23 04:05:46.531] [info] [krnl] [t23616] guest-alloc virtual addr=45760000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.531] [info] [krnl] [t16896] guest-free virtual addr=45660000 size=00010000 type=00004000
+[2026-10-23 04:05:46.533] [info] [krnl] [t23616] guest-alloc virtual addr=45650000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.533] [info] [krnl] [t16896] guest-free virtual addr=45720000 size=00020000 type=00004000
+[2026-10-23 04:05:46.537] [info] [krnl] [t16896] guest-free virtual addr=45CF0000 size=00010000 type=00004000
+[2026-10-23 04:05:46.543] [info] [krnl] [t23616] guest-alloc virtual addr=45720000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.546] [info] [krnl] [t23616] guest-alloc virtual addr=45D20000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.550] [info] [krnl] [t23616] guest-alloc virtual addr=45D40000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.553] [info] [krnl] [t16896] guest-free virtual addr=45760000 size=00020000 type=00004000
+[2026-10-23 04:05:46.564] [info] [krnl] [t16896] guest-alloc virtual addr=45690000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.566] [info] [krnl] [t16896] guest-alloc virtual addr=456B0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.568] [info] [krnl] [t16896] guest-alloc virtual addr=456E0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.572] [info] [krnl] [t16896] guest-alloc virtual addr=45700000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.575] [info] [krnl] [t16896] guest-alloc virtual addr=45740000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.577] [info] [krnl] [t16896] guest-alloc virtual addr=45760000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.580] [info] [krnl] [t16896] guest-alloc virtual addr=45770000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.582] [info] [krnl] [t16896] guest-alloc virtual addr=45780000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.584] [info] [krnl] [t16896] guest-alloc virtual addr=45CF0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.586] [info] [krnl] [t16896] guest-alloc virtual addr=45D60000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.590] [info] [krnl] [t16896] guest-alloc virtual addr=45D70000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.591] [info] [krnl] [t23616] guest-alloc virtual addr=45D80000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.598] [info] [krnl] [t23616] guest-alloc virtual addr=45DA0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.600] [info] [krnl] [t16896] guest-alloc virtual addr=45DC0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.604] [info] [krnl] [t16896] guest-alloc virtual addr=45DD0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.606] [info] [krnl] [t16896] guest-alloc virtual addr=45DE0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.608] [info] [krnl] [t16896] guest-alloc virtual addr=45DF0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.610] [info] [krnl] [t16896] guest-alloc virtual addr=45E00000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.612] [info] [krnl] [t23616] guest-alloc virtual addr=45E10000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.616] [info] [krnl] [t23616] guest-alloc virtual addr=45E30000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.621] [info] [krnl] [t23616] guest-alloc virtual addr=45E50000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.624] [info] [krnl] [t16896] guest-alloc virtual addr=45E70000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.626] [info] [krnl] [t16896] guest-alloc virtual addr=45E80000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.628] [info] [krnl] [t16896] guest-alloc virtual addr=45E90000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.630] [info] [krnl] [t16896] guest-alloc virtual addr=45EA0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.632] [info] [krnl] [t16896] guest-alloc virtual addr=45EB0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.634] [info] [krnl] [t16896] guest-alloc virtual addr=45EC0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.704] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:46.705] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:46.707] [info] [krnl] [t11196] guest-alloc virtual addr=45ED0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.708] [info] [krnl] [t11196] guest-alloc virtual addr=45EF0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.713] [info] [krnl] [t11196] guest-alloc virtual addr=45F10000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.718] [info] [krnl] [t11196] guest-alloc virtual addr=45F30000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.722] [info] [krnl] [t16896] guest-free virtual addr=45EF0000 size=00010000 type=00004000
+[2026-10-23 04:05:46.724] [info] [krnl] [t16896] guest-free virtual addr=45F00000 size=00010000 type=00004000
+[2026-10-23 04:05:46.725] [info] [krnl] [t11196] guest-alloc virtual addr=45EF0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.726] [info] [krnl] [t16896] guest-free virtual addr=45F00000 size=00020000 type=00004000
+[2026-10-23 04:05:46.727] [info] [krnl] [t11196] guest-alloc virtual addr=45F00000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.730] [info] [krnl] [t16896] guest-free virtual addr=45F20000 size=00010000 type=00004000
+[2026-10-23 04:05:46.732] [info] [krnl] [t11196] guest-alloc virtual addr=45F50000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.734] [info] [krnl] [t16896] guest-free virtual addr=45F30000 size=00010000 type=00004000
+[2026-10-23 04:05:46.743] [info] [krnl] [t16896] guest-free virtual addr=45F10000 size=00010000 type=00004000
+[2026-10-23 04:05:46.745] [info] [krnl] [t11196] guest-alloc virtual addr=45F10000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.745] [info] [krnl] [t16896] guest-free virtual addr=45F40000 size=00010000 type=00004000
+[2026-10-23 04:05:46.749] [info] [krnl] [t16896] guest-free virtual addr=45F50000 size=00020000 type=00004000
+[2026-10-23 04:05:46.751] [info] [krnl] [t11196] guest-alloc virtual addr=45F30000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.758] [info] [krnl] [t16896] guest-free virtual addr=45F10000 size=00010000 type=00004000
+[2026-10-23 04:05:46.761] [info] [krnl] [t16896] guest-free virtual addr=45F20000 size=00030000 type=00004000
+[2026-10-23 04:05:46.763] [info] [krnl] [t16896] guest-free virtual addr=45ED0000 size=00020000 type=00004000
+[2026-10-23 04:05:46.799] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:46.800] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:46.800] [info] [krnl] [t16896] guest-free virtual addr=45F00000 size=00010000 type=00004000
+[2026-10-23 04:05:46.802] [info] [krnl] [t21380] guest-alloc virtual addr=45ED0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.804] [info] [krnl] [t21380] guest-alloc virtual addr=45F00000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.809] [info] [krnl] [t21380] guest-alloc virtual addr=45F20000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.816] [info] [krnl] [t16896] guest-free virtual addr=45F00000 size=00010000 type=00004000
+[2026-10-23 04:05:46.818] [info] [krnl] [t21380] guest-alloc virtual addr=45F40000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.818] [info] [krnl] [t16896] guest-free virtual addr=45F10000 size=00010000 type=00004000
+[2026-10-23 04:05:46.820] [info] [krnl] [t16896] guest-free virtual addr=45F20000 size=00010000 type=00004000
+[2026-10-23 04:05:46.825] [info] [krnl] [t16896] guest-free virtual addr=45F30000 size=00010000 type=00004000
+[2026-10-23 04:05:46.826] [info] [krnl] [t21380] guest-alloc virtual addr=45F00000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.828] [info] [krnl] [t16896] guest-free virtual addr=45F40000 size=00020000 type=00004000
+[2026-10-23 04:05:46.835] [info] [krnl] [t16896] guest-free virtual addr=45F10000 size=00010000 type=00004000
+[2026-10-23 04:05:46.843] [info] [krnl] [t21380] guest-alloc virtual addr=45F10000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.852] [info] [krnl] [t16896] guest-free virtual addr=45F20000 size=00010000 type=00004000
+[2026-10-23 04:05:46.855] [info] [krnl] [t21380] guest-alloc virtual addr=45F20000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.864] [info] [krnl] [t16896] guest-free virtual addr=45F10000 size=00010000 type=00004000
+[2026-10-23 04:05:46.865] [info] [krnl] [t21380] guest-alloc virtual addr=45F40000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.866] [info] [krnl] [t16896] guest-free virtual addr=45F00000 size=00010000 type=00004000
+[2026-10-23 04:05:46.868] [info] [krnl] [t16896] guest-free virtual addr=45F20000 size=00010000 type=00004000
+[2026-10-23 04:05:46.870] [info] [krnl] [t21380] guest-alloc virtual addr=45F00000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.880] [info] [krnl] [t21380] guest-alloc virtual addr=45F60000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.889] [info] [krnl] [t16896] guest-free virtual addr=45F10000 size=00010000 type=00004000
+[2026-10-23 04:05:46.896] [info] [krnl] [t16896] guest-free virtual addr=45F70000 size=00010000 type=00004000
+[2026-10-23 04:05:46.898] [info] [krnl] [t21380] guest-alloc virtual addr=45F10000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.908] [info] [krnl] [t16896] guest-free virtual addr=45F60000 size=00010000 type=00004000
+[2026-10-23 04:05:46.910] [info] [krnl] [t16896] guest-free virtual addr=45F10000 size=00020000 type=00004000
+[2026-10-23 04:05:46.911] [info] [krnl] [t21380] guest-alloc virtual addr=45F10000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.912] [info] [krnl] [t16896] guest-free virtual addr=45F50000 size=00010000 type=00004000
+[2026-10-23 04:05:46.925] [info] [krnl] [t16896] guest-free virtual addr=45F20000 size=00010000 type=00004000
+[2026-10-23 04:05:46.927] [info] [krnl] [t21380] guest-alloc virtual addr=45F50000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.933] [info] [krnl] [t16896] guest-free virtual addr=45F10000 size=00010000 type=00004000
+[2026-10-23 04:05:46.935] [info] [krnl] [t16896] guest-free virtual addr=45F50000 size=00020000 type=00004000
+[2026-10-23 04:05:46.939] [info] [krnl] [t16896] guest-free virtual addr=45F00000 size=00010000 type=00004000
+[2026-10-23 04:05:46.940] [info] [krnl] [t21380] guest-alloc virtual addr=45F00000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.954] [info] [krnl] [t16896] guest-free virtual addr=45F00000 size=00020000 type=00004000
+[2026-10-23 04:05:46.955] [info] [krnl] [t21380] guest-alloc virtual addr=45F00000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.961] [info] [krnl] [t16896] guest-free virtual addr=45F00000 size=00020000 type=00004000
+[2026-10-23 04:05:46.971] [info] [krnl] [t21380] guest-alloc virtual addr=45F00000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:46.976] [info] [krnl] [t16896] guest-free virtual addr=45F00000 size=00020000 type=00004000
+[2026-10-23 04:05:47.003] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:47.004] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:47.013] [info] [krnl] [t16896] guest-alloc virtual addr=45F00000 size=00030000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.016] [info] [krnl] [t8092] guest-alloc virtual addr=45F50000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.022] [info] [krnl] [t8092] guest-alloc virtual addr=45F70000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.030] [info] [krnl] [t8092] guest-alloc virtual addr=45F90000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.036] [info] [krnl] [t8092] guest-alloc virtual addr=45FB0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.038] [info] [krnl] [t8092] guest-alloc virtual addr=45FD0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.046] [info] [krnl] [t16896] guest-alloc virtual addr=45FF0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.050] [info] [krnl] [t16896] guest-alloc virtual addr=46000000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.054] [info] [krnl] [t16896] guest-alloc virtual addr=46010000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.060] [info] [krnl] [t16896] guest-alloc virtual addr=46020000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.062] [info] [krnl] [t16896] guest-alloc virtual addr=46030000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.068] [info] [krnl] [t16896] guest-alloc virtual addr=46040000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.073] [info] [krnl] [t16896] guest-alloc virtual addr=46050000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.079] [info] [krnl] [t16896] guest-alloc virtual addr=46060000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.083] [info] [krnl] [t16896] guest-alloc virtual addr=46070000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.088] [info] [krnl] [t16896] guest-alloc virtual addr=46080000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.094] [info] [krnl] [t16896] guest-alloc virtual addr=46090000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.098] [info] [krnl] [t16896] guest-alloc virtual addr=460A0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.103] [info] [krnl] [t16896] guest-alloc virtual addr=460B0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.105] [info] [krnl] [t16896] guest-alloc virtual addr=460C0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.111] [info] [krnl] [t16896] guest-alloc virtual addr=460D0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.114] [info] [krnl] [t16896] guest-alloc virtual addr=460E0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.119] [info] [krnl] [t16896] guest-alloc virtual addr=460F0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.125] [info] [krnl] [t16896] guest-alloc virtual addr=46100000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.130] [info] [krnl] [t16896] guest-alloc virtual addr=46110000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.134] [info] [krnl] [t16896] guest-alloc virtual addr=46120000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.136] [info] [krnl] [t16896] guest-alloc virtual addr=46130000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.140] [info] [krnl] [t16896] guest-alloc virtual addr=46140000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.143] [info] [krnl] [t16896] guest-alloc virtual addr=46150000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.148] [info] [krnl] [t16896] guest-alloc virtual addr=46160000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.152] [info] [krnl] [t16896] guest-alloc virtual addr=46170000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.158] [info] [krnl] [t16896] guest-alloc virtual addr=46180000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.162] [info] [krnl] [t16896] guest-alloc virtual addr=46190000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.165] [info] [krnl] [t16896] guest-alloc virtual addr=461A0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.168] [info] [krnl] [t16896] guest-alloc virtual addr=461B0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.175] [info] [krnl] [t16896] guest-alloc virtual addr=461C0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:47.198] [info] [krnl] [t16896] guest-alloc virtual addr=461D0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:05:50.140] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:50.141] [info] [krnl] [t10772] guest-alloc physical addr=FF5F8000 size=0000D000 protect=00000004 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:50.208] [error] [krnl] [t12696] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:50.208] [info] [krnl] [t12696] guest-alloc physical addr=FFC95000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:50.208] [info] [krnl] [t12696] guest-alloc physical addr=FFC94000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:50.208] [info] [krnl] [t12696] guest-alloc physical addr=FFC93000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:50.208] [info] [krnl] [t12696] guest-alloc physical addr=FFC92000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:50.208] [info] [krnl] [t12696] guest-alloc physical addr=FFC91000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:50.210] [info] [krnl] [t12696] guest-alloc virtual addr=464A0000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.210] [info] [krnl] [t12696] guest-alloc virtual addr=465B0000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.210] [info] [krnl] [t12696] guest-alloc virtual addr=46600000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.210] [info] [krnl] [t12696] guest-alloc virtual addr=46650000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.211] [info] [krnl] [t12696] guest-alloc virtual addr=46760000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.211] [info] [krnl] [t12696] guest-alloc virtual addr=467B0000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.211] [info] [krnl] [t12696] guest-alloc virtual addr=46800000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.212] [info] [krnl] [t12696] guest-alloc virtual addr=46910000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.212] [info] [krnl] [t12696] guest-alloc virtual addr=46960000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.212] [info] [krnl] [t12696] guest-alloc virtual addr=469B0000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.212] [info] [krnl] [t12696] guest-alloc virtual addr=46AC0000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.213] [info] [krnl] [t12696] guest-alloc virtual addr=46B10000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.213] [info] [krnl] [t12696] guest-alloc virtual addr=46B60000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.213] [info] [krnl] [t12696] guest-alloc virtual addr=46C70000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.213] [info] [krnl] [t12696] guest-alloc virtual addr=46CC0000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.214] [info] [krnl] [t12696] guest-alloc virtual addr=46D10000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.214] [info] [krnl] [t12696] guest-alloc virtual addr=46E20000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.214] [info] [krnl] [t12696] guest-alloc virtual addr=46E70000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.215] [info] [krnl] [t12696] guest-alloc virtual addr=46EC0000 size=002C0000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:50.216] [info] [krnl] [t12696] guest-alloc physical addr=FF517000 size=000E1000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:50.216] [info] [krnl] [t12696] guest-alloc physical addr=FF4D3000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:50.216] [info] [krnl] [t12696] guest-alloc physical addr=FF48F000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:50.216] [info] [krnl] [t12696] guest-alloc physical addr=FF3AE000 size=000E1000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:50.216] [info] [krnl] [t12696] guest-alloc physical addr=FF36A000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:50.216] [info] [krnl] [t12696] guest-alloc physical addr=FF326000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:50.216] [info] [krnl] [t12696] guest-alloc physical addr=FF245000 size=000E1000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:50.216] [info] [krnl] [t12696] guest-alloc physical addr=FF201000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:50.216] [info] [krnl] [t12696] guest-alloc physical addr=FF1BD000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:53.306] [info] [krnl] [t12696] guest-free virtual addr=46EC0000 size=002C0000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=46800000 size=00110000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=46910000 size=00050000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=46960000 size=00050000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=469B0000 size=00110000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=46AC0000 size=00050000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=46B10000 size=00050000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=46650000 size=00110000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=46760000 size=00050000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=467B0000 size=00050000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=464A0000 size=00110000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=465B0000 size=00050000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=46600000 size=00050000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=46B60000 size=00110000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=46C70000 size=00050000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=46CC0000 size=00050000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=46D10000 size=00110000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=46E20000 size=00050000 type=00008000
+[2026-10-23 04:05:53.307] [info] [krnl] [t12696] guest-free virtual addr=46E70000 size=00050000 type=00008000
+[2026-10-23 04:05:53.308] [info] [krnl] [t12696] guest-free physical addr=FF517000
+[2026-10-23 04:05:53.308] [info] [krnl] [t12696] guest-free physical addr=FF4D3000
+[2026-10-23 04:05:53.308] [info] [krnl] [t12696] guest-free physical addr=FF48F000
+[2026-10-23 04:05:53.308] [info] [krnl] [t12696] guest-free physical addr=FF3AE000
+[2026-10-23 04:05:53.308] [info] [krnl] [t12696] guest-free physical addr=FF36A000
+[2026-10-23 04:05:53.308] [info] [krnl] [t12696] guest-free physical addr=FF326000
+[2026-10-23 04:05:53.308] [info] [krnl] [t12696] guest-free physical addr=FF245000
+[2026-10-23 04:05:53.308] [info] [krnl] [t12696] guest-free physical addr=FF201000
+[2026-10-23 04:05:53.308] [info] [krnl] [t12696] guest-free physical addr=FF1BD000
+[2026-10-23 04:05:53.308] [info] [krnl] [t12696] guest-free physical addr=FFC92000
+[2026-10-23 04:05:53.308] [info] [krnl] [t12696] guest-free physical addr=FFC91000
+[2026-10-23 04:05:53.308] [info] [krnl] [t12696] guest-free physical addr=FFC93000
+[2026-10-23 04:05:53.308] [info] [krnl] [t12696] guest-free physical addr=FFC94000
+[2026-10-23 04:05:53.308] [info] [krnl] [t12696] guest-free physical addr=FFC95000
+[2026-10-23 04:05:53.308] [info] [krnl] [t10464] guest-free physical addr=FF5F8000
+[2026-10-23 04:05:53.941] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:53.942] [info] [krnl] [t10772] guest-alloc physical addr=FF5BD000 size=00048000 protect=00000004 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:54.007] [error] [krnl] [t12696] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:54.007] [info] [krnl] [t12696] guest-alloc physical addr=FFC95000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:54.008] [info] [krnl] [t12696] guest-alloc physical addr=FFC94000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:54.008] [info] [krnl] [t12696] guest-alloc physical addr=FFC93000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:54.008] [info] [krnl] [t12696] guest-alloc physical addr=FFC92000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:54.008] [info] [krnl] [t12696] guest-alloc physical addr=FFC91000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:54.009] [info] [krnl] [t12696] guest-alloc virtual addr=464A0000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.009] [info] [krnl] [t12696] guest-alloc virtual addr=465B0000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.009] [info] [krnl] [t12696] guest-alloc virtual addr=46600000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.009] [info] [krnl] [t12696] guest-alloc virtual addr=46650000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.010] [info] [krnl] [t12696] guest-alloc virtual addr=46760000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.010] [info] [krnl] [t12696] guest-alloc virtual addr=467B0000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.010] [info] [krnl] [t12696] guest-alloc virtual addr=46800000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.010] [info] [krnl] [t12696] guest-alloc virtual addr=46910000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.010] [info] [krnl] [t12696] guest-alloc virtual addr=46960000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.011] [info] [krnl] [t12696] guest-alloc virtual addr=469B0000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.011] [info] [krnl] [t12696] guest-alloc virtual addr=46AC0000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.011] [info] [krnl] [t12696] guest-alloc virtual addr=46B10000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.011] [info] [krnl] [t12696] guest-alloc virtual addr=46B60000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.011] [info] [krnl] [t12696] guest-alloc virtual addr=46C70000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.012] [info] [krnl] [t12696] guest-alloc virtual addr=46CC0000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.012] [info] [krnl] [t12696] guest-alloc virtual addr=46D10000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.012] [info] [krnl] [t12696] guest-alloc virtual addr=46E20000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.012] [info] [krnl] [t12696] guest-alloc virtual addr=46E70000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.013] [info] [krnl] [t12696] guest-alloc virtual addr=46EC0000 size=002C0000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:54.014] [info] [krnl] [t12696] guest-alloc physical addr=FF4DC000 size=000E1000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:54.014] [info] [krnl] [t12696] guest-alloc physical addr=FF498000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:54.014] [info] [krnl] [t12696] guest-alloc physical addr=FF454000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:54.015] [info] [krnl] [t12696] guest-alloc physical addr=FF373000 size=000E1000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:54.015] [info] [krnl] [t12696] guest-alloc physical addr=FF32F000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:54.015] [info] [krnl] [t12696] guest-alloc physical addr=FF2EB000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:54.015] [info] [krnl] [t12696] guest-alloc physical addr=FF20A000 size=000E1000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:54.015] [info] [krnl] [t12696] guest-alloc physical addr=FF1C6000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:54.015] [info] [krnl] [t12696] guest-alloc physical addr=FF182000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:57.707] [info] [krnl] [t12696] guest-free virtual addr=46EC0000 size=002C0000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=46800000 size=00110000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=46910000 size=00050000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=46960000 size=00050000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=469B0000 size=00110000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=46AC0000 size=00050000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=46B10000 size=00050000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=46650000 size=00110000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=46760000 size=00050000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=467B0000 size=00050000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=464A0000 size=00110000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=465B0000 size=00050000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=46600000 size=00050000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=46B60000 size=00110000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=46C70000 size=00050000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=46CC0000 size=00050000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=46D10000 size=00110000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=46E20000 size=00050000 type=00008000
+[2026-10-23 04:05:57.708] [info] [krnl] [t12696] guest-free virtual addr=46E70000 size=00050000 type=00008000
+[2026-10-23 04:05:57.713] [info] [krnl] [t12696] guest-free physical addr=FF4DC000
+[2026-10-23 04:05:57.713] [info] [krnl] [t12696] guest-free physical addr=FF498000
+[2026-10-23 04:05:57.713] [info] [krnl] [t12696] guest-free physical addr=FF454000
+[2026-10-23 04:05:57.713] [info] [krnl] [t12696] guest-free physical addr=FF373000
+[2026-10-23 04:05:57.713] [info] [krnl] [t12696] guest-free physical addr=FF32F000
+[2026-10-23 04:05:57.713] [info] [krnl] [t12696] guest-free physical addr=FF2EB000
+[2026-10-23 04:05:57.713] [info] [krnl] [t12696] guest-free physical addr=FF20A000
+[2026-10-23 04:05:57.713] [info] [krnl] [t12696] guest-free physical addr=FF1C6000
+[2026-10-23 04:05:57.713] [info] [krnl] [t12696] guest-free physical addr=FF182000
+[2026-10-23 04:05:57.713] [info] [krnl] [t12696] guest-free physical addr=FFC92000
+[2026-10-23 04:05:57.713] [info] [krnl] [t12696] guest-free physical addr=FFC91000
+[2026-10-23 04:05:57.713] [info] [krnl] [t12696] guest-free physical addr=FFC93000
+[2026-10-23 04:05:57.713] [info] [krnl] [t12696] guest-free physical addr=FFC94000
+[2026-10-23 04:05:57.713] [info] [krnl] [t12696] guest-free physical addr=FFC95000
+[2026-10-23 04:05:57.713] [info] [krnl] [t10464] guest-free physical addr=FF5BD000
+[2026-10-23 04:05:57.841] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:57.841] [info] [krnl] [t10772] guest-alloc physical addr=FF3D8000 size=0022D000 protect=00000004 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:57.906] [error] [krnl] [t12696] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:05:57.907] [info] [krnl] [t12696] guest-alloc physical addr=FFC95000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:57.907] [info] [krnl] [t12696] guest-alloc physical addr=FFC94000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:57.907] [info] [krnl] [t12696] guest-alloc physical addr=FFC93000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:57.907] [info] [krnl] [t12696] guest-alloc physical addr=FFC92000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:57.907] [info] [krnl] [t12696] guest-alloc physical addr=FFC91000 size=00001000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:57.908] [info] [krnl] [t12696] guest-alloc virtual addr=464A0000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.909] [info] [krnl] [t12696] guest-alloc virtual addr=465B0000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.909] [info] [krnl] [t12696] guest-alloc virtual addr=46600000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.909] [info] [krnl] [t12696] guest-alloc virtual addr=46650000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.909] [info] [krnl] [t12696] guest-alloc virtual addr=46760000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.909] [info] [krnl] [t12696] guest-alloc virtual addr=467B0000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.910] [info] [krnl] [t12696] guest-alloc virtual addr=46800000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.910] [info] [krnl] [t12696] guest-alloc virtual addr=46910000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.910] [info] [krnl] [t12696] guest-alloc virtual addr=46960000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.910] [info] [krnl] [t12696] guest-alloc virtual addr=469B0000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.910] [info] [krnl] [t12696] guest-alloc virtual addr=46AC0000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.911] [info] [krnl] [t12696] guest-alloc virtual addr=46B10000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.911] [info] [krnl] [t12696] guest-alloc virtual addr=46B60000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.911] [info] [krnl] [t12696] guest-alloc virtual addr=46C70000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.911] [info] [krnl] [t12696] guest-alloc virtual addr=46CC0000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.911] [info] [krnl] [t12696] guest-alloc virtual addr=46D10000 size=00110000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.912] [info] [krnl] [t12696] guest-alloc virtual addr=46E20000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.912] [info] [krnl] [t12696] guest-alloc virtual addr=46E70000 size=00050000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.912] [info] [krnl] [t12696] guest-alloc virtual addr=46EC0000 size=002C0000 type=20801000 protect=00000003 page=10000
+[2026-10-23 04:05:57.913] [info] [krnl] [t12696] guest-alloc physical addr=FF2F7000 size=000E1000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:57.913] [info] [krnl] [t12696] guest-alloc physical addr=FF2B3000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:57.913] [info] [krnl] [t12696] guest-alloc physical addr=FF26F000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:57.913] [info] [krnl] [t12696] guest-alloc physical addr=FF18E000 size=000E1000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:57.913] [info] [krnl] [t12696] guest-alloc physical addr=FF14A000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:57.913] [info] [krnl] [t12696] guest-alloc physical addr=FF106000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:57.913] [info] [krnl] [t12696] guest-alloc physical addr=FF025000 size=000E1000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:57.914] [info] [krnl] [t12696] guest-alloc physical addr=EAFBB000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:05:57.914] [info] [krnl] [t12696] guest-alloc physical addr=EAF77000 size=00044000 protect=00000404 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=46EC0000 size=002C0000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=46800000 size=00110000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=46910000 size=00050000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=46960000 size=00050000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=469B0000 size=00110000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=46AC0000 size=00050000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=46B10000 size=00050000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=46650000 size=00110000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=46760000 size=00050000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=467B0000 size=00050000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=464A0000 size=00110000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=465B0000 size=00050000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=46600000 size=00050000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=46B60000 size=00110000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=46C70000 size=00050000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=46CC0000 size=00050000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=46D10000 size=00110000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=46E20000 size=00050000 type=00008000
+[2026-10-23 04:06:01.107] [info] [krnl] [t12696] guest-free virtual addr=46E70000 size=00050000 type=00008000
+[2026-10-23 04:06:01.195] [info] [krnl] [t12696] guest-free physical addr=FF2F7000
+[2026-10-23 04:06:01.195] [info] [krnl] [t12696] guest-free physical addr=FF2B3000
+[2026-10-23 04:06:01.195] [info] [krnl] [t12696] guest-free physical addr=FF26F000
+[2026-10-23 04:06:01.195] [info] [krnl] [t12696] guest-free physical addr=FF18E000
+[2026-10-23 04:06:01.195] [info] [krnl] [t12696] guest-free physical addr=FF14A000
+[2026-10-23 04:06:01.195] [info] [krnl] [t12696] guest-free physical addr=FF106000
+[2026-10-23 04:06:01.195] [info] [krnl] [t12696] guest-free physical addr=FF025000
+[2026-10-23 04:06:01.195] [info] [krnl] [t12696] guest-free physical addr=EAFBB000
+[2026-10-23 04:06:01.195] [info] [krnl] [t12696] guest-free physical addr=EAF77000
+[2026-10-23 04:06:01.195] [info] [krnl] [t12696] guest-free physical addr=FFC92000
+[2026-10-23 04:06:01.195] [info] [krnl] [t12696] guest-free physical addr=FFC91000
+[2026-10-23 04:06:01.195] [info] [krnl] [t12696] guest-free physical addr=FFC93000
+[2026-10-23 04:06:01.195] [info] [krnl] [t12696] guest-free physical addr=FFC94000
+[2026-10-23 04:06:01.195] [info] [krnl] [t12696] guest-free physical addr=FFC95000
+[2026-10-23 04:06:01.195] [info] [krnl] [t10464] guest-free physical addr=FF3D8000
+[2026-10-23 04:06:01.256] [info] [krnl] [t10464] guest-alloc virtual addr=461E0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.257] [info] [krnl] [t10464] guest-alloc virtual addr=461F0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.258] [info] [krnl] [t10464] guest-alloc virtual addr=46200000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.259] [info] [krnl] [t10464] guest-alloc virtual addr=46210000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.259] [info] [krnl] [t10464] guest-alloc virtual addr=46220000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.260] [info] [krnl] [t10464] guest-alloc virtual addr=46230000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.260] [info] [krnl] [t10464] guest-alloc virtual addr=46240000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.261] [info] [krnl] [t10464] guest-alloc virtual addr=46250000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.261] [info] [krnl] [t10464] guest-alloc virtual addr=46260000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.262] [info] [krnl] [t10464] guest-alloc virtual addr=46270000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.263] [info] [krnl] [t10464] guest-alloc virtual addr=46280000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.264] [info] [krnl] [t10464] guest-alloc virtual addr=46290000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.265] [info] [krnl] [t10464] guest-alloc virtual addr=462A0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.265] [info] [krnl] [t10464] guest-alloc virtual addr=462B0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.266] [info] [krnl] [t10464] guest-alloc virtual addr=462C0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.267] [info] [krnl] [t10464] guest-alloc virtual addr=462D0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.268] [info] [krnl] [t10464] guest-alloc virtual addr=462E0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.268] [info] [krnl] [t10464] guest-alloc virtual addr=462F0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.269] [info] [krnl] [t10464] guest-alloc virtual addr=46300000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.270] [info] [krnl] [t10464] guest-alloc virtual addr=46310000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.271] [info] [krnl] [t10464] guest-alloc virtual addr=46320000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:01.273] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:01.274] [info] [krnl] [t10772] guest-alloc physical addr=FF3A0000 size=00265000 protect=00000004 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:06:01.276] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:01.277] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:01.277] [info] [krnl] [t10772] guest-alloc physical addr=FF2F1000 size=000AF000 protect=00000004 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:06:01.278] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:01.279] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:01.279] [info] [krnl] [t10772] guest-alloc physical addr=FF233000 size=000BE000 protect=00000004 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:06:03.924] [info] [krnl] [t10464] guest-free virtual addr=46220000 size=00010000 type=00004000
+[2026-10-23 04:06:03.924] [info] [krnl] [t10464] guest-free virtual addr=461F0000 size=00010000 type=00004000
+[2026-10-23 04:06:03.924] [info] [krnl] [t10464] guest-free virtual addr=46200000 size=00010000 type=00004000
+[2026-10-23 04:06:03.924] [info] [krnl] [t10464] guest-free virtual addr=46210000 size=00010000 type=00004000
+[2026-10-23 04:06:03.925] [info] [krnl] [t10464] guest-free virtual addr=46270000 size=00010000 type=00004000
+[2026-10-23 04:06:03.925] [info] [krnl] [t10464] guest-free virtual addr=46240000 size=00010000 type=00004000
+[2026-10-23 04:06:03.925] [info] [krnl] [t10464] guest-free virtual addr=46250000 size=00010000 type=00004000
+[2026-10-23 04:06:03.925] [info] [krnl] [t10464] guest-free virtual addr=46260000 size=00010000 type=00004000
+[2026-10-23 04:06:03.925] [info] [krnl] [t10464] guest-free virtual addr=462C0000 size=00010000 type=00004000
+[2026-10-23 04:06:03.925] [info] [krnl] [t10464] guest-free virtual addr=46290000 size=00010000 type=00004000
+[2026-10-23 04:06:03.925] [info] [krnl] [t10464] guest-free virtual addr=462A0000 size=00010000 type=00004000
+[2026-10-23 04:06:03.925] [info] [krnl] [t10464] guest-free virtual addr=462B0000 size=00010000 type=00004000
+[2026-10-23 04:06:03.925] [info] [krnl] [t10464] guest-free virtual addr=46310000 size=00010000 type=00004000
+[2026-10-23 04:06:03.926] [info] [krnl] [t10464] guest-free virtual addr=462E0000 size=00010000 type=00004000
+[2026-10-23 04:06:03.926] [info] [krnl] [t10464] guest-free virtual addr=462F0000 size=00010000 type=00004000
+[2026-10-23 04:06:03.926] [info] [krnl] [t10464] guest-free virtual addr=46300000 size=00010000 type=00004000
+[2026-10-23 04:06:03.926] [info] [krnl] [t10464] guest-free virtual addr=461E0000 size=00010000 type=00004000
+[2026-10-23 04:06:03.926] [info] [krnl] [t10464] guest-free virtual addr=46230000 size=00010000 type=00004000
+[2026-10-23 04:06:03.926] [info] [krnl] [t10464] guest-free virtual addr=46280000 size=00010000 type=00004000
+[2026-10-23 04:06:03.926] [info] [krnl] [t10464] guest-free virtual addr=462D0000 size=00010000 type=00004000
+[2026-10-23 04:06:04.009] [info] [krnl] [t10464] guest-alloc virtual addr=461E0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.010] [info] [krnl] [t10464] guest-free virtual addr=461E0000 size=00010000 type=00004000
+[2026-10-23 04:06:04.010] [info] [krnl] [t10464] guest-alloc virtual addr=461E0000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.013] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:04.014] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:04.017] [info] [krnl] [t18060] guest-alloc virtual addr=461F0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.018] [info] [krnl] [t16896] guest-alloc virtual addr=46210000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.020] [info] [krnl] [t18060] guest-alloc virtual addr=46220000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.024] [info] [krnl] [t16896] guest-alloc virtual addr=46240000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.024] [info] [krnl] [t18060] guest-alloc virtual addr=46250000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.048] [info] [krnl] [t16896] guest-free virtual addr=46250000 size=00010000 type=00004000
+[2026-10-23 04:06:04.072] [info] [krnl] [t18060] guest-alloc virtual addr=46270000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.087] [info] [krnl] [t16896] guest-free virtual addr=46280000 size=00010000 type=00004000
+[2026-10-23 04:06:04.094] [info] [krnl] [t18060] guest-alloc virtual addr=46280000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.106] [info] [krnl] [t16896] guest-free virtual addr=46280000 size=00020000 type=00004000
+[2026-10-23 04:06:04.108] [info] [krnl] [t18060] guest-alloc virtual addr=46280000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.118] [info] [krnl] [t16896] guest-free virtual addr=46280000 size=00020000 type=00004000
+[2026-10-23 04:06:04.120] [info] [krnl] [t16896] guest-free virtual addr=46270000 size=00010000 type=00004000
+[2026-10-23 04:06:04.134] [info] [krnl] [t18060] guest-alloc virtual addr=46270000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.144] [info] [krnl] [t16896] guest-free virtual addr=46270000 size=00020000 type=00004000
+[2026-10-23 04:06:04.152] [info] [krnl] [t18060] guest-alloc virtual addr=46270000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.162] [info] [krnl] [t16896] guest-free virtual addr=46270000 size=00020000 type=00004000
+[2026-10-23 04:06:04.181] [info] [krnl] [t18060] guest-alloc virtual addr=46270000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.415] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:04.416] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:04.453] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:04.454] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:04.459] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.461] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.468] [info] [krnl] [t16896] guest-free virtual addr=462B0000 size=00020000 type=00004000
+[2026-10-23 04:06:04.470] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.473] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00040000 type=00004000
+[2026-10-23 04:06:04.498] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.500] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.508] [info] [krnl] [t19352] guest-alloc virtual addr=462D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.509] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.510] [info] [krnl] [t16896] guest-free virtual addr=462B0000 size=00010000 type=00004000
+[2026-10-23 04:06:04.512] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.515] [info] [krnl] [t16896] guest-free virtual addr=462C0000 size=00010000 type=00004000
+[2026-10-23 04:06:04.517] [info] [krnl] [t16896] guest-free virtual addr=462D0000 size=00020000 type=00004000
+[2026-10-23 04:06:04.521] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.526] [info] [krnl] [t16896] guest-free virtual addr=462B0000 size=00020000 type=00004000
+[2026-10-23 04:06:04.528] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.551] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.560] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.564] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00040000 type=00004000
+[2026-10-23 04:06:04.580] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.584] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.596] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.599] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.606] [info] [krnl] [t16896] guest-free virtual addr=462B0000 size=00020000 type=00004000
+[2026-10-23 04:06:04.610] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.620] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.624] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.626] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.630] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.632] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.638] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.646] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00040000 type=00004000
+[2026-10-23 04:06:04.647] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.652] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.676] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.678] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.684] [info] [krnl] [t16896] guest-free virtual addr=462B0000 size=00020000 type=00004000
+[2026-10-23 04:06:04.688] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.704] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.707] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.716] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.722] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.743] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.747] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.757] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.760] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.766] [info] [krnl] [t16896] guest-free virtual addr=462B0000 size=00020000 type=00004000
+[2026-10-23 04:06:04.772] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.793] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.801] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.802] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.808] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.817] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.821] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.827] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.832] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.842] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.847] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.860] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.864] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.878] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.886] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.891] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00040000 type=00004000
+[2026-10-23 04:06:04.893] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.897] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.899] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.904] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.911] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.914] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.919] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.922] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.928] [info] [krnl] [t16896] guest-free virtual addr=462B0000 size=00020000 type=00004000
+[2026-10-23 04:06:04.932] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.938] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.941] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.957] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.960] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:04.967] [info] [krnl] [t16896] guest-free virtual addr=462B0000 size=00020000 type=00004000
+[2026-10-23 04:06:04.970] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:04.996] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.000] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.004] [info] [krnl] [t16896] guest-free virtual addr=462B0000 size=00020000 type=00004000
+[2026-10-23 04:06:05.009] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:05.027] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.030] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:05.036] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.040] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:05.074] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.076] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.083] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00040000 type=00004000
+[2026-10-23 04:06:05.084] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.088] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:05.090] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.094] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:05.108] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.114] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.119] [info] [krnl] [t16896] guest-free virtual addr=462B0000 size=00020000 type=00004000
+[2026-10-23 04:06:05.121] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:05.151] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.154] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.159] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00040000 type=00004000
+[2026-10-23 04:06:05.187] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.190] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.197] [info] [krnl] [t16896] guest-free virtual addr=462B0000 size=00020000 type=00004000
+[2026-10-23 04:06:05.201] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:05.206] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.210] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:05.227] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.230] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.235] [info] [krnl] [t16896] guest-free virtual addr=462B0000 size=00020000 type=00004000
+[2026-10-23 04:06:05.239] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:05.266] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.269] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.274] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00040000 type=00004000
+[2026-10-23 04:06:05.285] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.289] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:05.300] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.304] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:05.307] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.309] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.316] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00040000 type=00004000
+[2026-10-23 04:06:05.316] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.322] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:05.323] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.328] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:05.342] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.347] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.354] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00040000 type=00004000
+[2026-10-23 04:06:05.382] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.384] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.389] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00040000 type=00004000
+[2026-10-23 04:06:05.419] [info] [krnl] [t19352] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.423] [info] [krnl] [t19352] guest-alloc virtual addr=462B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.431] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:05.571] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:05.572] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:05.574] [info] [krnl] [t25924] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.576] [info] [krnl] [t25924] guest-alloc virtual addr=462D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.578] [info] [krnl] [t25924] guest-alloc virtual addr=462F0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.581] [info] [krnl] [t25924] guest-alloc virtual addr=46330000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.583] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:05.585] [info] [krnl] [t25924] guest-alloc virtual addr=46290000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.590] [info] [krnl] [t25924] guest-alloc virtual addr=46350000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.592] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00010000 type=00004000
+[2026-10-23 04:06:05.594] [info] [krnl] [t25924] guest-alloc virtual addr=46300000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:05.597] [info] [krnl] [t16896] guest-free virtual addr=46290000 size=00020000 type=00004000
+[2026-10-23 04:06:05.603] [info] [krnl] [t16896] guest-free virtual addr=46360000 size=00010000 type=00004000
+[2026-10-23 04:06:05.613] [info] [krnl] [t16896] guest-free virtual addr=462D0000 size=00020000 type=00004000
+[2026-10-23 04:06:05.615] [info] [krnl] [t16896] guest-free virtual addr=46330000 size=00030000 type=00004000
+[2026-10-23 04:06:05.617] [info] [krnl] [t16896] guest-free virtual addr=46310000 size=00010000 type=00004000
+[2026-10-23 04:06:05.618] [info] [krnl] [t16896] guest-free virtual addr=462F0000 size=00020000 type=00004000
+[2026-10-23 04:06:06.457] [info] [krnl] [t10464] guest-alloc virtual addr=46250000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:10.699] [error] [krnl] [t14540] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:20.010] [info] [krnl] [t10464] guest-alloc physical addr=FF22B000 size=00008000 protect=00000004 page=1000 min=00000000 max=FFFFFFFF align=1000
+[2026-10-23 04:06:20.043] [info] [krnl] [t10464] guest-alloc virtual addr=46290000 size=00010000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:29.118] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:29.119] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:29.122] [info] [krnl] [t16752] guest-alloc virtual addr=462D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:29.125] [info] [krnl] [t16752] guest-alloc virtual addr=462F0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:29.134] [info] [krnl] [t16896] guest-free virtual addr=462F0000 size=00020000 type=00004000
+[2026-10-23 04:06:29.136] [info] [krnl] [t16752] guest-alloc virtual addr=462F0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:29.141] [info] [krnl] [t16896] guest-free virtual addr=462F0000 size=00020000 type=00004000
+[2026-10-23 04:06:29.144] [info] [krnl] [t16896] guest-free virtual addr=462D0000 size=00020000 type=00004000
+[2026-10-23 04:06:29.145] [info] [krnl] [t16752] guest-alloc virtual addr=462D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:29.148] [info] [krnl] [t16752] guest-alloc virtual addr=462F0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:29.154] [info] [krnl] [t16752] guest-alloc virtual addr=46330000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:29.159] [info] [krnl] [t16896] guest-free virtual addr=462F0000 size=00020000 type=00004000
+[2026-10-23 04:06:29.160] [info] [krnl] [t16752] guest-alloc virtual addr=462F0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:29.160] [info] [krnl] [t16896] guest-free virtual addr=46330000 size=00020000 type=00004000
+[2026-10-23 04:06:29.165] [info] [krnl] [t16896] guest-free virtual addr=462D0000 size=00020000 type=00004000
+[2026-10-23 04:06:29.166] [info] [krnl] [t16752] guest-alloc virtual addr=462D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:29.171] [info] [krnl] [t16752] guest-alloc virtual addr=46330000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:29.172] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00010000 type=00004000
+[2026-10-23 04:06:29.173] [info] [krnl] [t16752] guest-alloc virtual addr=46300000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:29.180] [info] [krnl] [t16896] guest-free virtual addr=46330000 size=00020000 type=00004000
+[2026-10-23 04:06:29.181] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00020000 type=00004000
+[2026-10-23 04:06:29.182] [info] [krnl] [t16752] guest-alloc virtual addr=46300000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:29.193] [info] [krnl] [t16896] guest-free virtual addr=462F0000 size=00010000 type=00004000
+[2026-10-23 04:06:29.235] [info] [krnl] [t16896] guest-free virtual addr=462D0000 size=00020000 type=00004000
+[2026-10-23 04:06:29.258] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00010000 type=00004000
+[2026-10-23 04:06:29.272] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:29.273] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:29.273] [info] [krnl] [t16896] guest-free virtual addr=46310000 size=00010000 type=00004000
+[2026-10-23 04:06:29.275] [info] [krnl] [t4300] guest-alloc virtual addr=462D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:48.849] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:48.849] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:48.849] [info] [krnl] [t16896] guest-free virtual addr=462D0000 size=00020000 type=00004000
+[2026-10-23 04:06:48.860] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:48.860] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:48.899] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:48.900] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:48.903] [info] [krnl] [t25980] guest-alloc virtual addr=462D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:48.905] [info] [krnl] [t25980] guest-alloc virtual addr=462F0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:48.910] [info] [krnl] [t25980] guest-alloc virtual addr=46330000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:48.913] [info] [krnl] [t16896] guest-free virtual addr=462D0000 size=00020000 type=00004000
+[2026-10-23 04:06:48.914] [info] [krnl] [t25980] guest-alloc virtual addr=462D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:48.915] [info] [krnl] [t16896] guest-free virtual addr=462F0000 size=00020000 type=00004000
+[2026-10-23 04:06:48.916] [info] [krnl] [t25980] guest-alloc virtual addr=462F0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:48.918] [info] [krnl] [t16896] guest-free virtual addr=46330000 size=00020000 type=00004000
+[2026-10-23 04:06:48.920] [info] [krnl] [t25980] guest-alloc virtual addr=46330000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:48.924] [info] [krnl] [t25980] guest-alloc virtual addr=46350000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:48.929] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00010000 type=00004000
+[2026-10-23 04:06:48.931] [info] [krnl] [t25980] guest-alloc virtual addr=46300000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:48.943] [info] [krnl] [t16896] guest-free virtual addr=46360000 size=00010000 type=00004000
+[2026-10-23 04:06:48.949] [info] [krnl] [t16896] guest-free virtual addr=46350000 size=00010000 type=00004000
+[2026-10-23 04:06:48.950] [info] [krnl] [t25980] guest-alloc virtual addr=46350000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:48.960] [info] [krnl] [t16896] guest-free virtual addr=46310000 size=00010000 type=00004000
+[2026-10-23 04:06:48.962] [info] [krnl] [t25980] guest-alloc virtual addr=46370000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:48.962] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00010000 type=00004000
+[2026-10-23 04:06:48.965] [info] [krnl] [t16896] guest-free virtual addr=46330000 size=00020000 type=00004000
+[2026-10-23 04:06:48.966] [info] [krnl] [t25980] guest-alloc virtual addr=46300000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:48.971] [info] [krnl] [t16896] guest-free virtual addr=46350000 size=00010000 type=00004000
+[2026-10-23 04:06:48.972] [info] [krnl] [t25980] guest-alloc virtual addr=46330000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:48.976] [info] [krnl] [t16896] guest-free virtual addr=46360000 size=00010000 type=00004000
+[2026-10-23 04:06:48.978] [info] [krnl] [t25980] guest-alloc virtual addr=46350000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:48.978] [info] [krnl] [t16896] guest-free virtual addr=46360000 size=00030000 type=00004000
+[2026-10-23 04:06:48.982] [info] [krnl] [t25980] guest-alloc virtual addr=46360000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:48.985] [info] [krnl] [t16896] guest-free virtual addr=46310000 size=00010000 type=00004000
+[2026-10-23 04:06:48.993] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00010000 type=00004000
+[2026-10-23 04:06:48.998] [info] [krnl] [t25980] guest-alloc virtual addr=46300000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.002] [info] [krnl] [t16896] guest-free virtual addr=46370000 size=00010000 type=00004000
+[2026-10-23 04:06:49.010] [info] [krnl] [t16896] guest-free virtual addr=462F0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.011] [info] [krnl] [t25980] guest-alloc virtual addr=46370000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.017] [info] [krnl] [t25980] guest-alloc virtual addr=464A0000 size=01000000 type=60002000 protect=00000003 page=10000
+[2026-10-23 04:06:49.018] [info] [krnl] [t25980] guest-alloc virtual addr=464A0000 size=00030000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.018] [info] [krnl] [t16896] guest-free virtual addr=462D0000 size=00020000 type=00004000
+[2026-10-23 04:06:49.019] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00020000 type=00004000
+[2026-10-23 04:06:49.022] [info] [krnl] [t25980] guest-alloc virtual addr=462D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.023] [info] [krnl] [t16896] guest-free virtual addr=46330000 size=00020000 type=00004000
+[2026-10-23 04:06:49.024] [info] [krnl] [t25980] guest-alloc virtual addr=462F0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.029] [info] [krnl] [t16896] guest-free virtual addr=46350000 size=00020000 type=00004000
+[2026-10-23 04:06:49.030] [info] [krnl] [t25980] guest-alloc virtual addr=46330000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.032] [info] [krnl] [t25980] guest-alloc virtual addr=46350000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.034] [info] [krnl] [t16896] guest-free virtual addr=46370000 size=00020000 type=00004000
+[2026-10-23 04:06:49.036] [info] [krnl] [t25980] guest-alloc virtual addr=46370000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.038] [info] [krnl] [t16896] guest-free virtual addr=464B0000 size=00020000 type=00004000
+[2026-10-23 04:06:49.047] [info] [krnl] [t25980] guest-alloc virtual addr=464B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.048] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00010000 type=00004000
+[2026-10-23 04:06:49.057] [info] [krnl] [t16896] guest-free virtual addr=46380000 size=00010000 type=00004000
+[2026-10-23 04:06:49.059] [info] [krnl] [t25980] guest-alloc virtual addr=46300000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.070] [info] [krnl] [t16896] guest-free virtual addr=464C0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.080] [info] [krnl] [t16896] guest-free virtual addr=46370000 size=00010000 type=00004000
+[2026-10-23 04:06:49.082] [info] [krnl] [t25980] guest-alloc virtual addr=46370000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.085] [info] [krnl] [t16896] guest-free virtual addr=462F0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.088] [info] [krnl] [t16896] guest-free virtual addr=464B0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.090] [info] [krnl] [t25980] guest-alloc virtual addr=464B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.096] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00020000 type=00004000
+[2026-10-23 04:06:49.101] [info] [krnl] [t16896] guest-free virtual addr=462D0000 size=00020000 type=00004000
+[2026-10-23 04:06:49.103] [info] [krnl] [t25980] guest-alloc virtual addr=462D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.103] [info] [krnl] [t16896] guest-free virtual addr=46380000 size=00010000 type=00004000
+[2026-10-23 04:06:49.105] [info] [krnl] [t25980] guest-alloc virtual addr=462F0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.113] [info] [krnl] [t16896] guest-free virtual addr=464C0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.116] [info] [krnl] [t25980] guest-alloc virtual addr=46380000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.119] [info] [krnl] [t16896] guest-free virtual addr=46360000 size=00010000 type=00004000
+[2026-10-23 04:06:49.122] [info] [krnl] [t25980] guest-alloc virtual addr=464C0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.125] [info] [krnl] [t16896] guest-free virtual addr=462D0000 size=00020000 type=00004000
+[2026-10-23 04:06:49.128] [info] [krnl] [t25980] guest-alloc virtual addr=462D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.128] [info] [krnl] [t16896] guest-free virtual addr=462F0000 size=00020000 type=00004000
+[2026-10-23 04:06:49.130] [info] [krnl] [t25980] guest-alloc virtual addr=462F0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.139] [info] [krnl] [t16896] guest-free virtual addr=46370000 size=00010000 type=00004000
+[2026-10-23 04:06:49.141] [info] [krnl] [t16896] guest-free virtual addr=46350000 size=00010000 type=00004000
+[2026-10-23 04:06:49.143] [info] [krnl] [t25980] guest-alloc virtual addr=46350000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.143] [info] [krnl] [t16896] guest-free virtual addr=46380000 size=00020000 type=00004000
+[2026-10-23 04:06:49.147] [info] [krnl] [t16896] guest-free virtual addr=464D0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.154] [info] [krnl] [t25980] guest-alloc virtual addr=46370000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.161] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00010000 type=00004000
+[2026-10-23 04:06:49.170] [info] [krnl] [t16896] guest-free virtual addr=464C0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.171] [info] [krnl] [t25980] guest-alloc virtual addr=46300000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.179] [info] [krnl] [t16896] guest-free virtual addr=464B0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.191] [info] [krnl] [t16896] guest-free virtual addr=46380000 size=00010000 type=00004000
+[2026-10-23 04:06:49.193] [info] [krnl] [t25980] guest-alloc virtual addr=46380000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.197] [info] [krnl] [t16896] guest-free virtual addr=462D0000 size=00020000 type=00004000
+[2026-10-23 04:06:49.201] [info] [krnl] [t25980] guest-alloc virtual addr=462D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.206] [info] [krnl] [t16896] guest-free virtual addr=46310000 size=00010000 type=00004000
+[2026-10-23 04:06:49.219] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00010000 type=00004000
+[2026-10-23 04:06:49.220] [info] [krnl] [t25980] guest-alloc virtual addr=46300000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.220] [info] [krnl] [t16896] guest-free virtual addr=46390000 size=00010000 type=00004000
+[2026-10-23 04:06:49.235] [info] [krnl] [t16896] guest-free virtual addr=46350000 size=00010000 type=00004000
+[2026-10-23 04:06:49.236] [info] [krnl] [t25980] guest-alloc virtual addr=464B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.237] [info] [krnl] [t16896] guest-free virtual addr=46380000 size=00010000 type=00004000
+[2026-10-23 04:06:49.239] [info] [krnl] [t25980] guest-alloc virtual addr=46380000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.241] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00020000 type=00004000
+[2026-10-23 04:06:49.246] [info] [krnl] [t25980] guest-alloc virtual addr=46300000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.249] [info] [krnl] [t16896] guest-free virtual addr=46360000 size=00010000 type=00004000
+[2026-10-23 04:06:49.253] [info] [krnl] [t16896] guest-free virtual addr=46330000 size=00020000 type=00004000
+[2026-10-23 04:06:49.257] [info] [krnl] [t25980] guest-alloc virtual addr=46330000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.257] [info] [krnl] [t16896] guest-free virtual addr=464C0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.258] [info] [krnl] [t10464] guest-free virtual addr=46370000 size=00010000 type=00004000
+[2026-10-23 04:06:49.259] [info] [krnl] [t25980] guest-alloc virtual addr=46350000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.263] [info] [krnl] [t16896] guest-free virtual addr=46380000 size=00020000 type=00004000
+[2026-10-23 04:06:49.264] [info] [krnl] [t25980] guest-alloc virtual addr=46370000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.269] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00020000 type=00004000
+[2026-10-23 04:06:49.271] [info] [krnl] [t16896] guest-free virtual addr=462F0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.272] [info] [krnl] [t25980] guest-alloc virtual addr=462F0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.276] [info] [krnl] [t16896] guest-free virtual addr=464B0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.278] [info] [krnl] [t25980] guest-alloc virtual addr=464B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.293] [info] [krnl] [t16896] guest-free virtual addr=46380000 size=00010000 type=00004000
+[2026-10-23 04:06:49.297] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00010000 type=00004000
+[2026-10-23 04:06:49.298] [info] [krnl] [t25980] guest-alloc virtual addr=46300000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.313] [info] [krnl] [t16896] guest-free virtual addr=46370000 size=00010000 type=00004000
+[2026-10-23 04:06:49.314] [info] [krnl] [t16896] guest-free virtual addr=464C0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.322] [info] [krnl] [t25980] guest-alloc virtual addr=46370000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.322] [info] [krnl] [t16896] guest-free virtual addr=464B0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.325] [info] [krnl] [t16896] guest-free virtual addr=46330000 size=00020000 type=00004000
+[2026-10-23 04:06:49.326] [info] [krnl] [t25980] guest-alloc virtual addr=46330000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.327] [info] [krnl] [t16896] guest-free virtual addr=46350000 size=00010000 type=00004000
+[2026-10-23 04:06:49.328] [info] [krnl] [t25980] guest-alloc virtual addr=464B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.331] [info] [krnl] [t16896] guest-free virtual addr=46310000 size=00010000 type=00004000
+[2026-10-23 04:06:49.336] [info] [krnl] [t25980] guest-alloc virtual addr=464D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.339] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00010000 type=00004000
+[2026-10-23 04:06:49.341] [info] [krnl] [t16896] guest-free virtual addr=46360000 size=00010000 type=00004000
+[2026-10-23 04:06:49.342] [info] [krnl] [t25980] guest-alloc virtual addr=46300000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.343] [info] [krnl] [t16896] guest-free virtual addr=46370000 size=00020000 type=00004000
+[2026-10-23 04:06:49.345] [info] [krnl] [t16896] guest-free virtual addr=46330000 size=00020000 type=00004000
+[2026-10-23 04:06:49.347] [info] [krnl] [t25980] guest-alloc virtual addr=46330000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.362] [info] [krnl] [t16896] guest-free virtual addr=464E0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.368] [info] [krnl] [t25980] guest-alloc virtual addr=46350000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.368] [info] [krnl] [t16896] guest-free virtual addr=46310000 size=00010000 type=00004000
+[2026-10-23 04:06:49.380] [info] [krnl] [t16896] guest-free virtual addr=464D0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.381] [info] [krnl] [t25980] guest-alloc virtual addr=46370000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.383] [info] [krnl] [t16896] guest-free virtual addr=462F0000 size=00020000 type=00004000
+[2026-10-23 04:06:49.389] [info] [krnl] [t25980] guest-alloc virtual addr=462F0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.399] [info] [krnl] [t16896] guest-free virtual addr=464C0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.404] [info] [krnl] [t16896] guest-free virtual addr=46380000 size=00010000 type=00004000
+[2026-10-23 04:06:49.408] [info] [krnl] [t25980] guest-alloc virtual addr=46380000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.419] [info] [krnl] [t16896] guest-free virtual addr=464B0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.421] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00010000 type=00004000
+[2026-10-23 04:06:49.423] [info] [krnl] [t25980] guest-alloc virtual addr=46300000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.444] [info] [krnl] [t16896] guest-free virtual addr=46390000 size=00010000 type=00004000
+[2026-10-23 04:06:49.460] [info] [krnl] [t16896] guest-free virtual addr=46380000 size=00010000 type=00004000
+[2026-10-23 04:06:49.462] [info] [krnl] [t16896] guest-free virtual addr=46310000 size=00010000 type=00004000
+[2026-10-23 04:06:49.463] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00010000 type=00004000
+[2026-10-23 04:06:49.465] [info] [krnl] [t25980] guest-alloc virtual addr=46300000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.474] [info] [krnl] [t16896] guest-free virtual addr=46370000 size=00010000 type=00004000
+[2026-10-23 04:06:49.476] [info] [krnl] [t25980] guest-alloc virtual addr=46370000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.484] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00020000 type=00004000
+[2026-10-23 04:06:49.485] [info] [krnl] [t25980] guest-alloc virtual addr=46300000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.500] [info] [krnl] [t16896] guest-free virtual addr=46380000 size=00010000 type=00004000
+[2026-10-23 04:06:49.507] [info] [krnl] [t16896] guest-free virtual addr=46370000 size=00010000 type=00004000
+[2026-10-23 04:06:49.509] [info] [krnl] [t25980] guest-alloc virtual addr=46370000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.515] [info] [krnl] [t16896] guest-free virtual addr=46310000 size=00010000 type=00004000
+[2026-10-23 04:06:49.516] [info] [krnl] [t25980] guest-alloc virtual addr=464B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.522] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00010000 type=00004000
+[2026-10-23 04:06:49.525] [info] [krnl] [t16896] guest-free virtual addr=46350000 size=00010000 type=00004000
+[2026-10-23 04:06:49.526] [info] [krnl] [t25980] guest-alloc virtual addr=46300000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.528] [info] [krnl] [t16896] guest-free virtual addr=46360000 size=00010000 type=00004000
+[2026-10-23 04:06:49.530] [info] [krnl] [t16896] guest-free virtual addr=46370000 size=00020000 type=00004000
+[2026-10-23 04:06:49.531] [info] [krnl] [t25980] guest-alloc virtual addr=46350000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.544] [info] [krnl] [t16896] guest-free virtual addr=464C0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.549] [info] [krnl] [t25980] guest-alloc virtual addr=46370000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.551] [info] [krnl] [t16896] guest-free virtual addr=46310000 size=00010000 type=00004000
+[2026-10-23 04:06:49.558] [info] [krnl] [t16896] guest-free virtual addr=464B0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.560] [info] [krnl] [t25980] guest-alloc virtual addr=464B0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.562] [info] [krnl] [t16896] guest-free virtual addr=462D0000 size=00020000 type=00004000
+[2026-10-23 04:06:49.565] [info] [krnl] [t25980] guest-alloc virtual addr=462D0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.568] [info] [krnl] [t16896] guest-free virtual addr=462F0000 size=00020000 type=00004000
+[2026-10-23 04:06:49.571] [info] [krnl] [t25980] guest-alloc virtual addr=462F0000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.573] [info] [krnl] [t16896] guest-free virtual addr=46380000 size=00010000 type=00004000
+[2026-10-23 04:06:49.586] [info] [krnl] [t16896] guest-free virtual addr=464C0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.587] [info] [krnl] [t25980] guest-alloc virtual addr=46380000 size=00020000 type=60001000 protect=00000003 page=10000
+[2026-10-23 04:06:49.599] [info] [krnl] [t16896] guest-free virtual addr=46300000 size=00010000 type=00004000
+[2026-10-23 04:06:49.603] [info] [krnl] [t16896] guest-free virtual addr=46330000 size=00020000 type=00004000
+[2026-10-23 04:06:49.605] [info] [krnl] [t16896] guest-free virtual addr=46350000 size=00020000 type=00004000
+[2026-10-23 04:06:49.607] [info] [krnl] [t16896] guest-free virtual addr=464B0000 size=00010000 type=00004000
+[2026-10-23 04:06:49.609] [info] [krnl] [t16896] guest-free virtual addr=46370000 size=00030000 type=00004000
+[2026-10-23 04:06:49.694] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.695] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.695] [info] [krnl] [t16896] guest-free virtual addr=462D0000 size=00030000 type=00004000
+[2026-10-23 04:06:49.725] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.726] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.740] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.740] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.753] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.753] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.765] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.765] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.778] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.779] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.792] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.794] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.808] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.808] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.820] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.821] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.834] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.834] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.847] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.848] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.859] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.859] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.872] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.872] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.883] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.883] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.895] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.896] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.911] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.912] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.924] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.925] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.940] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.940] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.954] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.954] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.966] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.968] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.982] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.982] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.996] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:49.996] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.009] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.009] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.021] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.021] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.033] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.033] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.049] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.050] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.063] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.063] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.077] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.077] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.088] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.089] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.101] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.101] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.113] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.114] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.126] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.127] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.137] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.137] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.150] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.150] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.160] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.161] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.174] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.175] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.189] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.190] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.205] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.205] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.218] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.218] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.230] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.231] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.244] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.244] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.259] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.259] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.273] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-23 04:06:50.273] [error] [krnl] [t10428] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented

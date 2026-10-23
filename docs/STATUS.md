@@ -9,7 +9,7 @@ Atualizado em 2026-10-22. Legenda: **feito** = verificado por execução; **comp
 | C — Cadeia ARM32 | **feito (Vita físico)** | `dist/rexglue_ppc_tests.vpk` (ELF32 ARM EABI5 hard-float, ARMv7/Thumb-2/VFPv3/NEON). Vita3K: 1582/1585 → 3 bugs corrigidos (#12–14) → 1588/1588. **PS Vita físico: 1588/1588, 0 exceções, página-guarda intacta** (`docs/logs/C17_vita_fisico_ppc_tests.log`): acessos desalinhados (`lwz`/`ld`/`stw`), FPSCR (modos de arredondamento), NEON e FMA de software funcionam no Cortex-A9 real |
 | D — Inicialização mínima do Storm 2 | **feito no host (x64)**, incluindo batalha medida (695 s sem travar, depois da correção do bug 20) | codegen completo (0 `REX_FATAL`, 0 não implementadas). Build x64 roda 300 s sem travar e sem fechar sozinho. Tabela de imports (`docs/imports.md`: 229 imports, 115 chamados, nenhum STUB chamado). Tela preta corrigida (bug 19): com as opções padrão a imagem aparece do logo da Dolby até o carregamento de "Batalha 1: Naruto vs Sasuke" (`docs/logs/D27_render_fix`; regressão `scripts/check_storm2_render.ps1`). Instruções por quadro e memória medidas **fora de batalha** (abaixo) |
 | E — Código e runtime no Vita | **passo 1 feito**: o código do jogo compila para ARM32 (28,8 MiB) | runtime do Vita não começado |
-| E–H | aguardando decisão | portões 1 e 2 desfavoráveis do jeito direto: **`docs/RELATORIO_VIABILIDADE.md`** (2026-10-23) |
+| E–H | **opção B escolhida** (2026-10-23): runtime mínimo e jogo rodando no Vita sem gráficos | relatório: `docs/RELATORIO_VIABILIDADE.md`; plano e projeto da memória: **`docs/PLANO_RUNTIME_VITA.md`** (etapas B1–B5) |
 
 ## Cadeia ARM32 — o que foi preciso mudar no ReXGlue
 1. `platform.h`: `#error` para 32 bits → `REX_ARCH_ARM32`; Vita → `REX_PLATFORM_VITA`.
