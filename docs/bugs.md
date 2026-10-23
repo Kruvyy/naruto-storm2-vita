@@ -28,6 +28,7 @@ Commits na branch `vita-arm32` de `rexglue/`.
 | 17 | A | análise de funções | funções sem `.pdata` cujo endereço só aparece no código como constante `lis`+`addi`/`ori` (ponteiro de callback passado em registrador) não eram geradas → `FATAL Call to invalid or unregistered function at guest address 0x8224B8C0` na 1ª execução do Storm 2 | corrigido (opção `scan_code_address_constants`, desligada por padrão; ligada no Storm 2) | `find_code_const_functions.py`: candidatos → 0; `check_storm2_codegen.ps1`; execução de 240 s sem FATAL (`docs/logs/D17_run3`) | `3023ce9` | 693 registros, +6 funções novas |
 | 18 | B | `NtQueryInformationFile` | a classe `XFileXctdCompressionInformation` não é implementada pelo runtime: devolve `X_STATUS_INVALID_PARAMETER` e registra erro | confirmado; o jogo segue em frente (provavelmente trata como arquivo não comprimido) [H] | — | — | ~260 chamadas em 240 s |
 | 19 | C | render targets D3D12 (caminho RTV) | **tela preta**: o padrão de `execute_unclipped_draw_vs_on_cpu` foi trocado de `true` (Xenia) para `false` no port do ReXGlue. Desenhos sem recorte (quads em espaço de tela, limpezas) passavam a "ocupar" a EDRAM inteira, e as transferências de posse entre render targets zeravam o conteúdo. O frontbuffer apresentado era 0 em todos os canais | corrigido (padrão `true` restaurado, com a descrição original) | `scripts/check_storm2_render.ps1` (falhava: 0 % aceso; passa: 100 %) | `d31d6c4` | todas as telas |
+| 20 | A | tabelas de salto (`bctr`) | tabelas de **ponteiros de função** (`table[i]()` como chamada de cauda, sem verificação de limite) eram emitidas como `switch` com só as entradas recuperadas (1–2) e `default: __builtin_trap()`. O detector ainda tomava o registro da tabela como índice (`lwzx rD,rIdx,rTab` com operandos invertidos). Na batalha: `STATUS_ILLEGAL_INSTRUCTION` (`ud2` em `sub_822185C0`) | corrigido: tabela cujos alvos são todos outras funções vira despacho indireto pelo `ctr`; o `default` de todo `switch` passa a despachar pelo `ctr` em vez de trap mudo | `unit [codegen][dispatch]` (4 casos); `check_storm2_codegen.ps1` (auditoria: 9 → 0 tabelas de despacho emitidas como `switch`, 138 → 0 traps no `default`) | `933a33b` | 9 funções; 129 `switch` internos |
 
 ## Detalhes
 
@@ -108,3 +109,28 @@ Causa: em `src/graphics/util/draw_extent_estimator.cpp` o ReXGlue comentou o `DE
 Correção: padrão `true` restaurado, com a descrição do Xenia. Depois dela, `scripts/check_storm2_render.ps1` sem opções extras: frontbuffer 100 % aceso, janela 96,7–99,4 % não preta, do logo da Dolby até "Batalha 1: Naruto vs Sasuke, AGUARDE 87%" (`D27_render_fix`). Suíte `ctest`: 3394/3395 (a falha é o item 6, anterior).
 
 **Auditoria de padrões** (`scripts/audit_cvar_defaults.py`): só 15 definições originais do Xenia ficaram comentadas no código. Depois da correção, a única divergência restante é `primitive_processor_cache_min_indices` (Xenia 4096, ReXGlue 0), que afeta só o cache de primitivas processadas, ou seja, custo de CPU, não a imagem. Ficou sem mudança, por falta de evidência de problema. **Limitação:** as demais cvars foram convertidas sem deixar o original. Uma auditoria completa exige o código-fonte do Xenia Canary, que não está nesta máquina.
+
+### 20 — tabelas de ponteiros de função emitidas como `switch` (travamento na batalha)
+Sintoma: na 1ª tentativa de batalha (`docs/logs/batalha1`), o processo morreu aos ~75 s com `0xC000001D` (`STATUS_ILLEGAL_INSTRUCTION`), sem mensagem no log. Log de eventos do Windows: falha em `storm2.exe+0x1D9D948`. A desmontagem (`llvm-objdump`) mostrou um `ud2`, que é como o Clang emite `__builtin_trap()` no Windows.
+
+Função: `sub_822185C0` (`lis r11,0x8201; slwi r10,r3,2; addi r11,r11,-3568; lwzx r11,r10,r11; mtctr r11; bctr`). Ela lê um ponteiro de função de uma tabela em `.rdata` (`0x8200F210`: `0x822185D8`, `0x82218620`×N, `0x82218668`…) e salta para ele. Código emitido antes:
+```
+switch (ctx.r11.u32) { case 0: sub_822185D8(ctx, base); return;
+                       default: __builtin_trap(); }
+```
+
+Duas falhas no `detectJumpTable` (`src/codegen/function_scanner.cpp`), confirmadas no rastro `docs/logs/D3_codegen_trace*.log`:
+1. Ele toma `RB` do `lwzx` como índice. Aqui os operandos estão invertidos, então o `switch` ficou sobre `r11`, que é o endereço lido, não o índice.
+2. Sem verificação de limite, ele lê entradas até a primeira fora da "região" da função. A entrada [1] (`0x82218620`) já estava fora, então sobrou 1 alvo. Esse alvo é início de outra função e foi tirado da análise de blocos, mas a tabela continuou sendo usada na emissão.
+
+Auditoria do código gerado (`scripts/audit_switch_tables.py`): 9 das 138 tabelas tinham exatamente esse padrão (operandos invertidos e todos os alvos em outras funções); nenhuma tabela interna tinha operandos invertidos.
+
+Correção (`rexglue`):
+- `isFunctionDispatchTable()`: uma tabela detectada automaticamente cujos alvos são todos inícios de outras funções não é registrada. O `bctr` vira `REX_CALL_INDIRECT_FUNC(ctr)`, o tratamento que o ReXGlue já dava a um `bctr` sem tabela.
+- No `default` de todo `switch`, `__builtin_trap()` virou despacho pelo `ctr`. Se o alvo é uma função registrada, ela roda; se não é, o runtime para com o endereço do convidado, em vez de um `ud2` sem diagnóstico.
+
+Depois: 129 `switch` (internos), 0 tabelas de despacho como `switch`, 0 traps no `default`. `check_storm2_codegen.ps1` OK; `ctest` 3404/3405 (a falha é o item 6).
+
+**Lacunas:**
+- O detector ainda não trata `lwzx` com operandos invertidos em tabelas **internas**. Hoje não há nenhum caso desses no Storm 2, e a auditoria acusa se aparecer.
+- A suíte PPC não cobre despacho indireto: no harness, `REX_CALL_INDIRECT_FUNC` cai no resolvedor global, que não existe ali. Um teste `.s` desse padrão exige dar ao harness uma tabela de funções.

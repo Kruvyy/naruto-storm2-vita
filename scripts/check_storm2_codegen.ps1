@@ -19,4 +19,11 @@ $out2 = py -3 -I (Join-Path $PSScriptRoot 'find_code_const_functions.py') $dump 
 "enderecos montados no codigo sem funcao: $out2"
 if ($out2 -notmatch 'sem funcao: 0$') { $fail++ }
 
+$out3 = py -3 -I (Join-Path $PSScriptRoot 'audit_switch_tables.py') $gen | Select-Object -Last 1
+"tabelas de salto: $out3"
+if ($out3 -notmatch 'indice_e_tabela: 0;' -or $out3 -notmatch 'so_funcoes: 0;') { $fail++ }
+
+$trap = (Select-String -Path "$gen\*.cpp" -Pattern 'Switch case out of range').Count
+"switch com trap silencioso no default: $trap (esperado 0)"; if ($trap -ne 0) { $fail++ }
+
 if ($fail -eq 0) { "OK" } else { "FALHOU ($fail)"; exit 1 }

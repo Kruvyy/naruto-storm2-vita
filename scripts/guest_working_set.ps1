@@ -36,7 +36,9 @@ public static class Ws {
 '@
 # Virtual heaps only (guest 0x00000000-0x9FFFFFFF). Guest 0xA0000000-0xFFFFFFFF are
 # views of physical memory and would count the same pages twice.
-$v = [Ws]::CountResident($ProcessId, 0x100000000, 0xA0000000)
+# 0xA0000000L: without the L suffix, PowerShell 5.1 parses it as a negative
+# Int32 and the scan covered nothing (virtual always reported 0).
+$v = [Ws]::CountResident($ProcessId, 0x100000000, 0xA0000000L)
 $p = [Ws]::CountResident($ProcessId, 0x200000000, 0x20000000)
 "residente virtual  : {0:N1} MiB" -f ($v / 1MB)
 "residente fisica   : {0:N1} MiB" -f ($p / 1MB)
