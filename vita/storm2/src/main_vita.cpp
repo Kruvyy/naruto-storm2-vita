@@ -42,6 +42,7 @@
 
 #include <rex/audio/vita/vita_audio_system.h>
 #include <rex/cvar.h>
+#include <rex/graphics/gles/gles_gpu.h>
 #include <rex/graphics/null/null_gpu.h>
 #include <rex/image_info.h>
 #include <rex/input/input_system.h>
@@ -64,6 +65,14 @@ unsigned int _newlib_heap_size_user = 48 * 1024 * 1024;
 
 REXCVAR_DEFINE_STRING(vita_game_root, "ux0:data/storm2port/game", "Vita",
                       "Folder with default.xex and the game data");
+REXCVAR_DEFINE_STRING(vita_gpu, "auto", "Vita",
+                      "GPU backend: gles (renderer, needs ur0:data/external/libshacccg.suprx), "
+                      "null (no rendering), auto (gles if the shader compiler is installed)");
+
+namespace {
+constexpr const char* kShaderCompilerPath = "ur0:data/external/libshacccg.suprx";
+bool g_rendering = false;
+}  // namespace
 
 namespace {
 
@@ -251,11 +260,26 @@ int main() {
               uint64_t(xex_stat.st_size));
 
   rex::RuntimeConfig config;
-  auto graphics = std::make_unique<rex::graphics::null::NullGraphicsSystem>();
-  if (XFAILED(graphics->SetupPresentation(nullptr))) {
-    Fail("null GPU setup failed");
+  {
+    const std::string gpu = REXCVAR_GET(vita_gpu);
+    SceIoStat compiler_stat{};
+    const bool have_compiler = sceIoGetstat(kShaderCompilerPath, &compiler_stat) >= 0;
+    g_rendering = gpu == "gles" || (gpu == "auto" && have_compiler);
+    REXLOG_INFO("GPU: {} (vita_gpu={}, {} {})", g_rendering ? "GLES renderer (vitaGL)" : "null",
+                gpu, kShaderCompilerPath, have_compiler ? "present" : "absent");
+    Stats("gpu: %s, shader compiler %s\n", g_rendering ? "gles" : "null",
+          have_compiler ? "present" : "absent");
+    std::unique_ptr<rex::graphics::GraphicsSystem> graphics;
+    if (g_rendering) {
+      graphics = std::make_unique<rex::graphics::gles::GlesGraphicsSystem>();
+    } else {
+      graphics = std::make_unique<rex::graphics::null::NullGraphicsSystem>();
+    }
+    if (XFAILED(graphics->SetupPresentation(nullptr))) {
+      Fail("GPU setup failed");
+    }
+    config.graphics = std::move(graphics);
   }
-  config.graphics = std::move(graphics);
   config.audio_factory = REX_AUDIO_BACKEND(rex::audio::vita::VitaAudioSystem);
   config.input_factory = REX_INPUT_BACKEND(rex::input::CreateDefaultInputSystem);
   config.kernel_init = rex::kernel::InitializeKernel;
@@ -286,7 +310,10 @@ int main() {
     main_thread->Wait(0, 0, 0, nullptr);
     finished = true;
   });
-  Screen(kBlue);
+  if (!g_rendering) {
+    // With the renderer the display belongs to vitaGL.
+    Screen(kBlue);
+  }
   REXLOG_INFO("Game started");
 
   // Statistics every 5 s; START + SELECT held for 2 s quits.
@@ -340,7 +367,9 @@ int main() {
     }
   }
 
-  Screen(kGreen);
+  if (!g_rendering) {
+    Screen(kGreen);
+  }
   rex::perf::DumpImportStats();
   rex::FlushLogging();
   if (finished) {

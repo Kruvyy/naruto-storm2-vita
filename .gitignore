@@ -24,3 +24,7 @@
 __pycache__/
 # Vita copy of the generated code (storm2/vita/storm2_vita_manifest.toml).
 /storm2/vita/generated/
+# Shader microcode dumped from the game by --null_gpu_dump_shaders (derived from the game).
+/storm2/shader_dump/
+# Frames rendered by the GLES backend on the PC (derived from the game).
+/storm2/gles_frames/

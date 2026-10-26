@@ -51,8 +51,8 @@ add_executable(storm2_vita src/main_vita.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../common/vita_math_compat.c)
 target_link_options(storm2_vita PRIVATE -Wl,--gc-sections)
 target_link_libraries(storm2_vita PRIVATE
-  storm2_code rexgpu_null_vita rexaudio_vita rexinput_vita rexruntime_vita rexcore_vita
-  ${REX_VITA_SYSTEM_LIBS})
+  storm2_code rexgpu_gles_vita rexgpu_null_vita rexaudio_vita rexinput_vita rexruntime_vita
+  rexcore_vita ${REX_VITA_GLES_LIBS} ${REX_VITA_SYSTEM_LIBS})
 
 vita_create_self(eboot.bin storm2_vita)
 set(VITA_MKSFOEX_FLAGS "-d ATTRIBUTE2=12")

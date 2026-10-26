@@ -274,10 +274,31 @@ set(REXGPU_NULL_VITA_SOURCES
   pipeline/shader/interpreter.cpp pipeline/shader/translator.cpp
   pipeline/shader/translator_disasm.cpp null/null_gpu.cpp)
 list(TRANSFORM REXGPU_NULL_VITA_SOURCES PREPEND "${SRC}/graphics/")
+# util/draw.cpp uses the fixed-point helpers of ui/graphics_util.cpp.
+list(APPEND REXGPU_NULL_VITA_SOURCES ${SRC}/ui/graphics_util.cpp)
 add_library(rexgpu_null_vita STATIC ${REXGPU_NULL_VITA_SOURCES})
 target_include_directories(rexgpu_null_vita PRIVATE ${TP}/renderdoc ${REXGLUE_DIR})
 target_compile_options(rexgpu_null_vita PRIVATE -Wno-unused-variable)
 target_link_libraries(rexgpu_null_vita PUBLIC rexruntime_vita PRIVATE xxHash::xxhash)
+
+#=============================================================================
+# rexgpu (GLES backend through vitaGL): the renderer of docs/PLANO_RENDER_VITA.md.
+# Needs ur0:data/external/libshacccg.suprx on the console (runtime shader
+# compiler); the app falls back to the null GPU without it.
+#=============================================================================
+add_library(rexgpu_gles_vita STATIC
+  ${SRC}/graphics/pipeline/shader/glsl_translator.cpp
+  ${SRC}/graphics/gles/gl_api.cpp ${SRC}/graphics/gles/gles_gpu.cpp
+  ${SRC}/graphics/gles/gles_texture.cpp)
+target_include_directories(rexgpu_gles_vita PRIVATE ${TP}/renderdoc ${REXGLUE_DIR})
+target_compile_options(rexgpu_gles_vita PRIVATE -Wno-unused-variable)
+target_link_libraries(rexgpu_gles_vita PUBLIC rexgpu_null_vita PRIVATE xxHash::xxhash)
+set(REX_VITA_GLES_LIBS
+  vitaGL vitashark SceShaccCgExt mathneon taihen_stub SceShaccCg_stub SceKernelDmacMgr_stub
+  SceGxm_stub SceAppMgr_stub SceCommonDialog_stub SceIme_stub)
+if(NOT PROJECT_IS_TOP_LEVEL)
+  set(REX_VITA_GLES_LIBS ${REX_VITA_GLES_LIBS} PARENT_SCOPE)
+endif()
 
 #=============================================================================
 # rexinput: input system (incl. record/replay) with the sceCtrl driver
