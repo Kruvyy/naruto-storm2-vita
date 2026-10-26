@@ -155,9 +155,10 @@ Cada etapa só termina com a verificação indicada. Nada é dado como feito sem
     | erros no log | os mesmos 115 `NtQueryInformationFile` | 115 |
     | escritas em memória liberada / além do limite | 0 / 0 | — |
     | heap do newlib em uso | 28,4 MiB de 48 | — |
-    | blocos de áudio entregues pelo jogo | 90–128/s | ~178/s |
+    | blocos de áudio entregues pelo jogo | 90–128/s no 1º minuto; depois 58–84/s, média 71 (`F6`) | ~178/s |
 
     - **Reprodução de entrada** (`docs/logs/F5_replay_start`, START nos quadros 2500–3700): o jogo sai da tela de título nos dois, com os mesmos números: quadro 3000 → 121.580 desenhos no Vita3K e 122.280 no PC; quadro 3600 → 201.068 e 203.140; quadro 4200 → **238.860 desenhos e 24.600 resolves nos dois**. O código ARM32 percorre o mesmo caminho do x64, inclusive na resposta à entrada.
+    - Execução do usuário no Vita3K (`docs/logs/F6_vita3k_340s`, 340 s, 7.124 quadros, fechada pelo emulador sem erro): mesmo padrão de 72.065–72.135 desenhos e 18.600 resolves por 600 quadros na tela de título, 393,9 MiB de blocos, heap estável em 28,4 MiB, os mesmos 115 erros. Depois do 1º minuto: 21,4 quadros/s e 71 blocos de áudio por segundo em média, ou seja, ~38 % do tempo real no áudio contra ~71 % nos quadros. No emulador, o motor de áudio do jogo é o que mais fica para trás.
     - Estabilidade: uma execução passou de 11 min (11.790 quadros) sem cair. O log dela não foi guardado: por engano, duas instâncias do Vita3K escreviam no mesmo arquivo (instalar pelo VPK reabre o emulador com outro processo; para rodar de novo, `Vita3K.exe -r RXGT00006`).
     - `NtSuspendThread` (8 chamadas) com a suspensão adiada da B3: o jogo segue igual ao PC.
     - O que o Vita3K **não** mostra: velocidade (6–7× mais rápido que o console); falta de memória (ele relata 0 KiB livres e continua alocando, então os blocos de reserva nunca são usados); tempo de CPU por thread (`runClocks` vem sempre 0).
