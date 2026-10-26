@@ -1,0 +1,12 @@
+[1965-07-20 04:23:26.264] [error] [core] [t1521994053] AllocFixed: the PS Vita cannot allocate at a chosen address (0x81000000, 0x1000)
+[1965-07-20 04:23:26.718] [info] [sys] [t1521994053] PS Vita: suspend of thread 000000F7 is deferred to its next wait or sleep (1 so far)
+[1965-07-20 04:23:27.031] [info] [sys] [t1521994053] PS Vita: termination of thread 0000011C is deferred to its next wait or sleep
+[1965-07-20 04:23:27.151] [info] [sys] [t1521994053] Guest memory: software MMU (4 KiB page table at 0x0000000080800000, 4.5 MiB of tables); each guest region gets its own host block
+[1965-07-20 04:23:27.182] [warning] [core] [t1521994053] PS Vita: host faults are not delivered to the app; exception handlers are kept but never called (a fault ends the program with a crash dump)
+[1965-07-20 04:23:27.239] [warning] [sys] [t1521994053] Software MMU: virtual region 7C000000 (4.0 MiB) limited to 1.0 MiB of real memory
+[1965-07-20 04:23:27.247] [info] [sys] [t1521994053] Software MMU: frame 0: 3 virtual + 1 physical blocks, 17.3 MiB backed (peak 17.3 MiB), 0 released-page writes
+[1965-07-20 04:23:27.249] [info] [sys] [t1521994053] Software MMU:   physical region C0000000: 16.0 MiB, 16.0 MiB backed
+[1965-07-20 04:23:27.249] [info] [sys] [t1521994053] Software MMU:   virtual  region 7C000000: 4.0 MiB, 1.0 MiB backed
+[1965-07-20 04:23:27.250] [info] [sys] [t1521994053] Software MMU:   virtual  region 80000000: 0.2 MiB, 0.2 MiB backed
+[1965-07-20 04:23:27.251] [info] [sys] [t1521994053] Software MMU:   virtual  region 00000000: 0.1 MiB, 0.1 MiB backed
+[1965-07-20 04:23:27.299] [warning] [sys] [t1521994053] Software MMU: physical memory at physical address 0B000000 (272.0 MiB) limited to 184.0 MiB of real memory

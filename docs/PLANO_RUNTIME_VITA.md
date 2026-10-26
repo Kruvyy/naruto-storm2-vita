@@ -88,11 +88,54 @@ Cada etapa só termina com a verificação indicada. Nada é dado como feito sem
     - Isso continua acima dos ~256 MB padrão. Reduzir exige limites de dois trechos (começo e fim) no bloco de 70 MiB, ou memória do convidado menor no próprio jogo. [P] Medir no console quanta RAM o app consegue (B3/B4).
   - **Fora da validação:** batalha (espera a gravação de entrada da B1b), D3D12 com MMU por software (recusado de propósito) e desempenho da tradução no PC (o jogo é limitado a 30 quadros/s; o custo no Vita já foi medido no benchmark).
 - **Armadilha de build achada:** `rexglue codegen` reescreve `<pasta do manifesto>/generated/rexglue.cmake`. Com o manifesto do Vita em `storm2/`, o build do PC passou a compilar a cópia do Vita sem aviso. O manifesto do Vita agora fica em `storm2/vita/`, com saída em `storm2/vita/generated/`.
+- **B3 — camada do Vita compila e passa no Vita3K (2026-10-26); falta o console.**
+  - **Build:** projeto próprio em `vita/runtime` (não o CMake completo do ReXGlue, que puxa SDL3, D3D12, FFmpeg e o gerador). Ele compila com o VitaSDK as mesmas fontes de core, system, kernel e filesystem do build do PC, com `REXGLUE_SOFT_MMU`. [V] 0 erros e 0 avisos: `librexcore_vita.a` tem 2,2 MB e `librexruntime_vita.a` 7,5 MB.
+  - **Camada de plataforma** (`rexglue/src/core/*_vita.cpp`):
+
+    | Peça | No Vita |
+    |---|---|
+    | relógio | `sceKernelGetProcessTimeWide` (µs), hora do RTC |
+    | memória | blocos `sceKernelAllocMemBlock`, zerados; endereço escolhido é recusado; sem proteção de página; reserva sem acesso devolve endereço baixo não mapeado |
+    | threads | derivado do POSIX, sem sinais (ver abaixo); id, prioridade e afinidade pelo `SceUID` (hardware threads 0–5 do Xenon → núcleos 0–2) |
+    | fibers | `SceFiber` (`sceFiberRun`/`Switch`/`ReturnToThread`) |
+    | arquivos | `sceIo` direto (caminhos `ux0:`/`app0:`); "arquivo mapeado" = lido para a memória e gravado de volta |
+    | exceções/SEH | o Vita não entrega falhas ao app: os tratadores ficam registrados e nunca rodam (escrito no log) |
+    | bibliotecas dinâmicas | não existem: `Load()` falha com mensagem |
+    | sockets | `close()`; `ioctl` falha (`ENOSYS`) |
+
+  - **Threads sem sinais:**
+    - os callbacks (APCs) só entram na fila; as esperas alertáveis já verificam a fila a cada 1 ms;
+    - suspender ou terminar *outra* thread vale na próxima espera, pausa (`sleep`) ou `yield` dela, e isso vai para o log;
+    - o Storm 2 chama `NtSuspendThread` 8 vezes, com o handle guardado num objeto (provavelmente outra thread); confirmar em B4.
+  - **Correções para 32 bits** (bugs 24–25):
+    - hash FNV-1a com constantes de 64 bits truncadas;
+    - deslocamentos `>> 32` em `size_t`;
+    - cabeçalho do heap do CRT;
+    - `timegm` e `endian.h` ausentes;
+    - `flockfile` ausente no newlib (`vita/runtime/compat`).
+  - **Testes** (`dist/rexglue_runtime_tests.vpk`, título `RXGT00003`; log em `ux0:data/storm2port/runtime_tests.log`): 26 casos com as bibliotecas reais:
+    - relógio, memória do host;
+    - threads, eventos, semáforo, mutante, `WaitMultiple`, timer, TLS, id/prioridade/afinidade, callback alertável;
+    - suspensão adiada, autossuspensão, término adiado;
+    - fibers, arquivos, `std::filesystem`;
+    - os casos da MMU por software, inclusive uma região de 272 MiB limitada a 184 MiB;
+    - log.
+  - **Vita3K** (`docs/logs/F1_runtime_tests_vita3k`): [V] 25/26.
+    - A falha é `SetLength`: o Vita3K não implementa `sceIoChstatByFd`.
+    - O emulador informa 224 MiB livres para o app no início; com a região de 184 MiB alocada sobram 19 MiB.
+    - Os tempos do emulador não valem para o console.
+  - **[P] No console:**
+    - os 26 casos;
+    - memória livre real;
+    - `sceIoChstatByFd`;
+    - datas do log (no Vita3K o spdlog marca 1965);
+    - e, com TRIÂNGULO no fim, a prova de que a página sem acesso falha de fato (o app deve fechar com erro).
+  - **Ainda não compilado para o Vita:** UI, áudio, entrada e o plugin de GPU nula (B4). O executável de teste só linka porque descarta seções não usadas (`--gc-sections`).
 
 Fora desta fase, documentado como pendente: renderização (GXM), áudio (reescrita NEON e XMA), tela SIM/NÃO (pode entrar em B4 se custar pouco).
 
 ## Riscos [H]
 - **Fences e leituras de volta da GPU:** a GPU nula escreve fences e interrupções. Se o jogo ler de volta dados gerados pela GPU (consultas de oclusão, memexport, resolves lidos pela CPU), ele recebe zeros. Isso pode mudar o caminho do jogo e precisa ser checado em B1.
 - **Áudio sem decodificação XMA:** as threads de áudio do jogo podem esperar contextos XMA que nunca terminam. Se isso travar o jogo, B4 precisa de um decodificador real (FFmpeg do VitaSDK), com custo de CPU a medir.
-- **Bibliotecas de terceiros** (fmt, spdlog, toml, xxhash) no GCC do VitaSDK: devem compilar, mas não foi testado.
+- **Bibliotecas de terceiros** (fmt, spdlog, toml, xxhash) no GCC do VitaSDK: [V] compilam e rodam no Vita3K (B3); spdlog sem `fwrite_unlocked` e sem fuso horário.
 - **Memória:** se o modo estendido não der RAM suficiente, a medida fica limitada a um trecho do jogo ou a limites menores nos blocos grandes.
