@@ -1,15 +1,17 @@
-# ReXGlue runtime for the PS Vita (B3 of docs/PLANO_RUNTIME_VITA.md).
+# ReXGlue runtime for the PS Vita (B3/B4 of docs/PLANO_RUNTIME_VITA.md).
 #
-# Builds, with the VitaSDK, the parts of the ReXGlue runtime that do not
-# depend on a window, a GPU or audio output: core (with the *_vita.cpp
-# platform layer), system, kernel and filesystem. They use the software MMU
-# (REXGLUE_SOFT_MMU) and the code generator's 32-bit memory model.
+# Builds, with the VitaSDK, the ReXGlue runtime without window or renderer:
+# core (with the *_vita.cpp platform layer), system, kernel, filesystem, the
+# null GPU, input (sceCtrl) and audio (real XMA decoding, silent output). They
+# use the software MMU (REXGLUE_SOFT_MMU) and the code generator's 32-bit
+# memory model. Also used as a subproject by vita/storm2.
 #
 #   cmake -G Ninja -S vita/runtime -B vita/runtime/build-vita ^
 #     -DCMAKE_TOOLCHAIN_FILE=%VITASDK%/share/vita.toolchain.cmake
 #   cmake --build vita/runtime/build-vita
 cmake_minimum_required(VERSION 3.20)
 project(rexglue_vita_runtime C CXX)
+option(REX_VITA_RUNTIME_TESTS "Build the runtime tests VPK" ON)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -75,6 +77,68 @@ target_include_directories(o1heap PUBLIC ${TP}/o1heap/o1heap)
 target_compile_definitions(o1heap PRIVATE
   "O1HEAP_CONFIG_HEADER=\"${REXGLUE_DIR}/include/rex/o1heap_config.h\"")
 target_compile_options(o1heap PRIVATE -w)
+
+#=============================================================================
+# FFmpeg (libavutil + libavcodec, the WMA Pro decoder used for XMA): same
+# sources as rexglue/thirdparty/CMakeLists.txt without the x86/aarch64 files,
+# with a Vita config.h generated from the Linux aarch64 one (plain C).
+#=============================================================================
+set(FFMPEG_DIR "${TP}/FFmpeg")
+set(FFMPEG_VITA_CONFIG_DIR "${CMAKE_CURRENT_BINARY_DIR}/ffmpeg-config")
+find_program(PYTHON_EXE NAMES python3 python REQUIRED)
+execute_process(
+  COMMAND ${PYTHON_EXE} -I ${CMAKE_CURRENT_LIST_DIR}/tools/make_ffmpeg_config.py
+          ${FFMPEG_DIR} ${FFMPEG_VITA_CONFIG_DIR}
+  RESULT_VARIABLE FFMPEG_CONFIG_RESULT)
+if(NOT FFMPEG_CONFIG_RESULT EQUAL 0)
+  message(FATAL_ERROR "make_ffmpeg_config.py failed")
+endif()
+set(FFMPEG_OVERLAY_BUILD_DIR "${CMAKE_CURRENT_BINARY_DIR}/ffmpeg-overlay")
+foreach(f codec_list.c parser_list.c bsf_list.c)
+  configure_file("${TP}/ffmpeg-overlay/${f}" "${FFMPEG_OVERLAY_BUILD_DIR}/libavcodec/${f}" COPYONLY)
+endforeach()
+
+set(LIBAVUTIL_VITA_SOURCES
+  adler32.c aes.c aes_ctr.c audio_fifo.c avstring.c avsscanf.c base64.c blowfish.c bprint.c
+  buffer.c cast5.c camellia.c channel_layout.c color_utils.c cpu.c crc.c des.c dict.c display.c
+  dovi_meta.c downmix_info.c encryption_info.c error.c eval.c fifo.c file.c file_open.c
+  float_dsp.c fixed_dsp.c frame.c hash.c hdr_dynamic_metadata.c hmac.c hwcontext.c imgutils.c
+  integer.c intmath.c lfg.c lls.c log.c log2_tab.c mathematics.c mastering_display_metadata.c
+  md5.c mem.c murmur3.c opt.c parseutils.c pixdesc.c pixelutils.c random_seed.c rational.c
+  reverse.c rc4.c ripemd.c samplefmt.c sha.c sha512.c slicethread.c spherical.c stereo3d.c
+  threadmessage.c time.c timecode.c tree.c twofish.c utils.c xga_font_data.c xtea.c tea.c tx.c
+  tx_float.c tx_double.c tx_int32.c video_enc_params.c film_grain_params.c)
+list(TRANSFORM LIBAVUTIL_VITA_SOURCES PREPEND "${FFMPEG_DIR}/libavutil/")
+set(LIBAVCODEC_VITA_SOURCES
+  ac3_parser.c adts_parser.c allcodecs.c avcodec.c avdct.c avpacket.c avpicture.c bitstream.c
+  bitstream_filter.c bitstream_filters.c bsf.c codec_desc.c codec_par.c d3d11va.c decode.c
+  dirac.c dv_profile.c encode.c imgconvert.c jni.c mathtables.c mediacodec.c mpeg12framerate.c
+  options.c parser.c parsers.c profiles.c qsv_api.c raw.c utils.c vorbis_parser.c xiph.c
+  faandct.c faanidct.c fdctdsp.c jfdctfst.c jfdctint.c idctdsp.c simple_idct.c jrevdct.c
+  mdct_float.c mdct_fixed_32.c sinewin.c wma_freqs.c wmaprodec.c wmadec.c wma.c wma_common.c
+  mpegaudio.c mpegaudiodata.c mpegaudiodecheader.c mpegaudiodec_common.c mpegaudiodec_float.c
+  mpegaudiodec_fixed.c mpegaudiodsp.c mpegaudiodsp_data.c mpegaudiodsp_float.c
+  mpegaudiodsp_fixed.c mpegaudio_parser.c dct.c dct32_float.c dct32_fixed.c rdft.c aactab.c
+  null_bsf.c pthread.c pthread_slice.c pthread_frame.c avfft.c fft_float.c fft_fixed_32.c
+  fft_init_table.c file_open.c)
+list(TRANSFORM LIBAVCODEC_VITA_SOURCES PREPEND "${FFMPEG_DIR}/libavcodec/")
+
+add_library(libavutil STATIC ${LIBAVUTIL_VITA_SOURCES})
+add_library(libavcodec STATIC ${LIBAVCODEC_VITA_SOURCES})
+foreach(lib libavutil libavcodec)
+  # The Vita config.h must win over FFmpeg's own (which has no Vita case).
+  target_include_directories(${lib} BEFORE PRIVATE ${FFMPEG_VITA_CONFIG_DIR})
+  target_include_directories(${lib} PUBLIC ${FFMPEG_DIR}
+    PRIVATE ${FFMPEG_DIR}/compat/atomics/gcc)
+  target_compile_definitions(${lib} PRIVATE HAVE_AV_CONFIG_H _USE_MATH_DEFINES)
+  # GCC 14+ turns these old-C diagnostics into errors; this FFmpeg passes enum
+  # pointers as int* (same size here: enums are int-sized in this ABI).
+  target_compile_options(${lib} PRIVATE -w
+    -Wno-error=incompatible-pointer-types -Wno-error=int-conversion
+    -Wno-error=implicit-function-declaration)
+endforeach()
+target_include_directories(libavcodec BEFORE PRIVATE ${FFMPEG_OVERLAY_BUILD_DIR})
+target_link_libraries(libavcodec PUBLIC libavutil)
 
 #=============================================================================
 # Settings shared by the runtime libraries
@@ -184,8 +248,13 @@ set(REXFILESYSTEM_VITA_SOURCES
   devices/stfs_container_file.cpp)
 list(TRANSFORM REXFILESYSTEM_VITA_SOURCES PREPEND "${SRC}/filesystem/")
 
+# From src/ui only what the kernel and the GPU reference: the video mode cvars
+# and WindowedAppContext (always null here: there is no window or ImGui).
+set(REXUI_VITA_SOURCES ${SRC}/ui/display_cvars.cpp ${SRC}/ui/windowed_app_context.cpp)
+
 add_library(rexruntime_vita STATIC
-  ${REXSYSTEM_VITA_SOURCES} ${REXKERNEL_VITA_SOURCES} ${REXFILESYSTEM_VITA_SOURCES})
+  ${REXSYSTEM_VITA_SOURCES} ${REXKERNEL_VITA_SOURCES} ${REXFILESYSTEM_VITA_SOURCES}
+  ${REXUI_VITA_SOURCES})
 # compat/: <endian.h> for thirdparty/crypto.
 target_include_directories(rexruntime_vita PRIVATE
   ${TP} ${TP}/imgui ${SRC}/filesystem/devices ${CMAKE_CURRENT_LIST_DIR}/compat)
@@ -193,9 +262,54 @@ target_link_libraries(rexruntime_vita PUBLIC rexcore_vita
   PRIVATE aes128 mspack o1heap xxHash::xxhash utf8cpp)
 
 #=============================================================================
+# rexgpu (null backend only): runs the PM4 command stream, renders nothing.
+# Same generic sources as src/graphics/CMakeLists.txt, without the plugin entry
+# point and the D3D12/Vulkan backends; the app creates NullGraphicsSystem.
+#=============================================================================
+set(REXGPU_NULL_VITA_SOURCES
+  flags.cpp register_file.cpp registers.cpp pipeline/shader/shader.cpp format/ucode.cpp
+  sampler_info.cpp graphics_system.cpp command_processor.cpp util/draw_extent_estimator.cpp
+  util/draw.cpp packet_disassembler.cpp primitive_processor.cpp
+  pipeline/render_target/cache.cpp shared_memory.cpp pipeline/texture/cache.cpp
+  pipeline/shader/interpreter.cpp pipeline/shader/translator.cpp
+  pipeline/shader/translator_disasm.cpp null/null_gpu.cpp)
+list(TRANSFORM REXGPU_NULL_VITA_SOURCES PREPEND "${SRC}/graphics/")
+add_library(rexgpu_null_vita STATIC ${REXGPU_NULL_VITA_SOURCES})
+target_include_directories(rexgpu_null_vita PRIVATE ${TP}/renderdoc ${REXGLUE_DIR})
+target_compile_options(rexgpu_null_vita PRIVATE -Wno-unused-variable)
+target_link_libraries(rexgpu_null_vita PUBLIC rexruntime_vita PRIVATE xxHash::xxhash)
+
+#=============================================================================
+# rexinput: input system (incl. record/replay) with the sceCtrl driver
+#=============================================================================
+add_library(rexinput_vita STATIC
+  ${SRC}/input/input_system.cpp ${SRC}/input/device_assignment.cpp ${SRC}/input/state_merge.cpp
+  ${SRC}/input/nop/nop_input_driver.cpp ${SRC}/input/vita/vita_input_driver.cpp)
+target_link_libraries(rexinput_vita PUBLIC rexruntime_vita)
+
+#=============================================================================
+# rexaudio: audio system with real XMA decoding and a silent real-time driver
+#=============================================================================
+add_library(rexaudio_vita STATIC
+  ${SRC}/audio/audio_driver.cpp ${SRC}/audio/audio_system.cpp ${SRC}/audio/downmix.cpp
+  ${SRC}/audio/xma_context.cpp ${SRC}/audio/xma_decoder.cpp ${SRC}/audio/xma_register_file.cpp
+  ${SRC}/audio/vita/vita_audio_system.cpp)
+target_link_libraries(rexaudio_vita PUBLIC rexruntime_vita PRIVATE libavcodec libavutil)
+
+#=============================================================================
 # Runtime tests VPK (ux0:data/storm2port/runtime_tests.log)
 #=============================================================================
 include("$ENV{VITASDK}/share/vita.cmake" REQUIRED)
+# Libraries a statically linked Vita app on this runtime needs (std::thread
+# needs the whole pthread archive, see below).
+set(REX_VITA_SYSTEM_LIBS
+  SceDisplay_stub SceCtrl_stub SceSysmem_stub SceIofilemgr_stub SceLibKernel_stub
+  SceKernelThreadMgr_stub SceProcessmgr_stub SceRtc_stub SceFiber_stub SceSysmodule_stub
+  -Wl,--whole-archive pthread -Wl,--no-whole-archive)
+if(NOT PROJECT_IS_TOP_LEVEL)
+  set(REX_VITA_SYSTEM_LIBS ${REX_VITA_SYSTEM_LIBS} PARENT_SCOPE)
+endif()
+if(REX_VITA_RUNTIME_TESTS)
 add_executable(runtime_tests_vita
   tests/runtime_tests.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../common/vita_math_compat.c)
@@ -214,3 +328,4 @@ vita_create_self(eboot.bin runtime_tests_vita)
 vita_create_vpk(rexglue_runtime_tests.vpk RXGT00003 eboot.bin
   VERSION "01.00"
   NAME "ReXGlue Runtime Tests")
+endif()

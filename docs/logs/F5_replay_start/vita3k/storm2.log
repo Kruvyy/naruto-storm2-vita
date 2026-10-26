@@ -1,0 +1,205 @@
+[1965-07-20 03:37:08.569] [info] [core] [t3987738935] Storm 2 (PS Vita, headless): game in ux0:data/storm2port/game, xex 9875456 bytes
+[1965-07-20 03:37:08.578] [info] [gpu] [t3987738935] null GPU backend: guest command stream runs, nothing is rendered
+[1965-07-20 03:37:08.582] [info] [core] [t3987738935] PS Vita: hardware exceptions cannot be caught; a guest fault ends the program
+[1965-07-20 03:37:08.597] [info] [sys] [t3987738935] Guest memory: software MMU (4 KiB page table at 0x0000000080800000, 4.5 MiB of tables); each guest region gets its own host block
+[1965-07-20 03:37:08.632] [warning] [core] [t3987738935] PS Vita: host faults are not delivered to the app; exception handlers are kept but never called (a fault ends the program with a crash dump)
+[1965-07-20 03:37:08.864] [info] [apu] [t3987738935] PS Vita audio: guest audio runs at real time (256 samples at 48 kHz, XMA decoded), output is discarded (no sound yet)
+[1965-07-20 03:37:16.009] [info] [core] [t3987738935] Function table initialized for module: code=821C0000-82836294, image=82000000-82B30000
+[1965-07-20 03:37:16.602] [info] [core] [t3987738935] Game started
+[1965-07-20 03:37:17.214] [warning] [sys] [t3667960989] GetProcAddressByOrdinal: function XamPartyGetUserList (0AFF) in xam - no native implementation
+[1965-07-20 03:37:17.232] [warning] [krnl] [t3667960989] ERROR: XexGetProcedureAddress ordinal 2815 (0xAFF) in 'xam' not found!
+[1965-07-20 03:37:17.235] [warning] [sys] [t3667960989] GetProcAddressByOrdinal: function XamPartySendGameInvites (0B00) in xam - no native implementation
+[1965-07-20 03:37:17.235] [warning] [krnl] [t3667960989] ERROR: XexGetProcedureAddress ordinal 2816 (0xB00) in 'xam' not found!
+[1965-07-20 03:37:17.236] [warning] [sys] [t3667960989] GetProcAddressByOrdinal: function XamPartySetCustomData (0B0B) in xam - no native implementation
+[1965-07-20 03:37:17.236] [warning] [krnl] [t3667960989] ERROR: XexGetProcedureAddress ordinal 2827 (0xB0B) in 'xam' not found!
+[1965-07-20 03:37:17.237] [warning] [sys] [t3667960989] GetProcAddressByOrdinal: function XamPartyGetBandwidth (0B10) in xam - no native implementation
+[1965-07-20 03:37:17.237] [warning] [krnl] [t3667960989] ERROR: XexGetProcedureAddress ordinal 2832 (0xB10) in 'xam' not found!
+[1965-07-20 03:37:17.589] [warning] [sys] [t3667960989] Software MMU: physical memory at physical address 0B000000 (272.0 MiB) limited to 184.0 MiB of real memory
+[1965-07-20 03:37:17.791] [info] [gpu] [t3667960989] SetInterruptCallback(826A5998, 40005080)
+[1965-07-20 03:37:19.414] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:19.551] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:20.170] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:20.243] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:20.618] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:28.088] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:28.593] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:28.606] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:28.828] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:29.301] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:29.504] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:29.723] [info] [core] [t3667960989] input replay: 10 events for 1 user(s) from ux0:data/storm2port/start_test.txt (stretch 1)
+[1965-07-20 03:37:31.079] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:31.126] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:32.015] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:32.079] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:32.318] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:32.332] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:33.252] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:33.267] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:33.697] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:33.709] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:33.867] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:33.880] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:34.111] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:34.123] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:35.388] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:35.399] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:35.648] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:35.661] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:35.981] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:35.999] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:39.576] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:39.587] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:40.648] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:40.661] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:41.128] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:41.141] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:41.326] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:41.338] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:41.595] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:41.621] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:41.880] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:41.894] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:42.166] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:42.180] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:42.397] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:42.410] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:42.576] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:42.590] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:42.974] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:42.986] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:43.202] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:43.212] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:43.335] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:43.346] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:43.515] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:43.527] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:43.766] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:43.777] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:43.921] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:43.933] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:44.165] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:44.176] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:44.301] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:44.314] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:44.497] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:44.509] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:44.744] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:44.756] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:44.937] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:44.947] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:45.223] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:45.235] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:45.404] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:45.416] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:45.600] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:45.611] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:45.733] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:45.747] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:45.979] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:45.993] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:46.142] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:46.154] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:47.208] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:47.253] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:47.265] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:47.276] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:47.284] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:47.305] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:47.717] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:47.730] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:47.951] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:47.966] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:48.151] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:48.166] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:50.159] [info] [apu] [t3667960989] XMA: 1 contexts have an FFmpeg decoder
+[1965-07-20 03:37:56.419] [info] [sys] [t3667960989] Software MMU: frame 600: 434 virtual + 21 physical blocks, 373.5 MiB backed (peak 373.6 MiB), 0 released-page writes
+[1965-07-20 03:37:56.423] [info] [sys] [t3667960989] Software MMU:   physical region AB000000: 272.0 MiB, 184.0 MiB backed
+[1965-07-20 03:37:56.424] [info] [sys] [t3667960989] Software MMU:   virtual  region 40F40000: 70.1 MiB, 70.1 MiB backed
+[1965-07-20 03:37:56.425] [info] [sys] [t3667960989] Software MMU:   physical region DC000000: 48.0 MiB, 48.0 MiB backed
+[1965-07-20 03:37:56.425] [info] [sys] [t3667960989] Software MMU:   physical region C0000000: 16.0 MiB, 16.0 MiB backed
+[1965-07-20 03:37:56.425] [info] [sys] [t3667960989] Software MMU:   virtual  region 82000000: 11.2 MiB, 11.2 MiB backed
+[1965-07-20 03:37:56.426] [info] [sys] [t3667960989] Software MMU:   virtual  region 40220000: 8.1 MiB, 8.1 MiB backed
+[1965-07-20 03:37:56.426] [info] [sys] [t3667960989] Software MMU:   virtual  region 45BA0000: 8.0 MiB, 8.0 MiB backed
+[1965-07-20 03:37:56.426] [info] [sys] [t3667960989] Software MMU:   virtual  region 45550000: 4.0 MiB, 4.0 MiB backed
+[1965-07-20 03:37:56.480] [info] [gpu] [t1102513000] null-gpu: swap 600: 50232 draws and 5388 resolves since the last report (frontbuffer 0B000000 1280x720, not rendered)
+[1965-07-20 03:37:57.363] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:57.411] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:58.135] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:58.151] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:58.464] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:58.480] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:58.736] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:37:58.748] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:38:02.855] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:38:02.872] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:38:03.301] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:38:03.315] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:38:04.496] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:38:04.509] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:38:14.460] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:38:14.745] [error] [krnl] [t1415199390] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:38:20.887] [info] [sys] [t3667960989] Software MMU: frame 1200: 516 virtual + 36 physical blocks, 391.6 MiB backed (peak 391.6 MiB), 0 released-page writes
+[1965-07-20 03:38:20.889] [info] [sys] [t3667960989] Software MMU:   physical region AB000000: 272.0 MiB, 184.0 MiB backed
+[1965-07-20 03:38:20.889] [info] [sys] [t3667960989] Software MMU:   virtual  region 40F40000: 70.1 MiB, 70.1 MiB backed
+[1965-07-20 03:38:20.890] [info] [sys] [t3667960989] Software MMU:   physical region DC000000: 48.0 MiB, 48.0 MiB backed
+[1965-07-20 03:38:20.890] [info] [sys] [t3667960989] Software MMU:   physical region C0000000: 16.0 MiB, 16.0 MiB backed
+[1965-07-20 03:38:20.891] [info] [sys] [t3667960989] Software MMU:   virtual  region 82000000: 11.2 MiB, 11.2 MiB backed
+[1965-07-20 03:38:20.891] [info] [sys] [t3667960989] Software MMU:   virtual  region 40220000: 8.1 MiB, 8.1 MiB backed
+[1965-07-20 03:38:20.891] [info] [sys] [t3667960989] Software MMU:   virtual  region 45BA0000: 8.0 MiB, 8.0 MiB backed
+[1965-07-20 03:38:20.892] [info] [sys] [t3667960989] Software MMU:   virtual  region 45550000: 4.0 MiB, 4.0 MiB backed
+[1965-07-20 03:38:20.895] [info] [gpu] [t1102513000] null-gpu: swap 1200: 57693 draws and 9395 resolves since the last report (frontbuffer 0B000000 1280x720, not rendered)
+[1965-07-20 03:38:24.382] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:38:24.440] [error] [krnl] [t1415199390] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:38:40.608] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:38:40.700] [error] [krnl] [t1415199390] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:38:48.352] [info] [sys] [t3667960989] Software MMU: frame 1800: 568 virtual + 36 physical blocks, 393.9 MiB backed (peak 393.9 MiB), 0 released-page writes
+[1965-07-20 03:38:48.353] [info] [sys] [t3667960989] Software MMU:   physical region AB000000: 272.0 MiB, 184.0 MiB backed
+[1965-07-20 03:38:48.354] [info] [sys] [t3667960989] Software MMU:   virtual  region 40F40000: 70.1 MiB, 70.1 MiB backed
+[1965-07-20 03:38:48.354] [info] [sys] [t3667960989] Software MMU:   physical region DC000000: 48.0 MiB, 48.0 MiB backed
+[1965-07-20 03:38:48.355] [info] [sys] [t3667960989] Software MMU:   physical region C0000000: 16.0 MiB, 16.0 MiB backed
+[1965-07-20 03:38:48.355] [info] [sys] [t3667960989] Software MMU:   virtual  region 82000000: 11.2 MiB, 11.2 MiB backed
+[1965-07-20 03:38:48.355] [info] [sys] [t3667960989] Software MMU:   virtual  region 40220000: 8.1 MiB, 8.1 MiB backed
+[1965-07-20 03:38:48.355] [info] [sys] [t3667960989] Software MMU:   virtual  region 45BA0000: 8.0 MiB, 8.0 MiB backed
+[1965-07-20 03:38:48.356] [info] [sys] [t3667960989] Software MMU:   virtual  region 45550000: 4.0 MiB, 4.0 MiB backed
+[1965-07-20 03:38:48.369] [info] [gpu] [t1102513000] null-gpu: swap 1800: 58977 draws and 11788 resolves since the last report (frontbuffer 0B000000 1280x720, not rendered)
+[1965-07-20 03:39:16.295] [info] [sys] [t3667960989] Software MMU: frame 2400: 568 virtual + 36 physical blocks, 393.9 MiB backed (peak 393.9 MiB), 0 released-page writes
+[1965-07-20 03:39:16.307] [info] [gpu] [t1102513000] null-gpu: swap 2400: 72067 draws and 18600 resolves since the last report (frontbuffer 0B000000 1280x720, not rendered)
+[1965-07-20 03:39:21.583] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:39:21.655] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:39:21.674] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:39:21.702] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:39:21.721] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:39:27.145] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:39:27.158] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:39:29.244] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:39:29.263] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:39:29.570] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:39:29.639] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:39:38.411] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:39:38.464] [error] [krnl] [t3175023929] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:39:45.323] [error] [krnl] [t2212187215] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:39:48.688] [info] [sys] [t3667960989] Software MMU: frame 3000: 549 virtual + 24 physical blocks, 377.7 MiB backed (peak 393.9 MiB), 0 released-page writes
+[1965-07-20 03:39:48.689] [info] [sys] [t3667960989] Software MMU:   physical region AB000000: 272.0 MiB, 184.0 MiB backed
+[1965-07-20 03:39:48.690] [info] [sys] [t3667960989] Software MMU:   virtual  region 40F40000: 70.1 MiB, 70.1 MiB backed
+[1965-07-20 03:39:48.690] [info] [sys] [t3667960989] Software MMU:   physical region DC000000: 48.0 MiB, 48.0 MiB backed
+[1965-07-20 03:39:48.690] [info] [sys] [t3667960989] Software MMU:   physical region C0000000: 16.0 MiB, 16.0 MiB backed
+[1965-07-20 03:39:48.690] [info] [sys] [t3667960989] Software MMU:   virtual  region 82000000: 11.2 MiB, 11.2 MiB backed
+[1965-07-20 03:39:48.691] [info] [sys] [t3667960989] Software MMU:   virtual  region 40220000: 8.1 MiB, 8.1 MiB backed
+[1965-07-20 03:39:48.691] [info] [sys] [t3667960989] Software MMU:   virtual  region 45BA0000: 8.0 MiB, 8.0 MiB backed
+[1965-07-20 03:39:48.691] [info] [sys] [t3667960989] Software MMU:   virtual  region 45550000: 4.0 MiB, 4.0 MiB backed
+[1965-07-20 03:39:48.693] [info] [gpu] [t1102513000] null-gpu: swap 3000: 121580 draws and 22629 resolves since the last report (frontbuffer 0B000000 1280x720, not rendered)
+[1965-07-20 03:40:34.054] [info] [sys] [t3667960989] Software MMU: frame 3600: 549 virtual + 25 physical blocks, 377.8 MiB backed (peak 393.9 MiB), 0 released-page writes
+[1965-07-20 03:40:34.055] [info] [sys] [t3667960989] Software MMU:   physical region AB000000: 272.0 MiB, 184.0 MiB backed
+[1965-07-20 03:40:34.055] [info] [sys] [t3667960989] Software MMU:   virtual  region 40F40000: 70.1 MiB, 70.1 MiB backed
+[1965-07-20 03:40:34.056] [info] [sys] [t3667960989] Software MMU:   physical region DC000000: 48.0 MiB, 48.0 MiB backed
+[1965-07-20 03:40:34.056] [info] [sys] [t3667960989] Software MMU:   physical region C0000000: 16.0 MiB, 16.0 MiB backed
+[1965-07-20 03:40:34.057] [info] [sys] [t3667960989] Software MMU:   virtual  region 82000000: 11.2 MiB, 11.2 MiB backed
+[1965-07-20 03:40:34.058] [info] [sys] [t3667960989] Software MMU:   virtual  region 40220000: 8.1 MiB, 8.1 MiB backed
+[1965-07-20 03:40:34.058] [info] [sys] [t3667960989] Software MMU:   virtual  region 45BA0000: 8.0 MiB, 8.0 MiB backed
+[1965-07-20 03:40:34.058] [info] [sys] [t3667960989] Software MMU:   virtual  region 45550000: 4.0 MiB, 4.0 MiB backed
+[1965-07-20 03:40:34.068] [info] [gpu] [t1102513000] null-gpu: swap 3600: 201068 draws and 24600 resolves since the last report (frontbuffer 0B000000 1280x720, not rendered)
+[1965-07-20 03:40:43.309] [info] [core] [t3667960989] input replay: last event delivered at guest frame 3710
+[1965-07-20 03:41:24.655] [info] [sys] [t3667960989] Software MMU: frame 4200: 549 virtual + 25 physical blocks, 377.8 MiB backed (peak 393.9 MiB), 0 released-page writes
+[1965-07-20 03:41:24.663] [info] [gpu] [t1102513000] null-gpu: swap 4200: 238860 draws and 24600 resolves since the last report (frontbuffer 0B000000 1280x720, not rendered)
+[1965-07-20 03:42:15.984] [info] [sys] [t3667960989] Software MMU: frame 4800: 549 virtual + 25 physical blocks, 377.8 MiB backed (peak 393.9 MiB), 0 released-page writes

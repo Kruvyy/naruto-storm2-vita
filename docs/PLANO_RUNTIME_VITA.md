@@ -40,7 +40,7 @@ Cada etapa só termina com a verificação indicada. Nada é dado como feito sem
 | B1 | **GPU nula** no ReXGlue: subclasse do `CommandProcessor` que reaproveita a leitura de PM4 da classe base, ignora desenhos e resolves, e executa registros, `EVENT_WRITE`/`MEM_WRITE`/fences, interrupções e `XE_SWAP` | no PC, Storm 2 sem renderizar chega às batalhas, com o jogador jogando às cegas ou com entrada reproduzida: swaps a ~30/s, `import_stats` igual à execução com D3D12 |
 | B2 | **Memória por software no runtime de PC**: a classe `Memory` com tabela de 64 KiB, alocações contíguas por bloco, prefixo + página-guarda nos blocos grandes | no PC: Storm 2 com `REX_GUEST_SOFT_MMU` (código gerado e runtime) e GPU nula roda igual a B1; `check_storm2_render.ps1` com D3D12 também passa |
 | B3 | **Camada de plataforma do Vita** (`*_vita.cpp`): threads (pthread do VitaSDK ou `sceKernel*Thread`), fibers (`SceFiber`), relógio, arquivos (`sceIo`), blocos de memória; sem tratador de exceção (o MMIO já é tratado no código gerado), sem bibliotecas dinâmicas, sem sockets, sem SDL | `core`/`system`/`kernel`/`filesystem` compilam com o VitaSDK; testes unitários portáveis rodando no Vita |
-| B4 | **App `storm2` do Vita**: liga runtime, GPU nula e o código gerado (`vita/storm2`); dados do jogo em `ux0:data/storm2port/game`; entrada por `sceCtrl`; áudio desligado e registrado como desligado (sem decodificação XMA nesta fase); log de quadros/s, memória livre e CPU por thread | o VPK abre, chega ao menu e à batalha, e grava o log de medidas |
+| B4 | **App `storm2` do Vita**: liga runtime, GPU nula e o código gerado (`vita/storm2`); dados do jogo em `ux0:data/storm2port/game`; entrada por `sceCtrl`; áudio sem som, mas com o XMA decodificado e o relógio de áudio em tempo real (sem isso as threads de áudio do jogo podem travar); log de quadros/s, memória livre e CPU por thread | o VPK abre, chega ao menu e à batalha, e grava o log de medidas |
 | B5 | **Medida no console** | log do usuário: quadros/s de CPU em batalha, memória usada, threads |
 
 ### Andamento
@@ -131,6 +131,42 @@ Cada etapa só termina com a verificação indicada. Nada é dado como feito sem
     - datas do log (no Vita3K o spdlog marca 1965);
     - e, com TRIÂNGULO no fim, a prova de que a página sem acesso falha de fato (o app deve fechar com erro).
   - **Ainda não compilado para o Vita:** UI, áudio, entrada e o plugin de GPU nula (B4). O executável de teste só linka porque descarta seções não usadas (`--gc-sections`).
+- **B4 — o Storm 2 roda no Vita3K sem gráficos (2026-10-26); falta o console.**
+  - **Build** (`vita/storm2`, que inclui `vita/runtime`):
+    - o código gerado (112 arquivos) mais o runtime do Vita: GPU nula, entrada pelo `sceCtrl`, áudio, e o FFmpeg (libavutil e libavcodec em C genérico, configuração gerada por `vita/runtime/tools/make_ffmpeg_config.py`);
+    - saída `storm2_vita.vpk`: título `RXGT00006`, nome "Storm 2 (headless)", memória estendida (`ATTRIBUTE2=12`), 17 MiB;
+    - código ARM 34,4 MB (`text`), dados e bss 1,5 MB; compilação completa ~22 min com 11 processos.
+  - **O app** (`vita/storm2/src/main_vita.cpp`):
+    - tela amarela ao iniciar, azul com o jogo rodando, vermelha com erro (a mensagem vai para os logs) e verde no fim;
+    - START + SELECT por 2 s encerram;
+    - arquivos em `ux0:data/storm2port`: `game/` (o jogo), `storm2.toml` (cvars opcionais), `storm2.log`, `storm2_stats.log` (a cada 5 s), `storm2_threads.log` (a cada 30 s), `frame_stats.csv`, `import_stats.csv`;
+    - limite padrão `soft_mmu_caps=0xAB000000=184` (o `storm2.toml` pode trocar);
+    - heap do newlib de 48 MiB.
+  - **Áudio:** o XMA é decodificado de verdade e a saída é descartada. Um relógio consome um bloco de 256 amostras a cada 5333 µs, como o dispositivo SDL do PC, para o jogo andar no ritmo do áudio real. O log mostra quantos blocos por segundo o jogo entrega (tempo real = 187,5).
+  - **Entrada:** botões e analógicos do Vita viram o controle do Xbox (Cruz/Círculo/Quadrado/Triângulo = A/B/X/Y, L/R = LB/RB, START/SELECT = Start/Back). A reprodução de entrada da B1b funciona no Vita (`input_replay` no `storm2.toml`).
+  - **Correções:** bugs 26–29 em `docs/bugs.md`. A principal: os 320 contextos XMA criavam o decodificador do FFmpeg na partida (~190 MiB do host); no Vita o app abortava em 1 s.
+  - **Vita3K** (`docs/logs/F3_storm2_vita3k`): [V no emulador]
+
+    | | Vita3K (ARM32) | PC (`F4`, x64) |
+    |---|---:|---:|
+    | desenhos / resolves a cada 600 quadros, depois do carregamento | 72.079 / 18.600 | 72.600 / 18.600 |
+    | blocos do convidado no host | 393,9 MiB (limite de 184 MiB) | — (arranjo plano) |
+    | memória do convidado comprometida | 479,9 MiB | 480,0 MiB |
+    | erros no log | os mesmos 115 `NtQueryInformationFile` | 115 |
+    | escritas em memória liberada / além do limite | 0 / 0 | — |
+    | heap do newlib em uso | 28,4 MiB de 48 | — |
+    | blocos de áudio entregues pelo jogo | 90–128/s | ~178/s |
+
+    - **Reprodução de entrada** (`docs/logs/F5_replay_start`, START nos quadros 2500–3700): o jogo sai da tela de título nos dois, com os mesmos números: quadro 3000 → 121.580 desenhos no Vita3K e 122.280 no PC; quadro 3600 → 201.068 e 203.140; quadro 4200 → **238.860 desenhos e 24.600 resolves nos dois**. O código ARM32 percorre o mesmo caminho do x64, inclusive na resposta à entrada.
+    - Estabilidade: uma execução passou de 11 min (11.790 quadros) sem cair. O log dela não foi guardado: por engano, duas instâncias do Vita3K escreviam no mesmo arquivo (instalar pelo VPK reabre o emulador com outro processo; para rodar de novo, `Vita3K.exe -r RXGT00006`).
+    - `NtSuspendThread` (8 chamadas) com a suspensão adiada da B3: o jogo segue igual ao PC.
+    - O que o Vita3K **não** mostra: velocidade (6–7× mais rápido que o console); falta de memória (ele relata 0 KiB livres e continua alocando, então os blocos de reserva nunca são usados); tempo de CPU por thread (`runClocks` vem sempre 0).
+  - **Conta de memória para o console [H]:**
+    - pedido: 394 MiB de blocos do convidado (com o limite) + 4,5 MiB de tabelas de página + 48 MiB de heap + ~36 MiB do executável ≈ **482 MiB**;
+    - no Vita3K, com o executável e o heap já carregados, sobram 317 MiB de RAM principal; mais 26 MiB de RAM contígua e ~110 MiB de CDRAM ≈ **453 MiB** para os blocos do convidado, contra 398 pedidos;
+    - risco: os blocos de 184, 70 e 48 MiB precisam, cada um, de um bloco contíguo do sistema, e o tamanho do maior bloco possível no console é desconhecido (o `memprobe` mede);
+    - se faltar memória, o app para com a mensagem "Software MMU: out of host memory", que diz a região e quanto já estava alocado.
+  - **[P] No console (B5):** se a tela fica azul; quadros/s reais com a GPU nula (o limite de CPU); blocos de áudio por segundo; memória livre e uso dos blocos de reserva; CPU por thread.
 
 Fora desta fase, documentado como pendente: renderização (GXM), áudio (reescrita NEON e XMA), tela SIM/NÃO (pode entrar em B4 se custar pouco).
 

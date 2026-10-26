@@ -1,6 +1,6 @@
 # Estado dos marcos
 
-Atualizado em 2026-10-23. Legenda: **feito** = verificado por execução; **compilado** = só compilou; **pendente**; **bloqueado** (com o motivo).
+Atualizado em 2026-10-26. Legenda: **feito** = verificado por execução; **compilado** = só compilou; **pendente**; **bloqueado** (com o motivo).
 
 | Marco | Estado | Evidência / falta |
 |---|---|---|
@@ -10,6 +10,7 @@ Atualizado em 2026-10-23. Legenda: **feito** = verificado por execução; **comp
 | D — Inicialização mínima do Storm 2 | **feito no host (x64)**, incluindo batalha medida (695 s sem travar, depois da correção do bug 20) | codegen completo (0 `REX_FATAL`, 0 não implementadas). Build x64 roda 300 s sem travar e sem fechar sozinho. Tabela de imports (`docs/imports.md`: 229 imports, 115 chamados, nenhum STUB chamado). Tela preta corrigida (bug 19): com as opções padrão a imagem aparece do logo da Dolby até o carregamento de "Batalha 1: Naruto vs Sasuke" (`docs/logs/D27_render_fix`; regressão `scripts/check_storm2_render.ps1`). Instruções por quadro e memória medidas **fora de batalha** (abaixo) |
 | E — Código e runtime no Vita | **passo 1 feito**: o código do jogo compila para ARM32 (28,8 MiB) | runtime do Vita não começado |
 | E–H | **opção B escolhida** (2026-10-23): runtime mínimo e jogo rodando no Vita sem gráficos | relatório: `docs/RELATORIO_VIABILIDADE.md`; plano e projeto da memória: **`docs/PLANO_RUNTIME_VITA.md`** (etapas B1–B5) |
+| B4 (opção B) | **o Storm 2 roda no Vita3K sem gráficos**; falta o console | `dist/storm2_vita.vpk` (`RXGT00006`, memória estendida): código do jogo + runtime do Vita + GPU nula + XMA decodificado com saída muda + `sceCtrl`. No Vita3K o jogo faz os mesmos desenhos e resolves que o PC (72.079/18.600 contra 72.600/18.600 por 600 quadros) e, com START reproduzido, sai da tela de título com números idênticos aos do PC (238.860 desenhos no quadro 4200). Blocos do convidado: 394 MiB com o limite de 184 MiB. Bugs 26–29 (o principal: o XMA alocava ~190 MiB na partida). Detalhes em `docs/PLANO_RUNTIME_VITA.md` |
 | B3 (opção B) | **compilado para o Vita e testado no Vita3K**; falta o console | camada `*_vita.cpp` (relógio, memória, threads sem sinais, fibers `SceFiber`, arquivos `sceIo`), core/system/kernel/filesystem compilam com o VitaSDK sem erros nem avisos (`vita/runtime`). VPK de testes `dist/rexglue_runtime_tests.vpk`: 25/26 no Vita3K (a falha é `sceIoChstatByFd`, ausente no emulador). Detalhes em `docs/PLANO_RUNTIME_VITA.md` |
 | B1/B1b/B2 (opção B) | **B1 feito no PC** (GPU nula); **B1b implementado** (gravação/reprodução de entrada; falta a sessão gravada); **B2 feito no PC** (memória por software) | B2: o Storm 2 com MMU por software e GPU nula roda igual ao arranjo plano por 120 s (30,0 quadros/s, mesmos desenhos/resolves, mesma memória, 0 escritas em memória liberada). Pede 483 MiB do host sem limites e 394 MiB com o bloco de 272 MiB limitado a 184 MiB. Testes `tests/soft_mmu` 12/12. Detalhes em `docs/PLANO_RUNTIME_VITA.md` |
 
