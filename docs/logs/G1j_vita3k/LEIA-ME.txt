@@ -1,0 +1,10 @@
+Vita3K (emulador, nao e o console), rexglue G1j (ef8c3c7), 2026-10-27. Medidas do emulador.
+
+- storm2_titulo.log / storm2_stats_titulo.log: execucao com o reinicio de primitivas (bug 55),
+  filmes pulados, cache de shaders quente. Tela de titulo com o ceu inteiro e as nuvens, sem as
+  faixas pretas, ~4-6 quadros/s no Vita3K (t=130-167 s). O log mostra o primeiro desenho com indice
+  de reinicio FFFF (faixa de 1209 indices dividida em lista de 1461). Capturas g1j_title_* em
+  storm2/captures/vita3k (nao versionadas, imagens do jogo).
+- Execucao anterior (capturas g1j_reset_*): o DualSense conectado ao PC passou do titulo para o menu
+  "Selecao de Modo de Jogo" (modelo 3D do Naruto visivel), ~1,2 quadro/s no menu.
+- A faixa fina com ruido na borda de baixo ja aparecia nas capturas de G1i; nao vem desta mudanca.

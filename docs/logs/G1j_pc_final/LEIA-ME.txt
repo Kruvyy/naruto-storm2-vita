@@ -1,0 +1,25 @@
+PC, backend GLES (OpenGL de desktop), rexglue G1j, 2026-10-27. Execucoes de 45 s com
+--storm2_skip_movies=true; quadros em storm2/gles_frames/<execucao> (nao versionados).
+
+Correcao (bug 55, faixas pretas do fundo da tela de titulo):
+- G1j_pc_final: reinicio de primitivas (rexglue ef8c3c7). Quadros 800-1200 iguais a captura do
+  D3D12 (storm2/captures/G1h_pc_skip_d3d12): ceu inteiro, nuvens a esquerda, sem faixas nem linhas
+  soltas. Contra a versao anterior (G1i_pc_structured): 33-43% dos pixels mudam, luma 138-153 ->
+  189; quadros 200-600 identicos. O log mostra o primeiro desenho com indice de reinicio FFFF.
+
+Diagnosticos (na copia da cena 0CB9A000:0, --gles_debug_show_resolve):
+- G1j_pc_trace: trace de um quadro do titulo (desenho 46 = ceu, PS E8EAE3, faixa de 415 indices).
+- G1j_pc_magenta_*: PS forcado a magenta por hash. Com E8EAE3 (ceu) a tela inteira fica magenta: a
+  geometria do ceu chega a todos os pixels pretos; o PS 75EFC7 (mapa de sombra) nao aparece.
+- G1j_pc_nodiscard: sem discard nos pixel shaders, a tela inteira sai azul-marinho (cor da neblina).
+- G1j_pc_kill (filtro E8EAE3): expr:vec4(xe_r1.w,xe_i0.w,xe_i3.x,1.0) -> alfa da textura ~1,0, alfa
+  do vertice ~0,15, limiar ~0,78, constantes na tela toda: a camada de cima sao triangulos com os
+  atributos de um vertice so, o que o indice de reinicio usado como vertice explica.
+- G1j_pc_uv (filtro E8EAE3): expr:vec4(fract(xe_i1.xy),xe_i2.x,1.0) -> UV constante na tela toda.
+- G1j_pc_white: profundidade como textura lida como branca (longe); sem efeito.
+
+Hipoteses descartadas (codigo revertido):
+- G1j_pc_mrt: alvo de cor 1 escrito de verdade no desktop (gl_FragData[1] + glDrawBuffers). Um
+  framebuffer a mais criado, imagem igual (diferenca dentro do ruido).
+- G1j_pc_zclamp: profundidade presa aos planos perto/longe quando PA_CL_CLIP_CNTL clip_disable;
+  imagem igual.
