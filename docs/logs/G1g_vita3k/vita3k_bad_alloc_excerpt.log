@@ -1,0 +1,16 @@
+﻿[04:21:51.274] |T| [write_file]: *** TTY: terminate called after throwing an instance of '
+[04:21:51.275] |T| [write_file]: *** TTY: std::bad_alloc
+[04:21:51.275] |T| [write_file]: *** TTY: '
+[04:21:51.278] |T| [write_file]: *** TTY:   what():  
+[04:21:51.278] |T| [write_file]: *** TTY: std::bad_alloc
+[04:21:51.288] |T| [write_file]: *** TTY: 
+[04:21:51.289] |W| [ArmDynarmicCallback::ExceptionRaised]: Undefined instruction at address 0x830393BE, instruction 0xE92DDEFF (udf #0xff)
+PC: 0x830393c0,   SP: 0x83901e28,   LR: 0x8303938b
+r0 : 0x00000001   r6 : 0x830a2054
+r1 : 0x00000001   r7 : 0x82fde0bd
+r2 : 0x00000006   r8 : 0x85bee1b0
+r3 : 0x00000000   r9 : 0x00384000
+r4 : 0x834c0748   r10: 0x00384000
+r5 : 0x00000001   r11: 0x00000500
+[04:21:51.290] |E| [export__sceKernelLockLwMutex::<lambda_2>::operator ()]: _sceKernelLockLwMutex returned SCE_KERNEL_ERROR_UNKNOWN_LW_MUTEX_ID (0x80028181)
+[04:21:51.290] |E| [ArmDynarmicCallback::MemoryRead]: Invalid read of uint32_t at address: 0x849cf984

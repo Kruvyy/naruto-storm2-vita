@@ -28,8 +28,10 @@
 #include <malloc.h>
 #include <map>
 #include <memory>
+#include <new>
 #include <string>
 #include <thread>
+#include <unwind-arm-common.h>  // the SDK has no unwind.h
 #include <vector>
 
 #include <psp2/ctrl.h>
@@ -143,6 +145,71 @@ constexpr uint32_t kYellow = 0xFF20E0E0u, kBlue = 0xFFE08020u, kRed = 0xFF2020E0
   sceKernelExitProcess(1);
   __builtin_unreachable();
 }
+
+// A failed host allocation (operator new below). Without this, std::bad_alloc
+// reaches std::terminate and abort, and newlib's _exit frees the heap block
+// before the process ends: every other thread then crashes on freed memory and
+// the Vita3K log shows those crashes, not the allocation (bug 46).
+struct Backtrace {
+  uintptr_t pc[16];
+  int count = 0;
+};
+
+_Unwind_Reason_Code BacktraceStep(_Unwind_Context* context, void* arg) {
+  auto* bt = static_cast<Backtrace*>(arg);
+  if (bt->count >= 16) {
+    return _URC_END_OF_STACK;
+  }
+  bt->pc[bt->count++] = uintptr_t(_Unwind_GetGR(context, 15) & ~_Unwind_Word(1));  // pc
+  return _URC_NO_REASON;
+}
+
+std::atomic<bool> g_out_of_memory{false};
+
+[[noreturn]] void OutOfHostMemory(size_t size) {
+  if (g_out_of_memory.exchange(true)) {
+    // Another thread is already reporting; keep the heap and wait for it.
+    for (;;) {
+      sceKernelDelayThread(1000 * 1000);
+    }
+  }
+  Backtrace bt;
+  _Unwind_Backtrace(BacktraceStep, &bt);
+  char trace[16 * 9 + 1] = {};
+  for (int i = 0; i < bt.count; ++i) {
+    snprintf(trace + i * 9, 10, " %08X", unsigned(bt.pc[i]));
+  }
+  const struct mallinfo heap = mallinfo();
+  // Integers only: no heap use while reporting.
+  Stats("ERROR: host allocation of %u bytes failed: newlib heap %u KiB in use, %u KiB free, "
+        "arena %u of %u KiB; thread %08X; stack%s\n",
+        unsigned(size), unsigned(heap.uordblks / 1024), unsigned(heap.fordblks / 1024),
+        unsigned(heap.arena / 1024), _newlib_heap_size_user / 1024,
+        unsigned(sceKernelGetThreadId()), trace);
+  Fail(fmt::format("Host memory exhausted: {} bytes requested, newlib heap {} KiB in use, {} KiB "
+                   "free (stack in storm2_stats.log)",
+                   size, heap.uordblks / 1024, heap.fordblks / 1024));
+}
+
+}  // namespace
+
+void* operator new(std::size_t size) {
+  if (void* p = std::malloc(size ? size : 1)) {
+    return p;
+  }
+  OutOfHostMemory(size);
+}
+void* operator new[](std::size_t size) {
+  return operator new(size);
+}
+void* operator new(std::size_t size, const std::nothrow_t&) noexcept {
+  return std::malloc(size ? size : 1);
+}
+void* operator new[](std::size_t size, const std::nothrow_t&) noexcept {
+  return std::malloc(size ? size : 1);
+}
+
+namespace {
 
 // CPU time per thread: guest threads and the runtime's host threads (XMA
 // decoder, GPU command processor...), from the kernel's run time of each
@@ -350,14 +417,16 @@ int main() {
     const struct mallinfo heap = mallinfo();
     const uint64_t audio_frames = rex::audio::vita::VitaSilentAudioDriver::total_frames_submitted();
     Stats("t=%llus frames=%u fps=%.2f audio=%.1f/s backed=%.1fMiB guest_committed=%.1fMiB "
-          "free_user=%dKiB free_cdram=%dKiB free_phycont=%dKiB heap_used=%.1fMiB\n",
+          "free_user=%dKiB free_cdram=%dKiB free_phycont=%dKiB heap_used=%.1fMiB "
+          "heap_free=%.1fMiB heap_arena=%.1fMiB\n",
           (unsigned long long)(now_us / 1000000), frame,
           double(frame - last_frame) * 1e6 / double(now_us - last_us),
           double(audio_frames - last_audio_frames) * 1e6 / double(now_us - last_us),
           double(mem.host_backed) / 1048576.0,
           double(mem.virtual_committed + mem.physical_committed) / 1048576.0,
           free_mem.size_user / 1024, free_mem.size_cdram / 1024, free_mem.size_phycont / 1024,
-          double(heap.uordblks) / 1048576.0);
+          double(heap.uordblks) / 1048576.0, double(heap.fordblks) / 1048576.0,
+          double(heap.arena) / 1048576.0);
     last_us = now_us;
     last_frame = frame;
     last_audio_frames = audio_frames;

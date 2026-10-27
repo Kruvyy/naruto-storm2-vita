@@ -1,0 +1,9 @@
+﻿Vita3K (emulador, nao e o console), rexglue G1g, 2026-10-27.
+- vita3k_bad_alloc_excerpt.log: trecho do vita3k.log da execucao das 04:21 (build G1f), copiado da
+  saida da ferramenta: std::bad_alloc -> abort (udf em _kill_r) -> heap do newlib liberado -> as
+  outras threads caem em memoria liberada (as quedas da "camada de threads" do bug 45).
+- storm2.log / storm2_stats.log: execucao com a correcao (texturas de 1 e 2 componentes como
+  luminancia, atualizacao no lugar, vglUseExtraMem desligado). Heap estavel (~31-32 MiB) durante o
+  filme da CyberConnect2, que aparece com as cores certas.
+- vita3k_dolby_crash.log: o proprio Vita3K cai (escrita no endereco 0x20 do lado do host) ~28 s
+  depois de abrir Dolby.wmv. Causa nao investigada.
