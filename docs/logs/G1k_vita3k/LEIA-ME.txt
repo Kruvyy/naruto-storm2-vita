@@ -1,0 +1,20 @@
+Vita3K (emulador, nao e o console), rexglue G1k (c3280c8), 2026-10-27. Medidas do emulador.
+
+- storm2_menu.log / storm2_stats_menu.log: entrada reproduzida (menu_start.txt com
+  input_replay_stretch = 1.6: START no quadro 1600, porque no Vita3K o titulo so aceita o botao
+  depois do quadro ~1000), relatorio a cada 30 quadros, log_flush_interval = 1.
+  Menu "Selecao de Modo de Jogo" a 7,5-8,5 quadros/s. Por 30 quadros (~3,8 s): ocioso ~0,4 s,
+  desenhos ~3,0 s (chamadas GL do vitaGL ~1,6 s, vertices ~0,5 s dos quais ~0,35 s de hash,
+  texturas ~0,26 s, constantes ~0,17 s), resolves ~0,15 s. Memoria: heap do newlib 37 MiB usados
+  (4,8 MiB livres); GPU ~74 MiB + ~4 MiB de buffers de vertices/indices.
+- Antes (mesma entrada, execucoes g1k_menu2/g1k_menu3, logs nao guardados; numeros copiados do log
+  na hora): menu a ~1,7 quadro/s. Por 30 quadros (~17 s): vertices ~10,4 s, dos quais glBufferData
+  ~9,7 s para ~119 MiB; texturas ~1,5-2,0 s (hash de 810 MiB); chamadas GL ~2,0-2,4 s; resolves
+  ~1,0-1,4 s; ocioso ~0,3-0,5 s. Na tela de titulo: ~6 quadros/s, thread da GPU ocupada ~92%.
+- Capturas g1k_menu*_* e g1k_title* em storm2/captures/vita3k (nao versionadas).
+- O Naruto do menu sai semitransparente/borrado no Vita3K (no PC sai solido); ja aparecia antes
+  destas mudancas (capturas g1j_reset_*, g1k_menu2_*).
+- Quatro execucoes seguidas travaram na inicializacao (antes de "runtime ready") e uma derrubou o
+  Vita3K enquanto ele recompilava o proprio cache de shaders do titulo; o cache foi movido para o
+  scratchpad. Depois a versao anterior e esta iniciaram normalmente tres vezes. Causa nao
+  encontrada.

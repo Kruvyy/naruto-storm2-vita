@@ -1,0 +1,20 @@
+PC, backend GLES (OpenGL de desktop), rexglue G1k, 2026-10-27. Execucoes de 75-80 s com
+--storm2_skip_movies=true e a mesma entrada reproduzida (menu_start.txt: START por 10 quadros no
+quadro 1000, na tela de titulo); o menu "Selecao de Modo de Jogo" aparece por volta do quadro 1450.
+Quadros em storm2/gles_frames/<execucao> (nao versionados). Relatorio a cada 60 quadros
+(--gles_report_interval=60): tempo da thread da GPU por tipo.
+
+- G1k_pc_menu: antes das mudancas, so com os tempos. Menu, por 60 quadros (~2,2 s): ocioso
+  (esperando o jogo) ~1,4 s; desenhos ~0,75 s (texturas ~0,3 s, vertices ~0,35 s, chamadas GL ~6 ms).
+- G1k_pc_menu2: com a divisao dos tempos. Por 60 quadros: 204 MiB de vertices e 33 MiB de indices
+  enviados (glBufferData 32 ms do total de ~220 ms); 1620 MiB de texturas lidos para o hash.
+- G1k_pc_vcache: cache de vertices e indices. Vertices ~220 -> ~55 ms; 54 MiB enviados (faixas que
+  mudam de fato), indices 0; 650 buffers guardados (3,9 MiB) + 87 de indices (0,2 MiB). Quadros do
+  menu iguais aos de G1k_pc_menu (0,0-0,1% dos pixels).
+- G1k_pc_tsample: hash de textura por amostragem. 1620 -> 103 MiB por 60 quadros; desenhos ~430 ->
+  ~140 ms (~2,3 ms por quadro).
+- G1k_pc_tfull: mesma versao com --gles_texture_full_check_swaps=1 (hash completo a cada quadro).
+  Quadros do menu iguais aos de G1k_pc_tsample (0,0-0,1%): a amostragem nao deixa textura velha no
+  menu. Os ~1,3% de diferenca para G1k_pc_menu aparecem nos dois modos (texto que rola em tempo
+  real, nao por quadro).
+- O quadro 600 (transicao escura) varia entre execucoes, com e sem as mudancas.

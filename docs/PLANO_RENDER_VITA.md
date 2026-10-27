@@ -107,6 +107,13 @@ Um backend novo, `rex::graphics::gles`, escrito sobre um subconjunto do OpenGL E
   - **Correção**: índices de reinício detectados como no `PrimitiveProcessor` (faixas, leques e faixas de linhas; comparação em 24 bits antes do deslocamento de índice). O OpenGL ES 2 não tem reinício de primitivas, então esses desenhos viram listas na CPU, com a ordem dos triângulos do console (par de novo depois de cada reinício). A faixa de vértices copiada também deixa de ir até o índice FFFF.
   - **Resultado**: [V no PC] o título fica igual à captura do D3D12 (céu inteiro, nuvens à esquerda; 33–43% dos pixels mudam contra G1i, ruído entre execuções ~1–3%). [V no emulador] título no Vita3K com o céu inteiro, ~4–6 quadros/s; numa execução o DualSense levou ao menu de modos, com o modelo 3D do Naruto.
   - **Descartados no caminho** (código revertido): MRT de verdade no PC (`gl_FragData[1]` + `glDrawBuffers`) e profundidade presa aos planos com `clip_disable` não mudaram a imagem.
+- **G1k: desempenho do menu** (rexglue `c3280c8`; emulador e PC). Logs: `docs/logs/G1k_pc_*` (com a lista das execuções), `docs/logs/G1k_vita3k`.
+  - **Medição**: o relatório da GPU (`gles_report_interval`) agora divide o tempo da thread da GPU em ocioso (esperando o jogo), desenhos (texturas, constantes, vértices, chamadas GL), resolves, apresentação e o resto, com os bytes enviados e lidos para hash. Para chegar ao menu sem depender do controle, uma entrada sintética (`menu_start.txt`: START no quadro 1000; `input_replay_stretch = 1.6` no Vita3K).
+  - **Diagnóstico** [V no emulador]: no menu a ~1,7 quadro/s a thread da GPU ficava ocupada 97% do tempo; o jogo não era o gargalo. 60% ia em reenviar vértices (`glBufferData` de ~4 MiB por quadro) e ~10% em ler todas as texturas para o hash (~27 MiB por quadro).
+  - **Mudanças** (bug 56): cache de vértices e índices em buffers GL, conferido por hash a cada desenho; texturas grandes conferidas por amostragem (64 bytes a cada 4 KiB) a cada quadro e inteiras a cada 30 quadros; troca de bytes dos vértices por palavra.
+  - **Resultado**: [V no PC] trabalho do renderizador no menu ~12 → ~2,3 ms por quadro, imagens iguais (a amostragem não deixa textura velha no menu: 0,0–0,1% contra hash completo). [V no emulador] menu **1,7 → 7,5–8,5 quadros/s**. No console a proporção pode ser outra: o Vita3K executa o código ARM mais rápido que o aparelho e emula a GPU.
+  - **O que pesa agora** [V no emulador]: o processamento de cada chamada de desenho no vitaGL (~55 ms por quadro para ~300 desenhos) e o hash das faixas de vértices (~11–14 ms por quadro).
+  - **Vistos de passagem**: Naruto semitransparente no menu do Vita3K (bug 57); travamentos esporádicos na inicialização do Vita3K (bug 58).
 
 ## Etapas
 | # | Etapa | Verificação |
@@ -121,4 +128,5 @@ Um backend novo, `rex::graphics::gles`, escrito sobre um subconjunto do OpenGL E
 | G1h | desempenho: cache de shaders, filmes | **feito**: cache (224,6 s → 14 ms na abertura), filmes pulados (opção), compilador fora do heap; tela de título no Vita3K sem o fundo (bug 49) e com cores trocadas (bug 50) |
 | `7009477` | fundo e cores da tela de título | **feito**: cores (copy_dest_swap), 11 varyings (COLOR0/1), limpezas por vista MSAA (alvos em resolução de amostras), laços estruturados no vitaGL; céu e nuvens no Vita3K; faltam faixas pretas do cenário (bug 55) |
 | `ef8c3c7` | faixas pretas do fundo do título | **feito**: reinício de primitivas (índice FFFF) nas faixas; título igual ao D3D12 no PC e com o céu inteiro no Vita3K |
+| `c3280c8` | desempenho do menu | **feito**: cache de vértices/índices, hash de textura por amostragem, tempos da thread da GPU; menu 1,7 → ~8 quadros/s no Vita3K; agora pesam as chamadas de desenho do vitaGL |
 | G2 | MSAA, HDR, profundidade como textura, alvos múltiplos, desempenho e memória das texturas | batalha |
