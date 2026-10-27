@@ -1,0 +1,15 @@
+﻿Vita3K (emulador, nao e o console), rexglue G1i, 2026-10-27. Medidas do emulador.
+
+- storm2_titulo.log / storm2_stats_titulo.log: execucao final (filmes pulados, cache quente): tela de
+  titulo com ceu e nuvens, cores certas, ~6 quadros/s no Vita3K. Capturas g1i_struct2_* em
+  storm2/captures/vita3k (nao versionadas, imagens do jogo).
+- Grade de lacos (gles_present_test=8, capturas g1i_loops*_*): celulas 0, 1, 2, 6, 7, 9, 11, 12 (lacos
+  com contador de programa, com e sem continue/break, int ou float, if/else) vermelhas; 3, 4, 5, 8, 10
+  (lacos simples) verdes.
+- Copias intermediarias (gles_debug_show_resolve "ENDERECO:N", capturas g1i_snap*): cena 0CB9A000:0 e
+  passada 62 (0DC02000:0) com o ceu; passada 63 (0DF22000:0) e composicao 95 (0E242000:0) pretas antes
+  dos lacos estruturados.
+- Diagnosticos sem efeito no Vita: profundidade como textura lida como branca (longe), teste de
+  profundidade desligado, framebuffer pareado para desenhos so de profundidade, texturas zeradas.
+- O DualSense conectado ao PC controla o Vita3K: algumas execucoes passaram do titulo (aviso de
+  salvamento, menu) sem comando do teste.

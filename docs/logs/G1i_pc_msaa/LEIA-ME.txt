@@ -1,0 +1,9 @@
+Execucoes no PC (x64, backend GLES), 2026-10-27, G1i. Imagens em storm2/gles_frames (nao versionadas).
+
+- G1i_pc_nodepth: diagnostico --gles_debug_no_depth_test=true com --gles_debug_show_resolve=0CB9A000:
+  com o teste de profundidade desligado o ceu aparece; mostrou que a profundidade rejeitava a cena.
+- G1i_pc_msaa: alvos em resolucao de amostras (bug 52), sem diagnosticos: tela de titulo com ceu e
+  nuvens, aviso de salvamento sem "fantasma".
+- G1i_pc_structured: com os lacos estruturados (bug 37/53); quadros iguais aos anteriores dentro do
+  ruido entre execucoes (duas execucoes do mesmo build ja diferem 3-4% nas folhas do titulo).
+- Um DualSense estava conectado ao PC; as execucoes podem ter recebido botoes.
