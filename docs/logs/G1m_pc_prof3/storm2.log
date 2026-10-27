@@ -1,0 +1,785 @@
+[2026-10-27 18:41:19.404] [info] [gpu] [t13944] GLES GPU backend (OpenGL ES 2 subset)
+[2026-10-27 18:41:19.435] [info] [sys] [t13944] Guest memory arena mapped: virtual base 0x0000000100000000, physical base 0x0000000200000000
+[2026-10-27 18:41:19.490] [info] [gpu] [t13944] GLES GPU backend (OpenGL ES 2 subset)
+[2026-10-27 18:41:19.495] [info] [core] [t13944] Function table initialized for module: code=821C0000-82836294, image=82000000-82B30000
+[2026-10-27 18:41:19.565] [info] [gpu] [t22856] GLES backend on desktop OpenGL (offscreen): ATI Technologies Inc. / AMD Radeon RX 6600 / 4.6.0 Compatibility Profile Context 26.10.1.261008, S3TC true
+[2026-10-27 18:41:19.689] [warning] [core] [t13944] SDL GameControllerDB: file 'gamecontrollerdb.txt' does not exist.
+[2026-10-27 18:41:19.691] [info] [core] [t13944] SDL input driver initialized successfully
+[2026-10-27 18:41:19.740] [info] [core] [t13944] Initializing shader storage for title 4E4D0819...
+[2026-10-27 18:41:19.751] [info] [gpu] [t13544] SetInterruptCallback(826A5998, 40005080)
+[2026-10-27 18:41:19.759] [info] [gpu] [t22856] GLES: render target depth base 0 pitch 640 format 0 msaa 2: 1280x736
+[2026-10-27 18:41:19.759] [info] [gpu] [t22856] GLES: scratch color attachment 1280x736 for depth-only passes
+[2026-10-27 18:41:19.759] [info] [gpu] [t22856] GLES: framebuffer 1280x736 with depth/stencil (1 render target framebuffers)
+[2026-10-27 18:41:19.761] [info] [gpu] [t22856] GLES: compiled VS 1E6883FCCDE1F688 (modification 0, 2978 bytes of GLSL) in 1.8 ms
+[2026-10-27 18:41:19.762] [info] [gpu] [t22856] GLES: linked program VS 1E6883FCCDE1F688 + PS 0000000000000000 in 1.0 ms
+[2026-10-27 18:41:19.762] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc -1 (-1 kept) pc -1 (-1 kept) vte 3 ndc 1/0 atest -1, 0 bools, 0 loops, 0 textures; 4 active uniforms
+[2026-10-27 18:41:19.764] [info] [gpu] [t22856] GLES: render target color base 0 pitch 1280 format 0 msaa 0: 1280x736
+[2026-10-27 18:41:19.765] [info] [gpu] [t22856] GLES: resolve target 0B000000 1280x736
+[2026-10-27 18:41:19.765] [info] [gpu] [t22856] GLES: resolve framebuffer 1280x736 #0
+[2026-10-27 18:41:19.776] [info] [gpu] [t22856] GLES: render target depth base 640 pitch 640 format 0 msaa 2: 1280x736
+[2026-10-27 18:41:19.776] [info] [gpu] [t22856] GLES: framebuffer 1280x736 with depth/stencil (2 render target framebuffers)
+[2026-10-27 18:41:19.844] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:19.845] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:19.876] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:19.877] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:19.941] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.122] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.137] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.138] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.149] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.271] [info] [apu] [t13544] audio endpoint 'Realtek HD Audio 2nd output (Realtek(R) Audio)': 2 ch, 48000 Hz, format 0x8120; submitting 2 ch
+[2026-10-27 18:41:20.273] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.275] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.279] [info] [core] [t13544] input replay: 2 events for 1 user(s) from C:\Users\minoo\Downloads\PORT NARUTO STORM 2 PS VITA\docs\logs\G1k_pc_menu\menu_start.txt (stretch 1)
+[2026-10-27 18:41:20.293] [info] [gpu] [t22856] GLES: resolve target 0CB9A000 1280x640
+[2026-10-27 18:41:20.293] [info] [gpu] [t22856] GLES: resolve framebuffer 1280x640 #0
+[2026-10-27 18:41:20.294] [info] [gpu] [t22856] GLES: render target color base 640 pitch 1280 format 0 msaa 0: 1280x736
+[2026-10-27 18:41:20.294] [info] [gpu] [t22856] GLES: resolve target 0CEBA000 1280x640
+[2026-10-27 18:41:20.294] [info] [gpu] [t22856] GLES: resolve framebuffer 1280x640 #1
+[2026-10-27 18:41:20.295] [info] [gpu] [t22856] GLES: framebuffer 1280x736 (3 render target framebuffers)
+[2026-10-27 18:41:20.296] [info] [gpu] [t22856] GLES: compiled VS 4666C5A9092B03DD (modification 3, 4323 bytes of GLSL) in 1.8 ms
+[2026-10-27 18:41:20.299] [info] [gpu] [t22856] GLES: compiled PS 7ABDFEFBCADB4BF9 (modification 3, 2923 bytes of GLSL) in 2.1 ms
+[2026-10-27 18:41:20.299] [info] [gpu] [t22856] GLES: linked program VS 4666C5A9092B03DD + PS 7ABDFEFBCADB4BF9 in 0.2 ms
+[2026-10-27 18:41:20.299] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 10 (5 kept) pc -1 (-1 kept) vte 15 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 9 active uniforms
+[2026-10-27 18:41:20.309] [info] [gpu] [t22856] GLES: render target depth base 1280 pitch 640 format 0 msaa 2: 1280x736
+[2026-10-27 18:41:20.309] [info] [gpu] [t22856] GLES: framebuffer 1280x736 with depth/stencil (4 render target framebuffers)
+[2026-10-27 18:41:20.310] [info] [gpu] [t22856] GLES: compiled VS 1E6883FCCDE1F688 (modification 1, 3003 bytes of GLSL) in 1.4 ms
+[2026-10-27 18:41:20.312] [info] [gpu] [t22856] GLES: compiled PS A4A965C189287B99 (modification 1, 2605 bytes of GLSL) in 1.3 ms
+[2026-10-27 18:41:20.312] [info] [gpu] [t22856] GLES: linked program VS 1E6883FCCDE1F688 + PS A4A965C189287B99 in 0.2 ms
+[2026-10-27 18:41:20.312] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc -1 (-1 kept) pc -1 (-1 kept) vte 4 ndc 2/1 atest 0, 0 bools, 0 loops, 0 textures; 5 active uniforms
+[2026-10-27 18:41:20.363] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.364] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.375] [info] [gpu] [t22856] GLES: framebuffer 1280x736 with depth/stencil (5 render target framebuffers)
+[2026-10-27 18:41:20.540] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.541] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.572] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.573] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.704] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.705] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.777] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.777] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.793] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.794] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.803] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:20.804] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:21.033] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:21.034] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:21.061] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:21.062] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:21.092] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:21.093] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:21.144] [info] [gpu] [t22856] GLES: compiled VS 13B01BEA94678566 (modification 3, 4870 bytes of GLSL) in 1.9 ms
+[2026-10-27 18:41:21.144] [info] [gpu] [t22856] GLES: linked program VS 13B01BEA94678566 + PS 7ABDFEFBCADB4BF9 in 0.4 ms
+[2026-10-27 18:41:21.144] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 10 (5 kept) pc -1 (-1 kept) vte 15 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 9 active uniforms
+[2026-10-27 18:41:21.147] [info] [gpu] [t22856] GLES: compiled VS 2E015B8427EBD8C5 (modification 1F, 6346 bytes of GLSL) in 2.3 ms
+[2026-10-27 18:41:21.149] [info] [gpu] [t22856] GLES: compiled PS E8EAE3AA51F7921E (modification 1F, 4898 bytes of GLSL) in 1.6 ms
+[2026-10-27 18:41:21.149] [info] [gpu] [t22856] GLES: linked program VS 2E015B8427EBD8C5 + PS E8EAE3AA51F7921E in 0.3 ms
+[2026-10-27 18:41:21.149] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 11 (10 kept) pc 3 (1 kept) vte 21 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-10-27 18:41:22.009] [info] [gpu] [t22856] GLES: swap 60: 535 draws, 1416 skipped, 164 resolves since the last report; 5 render targets, 3 resolve targets, 2 textures, 5 programs; frontbuffer 0B000000 resolved; skipped: no target 1416, shader 0, link 0, vertices 0
+[2026-10-27 18:41:22.009] [info] [gpu] [t22856] GLES: time since the last report 2244 ms: translate 0 ms, compile 14 ms (8 shaders), link 2 ms (5 programs, 0 from the shader cache), present+swap 0 ms; longest frame 203 ms
+[2026-10-27 18:41:22.009] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 2215 ms, draws 19 ms (textures 1, constants 0, vertices 1, GL draw calls 0), resolves 5 ms, present 0 ms, other 5 ms
+[2026-10-27 18:41:22.009] [info] [gpu] [t22856] GLES:   vertices: glBufferData 0 ms for 0.0 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 0.0 MiB; cache hits/misses: vertex ranges 293/24, index sets 275/16; kept: 24 vertex buffers 0.0 MiB, 16 index buffers 0.0 MiB
+[2026-10-27 18:41:22.009] [info] [gpu] [t22856] GLES:   textures: hashing 0 ms for 1.8 MiB
+[2026-10-27 18:41:22.009] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 2 (0.0 MiB)
+[2026-10-27 18:41:22.009] [info] [gpu] [t22856] GLES:   GL calls: program switches 266, uniform uploads 277 (unchanged, not sent: 3738), state groups sent 1318 (unchanged: 2427), blend changes on a program (vitaGL fragment re-patch) 0
+[2026-10-27 18:41:22.009] [info] [gpu] [t22856] GLES memory (MiB): render targets 7.2 (2), resolve targets 9.8 (3), textures 0.1 (2), scratch 3.6, framebuffers 5 + 3 for resolves -> depth/stencil 31.4 (vitaGL estimate); total 52.1
+[2026-10-27 18:41:22.021] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.021] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.332] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.332] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.447] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.447] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.460] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.461] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.470] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.471] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.479] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.480] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.493] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.494] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.510] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.510] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.521] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.521] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.597] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.597] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.618] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.618] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.627] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.628] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.637] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.637] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.646] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.647] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.659] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.659] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.668] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.668] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.677] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.678] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.686] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.687] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.695] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.696] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.705] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.705] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.715] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.715] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.727] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.727] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.736] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.736] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.745] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.745] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.800] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.801] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.809] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.810] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.867] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.868] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.868] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.868] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.869] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.869] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.961] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.961] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.970] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.970] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.978] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:22.978] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:24.008] [info] [apu] [t13544] XMA: 1 contexts have an FFmpeg decoder
+[2026-10-27 18:41:24.009] [info] [gpu] [t22856] GLES: swap 120: 993 draws, 1440 skipped, 180 resolves since the last report; 5 render targets, 3 resolve targets, 2 textures, 5 programs; frontbuffer 0B000000 resolved; skipped: no target 1440, shader 0, link 0, vertices 0
+[2026-10-27 18:41:24.009] [info] [gpu] [t22856] GLES: time since the last report 2000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 35 ms
+[2026-10-27 18:41:24.009] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1987 ms, draws 6 ms (textures 1, constants 0, vertices 2, GL draw calls 0), resolves 2 ms, present 0 ms, other 5 ms
+[2026-10-27 18:41:24.009] [info] [gpu] [t22856] GLES:   vertices: glBufferData 0 ms for 0.0 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 0.1 MiB; cache hits/misses: vertex ranges 750/3, index sets 690/3; kept: 17 vertex buffers 0.0 MiB, 12 index buffers 0.0 MiB
+[2026-10-27 18:41:24.009] [info] [gpu] [t22856] GLES:   textures: hashing 0 ms for 4.2 MiB
+[2026-10-27 18:41:24.009] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 42 (0.0 MiB)
+[2026-10-27 18:41:24.010] [info] [gpu] [t22856] GLES:   GL calls: program switches 360, uniform uploads 633 (unchanged, not sent: 7797), state groups sent 1680 (unchanged: 5271), blend changes on a program (vitaGL fragment re-patch) 0
+[2026-10-27 18:41:24.010] [info] [gpu] [t22856] GLES memory (MiB): render targets 7.2 (2), resolve targets 9.8 (3), textures 0.1 (2), scratch 3.6, framebuffers 5 + 3 for resolves -> depth/stencil 31.4 (vitaGL estimate); total 52.1
+[2026-10-27 18:41:24.010] [info] [gpu] [t22856] GLES: render target depth base 0 pitch 1040 format 0 msaa 0: 1040x736
+[2026-10-27 18:41:24.010] [info] [gpu] [t22856] GLES: scratch color attachment 1040x736 for depth-only passes
+[2026-10-27 18:41:24.010] [info] [gpu] [t22856] GLES: framebuffer 1040x736 with depth/stencil (6 render target framebuffers)
+[2026-10-27 18:41:24.012] [info] [gpu] [t22856] GLES: compiled VS 2443876AABAE04D9 (modification 3, 4273 bytes of GLSL) in 2.0 ms
+[2026-10-27 18:41:24.021] [info] [gpu] [t22856] GLES: compiled PS 6D868915601F3596 (modification 3, 23649 bytes of GLSL) in 9.2 ms
+[2026-10-27 18:41:24.022] [info] [gpu] [t22856] GLES: linked program VS 2443876AABAE04D9 + PS 6D868915601F3596 in 0.9 ms
+[2026-10-27 18:41:24.022] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 23 (4 kept) pc 3 (1 kept) vte 27 ndc 2/1 atest 0, 0 bools, 0 loops, 3 textures; 16 active uniforms
+[2026-10-27 18:41:24.023] [warning] [gpu] [t22856] GLES: texture format k_24_8 not supported (black)
+[2026-10-27 18:41:24.026] [info] [gpu] [t22856] GLES: compiled VS 2A53964AA9F4D66E (modification 1, 4317 bytes of GLSL) in 2.0 ms
+[2026-10-27 18:41:24.029] [info] [gpu] [t22856] GLES: compiled PS A2147ED6ACF52DBF (modification 20001, 9499 bytes of GLSL) in 3.1 ms
+[2026-10-27 18:41:24.030] [info] [gpu] [t22856] GLES: linked program VS 2A53964AA9F4D66E + PS A2147ED6ACF52DBF in 0.7 ms
+[2026-10-27 18:41:24.030] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 22 (5 kept) pc 3 (12 kept) vte 27 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-10-27 18:41:24.030] [info] [gpu] [t22856] GLES: resolve target 0D4FA000 1280x640
+[2026-10-27 18:41:24.032] [info] [gpu] [t22856] GLES: compiled VS 5C3A02159BE6E884 (modification 3, 5036 bytes of GLSL) in 2.0 ms
+[2026-10-27 18:41:24.034] [info] [gpu] [t22856] GLES: compiled PS 15741DBDE0A6290A (modification 3, 3082 bytes of GLSL) in 2.0 ms
+[2026-10-27 18:41:24.035] [info] [gpu] [t22856] GLES: linked program VS 5C3A02159BE6E884 + PS 15741DBDE0A6290A in 0.3 ms
+[2026-10-27 18:41:24.035] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 16 (6 kept) pc -1 (-1 kept) vte 22 ndc 2/1 atest 0, 0 bools, 0 loops, 2 textures; 12 active uniforms
+[2026-10-27 18:41:24.035] [info] [gpu] [t22856] GLES: resolve target 0DC02000 1280x640
+[2026-10-27 18:41:24.037] [info] [gpu] [t22856] GLES: compiled VS 3DDE552C3BDAE2BF (modification 3, 4930 bytes of GLSL) in 1.9 ms
+[2026-10-27 18:41:24.039] [info] [gpu] [t22856] GLES: compiled PS BCC460762FDFFFFC (modification 3, 6529 bytes of GLSL) in 2.1 ms
+[2026-10-27 18:41:24.040] [info] [gpu] [t22856] GLES: linked program VS 3DDE552C3BDAE2BF + PS BCC460762FDFFFFC in 0.4 ms
+[2026-10-27 18:41:24.040] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 18 (6 kept) pc 4 (1 kept) vte 24 ndc 3/2 atest 0, 0 bools, 1 loops, 2 textures; 14 active uniforms
+[2026-10-27 18:41:24.040] [info] [gpu] [t22856] GLES: resolve target 0DF22000 1280x640
+[2026-10-27 18:41:24.043] [info] [gpu] [t22856] GLES: compiled VS 4124792F35086E42 (modification F, 6374 bytes of GLSL) in 2.2 ms
+[2026-10-27 18:41:24.044] [info] [gpu] [t22856] GLES: compiled PS 083B01342061346A (modification F, 4352 bytes of GLSL) in 1.5 ms
+[2026-10-27 18:41:24.045] [info] [gpu] [t22856] GLES: linked program VS 4124792F35086E42 + PS 083B01342061346A in 0.3 ms
+[2026-10-27 18:41:24.045] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 11 (6 kept) pc 3 (1 kept) vte 17 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-10-27 18:41:24.047] [info] [gpu] [t22856] GLES: compiled PS ECFA8AFC82759BAD (modification 3, 4561 bytes of GLSL) in 1.7 ms
+[2026-10-27 18:41:24.047] [info] [gpu] [t22856] GLES: linked program VS 3DDE552C3BDAE2BF + PS ECFA8AFC82759BAD in 0.3 ms
+[2026-10-27 18:41:24.047] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 12 (6 kept) pc 3 (2 kept) vte 18 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-10-27 18:41:24.050] [info] [gpu] [t22856] GLES: compiled VS F97B3D21465FD604 (modification 3, 4736 bytes of GLSL) in 2.5 ms
+[2026-10-27 18:41:24.052] [info] [gpu] [t22856] GLES: compiled PS 389831C73DE85D45 (modification 3, 7270 bytes of GLSL) in 2.4 ms
+[2026-10-27 18:41:24.053] [info] [gpu] [t22856] GLES: linked program VS F97B3D21465FD604 + PS 389831C73DE85D45 in 0.3 ms
+[2026-10-27 18:41:24.053] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 13 (6 kept) pc 3 (3 kept) vte 19 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-10-27 18:41:24.054] [info] [gpu] [t22856] GLES: render target color base 0 pitch 640 format 7 msaa 2: 1280x736
+[2026-10-27 18:41:24.054] [info] [gpu] [t22856] GLES: framebuffer 1280x736 (7 render target framebuffers)
+[2026-10-27 18:41:24.054] [info] [gpu] [t22856] GLES: resolve target 0E562000 1280x640
+[2026-10-27 18:41:24.058] [info] [gpu] [t22856] GLES: compiled VS CF0D3867629B648A (modification F, 6165 bytes of GLSL) in 3.1 ms
+[2026-10-27 18:41:24.060] [info] [gpu] [t22856] GLES: compiled PS B62A1667D0BA6F26 (modification F, 4536 bytes of GLSL) in 1.7 ms
+[2026-10-27 18:41:24.060] [info] [gpu] [t22856] GLES: linked program VS CF0D3867629B648A + PS B62A1667D0BA6F26 in 0.3 ms
+[2026-10-27 18:41:24.060] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 29 (8 kept) pc 3 (1 kept) vte 37 ndc 2/1 atest 0, 0 bools, 0 loops, 4 textures; 19 active uniforms
+[2026-10-27 18:41:24.062] [info] [gpu] [t22856] GLES: compiled PS D5019343FF423CC8 (modification 3, 4859 bytes of GLSL) in 1.9 ms
+[2026-10-27 18:41:24.062] [info] [gpu] [t22856] GLES: linked program VS F97B3D21465FD604 + PS D5019343FF423CC8 in 0.3 ms
+[2026-10-27 18:41:24.062] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 11 (6 kept) pc 3 (1 kept) vte 17 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-10-27 18:41:24.065] [info] [gpu] [t22856] GLES: compiled VS DD881E5FDA628D88 (modification 3, 5496 bytes of GLSL) in 2.2 ms
+[2026-10-27 18:41:24.066] [info] [gpu] [t22856] GLES: compiled PS 46AA46E4EB44BFF6 (modification 3, 3493 bytes of GLSL) in 1.4 ms
+[2026-10-27 18:41:24.067] [info] [gpu] [t22856] GLES: linked program VS DD881E5FDA628D88 + PS 46AA46E4EB44BFF6 in 0.4 ms
+[2026-10-27 18:41:24.067] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 16 (8 kept) pc -1 (-1 kept) vte 24 ndc 2/1 atest 0, 0 bools, 0 loops, 2 textures; 12 active uniforms
+[2026-10-27 18:41:24.067] [info] [gpu] [t22856] GLES: resolve target 0E242000 1280x640
+[2026-10-27 18:41:24.069] [info] [gpu] [t22856] GLES: compiled PS C60F811D2CD5F211 (modification 3, 3206 bytes of GLSL) in 2.0 ms
+[2026-10-27 18:41:24.070] [info] [gpu] [t22856] GLES: linked program VS 3DDE552C3BDAE2BF + PS C60F811D2CD5F211 in 0.3 ms
+[2026-10-27 18:41:24.070] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 16 (6 kept) pc -1 (-1 kept) vte 22 ndc 2/1 atest 0, 0 bools, 0 loops, 2 textures; 12 active uniforms
+[2026-10-27 18:41:24.077] [info] [gpu] [t22856] GLES: texture 10249000 512x256 k_8_8_8_8 (512 KiB on the host)
+[2026-10-27 18:41:24.081] [info] [gpu] [t22856] GLES: texture 0FEE9000 1024x3152 k_DXT4_5 (3152 KiB on the host)
+[2026-10-27 18:41:26.024] [info] [gpu] [t22856] GLES: swap 180: 9983 draws, 4320 skipped, 1800 resolves since the last report; 7 render targets, 8 resolve targets, 8 textures, 16 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:26.025] [info] [gpu] [t22856] GLES: time since the last report 2015 ms: translate 1 ms, compile 47 ms (19 shaders), link 4 ms (11 programs, 0 from the shader cache), present+swap 0 ms; longest frame 66 ms
+[2026-10-27 18:41:26.025] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1896 ms, draws 98 ms (textures 17, constants 3, vertices 10, GL draw calls 2), resolves 8 ms, present 0 ms, other 14 ms
+[2026-10-27 18:41:26.025] [info] [gpu] [t22856] GLES:   vertices: glBufferData 1 ms for 0.3 MiB of vertices and 0.0 MiB of indices, hashing 1 ms for 0.6 MiB; cache hits/misses: vertex ranges 7999/544, index sets 7784/0; kept: 480 vertex buffers 0.0 MiB, 1 index buffers 0.0 MiB
+[2026-10-27 18:41:26.025] [info] [gpu] [t22856] GLES:   textures: hashing 6 ms for 31.0 MiB
+[2026-10-27 18:41:26.025] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 0 (0.0 MiB)
+[2026-10-27 18:41:26.025] [info] [gpu] [t22856] GLES:   GL calls: program switches 2609, uniform uploads 8144 (unchanged, not sent: 77743), state groups sent 12983 (unchanged: 56898), blend changes on a program (vitaGL fragment re-patch) 356
+[2026-10-27 18:41:26.025] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 3.7 (8), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 88.8
+[2026-10-27 18:41:28.026] [info] [gpu] [t22856] GLES: swap 240: 11040 draws, 4320 skipped, 1800 resolves since the last report; 7 render targets, 8 resolve targets, 8 textures, 16 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:28.026] [info] [gpu] [t22856] GLES: time since the last report 2002 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 37 ms
+[2026-10-27 18:41:28.026] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1945 ms, draws 37 ms (textures 10, constants 3, vertices 10, GL draw calls 2), resolves 6 ms, present 0 ms, other 14 ms
+[2026-10-27 18:41:28.026] [info] [gpu] [t22856] GLES:   vertices: glBufferData 1 ms for 0.3 MiB of vertices and 0.0 MiB of indices, hashing 1 ms for 0.7 MiB; cache hits/misses: vertex ranges 9600/0, index sets 8820/0; kept: 480 vertex buffers 0.0 MiB, 1 index buffers 0.0 MiB
+[2026-10-27 18:41:28.026] [info] [gpu] [t22856] GLES:   textures: hashing 4 ms for 24.5 MiB
+[2026-10-27 18:41:28.026] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 0 (0.0 MiB)
+[2026-10-27 18:41:28.026] [info] [gpu] [t22856] GLES:   GL calls: program switches 2640, uniform uploads 9060 (unchanged, not sent: 86340), state groups sent 13020 (unchanged: 64260), blend changes on a program (vitaGL fragment re-patch) 360
+[2026-10-27 18:41:28.026] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 3.7 (8), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 88.8
+[2026-10-27 18:41:29.126] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:29.127] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:29.261] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:29.262] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:29.283] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:29.284] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:29.298] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:29.298] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:30.025] [info] [gpu] [t22856] GLES: swap 300: 6781 draws, 4320 skipped, 1410 resolves since the last report; 7 render targets, 8 resolve targets, 8 textures, 16 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:30.025] [info] [gpu] [t22856] GLES: time since the last report 1999 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 35 ms
+[2026-10-27 18:41:30.025] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1959 ms, draws 25 ms (textures 7, constants 2, vertices 7, GL draw calls 1), resolves 5 ms, present 0 ms, other 11 ms
+[2026-10-27 18:41:30.025] [info] [gpu] [t22856] GLES:   vertices: glBufferData 0 ms for 0.2 MiB of vertices and 0.0 MiB of indices, hashing 1 ms for 0.4 MiB; cache hits/misses: vertex ranges 5610/43, index sets 5154/0; kept: 486 vertex buffers 0.0 MiB, 1 index buffers 0.0 MiB
+[2026-10-27 18:41:30.025] [info] [gpu] [t22856] GLES:   textures: hashing 3 ms for 18.3 MiB
+[2026-10-27 18:41:30.025] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 0 (0.0 MiB)
+[2026-10-27 18:41:30.025] [info] [gpu] [t22856] GLES:   GL calls: program switches 1865, uniform uploads 5387 (unchanged, not sent: 52280), state groups sent 9437 (unchanged: 38030), blend changes on a program (vitaGL fragment re-patch) 205
+[2026-10-27 18:41:30.025] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 3.7 (8), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 88.8
+[2026-10-27 18:41:30.104] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:30.105] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:30.182] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:30.183] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:30.388] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:30.388] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:30.675] [info] [gpu] [t22856] GLES: texture 11092000 1280x720 k_4_4_4_4 (3600 KiB on the host)
+[2026-10-27 18:41:32.026] [info] [gpu] [t22856] GLES: swap 360: 1169 draws, 4320 skipped, 900 resolves since the last report; 7 render targets, 8 resolve targets, 9 textures, 16 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:32.026] [info] [gpu] [t22856] GLES: time since the last report 2001 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 35 ms
+[2026-10-27 18:41:32.026] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1967 ms, draws 24 ms (textures 19, constants 1, vertices 2, GL draw calls 0), resolves 4 ms, present 0 ms, other 6 ms
+[2026-10-27 18:41:32.026] [info] [gpu] [t22856] GLES:   vertices: glBufferData 0 ms for 0.1 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 0.0 MiB; cache hits/misses: vertex ranges 416/33, index sets 400/1; kept: 25 vertex buffers 0.0 MiB, 2 index buffers 0.0 MiB
+[2026-10-27 18:41:32.026] [info] [gpu] [t22856] GLES:   textures: hashing 3 ms for 14.3 MiB
+[2026-10-27 18:41:32.026] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 0 (0.0 MiB)
+[2026-10-27 18:41:32.026] [info] [gpu] [t22856] GLES:   GL calls: program switches 809, uniform uploads 302 (unchanged, not sent: 7680), state groups sent 4820 (unchanged: 3363), blend changes on a program (vitaGL fragment re-patch) 0
+[2026-10-27 18:41:32.026] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 7.2 (9), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 92.3
+[2026-10-27 18:41:34.026] [info] [gpu] [t22856] GLES: freed 1 textures and 0 resolve targets (0.1 MiB) unused for 300 swaps
+[2026-10-27 18:41:34.026] [info] [gpu] [t22856] GLES: swap 420: 1151 draws, 4320 skipped, 900 resolves since the last report; 7 render targets, 8 resolve targets, 8 textures, 16 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:34.026] [info] [gpu] [t22856] GLES: time since the last report 2000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:41:34.026] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1982 ms, draws 9 ms (textures 3, constants 1, vertices 2, GL draw calls 0), resolves 3 ms, present 0 ms, other 6 ms
+[2026-10-27 18:41:34.026] [info] [gpu] [t22856] GLES:   vertices: glBufferData 0 ms for 0.1 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 0.0 MiB; cache hits/misses: vertex ranges 417/14, index sets 420/0; kept: 25 vertex buffers 0.0 MiB, 2 index buffers 0.0 MiB
+[2026-10-27 18:41:34.026] [info] [gpu] [t22856] GLES:   textures: hashing 2 ms for 14.6 MiB
+[2026-10-27 18:41:34.026] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 0 (0.0 MiB)
+[2026-10-27 18:41:34.026] [info] [gpu] [t22856] GLES:   GL calls: program switches 791, uniform uploads 300 (unchanged, not sent: 7539), state groups sent 4822 (unchanged: 3235), blend changes on a program (vitaGL fragment re-patch) 0
+[2026-10-27 18:41:34.026] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 7.2 (8), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 92.2
+[2026-10-27 18:41:34.702] [info] [gpu] [t22856] GLES: texture 10EC6000 1280x720 k_4_4_4_4 (3600 KiB on the host)
+[2026-10-27 18:41:36.026] [info] [gpu] [t22856] GLES: swap 480: 1189 draws, 4320 skipped, 900 resolves since the last report; 7 render targets, 8 resolve targets, 9 textures, 16 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:36.026] [info] [gpu] [t22856] GLES: time since the last report 2000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 35 ms
+[2026-10-27 18:41:36.026] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1973 ms, draws 18 ms (textures 12, constants 1, vertices 2, GL draw calls 0), resolves 3 ms, present 0 ms, other 5 ms
+[2026-10-27 18:41:36.026] [info] [gpu] [t22856] GLES:   vertices: glBufferData 0 ms for 0.1 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 0.0 MiB; cache hits/misses: vertex ranges 416/53, index sets 419/1; kept: 25 vertex buffers 0.0 MiB, 2 index buffers 0.0 MiB
+[2026-10-27 18:41:36.026] [info] [gpu] [t22856] GLES:   textures: hashing 3 ms for 18.4 MiB
+[2026-10-27 18:41:36.026] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 0 (0.0 MiB)
+[2026-10-27 18:41:36.026] [info] [gpu] [t22856] GLES:   GL calls: program switches 829, uniform uploads 300 (unchanged, not sent: 7881), state groups sent 4898 (unchanged: 3425), blend changes on a program (vitaGL fragment re-patch) 0
+[2026-10-27 18:41:36.026] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 10.7 (9), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 95.8
+[2026-10-27 18:41:38.025] [info] [gpu] [t22856] GLES: swap 540: 1150 draws, 4320 skipped, 900 resolves since the last report; 7 render targets, 8 resolve targets, 9 textures, 16 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:38.025] [info] [gpu] [t22856] GLES: time since the last report 1999 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 35 ms
+[2026-10-27 18:41:38.025] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1981 ms, draws 9 ms (textures 3, constants 1, vertices 2, GL draw calls 0), resolves 3 ms, present 0 ms, other 6 ms
+[2026-10-27 18:41:38.025] [info] [gpu] [t22856] GLES:   vertices: glBufferData 0 ms for 0.1 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 0.0 MiB; cache hits/misses: vertex ranges 417/13, index sets 420/0; kept: 25 vertex buffers 0.0 MiB, 2 index buffers 0.0 MiB
+[2026-10-27 18:41:38.025] [info] [gpu] [t22856] GLES:   textures: hashing 2 ms for 14.5 MiB
+[2026-10-27 18:41:38.025] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 0 (0.0 MiB)
+[2026-10-27 18:41:38.025] [info] [gpu] [t22856] GLES:   GL calls: program switches 790, uniform uploads 300 (unchanged, not sent: 7530), state groups sent 4820 (unchanged: 3230), blend changes on a program (vitaGL fragment re-patch) 0
+[2026-10-27 18:41:38.025] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 10.7 (9), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 95.8
+[2026-10-27 18:41:38.725] [info] [core] [t13544] Storm 2: movie 0 (logo_cc2) skipped (storm2_skip_movies)
+[2026-10-27 18:41:39.359] [info] [core] [t13544] Storm 2: movie 1 (Dolby) skipped (storm2_skip_movies)
+[2026-10-27 18:41:39.558] [info] [core] [t13544] Storm 2: movie 2 (opening) skipped (storm2_skip_movies)
+[2026-10-27 18:41:39.562] [info] [gpu] [t22856] GLES: compiled VS 818B92470F80833E (modification 1, 5199 bytes of GLSL) in 2.2 ms
+[2026-10-27 18:41:39.564] [info] [gpu] [t22856] GLES: compiled PS 1C5B744F4C81F9EB (modification 1, 5957 bytes of GLSL) in 2.0 ms
+[2026-10-27 18:41:39.565] [info] [gpu] [t22856] GLES: linked program VS 818B92470F80833E + PS 1C5B744F4C81F9EB in 0.4 ms
+[2026-10-27 18:41:39.565] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 26 (7 kept) pc 3 (4 kept) vte 33 ndc 2/1 atest 0, 0 bools, 0 loops, 3 textures; 16 active uniforms
+[2026-10-27 18:41:40.026] [info] [gpu] [t22856] GLES: freed 5 textures and 0 resolve targets (3.6 MiB) unused for 300 swaps
+[2026-10-27 18:41:40.026] [info] [gpu] [t22856] GLES: swap 600: 1560 draws, 4320 skipped, 1110 resolves since the last report; 7 render targets, 8 resolve targets, 4 textures, 17 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:40.026] [info] [gpu] [t22856] GLES: time since the last report 2001 ms: translate 0 ms, compile 4 ms (2 shaders), link 0 ms (1 programs, 0 from the shader cache), present+swap 0 ms; longest frame 35 ms
+[2026-10-27 18:41:40.026] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1976 ms, draws 14 ms (textures 3, constants 1, vertices 2, GL draw calls 0), resolves 4 ms, present 0 ms, other 6 ms
+[2026-10-27 18:41:40.026] [info] [gpu] [t22856] GLES:   vertices: glBufferData 0 ms for 0.2 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 0.0 MiB; cache hits/misses: vertex ranges 560/112, index sets 620/0; kept: 78 vertex buffers 0.0 MiB, 2 index buffers 0.0 MiB
+[2026-10-27 18:41:40.026] [info] [gpu] [t22856] GLES:   textures: hashing 2 ms for 10.2 MiB
+[2026-10-27 18:41:40.026] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 0 (0.0 MiB)
+[2026-10-27 18:41:40.026] [info] [gpu] [t22856] GLES:   GL calls: program switches 1150, uniform uploads 540 (unchanged, not sent: 10676), state groups sent 6580 (unchanged: 4340), blend changes on a program (vitaGL fragment re-patch) 55
+[2026-10-27 18:41:40.026] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 7.0 (4), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 92.1
+[2026-10-27 18:41:40.703] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:40.706] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:40.706] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:40.708] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:40.708] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:42.026] [info] [gpu] [t22856] GLES: swap 660: 3240 draws, 4320 skipped, 1800 resolves since the last report; 7 render targets, 8 resolve targets, 5 textures, 17 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:42.026] [info] [gpu] [t22856] GLES: time since the last report 2000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:41:42.026] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1972 ms, draws 15 ms (textures 4, constants 1, vertices 4, GL draw calls 1), resolves 5 ms, present 0 ms, other 8 ms
+[2026-10-27 18:41:42.026] [info] [gpu] [t22856] GLES:   vertices: glBufferData 0 ms for 0.3 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 0.1 MiB; cache hits/misses: vertex ranges 1762/38, index sets 1722/18; kept: 90 vertex buffers 0.0 MiB, 19 index buffers 0.0 MiB
+[2026-10-27 18:41:42.026] [info] [gpu] [t22856] GLES:   textures: hashing 2 ms for 12.0 MiB
+[2026-10-27 18:41:42.026] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 2 (0.0 MiB)
+[2026-10-27 18:41:42.026] [info] [gpu] [t22856] GLES:   GL calls: program switches 2378, uniform uploads 1621 (unchanged, not sent: 24179), state groups sent 12872 (unchanged: 9808), blend changes on a program (vitaGL fragment re-patch) 240
+[2026-10-27 18:41:42.026] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 7.1 (5), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 92.2
+[2026-10-27 18:41:43.439] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:43.439] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:43.451] [info] [gpu] [t22856] GLES: compiled VS 46BCED343281907B (modification 1F, 18489 bytes of GLSL) in 8.0 ms
+[2026-10-27 18:41:43.454] [info] [gpu] [t22856] GLES: compiled PS A1EB7A303E163A5A (modification 1F, 5473 bytes of GLSL) in 2.4 ms
+[2026-10-27 18:41:43.454] [info] [gpu] [t22856] GLES: linked program VS 46BCED343281907B + PS A1EB7A303E163A5A in 0.6 ms
+[2026-10-27 18:41:43.455] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 17 (29 kept) pc 3 (1 kept) vte 46 ndc 2/1 atest 0, 0 bools, 0 loops, 2 textures; 13 active uniforms
+[2026-10-27 18:41:43.455] [info] [gpu] [t22856] GLES: texture 11A2E000 1024x1024 k_DXT1 (512 KiB on the host)
+[2026-10-27 18:41:43.456] [info] [gpu] [t22856] GLES: texture 11683000 1024x1024 k_DXT1 (512 KiB on the host)
+[2026-10-27 18:41:43.456] [info] [gpu] [t22856] GLES: primitive reset index FFFF in a 1209-index draw (primitive type 6) - split into a list of 1461 indices
+[2026-10-27 18:41:43.460] [info] [gpu] [t22856] GLES: texture 11ADE000 2048x2048 k_DXT1 (2048 KiB on the host)
+[2026-10-27 18:41:43.461] [info] [gpu] [t22856] GLES: texture 11E50000 1024x1024 k_DXT1 (512 KiB on the host)
+[2026-10-27 18:41:43.462] [info] [gpu] [t22856] GLES: texture 119AE000 1024x1024 k_DXT1 (512 KiB on the host)
+[2026-10-27 18:41:43.463] [info] [gpu] [t22856] GLES: texture 11ED0000 1024x1024 k_DXT1 (512 KiB on the host)
+[2026-10-27 18:41:43.464] [info] [gpu] [t22856] GLES: texture 115D3000 1024x1024 k_DXT1 (512 KiB on the host)
+[2026-10-27 18:41:43.466] [info] [gpu] [t22856] GLES: texture 118AE000 1024x1024 k_DXT1 (512 KiB on the host)
+[2026-10-27 18:41:43.467] [info] [gpu] [t22856] GLES: texture 113C3000 1024x1024 k_DXT1 (512 KiB on the host)
+[2026-10-27 18:41:43.476] [info] [gpu] [t22856] GLES: compiled VS 662F7EAB15275319 (modification 1FF, 21664 bytes of GLSL) in 7.3 ms
+[2026-10-27 18:41:43.476] [warning] [gpu] [t22856] GLSL translator: texture operation getWeights2D not supported, returns 0
+[2026-10-27 18:41:43.479] [info] [gpu] [t22856] GLES: compiled PS 75EFC7EC033C4CA6 (modification 1FF, 9557 bytes of GLSL) in 3.7 ms
+[2026-10-27 18:41:43.481] [info] [gpu] [t22856] GLES: linked program VS 662F7EAB15275319 + PS 75EFC7EC033C4CA6 in 1.4 ms
+[2026-10-27 18:41:43.481] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 24 (39 kept) pc 3 (1 kept) vte 63 ndc 2/1 atest 0, 0 bools, 0 loops, 3 textures; 17 active uniforms
+[2026-10-27 18:41:43.482] [info] [gpu] [t22856] GLES: texture 11313000 1024x1024 k_DXT1 (512 KiB on the host)
+[2026-10-27 18:41:43.486] [warning] [gpu] [t22856] GLES: texture format k_24_8 not supported (black)
+[2026-10-27 18:41:43.494] [info] [gpu] [t22856] GLES: compiled VS 18B3A07010A2286C (modification 7FF, 21379 bytes of GLSL) in 6.8 ms
+[2026-10-27 18:41:43.501] [info] [gpu] [t22856] GLES: compiled PS 2F9D9F5A86C9B34F (modification 7FF, 22560 bytes of GLSL) in 7.4 ms
+[2026-10-27 18:41:43.503] [info] [gpu] [t22856] GLES: linked program VS 18B3A07010A2286C + PS 2F9D9F5A86C9B34F in 1.1 ms
+[2026-10-27 18:41:43.503] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 31 (31 kept) pc 3 (3 kept) vte 62 ndc 2/1 atest 0, 0 bools, 0 loops, 4 textures; 19 active uniforms
+[2026-10-27 18:41:43.508] [info] [gpu] [t22856] GLES: compiled VS 9F5E5B1732286B04 (modification 1F, 18120 bytes of GLSL) in 5.0 ms
+[2026-10-27 18:41:43.509] [info] [gpu] [t22856] GLES: linked program VS 9F5E5B1732286B04 + PS E8EAE3AA51F7921E in 0.6 ms
+[2026-10-27 18:41:43.509] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 11 (29 kept) pc 3 (1 kept) vte 40 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-10-27 18:41:43.514] [info] [gpu] [t22856] GLES: compiled PS 583DB46E8980998C (modification 1, 4457 bytes of GLSL) in 2.1 ms
+[2026-10-27 18:41:43.514] [info] [gpu] [t22856] GLES: linked program VS 2A53964AA9F4D66E + PS 583DB46E8980998C in 0.3 ms
+[2026-10-27 18:41:43.514] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 13 (5 kept) pc 3 (3 kept) vte 18 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-10-27 18:41:43.516] [info] [gpu] [t22856] GLES: compiled VS 07FE57A39423E2A6 (modification 3, 5883 bytes of GLSL) in 1.9 ms
+[2026-10-27 18:41:43.518] [info] [gpu] [t22856] GLES: compiled PS 478E5FA9684547B1 (modification 3, 6701 bytes of GLSL) in 2.2 ms
+[2026-10-27 18:41:43.519] [info] [gpu] [t22856] GLES: linked program VS 07FE57A39423E2A6 + PS 478E5FA9684547B1 in 0.4 ms
+[2026-10-27 18:41:43.519] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 32 (9 kept) pc 3 (4 kept) vte 41 ndc 2/1 atest 0, 0 bools, 0 loops, 4 textures; 19 active uniforms
+[2026-10-27 18:41:43.521] [info] [gpu] [t22856] GLES: compiled VS 9FD0BFCB0A6E13AF (modification 1, 4073 bytes of GLSL) in 1.6 ms
+[2026-10-27 18:41:43.522] [info] [gpu] [t22856] GLES: compiled PS AB3DCCCDF0FBC907 (modification 1, 3053 bytes of GLSL) in 1.2 ms
+[2026-10-27 18:41:43.522] [info] [gpu] [t22856] GLES: linked program VS 9FD0BFCB0A6E13AF + PS AB3DCCCDF0FBC907 in 0.2 ms
+[2026-10-27 18:41:43.522] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 10 (5 kept) pc -1 (-1 kept) vte 15 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 9 active uniforms
+[2026-10-27 18:41:43.524] [info] [gpu] [t22856] GLES: compiled VS 59CD00A489248613 (modification 1, 5198 bytes of GLSL) in 1.7 ms
+[2026-10-27 18:41:43.527] [info] [gpu] [t22856] GLES: compiled PS A7D09ABBCE821773 (modification 1, 8567 bytes of GLSL) in 2.6 ms
+[2026-10-27 18:41:43.527] [info] [gpu] [t22856] GLES: linked program VS 59CD00A489248613 + PS A7D09ABBCE821773 in 0.4 ms
+[2026-10-27 18:41:43.527] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 14 (6 kept) pc 3 (4 kept) vte 20 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-10-27 18:41:43.529] [info] [gpu] [t22856] GLES: compiled VS 28138B1C7C13DFE8 (modification 3, 3857 bytes of GLSL) in 1.9 ms
+[2026-10-27 18:41:43.531] [info] [gpu] [t22856] GLES: compiled PS 66E05C9B4FB31681 (modification 30003, 4810 bytes of GLSL) in 1.8 ms
+[2026-10-27 18:41:43.532] [info] [gpu] [t22856] GLES: linked program VS 28138B1C7C13DFE8 + PS 66E05C9B4FB31681 in 0.3 ms
+[2026-10-27 18:41:43.532] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 16 (5 kept) pc 3 (6 kept) vte 21 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-10-27 18:41:43.534] [info] [gpu] [t22856] GLES: compiled VS BDA457248E1F30D6 (modification 1, 4153 bytes of GLSL) in 2.1 ms
+[2026-10-27 18:41:43.536] [info] [gpu] [t22856] GLES: compiled PS 471B749FBB897F7E (modification 1, 4729 bytes of GLSL) in 1.8 ms
+[2026-10-27 18:41:43.536] [info] [gpu] [t22856] GLES: linked program VS BDA457248E1F30D6 + PS 471B749FBB897F7E in 0.3 ms
+[2026-10-27 18:41:43.536] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 10 (4 kept) pc 3 (6 kept) vte 14 ndc 2/1 atest 0, 0 bools, 0 loops, 0 textures; 7 active uniforms
+[2026-10-27 18:41:43.537] [info] [gpu] [t22856] GLES: texture 11272000 1024x512 k_DXT4_5 (512 KiB on the host)
+[2026-10-27 18:41:43.822] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:43.822] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:43.855] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:43.856] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:43.864] [info] [gpu] [t22856] GLES: compiled VS 8B1102365E49ED2F (modification FF, 12102 bytes of GLSL) in 4.0 ms
+[2026-10-27 18:41:43.867] [info] [gpu] [t22856] GLES: compiled PS 93C37984FFE46C47 (modification FF, 6645 bytes of GLSL) in 2.6 ms
+[2026-10-27 18:41:43.868] [info] [gpu] [t22856] GLES: linked program VS 8B1102365E49ED2F + PS 93C37984FFE46C47 in 0.6 ms
+[2026-10-27 18:41:43.868] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 17 (26 kept) pc 3 (1 kept) vte 43 ndc 2/1 atest 0, 0 bools, 0 loops, 2 textures; 13 active uniforms
+[2026-10-27 18:41:44.125] [info] [gpu] [t22856] GLES: swap 720: 4688 draws, 4320 skipped, 2009 resolves since the last report; 7 render targets, 8 resolve targets, 39 textures, 28 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:44.125] [info] [gpu] [t22856] GLES: time since the last report 2099 ms: translate 1 ms, compile 68 ms (20 shaders), link 6 ms (11 programs, 0 from the shader cache), present+swap 0 ms; longest frame 99 ms
+[2026-10-27 18:41:44.125] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1957 ms, draws 126 ms (textures 29, constants 2, vertices 9, GL draw calls 1), resolves 5 ms, present 0 ms, other 11 ms
+[2026-10-27 18:41:44.125] [info] [gpu] [t22856] GLES:   vertices: glBufferData 1 ms for 1.4 MiB of vertices and 0.1 MiB of indices, hashing 3 ms for 22.5 MiB; cache hits/misses: vertex ranges 3095/115, index sets 3093/62; kept: 177 vertex buffers 1.1 MiB, 73 index buffers 0.1 MiB
+[2026-10-27 18:41:44.125] [info] [gpu] [t22856] GLES:   textures: hashing 12 ms for 52.2 MiB
+[2026-10-27 18:41:44.125] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 35 (0.0 MiB)
+[2026-10-27 18:41:44.125] [info] [gpu] [t22856] GLES:   GL calls: program switches 2821, uniform uploads 2385 (unchanged, not sent: 40261), state groups sent 14383 (unchanged: 18433), blend changes on a program (vitaGL fragment re-patch) 401
+[2026-10-27 18:41:44.125] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (39), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.7
+[2026-10-27 18:41:44.987] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:44.988] [error] [krnl] [t2780] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:46.125] [info] [gpu] [t22856] GLES: freed 1 textures and 0 resolve targets (3.5 MiB) unused for 300 swaps
+[2026-10-27 18:41:46.125] [info] [gpu] [t22856] GLES: swap 780: 7302 draws, 4320 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 39 textures, 28 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:46.125] [info] [gpu] [t22856] GLES: time since the last report 2000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 37 ms
+[2026-10-27 18:41:46.125] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1932 ms, draws 47 ms (textures 18, constants 3, vertices 15, GL draw calls 1), resolves 6 ms, present 0 ms, other 15 ms
+[2026-10-27 18:41:46.125] [info] [gpu] [t22856] GLES:   vertices: glBufferData 0 ms for 0.3 MiB of vertices and 0.0 MiB of indices, hashing 7 ms for 70.7 MiB; cache hits/misses: vertex ranges 5741/1, index sets 5741/1; kept: 159 vertex buffers 1.1 MiB, 64 index buffers 0.1 MiB
+[2026-10-27 18:41:46.125] [info] [gpu] [t22856] GLES:   textures: hashing 12 ms for 79.8 MiB
+[2026-10-27 18:41:46.125] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 45 (0.1 MiB)
+[2026-10-27 18:41:46.125] [info] [gpu] [t22856] GLES:   GL calls: program switches 3719, uniform uploads 3102 (unchanged, not sent: 71070), state groups sent 17457 (unchanged: 33657), blend changes on a program (vitaGL fragment re-patch) 779
+[2026-10-27 18:41:46.125] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 13.2 (39), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 98.2
+[2026-10-27 18:41:48.124] [info] [gpu] [t22856] GLES: swap 840: 7269 draws, 4320 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 39 textures, 28 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:48.124] [info] [gpu] [t22856] GLES: time since the last report 1999 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 37 ms
+[2026-10-27 18:41:48.124] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1931 ms, draws 47 ms (textures 18, constants 3, vertices 15, GL draw calls 1), resolves 6 ms, present 0 ms, other 14 ms
+[2026-10-27 18:41:48.124] [info] [gpu] [t22856] GLES:   vertices: glBufferData 1 ms for 0.3 MiB of vertices and 0.0 MiB of indices, hashing 7 ms for 70.7 MiB; cache hits/misses: vertex ranges 5709/0, index sets 5709/0; kept: 159 vertex buffers 1.1 MiB, 64 index buffers 0.1 MiB
+[2026-10-27 18:41:48.124] [info] [gpu] [t22856] GLES:   textures: hashing 13 ms for 79.5 MiB
+[2026-10-27 18:41:48.124] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 30 (0.0 MiB)
+[2026-10-27 18:41:48.124] [info] [gpu] [t22856] GLES:   GL calls: program switches 3700, uniform uploads 3069 (unchanged, not sent: 70671), state groups sent 17419 (unchanged: 33464), blend changes on a program (vitaGL fragment re-patch) 779
+[2026-10-27 18:41:48.124] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 13.2 (39), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 98.2
+[2026-10-27 18:41:50.126] [info] [gpu] [t22856] GLES: freed 1 textures and 0 resolve targets (3.5 MiB) unused for 300 swaps
+[2026-10-27 18:41:50.126] [info] [gpu] [t22856] GLES: swap 900: 7393 draws, 4320 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 38 textures, 28 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:50.126] [info] [gpu] [t22856] GLES: time since the last report 2002 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 37 ms
+[2026-10-27 18:41:50.126] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1935 ms, draws 46 ms (textures 18, constants 3, vertices 15, GL draw calls 1), resolves 6 ms, present 0 ms, other 15 ms
+[2026-10-27 18:41:50.126] [info] [gpu] [t22856] GLES:   vertices: glBufferData 0 ms for 0.3 MiB of vertices and 0.0 MiB of indices, hashing 7 ms for 70.8 MiB; cache hits/misses: vertex ranges 5833/0, index sets 5833/0; kept: 159 vertex buffers 1.1 MiB, 64 index buffers 0.1 MiB
+[2026-10-27 18:41:50.126] [info] [gpu] [t22856] GLES:   textures: hashing 12 ms for 79.8 MiB
+[2026-10-27 18:41:50.126] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 134 (0.2 MiB)
+[2026-10-27 18:41:50.126] [info] [gpu] [t22856] GLES:   GL calls: program switches 3720, uniform uploads 3193 (unchanged, not sent: 72159), state groups sent 17459 (unchanged: 34292), blend changes on a program (vitaGL fragment re-patch) 779
+[2026-10-27 18:41:50.126] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 9.6 (38), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 94.7
+[2026-10-27 18:41:52.124] [info] [gpu] [t22856] GLES: swap 960: 7296 draws, 4320 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 38 textures, 28 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:52.124] [info] [gpu] [t22856] GLES: time since the last report 1999 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 35 ms
+[2026-10-27 18:41:52.124] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1932 ms, draws 47 ms (textures 18, constants 3, vertices 15, GL draw calls 1), resolves 6 ms, present 0 ms, other 14 ms
+[2026-10-27 18:41:52.124] [info] [gpu] [t22856] GLES:   vertices: glBufferData 0 ms for 0.3 MiB of vertices and 0.0 MiB of indices, hashing 7 ms for 70.7 MiB; cache hits/misses: vertex ranges 5736/0, index sets 5736/0; kept: 159 vertex buffers 1.1 MiB, 64 index buffers 0.1 MiB
+[2026-10-27 18:41:52.124] [info] [gpu] [t22856] GLES:   textures: hashing 12 ms for 79.7 MiB
+[2026-10-27 18:41:52.124] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 41 (0.0 MiB)
+[2026-10-27 18:41:52.125] [info] [gpu] [t22856] GLES:   GL calls: program switches 3717, uniform uploads 3096 (unchanged, not sent: 70998), state groups sent 17452 (unchanged: 33620), blend changes on a program (vitaGL fragment re-patch) 778
+[2026-10-27 18:41:52.125] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 9.6 (38), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 94.7
+[2026-10-27 18:41:53.491] [info] [core] [t13544] SDL OnControllerDeviceAdded: "Xbox One Controller", JoystickType(1), GameControllerType(3), VendorID(0x045E), ProductID(0x02FF)
+[2026-10-27 18:41:53.492] [info] [core] [t13544] SDL OnControllerDeviceAdded: connection order 0, device 1.
+[2026-10-27 18:41:53.790] [info] [core] [t13544] input replay: last event delivered at guest frame 1010
+[2026-10-27 18:41:54.029] [info] [gpu] [t22856] GLES: texture 0FEE9000 1024x3152 k_DXT4_5 (3152 KiB on the host)
+[2026-10-27 18:41:54.126] [info] [gpu] [t22856] GLES: freed 1 textures and 0 resolve targets (0.1 MiB) unused for 300 swaps
+[2026-10-27 18:41:54.126] [info] [gpu] [t22856] GLES: swap 1020: 7682 draws, 4320 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 40 textures, 28 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:54.126] [info] [gpu] [t22856] GLES: time since the last report 2001 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 37 ms
+[2026-10-27 18:41:54.126] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1929 ms, draws 51 ms (textures 22, constants 3, vertices 16, GL draw calls 1), resolves 6 ms, present 0 ms, other 15 ms
+[2026-10-27 18:41:54.126] [info] [gpu] [t22856] GLES:   vertices: glBufferData 1 ms for 0.3 MiB of vertices and 0.0 MiB of indices, hashing 7 ms for 70.7 MiB; cache hits/misses: vertex ranges 5715/407, index sets 6018/5; kept: 500 vertex buffers 1.1 MiB, 69 index buffers 0.1 MiB
+[2026-10-27 18:41:54.126] [info] [gpu] [t22856] GLES:   textures: hashing 13 ms for 83.1 MiB
+[2026-10-27 18:41:54.126] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 5 (0.0 MiB)
+[2026-10-27 18:41:54.126] [info] [gpu] [t22856] GLES:   GL calls: program switches 3707, uniform uploads 3350 (unchanged, not sent: 73986), state groups sent 17522 (unchanged: 36252), blend changes on a program (vitaGL fragment re-patch) 808
+[2026-10-27 18:41:54.126] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 12.7 (40), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 97.8
+[2026-10-27 18:41:56.125] [info] [gpu] [t22856] GLES: swap 1080: 14090 draws, 4320 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 40 textures, 28 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:56.125] [info] [gpu] [t22856] GLES: time since the last report 1999 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 35 ms
+[2026-10-27 18:41:56.125] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1911 ms, draws 63 ms (textures 23, constants 4, vertices 20, GL draw calls 2), resolves 6 ms, present 0 ms, other 19 ms
+[2026-10-27 18:41:56.125] [info] [gpu] [t22856] GLES:   vertices: glBufferData 1 ms for 0.3 MiB of vertices and 0.0 MiB of indices, hashing 7 ms for 71.6 MiB; cache hits/misses: vertex ranges 12530/0, index sets 11990/0; kept: 495 vertex buffers 1.1 MiB, 67 index buffers 0.1 MiB
+[2026-10-27 18:41:56.125] [info] [gpu] [t22856] GLES:   textures: hashing 14 ms for 91.2 MiB
+[2026-10-27 18:41:56.125] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 8 (0.0 MiB)
+[2026-10-27 18:41:56.125] [info] [gpu] [t22856] GLES:   GL calls: program switches 3884, uniform uploads 8930 (unchanged, not sent: 126306), state groups sent 18204 (unchanged: 80426), blend changes on a program (vitaGL fragment re-patch) 836
+[2026-10-27 18:41:56.125] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 12.7 (40), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 97.8
+[2026-10-27 18:41:57.692] [error] [krnl] [t22424] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-27 18:41:58.125] [info] [gpu] [t22856] GLES: swap 1140: 12289 draws, 4320 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 40 textures, 28 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:41:58.125] [info] [gpu] [t22856] GLES: time since the last report 2000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:41:58.125] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1917 ms, draws 59 ms (textures 22, constants 4, vertices 19, GL draw calls 2), resolves 6 ms, present 0 ms, other 18 ms
+[2026-10-27 18:41:58.125] [info] [gpu] [t22856] GLES:   vertices: glBufferData 1 ms for 0.3 MiB of vertices and 0.0 MiB of indices, hashing 7 ms for 71.6 MiB; cache hits/misses: vertex ranges 10568/161, index sets 10207/0; kept: 497 vertex buffers 1.1 MiB, 67 index buffers 0.1 MiB
+[2026-10-27 18:41:58.125] [info] [gpu] [t22856] GLES:   textures: hashing 14 ms for 87.3 MiB
+[2026-10-27 18:41:58.126] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 45 (0.1 MiB)
+[2026-10-27 18:41:58.126] [info] [gpu] [t22856] GLES:   GL calls: program switches 3878, uniform uploads 7157 (unchanged, not sent: 112076), state groups sent 18212 (unchanged: 67811), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:41:58.126] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 12.7 (40), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 97.8
+[2026-10-27 18:42:00.124] [info] [gpu] [t22856] GLES: swap 1200: 14146 draws, 4320 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 40 textures, 28 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:00.125] [info] [gpu] [t22856] GLES: time since the last report 1999 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:00.125] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1910 ms, draws 64 ms (textures 23, constants 4, vertices 20, GL draw calls 2), resolves 6 ms, present 0 ms, other 19 ms
+[2026-10-27 18:42:00.125] [info] [gpu] [t22856] GLES:   vertices: glBufferData 1 ms for 0.3 MiB of vertices and 0.0 MiB of indices, hashing 7 ms for 71.7 MiB; cache hits/misses: vertex ranges 12586/0, index sets 12046/0; kept: 495 vertex buffers 1.1 MiB, 67 index buffers 0.1 MiB
+[2026-10-27 18:42:00.125] [info] [gpu] [t22856] GLES:   textures: hashing 14 ms for 91.3 MiB
+[2026-10-27 18:42:00.125] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 54 (0.1 MiB)
+[2026-10-27 18:42:00.125] [info] [gpu] [t22856] GLES:   GL calls: program switches 3893, uniform uploads 8990 (unchanged, not sent: 126971), state groups sent 18224 (unchanged: 80798), blend changes on a program (vitaGL fragment re-patch) 838
+[2026-10-27 18:42:00.125] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 12.7 (40), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 97.8
+[2026-10-27 18:42:02.126] [info] [gpu] [t22856] GLES: swap 1260: 11414 draws, 4320 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 40 textures, 28 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:02.126] [info] [gpu] [t22856] GLES: time since the last report 2001 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 37 ms
+[2026-10-27 18:42:02.126] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1917 ms, draws 60 ms (textures 23, constants 4, vertices 19, GL draw calls 2), resolves 6 ms, present 0 ms, other 17 ms
+[2026-10-27 18:42:02.126] [info] [gpu] [t22856] GLES:   vertices: glBufferData 1 ms for 0.3 MiB of vertices and 0.0 MiB of indices, hashing 8 ms for 71.4 MiB; cache hits/misses: vertex ranges 9630/224, index sets 9332/0; kept: 497 vertex buffers 1.1 MiB, 67 index buffers 0.1 MiB
+[2026-10-27 18:42:02.126] [info] [gpu] [t22856] GLES:   textures: hashing 15 ms for 86.8 MiB
+[2026-10-27 18:42:02.126] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 0 (0.0 MiB)
+[2026-10-27 18:42:02.126] [info] [gpu] [t22856] GLES:   GL calls: program switches 3837, uniform uploads 6274 (unchanged, not sent: 104731), state groups sent 18080 (unchanged: 61818), blend changes on a program (vitaGL fragment re-patch) 822
+[2026-10-27 18:42:02.126] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 12.7 (40), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 97.8
+[2026-10-27 18:42:04.125] [info] [gpu] [t22856] GLES: freed 1 textures and 0 resolve targets (0.1 MiB) unused for 300 swaps
+[2026-10-27 18:42:04.125] [info] [gpu] [t22856] GLES: swap 1320: 8080 draws, 4320 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 39 textures, 28 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:04.125] [info] [gpu] [t22856] GLES: time since the last report 1999 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:04.125] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1926 ms, draws 51 ms (textures 19, constants 3, vertices 16, GL draw calls 1), resolves 6 ms, present 0 ms, other 16 ms
+[2026-10-27 18:42:04.125] [info] [gpu] [t22856] GLES:   vertices: glBufferData 1 ms for 0.3 MiB of vertices and 0.0 MiB of indices, hashing 7 ms for 70.8 MiB; cache hits/misses: vertex ranges 6441/79, index sets 6177/1; kept: 242 vertex buffers 1.1 MiB, 63 index buffers 0.1 MiB
+[2026-10-27 18:42:04.125] [info] [gpu] [t22856] GLES:   textures: hashing 13 ms for 85.2 MiB
+[2026-10-27 18:42:04.125] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 60 (0.1 MiB)
+[2026-10-27 18:42:04.125] [info] [gpu] [t22856] GLES:   GL calls: program switches 3785, uniform uploads 3175 (unchanged, not sent: 77941), state groups sent 17636 (unchanged: 38924), blend changes on a program (vitaGL fragment re-patch) 720
+[2026-10-27 18:42:04.125] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 12.6 (39), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 97.7
+[2026-10-27 18:42:04.859] [info] [gpu] [t22856] GLES: texture 11473000 1024x1024 k_DXT1 (512 KiB on the host)
+[2026-10-27 18:42:06.126] [info] [gpu] [t22856] GLES: swap 1380: 7290 draws, 4320 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 41 textures, 28 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:06.126] [info] [gpu] [t22856] GLES: time since the last report 2002 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:06.126] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1931 ms, draws 49 ms (textures 19, constants 3, vertices 16, GL draw calls 1), resolves 6 ms, present 0 ms, other 15 ms
+[2026-10-27 18:42:06.127] [info] [gpu] [t22856] GLES:   vertices: glBufferData 1 ms for 0.5 MiB of vertices and 0.0 MiB of indices, hashing 7 ms for 68.2 MiB; cache hits/misses: vertex ranges 5710/20, index sets 5710/20; kept: 166 vertex buffers 1.1 MiB, 71 index buffers 0.1 MiB
+[2026-10-27 18:42:06.127] [info] [gpu] [t22856] GLES:   textures: hashing 12 ms for 79.3 MiB
+[2026-10-27 18:42:06.127] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 2 (0.0 MiB)
+[2026-10-27 18:42:06.127] [info] [gpu] [t22856] GLES:   GL calls: program switches 3827, uniform uploads 2932 (unchanged, not sent: 72520), state groups sent 17377 (unchanged: 33653), blend changes on a program (vitaGL fragment re-patch) 765
+[2026-10-27 18:42:06.127] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 13.4 (41), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 98.4
+[2026-10-27 18:42:06.129] [info] [gpu] [t22856] GLES: texture 12268000 1536x768 k_DXT4_5 (1152 KiB on the host)
+[2026-10-27 18:42:06.828] [info] [gpu] [t22856] GLES: compiled VS D83A3F8DA0C5BCB8 (modification 0, 3475 bytes of GLSL) in 2.3 ms
+[2026-10-27 18:42:06.828] [info] [gpu] [t22856] GLES: linked program VS D83A3F8DA0C5BCB8 + PS 0000000000000000 in 0.2 ms
+[2026-10-27 18:42:06.828] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 3 (4 kept) pc -1 (-1 kept) vte 7 ndc 1/0 atest -1, 0 bools, 0 loops, 0 textures; 5 active uniforms
+[2026-10-27 18:42:06.830] [info] [gpu] [t22856] GLES: compiled VS 9F5A6C253EA745D9 (modification 0, 3475 bytes of GLSL) in 2.0 ms
+[2026-10-27 18:42:06.830] [info] [gpu] [t22856] GLES: linked program VS 9F5A6C253EA745D9 + PS 0000000000000000 in 0.2 ms
+[2026-10-27 18:42:06.830] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 3 (4 kept) pc -1 (-1 kept) vte 7 ndc 1/0 atest -1, 0 bools, 0 loops, 0 textures; 5 active uniforms
+[2026-10-27 18:42:06.836] [info] [gpu] [t22856] GLES: compiled VS 82F4ACEFC5E4D8A0 (modification FF, 12102 bytes of GLSL) in 4.5 ms
+[2026-10-27 18:42:06.841] [info] [gpu] [t22856] GLES: compiled PS B958D20D3E6FDD3D (modification FF, 12475 bytes of GLSL) in 4.7 ms
+[2026-10-27 18:42:06.842] [info] [gpu] [t22856] GLES: linked program VS 82F4ACEFC5E4D8A0 + PS B958D20D3E6FDD3D in 0.8 ms
+[2026-10-27 18:42:06.842] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 18 (26 kept) pc 3 (2 kept) vte 44 ndc 2/1 atest 0, 0 bools, 0 loops, 2 textures; 13 active uniforms
+[2026-10-27 18:42:06.844] [info] [gpu] [t22856] GLES: texture 1244D000 512x512 k_5_6_5 (1024 KiB on the host)
+[2026-10-27 18:42:06.848] [info] [gpu] [t22856] GLES: compiled VS 74C32F087A311BBA (modification 1F, 8705 bytes of GLSL) in 3.2 ms
+[2026-10-27 18:42:06.850] [info] [gpu] [t22856] GLES: compiled PS 74E790B19DC618A3 (modification 1F, 4536 bytes of GLSL) in 2.1 ms
+[2026-10-27 18:42:06.850] [info] [gpu] [t22856] GLES: linked program VS 74C32F087A311BBA + PS 74E790B19DC618A3 in 0.4 ms
+[2026-10-27 18:42:06.850] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 11 (10 kept) pc 3 (1 kept) vte 21 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-10-27 18:42:06.851] [info] [gpu] [t22856] GLES: linked program VS 8B1102365E49ED2F + PS B958D20D3E6FDD3D in 0.7 ms
+[2026-10-27 18:42:06.851] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 18 (26 kept) pc 3 (2 kept) vte 44 ndc 2/1 atest 0, 0 bools, 0 loops, 2 textures; 13 active uniforms
+[2026-10-27 18:42:06.856] [info] [gpu] [t22856] GLES: compiled VS C93F38275EB913CC (modification 1F, 8705 bytes of GLSL) in 4.3 ms
+[2026-10-27 18:42:06.856] [info] [gpu] [t22856] GLES: linked program VS C93F38275EB913CC + PS 74E790B19DC618A3 in 0.4 ms
+[2026-10-27 18:42:06.856] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 11 (10 kept) pc 3 (1 kept) vte 21 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-10-27 18:42:06.862] [info] [gpu] [t22856] GLES: compiled VS 234F9F4626D49E32 (modification 1FF, 12803 bytes of GLSL) in 5.8 ms
+[2026-10-27 18:42:06.867] [info] [gpu] [t22856] GLES: compiled PS 0476F2C52B5B460A (modification 1FF, 14563 bytes of GLSL) in 4.2 ms
+[2026-10-27 18:42:06.867] [info] [gpu] [t22856] GLES: linked program VS 234F9F4626D49E32 + PS 0476F2C52B5B460A in 0.8 ms
+[2026-10-27 18:42:06.868] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 24 (29 kept) pc 3 (2 kept) vte 53 ndc 2/1 atest 0, 0 bools, 0 loops, 3 textures; 16 active uniforms
+[2026-10-27 18:42:06.870] [info] [gpu] [t22856] GLES: texture 125BD000 512x512 k_5_6_5 (1024 KiB on the host)
+[2026-10-27 18:42:06.872] [info] [gpu] [t22856] GLES: compiled VS A65B3A1A291B01BF (modification 0, 2352 bytes of GLSL) in 1.2 ms
+[2026-10-27 18:42:06.873] [info] [gpu] [t22856] GLES: compiled PS BF93DD49CA93B852 (modification 0, 2855 bytes of GLSL) in 1.3 ms
+[2026-10-27 18:42:06.873] [info] [gpu] [t22856] GLES: linked program VS A65B3A1A291B01BF + PS BF93DD49CA93B852 in 0.2 ms
+[2026-10-27 18:42:06.873] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 4 (1 kept) pc -1 (-1 kept) vte 5 ndc 2/1 atest 0, 0 bools, 0 loops, 0 textures; 6 active uniforms
+[2026-10-27 18:42:06.879] [info] [gpu] [t22856] GLES: compiled VS 0F628CC3AD4EED18 (modification 1, 17908 bytes of GLSL) in 5.3 ms
+[2026-10-27 18:42:06.880] [info] [gpu] [t22856] GLES: linked program VS 0F628CC3AD4EED18 + PS A4A965C189287B99 in 0.5 ms
+[2026-10-27 18:42:06.880] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 4 (19 kept) pc -1 (-1 kept) vte 23 ndc 2/1 atest 0, 0 bools, 0 loops, 0 textures; 6 active uniforms
+[2026-10-27 18:42:06.886] [info] [gpu] [t22856] GLES: compiled VS 3FF1898E1D84151E (modification 1, 17763 bytes of GLSL) in 6.2 ms
+[2026-10-27 18:42:06.887] [info] [gpu] [t22856] GLES: linked program VS 3FF1898E1D84151E + PS A4A965C189287B99 in 0.5 ms
+[2026-10-27 18:42:06.887] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 4 (19 kept) pc -1 (-1 kept) vte 23 ndc 2/1 atest 0, 0 bools, 0 loops, 0 textures; 6 active uniforms
+[2026-10-27 18:42:06.893] [info] [gpu] [t22856] GLES: compiled VS FACBF5B594765BF9 (modification 1, 17763 bytes of GLSL) in 5.4 ms
+[2026-10-27 18:42:06.893] [info] [gpu] [t22856] GLES: linked program VS FACBF5B594765BF9 + PS A4A965C189287B99 in 0.6 ms
+[2026-10-27 18:42:06.893] [info] [gpu] [t22856] GLES: program uniforms (-1 = absent): vc 4 (19 kept) pc -1 (-1 kept) vte 23 ndc 2/1 atest 0, 0 bools, 0 loops, 0 textures; 6 active uniforms
+[2026-10-27 18:42:06.913] [info] [gpu] [t22856] GLES: texture 10249000 512x256 k_8_8_8_8 (512 KiB on the host)
+[2026-10-27 18:42:06.993] [info] [apu] [t13544] XMA: 8 contexts have an FFmpeg decoder
+[2026-10-27 18:42:08.158] [info] [gpu] [t22856] GLES: swap 1440: 15051 draws, 4671 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 53 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:08.158] [info] [gpu] [t22856] GLES: time since the last report 2032 ms: translate 1 ms, compile 53 ms (14 shaders), link 5 ms (11 programs, 0 from the shader cache), present+swap 0 ms; longest frame 85 ms
+[2026-10-27 18:42:08.158] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1844 ms, draws 160 ms (textures 34, constants 5, vertices 41, GL draw calls 2), resolves 7 ms, present 0 ms, other 22 ms
+[2026-10-27 18:42:08.158] [info] [gpu] [t22856] GLES:   vertices: glBufferData 5 ms for 35.4 MiB of vertices and 0.1 MiB of indices, hashing 18 ms for 170.2 MiB; cache hits/misses: vertex ranges 12916/1238, index sets 13274/27; kept: 651 vertex buffers 3.9 MiB, 88 index buffers 0.2 MiB
+[2026-10-27 18:42:08.158] [info] [gpu] [t22856] GLES:   textures: hashing 17 ms for 96.6 MiB
+[2026-10-27 18:42:08.158] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1147 (33.7 MiB)
+[2026-10-27 18:42:08.158] [info] [gpu] [t22856] GLES:   GL calls: program switches 5087, uniform uploads 9849 (unchanged, not sent: 136563), state groups sent 19213 (unchanged: 86144), blend changes on a program (vitaGL fragment re-patch) 846
+[2026-10-27 18:42:08.158] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 17.7 (53), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 102.7
+[2026-10-27 18:42:10.158] [info] [gpu] [t22856] GLES: swap 1500: 19239 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 53 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:10.158] [info] [gpu] [t22856] GLES: time since the last report 2000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:10.158] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1855 ms, draws 114 ms (textures 31, constants 6, vertices 55, GL draw calls 3), resolves 7 ms, present 0 ms, other 24 ms
+[2026-10-27 18:42:10.158] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.0 MiB of vertices and 0.0 MiB of indices, hashing 24 ms for 224.3 MiB; cache hits/misses: vertex ranges 17378/1321, index sets 17379/0; kept: 650 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:10.158] [info] [gpu] [t22856] GLES:   textures: hashing 19 ms for 103.0 MiB
+[2026-10-27 18:42:10.158] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:10.158] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13485 (unchanged, not sent: 169866), state groups sent 20220 (unchanged: 114453), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:10.158] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 17.7 (53), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 102.7
+[2026-10-27 18:42:12.160] [info] [gpu] [t22856] GLES: freed 1 textures and 0 resolve targets (0.0 MiB) unused for 300 swaps
+[2026-10-27 18:42:12.160] [info] [gpu] [t22856] GLES: swap 1560: 18904 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 52 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:12.160] [info] [gpu] [t22856] GLES: time since the last report 2002 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:12.160] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1854 ms, draws 116 ms (textures 30, constants 7, vertices 56, GL draw calls 3), resolves 7 ms, present 0 ms, other 25 ms
+[2026-10-27 18:42:12.160] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.1 MiB of vertices and 0.0 MiB of indices, hashing 25 ms for 224.3 MiB; cache hits/misses: vertex ranges 16361/2003, index sets 17044/0; kept: 634 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:12.160] [info] [gpu] [t22856] GLES:   textures: hashing 18 ms for 103.0 MiB
+[2026-10-27 18:42:12.160] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:12.160] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13172 (unchanged, not sent: 167164), state groups sent 20220 (unchanged: 112108), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:12.160] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 17.7 (52), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 102.7
+[2026-10-27 18:42:14.160] [info] [gpu] [t22856] GLES: freed 1 textures and 0 resolve targets (0.0 MiB) unused for 300 swaps
+[2026-10-27 18:42:14.160] [info] [gpu] [t22856] GLES: swap 1620: 18891 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 51 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:14.160] [info] [gpu] [t22856] GLES: time since the last report 2000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:14.160] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1849 ms, draws 118 ms (textures 32, constants 7, vertices 57, GL draw calls 3), resolves 7 ms, present 0 ms, other 25 ms
+[2026-10-27 18:42:14.160] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.0 MiB of vertices and 0.0 MiB of indices, hashing 25 ms for 224.3 MiB; cache hits/misses: vertex ranges 16620/1731, index sets 17031/0; kept: 635 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:14.160] [info] [gpu] [t22856] GLES:   textures: hashing 19 ms for 103.0 MiB
+[2026-10-27 18:42:14.160] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:14.160] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13153 (unchanged, not sent: 167066), state groups sent 20220 (unchanged: 112017), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:14.160] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 17.6 (51), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 102.7
+[2026-10-27 18:42:16.158] [info] [gpu] [t22856] GLES: freed 4 textures and 0 resolve targets (1.0 MiB) unused for 300 swaps
+[2026-10-27 18:42:16.159] [info] [gpu] [t22856] GLES: swap 1680: 18899 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 47 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:16.159] [info] [gpu] [t22856] GLES: time since the last report 1998 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:16.159] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1856 ms, draws 111 ms (textures 29, constants 7, vertices 53, GL draw calls 3), resolves 7 ms, present 0 ms, other 25 ms
+[2026-10-27 18:42:16.159] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.1 MiB of vertices and 0.0 MiB of indices, hashing 23 ms for 224.3 MiB; cache hits/misses: vertex ranges 16485/1874, index sets 17039/0; kept: 635 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:16.159] [info] [gpu] [t22856] GLES:   textures: hashing 18 ms for 103.0 MiB
+[2026-10-27 18:42:16.159] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:16.159] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13161 (unchanged, not sent: 167130), state groups sent 20220 (unchanged: 112073), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:16.159] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (47), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.7
+[2026-10-27 18:42:18.160] [info] [gpu] [t22856] GLES: freed 1 textures and 0 resolve targets (0.0 MiB) unused for 300 swaps
+[2026-10-27 18:42:18.160] [info] [gpu] [t22856] GLES: swap 1740: 19187 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:18.160] [info] [gpu] [t22856] GLES: time since the last report 2001 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:18.160] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1862 ms, draws 108 ms (textures 30, constants 7, vertices 51, GL draw calls 3), resolves 7 ms, present 0 ms, other 24 ms
+[2026-10-27 18:42:18.160] [info] [gpu] [t22856] GLES:   vertices: glBufferData 6 ms for 54.0 MiB of vertices and 0.0 MiB of indices, hashing 22 ms for 224.3 MiB; cache hits/misses: vertex ranges 17537/1110, index sets 17327/0; kept: 650 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:18.160] [info] [gpu] [t22856] GLES:   textures: hashing 18 ms for 103.0 MiB
+[2026-10-27 18:42:18.160] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:18.160] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13427 (unchanged, not sent: 169456), state groups sent 20220 (unchanged: 114089), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:18.160] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:20.158] [info] [gpu] [t22856] GLES: swap 1800: 19260 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:20.158] [info] [gpu] [t22856] GLES: time since the last report 1999 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 37 ms
+[2026-10-27 18:42:20.158] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1859 ms, draws 109 ms (textures 29, constants 6, vertices 52, GL draw calls 3), resolves 7 ms, present 0 ms, other 24 ms
+[2026-10-27 18:42:20.158] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.0 MiB of vertices and 0.0 MiB of indices, hashing 23 ms for 224.3 MiB; cache hits/misses: vertex ranges 17640/1080, index sets 17400/0; kept: 650 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:20.158] [info] [gpu] [t22856] GLES:   textures: hashing 17 ms for 103.0 MiB
+[2026-10-27 18:42:20.158] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:20.158] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13500 (unchanged, not sent: 170040), state groups sent 20220 (unchanged: 114600), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:20.159] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:22.158] [info] [gpu] [t22856] GLES: swap 1860: 19024 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:22.158] [info] [gpu] [t22856] GLES: time since the last report 2000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:22.158] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1861 ms, draws 108 ms (textures 29, constants 6, vertices 52, GL draw calls 3), resolves 7 ms, present 0 ms, other 24 ms
+[2026-10-27 18:42:22.159] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.1 MiB of vertices and 0.0 MiB of indices, hashing 22 ms for 224.3 MiB; cache hits/misses: vertex ranges 16651/1833, index sets 17164/0; kept: 639 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:22.159] [info] [gpu] [t22856] GLES:   textures: hashing 18 ms for 103.0 MiB
+[2026-10-27 18:42:22.159] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:22.159] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13288 (unchanged, not sent: 168128), state groups sent 20220 (unchanged: 112948), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:22.159] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:24.158] [info] [gpu] [t22856] GLES: swap 1920: 18876 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:24.158] [info] [gpu] [t22856] GLES: time since the last report 2000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:24.158] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1860 ms, draws 109 ms (textures 29, constants 7, vertices 52, GL draw calls 3), resolves 7 ms, present 0 ms, other 25 ms
+[2026-10-27 18:42:24.158] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.1 MiB of vertices and 0.0 MiB of indices, hashing 22 ms for 224.2 MiB; cache hits/misses: vertex ranges 16476/1860, index sets 17016/0; kept: 636 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:24.158] [info] [gpu] [t22856] GLES:   textures: hashing 18 ms for 103.0 MiB
+[2026-10-27 18:42:24.158] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:24.158] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13140 (unchanged, not sent: 166944), state groups sent 20220 (unchanged: 111912), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:24.158] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:26.157] [info] [gpu] [t22856] GLES: swap 1980: 18915 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:26.157] [info] [gpu] [t22856] GLES: time since the last report 1999 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:26.157] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1855 ms, draws 112 ms (textures 30, constants 7, vertices 54, GL draw calls 3), resolves 7 ms, present 0 ms, other 25 ms
+[2026-10-27 18:42:26.157] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.1 MiB of vertices and 0.0 MiB of indices, hashing 23 ms for 224.3 MiB; cache hits/misses: vertex ranges 16498/1877, index sets 17055/0; kept: 635 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:26.157] [info] [gpu] [t22856] GLES:   textures: hashing 18 ms for 103.0 MiB
+[2026-10-27 18:42:26.158] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:26.158] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13177 (unchanged, not sent: 167258), state groups sent 20220 (unchanged: 112185), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:26.158] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:28.158] [info] [gpu] [t22856] GLES: swap 2040: 19054 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:28.158] [info] [gpu] [t22856] GLES: time since the last report 2001 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:28.158] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1856 ms, draws 111 ms (textures 29, constants 6, vertices 53, GL draw calls 3), resolves 7 ms, present 0 ms, other 26 ms
+[2026-10-27 18:42:28.158] [info] [gpu] [t22856] GLES:   vertices: glBufferData 6 ms for 54.0 MiB of vertices and 0.0 MiB of indices, hashing 23 ms for 224.3 MiB; cache hits/misses: vertex ranges 17163/1351, index sets 17194/0; kept: 650 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:28.158] [info] [gpu] [t22856] GLES:   textures: hashing 18 ms for 103.0 MiB
+[2026-10-27 18:42:28.158] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:28.158] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13302 (unchanged, not sent: 168384), state groups sent 20220 (unchanged: 113158), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:28.158] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:30.158] [info] [gpu] [t22856] GLES: swap 2100: 19260 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:30.158] [info] [gpu] [t22856] GLES: time since the last report 2000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:30.158] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1859 ms, draws 109 ms (textures 29, constants 6, vertices 52, GL draw calls 3), resolves 7 ms, present 0 ms, other 25 ms
+[2026-10-27 18:42:30.158] [info] [gpu] [t22856] GLES:   vertices: glBufferData 6 ms for 54.0 MiB of vertices and 0.0 MiB of indices, hashing 22 ms for 224.3 MiB; cache hits/misses: vertex ranges 17640/1080, index sets 17400/0; kept: 650 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:30.158] [info] [gpu] [t22856] GLES:   textures: hashing 17 ms for 103.0 MiB
+[2026-10-27 18:42:30.158] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:30.158] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13500 (unchanged, not sent: 170040), state groups sent 20220 (unchanged: 114600), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:30.158] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:32.157] [info] [gpu] [t22856] GLES: swap 2160: 19155 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:32.157] [info] [gpu] [t22856] GLES: time since the last report 1999 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 37 ms
+[2026-10-27 18:42:32.157] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1855 ms, draws 112 ms (textures 30, constants 6, vertices 53, GL draw calls 3), resolves 7 ms, present 0 ms, other 25 ms
+[2026-10-27 18:42:32.157] [info] [gpu] [t22856] GLES:   vertices: glBufferData 6 ms for 54.0 MiB of vertices and 0.0 MiB of indices, hashing 23 ms for 224.3 MiB; cache hits/misses: vertex ranges 17048/1567, index sets 17295/0; kept: 649 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:32.157] [info] [gpu] [t22856] GLES:   textures: hashing 18 ms for 103.0 MiB
+[2026-10-27 18:42:32.157] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:32.157] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13408 (unchanged, not sent: 169187), state groups sent 20220 (unchanged: 113865), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:32.157] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:34.158] [info] [gpu] [t22856] GLES: swap 2220: 18864 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:34.158] [info] [gpu] [t22856] GLES: time since the last report 2001 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:34.158] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1857 ms, draws 111 ms (textures 30, constants 7, vertices 53, GL draw calls 3), resolves 8 ms, present 0 ms, other 25 ms
+[2026-10-27 18:42:34.158] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.1 MiB of vertices and 0.0 MiB of indices, hashing 23 ms for 224.2 MiB; cache hits/misses: vertex ranges 16394/1930, index sets 17004/0; kept: 634 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:34.158] [info] [gpu] [t22856] GLES:   textures: hashing 18 ms for 103.0 MiB
+[2026-10-27 18:42:34.158] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:34.158] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13131 (unchanged, not sent: 166845), state groups sent 20220 (unchanged: 111828), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:34.158] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:36.160] [info] [gpu] [t22856] GLES: swap 2280: 18928 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:36.160] [info] [gpu] [t22856] GLES: time since the last report 2002 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:36.160] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1859 ms, draws 110 ms (textures 29, constants 6, vertices 52, GL draw calls 3), resolves 8 ms, present 0 ms, other 25 ms
+[2026-10-27 18:42:36.160] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.1 MiB of vertices and 0.0 MiB of indices, hashing 22 ms for 224.3 MiB; cache hits/misses: vertex ranges 16559/1829, index sets 17068/0; kept: 635 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:36.160] [info] [gpu] [t22856] GLES:   textures: hashing 18 ms for 103.0 MiB
+[2026-10-27 18:42:36.160] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:36.160] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13191 (unchanged, not sent: 167361), state groups sent 20220 (unchanged: 112276), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:36.160] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:38.157] [info] [gpu] [t22856] GLES: swap 2340: 18935 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:38.157] [info] [gpu] [t22856] GLES: time since the last report 1998 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:38.157] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1854 ms, draws 110 ms (textures 29, constants 7, vertices 53, GL draw calls 3), resolves 7 ms, present 0 ms, other 26 ms
+[2026-10-27 18:42:38.157] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.0 MiB of vertices and 0.0 MiB of indices, hashing 23 ms for 224.3 MiB; cache hits/misses: vertex ranges 16767/1628, index sets 17075/0; kept: 644 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:38.157] [info] [gpu] [t22856] GLES:   textures: hashing 17 ms for 103.0 MiB
+[2026-10-27 18:42:38.157] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:38.157] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13190 (unchanged, not sent: 167425), state groups sent 20220 (unchanged: 112325), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:38.157] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:40.158] [info] [gpu] [t22856] GLES: swap 2400: 19249 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:40.159] [info] [gpu] [t22856] GLES: time since the last report 2001 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:40.159] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1861 ms, draws 108 ms (textures 29, constants 6, vertices 51, GL draw calls 3), resolves 7 ms, present 0 ms, other 25 ms
+[2026-10-27 18:42:40.159] [info] [gpu] [t22856] GLES:   vertices: glBufferData 6 ms for 54.0 MiB of vertices and 0.0 MiB of indices, hashing 22 ms for 224.3 MiB; cache hits/misses: vertex ranges 17617/1092, index sets 17389/0; kept: 650 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:40.159] [info] [gpu] [t22856] GLES:   textures: hashing 17 ms for 103.0 MiB
+[2026-10-27 18:42:40.159] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:40.159] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13489 (unchanged, not sent: 169952), state groups sent 20220 (unchanged: 114523), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:40.159] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:42.158] [info] [gpu] [t22856] GLES: swap 2460: 19248 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:42.158] [info] [gpu] [t22856] GLES: time since the last report 1999 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:42.158] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1859 ms, draws 108 ms (textures 29, constants 6, vertices 52, GL draw calls 3), resolves 7 ms, present 0 ms, other 25 ms
+[2026-10-27 18:42:42.158] [info] [gpu] [t22856] GLES:   vertices: glBufferData 6 ms for 54.0 MiB of vertices and 0.0 MiB of indices, hashing 22 ms for 224.3 MiB; cache hits/misses: vertex ranges 17445/1263, index sets 17388/0; kept: 650 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:42.158] [info] [gpu] [t22856] GLES:   textures: hashing 17 ms for 103.0 MiB
+[2026-10-27 18:42:42.158] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:42.158] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13492 (unchanged, not sent: 169940), state groups sent 20220 (unchanged: 114516), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:42.158] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:44.158] [info] [gpu] [t22856] GLES: swap 2520: 18925 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:44.158] [info] [gpu] [t22856] GLES: time since the last report 2001 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:44.158] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1861 ms, draws 107 ms (textures 29, constants 6, vertices 51, GL draw calls 3), resolves 7 ms, present 0 ms, other 25 ms
+[2026-10-27 18:42:44.158] [info] [gpu] [t22856] GLES:   vertices: glBufferData 6 ms for 54.1 MiB of vertices and 0.0 MiB of indices, hashing 22 ms for 224.3 MiB; cache hits/misses: vertex ranges 16395/1990, index sets 17065/0; kept: 634 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:44.158] [info] [gpu] [t22856] GLES:   textures: hashing 17 ms for 103.0 MiB
+[2026-10-27 18:42:44.158] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:44.158] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13192 (unchanged, not sent: 167333), state groups sent 20220 (unchanged: 112255), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:44.158] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:46.157] [info] [gpu] [t22856] GLES: swap 2580: 18884 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:46.157] [info] [gpu] [t22856] GLES: time since the last report 1999 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 37 ms
+[2026-10-27 18:42:46.157] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1857 ms, draws 109 ms (textures 29, constants 6, vertices 52, GL draw calls 3), resolves 7 ms, present 0 ms, other 25 ms
+[2026-10-27 18:42:46.157] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.1 MiB of vertices and 0.0 MiB of indices, hashing 23 ms for 224.3 MiB; cache hits/misses: vertex ranges 16517/1827, index sets 17024/0; kept: 636 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:46.157] [info] [gpu] [t22856] GLES:   textures: hashing 17 ms for 103.0 MiB
+[2026-10-27 18:42:46.157] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:46.157] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13147 (unchanged, not sent: 167009), state groups sent 20220 (unchanged: 111968), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:46.157] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:48.159] [info] [gpu] [t22856] GLES: swap 2640: 18898 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:48.160] [info] [gpu] [t22856] GLES: time since the last report 2003 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:48.160] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1861 ms, draws 110 ms (textures 29, constants 6, vertices 52, GL draw calls 3), resolves 8 ms, present 0 ms, other 24 ms
+[2026-10-27 18:42:48.160] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.1 MiB of vertices and 0.0 MiB of indices, hashing 23 ms for 224.3 MiB; cache hits/misses: vertex ranges 16489/1869, index sets 17038/0; kept: 632 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:48.160] [info] [gpu] [t22856] GLES:   textures: hashing 17 ms for 103.0 MiB
+[2026-10-27 18:42:48.160] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:48.160] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13162 (unchanged, not sent: 167120), state groups sent 20220 (unchanged: 112066), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:48.160] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:50.159] [info] [gpu] [t22856] GLES: swap 2700: 19166 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:50.160] [info] [gpu] [t22856] GLES: time since the last report 2000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 35 ms
+[2026-10-27 18:42:50.160] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1855 ms, draws 112 ms (textures 30, constants 7, vertices 54, GL draw calls 3), resolves 8 ms, present 0 ms, other 25 ms
+[2026-10-27 18:42:50.160] [info] [gpu] [t22856] GLES:   vertices: glBufferData 6 ms for 54.0 MiB of vertices and 0.0 MiB of indices, hashing 23 ms for 224.3 MiB; cache hits/misses: vertex ranges 17510/1116, index sets 17306/0; kept: 650 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:50.160] [info] [gpu] [t22856] GLES:   textures: hashing 18 ms for 103.0 MiB
+[2026-10-27 18:42:50.160] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:50.160] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13406 (unchanged, not sent: 169288), state groups sent 20220 (unchanged: 113942), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:50.160] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:52.161] [info] [gpu] [t22856] GLES: swap 2760: 19260 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:52.161] [info] [gpu] [t22856] GLES: time since the last report 2001 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 37 ms
+[2026-10-27 18:42:52.161] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1847 ms, draws 120 ms (textures 32, constants 7, vertices 57, GL draw calls 3), resolves 8 ms, present 0 ms, other 27 ms
+[2026-10-27 18:42:52.161] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.0 MiB of vertices and 0.0 MiB of indices, hashing 25 ms for 224.3 MiB; cache hits/misses: vertex ranges 17640/1080, index sets 17400/0; kept: 650 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:52.161] [info] [gpu] [t22856] GLES:   textures: hashing 19 ms for 103.0 MiB
+[2026-10-27 18:42:52.161] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:52.161] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13500 (unchanged, not sent: 170040), state groups sent 20220 (unchanged: 114600), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:52.161] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:54.159] [info] [gpu] [t22856] GLES: swap 2820: 19048 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:54.159] [info] [gpu] [t22856] GLES: time since the last report 1998 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:54.159] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1838 ms, draws 125 ms (textures 34, constants 7, vertices 60, GL draw calls 3), resolves 8 ms, present 0 ms, other 27 ms
+[2026-10-27 18:42:54.159] [info] [gpu] [t22856] GLES:   vertices: glBufferData 8 ms for 54.1 MiB of vertices and 0.0 MiB of indices, hashing 26 ms for 224.3 MiB; cache hits/misses: vertex ranges 16753/1755, index sets 17188/0; kept: 641 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:54.159] [info] [gpu] [t22856] GLES:   textures: hashing 20 ms for 103.0 MiB
+[2026-10-27 18:42:54.159] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:54.159] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13308 (unchanged, not sent: 168324), state groups sent 20220 (unchanged: 113116), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:54.159] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:56.160] [info] [gpu] [t22856] GLES: swap 2880: 18867 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:56.160] [info] [gpu] [t22856] GLES: time since the last report 2001 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:56.160] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1837 ms, draws 128 ms (textures 35, constants 7, vertices 61, GL draw calls 3), resolves 8 ms, present 0 ms, other 27 ms
+[2026-10-27 18:42:56.160] [info] [gpu] [t22856] GLES:   vertices: glBufferData 8 ms for 54.1 MiB of vertices and 0.0 MiB of indices, hashing 27 ms for 224.2 MiB; cache hits/misses: vertex ranges 16446/1881, index sets 17007/0; kept: 636 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:56.160] [info] [gpu] [t22856] GLES:   textures: hashing 21 ms for 103.0 MiB
+[2026-10-27 18:42:56.160] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:56.160] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13133 (unchanged, not sent: 166870), state groups sent 20220 (unchanged: 111849), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:56.160] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:42:58.158] [info] [gpu] [t22856] GLES: swap 2940: 18920 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:42:58.158] [info] [gpu] [t22856] GLES: time since the last report 1999 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:42:58.158] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1830 ms, draws 132 ms (textures 36, constants 8, vertices 63, GL draw calls 3), resolves 8 ms, present 0 ms, other 27 ms
+[2026-10-27 18:42:58.158] [info] [gpu] [t22856] GLES:   vertices: glBufferData 8 ms for 54.1 MiB of vertices and 0.0 MiB of indices, hashing 28 ms for 224.3 MiB; cache hits/misses: vertex ranges 16454/1926, index sets 17060/0; kept: 635 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:42:58.158] [info] [gpu] [t22856] GLES:   textures: hashing 22 ms for 103.0 MiB
+[2026-10-27 18:42:58.158] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:42:58.159] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13184 (unchanged, not sent: 167296), state groups sent 20220 (unchanged: 112220), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:42:58.159] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:43:00.158] [info] [gpu] [t22856] GLES: swap 3000: 19028 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:43:00.159] [info] [gpu] [t22856] GLES: time since the last report 2000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 35 ms
+[2026-10-27 18:43:00.159] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1850 ms, draws 118 ms (textures 32, constants 7, vertices 57, GL draw calls 3), resolves 7 ms, present 0 ms, other 25 ms
+[2026-10-27 18:43:00.159] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.0 MiB of vertices and 0.0 MiB of indices, hashing 25 ms for 224.3 MiB; cache hits/misses: vertex ranges 17110/1378, index sets 17168/0; kept: 650 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:43:00.159] [info] [gpu] [t22856] GLES:   textures: hashing 19 ms for 103.0 MiB
+[2026-10-27 18:43:00.159] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:43:00.159] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13276 (unchanged, not sent: 168176), state groups sent 20220 (unchanged: 112976), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:43:00.159] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:43:02.157] [info] [gpu] [t22856] GLES: swap 3060: 19260 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:43:02.157] [info] [gpu] [t22856] GLES: time since the last report 1999 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:43:02.157] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1854 ms, draws 113 ms (textures 31, constants 6, vertices 54, GL draw calls 3), resolves 7 ms, present 0 ms, other 25 ms
+[2026-10-27 18:43:02.158] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.0 MiB of vertices and 0.0 MiB of indices, hashing 24 ms for 224.3 MiB; cache hits/misses: vertex ranges 17640/1080, index sets 17400/0; kept: 650 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:43:02.158] [info] [gpu] [t22856] GLES:   textures: hashing 18 ms for 103.0 MiB
+[2026-10-27 18:43:02.158] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:43:02.158] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13500 (unchanged, not sent: 170040), state groups sent 20220 (unchanged: 114600), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:43:02.158] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:43:04.158] [info] [gpu] [t22856] GLES: swap 3120: 19177 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:43:04.158] [info] [gpu] [t22856] GLES: time since the last report 2001 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:43:04.158] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1863 ms, draws 107 ms (textures 29, constants 6, vertices 51, GL draw calls 3), resolves 7 ms, present 0 ms, other 24 ms
+[2026-10-27 18:43:04.158] [info] [gpu] [t22856] GLES:   vertices: glBufferData 6 ms for 54.0 MiB of vertices and 0.0 MiB of indices, hashing 22 ms for 224.3 MiB; cache hits/misses: vertex ranges 17070/1567, index sets 17317/0; kept: 650 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:43:04.158] [info] [gpu] [t22856] GLES:   textures: hashing 17 ms for 103.0 MiB
+[2026-10-27 18:43:04.158] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:43:04.158] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13429 (unchanged, not sent: 169364), state groups sent 20220 (unchanged: 114019), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:43:04.158] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:43:06.160] [info] [gpu] [t22856] GLES: swap 3180: 18867 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:43:06.160] [info] [gpu] [t22856] GLES: time since the last report 2001 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:43:06.160] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1859 ms, draws 111 ms (textures 30, constants 6, vertices 53, GL draw calls 3), resolves 7 ms, present 0 ms, other 24 ms
+[2026-10-27 18:43:06.160] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.1 MiB of vertices and 0.0 MiB of indices, hashing 23 ms for 224.2 MiB; cache hits/misses: vertex ranges 16490/1837, index sets 17007/0; kept: 634 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:43:06.160] [info] [gpu] [t22856] GLES:   textures: hashing 18 ms for 103.0 MiB
+[2026-10-27 18:43:06.160] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:43:06.160] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13133 (unchanged, not sent: 166870), state groups sent 20220 (unchanged: 111849), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:43:06.160] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:43:08.158] [info] [gpu] [t22856] GLES: swap 3240: 18926 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:43:08.158] [info] [gpu] [t22856] GLES: time since the last report 1999 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:43:08.158] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1853 ms, draws 113 ms (textures 30, constants 7, vertices 54, GL draw calls 3), resolves 7 ms, present 0 ms, other 25 ms
+[2026-10-27 18:43:08.158] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.1 MiB of vertices and 0.0 MiB of indices, hashing 23 ms for 224.3 MiB; cache hits/misses: vertex ranges 16586/1800, index sets 17066/0; kept: 636 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:43:08.158] [info] [gpu] [t22856] GLES:   textures: hashing 19 ms for 103.0 MiB
+[2026-10-27 18:43:08.158] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:43:08.158] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13188 (unchanged, not sent: 167346), state groups sent 20220 (unchanged: 112262), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:43:08.158] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6
+[2026-10-27 18:43:10.159] [info] [gpu] [t22856] GLES: swap 3300: 18922 draws, 4860 skipped, 2460 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 39 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[2026-10-27 18:43:10.159] [info] [gpu] [t22856] GLES: time since the last report 2001 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 0 ms; longest frame 36 ms
+[2026-10-27 18:43:10.159] [info] [gpu] [t22856] GLES: GPU thread: idle (waiting for the game) 1852 ms, draws 116 ms (textures 31, constants 7, vertices 55, GL draw calls 3), resolves 8 ms, present 0 ms, other 25 ms
+[2026-10-27 18:43:10.159] [info] [gpu] [t22856] GLES:   vertices: glBufferData 7 ms for 54.0 MiB of vertices and 0.0 MiB of indices, hashing 24 ms for 224.3 MiB; cache hits/misses: vertex ranges 16680/1702, index sets 17062/0; kept: 641 vertex buffers 3.9 MiB, 87 index buffers 0.2 MiB
+[2026-10-27 18:43:10.159] [info] [gpu] [t22856] GLES:   textures: hashing 19 ms for 103.0 MiB
+[2026-10-27 18:43:10.159] [info] [gpu] [t22856] GLES:   vertex ranges checked again in the same swap: 1740 (50.4 MiB)
+[2026-10-27 18:43:10.159] [info] [gpu] [t22856] GLES:   GL calls: program switches 5700, uniform uploads 13180 (unchanged, not sent: 167318), state groups sent 20220 (unchanged: 112234), blend changes on a program (vitaGL fragment re-patch) 840
+[2026-10-27 18:43:10.159] [info] [gpu] [t22856] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (8), textures 16.6 (46), scratch 6.5, framebuffers 7 + 3 for resolves -> depth/stencil 38.7 (vitaGL estimate); total 101.6

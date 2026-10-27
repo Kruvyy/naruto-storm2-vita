@@ -1,0 +1,21 @@
+PC, backend GLES, rexglue G1m, 2026-10-27. Entrada de G1k (menu_start.txt), menu a partir do
+quadro ~1450. Perfil por amostragem da thread da GPU com scripts/profile_host_thread.ps1 (25 s no
+menu, 1 amostra/ms; funcoes pelo .map do rexgpu-xenos.dll). Logs das execucoes em cada pasta;
+saidas do perfil resumidas aqui.
+
+- G1m_pc_prof (antes): thread da GPU com 8,4% de um nucleo; ~90% das amostras esperando (dentro
+  do WAIT_REG_MEM e do laco ocioso: o jogo e o gargalo no PC). Do tempo ocupado: driver OpenGL
+  ~20%, hash (XXH3) ~16%, escrita de registradores ~18% (RegisterFile::GetRegisterInfo sozinho
+  ~9%: um switch de ~3400 casos chamado a cada escrita so para um log de depuracao), shaders,
+  constantes, mapas.
+  Obs.: as amostras "MakeCoherent -> ntdll" sao um artefato da busca na pilha (endereco de retorno
+  velho); sao o sono dentro do WAIT_REG_MEM.
+- G1m_pc_regs: tabela de bits dos registradores. GetRegisterInfo sai do perfil. Contador novo:
+  so 22% dos bytes de vertices lidos para hash sao faixas ja conferidas no mesmo quadro (50 de
+  224 MiB por 60 quadros), entao conferir uma vez por quadro nao compensa.
+- G1m_pc_prof2: perfil depois da tabela de registradores (9,0% de um nucleo nessa execucao).
+- G1m_pc_opt: com as demais mudancas e quadros gravados; imagens iguais as de G1m_pc_regs
+  (0,0-0,1%).
+- G1m_pc_prof3: versao final, sem quadros gravados e com --gles_detailed_timers=true: thread da
+  GPU com 7,9% de um nucleo. O que sobra de maior: driver OpenGL, hash das faixas de vertices,
+  WriteRegister, o laco que espera o jogo (WAIT_REG_MEM, leituras do relogio, sono).

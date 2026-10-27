@@ -119,6 +119,12 @@ Um backend novo, `rex::graphics::gles`, escrito sobre um subconjunto do OpenGL E
   - **Mudança** (bug 59): estado em grupos (tesoura, viewport, blend, máscara de cor, profundidade, stencil, culling) enviado só quando muda; `glUseProgram` só na troca de programa; uniforms guardados por programa e enviados só quando mudam. Os desenhos auxiliares (resolves, limpezas, apresentação, testes) invalidam o cache. `gles_state_cache = false` desliga tudo.
   - **Resultado**: [V no PC] 93% dos uniforms e 85% dos grupos de estado deixam de ser enviados; quadros idênticos com o cache ligado e desligado. [V no emulador] chamadas GL ~1,6 → ~0,85 s por 30 quadros; menu **7,5–8,5 → 9,4–9,9 quadros/s**; a thread da GPU passa 17–26% do tempo esperando o jogo.
   - **O que sobra** [V no emulador], por quadro: chamadas GL ~28 ms, hash das faixas de vértices ~12 ms, texturas ~10 ms; ~10 refações do programa de fragmento por quadro por mudança de blend num mesmo programa.
+- **G1m: perfil da thread da GPU e custo de CPU do nosso código** (rexglue `5355511`; PC e emulador). Logs: `docs/logs/G1m_pc_*` (resumo dos perfis em `G1m_pc_prof3/LEIA-ME.txt`), `docs/logs/G1m_vita3k`.
+  - **Ferramenta**: `scripts/profile_host_thread.ps1` amostra o RIP da thread da GPU (escolhida sozinha) e dá nome às funções pelo `.map` do `rexgpu-xenos.dll` (o link agora gera o mapa no Windows); amostras no driver ou no Windows contam pela função nossa que chamou.
+  - **Achados** [V no PC]: a thread da GPU usa ~8–9% de um núcleo no menu; ~90% do tempo ela espera o jogo. Do tempo ocupado, ~9% ia em `RegisterFile::GetRegisterInfo`, um switch de ~3400 casos chamado a cada escrita de registrador só para um log de depuração. Também apareceram a montagem das constantes (busca nos 256 registradores por estágio a cada desenho), o mapa de uniforms e as chamadas de hash por amostra de textura.
+  - **Mudanças** (bug 60): tabela de bits dos registradores feita na compilação (compartilhada por todos os backends, sem mudança de comportamento); lista dos registradores de constantes feita uma vez por programa; uniforms numa lista curta; amostras de textura num único hash; os cronômetros detalhados do relatório só com `gles_detailed_timers` (cada leitura do relógio pode ser uma chamada de sistema).
+  - **Resultado**: [V no PC] thread da GPU 9,0 → 7,9% de um núcleo, imagens iguais. [V no emulador] constantes ~2,5× mais baratas, mas o menu fica em ~9 quadros/s: no Vita3K o limite agora são as chamadas de desenho do vitaGL/emulador e o próprio jogo (a thread da GPU espera o jogo 20–28% do tempo). O ganho é de CPU, que pesa mais no console.
+  - **Hash por quadro** descartado: só 22% dos bytes de vértices conferidos por hash são de faixas já conferidas no mesmo quadro.
 
 ## Etapas
 | # | Etapa | Verificação |
@@ -135,4 +141,5 @@ Um backend novo, `rex::graphics::gles`, escrito sobre um subconjunto do OpenGL E
 | `ef8c3c7` | faixas pretas do fundo do título | **feito**: reinício de primitivas (índice FFFF) nas faixas; título igual ao D3D12 no PC e com o céu inteiro no Vita3K |
 | `c3280c8` | desempenho do menu | **feito**: cache de vértices/índices, hash de textura por amostragem, tempos da thread da GPU; menu 1,7 → ~8 quadros/s no Vita3K; agora pesam as chamadas de desenho do vitaGL |
 | `6c84a6d` | custo por desenho no vitaGL | **feito**: estado, programa e uniforms só quando mudam; chamadas GL pela metade, menu ~8 → ~9,6 quadros/s no Vita3K |
+| `5355511` | perfil e CPU do nosso código | **feito**: perfilador da thread da GPU; escrita de registradores e constantes mais baratas; PC 9,0 → 7,9% de um núcleo; Vita3K sem mudança de fps (limite: vitaGL e o jogo) |
 | G2 | MSAA, HDR, profundidade como textura, alvos múltiplos, desempenho e memória das texturas | batalha |

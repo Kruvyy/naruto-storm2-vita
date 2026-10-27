@@ -1,0 +1,15 @@
+Vita3K (emulador, nao e o console), rexglue G1m (5355511), 2026-10-27. Medidas do emulador.
+
+Mesma entrada de G1k/G1l (menu_start.txt, input_replay_stretch = 1.6), relatorio a cada 30
+quadros, gles_detailed_timers = true, log_flush_interval = 1.
+
+- storm2_menu.log / storm2_stats_menu.log: menu a 8,8-9,4 quadros/s (G1l: 9,4-9,9; diferenca
+  dentro da variacao entre execucoes). Por 30 quadros: ocioso (esperando o jogo) 0,64-0,89 s,
+  desenhos 2,2-2,5 s (chamadas GL do vitaGL 0,95-1,5 s, vertices 0,55-0,72 s dos quais 0,31-0,46 s
+  de hash, texturas 0,19-0,30 s, constantes 0,05-0,07 s, antes 0,11-0,17 s), resolves 0,1-0,2 s.
+- No Vita3K o que limita agora e o processamento de cada desenho no vitaGL/emulador e o proprio
+  jogo; a economia de CPU desta etapa pesa mais no console, onde o codigo ARM roda varias vezes
+  mais devagar que no Vita3K.
+- Imagem do menu igual a de G1l (captura g1m_menu_0, nao versionada).
+- Depois dos testes, ux0:data/storm2port/storm2.toml ficou sem configuracoes de teste (sem
+  input_replay): os controles fisicos voltam a valer.
