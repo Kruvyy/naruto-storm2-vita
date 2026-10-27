@@ -13,6 +13,7 @@ include(generated/rexglue.cmake)
 # Sources
 set(STORM2_SOURCES
     src/main.cpp
+    src/storm2_movies.cpp
 )
 
 if(WIN32)

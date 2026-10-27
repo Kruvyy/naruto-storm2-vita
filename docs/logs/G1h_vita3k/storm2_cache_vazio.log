@@ -1,0 +1,265 @@
+[1965-07-20 03:45:43.602] [info] [core] [t3987738935] Storm 2 (PS Vita, headless): game in ux0:data/storm2port/game, xex 9875456 bytes
+[1965-07-20 03:45:43.612] [info] [core] [t3987738935] GPU: GLES renderer (vitaGL) (vita_gpu=auto, ur0:data/external/libshacccg.suprx present)
+[1965-07-20 03:45:43.615] [info] [gpu] [t3987738935] GLES GPU backend (OpenGL ES 2 subset)
+[1965-07-20 03:45:43.619] [info] [core] [t3987738935] PS Vita: hardware exceptions cannot be caught; a guest fault ends the program
+[1965-07-20 03:45:43.633] [info] [sys] [t3987738935] Guest memory: software MMU (4 KiB page table at 0x0000000080800000, 4.5 MiB of tables); each guest region gets its own host block
+[1965-07-20 03:45:43.666] [warning] [core] [t3987738935] PS Vita: host faults are not delivered to the app; exception handlers are kept but never called (a fault ends the program with a crash dump)
+[1965-07-20 03:45:43.890] [info] [apu] [t3987738935] PS Vita audio: guest audio runs at real time (256 samples at 48 kHz, XMA decoded), output is discarded (no sound yet)
+[1965-07-20 03:45:49.963] [info] [core] [t3987738935] Function table initialized for module: code=821C0000-82836294, image=82000000-82B30000
+[1965-07-20 03:45:50.517] [info] [core] [t3987738935] Game started
+[1965-07-20 03:45:51.055] [warning] [sys] [t3936751730] GetProcAddressByOrdinal: function XamPartyGetUserList (0AFF) in xam - no native implementation
+[1965-07-20 03:45:51.071] [warning] [krnl] [t3936751730] ERROR: XexGetProcedureAddress ordinal 2815 (0xAFF) in 'xam' not found!
+[1965-07-20 03:45:51.072] [warning] [sys] [t3936751730] GetProcAddressByOrdinal: function XamPartySendGameInvites (0B00) in xam - no native implementation
+[1965-07-20 03:45:51.074] [warning] [krnl] [t3936751730] ERROR: XexGetProcedureAddress ordinal 2816 (0xB00) in 'xam' not found!
+[1965-07-20 03:45:51.074] [warning] [sys] [t3936751730] GetProcAddressByOrdinal: function XamPartySetCustomData (0B0B) in xam - no native implementation
+[1965-07-20 03:45:51.075] [warning] [krnl] [t3936751730] ERROR: XexGetProcedureAddress ordinal 2827 (0xB0B) in 'xam' not found!
+[1965-07-20 03:45:51.075] [warning] [sys] [t3936751730] GetProcAddressByOrdinal: function XamPartyGetBandwidth (0B10) in xam - no native implementation
+[1965-07-20 03:45:51.075] [warning] [krnl] [t3936751730] ERROR: XexGetProcedureAddress ordinal 2832 (0xB10) in 'xam' not found!
+[1965-07-20 03:45:51.081] [info] [gpu] [t1275376843] GLES backend on vitaGL: RAM pool 24 MiB, CDRAM pool 100 MiB, phycont pool 16 MiB
+[1965-07-20 03:45:51.440] [warning] [sys] [t3936751730] Software MMU: physical memory at physical address 0B000000 (272.0 MiB) limited to 184.0 MiB of real memory
+[1965-07-20 03:45:51.625] [info] [gpu] [t3936751730] SetInterruptCallback(826A5998, 40005080)
+[1965-07-20 03:45:53.981] [info] [gpu] [t1275376843] GLES: render target depth base 0 pitch 640 format 0 msaa 2: 640x736
+[1965-07-20 03:45:53.989] [error] [gpu] [t1275376843] GLES: GL_INVALID_ENUM after creating a render target (swap 0); vitaGL free/total MiB: VRAM 2139.8/100.0, RAM 2139.8/24.0, PHYCONT 2139.8/16.0, newlib 0.0/48.0
+[1965-07-20 03:45:53.992] [info] [gpu] [t1275376843] GLES: scratch color attachment 16x16 for depth-only passes
+[1965-07-20 03:45:53.996] [info] [gpu] [t1275376843] GLES: framebuffer 16x16 with depth/stencil (1 render target framebuffers)
+[1965-07-20 03:45:54.022] [info] [gpu] [t1275376843] GLES: compiled VS 1E6883FCCDE1F688 (modification 0, 3001 bytes of GLSL) in 0.4 ms
+[1965-07-20 03:45:54.959] [info] [gpu] [t1275376843] GLES: linked program VS 1E6883FCCDE1F688 + PS 0000000000000000 in 901.8 ms
+[1965-07-20 03:45:54.964] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc -1 (-1 kept) pc -1 (-1 kept) vte 2051170680 ndc 2051170664/2051170648 atest -1, 0 bools, 0 loops, 0 textures; 4 active uniforms
+[1965-07-20 03:45:55.067] [info] [gpu] [t1275376843] GLES: render target color base 0 pitch 1280 format 0 msaa 0: 1280x736
+[1965-07-20 03:45:55.070] [info] [gpu] [t1275376843] GLES: resolve target 0B000000 1280x736
+[1965-07-20 03:45:55.073] [info] [gpu] [t1275376843] GLES: resolve framebuffer 1280x736 #0
+[1965-07-20 03:45:55.122] [info] [gpu] [t1275376843] GLES: render target depth base 640 pitch 640 format 0 msaa 2: 640x736
+[1965-07-20 03:45:55.123] [info] [gpu] [t1275376843] GLES: framebuffer 16x16 with depth/stencil (2 render target framebuffers)
+[1965-07-20 03:45:55.421] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:45:55.564] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:45:55.972] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:45:55.991] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:45:56.369] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:01.734] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:01.989] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:02.001] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:02.225] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:02.695] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:02.816] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:03.048] [info] [gpu] [t1275376843] GLES: resolve target 0CB9A000 1280x640
+[1965-07-20 03:46:03.048] [info] [gpu] [t1275376843] GLES: resolve framebuffer 1280x640 #0
+[1965-07-20 03:46:03.052] [info] [gpu] [t1275376843] GLES: render target color base 640 pitch 1280 format 0 msaa 0: 1280x736
+[1965-07-20 03:46:03.053] [info] [gpu] [t1275376843] GLES: resolve target 0CEBA000 1280x640
+[1965-07-20 03:46:03.054] [info] [gpu] [t1275376843] GLES: resolve framebuffer 1280x640 #1
+[1965-07-20 03:46:03.071] [info] [gpu] [t1275376843] GLES: framebuffer 1280x736 (3 render target framebuffers)
+[1965-07-20 03:46:03.077] [info] [gpu] [t1275376843] GLES: compiled VS 4666C5A9092B03DD (modification 3, 4346 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:46:03.081] [info] [gpu] [t1275376843] GLES: compiled PS 7ABDFEFBCADB4BF9 (modification 3, 2946 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:46:05.889] [info] [gpu] [t1275376843] GLES: linked program VS 4666C5A9092B03DD + PS 7ABDFEFBCADB4BF9 in 2803.4 ms
+[1965-07-20 03:46:05.891] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc 2052092040 (5 kept) pc -1 (-1 kept) vte 2052092024 ndc 2052092008/2052091992 atest 2051112088, 0 bools, 0 loops, 1 textures; 9 active uniforms
+[1965-07-20 03:46:06.058] [info] [gpu] [t1275376843] GLES: render target color base 0 pitch 640 format 0 msaa 2: 640x736
+[1965-07-20 03:46:06.059] [info] [gpu] [t1275376843] GLES: render target depth base 1280 pitch 640 format 0 msaa 2: 640x736
+[1965-07-20 03:46:06.059] [info] [gpu] [t1275376843] GLES: framebuffer 640x736 with depth/stencil (4 render target framebuffers)
+[1965-07-20 03:46:06.060] [info] [gpu] [t1275376843] GLES: compiled VS 1E6883FCCDE1F688 (modification 1, 3026 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:46:06.061] [info] [gpu] [t1275376843] GLES: compiled PS A4A965C189287B99 (modification 1, 2628 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:46:07.051] [info] [gpu] [t1275376843] GLES: linked program VS 1E6883FCCDE1F688 + PS A4A965C189287B99 in 984.0 ms
+[1965-07-20 03:46:07.053] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc -1 (-1 kept) pc -1 (-1 kept) vte 2051146776 ndc 2051146760/2051146744 atest 2051173720, 0 bools, 0 loops, 0 textures; 5 active uniforms
+[1965-07-20 03:46:08.178] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:08.192] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:08.347] [info] [gpu] [t1275376843] GLES: framebuffer 16x16 with depth/stencil (5 render target framebuffers)
+[1965-07-20 03:46:09.157] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:09.172] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:09.421] [info] [gpu] [t1275376843] GLES: swap 60: 204 draws, 1416 skipped, 120 resolves since the last report; 6 render targets, 3 resolve targets, 0 textures, 3 programs; frontbuffer 0B000000 resolved; skipped: no target 1416, shader 0, link 0, vertices 0
+[1965-07-20 03:46:09.423] [info] [gpu] [t1275376843] GLES: time since the last report 14301 ms: translate 30 ms, compile 0 ms (5 shaders), link 4689 ms (3 programs, 0 from the shader cache), present+swap 57 ms; longest frame 5619 ms
+[1965-07-20 03:46:09.427] [info] [gpu] [t1275376843] GLES memory (MiB): render targets 9.0 (3), resolve targets 9.8 (3), textures 0.0 (0), scratch 0.0, framebuffers 5 + 3 for resolves -> depth/stencil 15.7 (vitaGL estimate); total 34.5
+[1965-07-20 03:46:09.427] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:09.441] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:10.551] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:10.562] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:10.937] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:10.948] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:11.111] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:11.123] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:11.468] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:11.484] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:12.209] [info] [gpu] [t1275376843] GLES: swap 120: 300 draws, 1440 skipped, 180 resolves since the last report; 6 render targets, 3 resolve targets, 0 textures, 3 programs; frontbuffer 0B000000 resolved; skipped: no target 1440, shader 0, link 0, vertices 0
+[1965-07-20 03:46:12.210] [info] [gpu] [t1275376843] GLES: time since the last report 2790 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 210 ms; longest frame 230 ms
+[1965-07-20 03:46:12.210] [info] [gpu] [t1275376843] GLES memory (MiB): render targets 9.0 (3), resolve targets 9.8 (3), textures 0.0 (0), scratch 0.0, framebuffers 5 + 3 for resolves -> depth/stencil 15.7 (vitaGL estimate); total 34.5
+[1965-07-20 03:46:12.816] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:12.827] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:13.037] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:13.049] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:13.316] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:13.328] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:13.910] [info] [gpu] [t1275376843] GLES: compiled VS 13B01BEA94678566 (modification 3, 4893 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:46:16.553] [info] [gpu] [t1275376843] GLES: linked program VS 13B01BEA94678566 + PS 7ABDFEFBCADB4BF9 in 2623.9 ms
+[1965-07-20 03:46:16.555] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc 2051506512 (5 kept) pc -1 (-1 kept) vte 2051506496 ndc 2051506480/2051506464 atest 2051506552, 0 bools, 0 loops, 1 textures; 9 active uniforms
+[1965-07-20 03:46:16.564] [info] [gpu] [t1275376843] GLES: render target depth base 1280 pitch 1280 format 0 msaa 0: 1280x736
+[1965-07-20 03:46:16.565] [info] [gpu] [t1275376843] GLES: framebuffer 1280x736 with depth/stencil (6 render target framebuffers)
+[1965-07-20 03:46:16.568] [info] [gpu] [t1275376843] GLES: compiled VS 2E015B8427EBD8C5 (modification 1F, 6369 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:46:16.570] [info] [gpu] [t1275376843] GLES: compiled PS E8EAE3AA51F7921E (modification 1F, 4921 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:46:17.883] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:17.897] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:19.225] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:19.239] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:19.678] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:19.790] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:19.950] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:19.962] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:20.076] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:20.089] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:20.272] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:20.284] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:20.490] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:20.502] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:20.710] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:20.722] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:20.910] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:20.924] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:21.276] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:21.288] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:21.347] [info] [gpu] [t1275376843] GLES: linked program VS 2E015B8427EBD8C5 + PS E8EAE3AA51F7921E in 4770.6 ms
+[1965-07-20 03:46:21.349] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc 2048013984 (10 kept) pc 2051216072 (1 kept) vte 2048013968 ndc 2048013952/2048013936 atest 2051216024, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:46:21.505] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:21.516] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:21.719] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:21.733] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:21.845] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:21.856] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:22.039] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:22.052] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:22.190] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:22.203] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:22.278] [info] [gpu] [t1275376843] GLES: swap 180: 576 draws, 1440 skipped, 180 resolves since the last report; 7 render targets, 3 resolve targets, 2 textures, 5 programs; frontbuffer 0B000000 resolved; skipped: no target 1440, shader 0, link 0, vertices 0
+[1965-07-20 03:46:22.279] [info] [gpu] [t1275376843] GLES: time since the last report 10069 ms: translate 5 ms, compile 0 ms (3 shaders), link 7394 ms (2 programs, 0 from the shader cache), present+swap 50 ms; longest frame 7507 ms
+[1965-07-20 03:46:22.279] [info] [gpu] [t1275376843] GLES memory (MiB): render targets 9.0 (3), resolve targets 9.8 (3), textures 0.1 (2), scratch 0.0, framebuffers 6 + 3 for resolves -> depth/stencil 20.2 (vitaGL estimate); total 39.1
+[1965-07-20 03:46:22.332] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:22.344] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:22.479] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:22.491] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:22.627] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:22.638] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:22.858] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:22.871] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:23.070] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:23.082] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:23.263] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:23.276] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:23.561] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:23.575] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:23.687] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:23.699] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:23.943] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:23.954] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:24.217] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:24.228] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:24.359] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:24.370] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:25.265] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:25.279] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:25.291] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:25.305] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:25.326] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:25.360] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:25.771] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:25.782] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:25.809] [info] [gpu] [t1275376843] GLES: swap 240: 964 draws, 1440 skipped, 180 resolves since the last report; 7 render targets, 3 resolve targets, 2 textures, 5 programs; frontbuffer 0B000000 resolved; skipped: no target 1440, shader 0, link 0, vertices 0
+[1965-07-20 03:46:25.810] [info] [gpu] [t1275376843] GLES: time since the last report 3531 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 231 ms; longest frame 1085 ms
+[1965-07-20 03:46:25.810] [info] [gpu] [t1275376843] GLES memory (MiB): render targets 9.0 (3), resolve targets 9.8 (3), textures 0.1 (2), scratch 0.0, framebuffers 6 + 3 for resolves -> depth/stencil 20.2 (vitaGL estimate); total 39.1
+[1965-07-20 03:46:25.919] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:25.932] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:26.043] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:26.055] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:46:27.175] [info] [gpu] [t1275376843] GLES: render target depth base 0 pitch 1040 format 0 msaa 0: 1040x736
+[1965-07-20 03:46:27.176] [info] [gpu] [t1275376843] GLES: framebuffer 16x16 with depth/stencil (7 render target framebuffers)
+[1965-07-20 03:46:27.181] [info] [gpu] [t1275376843] GLES: render target depth base 0 pitch 520 format 0 msaa 2: 520x736
+[1965-07-20 03:46:27.182] [info] [gpu] [t1275376843] GLES: framebuffer 16x16 with depth/stencil (8 render target framebuffers)
+[1965-07-20 03:46:27.187] [info] [gpu] [t1275376843] GLES: compiled VS 2443876AABAE04D9 (modification 3, 4296 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:46:27.195] [info] [gpu] [t1275376843] GLES: compiled PS 6D868915601F3596 (modification 3, 23672 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:46:27.312] [info] [apu] [t3936751730] XMA: 1 contexts have an FFmpeg decoder
+[1965-07-20 03:49:20.817] [info] [gpu] [t1275376843] GLES: linked program VS 2443876AABAE04D9 + PS 6D868915601F3596 in 173616.8 ms
+[1965-07-20 03:49:20.819] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc 2048472648 (4 kept) pc 2050518264 (1 kept) vte 2048472632 ndc 2048472616/2048472600 atest 2050518152, 0 bools, 0 loops, 3 textures; 16 active uniforms
+[1965-07-20 03:49:20.824] [warning] [gpu] [t1275376843] GLES: texture format k_24_8 not supported (black)
+[1965-07-20 03:49:20.827] [info] [gpu] [t1275376843] GLES: compiled VS 2A53964AA9F4D66E (modification 1, 4340 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:49:20.830] [info] [gpu] [t1275376843] GLES: compiled PS A2147ED6ACF52DBF (modification 20001, 9522 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:49:31.800] [info] [gpu] [t1275376843] GLES: linked program VS 2A53964AA9F4D66E + PS A2147ED6ACF52DBF in 10962.6 ms
+[1965-07-20 03:49:31.801] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc 2048577016 (5 kept) pc 2046639392 (12 kept) vte 2048577000 ndc 2048576984/2048576968 atest 2046639344, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:49:31.802] [info] [gpu] [t1275376843] GLES: resolve target 0D4FA000 1280x640
+[1965-07-20 03:49:31.804] [info] [gpu] [t1275376843] GLES: compiled VS 5C3A02159BE6E884 (modification 3, 5059 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:49:31.806] [info] [gpu] [t1275376843] GLES: compiled PS 15741DBDE0A6290A (modification 3, 3105 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:49:34.187] [info] [gpu] [t1275376843] GLES: linked program VS 5C3A02159BE6E884 + PS 15741DBDE0A6290A in 2375.8 ms
+[1965-07-20 03:49:34.188] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc 2047998704 (6 kept) pc -1 (-1 kept) vte 2047998688 ndc 2047998672/2047998656 atest 2052353704, 0 bools, 0 loops, 2 textures; 12 active uniforms
+[1965-07-20 03:49:34.189] [info] [gpu] [t1275376843] GLES: resolve target 0DC02000 1280x640
+[1965-07-20 03:49:34.193] [info] [gpu] [t1275376843] GLES: compiled VS 3DDE552C3BDAE2BF (modification 3, 4953 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:49:34.248] [info] [gpu] [t1275376843] GLES: compiled PS BCC460762FDFFFFC (modification 3, 7059 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:49:42.093] [info] [gpu] [t1275376843] GLES: linked program VS 3DDE552C3BDAE2BF + PS BCC460762FDFFFFC in 7839.8 ms
+[1965-07-20 03:49:42.095] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc 2046977656 (6 kept) pc 2047815848 (1 kept) vte 2046977640 ndc 2046977624/2046977608 atest 2047815752, 0 bools, 1 loops, 2 textures; 14 active uniforms
+[1965-07-20 03:49:42.096] [info] [gpu] [t1275376843] GLES: resolve target 0DF22000 1280x640
+[1965-07-20 03:49:42.099] [info] [gpu] [t1275376843] GLES: compiled VS 4124792F35086E42 (modification F, 6397 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:49:42.100] [info] [gpu] [t1275376843] GLES: compiled PS 083B01342061346A (modification F, 4375 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:49:46.062] [info] [gpu] [t1275376843] GLES: linked program VS 4124792F35086E42 + PS 083B01342061346A in 3903.6 ms
+[1965-07-20 03:49:46.064] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc 2049387336 (6 kept) pc 2048745768 (1 kept) vte 2049387320 ndc 2049387304/2049387288 atest 2048745720, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:49:46.068] [info] [gpu] [t1275376843] GLES: compiled PS ECFA8AFC82759BAD (modification 3, 4584 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:49:48.665] [info] [gpu] [t1275376843] GLES: linked program VS 3DDE552C3BDAE2BF + PS ECFA8AFC82759BAD in 2591.4 ms
+[1965-07-20 03:49:48.666] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc 2051691000 (6 kept) pc 2049387120 (2 kept) vte 2051690984 ndc 2051690968/2051690952 atest 2049387072, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:49:48.669] [info] [gpu] [t1275376843] GLES: compiled VS F97B3D21465FD604 (modification 3, 4759 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:49:48.671] [info] [gpu] [t1275376843] GLES: compiled PS 389831C73DE85D45 (modification 3, 7293 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:49:58.519] [info] [gpu] [t1275376843] GLES: linked program VS F97B3D21465FD604 + PS 389831C73DE85D45 in 9842.6 ms
+[1965-07-20 03:49:58.520] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc 2048622376 (6 kept) pc 2048622464 (3 kept) vte 2048622360 ndc 2048622344/2048622328 atest 2048622416, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:49:58.522] [info] [gpu] [t1275376843] GLES: render target color base 0 pitch 640 format 7 msaa 2: 640x736
+[1965-07-20 03:49:58.522] [info] [gpu] [t1275376843] GLES: framebuffer 640x736 (9 render target framebuffers)
+[1965-07-20 03:49:58.537] [info] [gpu] [t1275376843] GLES: render target color base 0 pitch 1280 format 7 msaa 0: 1280x736
+[1965-07-20 03:49:58.538] [info] [gpu] [t1275376843] GLES: framebuffer 1280x736 (10 render target framebuffers)
+[1965-07-20 03:49:58.543] [info] [gpu] [t1275376843] GLES: resolve target 0E562000 1280x640
+[1965-07-20 03:49:58.545] [info] [gpu] [t1275376843] GLES: compiled VS CF0D3867629B648A (modification F, 6188 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:49:58.547] [info] [gpu] [t1275376843] GLES: compiled PS B62A1667D0BA6F26 (modification F, 4559 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:05.353] [info] [gpu] [t1275376843] GLES: linked program VS CF0D3867629B648A + PS B62A1667D0BA6F26 in 6797.6 ms
+[1965-07-20 03:50:05.354] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc 2053051880 (8 kept) pc 2048640928 (1 kept) vte 2053051864 ndc 2053051848/2053051832 atest 2048640784, 0 bools, 0 loops, 4 textures; 19 active uniforms
+[1965-07-20 03:50:05.356] [info] [gpu] [t1275376843] GLES: compiled PS D5019343FF423CC8 (modification 3, 4882 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:07.423] [info] [gpu] [t1275376843] GLES: linked program VS F97B3D21465FD604 + PS D5019343FF423CC8 in 2061.6 ms
+[1965-07-20 03:50:07.424] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc 2048148520 (6 kept) pc 2043782184 (1 kept) vte 2048148504 ndc 2048148488/2048148472 atest 2043782136, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:50:07.427] [info] [gpu] [t1275376843] GLES: compiled VS DD881E5FDA628D88 (modification 3, 5519 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:07.428] [info] [gpu] [t1275376843] GLES: compiled PS 46AA46E4EB44BFF6 (modification 3, 3516 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:11.297] [info] [gpu] [t1275376843] GLES: linked program VS DD881E5FDA628D88 + PS 46AA46E4EB44BFF6 in 3864.2 ms
+[1965-07-20 03:50:11.298] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc 2051352936 (8 kept) pc -1 (-1 kept) vte 2051352920 ndc 2051352904/2051352888 atest 2046808472, 0 bools, 0 loops, 2 textures; 12 active uniforms
+[1965-07-20 03:50:11.300] [info] [gpu] [t1275376843] GLES: resolve target 0E242000 1280x640
+[1965-07-20 03:50:11.301] [info] [gpu] [t1275376843] GLES: compiled PS C60F811D2CD5F211 (modification 3, 3229 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:12.021] [info] [gpu] [t1275376843] GLES: linked program VS 3DDE552C3BDAE2BF + PS C60F811D2CD5F211 in 712.0 ms
+[1965-07-20 03:50:12.022] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc 2047734976 (6 kept) pc -1 (-1 kept) vte 2047734960 ndc 2047734944/2047734928 atest 2048679296, 0 bools, 0 loops, 2 textures; 12 active uniforms
+[1965-07-20 03:50:12.398] [info] [gpu] [t1275376843] GLES: texture 10249000 512x256 k_8_8_8_8 (512 KiB on the host)
+[1965-07-20 03:50:12.916] [info] [gpu] [t1275376843] GLES: texture 0FEE9000 1024x3152 k_DXT4_5 (3152 KiB on the host)
+[1965-07-20 03:50:18.569] [info] [gpu] [t1275376843] GLES: swap 300: 5154 draws, 2928 skipped, 1017 resolves since the last report; 11 render targets, 8 resolve targets, 8 textures, 16 programs; frontbuffer 0B000000 resolved; skipped: no target 2928, shader 0, link 0, vertices 0
+[1965-07-20 03:50:18.569] [info] [gpu] [t1275376843] GLES: time since the last report 232759 ms: translate 77 ms, compile 0 ms (19 shaders), link 224568 ms (11 programs, 0 from the shader cache), present+swap 39 ms; longest frame 224866 ms
+[1965-07-20 03:50:18.570] [info] [gpu] [t1275376843] GLES memory (MiB): render targets 14.4 (5), resolve targets 25.5 (8), textures 3.7 (8), scratch 0.0, framebuffers 10 + 3 for resolves -> depth/stencil 25.6 (vitaGL estimate); total 69.2
+[1965-07-20 03:50:21.634] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:21.647] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:22.300] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:22.311] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:22.511] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:22.526] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:22.717] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:22.729] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:23.853] [info] [gpu] [t1275376843] GLES: swap 360: 3962 draws, 4320 skipped, 1155 resolves since the last report; 11 render targets, 8 resolve targets, 8 textures, 16 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[1965-07-20 03:50:23.853] [info] [gpu] [t1275376843] GLES: time since the last report 5284 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 34 ms; longest frame 251 ms
+[1965-07-20 03:50:23.854] [info] [gpu] [t1275376843] GLES memory (MiB): render targets 14.4 (5), resolve targets 25.5 (8), textures 3.7 (8), scratch 0.0, framebuffers 10 + 3 for resolves -> depth/stencil 25.6 (vitaGL estimate); total 69.2
+[1965-07-20 03:50:26.530] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:26.548] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:26.708] [info] [gpu] [t1275376843] GLES: swap 420: 1140 draws, 4320 skipped, 900 resolves since the last report; 11 render targets, 8 resolve targets, 8 textures, 16 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[1965-07-20 03:50:26.709] [info] [gpu] [t1275376843] GLES: time since the last report 2856 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 78 ms; longest frame 149 ms
+[1965-07-20 03:50:26.710] [info] [gpu] [t1275376843] GLES memory (MiB): render targets 14.4 (5), resolve targets 25.5 (8), textures 3.7 (8), scratch 0.0, framebuffers 10 + 3 for resolves -> depth/stencil 25.6 (vitaGL estimate); total 69.2
+[1965-07-20 03:50:26.981] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:26.995] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:28.429] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:28.442] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:30.064] [info] [gpu] [t1275376843] GLES: texture 11092000 1280x720 k_4_4_4_4 (3600 KiB on the host)
+[1965-07-20 03:50:31.019] [info] [gpu] [t1275376843] GLES: swap 480: 1156 draws, 4320 skipped, 900 resolves since the last report; 11 render targets, 8 resolve targets, 9 textures, 16 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[1965-07-20 03:50:31.019] [info] [gpu] [t1275376843] GLES: time since the last report 4310 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 149 ms; longest frame 760 ms
+[1965-07-20 03:50:31.020] [info] [gpu] [t1275376843] GLES memory (MiB): render targets 14.4 (5), resolve targets 25.5 (8), textures 7.2 (9), scratch 0.0, framebuffers 10 + 3 for resolves -> depth/stencil 25.6 (vitaGL estimate); total 72.7
+[1965-07-20 03:50:34.470] [info] [gpu] [t1275376843] GLES: texture 10EC6000 1280x720 k_4_4_4_4 (3600 KiB on the host)
+[1965-07-20 03:50:35.107] [error] [krnl] [t3307633911] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:35.538] [error] [krnl] [t2743907748] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:36.316] [info] [gpu] [t1275376843] GLES: resolve target 126EF000 1280x736
+[1965-07-20 03:50:36.317] [info] [gpu] [t1275376843] GLES: resolve framebuffer 1280x736 #1
+[1965-07-20 03:50:37.071] [info] [gpu] [t1275376843] GLES: swap 540: 1140 draws, 4320 skipped, 911 resolves since the last report; 11 render targets, 9 resolve targets, 10 textures, 16 programs; frontbuffer 0B000000 resolved; skipped: no target 4320, shader 0, link 0, vertices 0
+[1965-07-20 03:50:37.072] [info] [gpu] [t1275376843] GLES: time since the last report 6052 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 483 ms; longest frame 1002 ms
+[1965-07-20 03:50:37.072] [info] [gpu] [t1275376843] GLES memory (MiB): render targets 14.4 (5), resolve targets 29.1 (9), textures 10.8 (10), scratch 0.0, framebuffers 10 + 4 for resolves -> depth/stencil 29.2 (vitaGL estimate); total 83.4
+[1965-07-20 03:50:37.847] [info] [gpu] [t1275376843] GLES: compiled VS D5E12A97B3A84881 (modification 1, 2912 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:37.849] [info] [gpu] [t1275376843] GLES: compiled PS A0B5089C468B8CE8 (modification 1, 4471 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:39.666] [info] [gpu] [t1275376843] GLES: linked program VS D5E12A97B3A84881 + PS A0B5089C468B8CE8 in 1776.8 ms
+[1965-07-20 03:50:39.667] [info] [gpu] [t1275376843] GLES: program uniforms (-1 = absent): vc -1 (-1 kept) pc 2043653872 (3 kept) vte 2046842848 ndc 2046842832/2046842816 atest 2043653760, 0 bools, 0 loops, 3 textures; 15 active uniforms
+[1965-07-20 03:50:41.640] [info] [gpu] [t1275376843] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host)
+[1965-07-20 03:50:45.255] [info] [gpu] [t1275376843] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host)

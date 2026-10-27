@@ -1,0 +1,14 @@
+Execucoes no PC (x64), 2026-10-27, G1h. Imagens em storm2/gles_frames e storm2/captures (nao versionadas).
+
+- G1h_pc_nomovie: GLES, --vfs_hidden_extensions=.wmv. O jogo pede logo_cc2.wmv uma vez, recebe
+  "nao existe" e fica numa tela branca: esconder os filmes nao serve.
+- G1h_pc_skip: GLES, --storm2_skip_movies=true (duas execucoes no mesmo log: sem e com o seletor
+  de heap). Os tres filmes pulados em menos de 1 s; a tela fica branca no GLES (bug 51).
+- G1h_pc_skip_d3d12: D3D12, --storm2_skip_movies=true. Tela de titulo ("Pressione o botao START")
+  em ~30 s: o pulo funciona; o branco no GLES e lacuna do backend.
+- G1h_pc_startskip: GLES, START gravado (input_replay) durante os filmes: o jogo pula os filmes
+  sozinho; titulo e menu tambem com fundo branco no GLES (bug 51).
+- G1h_pc_final, G1h_pc_d3d12_movies: filmes ligados, depois de todas as mudancas. Quadros 150-600
+  iguais aos de G1g_pc. Nessas duas havia um controle DualSense conectado ao PC (log: "SDL
+  OnControllerDeviceAdded"); o jogo recebeu botoes e foi ao aviso de salvamento / menu, entao os
+  quadros seguintes nao sao comparaveis.

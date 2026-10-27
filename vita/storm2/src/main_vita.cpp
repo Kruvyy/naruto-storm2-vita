@@ -304,6 +304,13 @@ int main() {
   // the start; 184 MiB ran the title screen on the PC (docs/logs/E13d). A write
   // past the limit stops the game with a message naming the cvar.
   rex::cvar::SetFlagByName("soft_mmu_caps", "0xAB000000=184");
+  // Compiled shaders of the game, made on this device by the runtime compiler
+  // on first use (the files derive from the game's shaders: never distribute).
+  rex::cvar::SetFlagByName("gles_shader_cache_dir", "ux0:data/storm2port/shader_cache");
+  // The movies are decoded by the game's own code: ~0.2-0.3 frames/s in
+  // Vita3K. Skipped by default (storm2_skip_movies = false in storm2.toml
+  // plays them).
+  rex::cvar::SetFlagByName("storm2_skip_movies", "true");
   rex::cvar::LoadConfig(std::string(kDataDir) + "/storm2.toml");
 
   {

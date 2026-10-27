@@ -1,0 +1,23 @@
+﻿Vita3K (emulador, nao e o console), rexglue G1h, 2026-10-27. Medidas do emulador, nao valem para o console.
+
+- storm2_cache_vazio.log: primeira execucao com o cache de shaders vazio (sem pular filmes): 11
+  programas da abertura em 3D ligados em 224568 ms ("link 224568 ms (11 programs, 0 from the shader
+  cache)"), quadro mais longo 224866 ms.
+- Segunda execucao (mesmo cache): "link 14 ms (11 programs, 11 from the shader cache)"; o shader
+  grande 6D868915601F3596 em 1,1 ms; o jogo chega ao filme em 72 s em vez de ~300 s.
+- storm2_title_cache_quente.log / storm2_stats_title_cache_quente.log: storm2_skip_movies ligado
+  (padrao no Vita) e cache quente: os tres filmes pulados ("movie 0 (logo_cc2) skipped" ...), a
+  tela de titulo carrega com ~0,2-0,4 quadro/s com o renderizador quase parado (link 0 ms,
+  apresentacao 63 ms em 9,7 s): tempo de CPU do jogo carregando o titulo.
+- Programa de 11 varyings (VS 18B3A07010A2286C + PS 2F9D9F5A86C9B34F, chave 70ED6B26735BF9ED):
+  o Vita3K caiu 3 vezes ao compila-lo ("Read violation at address 0x24", ~1 s depois do inicio).
+  Isolado (gles_program_test_dir, so esse par, logo no boot): mesma queda. Com o 11o varying
+  trocado por uma variavel comum: "linked in 70703.1 ms; compiler memory peak 18261 KiB of 32 MiB".
+  Com o compilador no malloc do newlib (gles_vita_compiler_alloc = malloc): mesma queda.
+  O GLSL desse par fica so no scratchpad (derivado dos shaders do jogo).
+- Execucao com a protecao: "needs 11 varyings, vitaGL has 10; its draws are skipped"; o jogo segue,
+  compila os programas novos do titulo (1,7-35 s cada) e mostra a tela de titulo sem o fundo e com
+  vermelho e azul trocados.
+- O0 (gles_vita_shader_opt = 0): VS 4666C5A9092B03DD + PS 7ABDFEFBCADB4BF9 levou 10095 ms
+  (2803 ms em O2); os dois programas pequenos 850 e 1146 ms (902 e 984 ms em O2); o seguinte ficou
+  minutos ligando. O0 e mais lento; abandonado.

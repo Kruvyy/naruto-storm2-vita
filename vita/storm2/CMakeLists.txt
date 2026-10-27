@@ -48,6 +48,7 @@ target_compile_options(storm2_code PRIVATE
   -Wno-unused-parameter -Wno-unused-variable -Wno-unused-label -Wno-unused-but-set-variable)
 
 add_executable(storm2_vita src/main_vita.cpp
+  ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_movies.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../common/vita_math_compat.c)
 # __sce_headroom (vitasdk armvita.x): free space between the code and data
 # segments. vita-elf-create appends the module info and import tables (~3.6
