@@ -68,6 +68,16 @@ Um backend novo, `rex::graphics::gles`, escrito sobre um subconjunto do OpenGL E
   - **Para depois dos ~100 s** [V no emulador]: o Vita3K cai dentro do `libshacccg` ao compilar um shader da abertura em 3D, com o heap do newlib cheio (48 MiB) e `free_user=0`. Causa provável [H]: o vitaGL cria um buffer de profundidade privado para cada FBO (5,2 MiB a 1280×1024, mais o stencil), e o backend cria muitos FBOs (pares cor/profundidade, um por destino de resolve, anexos descartáveis). É o próximo trabalho (G1f): menos FBOs, alvos com a altura real em vez de 1024 e um orçamento de memória da GPU.
   - **Diagnóstico** (cvars no `storm2.toml`): `gles_present_test` (1 limpeza, 2 textura da CPU, 3 maior alvo do quadro, 4 render-to-texture, 5 construções GLSL, 6 layout de FBO), `gles_debug_solid_ps`, `gles_debug_ps_patch` (`opaque`, `alpha`, `atest`, `i0`, `i1`, `nodiscard`), `gles_report_interval` (tempos de tradução/compilação/ligação/apresentação e o maior quadro), `gles_trace_swap` (agora com o estado do teste alfa). Erros do GL entram no log.
   - **Ferramenta:** `scripts/capture_vita3k.ps1 -Saida <png>` captura a janela do Vita3K.
+- **G1f: memória da GPU no vitaGL** (rexglue `fefc455`; emulador). [V] O jogo passa do ponto em que caía (~100 s, heap do newlib cheio dentro do `libshacccg`) e segue até o início da abertura (~quadro 520–565). Logs: `docs/logs/G1f_vita3k`.
+  - **Relatório de memória** (`gles_report_interval`): no PC a abertura ocupa ~90–140 MiB; no Vita3K, ~76–99 MiB (alvos 14, resolves 25–29, texturas 11–27, profundidade escondida do vitaGL ~26–29, estimada).
+  - **O que reduziu:** texturas e resolves sem uso por 300 quadros são liberados; alvos começam com 736 linhas e crescem se um resolve pedir mais; dois FBOs por tamanho de destino de resolve, alternados (era um por textura); passes só de profundidade num alvo de rascunho 16×16 no vitaGL; pools do vitaGL CDRAM 100 MiB e phycont 16 MiB.
+  - **Erros do vitaGL achados no caminho** (corrigidos):
+    1. *culling* GL_FRONT ou GL_FRONT_AND_BACK liga o modo "sem polígonos" do vitaGL: todo desenho de triângulo seguinte é descartado antes de começar a cena, o splash do vitaGL não sai e as trocas de quadro são ignoradas (o logo piscando que o usuário gravou). Agora só GL_BACK: culling da frente = culling de trás com a ordem invertida; as duas faces = nada a desenhar. O splash termina logo depois da inicialização;
+    2. trocar a textura de um FBO cuja cena o vitaGL mantém aberta estraga o trabalho da GPU (tela congelada): por isso os FBOs de resolve se alternam;
+    3. `vglSetUniformData` escreve quantos elementos e componentes receber, sem limite, em buffers que o vitaGL aloca primeiro no heap do newlib. Arrays de constantes agora vão até o tamanho que o programa compilado manteve (`glGetActiveUniform`), vec4 com o número de componentes mantido, e os shaders auxiliares usam vec2/float.
+  - **Tentativas que quebram no Vita3K** (desligadas, com cvar para estudo): um FBO por alvo de cor (tela preta) e pular os passes só de profundidade (a tela alterna com a imagem do splash). Causa não encontrada.
+  - **Configuração do Vita3K:** com `disable-surface-sync: true` a imagem do jogo fica branca. Os testes usam surface sync ligado e resolução 1×.
+  - **Próximo problema** [V no emulador, causa H]: no início da abertura o emulador cai na camada de threads: leitura inválida em `pte_osTlsGetValue` (estado de uma thread já inválido) e depois um `std::thread` começa de um estado destruído (PC=0 em `execute_native_thread_routine`). As execuções com GPU nula passaram de 7.000 quadros sem isso, então algo da renderização muda o tempo ou a memória das threads. As pilhas das XThreads no Vita agora são limitadas a 2 MiB (pediam 16 MiB).
 
 ## Etapas
 | # | Etapa | Verificação |
@@ -77,5 +87,5 @@ Um backend novo, `rex::graphics::gles`, escrito sobre um subconjunto do OpenGL E
 | G1c | vértices, índices, constantes, viewport, blend/profundidade/stencil/culling | geometria visível nos PNGs |
 | G1d | texturas e resolves como textura | logos, tela de título e menu parecidos com as capturas do D3D12 |
 | G1e | o mesmo código no Vita (vitaGL) | imagem no Vita3K: **feito** (tela de carregamento, 2026-10-26) |
-| G1f | memória da GPU no vitaGL (FBOs, alvos, texturas) e as construções GLSL que falham | abertura em 3D no Vita3K sem cair |
+| G1f | memória da GPU no vitaGL (FBOs, alvos, texturas) e as construções GLSL que falham | memória: **feito** (passa do ponto de 100 s); abertura em 3D ainda cai na camada de threads |
 | G2 | MSAA, HDR, profundidade como textura, alvos múltiplos, desempenho e memória das texturas | batalha |

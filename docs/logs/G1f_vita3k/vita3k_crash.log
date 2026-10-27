@@ -1,0 +1,61 @@
+﻿Thumb: true
+
+[04:07:35.522] |C| [logging::exception_handler]: Read violation at address 0x485A00EF8.
+[04:07:35.522] |E| [ArmDynarmicCallback::MemoryRead]: Executing: add.w fp, r0, r6, lsl #1
+[04:07:35.522] |E| [ArmDynarmicCallback::MemoryRead]: Invalid read of uint32_t at address: 0x85b614c8
+PC: 0x83009bde,   SP: 0x8078efe0,   LR: 0x82f1a4f7
+r0 : 0x00000000   r6 : 0x00000000
+r1 : 0x00000000   r7 : 0x00000000
+r2 : 0x85b615a4   r8 : 0x00000000
+r3 : 0x00000000   r9 : 0x00000000
+r4 : 0x85b614c8   r10: 0x00000000
+r5 : 0x00000000   r11: 0x00000000
+r12: 0x00000000
+Thumb: true
+
+[04:07:35.522] |C| [logging::exception_handler]: Exception EXCEPTION_ACCESS_VIOLATION (0xC0000005). 
+[04:07:35.522] |C| [logging::exception_handler]: Read violation at address 0x485B6465C.
+[04:07:35.522] |E| [ArmDynarmicCallback::MemoryRead]: Executing: ldr r3, [r4]
+[04:07:35.522] |E| [ArmDynarmicCallback::MemoryWriteExclusive]: Invalid exclusive write of uint32_t at addr: 0x85b62e9c, val = 0x1, expected = 0x0
+PC: 0x82f1aae0,   SP: 0x837029d0,   LR: 0x82f77f39
+r0 : 0x00000000   r6 : 0x00000000
+r1 : 0x00000001   r7 : 0x83702a90
+r2 : 0x00000000   r8 : 0x82f79671
+r3 : 0x85b62e9c   r9 : 0x85e77ae8
+r4 : 0x85b62e98   r10: 0x82f79671
+r5 : 0x85b62e88   r11: 0x85e77af8
+r12: 0x00000001
+Thumb: true
+
+[04:07:35.522] |E| [ArmDynarmicCallback::MemoryRead]: Invalid read of uint32_t at address: 0x85a00ef8
+PC: 0x82f79cca,   SP: 0x8ac42b40,   LR: 0x83039a65
+r0 : 0x85a00ef0   r6 : 0xffffffff
+r1 : 0x00000001   r7 : 0x859a3a44
+r2 : 0x000003e8   r8 : 0x82f79671
+r3 : 0x00000000   r9 : 0x00000000
+r4 : 0x00000000   r10: 0x18e2512c
+r5 : 0x00000074   r11: 0x00000001
+r12: 0x45741e48
+Thumb: true
+
+[04:07:35.522] |E| [ArmDynarmicCallback::MemoryWriteExclusive]: Executing: add.w fp, r0, r6, lsl #1
+[04:07:35.522] |E| [ArmDynarmicCallback::MemoryRead]: Executing: b #0x82f79cd2
+[04:07:35.522] |E| [ArmDynarmicCallback::MemoryRead]: Invalid read of uint32_t at address: 0x0
+PC: 0x00000000,   SP: 0x8078efe0,   LR: 0x83009be7
+r0 : 0x85b614c8   r6 : 0x00000000
+r1 : 0x00000000   r7 : 0x00000000
+r2 : 0x85b615a4   r8 : 0x00000000
+r3 : 0x00000000   r9 : 0x00000000
+r4 : 0x85b614c8   r10: 0x00000000
+r5 : 0x00000000   r11: 0x00000000
+r12: 0x00000000
+Thumb: false
+
+[04:07:35.522] |C| [ArmDynarmicCallback::MemoryRead]: PC is 0x0
+[04:07:35.522] |E| [ArmDynarmicCallback::MemoryWriteExclusive]: Invalid exclusive write of uint32_t at addr: 0x85b614b4, val = 0x1, expected = 0x0
+PC: 0x82f1aae0,   SP: 0x9aa62a50,   LR: 0x82f77f39
+r0 : 0x00000000   r6 : 0x00000000
+r1 : 0x00000001   r7 : 0x9aa62b10
+r2 : 0x00000000   r8 : 0x82f79671
+r3 : 0x85b614b4   r9 : 0x85e41020
+r4 : 0x85b614b0   r10: 0x82f79671
