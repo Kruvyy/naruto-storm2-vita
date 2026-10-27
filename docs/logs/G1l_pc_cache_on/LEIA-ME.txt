@@ -1,0 +1,12 @@
+PC, backend GLES (OpenGL de desktop), rexglue G1l, 2026-10-27. Execucoes de 75 s com a entrada
+de G1k (docs/logs/G1k_pc_menu/menu_start.txt), relatorio a cada 60 quadros. Quadros em
+storm2/gles_frames/<execucao> (nao versionados).
+
+- G1l_pc_state: primeira versao do cache de estado. Por 60 quadros do menu (~317 desenhos por
+  quadro): 5.700 trocas de programa, 13.200 uniforms enviados e 167.300 iguais nao enviados (93%),
+  20.200 grupos de estado enviados e 112.200 nao (85%), 840 mudancas de blend num mesmo programa.
+- G1l_pc_cache_off / G1l_pc_cache_on: mesma versao com --gles_state_cache=false e =true. Todos os
+  quadros gravados iguais (0,0% dos pixels, inclusive os da tela de titulo). A versao com o cache
+  desligado tambem bate com G1k_pc_tsample (0,0%).
+- No PC o custo das chamadas GL ja era pequeno (~3 ms por 60 quadros); o ganho e no vitaGL
+  (docs/logs/G1l_vita3k).

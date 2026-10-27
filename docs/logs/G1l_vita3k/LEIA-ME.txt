@@ -1,0 +1,15 @@
+Vita3K (emulador, nao e o console), rexglue G1l (6c84a6d), 2026-10-27. Medidas do emulador.
+
+Mesma entrada de G1k (menu_start.txt, input_replay_stretch = 1.6), relatorio a cada 30 quadros,
+log_flush_interval = 1.
+
+- storm2_menu.log / storm2_stats_menu.log: menu "Selecao de Modo de Jogo" a 9,4-9,9 quadros/s
+  (G1k: 7,5-8,5). Por 30 quadros (~3,1 s): ocioso (esperando o jogo) 0,5-0,8 s, desenhos ~2,1 s
+  (chamadas GL do vitaGL ~0,85 s, antes ~1,6 s; vertices ~0,5 s; texturas ~0,3 s; constantes
+  ~0,1-0,17 s), resolves ~0,1 s. Chamadas GL por 30 quadros: 2850 trocas de programa, 6.600
+  uniforms enviados e 83.700 iguais nao enviados, 10.100 grupos de estado enviados e 56.100 nao,
+  300 mudancas de blend num mesmo programa (o vitaGL refaz o programa de fragmento).
+- Memoria: heap do newlib 37,1 MiB usados (4,7 MiB livres), igual a G1k.
+- Imagem do menu igual a de G1k (captura g1l_menu_0, nao versionada), com o Naruto semitransparente
+  do bug 57.
+- O GL_INVALID_ENUM "after creating a render target (swap 0)" ja aparecia nos logs anteriores.

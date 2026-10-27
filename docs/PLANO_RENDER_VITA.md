@@ -114,6 +114,11 @@ Um backend novo, `rex::graphics::gles`, escrito sobre um subconjunto do OpenGL E
   - **Resultado**: [V no PC] trabalho do renderizador no menu ~12 → ~2,3 ms por quadro, imagens iguais (a amostragem não deixa textura velha no menu: 0,0–0,1% contra hash completo). [V no emulador] menu **1,7 → 7,5–8,5 quadros/s**. No console a proporção pode ser outra: o Vita3K executa o código ARM mais rápido que o aparelho e emula a GPU.
   - **O que pesa agora** [V no emulador]: o processamento de cada chamada de desenho no vitaGL (~55 ms por quadro para ~300 desenhos) e o hash das faixas de vértices (~11–14 ms por quadro).
   - **Vistos de passagem**: Naruto semitransparente no menu do Vita3K (bug 57); travamentos esporádicos na inicialização do Vita3K (bug 58).
+- **G1l: custo por chamada de desenho no vitaGL** (rexglue `6c84a6d`; emulador e PC). Logs: `docs/logs/G1l_pc_*`, `docs/logs/G1l_vita3k`.
+  - **O que o vitaGL faz em cada desenho** (código lido, 2bdbe89): qualquer `glUniform*` marca o estágio como sujo, sem comparar valores, e `glUseProgram` marca os dois; no desenho seguinte o buffer de uniforms inteiro do estágio é copiado. Setters de profundidade, stencil, blend, culling, viewport e faixa de profundidade vão ao GXM na hora. Vértices e índices de buffers GL passam sem cópia; o patch do programa de vértices tem cache; o de fragmento é refeito quando o blend ou a máscara de cor mudam num mesmo programa.
+  - **Mudança** (bug 59): estado em grupos (tesoura, viewport, blend, máscara de cor, profundidade, stencil, culling) enviado só quando muda; `glUseProgram` só na troca de programa; uniforms guardados por programa e enviados só quando mudam. Os desenhos auxiliares (resolves, limpezas, apresentação, testes) invalidam o cache. `gles_state_cache = false` desliga tudo.
+  - **Resultado**: [V no PC] 93% dos uniforms e 85% dos grupos de estado deixam de ser enviados; quadros idênticos com o cache ligado e desligado. [V no emulador] chamadas GL ~1,6 → ~0,85 s por 30 quadros; menu **7,5–8,5 → 9,4–9,9 quadros/s**; a thread da GPU passa 17–26% do tempo esperando o jogo.
+  - **O que sobra** [V no emulador], por quadro: chamadas GL ~28 ms, hash das faixas de vértices ~12 ms, texturas ~10 ms; ~10 refações do programa de fragmento por quadro por mudança de blend num mesmo programa.
 
 ## Etapas
 | # | Etapa | Verificação |
@@ -129,4 +134,5 @@ Um backend novo, `rex::graphics::gles`, escrito sobre um subconjunto do OpenGL E
 | `7009477` | fundo e cores da tela de título | **feito**: cores (copy_dest_swap), 11 varyings (COLOR0/1), limpezas por vista MSAA (alvos em resolução de amostras), laços estruturados no vitaGL; céu e nuvens no Vita3K; faltam faixas pretas do cenário (bug 55) |
 | `ef8c3c7` | faixas pretas do fundo do título | **feito**: reinício de primitivas (índice FFFF) nas faixas; título igual ao D3D12 no PC e com o céu inteiro no Vita3K |
 | `c3280c8` | desempenho do menu | **feito**: cache de vértices/índices, hash de textura por amostragem, tempos da thread da GPU; menu 1,7 → ~8 quadros/s no Vita3K; agora pesam as chamadas de desenho do vitaGL |
+| `6c84a6d` | custo por desenho no vitaGL | **feito**: estado, programa e uniforms só quando mudam; chamadas GL pela metade, menu ~8 → ~9,6 quadros/s no Vita3K |
 | G2 | MSAA, HDR, profundidade como textura, alvos múltiplos, desempenho e memória das texturas | batalha |
