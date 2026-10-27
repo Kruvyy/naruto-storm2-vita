@@ -1,0 +1,40 @@
+﻿
+[23:26:26.771] |C| [logging::exception_handler]: Write violation at address 0x485AAEA08.
+[23:26:26.771] |E| [ArmDynarmicCallback::MemoryRead]: Invalid read of uint32_t at address: 0xddc
+PC: 0x00000000,   SP: 0x8b502928,   LR: 0x83026935
+r0 : 0x00000001   r6 : 0x00000000
+r1 : 0x8401f820   r7 : 0x00000006
+r2 : 0x8b502b3c   r8 : 0x82f75459
+r3 : 0x00000000   r9 : 0x18e241d5
+r4 : 0x8401f820   r10: 0x84a0467c
+r5 : 0x8b502b3c   r11: 0x86ffef78
+r12: 0x82fdb05d
+Thumb: false
+
+[23:26:26.771] |C| [ArmDynarmicCallback::MemoryRead]: PC is 0x0
+[23:26:26.771] |E| [ArmDynarmicCallback::MemoryRead]: Invalid read of uint32_t at address: 0x85dd42fc
+PC: 0x82f179f0,   SP: 0x90042a98,   LR: 0x82f73c97
+r0 : 0x00000000   r6 : 0x85cc7368
+r1 : 0x00000001   r7 : 0x00000001
+r2 : 0x00000001   r8 : 0x86490011
+r3 : 0x85dd42fc   r9 : 0x85cc7364
+r4 : 0x85dd42f8   r10: 0x00000001
+r5 : 0x85dd42fc   r11: 0x00000001
+r12: 0x85cc7364
+Thumb: true
+
+[23:26:26.771] |E| [ArmDynarmicCallback::MemoryRead]: Executing: movs r4, #1
+[23:26:26.771] |E| [ArmDynarmicCallback::MemoryWrite]: Invalid write of uint32_t at addr: 0x85aaea08, val = 0x0
+PC: 0x836c34cc,   SP: 0x8c500880,   LR: 0x8302b049
+r0 : 0x85aaea10   r6 : 0x85adc2b8
+r1 : 0x00000000   r7 : 0x8c500880
+r2 : 0x00000000   r8 : 0x85f45fa8
+r3 : 0x85aaea08   r9 : 0x00000000
+r4 : 0x85f45fa8   r10: 0x80002000
+r5 : 0x00000000   r11: 0x86eccb80
+r12: 0x00000c00
+Thumb: true
+
+[23:26:26.771] |E| [ArmDynarmicCallback::MemoryWrite]: Executing: mov r3, r0
+[23:26:26.771] |C| [logging::exception_handler]: Exception EXCEPTION_ACCESS_VIOLATION (0xC0000005). 
+[23:26:26.771] |C| [logging::exception_handler]: Write violation at address 0x485AAEA0C.

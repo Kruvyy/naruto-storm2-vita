@@ -55,7 +55,19 @@ Um backend novo, `rex::graphics::gles`, escrito sobre um subconjunto do OpenGL E
   - **HDR no Vita:** os alvos `16_16_16_16_FLOAT` viram RGBA8;
   - **atributos `half float` no vitaGL:** não verificados;
   - **MSAA:** ignorado, uma amostra.
-- **G1e (Vita3K) bloqueada pelo `libshacccg.suprx`.** O app do Vita já traz o backend (`vita_gpu=auto|gles|null` no `storm2.toml`). No modo `auto`, ele usa o renderizador quando existe `ur0:data/external/libshacccg.suprx` e a GPU nula quando não existe. No Vita3K sem o arquivo: [V] cai para a GPU nula e roda como antes. A imagem no Vita3K e no console depende desse arquivo, extraído do console do usuário.
+- **G1e: primeira imagem do jogo no Vita3K** (rexglue `012ef24`; emulador, não o console). [V] Com o `libshacccg.suprx` do console do usuário em `ur0:data/external/` do Vita3K, o app (`vita_gpu=auto`) usa o renderizador e mostra a tela de carregamento "AGUARDE 0…100%" igual à do PC (capturas locais em `storm2/captures/vita3k/`, fora do git). Logs: `docs/logs/G1e_vita3k`.
+  - **O que impedia a imagem** (cada item achado com um teste, todos corrigidos):
+    1. o retorno de `vglInitWithCustomSizes` não é sucesso/falha (é `GL_TRUE` só quando a resolução foi reduzida); a checagem certa é `is_shark_online`;
+    2. framebuffer só de profundidade é "incompleto" no vitaGL (0x8CD7): ganhou um anexo de cor descartável, um por tamanho;
+    3. `glCopyTexSubImage2D` no vitaGL é um `glReadPixels` (espera a GPU inteira) mais um novo upload, a cada resolve (~30 por quadro). No Vita3K a leitura volta zerada. Os resolves agora são um desenho num FBO sobre a textura de destino: no PC a imagem saiu idêntica byte a byte, e no Vita3K o jogo foi de 0,2 para até 15 quadros/s;
+    4. o vitaGL devolve como posição de uniform o endereço negado de um registro interno, que pode ser negativo; só −1 significa "não existe";
+    5. com o teste de tesoura ligado, o vitaGL descarta os desenhos num FBO (`gles_present_test=6`). Agora não há tesoura do GL: o viewport vira a interseção com o retângulo da tesoura e a transformação NDC compensa, e as limpezas dos resolves são desenhos (o `glClear` do vitaGL cobre uma área do tamanho da tela);
+    6. o `discard` das instruções *kill* do Xenos ficava dentro de `xe_body()`, em `if` aninhados, e matava todos os pixels dos shaders do jogo. Agora a instrução marca `xe_kill` e o único `discard` fica no `main()`. O teste isolado (célula 23) não reproduz a falha; a correção é empírica [H sobre a causa no compilador].
+  - **Testes de construções GLSL no vitaGL** (`gles_present_test=5`, 24 células, Vita3K): passam profundidade em −w e 0,999w, `bool` global, array de uniform com índice constante, varying escrito em função, `mat4 * vec4`, o epílogo de posição do Xenos, `discard` tomado e não tomado, o teste alfa do tradutor, um shader de fragmento em 3 programas e o shader de pixel 7ABDFEFB do jogo. **Falham:** array de uniform com índice calculado (lê zeros) e `for` com `continue`/`break`. Isso afeta o endereçamento relativo (`a0`/`aL`) e os shaders com saltos (modo `xe_cfpc`), ainda raros nas telas iniciais (1 dos 66 shaders do censo).
+  - **Custo no Vita3K** [V no emulador, não vale para o console]: compilar é instantâneo (o vitaGL adia para a ligação); ligar um programa leva 0,8–4,8 s, porque o `libshacccg` roda emulado.
+  - **Para depois dos ~100 s** [V no emulador]: o Vita3K cai dentro do `libshacccg` ao compilar um shader da abertura em 3D, com o heap do newlib cheio (48 MiB) e `free_user=0`. Causa provável [H]: o vitaGL cria um buffer de profundidade privado para cada FBO (5,2 MiB a 1280×1024, mais o stencil), e o backend cria muitos FBOs (pares cor/profundidade, um por destino de resolve, anexos descartáveis). É o próximo trabalho (G1f): menos FBOs, alvos com a altura real em vez de 1024 e um orçamento de memória da GPU.
+  - **Diagnóstico** (cvars no `storm2.toml`): `gles_present_test` (1 limpeza, 2 textura da CPU, 3 maior alvo do quadro, 4 render-to-texture, 5 construções GLSL, 6 layout de FBO), `gles_debug_solid_ps`, `gles_debug_ps_patch` (`opaque`, `alpha`, `atest`, `i0`, `i1`, `nodiscard`), `gles_report_interval` (tempos de tradução/compilação/ligação/apresentação e o maior quadro), `gles_trace_swap` (agora com o estado do teste alfa). Erros do GL entram no log.
+  - **Ferramenta:** `scripts/capture_vita3k.ps1 -Saida <png>` captura a janela do Vita3K.
 
 ## Etapas
 | # | Etapa | Verificação |
@@ -64,5 +76,6 @@ Um backend novo, `rex::graphics::gles`, escrito sobre um subconjunto do OpenGL E
 | G1b | tradutor GLSL | os 66 shaders do censo compilam no driver do PC sem erro |
 | G1c | vértices, índices, constantes, viewport, blend/profundidade/stencil/culling | geometria visível nos PNGs |
 | G1d | texturas e resolves como textura | logos, tela de título e menu parecidos com as capturas do D3D12 |
-| G1e | o mesmo código no Vita (vitaGL) | imagem no Vita3K [precisa do `libshacccg.suprx`] |
+| G1e | o mesmo código no Vita (vitaGL) | imagem no Vita3K: **feito** (tela de carregamento, 2026-10-26) |
+| G1f | memória da GPU no vitaGL (FBOs, alvos, texturas) e as construções GLSL que falham | abertura em 3D no Vita3K sem cair |
 | G2 | MSAA, HDR, profundidade como textura, alvos múltiplos, desempenho e memória das texturas | batalha |

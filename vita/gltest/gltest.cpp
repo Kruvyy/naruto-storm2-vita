@@ -15,6 +15,8 @@
 #include <cstdlib>
 #include <cstring>
 
+#include <pthread.h>
+
 #include <psp2/ctrl.h>
 #include <psp2/io/fcntl.h>
 #include <psp2/io/stat.h>
@@ -23,6 +25,8 @@
 #include <psp2/kernel/threadmgr.h>
 #include <vitaGL.h>
 #include <vitashark.h>
+
+extern "C" GLboolean is_shark_online;
 
 namespace {
 
@@ -115,7 +119,9 @@ GLuint Compile(GLenum type, const char* src) {
 
 }  // namespace
 
-int main() {
+static bool g_vgl_inited = false;
+
+static int RunTest() {
   sceIoMkdir("ux0:data", 0777);
   sceIoMkdir("ux0:data/storm2port", 0777);
   sceIoRemove(kLogPath);
@@ -127,17 +133,22 @@ int main() {
         sceIoGetstat("ur0:data/external/libshacccg.suprx", &st) >= 0 ? "present" : "absent");
   }
 
-  SharkTest("init", shark_init);
-  SharkTest("init_simple", shark_init_simple);
+  // (Direct vitaShaRK calls removed: vitaGL owns the compiler.)
+  (void)SharkTest;
 
-  vglSetupRuntimeShaderCompiler(SHARK_OPT_DEFAULT, SHARK_ENABLE, SHARK_DISABLE, SHARK_DISABLE);
-  GLboolean ok = vglInit(0x100000);
-  Log("vglInit -> %d\n", int(ok));
-  LogMemory("after vglInit");
-  if (!ok) {
-    sceKernelExitProcess(1);
-    return 1;
+  // Same initialization as the Storm 2 app (gles/gl_api.cpp), done here unless
+  // main already did it on the main thread.
+  GLboolean ok = GL_FALSE;
+  if (!g_vgl_inited) {
+    vglSetupRuntimeShaderCompiler(SHARK_OPT_DEFAULT, SHARK_ENABLE, SHARK_DISABLE, SHARK_DISABLE);
+    Log("calling vglInitWithCustomSizes\n");
+    ok = vglInitWithCustomSizes(0, 960, 544, 24 * 1024 * 1024, 80 * 1024 * 1024, 0, 0,
+                                SCE_GXM_MULTISAMPLE_NONE);
   }
+  // vitaGL returns GL_TRUE only when it lowered the resolution; not a success flag.
+  Log("vglInit returned %d (resolution lowered), shader compiler online: %d\n", int(ok),
+      int(is_shark_online));
+  LogMemory("after vglInit");
   Log("GL_VENDOR %s, GL_RENDERER %s, GL_VERSION %s\n",
       reinterpret_cast<const char*>(glGetString(GL_VENDOR)),
       reinterpret_cast<const char*>(glGetString(GL_RENDERER)),
@@ -149,10 +160,14 @@ int main() {
   GLint color_loc = -1;
   if (vs && fs) {
     program = glCreateProgram();
+    Log("step: created program\n");
     glAttachShader(program, vs);
     glAttachShader(program, fs);
+    Log("step: attached\n");
     glBindAttribLocation(program, 0, "aPos");
+    Log("step: bound attribute\n");
     glLinkProgram(program);
+    Log("step: linked\n");
     GLint linked = 0;
     glGetProgramiv(program, GL_LINK_STATUS, &linked);
     color_loc = glGetUniformLocation(program, "uColor");
@@ -163,6 +178,7 @@ int main() {
   }
 
   const float quad[] = {-0.5f, -0.5f, 0.5f, -0.5f, -0.5f, 0.5f, 0.5f, 0.5f};
+  Log("step: before buffers\n");
   GLuint vbo = 0;
   glGenBuffers(1, &vbo);
   glBindBuffer(GL_ARRAY_BUFFER, vbo);
@@ -173,16 +189,20 @@ int main() {
   glGenTextures(1, &rt_tex);
   glBindTexture(GL_TEXTURE_2D, rt_tex);
   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 64, 64, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
+  Log("step: before framebuffer\n");
   glGenFramebuffers(1, &fbo);
   glBindFramebuffer(GL_FRAMEBUFFER, fbo);
   glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, rt_tex, 0);
   Log("vitaGL: framebuffer status 0x%X\n", glCheckFramebufferStatus(GL_FRAMEBUFFER));
   glViewport(0, 0, 64, 64);
   glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
+  Log("step: before FBO clear\n");
   glClear(GL_COLOR_BUFFER_BIT);
+  Log("step: FBO cleared\n");
   if (program) {
     glUseProgram(program);
     glUniform4f(color_loc, 0.0f, 1.0f, 0.0f, 1.0f);
+    Log("step: uniform set\n");
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, nullptr);
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
@@ -231,4 +251,32 @@ int main() {
   Log("done\n");
   sceKernelExitProcess(0);
   return 0;
+}
+
+// Like the Storm 2 GPU command thread: the whole test runs on a secondary
+// pthread with a 16 MiB stack (GLTEST_MAIN_THREAD runs it on the main thread).
+static void* TestThread(void*) {
+  RunTest();
+  return nullptr;
+}
+
+int main() {
+#ifdef GLTEST_MAIN_THREAD
+  return RunTest();
+#else
+  // vitaGL initialized on the main thread, used from the secondary one.
+  vglSetupRuntimeShaderCompiler(SHARK_OPT_DEFAULT, SHARK_ENABLE, SHARK_DISABLE, SHARK_DISABLE);
+  vglInitWithCustomSizes(0, 960, 544, 24 * 1024 * 1024, 80 * 1024 * 1024, 0, 0,
+                         SCE_GXM_MULTISAMPLE_NONE);
+  g_vgl_inited = true;
+  pthread_attr_t attr;
+  pthread_attr_init(&attr);
+  pthread_attr_setstacksize(&attr, 512 * 1024);
+  pthread_t thread;
+  if (pthread_create(&thread, &attr, TestThread, nullptr) != 0) {
+    return 1;
+  }
+  pthread_join(thread, nullptr);
+  return 0;
+#endif
 }

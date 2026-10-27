@@ -1,0 +1,159 @@
+[1965-07-20 03:47:29.623] [info] [core] [t3987738935] Storm 2 (PS Vita, headless): game in ux0:data/storm2port/game, xex 9875456 bytes
+[1965-07-20 03:47:29.634] [info] [core] [t3987738935] GPU: GLES renderer (vitaGL) (vita_gpu=auto, ur0:data/external/libshacccg.suprx present)
+[1965-07-20 03:47:29.639] [info] [gpu] [t3987738935] GLES GPU backend (OpenGL ES 2 subset)
+[1965-07-20 03:47:29.643] [info] [core] [t3987738935] PS Vita: hardware exceptions cannot be caught; a guest fault ends the program
+[1965-07-20 03:47:29.663] [info] [sys] [t3987738935] Guest memory: software MMU (4 KiB page table at 0x0000000080800000, 4.5 MiB of tables); each guest region gets its own host block
+[1965-07-20 03:47:29.701] [warning] [core] [t3987738935] PS Vita: host faults are not delivered to the app; exception handlers are kept but never called (a fault ends the program with a crash dump)
+[1965-07-20 03:47:29.973] [info] [apu] [t3987738935] PS Vita audio: guest audio runs at real time (256 samples at 48 kHz, XMA decoded), output is discarded (no sound yet)
+[1965-07-20 03:47:36.892] [info] [core] [t3987738935] Function table initialized for module: code=821C0000-82836294, image=82000000-82B30000
+[1965-07-20 03:47:36.961] [info] [gpu] [t1264980882] GLES backend on vitaGL: RAM pool 24 MiB, CDRAM pool 80 MiB
+[1965-07-20 03:47:37.408] [info] [core] [t3987738935] Game started
+[1965-07-20 03:47:38.043] [warning] [sys] [t3272854107] GetProcAddressByOrdinal: function XamPartyGetUserList (0AFF) in xam - no native implementation
+[1965-07-20 03:47:38.060] [warning] [krnl] [t3272854107] ERROR: XexGetProcedureAddress ordinal 2815 (0xAFF) in 'xam' not found!
+[1965-07-20 03:47:38.062] [warning] [sys] [t3272854107] GetProcAddressByOrdinal: function XamPartySendGameInvites (0B00) in xam - no native implementation
+[1965-07-20 03:47:38.063] [warning] [krnl] [t3272854107] ERROR: XexGetProcedureAddress ordinal 2816 (0xB00) in 'xam' not found!
+[1965-07-20 03:47:38.063] [warning] [sys] [t3272854107] GetProcAddressByOrdinal: function XamPartySetCustomData (0B0B) in xam - no native implementation
+[1965-07-20 03:47:38.063] [warning] [krnl] [t3272854107] ERROR: XexGetProcedureAddress ordinal 2827 (0xB0B) in 'xam' not found!
+[1965-07-20 03:47:38.064] [warning] [sys] [t3272854107] GetProcAddressByOrdinal: function XamPartyGetBandwidth (0B10) in xam - no native implementation
+[1965-07-20 03:47:38.064] [warning] [krnl] [t3272854107] ERROR: XexGetProcedureAddress ordinal 2832 (0xB10) in 'xam' not found!
+[1965-07-20 03:47:38.393] [warning] [sys] [t3272854107] Software MMU: physical memory at physical address 0B000000 (272.0 MiB) limited to 184.0 MiB of real memory
+[1965-07-20 03:47:38.601] [info] [gpu] [t3272854107] SetInterruptCallback(826A5998, 40005080)
+[1965-07-20 03:47:39.581] [info] [gpu] [t1264980882] GLES: render target depth base 0 pitch 640 format 0 msaa 2: 640x1024 vitaGL free/total MiB: VRAM 222.7/80.0, RAM 222.7/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:47:39.583] [error] [gpu] [t1264980882] GLES: GL_INVALID_ENUM after creating a render target (swap 0); vitaGL free/total MiB: VRAM 2096.3/80.0, RAM 2096.3/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:47:39.585] [info] [gpu] [t1264980882] GLES: scratch color attachment 640x1024 for depth-only passes
+[1965-07-20 03:47:39.609] [info] [gpu] [t1264980882] GLES: compiled VS 1E6883FCCDE1F688 (modification 0, 3001 bytes of GLSL) in 0.6 ms
+[1965-07-20 03:47:40.489] [info] [gpu] [t1264980882] GLES: linked program VS 1E6883FCCDE1F688 + PS 0000000000000000 in 877.0 ms
+[1965-07-20 03:47:40.493] [info] [gpu] [t1264980882] GLES: program uniforms (-1 = absent): vc -1 pc -1 vte 2048304888 ndc 2048304872/2048304856 atest -1, 0 bools, 0 loops, 0 textures
+[1965-07-20 03:47:41.581] [info] [gpu] [t1264980882] GLES: render target color base 0 pitch 1280 format 0 msaa 0: 1280x1024 vitaGL free/total MiB: VRAM 192.0/80.0, RAM 192.0/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:47:41.584] [info] [gpu] [t1264980882] GLES: resolve target 0B000000 1280x736 vitaGL free/total MiB: VRAM 2974.0/80.0, RAM 2974.0/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:47:41.596] [info] [gpu] [t1264980882] GLES: render target depth base 640 pitch 640 format 0 msaa 2: 640x1024 vitaGL free/total MiB: VRAM 0.0/80.0, RAM 0.0/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:47:41.966] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:42.067] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:42.589] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:42.611] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:42.889] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:49.563] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:49.991] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:50.006] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:50.367] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:50.976] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:51.125] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:51.394] [info] [gpu] [t1264980882] GLES: resolve target 0CB9A000 1280x640 vitaGL free/total MiB: VRAM 2189.3/80.0, RAM 2189.3/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:47:51.402] [info] [gpu] [t1264980882] GLES: render target color base 640 pitch 1280 format 0 msaa 0: 1280x1024 vitaGL free/total MiB: VRAM 192.0/80.0, RAM 192.0/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:47:51.403] [info] [gpu] [t1264980882] GLES: resolve target 0CEBA000 1280x640 vitaGL free/total MiB: VRAM 3581.0/80.0, RAM 3581.0/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:47:51.422] [info] [gpu] [t1264980882] GLES: compiled VS 4666C5A9092B03DD (modification 3, 4346 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:47:51.426] [info] [gpu] [t1264980882] GLES: compiled PS 7ABDFEFBCADB4BF9 (modification 3, 2946 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:47:54.847] [info] [gpu] [t1264980882] GLES: linked program VS 4666C5A9092B03DD + PS 7ABDFEFBCADB4BF9 in 3420.1 ms
+[1965-07-20 03:47:54.849] [info] [gpu] [t1264980882] GLES: program uniforms (-1 = absent): vc 2051027864 pc -1 vte 2051027848 ndc 2051027832/2051027816 atest 2050104392, 0 bools, 0 loops, 1 textures
+[1965-07-20 03:47:54.888] [info] [gpu] [t1264980882] GLES: render target color base 0 pitch 640 format 0 msaa 2: 640x1024 vitaGL free/total MiB: VRAM 2189.8/80.0, RAM 2189.8/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:47:54.888] [info] [gpu] [t1264980882] GLES: render target depth base 1280 pitch 640 format 0 msaa 2: 640x1024 vitaGL free/total MiB: VRAM 0.0/80.0, RAM 0.0/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:47:54.889] [info] [gpu] [t1264980882] GLES: compiled VS 1E6883FCCDE1F688 (modification 1, 3026 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:47:54.890] [info] [gpu] [t1264980882] GLES: compiled PS A4A965C189287B99 (modification 1, 2628 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:47:55.900] [info] [gpu] [t1264980882] GLES: linked program VS 1E6883FCCDE1F688 + PS A4A965C189287B99 in 1010.2 ms
+[1965-07-20 03:47:55.901] [info] [gpu] [t1264980882] GLES: program uniforms (-1 = absent): vc -1 pc -1 vte 2051027744 ndc 2051027728/2051027712 atest 2052875392, 0 bools, 0 loops, 0 textures
+[1965-07-20 03:47:57.074] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:57.086] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:57.874] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:57.888] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:57.936] [info] [gpu] [t1264980882] GLES: swap 60: 183 draws, 1416 skipped, 106 resolves since the last report; 6 render targets, 3 resolve targets, 0 textures, 3 programs; frontbuffer 0B000000 resolved; skipped: no target 1416, shader 0, link 0, vertices 0
+[1965-07-20 03:47:57.938] [info] [gpu] [t1264980882] GLES: time since the last report 16341 ms: translate 25 ms, compile 1 ms (5 shaders), link 5307 ms (3 programs), present+swap 7 ms; longest frame 7101 ms. vitaGL free/total MiB: VRAM 0.0/80.0, RAM 0.0/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:47:58.149] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:58.160] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:58.905] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:58.918] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:59.272] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:59.282] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:59.454] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:59.467] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:59.668] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:47:59.680] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:00.152] [info] [gpu] [t1264980882] GLES: swap 120: 300 draws, 1440 skipped, 180 resolves since the last report; 6 render targets, 3 resolve targets, 0 textures, 3 programs; frontbuffer 0B000000 resolved; skipped: no target 1440, shader 0, link 0, vertices 0
+[1965-07-20 03:48:00.153] [info] [gpu] [t1264980882] GLES: time since the last report 2218 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs), present+swap 4 ms; longest frame 73 ms. vitaGL free/total MiB: VRAM 0.0/80.0, RAM 0.0/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:48:00.804] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:00.839] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:01.022] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:01.034] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:01.270] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:01.281] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:01.924] [info] [gpu] [t1264980882] GLES: compiled VS 13B01BEA94678566 (modification 3, 4893 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:48:05.793] [info] [gpu] [t1264980882] GLES: linked program VS 13B01BEA94678566 + PS 7ABDFEFBCADB4BF9 in 3867.8 ms
+[1965-07-20 03:48:05.794] [info] [gpu] [t1264980882] GLES: program uniforms (-1 = absent): vc 2047029408 pc -1 vte 2047029392 ndc 2047029376/2047029360 atest 2052885304, 0 bools, 0 loops, 1 textures
+[1965-07-20 03:48:05.812] [info] [gpu] [t1264980882] GLES: render target depth base 1280 pitch 1280 format 0 msaa 0: 1280x1024 vitaGL free/total MiB: VRAM 2096.3/80.0, RAM 2096.3/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:48:05.813] [error] [gpu] [t1264980882] GLES: GL_INVALID_ENUM after creating a render target (swap 154); vitaGL free/total MiB: VRAM 2096.3/80.0, RAM 2096.3/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:48:05.826] [info] [gpu] [t1264980882] GLES: compiled VS 2E015B8427EBD8C5 (modification 1F, 6369 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:48:05.849] [info] [gpu] [t1264980882] GLES: compiled PS E8EAE3AA51F7921E (modification 1F, 4921 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:48:05.883] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:05.895] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:06.953] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:06.966] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:07.412] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:07.424] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:07.606] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:07.619] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:07.805] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:07.816] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:08.071] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:08.083] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:08.207] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:08.220] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:08.381] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:08.395] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:08.658] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:08.674] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:09.160] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:09.172] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:09.368] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:09.382] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:09.540] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:09.552] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:09.668] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:09.681] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:09.879] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:09.891] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:10.092] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:10.105] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:10.227] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:10.240] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:10.390] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:10.402] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:10.563] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:10.575] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:10.743] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:10.769] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:11.009] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:11.022] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:11.025] [info] [gpu] [t1264980882] GLES: linked program VS 2E015B8427EBD8C5 + PS E8EAE3AA51F7921E in 5176.2 ms
+[1965-07-20 03:48:11.026] [info] [gpu] [t1264980882] GLES: program uniforms (-1 = absent): vc 2045796376 pc 2048893696 vte 2045796360 ndc 2045796344/2045796328 atest 2048893648, 0 bools, 0 loops, 1 textures
+[1965-07-20 03:48:11.079] [error] [gpu] [t1264980882] GLES: GL_INVALID_ENUM after the frame (swap 155); vitaGL free/total MiB: VRAM 2783.0/80.0, RAM 2783.0/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:48:11.198] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:11.209] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:11.378] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:11.389] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:11.503] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:11.515] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:11.645] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:11.682] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:11.871] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:11.885] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:11.901] [info] [gpu] [t1264980882] GLES: swap 180: 565 draws, 1440 skipped, 180 resolves since the last report; 7 render targets, 3 resolve targets, 2 textures, 5 programs; frontbuffer 0B000000 resolved; skipped: no target 1440, shader 0, link 0, vertices 0
+[1965-07-20 03:48:11.901] [info] [gpu] [t1264980882] GLES: time since the last report 11748 ms: translate 36 ms, compile 0 ms (3 shaders), link 9044 ms (2 programs), present+swap 50 ms; longest frame 9162 ms. vitaGL free/total MiB: VRAM 0.0/80.0, RAM 0.0/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:48:12.002] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:12.014] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:13.034] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:13.047] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:13.057] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:13.069] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:13.079] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:13.088] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:13.449] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:13.460] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:13.668] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:13.677] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:13.789] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:13.801] [error] [krnl] [t2537381283] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:48:15.521] [info] [gpu] [t1264980882] GLES: render target depth base 0 pitch 1040 format 0 msaa 0: 1040x1024 vitaGL free/total MiB: VRAM 755.2/80.0, RAM 755.2/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:48:15.522] [info] [gpu] [t1264980882] GLES: scratch color attachment 1040x1024 for depth-only passes
+[1965-07-20 03:48:15.728] [info] [apu] [t3272854107] XMA: 1 contexts have an FFmpeg decoder
+[1965-07-20 03:48:19.562] [info] [gpu] [t1264980882] GLES: render target depth base 0 pitch 520 format 0 msaa 2: 520x1024 vitaGL free/total MiB: VRAM 2112.1/80.0, RAM 2112.1/24.0, PHYCONT 0.0/0.0, newlib 0.0/48.0
+[1965-07-20 03:48:19.563] [info] [gpu] [t1264980882] GLES: scratch color attachment 520x1024 for depth-only passes
+[1965-07-20 03:48:23.614] [info] [gpu] [t1264980882] GLES: compiled VS 2443876AABAE04D9 (modification 3, 4296 bytes of GLSL) in 0.0 ms

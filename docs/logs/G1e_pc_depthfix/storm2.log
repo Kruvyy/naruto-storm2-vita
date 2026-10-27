@@ -1,0 +1,449 @@
+[2026-10-26 18:42:25.819] [info] [gpu] [t23468] GLES GPU backend (OpenGL ES 2 subset)
+[2026-10-26 18:42:25.858] [info] [sys] [t23468] Guest memory arena mapped: virtual base 0x0000000100000000, physical base 0x0000000200000000
+[2026-10-26 18:42:25.912] [info] [gpu] [t23468] GLES GPU backend (OpenGL ES 2 subset)
+[2026-10-26 18:42:25.918] [info] [core] [t23468] Function table initialized for module: code=821C0000-82836294, image=82000000-82B30000
+[2026-10-26 18:42:25.989] [info] [gpu] [t13652] GLES backend on desktop OpenGL (offscreen): ATI Technologies Inc. / AMD Radeon RX 6600 / 4.6.0 Compatibility Profile Context 26.10.1.261008, S3TC true
+[2026-10-26 18:42:26.123] [warning] [core] [t23468] SDL GameControllerDB: file 'gamecontrollerdb.txt' does not exist.
+[2026-10-26 18:42:26.125] [info] [core] [t23468] SDL input driver initialized successfully
+[2026-10-26 18:42:26.173] [info] [core] [t23468] Initializing shader storage for title 4E4D0819...
+[2026-10-26 18:42:26.183] [info] [gpu] [t25536] SetInterruptCallback(826A5998, 40005080)
+[2026-10-26 18:42:26.198] [info] [gpu] [t13652] GLES: render target depth base 0 pitch 640 format 0 msaa 2: 640x1024
+[2026-10-26 18:42:26.198] [info] [gpu] [t13652] GLES: scratch color attachment 640x1024 for depth-only passes
+[2026-10-26 18:42:26.200] [info] [gpu] [t13652] GLES: compiled VS 1E6883FCCDE1F688 (modification 0, 2911 bytes of GLSL) in 2.5 ms
+[2026-10-26 18:42:26.202] [info] [gpu] [t13652] GLES: linked program VS 1E6883FCCDE1F688 + PS 0000000000000000 in 1.1 ms
+[2026-10-26 18:42:26.202] [info] [gpu] [t13652] GLES: render target color base 0 pitch 1280 format 0 msaa 0: 1280x1024
+[2026-10-26 18:42:26.202] [info] [gpu] [t13652] GLES: resolve target 0B000000 1280x736
+[2026-10-26 18:42:26.215] [info] [gpu] [t13652] GLES: render target depth base 640 pitch 640 format 0 msaa 2: 640x1024
+[2026-10-26 18:42:26.282] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:26.283] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:26.316] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:26.316] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:26.380] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:26.564] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:26.578] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:26.578] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:26.586] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:26.755] [info] [apu] [t25536] audio endpoint 'Realtek HD Audio 2nd output (Realtek(R) Audio)': 2 ch, 48000 Hz, format 0x8120; submitting 2 ch
+[2026-10-26 18:42:26.758] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:26.760] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:26.765] [info] [core] [t25536] SDL OnControllerDeviceAdded: "DualSense Wireless Controller", JoystickType(1), GameControllerType(6), VendorID(0x054C), ProductID(0x0CE6)
+[2026-10-26 18:42:26.765] [info] [core] [t25536] SDL OnControllerDeviceAdded: connection order 0, device 1.
+[2026-10-26 18:42:26.780] [info] [gpu] [t13652] GLES: resolve target 0CB9A000 1280x640
+[2026-10-26 18:42:26.780] [info] [gpu] [t13652] GLES: render target color base 640 pitch 1280 format 0 msaa 0: 1280x1024
+[2026-10-26 18:42:26.780] [info] [gpu] [t13652] GLES: resolve target 0CEBA000 1280x640
+[2026-10-26 18:42:26.782] [info] [gpu] [t13652] GLES: compiled VS 4666C5A9092B03DD (modification 3, 4142 bytes of GLSL) in 2.5 ms
+[2026-10-26 18:42:26.785] [info] [gpu] [t13652] GLES: compiled PS 7ABDFEFBCADB4BF9 (modification 3, 2844 bytes of GLSL) in 2.4 ms
+[2026-10-26 18:42:26.785] [info] [gpu] [t13652] GLES: linked program VS 4666C5A9092B03DD + PS 7ABDFEFBCADB4BF9 in 0.4 ms
+[2026-10-26 18:42:26.798] [info] [gpu] [t13652] GLES: render target color base 0 pitch 640 format 0 msaa 2: 640x1024
+[2026-10-26 18:42:26.798] [info] [gpu] [t13652] GLES: render target depth base 1280 pitch 640 format 0 msaa 2: 640x1024
+[2026-10-26 18:42:26.800] [info] [gpu] [t13652] GLES: compiled VS 1E6883FCCDE1F688 (modification 1, 2936 bytes of GLSL) in 1.8 ms
+[2026-10-26 18:42:26.801] [info] [gpu] [t13652] GLES: compiled PS A4A965C189287B99 (modification 1, 2526 bytes of GLSL) in 1.4 ms
+[2026-10-26 18:42:26.801] [info] [gpu] [t13652] GLES: linked program VS 1E6883FCCDE1F688 + PS A4A965C189287B99 in 0.3 ms
+[2026-10-26 18:42:26.852] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:26.853] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.078] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.079] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.112] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.112] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.242] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.242] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.313] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.313] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.330] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.330] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.342] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.342] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.570] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.571] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.603] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.603] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.632] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.632] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:27.699] [info] [gpu] [t13652] GLES: compiled VS 13B01BEA94678566 (modification 3, 4670 bytes of GLSL) in 1.8 ms
+[2026-10-26 18:42:27.700] [info] [gpu] [t13652] GLES: linked program VS 13B01BEA94678566 + PS 7ABDFEFBCADB4BF9 in 0.3 ms
+[2026-10-26 18:42:27.700] [info] [gpu] [t13652] GLES: render target depth base 1280 pitch 1280 format 0 msaa 0: 1280x1024
+[2026-10-26 18:42:27.702] [info] [gpu] [t13652] GLES: compiled VS 2E015B8427EBD8C5 (modification 1F, 6070 bytes of GLSL) in 2.2 ms
+[2026-10-26 18:42:27.704] [info] [gpu] [t13652] GLES: compiled PS E8EAE3AA51F7921E (modification 1F, 4654 bytes of GLSL) in 1.6 ms
+[2026-10-26 18:42:27.704] [info] [gpu] [t13652] GLES: linked program VS 2E015B8427EBD8C5 + PS E8EAE3AA51F7921E in 0.3 ms
+[2026-10-26 18:42:28.706] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:28.706] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.084] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.084] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.204] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.205] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.219] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.219] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.229] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.230] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.239] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.239] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.254] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.255] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.271] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.271] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.281] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.281] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.361] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.362] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.380] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.381] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.391] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.392] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.400] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.400] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.410] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.411] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.422] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.423] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.435] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.435] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.445] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.445] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.457] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.457] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.467] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.467] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.477] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.478] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.489] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.489] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.502] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.503] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.512] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.513] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.524] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.524] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.582] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.583] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.590] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.591] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.656] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.656] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.657] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.657] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.658] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.658] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.762] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.763] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.773] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.773] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.781] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:29.782] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:30.498] [info] [gpu] [t13652] GLES: swap 120: 1497 draws, 2856 skipped, 344 resolves since the last report; 7 render targets, 3 resolve targets, 2 textures, 5 programs; frontbuffer 0B000000 resolved; skipped: no target 2856, shader 0, link 0, vertices 0
+[2026-10-26 18:42:30.498] [info] [gpu] [t13652] GLES: time since the last report 4296 ms: translate 0 ms, compile 16 ms (8 shaders), link 2 ms (5 programs), present+swap 0 ms; longest frame 200 ms
+[2026-10-26 18:42:30.796] [info] [gpu] [t13652] GLES: render target depth base 0 pitch 1040 format 0 msaa 0: 1040x1024
+[2026-10-26 18:42:30.796] [info] [gpu] [t13652] GLES: scratch color attachment 1040x1024 for depth-only passes
+[2026-10-26 18:42:30.797] [info] [gpu] [t13652] GLES: render target depth base 0 pitch 520 format 0 msaa 2: 520x1024
+[2026-10-26 18:42:30.797] [info] [gpu] [t13652] GLES: scratch color attachment 520x1024 for depth-only passes
+[2026-10-26 18:42:30.797] [info] [apu] [t25536] XMA: 1 contexts have an FFmpeg decoder
+[2026-10-26 18:42:30.799] [info] [gpu] [t13652] GLES: compiled VS 2443876AABAE04D9 (modification 3, 4092 bytes of GLSL) in 2.3 ms
+[2026-10-26 18:42:30.806] [info] [gpu] [t13652] GLES: compiled PS 6D868915601F3596 (modification 3, 21963 bytes of GLSL) in 7.0 ms
+[2026-10-26 18:42:30.808] [info] [gpu] [t13652] GLES: linked program VS 2443876AABAE04D9 + PS 6D868915601F3596 in 1.1 ms
+[2026-10-26 18:42:30.815] [warning] [gpu] [t13652] GLES: texture format k_24_8 not supported (black)
+[2026-10-26 18:42:30.817] [info] [gpu] [t13652] GLES: compiled VS 2A53964AA9F4D66E (modification 1, 4136 bytes of GLSL) in 1.6 ms
+[2026-10-26 18:42:30.821] [info] [gpu] [t13652] GLES: compiled PS A2147ED6ACF52DBF (modification 20001, 8926 bytes of GLSL) in 4.0 ms
+[2026-10-26 18:42:30.821] [info] [gpu] [t13652] GLES: linked program VS 2A53964AA9F4D66E + PS A2147ED6ACF52DBF in 0.3 ms
+[2026-10-26 18:42:30.821] [info] [gpu] [t13652] GLES: resolve target 0D4FA000 1280x640
+[2026-10-26 18:42:30.823] [info] [gpu] [t13652] GLES: compiled VS 5C3A02159BE6E884 (modification 3, 4798 bytes of GLSL) in 1.7 ms
+[2026-10-26 18:42:30.825] [info] [gpu] [t13652] GLES: compiled PS 15741DBDE0A6290A (modification 3, 3003 bytes of GLSL) in 1.5 ms
+[2026-10-26 18:42:30.825] [info] [gpu] [t13652] GLES: linked program VS 5C3A02159BE6E884 + PS 15741DBDE0A6290A in 0.5 ms
+[2026-10-26 18:42:30.825] [info] [gpu] [t13652] GLES: resolve target 0DC02000 1280x640
+[2026-10-26 18:42:30.827] [info] [gpu] [t13652] GLES: compiled VS 3DDE552C3BDAE2BF (modification 3, 4711 bytes of GLSL) in 1.8 ms
+[2026-10-26 18:42:30.830] [info] [gpu] [t13652] GLES: compiled PS BCC460762FDFFFFC (modification 3, 6720 bytes of GLSL) in 2.0 ms
+[2026-10-26 18:42:30.830] [info] [gpu] [t13652] GLES: linked program VS 3DDE552C3BDAE2BF + PS BCC460762FDFFFFC in 0.3 ms
+[2026-10-26 18:42:30.830] [info] [gpu] [t13652] GLES: resolve target 0DF22000 1280x640
+[2026-10-26 18:42:30.833] [info] [gpu] [t13652] GLES: compiled VS 4124792F35086E42 (modification F, 6041 bytes of GLSL) in 2.6 ms
+[2026-10-26 18:42:30.834] [info] [gpu] [t13652] GLES: compiled PS 083B01342061346A (modification F, 4216 bytes of GLSL) in 1.6 ms
+[2026-10-26 18:42:30.835] [info] [gpu] [t13652] GLES: linked program VS 4124792F35086E42 + PS 083B01342061346A in 0.3 ms
+[2026-10-26 18:42:30.836] [info] [gpu] [t13652] GLES: compiled PS ECFA8AFC82759BAD (modification 3, 4368 bytes of GLSL) in 1.6 ms
+[2026-10-26 18:42:30.837] [info] [gpu] [t13652] GLES: linked program VS 3DDE552C3BDAE2BF + PS ECFA8AFC82759BAD in 0.3 ms
+[2026-10-26 18:42:30.839] [info] [gpu] [t13652] GLES: compiled VS F97B3D21465FD604 (modification 3, 4536 bytes of GLSL) in 2.1 ms
+[2026-10-26 18:42:30.842] [info] [gpu] [t13652] GLES: compiled PS 389831C73DE85D45 (modification 3, 6982 bytes of GLSL) in 2.7 ms
+[2026-10-26 18:42:30.843] [info] [gpu] [t13652] GLES: linked program VS F97B3D21465FD604 + PS 389831C73DE85D45 in 0.4 ms
+[2026-10-26 18:42:30.843] [info] [gpu] [t13652] GLES: render target color base 0 pitch 640 format 7 msaa 2: 640x1024
+[2026-10-26 18:42:30.843] [info] [gpu] [t13652] GLES: render target color base 0 pitch 1280 format 7 msaa 0: 1280x1024
+[2026-10-26 18:42:30.843] [info] [gpu] [t13652] GLES: resolve target 0E562000 1280x640
+[2026-10-26 18:42:30.847] [info] [gpu] [t13652] GLES: compiled VS CF0D3867629B648A (modification F, 5870 bytes of GLSL) in 3.5 ms
+[2026-10-26 18:42:30.849] [info] [gpu] [t13652] GLES: compiled PS B62A1667D0BA6F26 (modification F, 4400 bytes of GLSL) in 1.7 ms
+[2026-10-26 18:42:30.849] [info] [gpu] [t13652] GLES: linked program VS CF0D3867629B648A + PS B62A1667D0BA6F26 in 0.3 ms
+[2026-10-26 18:42:30.851] [info] [gpu] [t13652] GLES: compiled PS D5019343FF423CC8 (modification 3, 4685 bytes of GLSL) in 1.7 ms
+[2026-10-26 18:42:30.851] [info] [gpu] [t13652] GLES: linked program VS F97B3D21465FD604 + PS D5019343FF423CC8 in 0.3 ms
+[2026-10-26 18:42:30.854] [info] [gpu] [t13652] GLES: compiled VS DD881E5FDA628D88 (modification 3, 5239 bytes of GLSL) in 2.2 ms
+[2026-10-26 18:42:30.855] [info] [gpu] [t13652] GLES: compiled PS 46AA46E4EB44BFF6 (modification 3, 3395 bytes of GLSL) in 1.3 ms
+[2026-10-26 18:42:30.855] [info] [gpu] [t13652] GLES: linked program VS DD881E5FDA628D88 + PS 46AA46E4EB44BFF6 in 0.4 ms
+[2026-10-26 18:42:30.856] [info] [gpu] [t13652] GLES: resolve target 0E242000 1280x640
+[2026-10-26 18:42:30.857] [info] [gpu] [t13652] GLES: compiled PS C60F811D2CD5F211 (modification 3, 3127 bytes of GLSL) in 1.3 ms
+[2026-10-26 18:42:30.857] [info] [gpu] [t13652] GLES: linked program VS 3DDE552C3BDAE2BF + PS C60F811D2CD5F211 in 0.3 ms
+[2026-10-26 18:42:34.514] [info] [gpu] [t13652] GLES: swap 240: 19520 draws, 8208 skipped, 3357 resolves since the last report; 11 render targets, 8 resolve targets, 8 textures, 16 programs; frontbuffer 0B000000 resolved; skipped: no target 8208, shader 0, link 0, vertices 0
+[2026-10-26 18:42:34.514] [info] [gpu] [t13652] GLES: time since the last report 4016 ms: translate 1 ms, compile 44 ms (19 shaders), link 4 ms (11 programs), present+swap 0 ms; longest frame 68 ms
+[2026-10-26 18:42:35.915] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:35.916] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:36.060] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:36.061] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:36.087] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:36.088] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:36.107] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:36.108] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:36.542] [warning] [gpu] [t13652] GLES: cannot write C:\Users\minoo\Downloads\PORT/frame_000300.png
+[2026-10-26 18:42:36.926] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:36.926] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:37.009] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:37.009] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:37.208] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:37.209] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:38.514] [info] [gpu] [t13652] GLES: swap 360: 9435 draws, 8640 skipped, 2445 resolves since the last report; 11 render targets, 8 resolve targets, 9 textures, 16 programs; frontbuffer 0B000000 resolved; skipped: no target 8640, shader 0, link 0, vertices 0
+[2026-10-26 18:42:38.514] [info] [gpu] [t13652] GLES: time since the last report 4000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs), present+swap 0 ms; longest frame 61 ms
+[2026-10-26 18:42:42.514] [info] [gpu] [t13652] GLES: swap 480: 2340 draws, 8640 skipped, 1800 resolves since the last report; 11 render targets, 8 resolve targets, 10 textures, 16 programs; frontbuffer 0B000000 resolved; skipped: no target 8640, shader 0, link 0, vertices 0
+[2026-10-26 18:42:42.514] [info] [gpu] [t13652] GLES: time since the last report 4000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs), present+swap 0 ms; longest frame 36 ms
+[2026-10-26 18:42:45.582] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:45.647] [error] [krnl] [t9336] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:45.714] [info] [gpu] [t13652] GLES: resolve target 126EF000 1280x736
+[2026-10-26 18:42:45.749] [info] [gpu] [t13652] GLES: compiled VS D5E12A97B3A84881 (modification 1, 2822 bytes of GLSL) in 1.5 ms
+[2026-10-26 18:42:45.751] [info] [gpu] [t13652] GLES: compiled PS A0B5089C468B8CE8 (modification 1, 4274 bytes of GLSL) in 1.6 ms
+[2026-10-26 18:42:45.751] [info] [gpu] [t13652] GLES: linked program VS D5E12A97B3A84881 + PS A0B5089C468B8CE8 in 0.3 ms
+[2026-10-26 18:42:46.606] [warning] [gpu] [t13652] GLES: cannot write C:\Users\minoo\Downloads\PORT/frame_000600.png
+[2026-10-26 18:42:46.606] [info] [gpu] [t13652] GLES: swap 600: 2330 draws, 8640 skipped, 1824 resolves since the last report; 11 render targets, 9 resolve targets, 19 textures, 17 programs; frontbuffer 0B000000 resolved; skipped: no target 8640, shader 0, link 0, vertices 0
+[2026-10-26 18:42:46.606] [info] [gpu] [t13652] GLES: time since the last report 4091 ms: translate 0 ms, compile 3 ms (2 shaders), link 0 ms (1 programs), present+swap 0 ms; longest frame 125 ms
+[2026-10-26 18:42:49.383] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:49.447] [error] [krnl] [t9336] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:50.581] [info] [gpu] [t13652] GLES: swap 720: 2370 draws, 8640 skipped, 1898 resolves since the last report; 11 render targets, 9 resolve targets, 28 textures, 17 programs; frontbuffer 0B000000 resolved; skipped: no target 8640, shader 0, link 0, vertices 0
+[2026-10-26 18:42:50.581] [info] [gpu] [t13652] GLES: time since the last report 3975 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs), present+swap 0 ms; longest frame 37 ms
+[2026-10-26 18:42:53.781] [error] [krnl] [t7512] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:53.785] [info] [gpu] [t13652] GLES: compiled VS 818B92470F80833E (modification 1, 4961 bytes of GLSL) in 3.4 ms
+[2026-10-26 18:42:53.788] [info] [gpu] [t13652] GLES: compiled PS 1C5B744F4C81F9EB (modification 1, 5688 bytes of GLSL) in 2.3 ms
+[2026-10-26 18:42:53.788] [info] [gpu] [t13652] GLES: linked program VS 818B92470F80833E + PS 1C5B744F4C81F9EB in 0.3 ms
+[2026-10-26 18:42:53.846] [error] [krnl] [t9336] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:42:54.580] [info] [gpu] [t13652] GLES: swap 840: 3074 draws, 8640 skipped, 2271 resolves since the last report; 11 render targets, 9 resolve targets, 37 textures, 18 programs; frontbuffer 0B000000 resolved; skipped: no target 8640, shader 0, link 0, vertices 0
+[2026-10-26 18:42:54.580] [info] [gpu] [t13652] GLES: time since the last report 3999 ms: translate 0 ms, compile 6 ms (2 shaders), link 0 ms (1 programs), present+swap 0 ms; longest frame 36 ms
+[2026-10-26 18:42:56.622] [warning] [gpu] [t13652] GLES: cannot write C:\Users\minoo\Downloads\PORT/frame_000900.png
+[2026-10-26 18:42:58.597] [info] [gpu] [t13652] GLES: swap 960: 5880 draws, 8640 skipped, 3720 resolves since the last report; 11 render targets, 9 resolve targets, 37 textures, 18 programs; frontbuffer 0B000000 resolved; skipped: no target 8640, shader 0, link 0, vertices 0
+[2026-10-26 18:42:58.597] [info] [gpu] [t13652] GLES: time since the last report 4017 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs), present+swap 0 ms; longest frame 76 ms
+[2026-10-26 18:43:02.597] [info] [gpu] [t13652] GLES: swap 1080: 5880 draws, 8640 skipped, 3720 resolves since the last report; 11 render targets, 9 resolve targets, 37 textures, 18 programs; frontbuffer 0B000000 resolved; skipped: no target 8640, shader 0, link 0, vertices 0
+[2026-10-26 18:43:02.598] [info] [gpu] [t13652] GLES: time since the last report 4000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs), present+swap 0 ms; longest frame 37 ms
+[2026-10-26 18:43:06.666] [warning] [gpu] [t13652] GLES: cannot write C:\Users\minoo\Downloads\PORT/frame_001200.png
+[2026-10-26 18:43:06.666] [info] [gpu] [t13652] GLES: swap 1200: 5880 draws, 8640 skipped, 3720 resolves since the last report; 11 render targets, 9 resolve targets, 37 textures, 18 programs; frontbuffer 0B000000 resolved; skipped: no target 8640, shader 0, link 0, vertices 0
+[2026-10-26 18:43:06.666] [info] [gpu] [t13652] GLES: time since the last report 4069 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs), present+swap 0 ms; longest frame 102 ms
+[2026-10-26 18:43:10.630] [info] [gpu] [t13652] GLES: swap 1320: 5880 draws, 8640 skipped, 3720 resolves since the last report; 11 render targets, 9 resolve targets, 37 textures, 18 programs; frontbuffer 0B000000 resolved; skipped: no target 8640, shader 0, link 0, vertices 0
+[2026-10-26 18:43:10.630] [info] [gpu] [t13652] GLES: time since the last report 3964 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs), present+swap 0 ms; longest frame 36 ms
+[2026-10-26 18:43:14.630] [info] [gpu] [t13652] GLES: swap 1440: 5880 draws, 8640 skipped, 3720 resolves since the last report; 11 render targets, 9 resolve targets, 37 textures, 18 programs; frontbuffer 0B000000 resolved; skipped: no target 8640, shader 0, link 0, vertices 0
+[2026-10-26 18:43:14.630] [info] [gpu] [t13652] GLES: time since the last report 4000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs), present+swap 0 ms; longest frame 36 ms
+[2026-10-26 18:43:16.671] [warning] [gpu] [t13652] GLES: cannot write C:\Users\minoo\Downloads\PORT/frame_001500.png
+[2026-10-26 18:43:18.648] [info] [gpu] [t13652] GLES: swap 1560: 5880 draws, 8640 skipped, 3720 resolves since the last report; 11 render targets, 9 resolve targets, 37 textures, 18 programs; frontbuffer 0B000000 resolved; skipped: no target 8640, shader 0, link 0, vertices 0
+[2026-10-26 18:43:18.648] [info] [gpu] [t13652] GLES: time since the last report 4018 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs), present+swap 0 ms; longest frame 74 ms
+[2026-10-26 18:43:22.648] [info] [gpu] [t13652] GLES: swap 1680: 5880 draws, 8640 skipped, 3720 resolves since the last report; 11 render targets, 9 resolve targets, 37 textures, 18 programs; frontbuffer 0B000000 resolved; skipped: no target 8640, shader 0, link 0, vertices 0
+[2026-10-26 18:43:22.648] [info] [gpu] [t13652] GLES: time since the last report 4000 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs), present+swap 0 ms; longest frame 36 ms
+[2026-10-26 18:43:26.689] [warning] [gpu] [t13652] GLES: cannot write C:\Users\minoo\Downloads\PORT/frame_001800.png
+[2026-10-26 18:43:26.689] [info] [gpu] [t13652] GLES: swap 1800: 5880 draws, 8640 skipped, 3720 resolves since the last report; 11 render targets, 9 resolve targets, 37 textures, 18 programs; frontbuffer 0B000000 resolved; skipped: no target 8640, shader 0, link 0, vertices 0
+[2026-10-26 18:43:26.689] [info] [gpu] [t13652] GLES: time since the last report 4041 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs), present+swap 0 ms; longest frame 74 ms
+[2026-10-26 18:43:30.666] [info] [gpu] [t13652] GLES: swap 1920: 5880 draws, 8640 skipped, 3720 resolves since the last report; 11 render targets, 9 resolve targets, 37 textures, 18 programs; frontbuffer 0B000000 resolved; skipped: no target 8640, shader 0, link 0, vertices 0
+[2026-10-26 18:43:30.666] [info] [gpu] [t13652] GLES: time since the last report 3976 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs), present+swap 0 ms; longest frame 36 ms
+[2026-10-26 18:43:34.664] [info] [gpu] [t13652] GLES: swap 2040: 5880 draws, 8640 skipped, 3720 resolves since the last report; 11 render targets, 9 resolve targets, 37 textures, 18 programs; frontbuffer 0B000000 resolved; skipped: no target 8640, shader 0, link 0, vertices 0
+[2026-10-26 18:43:34.664] [info] [gpu] [t13652] GLES: time since the last report 3998 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs), present+swap 0 ms; longest frame 35 ms
+[2026-10-26 18:43:36.705] [warning] [gpu] [t13652] GLES: cannot write C:\Users\minoo\Downloads\PORT/frame_002100.png
+[2026-10-26 18:43:38.682] [info] [gpu] [t13652] GLES: swap 2160: 5880 draws, 8640 skipped, 3720 resolves since the last report; 11 render targets, 9 resolve targets, 37 textures, 18 programs; frontbuffer 0B000000 resolved; skipped: no target 8640, shader 0, link 0, vertices 0
+[2026-10-26 18:43:38.682] [info] [gpu] [t13652] GLES: time since the last report 4018 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs), present+swap 0 ms; longest frame 76 ms
+[2026-10-26 18:43:59.951] [info] [gpu] [t23056] GLES GPU backend (OpenGL ES 2 subset)
+[2026-10-26 18:43:59.989] [info] [sys] [t23056] Guest memory arena mapped: virtual base 0x0000000100000000, physical base 0x0000000200000000
+[2026-10-26 18:44:00.046] [info] [gpu] [t23056] GLES GPU backend (OpenGL ES 2 subset)
+[2026-10-26 18:44:00.052] [info] [core] [t23056] Function table initialized for module: code=821C0000-82836294, image=82000000-82B30000
+[2026-10-26 18:44:00.120] [info] [gpu] [t4208] GLES backend on desktop OpenGL (offscreen): ATI Technologies Inc. / AMD Radeon RX 6600 / 4.6.0 Compatibility Profile Context 26.10.1.261008, S3TC true
+[2026-10-26 18:44:00.248] [warning] [core] [t23056] SDL GameControllerDB: file 'gamecontrollerdb.txt' does not exist.
+[2026-10-26 18:44:00.248] [info] [core] [t23056] SDL input driver initialized successfully
+[2026-10-26 18:44:00.296] [info] [core] [t23056] Initializing shader storage for title 4E4D0819...
+[2026-10-26 18:44:00.310] [info] [gpu] [t10972] SetInterruptCallback(826A5998, 40005080)
+[2026-10-26 18:44:00.317] [info] [gpu] [t4208] GLES: render target depth base 0 pitch 640 format 0 msaa 2: 640x1024
+[2026-10-26 18:44:00.317] [info] [gpu] [t4208] GLES: scratch color attachment 640x1024 for depth-only passes
+[2026-10-26 18:44:00.319] [info] [gpu] [t4208] GLES: compiled VS 1E6883FCCDE1F688 (modification 0, 2911 bytes of GLSL) in 1.9 ms
+[2026-10-26 18:44:00.321] [info] [gpu] [t4208] GLES: linked program VS 1E6883FCCDE1F688 + PS 0000000000000000 in 1.1 ms
+[2026-10-26 18:44:00.321] [info] [gpu] [t4208] GLES: render target color base 0 pitch 1280 format 0 msaa 0: 1280x1024
+[2026-10-26 18:44:00.321] [info] [gpu] [t4208] GLES: resolve target 0B000000 1280x736
+[2026-10-26 18:44:00.331] [info] [gpu] [t4208] GLES: render target depth base 640 pitch 640 format 0 msaa 2: 640x1024
+[2026-10-26 18:44:00.399] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:00.400] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:00.433] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:00.434] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:00.498] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:00.687] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:00.701] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:00.702] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:00.712] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:00.837] [info] [apu] [t10972] audio endpoint 'Realtek HD Audio 2nd output (Realtek(R) Audio)': 2 ch, 48000 Hz, format 0x8120; submitting 2 ch
+[2026-10-26 18:44:00.840] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:00.842] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:00.846] [info] [core] [t10972] SDL OnControllerDeviceAdded: "DualSense Wireless Controller", JoystickType(1), GameControllerType(6), VendorID(0x054C), ProductID(0x0CE6)
+[2026-10-26 18:44:00.846] [info] [core] [t10972] SDL OnControllerDeviceAdded: connection order 0, device 1.
+[2026-10-26 18:44:00.849] [info] [gpu] [t4208] GLES: resolve target 0CB9A000 1280x640
+[2026-10-26 18:44:00.849] [info] [gpu] [t4208] GLES: render target color base 640 pitch 1280 format 0 msaa 0: 1280x1024
+[2026-10-26 18:44:00.849] [info] [gpu] [t4208] GLES: resolve target 0CEBA000 1280x640
+[2026-10-26 18:44:00.852] [info] [gpu] [t4208] GLES: compiled VS 4666C5A9092B03DD (modification 3, 4142 bytes of GLSL) in 2.2 ms
+[2026-10-26 18:44:00.853] [info] [gpu] [t4208] GLES: compiled PS 7ABDFEFBCADB4BF9 (modification 3, 2844 bytes of GLSL) in 1.6 ms
+[2026-10-26 18:44:00.854] [info] [gpu] [t4208] GLES: linked program VS 4666C5A9092B03DD + PS 7ABDFEFBCADB4BF9 in 0.2 ms
+[2026-10-26 18:44:00.866] [info] [gpu] [t4208] GLES: render target color base 0 pitch 640 format 0 msaa 2: 640x1024
+[2026-10-26 18:44:00.866] [info] [gpu] [t4208] GLES: render target depth base 1280 pitch 640 format 0 msaa 2: 640x1024
+[2026-10-26 18:44:00.868] [info] [gpu] [t4208] GLES: compiled VS 1E6883FCCDE1F688 (modification 1, 2936 bytes of GLSL) in 1.9 ms
+[2026-10-26 18:44:00.871] [info] [gpu] [t4208] GLES: compiled PS A4A965C189287B99 (modification 1, 2526 bytes of GLSL) in 2.4 ms
+[2026-10-26 18:44:00.871] [info] [gpu] [t4208] GLES: linked program VS 1E6883FCCDE1F688 + PS A4A965C189287B99 in 0.2 ms
+[2026-10-26 18:44:00.919] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:00.920] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.128] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.129] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.162] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.163] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.289] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.290] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.370] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.370] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.388] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.388] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.399] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.399] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.621] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.622] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.654] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.654] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.682] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.682] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:01.733] [info] [gpu] [t4208] GLES: compiled VS 13B01BEA94678566 (modification 3, 4670 bytes of GLSL) in 2.0 ms
+[2026-10-26 18:44:01.733] [info] [gpu] [t4208] GLES: linked program VS 13B01BEA94678566 + PS 7ABDFEFBCADB4BF9 in 0.2 ms
+[2026-10-26 18:44:01.734] [info] [gpu] [t4208] GLES: render target depth base 1280 pitch 1280 format 0 msaa 0: 1280x1024
+[2026-10-26 18:44:01.736] [info] [gpu] [t4208] GLES: compiled VS 2E015B8427EBD8C5 (modification 1F, 6070 bytes of GLSL) in 2.0 ms
+[2026-10-26 18:44:01.738] [info] [gpu] [t4208] GLES: compiled PS E8EAE3AA51F7921E (modification 1F, 4654 bytes of GLSL) in 2.3 ms
+[2026-10-26 18:44:01.738] [info] [gpu] [t4208] GLES: linked program VS 2E015B8427EBD8C5 + PS E8EAE3AA51F7921E in 0.3 ms
+[2026-10-26 18:44:02.688] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:02.689] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.035] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.036] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.152] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.152] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.167] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.167] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.179] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.179] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.187] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.188] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.203] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.203] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.219] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.220] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.229] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.230] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.303] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.304] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.324] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.325] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.333] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.334] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.344] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.344] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.355] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.356] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.366] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.366] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.378] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.378] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.387] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.387] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.397] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.398] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.409] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.409] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.418] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.418] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.428] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.429] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.441] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.442] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.453] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.453] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.463] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.463] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.518] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.519] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.527] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.527] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.589] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.590] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.590] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.590] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.591] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.592] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.676] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.677] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.686] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.687] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.694] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:03.695] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:04.732] [info] [apu] [t10972] XMA: 1 contexts have an FFmpeg decoder
+[2026-10-26 18:44:04.732] [info] [gpu] [t4208] GLES: render target depth base 0 pitch 1040 format 0 msaa 0: 1040x1024
+[2026-10-26 18:44:04.732] [info] [gpu] [t4208] GLES: scratch color attachment 1040x1024 for depth-only passes
+[2026-10-26 18:44:04.732] [info] [gpu] [t4208] GLES: render target depth base 0 pitch 520 format 0 msaa 2: 520x1024
+[2026-10-26 18:44:04.732] [info] [gpu] [t4208] GLES: scratch color attachment 520x1024 for depth-only passes
+[2026-10-26 18:44:04.734] [info] [gpu] [t4208] GLES: compiled VS 2443876AABAE04D9 (modification 3, 4092 bytes of GLSL) in 1.9 ms
+[2026-10-26 18:44:04.741] [info] [gpu] [t4208] GLES: compiled PS 6D868915601F3596 (modification 3, 21963 bytes of GLSL) in 7.0 ms
+[2026-10-26 18:44:04.742] [info] [gpu] [t4208] GLES: linked program VS 2443876AABAE04D9 + PS 6D868915601F3596 in 0.8 ms
+[2026-10-26 18:44:04.749] [warning] [gpu] [t4208] GLES: texture format k_24_8 not supported (black)
+[2026-10-26 18:44:04.752] [info] [gpu] [t4208] GLES: compiled VS 2A53964AA9F4D66E (modification 1, 4136 bytes of GLSL) in 2.3 ms
+[2026-10-26 18:44:04.755] [info] [gpu] [t4208] GLES: compiled PS A2147ED6ACF52DBF (modification 20001, 8926 bytes of GLSL) in 2.9 ms
+[2026-10-26 18:44:04.755] [info] [gpu] [t4208] GLES: linked program VS 2A53964AA9F4D66E + PS A2147ED6ACF52DBF in 0.4 ms
+[2026-10-26 18:44:04.755] [info] [gpu] [t4208] GLES: resolve target 0D4FA000 1280x640
+[2026-10-26 18:44:04.757] [info] [gpu] [t4208] GLES: compiled VS 5C3A02159BE6E884 (modification 3, 4798 bytes of GLSL) in 1.8 ms
+[2026-10-26 18:44:04.759] [info] [gpu] [t4208] GLES: compiled PS 15741DBDE0A6290A (modification 3, 3003 bytes of GLSL) in 1.7 ms
+[2026-10-26 18:44:04.759] [info] [gpu] [t4208] GLES: linked program VS 5C3A02159BE6E884 + PS 15741DBDE0A6290A in 0.2 ms
+[2026-10-26 18:44:04.759] [info] [gpu] [t4208] GLES: resolve target 0DC02000 1280x640
+[2026-10-26 18:44:04.761] [info] [gpu] [t4208] GLES: compiled VS 3DDE552C3BDAE2BF (modification 3, 4711 bytes of GLSL) in 1.7 ms
+[2026-10-26 18:44:04.764] [info] [gpu] [t4208] GLES: compiled PS BCC460762FDFFFFC (modification 3, 6720 bytes of GLSL) in 2.3 ms
+[2026-10-26 18:44:04.764] [info] [gpu] [t4208] GLES: linked program VS 3DDE552C3BDAE2BF + PS BCC460762FDFFFFC in 0.5 ms
+[2026-10-26 18:44:04.764] [info] [gpu] [t4208] GLES: resolve target 0DF22000 1280x640
+[2026-10-26 18:44:04.767] [info] [gpu] [t4208] GLES: compiled VS 4124792F35086E42 (modification F, 6041 bytes of GLSL) in 2.9 ms
+[2026-10-26 18:44:04.769] [info] [gpu] [t4208] GLES: compiled PS 083B01342061346A (modification F, 4216 bytes of GLSL) in 1.7 ms
+[2026-10-26 18:44:04.769] [info] [gpu] [t4208] GLES: linked program VS 4124792F35086E42 + PS 083B01342061346A in 0.3 ms
+[2026-10-26 18:44:04.771] [info] [gpu] [t4208] GLES: compiled PS ECFA8AFC82759BAD (modification 3, 4368 bytes of GLSL) in 1.6 ms
+[2026-10-26 18:44:04.772] [info] [gpu] [t4208] GLES: linked program VS 3DDE552C3BDAE2BF + PS ECFA8AFC82759BAD in 0.3 ms
+[2026-10-26 18:44:04.774] [info] [gpu] [t4208] GLES: compiled VS F97B3D21465FD604 (modification 3, 4536 bytes of GLSL) in 1.7 ms
+[2026-10-26 18:44:04.776] [info] [gpu] [t4208] GLES: compiled PS 389831C73DE85D45 (modification 3, 6982 bytes of GLSL) in 2.2 ms
+[2026-10-26 18:44:04.776] [info] [gpu] [t4208] GLES: linked program VS F97B3D21465FD604 + PS 389831C73DE85D45 in 0.3 ms
+[2026-10-26 18:44:04.776] [info] [gpu] [t4208] GLES: render target color base 0 pitch 640 format 7 msaa 2: 640x1024
+[2026-10-26 18:44:04.776] [info] [gpu] [t4208] GLES: render target color base 0 pitch 1280 format 7 msaa 0: 1280x1024
+[2026-10-26 18:44:04.777] [info] [gpu] [t4208] GLES: resolve target 0E562000 1280x640
+[2026-10-26 18:44:04.779] [info] [gpu] [t4208] GLES: compiled VS CF0D3867629B648A (modification F, 5870 bytes of GLSL) in 2.6 ms
+[2026-10-26 18:44:04.781] [info] [gpu] [t4208] GLES: compiled PS B62A1667D0BA6F26 (modification F, 4400 bytes of GLSL) in 1.7 ms
+[2026-10-26 18:44:04.782] [info] [gpu] [t4208] GLES: linked program VS CF0D3867629B648A + PS B62A1667D0BA6F26 in 0.5 ms
+[2026-10-26 18:44:04.784] [info] [gpu] [t4208] GLES: compiled PS D5019343FF423CC8 (modification 3, 4685 bytes of GLSL) in 2.2 ms
+[2026-10-26 18:44:04.785] [info] [gpu] [t4208] GLES: linked program VS F97B3D21465FD604 + PS D5019343FF423CC8 in 0.5 ms
+[2026-10-26 18:44:04.787] [info] [gpu] [t4208] GLES: compiled VS DD881E5FDA628D88 (modification 3, 5239 bytes of GLSL) in 2.2 ms
+[2026-10-26 18:44:04.789] [info] [gpu] [t4208] GLES: compiled PS 46AA46E4EB44BFF6 (modification 3, 3395 bytes of GLSL) in 1.3 ms
+[2026-10-26 18:44:04.789] [info] [gpu] [t4208] GLES: linked program VS DD881E5FDA628D88 + PS 46AA46E4EB44BFF6 in 0.3 ms
+[2026-10-26 18:44:04.789] [info] [gpu] [t4208] GLES: resolve target 0E242000 1280x640
+[2026-10-26 18:44:04.791] [info] [gpu] [t4208] GLES: compiled PS C60F811D2CD5F211 (modification 3, 3127 bytes of GLSL) in 1.3 ms
+[2026-10-26 18:44:04.791] [info] [gpu] [t4208] GLES: linked program VS 3DDE552C3BDAE2BF + PS C60F811D2CD5F211 in 0.2 ms
+[2026-10-26 18:44:09.849] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:09.850] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:09.998] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:09.998] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:10.025] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:10.026] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:10.043] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:10.044] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:10.850] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:10.851] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:10.936] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:10.937] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:11.137] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:11.138] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:19.482] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:19.548] [error] [krnl] [t25456] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:19.615] [info] [gpu] [t4208] GLES: resolve target 126EF000 1280x736
+[2026-10-26 18:44:19.650] [info] [gpu] [t4208] GLES: compiled VS D5E12A97B3A84881 (modification 1, 2822 bytes of GLSL) in 1.3 ms
+[2026-10-26 18:44:19.651] [info] [gpu] [t4208] GLES: compiled PS A0B5089C468B8CE8 (modification 1, 4274 bytes of GLSL) in 1.5 ms
+[2026-10-26 18:44:19.651] [info] [gpu] [t4208] GLES: linked program VS D5E12A97B3A84881 + PS A0B5089C468B8CE8 in 0.2 ms
+[2026-10-26 18:44:20.679] [info] [gpu] [t4208] GLES: swap 600: 35150 draws, 37176 skipped, 9823 resolves since the last report; 11 render targets, 9 resolve targets, 19 textures, 17 programs; frontbuffer 0B000000 resolved; skipped: no target 37176, shader 0, link 0, vertices 0
+[2026-10-26 18:44:20.679] [info] [gpu] [t4208] GLES: time since the last report 20358 ms: translate 2 ms, compile 62 ms (29 shaders), link 7 ms (17 programs), present+swap 0 ms; longest frame 340 ms
+[2026-10-26 18:44:23.282] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:23.348] [error] [krnl] [t25456] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:27.649] [error] [krnl] [t8388] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:27.652] [info] [gpu] [t4208] GLES: compiled VS 818B92470F80833E (modification 1, 4961 bytes of GLSL) in 2.2 ms
+[2026-10-26 18:44:27.655] [info] [gpu] [t4208] GLES: compiled PS 1C5B744F4C81F9EB (modification 1, 5688 bytes of GLSL) in 2.8 ms
+[2026-10-26 18:44:27.655] [info] [gpu] [t4208] GLES: linked program VS 818B92470F80833E + PS 1C5B744F4C81F9EB in 0.3 ms
+[2026-10-26 18:44:27.714] [error] [krnl] [t25456] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-10-26 18:44:40.699] [info] [gpu] [t4208] GLES: swap 1200: 23258 draws, 43200 skipped, 15419 resolves since the last report; 11 render targets, 9 resolve targets, 37 textures, 18 programs; frontbuffer 0B000000 resolved; skipped: no target 43200, shader 0, link 0, vertices 0
+[2026-10-26 18:44:40.699] [info] [gpu] [t4208] GLES: time since the last report 20019 ms: translate 0 ms, compile 5 ms (2 shaders), link 0 ms (1 programs), present+swap 0 ms; longest frame 83 ms

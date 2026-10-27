@@ -49,7 +49,13 @@ target_compile_options(storm2_code PRIVATE
 
 add_executable(storm2_vita src/main_vita.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../common/vita_math_compat.c)
-target_link_options(storm2_vita PRIVATE -Wl,--gc-sections)
+# __sce_headroom (vitasdk armvita.x): free space between the code and data
+# segments. vita-elf-create appends the module info and import tables (~3.6
+# KiB here) after the code segment; the data segment only starts at the next
+# 64 KiB boundary, so when the code ends close to it the conversion fails with
+# "Cannot allocate N bytes for SCE data at end of segment" and then crashes
+# (0xC0000374) on its unchecked error path. See docs/bugs.md.
+target_link_options(storm2_vita PRIVATE -Wl,--gc-sections -Wl,--defsym,__sce_headroom=0x4000)
 target_link_libraries(storm2_vita PRIVATE
   storm2_code rexgpu_gles_vita rexgpu_null_vita rexaudio_vita rexinput_vita rexruntime_vita
   rexcore_vita ${REX_VITA_GLES_LIBS} ${REX_VITA_SYSTEM_LIBS})

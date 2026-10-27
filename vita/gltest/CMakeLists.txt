@@ -17,8 +17,9 @@ target_link_libraries(gltest PRIVATE
   vitaGL vitashark SceShaccCgExt mathneon taihen_stub SceShaccCg_stub
   SceKernelDmacMgr_stub SceGxm_stub SceDisplay_stub SceAppMgr_stub SceCommonDialog_stub
   SceIme_stub SceSysmodule_stub SceCtrl_stub SceIofilemgr_stub SceLibKernel_stub
-  SceKernelThreadMgr_stub SceProcessmgr_stub SceSysmem_stub m)
+  SceKernelThreadMgr_stub SceProcessmgr_stub SceSysmem_stub m pthread)
 vita_create_self(eboot.bin gltest)
+set(VITA_MKSFOEX_FLAGS "-d ATTRIBUTE2=12")
 vita_create_vpk(rexglue_gltest.vpk RXGT00007 eboot.bin
   VERSION "01.00"
   NAME "ReXGlue GL Test")
