@@ -1,0 +1,11 @@
+PC (x64), 2026-10-27. Etapa H1, depois da versao nativa de sub_82599010 (port fdeaf5a). Mesma
+entrada (menu_start.txt), perfil da thread de audio F80000B0 por 25 s no menu
+(perfil_audio_menu.csv).
+
+- CPU da thread de audio: 10,1% de um nucleo (antes, docs/logs/H1_pc_audio: 19,7%).
+- Amostras: sub_82599010 (agora o gancho com a versao nativa) 4,6%; sub_8281E500 0,9% (antes
+  4,5%); o resto espalhado, nenhuma funcao acima de ~0,5%.
+- sub_8281E500 caiu sem ter mudado (nem quem a chama): quase todas as amostras atribuidas a ela
+  antes eram de codigo do host que serve o sub_82599010 recompilado (o perfilador da a cada
+  amostra a funcao do convidado com o maior inicio abaixo do endereco; um auxiliar do host fora da
+  tabela de despacho, como a emulacao do fmadds, cai na funcao vizinha). Nao precisa ser reescrita.
