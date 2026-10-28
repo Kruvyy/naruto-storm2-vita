@@ -47,9 +47,29 @@ target_compile_options(storm2_code PRIVATE
   ${STORM2_OPT_LIST} -fwrapv
   -Wno-unused-parameter -Wno-unused-variable -Wno-unused-label -Wno-unused-but-set-variable)
 
+# Native versions of hot guest functions (scripts/ppc_to_native.py), made from
+# the generated code at build time into the build directory (derived from the
+# game: never committed). Used by storm2/src/storm2_audio_native.cpp.
+find_package(Python3 COMPONENTS Interpreter REQUIRED)
+set(STORM2_NATIVE_FUNCS sub_82599010)
+set(STORM2_NATIVE_DIR ${CMAKE_CURRENT_BINARY_DIR}/generated_native)
+set(STORM2_NATIVE_INCS)
+foreach(func ${STORM2_NATIVE_FUNCS})
+  add_custom_command(
+    OUTPUT ${STORM2_NATIVE_DIR}/${func}.inc
+    COMMAND ${Python3_EXECUTABLE} -I ${CMAKE_CURRENT_LIST_DIR}/../../scripts/ppc_to_native.py
+            --gen-dir ${STORM2_GEN_DIR} --func ${func} --out ${STORM2_NATIVE_DIR}/${func}.inc
+    DEPENDS ${CMAKE_CURRENT_LIST_DIR}/../../scripts/ppc_to_native.py ${STORM2_GEN_DIR}/storm2_init.cpp
+    COMMENT "Native version of ${func}")
+  list(APPEND STORM2_NATIVE_INCS ${STORM2_NATIVE_DIR}/${func}.inc)
+endforeach()
+
 add_executable(storm2_vita src/main_vita.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_movies.cpp
+  ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_audio_native.cpp
+  ${STORM2_NATIVE_INCS}
   ${CMAKE_CURRENT_LIST_DIR}/../common/vita_math_compat.c)
+target_include_directories(storm2_vita PRIVATE ${STORM2_NATIVE_DIR})
 # __sce_headroom (vitasdk armvita.x): free space between the code and data
 # segments. vita-elf-create appends the module info and import tables (~3.6
 # KiB here) after the code segment; the data segment only starts at the next

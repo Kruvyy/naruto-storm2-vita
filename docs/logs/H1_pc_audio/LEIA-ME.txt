@@ -1,0 +1,19 @@
+PC (x64), 2026-10-27. Etapa H1: CPU do jogo, motor de audio. Entrada reproduzida de
+docs/logs/G1k_pc_menu/menu_start.txt (menu a partir do quadro ~1450).
+
+- H1_pc_audio: execucao de 120 s; thread_insns.csv com as instrucoes por thread;
+  perfil_audio_menu.csv = profile_guest_thread.ps1 -Thread F80000B0 (25 s no menu): ~20% de um
+  nucleo, ~82% esperando; sub_82599010 ~50% e sub_8281E500 ~28% do tempo ocupado.
+- H1_pc_check5: comparacao recompilado x nativo de sub_82599010 em toda chamada
+  (--storm2_native_audio_check=true): 17.500 chamadas, 45 com diferencas.
+- H1_pc_check6: o mesmo com a medida em floats >= 1e-6: 18.500 chamadas, 50 com diferencas, 7
+  palavras diferentes na faixa audivel.
+- H1_pc_check_self: nativo x nativo (--storm2_native_audio_check_self=true): 22 chamadas com
+  diferencas nos mesmos campos (contador em +0x3B224 e um float em +0x38DEC etc.), que outra thread
+  escreve durante a comparacao.
+- H1_pc_time_recomp / H1_pc_time_native: tempo por chamada com --storm2_native_audio_stats=10:
+  176-184 us (recompilado) x 61-63 us (nativo).
+
+Execucoes descartadas: as quatro primeiras comparacoes tinham erros do proprio teste (buffer de
+entrada fora da comparacao; objeto maior que a regiao salva; r4 e r5 iguais restaurados antes da
+copia), corrigidos no codigo.

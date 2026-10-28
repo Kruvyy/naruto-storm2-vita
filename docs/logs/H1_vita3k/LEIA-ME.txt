@@ -1,0 +1,11 @@
+Vita3K (emulador, nao e o console), 2026-10-27. Etapa H1: sub_82599010 recompilado x nativo,
+120 s desde o inicio (tela de titulo), storm2_native_audio_stats = 10.
+
+- storm2_recompilado.log / storm2_stats_recompilado.log: 1124-1657 us por chamada, 2436-3229
+  chamadas a cada 10 s (36-41% de um nucleo do emulador).
+- storm2_nativo.log / storm2_stats_nativo.log: 314-380 us por chamada (numa primeira execucao
+  nativa, nao guardada, 4320-4976 chamadas a cada 10 s).
+- Blocos de audio por segundo (coluna audio= do stats): recompilado 56-122/s, nativo 87-158/s
+  (tempo real 187,5/s).
+- Quadros/s do jogo: variam mais entre execucoes do que entre as versoes (nao contam como ganho).
+- Depois dos testes o storm2.toml do Vita3K voltou a ficar sem configuracoes de teste.
