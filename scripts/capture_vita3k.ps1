@@ -2,7 +2,9 @@
 # para ver o que o renderizador GLES mostra no emulador.
 #
 # Uso: .\scripts\capture_vita3k.ps1 -Saida storm2\captures\vita3k\shot.png
-param([Parameter(Mandatory)] [string] $Saida, [string] $Titulo = 'FPS')
+#      -Exe <caminho do Vita3K.exe>: so o processo desse executavel (outro Vita3K
+#      aberto pelo usuario fica de fora).
+param([Parameter(Mandatory)] [string] $Saida, [string] $Titulo = 'FPS', [string] $Exe = '')
 
 Add-Type -ReferencedAssemblies System.Drawing -TypeDefinition @'
 using System;
@@ -51,7 +53,9 @@ public static class V3kCap {
 }
 '@
 
-$p = Get-Process Vita3K -ErrorAction SilentlyContinue | Select-Object -First 1
+$p = Get-Process Vita3K -ErrorAction SilentlyContinue |
+  Where-Object { -not $Exe -or ($_.Path -and $_.Path -ieq [IO.Path]::GetFullPath($Exe)) } |
+  Select-Object -First 1
 if (-not $p) { throw 'Vita3K nao esta rodando' }
 $h = [V3kCap]::Find([uint32]$p.Id, $Titulo)
 if ($h -eq [IntPtr]::Zero) { throw 'janela do Vita3K nao encontrada' }

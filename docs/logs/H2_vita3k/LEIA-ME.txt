@@ -1,0 +1,32 @@
+Vita3K (emulador, NAO o console), 2026-10-28. Etapa G1n: menu de modos, entrada sintetica
+menu_start.txt com input_replay_stretch = 1.6. Capturas em storm2/captures/vita3k/<execucao>_N.png
+(fora do git). A partir de h2_v3k_alpha os testes rodam num sistema de arquivos isolado (copia do app,
+dos saves e do storm2.toml; dados do jogo e firmware por juncao), sem tocar no Vita3K do usuario.
+
+storm2.log / storm2_stats.log: a execucao final (h2_v3k_final, padroes da versao commitada).
+storm2_npotdxt_hang.log: a execucao que parou no quadro 1618 decodificando todo DXT nao potencia de 2.
+
+Execucoes (resultado na captura):
+- h2_v3k_menu (antes da G1n): texto da placa ausente, Naruto borrado.
+- h2_v3k_keep (force load/store da profundidade dos framebuffers): Naruto nitido, texto ausente.
+- h2_v3k_npotdxt (todo DXT nao potencia de 2 decodificado na CPU): uma execucao parou no quadro 1618
+  (titulo); a seguinte pediu 12,9 MB ao heap do newlib e falhou. A opcao virou limitada por tamanho.
+- h2_v3k_npot1m: capturas pegaram a janela de outro Vita3K (do usuario): invalidas.
+- h2_v3k_alpha (gles_debug_ps_patch=alpha no PS E8EAE3 do texto): nenhuma forma de letra na placa,
+  ou seja, os desenhos do texto nao chegam a pixel nenhum.
+- h2_v3k_nodepth (sem teste de profundidade): o texto aparece.
+- h2_v3k_bias (polygon offset -4096 unidades / -4 no texto): texto ainda ausente.
+- h2_v3k_noshaderdepth (pula o desenho de restauracao): texto aparece, Naruto borrado.
+- h2_v3k_unbound (restauracao sem o buffer de profundidade): texto aparece, Naruto borrado.
+- h2_v3k_rekeep (flags conferidas a cada bind): nunca encontradas desligadas (0 por 600 quadros);
+  a execucao parou no quadro 2674 (captura preta).
+- h2_v3k_maskbias / h2_v3k_maskalways (restauracao sem profundidade + bias -4096 ou funcao "sempre"
+  na passada de mascara, PS A4A965): Naruto ainda borrado.
+- h2_v3k_showmask (restauracao sem profundidade + gles_debug_show_resolve=0D4FA000:0): a copia feita
+  depois da passada de mascara nao tem a silhueta (no PC tem): a cor dessa passada se perde.
+- h2_v3k_flush (comecar cada cena com o teste de profundidade desligado, via glFlush): texto aparece,
+  Naruto borrado; removido.
+- h2_v3k_split (restauracao com profundidade + cena dividida logo depois): Naruto nitido, texto
+  ausente; removido.
+- h2_v3k_final (versao commitada: restauracao com profundidade, profundidade mantida): Naruto nitido,
+  texto da placa ausente (bug 57 em aberto).

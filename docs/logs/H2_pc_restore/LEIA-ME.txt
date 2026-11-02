@@ -1,0 +1,31 @@
+PC (x64), backend GLES, 2026-10-27/28. Etapa G1n (logs H2_*): texto da placa ("Aventura Definitiva")
+e Naruto borrado no menu de modos. Todas as execucoes usam a entrada sintetica
+docs/logs/G1k_pc_menu/menu_start.txt (START no quadro 1000) e --storm2_skip_movies=true. Os PNG ficam
+em storm2/gles_frames/<execucao> (fora do git, derivados do jogo).
+
+- H2_d3d12_menu: referencia com o backend D3D12 (capturas em storm2/captures/H2_d3d12_menu).
+- H2_pc_trace, H2_pc_trace2: --gles_trace_swap=2000, um quadro do menu (desenhos, estado de
+  profundidade, resolves). Mostra o padrao: resolve da profundidade, preenchimento so de profundidade
+  com funcao "sempre" (desenho 93), restauracao por oDepth lendo a copia (desenho 94), texto (95-103).
+- H2_pc_polyoffset: polygon offset do Xenos implementado; o menu nao usa (0/0 no traco).
+- H2_pc_bias: --gles_debug_depth_bias=-16 em todos os desenhos (sem valor como teste: desloca todos).
+- H2_pc_nodepth: --gles_debug_no_depth_test=true.
+- H2_pc_skip93, H2_pc_skip94, H2_pc_skip9394, H2_pc_skip_board: --gles_debug_skip_draws com 93, 94,
+  93+94 e 104-108; bissecao em volta do texto que levou ao padrao de restauracao.
+- H2_pc_restore: com a emulacao da restauracao (gles_depth_restore): texto igual ao D3D12.
+- H2_pc_nofloat: --gles_debug_no_float_targets=true: imagem certa (alvos float nao sao a diferenca do
+  Vita).
+- H2_pc_npotdxt: decodificador de DXT na CPU para todos os tamanhos nao potencia de 2 (opcao antiga
+  gles_decode_npot_dxt; hoje gles_decode_npot_dxt_kib): 1,1-1,5% dos pixels diferentes de H2_pc_restore,
+  o ruido entre execucoes (legenda rolando); a placa sai certa.
+- H2_pc_floatdepth: --gles_debug_float_depth=true --gles_trace_swap=2000: profundidade float de 32 bits
+  como a do vitaGL; o texto aparece. O traco tem os formatos dos atributos: texto e placa usam os
+  mesmos (57, 32, 6, 31).
+- H2_pc_biasback: profundidade float + --gles_debug_depth_bias_filter=E8EAE3 (empurra so o texto para
+  tras). Tres execucoes na mesma pasta; ficou a ultima (100000 unidades: o texto some). Com 64 unidades
+  o texto aparece: ele depende da profundidade da placa, com margem entre ~4e-6 e ~6e-3.
+- H2_pc_unbound: restauracao desenhada sem o buffer de profundidade (gles_shader_depth_unbound,
+  entao ligado): 0,0% dos pixels diferentes de H2_pc_restore.
+- H2_pc_showmask: --gles_debug_show_resolve=0D4FA000:0 (a copia feita logo depois da passada de mascara
+  do personagem): silhueta do Naruto, cortada pelo corrimao, sobre fundo uniforme.
+- H2_pc_final: versao commitada (padroes): 1,1-1,4% dos pixels diferentes de H2_pc_restore (ruido).
