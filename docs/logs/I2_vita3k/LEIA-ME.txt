@@ -1,0 +1,31 @@
+I2 - desempenho do menu no Vita3K (emulador, não o console)
+
+Todas as execuções: sistema de arquivos isolado, renderizador Vulkan do Vita3K,
+entrada sintética menu_start_repeat.txt (docs/logs/I1_inputs), 5200 quadros,
+storm2.toml de teste com gles_report_interval = 300 e gles_detailed_timers = true.
+O PC estava com outros programas abertos (Chrome, Discord, overlay da Epic):
+o tempo por 300 quadros varia ~20% entre trechos da mesma execução.
+
+1_antes.log                    rexglue 92b69f2 (antes desta etapa)
+2_variantes_troca_dupla.log    gles_vita_blend_variants, com o defeito da troca
+                               dupla de programa (o programa base era ligado e
+                               depois a variante: 113 mil trocas por 300 quadros)
+3_variantes_amostra.log        variantes corrigidas + gles_vertex_sampled_check
+3_variantes_amostra_stats.log  storm2_stats.log da execução 3
+
+Por 300 quadros, trecho estável do menu (trocas 4200-5400):
+                               1 antes      2 (defeito)   3 final
+refações do programa de frag.  3000         0             0
+trocas de programa             27900        ~113000       28800
+bytes de vértices com hash     1121 MiB     1121 MiB      818 MiB
+tempo do hash de vértices      ~2,0 s       ~1,8 s        ~1,4-1,6 s
+tempo por 300 quadros          19,1-24,6 s  18,6-27,9 s   19,5-22,1 s
+
+4_threads_nucleos.log          storm2_threads.log com a thread de hardware (hw,
+                               núcleo do Vita = hw/2) e o handle de cada thread;
+                               no Vita3K o tempo de CPU por thread sai 0
+
+Leitura: as duas mudanças cortam trabalho de CPU (contado), mas no Vita3K a
+diferença de quadros/s fica dentro do ruído. Na execução 3 o trecho das trocas
+2100-3900 ficou ~2x mais lento em tudo (texturas, vértices e chamadas GL ao
+mesmo tempo), o que aponta para carga do PC, não para o código.

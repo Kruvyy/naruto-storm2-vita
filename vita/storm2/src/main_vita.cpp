@@ -225,6 +225,8 @@ void ThreadReport(rex::Runtime* runtime, uint64_t now_us, uint64_t interval_us,
     int core;
     int priority;
     uint64_t run_us;
+    int guest_cpu;      // guest hardware thread (0-5) the game asked for
+    uint64_t mask;      // affinity mask in guest hardware threads (two per Vita core)
   };
   std::vector<Row> rows;
   std::map<SceUID, uint64_t> run;
@@ -245,9 +247,14 @@ void ThreadReport(rex::Runtime* runtime, uint64_t now_us, uint64_t interval_us,
     run[uid] = run_us;
     auto it = last_run.find(uid);
     const uint64_t delta = it != last_run.end() && run_us >= it->second ? run_us - it->second : 0;
-    rows.push_back({xthread->name().empty() ? std::string(info.name) : xthread->name(),
+    // The thread's name carries the guest handle (F8000068...), as in the PC's
+    // thread_insns.csv ("GPU Commands (F8000014)").
+    rows.push_back({thread->name().empty()
+                        ? fmt::format("{} ({:08X})", info.name, uint32_t(xthread->handle()))
+                        : thread->name(),
                     xthread->thread_id(), double(delta) / double(interval_us), info.lastExecutedCpuId,
-                    info.currentPriority, run_us});
+                    info.currentPriority, run_us, int(xthread->active_cpu()),
+                    thread->affinity_mask()});
   }
   last_run = std::move(run);
   std::sort(rows.begin(), rows.end(), [](const Row& a, const Row& b) { return a.share > b.share; });
@@ -260,12 +267,16 @@ void ThreadReport(rex::Runtime* runtime, uint64_t now_us, uint64_t interval_us,
   std::string text =
       fmt::format("t={}s threads={} total={:.0f}% of one core (run time since start {:.1f}s)\n",
                   now_us / 1000000, rows.size(), total * 100, double(total_run_us) / 1e6);
+  // Vita3K reports no run time: then every thread is listed, for the guest
+  // hardware thread and the affinity mask (which Vita core it is held to).
+  const bool no_run_time = total_run_us == 0;
   for (const Row& row : rows) {
-    if (row.share < 0.005) {
+    if (row.share < 0.005 && !no_run_time) {
       continue;
     }
-    text += fmt::format("  {:5.1f}%  core {}  prio {:3}  {:08X}  {}\n", row.share * 100, row.core,
-                        row.priority, row.guest_id, row.name);
+    text += fmt::format("  {:5.1f}%  core {}  prio {:3}  hw {} mask {:02X}  {:08X}  {}\n",
+                        row.share * 100, row.core, row.priority, row.guest_cpu,
+                        unsigned(row.mask), row.guest_id, row.name);
   }
   SceUID fd = sceIoOpen(kThreadsPath, SCE_O_WRONLY | SCE_O_CREAT | SCE_O_APPEND, 0666);
   if (fd >= 0) {
