@@ -1,0 +1,1070 @@
+[1965-07-20 03:50:18.724] [info] [core] [t3987738935] sceKernelDelayThread: 0 us -> 0 us, 100 us -> 1063 us, 1000 us -> 1070 us
+[1965-07-20 03:50:18.739] [info] [core] [t3987738935] Storm 2 (PS Vita, headless): game in ux0:data/storm2port/game, xex 9875456 bytes
+[1965-07-20 03:50:18.743] [info] [core] [t3987738935] GPU: GLES renderer (vitaGL) (vita_gpu=auto, ur0:data/external/libshacccg.suprx present)
+[1965-07-20 03:50:18.746] [info] [gpu] [t3987738935] GLES GPU backend (OpenGL ES 2 subset)
+[1965-07-20 03:50:18.750] [info] [core] [t3987738935] PS Vita: hardware exceptions cannot be caught; a guest fault ends the program
+[1965-07-20 03:50:18.766] [info] [sys] [t3987738935] Guest memory: software MMU (4 KiB page table at 0x0000000080800000, 4.5 MiB of tables); each guest region gets its own host block
+[1965-07-20 03:50:18.806] [warning] [core] [t3987738935] PS Vita: host faults are not delivered to the app; exception handlers are kept but never called (a fault ends the program with a crash dump)
+[1965-07-20 03:50:19.060] [info] [apu] [t3987738935] PS Vita audio: guest audio runs at real time (256 samples at 48 kHz, XMA decoded), output is discarded (no sound yet)
+[1965-07-20 03:50:27.629] [info] [gpu] [t3987738935] GPU: command processor thread priority above normal
+[1965-07-20 03:50:27.666] [info] [core] [t3987738935] Function table initialized for module: code=821C0000-82836294, image=82000000-82B30000
+[1965-07-20 03:50:28.032] [info] [core] [t3987738935] Game started
+[1965-07-20 03:50:28.782] [info] [gpu] [t910821628] GLES backend on vitaGL: RAM pool 24 MiB, CDRAM pool 100 MiB, phycont pool 16 MiB
+[1965-07-20 03:50:28.838] [warning] [sys] [t1294523948] GetProcAddressByOrdinal: function XamPartyGetUserList (0AFF) in xam - no native implementation
+[1965-07-20 03:50:28.862] [warning] [krnl] [t1294523948] ERROR: XexGetProcedureAddress ordinal 2815 (0xAFF) in 'xam' not found!
+[1965-07-20 03:50:28.864] [warning] [sys] [t1294523948] GetProcAddressByOrdinal: function XamPartySendGameInvites (0B00) in xam - no native implementation
+[1965-07-20 03:50:28.865] [warning] [krnl] [t1294523948] ERROR: XexGetProcedureAddress ordinal 2816 (0xB00) in 'xam' not found!
+[1965-07-20 03:50:28.865] [warning] [sys] [t1294523948] GetProcAddressByOrdinal: function XamPartySetCustomData (0B0B) in xam - no native implementation
+[1965-07-20 03:50:28.865] [warning] [krnl] [t1294523948] ERROR: XexGetProcedureAddress ordinal 2827 (0xB0B) in 'xam' not found!
+[1965-07-20 03:50:28.866] [warning] [sys] [t1294523948] GetProcAddressByOrdinal: function XamPartyGetBandwidth (0B10) in xam - no native implementation
+[1965-07-20 03:50:28.866] [warning] [krnl] [t1294523948] ERROR: XexGetProcedureAddress ordinal 2832 (0xB10) in 'xam' not found!
+[1965-07-20 03:50:29.275] [warning] [sys] [t1294523948] Software MMU: physical memory at physical address 0B000000 (272.0 MiB) limited to 184.0 MiB of real memory
+[1965-07-20 03:50:29.592] [info] [gpu] [t1294523948] SetInterruptCallback(826A5998, 40005080)
+[1965-07-20 03:50:31.296] [info] [gpu] [t910821628] GLES: render target depth base 0 pitch 640 format 0 msaa 2: 1280x736
+[1965-07-20 03:50:31.304] [error] [gpu] [t910821628] GLES: GL_INVALID_ENUM after creating a render target (swap 0); vitaGL free/total MiB: VRAM 2138.1/100.0, RAM 2138.1/24.0, PHYCONT 2138.1/16.0, newlib 0.0/48.0
+[1965-07-20 03:50:31.307] [info] [gpu] [t910821628] GLES: scratch color attachment 16x16 for depth-only passes
+[1965-07-20 03:50:31.310] [info] [gpu] [t910821628] GLES: framebuffer 16x16 with depth/stencil (1 render target framebuffers)
+[1965-07-20 03:50:31.335] [info] [gpu] [t910821628] GLES: compiled VS 1E6883FCCDE1F688 (modification 0, 3001 bytes of GLSL) in 0.4 ms
+[1965-07-20 03:50:31.361] [info] [gpu] [t910821628] GLES: linked program VS 1E6883FCCDE1F688 + PS 0000000000000000 in 11.6 ms (shader cache)
+[1965-07-20 03:50:31.366] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc -1 (-1 kept) pc -1 (-1 kept) vte 2053231632 ndc 2053231616/2053231600 atest -1, 0 bools, 0 loops, 0 textures; 4 active uniforms
+[1965-07-20 03:50:31.407] [info] [gpu] [t910821628] GLES: render target color base 0 pitch 1280 format 0 msaa 0: 1280x736
+[1965-07-20 03:50:31.410] [info] [gpu] [t910821628] GLES: resolve target 0B000000 1280x736
+[1965-07-20 03:50:31.413] [info] [gpu] [t910821628] GLES: resolve framebuffer 1280x736 #0
+[1965-07-20 03:50:31.446] [info] [gpu] [t910821628] GLES: framebuffer 16x16 keeps its depth/stencil between scenes
+[1965-07-20 03:50:31.448] [info] [gpu] [t910821628] GLES: render target depth base 640 pitch 640 format 0 msaa 2: 1280x736
+[1965-07-20 03:50:31.448] [info] [gpu] [t910821628] GLES: framebuffer 16x16 with depth/stencil (2 render target framebuffers)
+[1965-07-20 03:50:31.508] [info] [gpu] [t910821628] GLES: framebuffer 16x16 keeps its depth/stencil between scenes
+[1965-07-20 03:50:31.734] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:31.842] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:32.235] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:32.259] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:32.480] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:34.163] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:34.326] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:34.340] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:34.524] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:34.924] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:35.059] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:35.259] [info] [core] [t1294523948] input replay: 42 events for 1 user(s) from ux0:data/storm2port/menu_start_repeat.txt (stretch 1)
+[1965-07-20 03:50:35.303] [info] [gpu] [t910821628] GLES: resolve target 0CB9A000 1280x640
+[1965-07-20 03:50:35.303] [info] [gpu] [t910821628] GLES: resolve framebuffer 1280x640 #0
+[1965-07-20 03:50:35.307] [info] [gpu] [t910821628] GLES: render target color base 640 pitch 1280 format 0 msaa 0: 1280x736
+[1965-07-20 03:50:35.309] [info] [gpu] [t910821628] GLES: resolve target 0CEBA000 1280x640
+[1965-07-20 03:50:35.309] [info] [gpu] [t910821628] GLES: resolve framebuffer 1280x640 #1
+[1965-07-20 03:50:35.320] [info] [gpu] [t910821628] GLES: framebuffer 1280x736 (3 render target framebuffers)
+[1965-07-20 03:50:35.325] [info] [gpu] [t910821628] GLES: compiled VS 4666C5A9092B03DD (modification 3, 4346 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:35.331] [info] [gpu] [t910821628] GLES: compiled PS 7ABDFEFBCADB4BF9 (modification 3, 2946 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:35.334] [info] [gpu] [t910821628] GLES: linked program VS 4666C5A9092B03DD + PS 7ABDFEFBCADB4BF9 in 2.7 ms (shader cache)
+[1965-07-20 03:50:35.337] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051826328 (5 kept) pc -1 (-1 kept) vte 2051826312 ndc 2051826296/2051826280 atest 2051794824, 0 bools, 0 loops, 1 textures; 9 active uniforms
+[1965-07-20 03:50:35.346] [info] [gpu] [t910821628] GLES: vertex stream ring 4 x 4 MiB
+[1965-07-20 03:50:35.393] [info] [gpu] [t910821628] GLES: render target depth base 1280 pitch 640 format 0 msaa 2: 1280x736
+[1965-07-20 03:50:35.393] [info] [gpu] [t910821628] GLES: framebuffer 1280x736 with depth/stencil (4 render target framebuffers)
+[1965-07-20 03:50:35.395] [info] [gpu] [t910821628] GLES: compiled VS 1E6883FCCDE1F688 (modification 1, 3026 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:35.396] [info] [gpu] [t910821628] GLES: compiled PS A4A965C189287B99 (modification 1, 2628 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:35.398] [info] [gpu] [t910821628] GLES: linked program VS 1E6883FCCDE1F688 + PS A4A965C189287B99 in 1.3 ms (shader cache)
+[1965-07-20 03:50:35.398] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc -1 (-1 kept) pc -1 (-1 kept) vte 2051774376 ndc 2051774360/2051774344 atest 2051750352, 0 bools, 0 loops, 0 textures; 5 active uniforms
+[1965-07-20 03:50:35.446] [info] [gpu] [t910821628] GLES: framebuffer 1280x736 keeps its depth/stencil between scenes
+[1965-07-20 03:50:36.100] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:36.113] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:36.756] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:36.769] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:36.933] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:36.943] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:37.589] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:37.600] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:37.888] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:37.900] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:38.032] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:38.044] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:38.161] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:38.175] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:39.232] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:39.244] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:39.415] [info] [krnl] [t1476103283] sync stats: 17677 calls in 10 s (165 keys)
+[1965-07-20 03:50:39.430] [info] [krnl] [t1476103283]            Wait thread F8000068 callers 825D2A3C <- 825CE554 object F8000060: 2853 calls, 8 blocked, 18.6 us avg
+[1965-07-20 03:50:39.431] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 8267C16C <- 8264CD94 object FFFFD8F0: 2069 calls, 2069 blocked, 1649.9 us avg
+[1965-07-20 03:50:39.431] [info] [krnl] [t1476103283]           Delay thread F80000DC callers 823F66A8 <- 8264CD94 object FFFFB1E0: 1720 calls, 1720 blocked, 2517.6 us avg
+[1965-07-20 03:50:39.431] [info] [krnl] [t1476103283]           Delay thread F80000E0 callers 825F7408 <- 826978F4 object FFFF3CB0: 750 calls, 750 blocked, 5729.9 us avg
+[1965-07-20 03:50:39.431] [info] [krnl] [t1476103283]           Delay thread F80000E8 callers 825F751C <- 826978F4 object FFFF3CB0: 750 calls, 750 blocked, 5742.0 us avg
+[1965-07-20 03:50:39.432] [info] [krnl] [t1476103283]        SetEvent thread F800001C callers 826AE5B0 <- 826A5A24 object F8000050: 573 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:39.432] [info] [krnl] [t1476103283]            Wait thread F800005C callers 825D5AD0 <- 825D015C object F8000054: 573 calls, 3 blocked, 11.8 us avg
+[1965-07-20 03:50:39.433] [info] [krnl] [t1476103283]        SetEvent thread F800005C callers 825D5AE4 <- 825D015C object F8000058: 573 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:39.433] [info] [krnl] [t1476103283]            Wait thread F800005C callers 825D01A4 <- 825CE554 object F8000050: 572 calls, 572 blocked, 16470.1 us avg
+[1965-07-20 03:50:39.433] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 82663844 <- 826564D8 object FFFFD8F0: 516 calls, 516 blocked, 1605.4 us avg
+[1965-07-20 03:50:39.433] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 82663844 <- 8261AC7C object FFFFD8F0: 411 calls, 411 blocked, 1676.0 us avg
+[1965-07-20 03:50:39.433] [info] [krnl] [t1476103283]            Wait thread F80000A8 callers 8269FFA0 <- 8269E684 object F800009C: 400 calls, 344 blocked, 18341.4 us avg
+[1965-07-20 03:50:39.433] [info] [krnl] [t1476103283]        SetEvent thread F8000094 callers 8269EB88 <- 826A27AC object F800009C: 373 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:39.433] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D031C <- 825D0448 object F8000054: 356 calls, 1 blocked, 7.7 us avg
+[1965-07-20 03:50:39.433] [info] [krnl] [t1476103283]        SetEvent thread F80000A8 callers 8269E684 <- 00000000 object F8000134: 322 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:39.433] [info] [krnl] [t1476103283]        SetEvent thread F80000A8 callers 8269FF60 <- 8269E684 object F8000128: 310 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:39.434] [info] [krnl] [t1476103283]            Wait thread F8000094 callers 826A27AC <- 825634C8 object F8000134: 310 calls, 309 blocked, 2171.7 us avg
+[1965-07-20 03:50:39.434] [info] [krnl] [t1476103283]           Delay thread F800011C callers 8267C378 <- 8264CD94 object FFFFD8F0: 279 calls, 279 blocked, 1595.3 us avg
+[1965-07-20 03:50:39.434] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D039C <- 825D0470 object F8000054: 255 calls, 0 blocked, 9.5 us avg
+[1965-07-20 03:50:39.434] [info] [krnl] [t1476103283]            Wait thread F8000094 callers 825CE9FC <- 825CE554 object F8000090: 253 calls, 253 blocked, 27842.7 us avg
+[1965-07-20 03:50:39.434] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 82663844 <- 8266E95C object FFFFD8F0: 231 calls, 231 blocked, 1546.2 us avg
+[1965-07-20 03:50:39.434] [info] [krnl] [t1476103283]   SignalAndWait thread F8000028 callers 825D0350 <- 825D0448 object F8000058: 226 calls, 114 blocked, 6379.4 us avg
+[1965-07-20 03:50:39.434] [info] [krnl] [t1476103283]           Delay thread F800011C callers 8267C42C <- 8264CD94 object FFFFD8F0: 184 calls, 184 blocked, 1901.4 us avg
+[1965-07-20 03:50:39.434] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 8266384C <- 8261CF40 object FFFFD8F0: 166 calls, 166 blocked, 1797.6 us avg
+[1965-07-20 03:50:39.434] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D0424 <- 82620BC4 object F8000060: 165 calls, 3 blocked, 20.5 us avg
+[1965-07-20 03:50:39.435] [info] [krnl] [t1476103283]        SetEvent thread F8000068 callers 825D5AE4 <- 825D2A30 object F8000064: 130 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:39.435] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D5AD0 <- 825D04C8 object F8000060: 130 calls, 0 blocked, 4.3 us avg
+[1965-07-20 03:50:39.435] [info] [krnl] [t1476103283]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04B8 object F8000058: 130 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:39.435] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D5AD0 <- 825D04B8 object F8000054: 130 calls, 0 blocked, 4.1 us avg
+[1965-07-20 03:50:39.435] [info] [krnl] [t1476103283]            Wait thread F8000068 callers 825D5AD0 <- 825D2A30 object F8000060: 130 calls, 5 blocked, 47.9 us avg
+[1965-07-20 03:50:39.435] [info] [krnl] [t1476103283]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04C8 object F8000064: 130 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:39.435] [info] [krnl] [t1476103283]   SignalAndWait thread F8000028 callers 825D03D0 <- 825D0470 object F8000058: 125 calls, 120 blocked, 14425.9 us avg
+[1965-07-20 03:50:39.435] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 8266384C <- 826564D8 object FFFFD8F0: 122 calls, 122 blocked, 1723.9 us avg
+[1965-07-20 03:50:39.435] [info] [krnl] [t1476103283]           Delay thread F8000028 callers 8261D6E4 <- 8261EFA0 object FFFFD8F0: 114 calls, 114 blocked, 1560.7 us avg
+[1965-07-20 03:50:39.435] [info] [krnl] [t1476103283]            Wait thread F800011C callers 825CB628 <- 826737B4 object F800014C: 82 calls, 82 blocked, 5617.6 us avg
+[1965-07-20 03:50:39.435] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D0424 <- 8261D6D8 object F8000060: 54 calls, 1 blocked, 13.5 us avg
+[1965-07-20 03:50:39.436] [info] [krnl] [t1476103283]            Wait thread F8000074 callers 825D63C8 <- 825CE554 object F800006C: 52 calls, 52 blocked, 188319.9 us avg
+[1965-07-20 03:50:39.436] [info] [krnl] [t1476103283]            Wait thread F800011C callers 825CB628 <- 826737B4 object F800013C: 52 calls, 52 blocked, 3646.0 us avg
+[1965-07-20 03:50:39.436] [info] [krnl] [t1476103283]        SetEvent thread F8000074 callers 825D64CC <- 825CE554 object F8000070: 52 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:39.436] [info] [krnl] [t1476103283]        SetEvent thread F80000A8 callers 8269E684 <- 00000000 object F8000128: 50 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:39.449] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:39.459] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:39.653] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:39.665] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:40.195] [info] [gpu] [t910821628] GLES: compiled VS 13B01BEA94678566 (modification 3, 4893 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:40.197] [info] [gpu] [t910821628] GLES: linked program VS 13B01BEA94678566 + PS 7ABDFEFBCADB4BF9 in 1.4 ms (shader cache)
+[1965-07-20 03:50:40.198] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051949688 (5 kept) pc -1 (-1 kept) vte 2051949672 ndc 2051949656/2051949640 atest 2051876320, 0 bools, 0 loops, 1 textures; 9 active uniforms
+[1965-07-20 03:50:40.212] [info] [gpu] [t910821628] GLES: compiled VS 2E015B8427EBD8C5 (modification 1F, 6369 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:40.214] [info] [gpu] [t910821628] GLES: compiled PS E8EAE3AA51F7921E (modification 1F, 4921 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:40.217] [info] [gpu] [t910821628] GLES: linked program VS 2E015B8427EBD8C5 + PS E8EAE3AA51F7921E in 2.2 ms (shader cache)
+[1965-07-20 03:50:40.218] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051527056 (10 kept) pc 2051527144 (1 kept) vte 2051527040 ndc 2051527024/2051527008 atest 2051527096, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:50:41.630] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:41.644] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:42.303] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:42.318] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:42.589] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:42.603] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:42.729] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:42.741] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:42.863] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:42.873] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:42.988] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:42.999] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:43.112] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:43.123] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:43.283] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:43.294] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:43.418] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:43.433] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:43.782] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:43.794] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:43.931] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:43.943] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:44.060] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:44.074] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:44.191] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:44.204] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:44.329] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:44.342] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:44.461] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:44.472] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:44.602] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:44.614] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:44.736] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:44.751] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:44.874] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:44.885] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:45.005] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:45.017] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:45.132] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:45.145] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:45.259] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:45.272] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:45.416] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:45.428] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:45.552] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:45.565] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:45.683] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:45.696] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:45.726] [info] [gpu] [t910821628] GLES: swap 300: 3148 draws, 7176 skipped, 836 resolves since the last report; 5 render targets, 3 resolve targets, 2 textures, 5 programs; frontbuffer 0B000000 resolved; skipped: no target 7176, shader 0, link 0, vertices 0
+[1965-07-20 03:50:45.728] [info] [gpu] [t910821628] GLES: time since the last report 14289 ms: translate 35 ms, compile 0 ms (8 shaders), link 19 ms (5 programs, 5 from the shader cache), present+swap 424 ms; longest frame 1848 ms
+[1965-07-20 03:50:45.729] [info] [gpu] [t910821628] GLES: GPU thread: idle (waiting for the game) 13061 ms, draws 453 ms (textures 0, constants 0, vertices 0, GL draw calls 0; parts off: gles_detailed_timers), resolves 83 ms, present 424 ms, other 269 ms
+[1965-07-20 03:50:45.731] [info] [gpu] [t910821628] GLES:   WAIT_REG_MEM: 3490 sleeps, 4675 ms slept for 3490 ms asked (part of idle)
+[1965-07-20 03:50:45.733] [info] [gpu] [t910821628] GLES:   vertices: glBufferData 0 ms for 0.2 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 0.2 MiB; cache hits/misses: vertex ranges 1991/27, index sets 1838/19; kept: 15 vertex buffers 0.0 MiB, 10 index buffers 0.0 MiB
+[1965-07-20 03:50:45.734] [info] [gpu] [t910821628] GLES:   vertex stream ring: 0.0 MiB written, 27 ranges moved to own buffers, 0 did not fit; 0 checks of static ranges by sample
+[1965-07-20 03:50:45.735] [info] [gpu] [t910821628] GLES:   textures: hashing 0 ms for 11.3 MiB
+[1965-07-20 03:50:45.737] [info] [gpu] [t910821628] GLES:   vertex ranges checked again in the same swap: 119 (0.0 MiB)
+[1965-07-20 03:50:45.738] [info] [gpu] [t910821628] GLES:   GL calls: program switches 1424, uniform uploads 1627 (unchanged, not sent: 22911), state groups sent 7534 (unchanged: 17650), blend changes on a program (vitaGL fragment re-patch) 0
+[1965-07-20 03:50:45.739] [info] [gpu] [t910821628] GLES:   framebuffer changes: 432 to render targets (1288 more keeping their depth/stencil, loaded and stored at each change on vitaGL), 836 to resolve targets, 300 to the display; game draws first after a change 1720, their GL draw calls 0 ms (part of GL draw calls)
+[1965-07-20 03:50:45.744] [info] [gpu] [t910821628] GLES:   GXM calls (all threads): BeginScene 2910 calls 9 ms (max 0.4 ms), EndScene 2910 calls 151 ms (max 92.5 ms), Draw 14084 calls 14 ms (max 0.1 ms), Finish 1 calls 4 ms (max 4.4 ms); EndScene by scene: render target 432 (29 us each), render target with depth kept 1288 (23 us each), resolve 836 (131 us each), display/other 354 (18 us each)
+[1965-07-20 03:50:45.746] [info] [gpu] [t910821628] GLES:   depth: fills held after a depth copy 0, dropped for a restore 0, applied as a clear 0
+[1965-07-20 03:50:45.748] [info] [gpu] [t910821628] GLES memory (MiB): render targets 7.2 (2), resolve targets 9.8 (3), textures 0.1 (2), scratch 0.0, framebuffers 4 + 3 for resolves -> depth/stencil 4.5 (vitaGL estimate); total 21.6
+[1965-07-20 03:50:45.752] [info] [gpu] [t910821628] GLES:   vitaGL pools free (probed, MiB, largest block): VRAM 50.2 (32.0) of 100, RAM 7.4 (4.0) of 24, PHYCONT 15.9 (8.0) of 16
+[1965-07-20 03:50:45.875] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:45.886] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:45.993] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:46.007] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:46.435] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:46.448] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:46.459] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:46.469] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:46.480] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:46.492] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:46.747] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:46.760] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:46.885] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:46.896] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:47.017] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:47.030] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:47.997] [info] [gpu] [t910821628] GLES: render target depth base 0 pitch 1040 format 0 msaa 0: 1040x736
+[1965-07-20 03:50:47.997] [info] [gpu] [t910821628] GLES: framebuffer 16x16 with depth/stencil (5 render target framebuffers)
+[1965-07-20 03:50:47.998] [info] [gpu] [t910821628] GLES: framebuffer 16x16 keeps its depth/stencil between scenes
+[1965-07-20 03:50:48.003] [info] [gpu] [t910821628] GLES: compiled VS 2443876AABAE04D9 (modification 3, 4296 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.017] [info] [gpu] [t910821628] GLES: compiled PS 6D868915601F3596 (modification 3, 23672 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.020] [info] [gpu] [t910821628] GLES: linked program VS 2443876AABAE04D9 + PS 6D868915601F3596 in 2.7 ms (shader cache)
+[1965-07-20 03:50:48.022] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2053104024 (4 kept) pc 2053175408 (1 kept) vte 2053104008 ndc 2053103992/2053103976 atest 2053175296, 0 bools, 0 loops, 3 textures; 16 active uniforms
+[1965-07-20 03:50:48.028] [warning] [gpu] [t910821628] GLES: texture format k_24_8 not supported (black)
+[1965-07-20 03:50:48.032] [info] [gpu] [t910821628] GLES: compiled VS 2A53964AA9F4D66E (modification 1, 4340 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.035] [info] [gpu] [t910821628] GLES: compiled PS A2147ED6ACF52DBF (modification 20001, 9522 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.036] [info] [gpu] [t910821628] GLES: linked program VS 2A53964AA9F4D66E + PS A2147ED6ACF52DBF in 1.2 ms (shader cache)
+[1965-07-20 03:50:48.037] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052631784 (5 kept) pc 2052631872 (12 kept) vte 2052631768 ndc 2052631752/2052631736 atest 2052631824, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:50:48.038] [info] [gpu] [t910821628] GLES: resolve target 0D4FA000 1280x640
+[1965-07-20 03:50:48.040] [info] [gpu] [t910821628] GLES: compiled VS 5C3A02159BE6E884 (modification 3, 5059 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.040] [info] [gpu] [t910821628] GLES: compiled PS 15741DBDE0A6290A (modification 3, 3105 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.042] [info] [gpu] [t910821628] GLES: linked program VS 5C3A02159BE6E884 + PS 15741DBDE0A6290A in 1.7 ms (shader cache)
+[1965-07-20 03:50:48.043] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052569152 (6 kept) pc -1 (-1 kept) vte 2052569136 ndc 2052569120/2052569104 atest 2052569208, 0 bools, 0 loops, 2 textures; 12 active uniforms
+[1965-07-20 03:50:48.044] [info] [gpu] [t910821628] GLES: resolve target 0DC02000 1280x640
+[1965-07-20 03:50:48.048] [info] [gpu] [t910821628] GLES: compiled VS 3DDE552C3BDAE2BF (modification 3, 4953 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.053] [info] [gpu] [t910821628] GLES: compiled PS BCC460762FDFFFFC (modification 3, 6552 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.055] [info] [gpu] [t910821628] GLES: linked program VS 3DDE552C3BDAE2BF + PS BCC460762FDFFFFC in 1.6 ms (shader cache)
+[1965-07-20 03:50:48.056] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052478448 (6 kept) pc 2052478600 (1 kept) vte 2052478432 ndc 2052478416/2052478400 atest 2052478504, 0 bools, 1 loops, 2 textures; 14 active uniforms
+[1965-07-20 03:50:48.058] [info] [gpu] [t910821628] GLES: resolve target 0DF22000 1280x640
+[1965-07-20 03:50:48.060] [info] [gpu] [t910821628] GLES: compiled VS 4124792F35086E42 (modification F, 6397 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.061] [info] [gpu] [t910821628] GLES: compiled PS 083B01342061346A (modification F, 4375 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.062] [info] [gpu] [t910821628] GLES: linked program VS 4124792F35086E42 + PS 083B01342061346A in 1.2 ms (shader cache)
+[1965-07-20 03:50:48.063] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052395792 (6 kept) pc 2052395880 (1 kept) vte 2052395776 ndc 2052395760/2052395744 atest 2052395832, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:50:48.066] [info] [gpu] [t910821628] GLES: compiled PS ECFA8AFC82759BAD (modification 3, 4584 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.068] [info] [gpu] [t910821628] GLES: linked program VS 3DDE552C3BDAE2BF + PS ECFA8AFC82759BAD in 1.3 ms (shader cache)
+[1965-07-20 03:50:48.068] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052350328 (6 kept) pc 2052350416 (2 kept) vte 2052350312 ndc 2052350296/2052350280 atest 2052350368, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:50:48.071] [info] [gpu] [t910821628] GLES: compiled VS F97B3D21465FD604 (modification 3, 4759 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.072] [info] [gpu] [t910821628] GLES: compiled PS 389831C73DE85D45 (modification 3, 7293 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.074] [info] [gpu] [t910821628] GLES: linked program VS F97B3D21465FD604 + PS 389831C73DE85D45 in 1.2 ms (shader cache)
+[1965-07-20 03:50:48.075] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052253432 (6 kept) pc 2052253520 (3 kept) vte 2052253416 ndc 2052253400/2052253384 atest 2052253472, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:50:48.076] [info] [gpu] [t910821628] GLES: render target color base 0 pitch 640 format 7 msaa 2: 1280x736
+[1965-07-20 03:50:48.076] [info] [gpu] [t910821628] GLES: framebuffer 1280x736 (6 render target framebuffers)
+[1965-07-20 03:50:48.168] [info] [apu] [t1294523948] XMA: 1 contexts have an FFmpeg decoder
+[1965-07-20 03:50:48.738] [info] [gpu] [t910821628] GLES: resolve target 0E562000 1280x640
+[1965-07-20 03:50:48.740] [info] [gpu] [t910821628] GLES: compiled VS CF0D3867629B648A (modification F, 6188 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.741] [info] [gpu] [t910821628] GLES: compiled PS B62A1667D0BA6F26 (modification F, 4559 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.742] [info] [gpu] [t910821628] GLES: linked program VS CF0D3867629B648A + PS B62A1667D0BA6F26 in 1.3 ms (shader cache)
+[1965-07-20 03:50:48.743] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051590344 (8 kept) pc 2051603848 (1 kept) vte 2051590328 ndc 2051590312/2051590296 atest 2051603704, 0 bools, 0 loops, 4 textures; 19 active uniforms
+[1965-07-20 03:50:48.745] [info] [gpu] [t910821628] GLES: compiled PS D5019343FF423CC8 (modification 3, 4882 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.747] [info] [gpu] [t910821628] GLES: linked program VS F97B3D21465FD604 + PS D5019343FF423CC8 in 1.4 ms (shader cache)
+[1965-07-20 03:50:48.747] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052602184 (6 kept) pc 2052568392 (1 kept) vte 2052602168 ndc 2052602152/2052602136 atest 2052568344, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:50:48.749] [info] [gpu] [t910821628] GLES: compiled VS DD881E5FDA628D88 (modification 3, 5519 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.750] [info] [gpu] [t910821628] GLES: compiled PS 46AA46E4EB44BFF6 (modification 3, 3516 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.751] [info] [gpu] [t910821628] GLES: linked program VS DD881E5FDA628D88 + PS 46AA46E4EB44BFF6 in 1.6 ms (shader cache)
+[1965-07-20 03:50:48.752] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052602096 (8 kept) pc -1 (-1 kept) vte 2052602080 ndc 2052602064/2052602048 atest 2051562848, 0 bools, 0 loops, 2 textures; 12 active uniforms
+[1965-07-20 03:50:48.753] [info] [gpu] [t910821628] GLES: resolve target 0E242000 1280x640
+[1965-07-20 03:50:48.754] [info] [gpu] [t910821628] GLES: compiled PS C60F811D2CD5F211 (modification 3, 3229 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:50:48.756] [info] [gpu] [t910821628] GLES: linked program VS 3DDE552C3BDAE2BF + PS C60F811D2CD5F211 in 1.3 ms (shader cache)
+[1965-07-20 03:50:48.756] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051995592 (6 kept) pc -1 (-1 kept) vte 2051995576 ndc 2051995560/2051995544 atest 2053134096, 0 bools, 0 loops, 2 textures; 12 active uniforms
+[1965-07-20 03:50:48.987] [info] [gpu] [t910821628] GLES: texture 10249000 512x256 k_8_8_8_8 (512 KiB on the host) at swap 347
+[1965-07-20 03:50:48.989] [info] [gpu] [t910821628] GLES: linked program VS 4666C5A9092B03DD + PS 7ABDFEFBCADB4BF9 in 0.9 ms (shader cache)
+[1965-07-20 03:50:48.989] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052512400 (5 kept) pc -1 (-1 kept) vte 2052512384 ndc 2052512368/2052512352 atest 2052711464, 0 bools, 0 loops, 1 textures; 9 active uniforms
+[1965-07-20 03:50:49.066] [info] [gpu] [t910821628] GLES: texture 0FEE9000 1024x3152 k_DXT4_5 (3152 KiB on the host) at swap 347
+[1965-07-20 03:50:49.069] [info] [gpu] [t910821628] GLES: resolve framebuffer 1024x3152 #0
+[1965-07-20 03:50:49.074] [info] [gpu] [t910821628] GLES: surface copy of a 1024x3152 texture (key 6278FFF60FEE9000) at swap 347
+[1965-07-20 03:50:49.418] [info] [krnl] [t944287948] sync stats: 24014 calls in 10 s (178 keys)
+[1965-07-20 03:50:49.435] [info] [krnl] [t944287948]           Delay thread F80000DC callers 823F66A8 <- 8264CD94 object FFFFB1E0: 3903 calls, 3903 blocked, 2514.4 us avg
+[1965-07-20 03:50:49.436] [info] [krnl] [t944287948]            Wait thread F8000068 callers 825D2A3C <- 825CE554 object F8000060: 2429 calls, 6 blocked, 27.2 us avg
+[1965-07-20 03:50:49.436] [info] [krnl] [t944287948]           Delay thread F80000E0 callers 825F7408 <- 826978F4 object FFFF3CB0: 1725 calls, 1725 blocked, 5724.0 us avg
+[1965-07-20 03:50:49.436] [info] [krnl] [t944287948]           Delay thread F80000E8 callers 825F751C <- 826978F4 object FFFF3CB0: 1724 calls, 1724 blocked, 5736.1 us avg
+[1965-07-20 03:50:49.436] [info] [krnl] [t944287948]           Delay thread F80000AC callers 8267C16C <- 8264CD94 object FFFFD8F0: 1589 calls, 1589 blocked, 1580.2 us avg
+[1965-07-20 03:50:49.436] [info] [krnl] [t944287948]           Delay thread F800011C callers 8267C378 <- 8264CD94 object FFFFD8F0: 1163 calls, 1163 blocked, 1631.1 us avg
+[1965-07-20 03:50:49.436] [info] [krnl] [t944287948]           Delay thread F80000AC callers 82663844 <- 8261AC7C object FFFFD8F0: 1048 calls, 1048 blocked, 1699.0 us avg
+[1965-07-20 03:50:49.437] [info] [krnl] [t944287948]           Delay thread F80000AC callers 8266384C <- 8261CF40 object FFFFD8F0: 999 calls, 999 blocked, 1826.8 us avg
+[1965-07-20 03:50:49.437] [info] [krnl] [t944287948]            Wait thread F8000028 callers 825D0424 <- 82620BC4 object F8000060: 645 calls, 6 blocked, 25.0 us avg
+[1965-07-20 03:50:49.437] [info] [krnl] [t944287948]            Wait thread F8000028 callers 825D031C <- 825D0448 object F8000054: 614 calls, 2 blocked, 7.8 us avg
+[1965-07-20 03:50:49.437] [info] [krnl] [t944287948]            Wait thread F800005C callers 825D01A4 <- 825CE554 object F8000050: 601 calls, 600 blocked, 16456.2 us avg
+[1965-07-20 03:50:49.438] [info] [krnl] [t944287948]        SetEvent thread F800005C callers 825D5AE4 <- 825D015C object F8000058: 601 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:49.439] [info] [krnl] [t944287948]            Wait thread F800005C callers 825D5AD0 <- 825D015C object F8000054: 601 calls, 1 blocked, 17.7 us avg
+[1965-07-20 03:50:49.439] [info] [krnl] [t944287948]        SetEvent thread F800001C callers 826AE5B0 <- 826A5A24 object F8000050: 601 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:49.439] [info] [krnl] [t944287948]            Wait thread F8000028 callers 825D039C <- 825D0470 object F8000054: 466 calls, 3 blocked, 11.0 us avg
+[1965-07-20 03:50:49.439] [info] [krnl] [t944287948]   SignalAndWait thread F8000028 callers 825D0350 <- 825D0448 object F8000058: 386 calls, 191 blocked, 3704.1 us avg
+[1965-07-20 03:50:49.439] [info] [krnl] [t944287948]           Delay thread F800011C callers 8267C42C <- 8264CD94 object FFFFD8F0: 308 calls, 308 blocked, 1902.5 us avg
+[1965-07-20 03:50:49.439] [info] [krnl] [t944287948]            Wait thread F8000094 callers 825CE9FC <- 825CE554 object F8000090: 258 calls, 254 blocked, 26594.3 us avg
+[1965-07-20 03:50:49.439] [info] [krnl] [t944287948]   SignalAndWait thread F8000028 callers 825D03D0 <- 825D0470 object F8000058: 238 calls, 214 blocked, 13504.5 us avg
+[1965-07-20 03:50:49.440] [info] [krnl] [t944287948]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04C8 object F8000064: 228 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:49.440] [info] [krnl] [t944287948]            Wait thread F8000028 callers 825D5AD0 <- 825D04C8 object F8000060: 228 calls, 2 blocked, 19.0 us avg
+[1965-07-20 03:50:49.440] [info] [krnl] [t944287948]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04B8 object F8000058: 228 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:49.440] [info] [krnl] [t944287948]            Wait thread F8000028 callers 825D5AD0 <- 825D04B8 object F8000054: 228 calls, 0 blocked, 4.7 us avg
+[1965-07-20 03:50:49.440] [info] [krnl] [t944287948]            Wait thread F8000068 callers 825D5AD0 <- 825D2A30 object F8000060: 227 calls, 3 blocked, 17.0 us avg
+[1965-07-20 03:50:49.440] [info] [krnl] [t944287948]        SetEvent thread F8000068 callers 825D5AE4 <- 825D2A30 object F8000064: 227 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:49.440] [info] [krnl] [t944287948]            Wait thread F80000A8 callers 8269FFA0 <- 8269E684 object F800009C: 223 calls, 208 blocked, 33572.3 us avg
+[1965-07-20 03:50:49.440] [info] [krnl] [t944287948]        SetEvent thread F8000094 callers 8269EB88 <- 826A27AC object F800009C: 155 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:49.440] [info] [krnl] [t944287948]        SetEvent thread F80000A8 callers 8269E684 <- 00000000 object F8000134: 149 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:49.440] [info] [krnl] [t944287948]        SetEvent thread F80000A8 callers 8269FF60 <- 8269E684 object F8000128: 127 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:49.441] [info] [krnl] [t944287948]            Wait thread F8000094 callers 826A27AC <- 825634C8 object F8000134: 127 calls, 127 blocked, 1637.3 us avg
+[1965-07-20 03:50:49.441] [info] [krnl] [t944287948]           Delay thread F80000AC callers 82663844 <- 8261D824 object FFFFD8F0: 111 calls, 111 blocked, 1496.3 us avg
+[1965-07-20 03:50:49.441] [info] [krnl] [t944287948]           Delay thread F800010C callers 82531AF0 <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100763.3 us avg
+[1965-07-20 03:50:49.441] [info] [krnl] [t944287948]           Delay thread F8000110 callers 8253025C <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100798.5 us avg
+[1965-07-20 03:50:49.441] [info] [krnl] [t944287948]            Wait thread F800007C callers 825D63C8 <- 825CE554 object F800006C: 85 calls, 85 blocked, 119017.0 us avg
+[1965-07-20 03:50:49.441] [info] [krnl] [t944287948]        SetEvent thread F800007C callers 825D64CC <- 825CE554 object F8000070: 85 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:49.441] [info] [krnl] [t944287948]            Wait thread F8000074 callers 825D63C8 <- 825CE554 object F800006C: 76 calls, 76 blocked, 128755.0 us avg
+[1965-07-20 03:50:49.441] [info] [krnl] [t944287948]        SetEvent thread F8000074 callers 825D64CC <- 825CE554 object F8000070: 76 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:49.441] [info] [krnl] [t944287948]           Delay thread F8000134 callers 8267C378 <- 8264CD94 object FFFFD8F0: 72 calls, 72 blocked, 1602.9 us avg
+[1965-07-20 03:50:49.441] [info] [krnl] [t944287948]        SetEvent thread F80000A8 callers 8269E684 <- 00000000 object F8000180: 70 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:49.442] [info] [krnl] [t944287948]        SetEvent thread F8000094 callers 8269E824 <- 826A210C object F800009C: 68 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:54.141] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:54.155] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:54.691] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:54.701] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:54.839] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:54.854] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:54.993] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:55.006] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:57.459] [info] [sys] [t1294523948] Software MMU: frame 600: 461 virtual + 21 physical blocks, 373.7 MiB backed (peak 373.7 MiB), 0 released-page writes
+[1965-07-20 03:50:57.462] [info] [sys] [t1294523948] Software MMU:   physical region AB000000: 272.0 MiB, 184.0 MiB backed
+[1965-07-20 03:50:57.463] [info] [sys] [t1294523948] Software MMU:   virtual  region 40F40000: 70.1 MiB, 70.1 MiB backed
+[1965-07-20 03:50:57.463] [info] [sys] [t1294523948] Software MMU:   physical region DC000000: 48.0 MiB, 48.0 MiB backed
+[1965-07-20 03:50:57.464] [info] [sys] [t1294523948] Software MMU:   physical region C0000000: 16.0 MiB, 16.0 MiB backed
+[1965-07-20 03:50:57.464] [info] [sys] [t1294523948] Software MMU:   virtual  region 82000000: 11.2 MiB, 11.2 MiB backed
+[1965-07-20 03:50:57.464] [info] [sys] [t1294523948] Software MMU:   virtual  region 40220000: 8.1 MiB, 8.1 MiB backed
+[1965-07-20 03:50:57.464] [info] [sys] [t1294523948] Software MMU:   virtual  region 45BA0000: 8.0 MiB, 8.0 MiB backed
+[1965-07-20 03:50:57.464] [info] [sys] [t1294523948] Software MMU:   virtual  region 45550000: 4.0 MiB, 4.0 MiB backed
+[1965-07-20 03:50:57.471] [info] [gpu] [t910821628] GLES: swap 600: 28457 draws, 19392 skipped, 6258 resolves since the last report; 7 render targets, 8 resolve targets, 8 textures, 17 programs; frontbuffer 0B000000 resolved; skipped: no target 19392, shader 0, link 0, vertices 0
+[1965-07-20 03:50:57.471] [info] [gpu] [t910821628] GLES: time since the last report 11747 ms: translate 31 ms, compile 0 ms (19 shaders), link 17 ms (12 programs, 12 from the shader cache), present+swap 51 ms; longest frame 784 ms
+[1965-07-20 03:50:57.471] [info] [gpu] [t910821628] GLES: GPU thread: idle (waiting for the game) 8270 ms, draws 2444 ms (textures 0, constants 0, vertices 0, GL draw calls 0; parts off: gles_detailed_timers), resolves 449 ms, present 51 ms, other 532 ms
+[1965-07-20 03:50:57.472] [info] [gpu] [t910821628] GLES:   WAIT_REG_MEM: 3571 sleeps, 4746 ms slept for 3571 ms asked (part of idle)
+[1965-07-20 03:50:57.472] [info] [gpu] [t910821628] GLES:   vertices: glBufferData 0 ms for 0.7 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 1.8 MiB; cache hits/misses: vertex ranges 24310/589, index sets 22739/2; kept: 21 vertex buffers 0.0 MiB, 1 index buffers 0.0 MiB
+[1965-07-20 03:50:57.472] [info] [gpu] [t910821628] GLES:   vertex stream ring: 0.1 MiB written, 494 ranges moved to own buffers, 0 did not fit; 0 checks of static ranges by sample
+[1965-07-20 03:50:57.472] [info] [gpu] [t910821628] GLES:   textures: hashing 0 ms for 93.3 MiB
+[1965-07-20 03:50:57.472] [info] [gpu] [t910821628] GLES:   vertex ranges checked again in the same swap: 46 (0.0 MiB)
+[1965-07-20 03:50:57.472] [info] [gpu] [t910821628] GLES:   GL calls: program switches 7845, uniform uploads 22703 (unchanged, not sent: 226175), state groups sent 45160 (unchanged: 182496), blend changes on a program (vitaGL fragment re-patch) 0
+[1965-07-20 03:50:57.473] [info] [gpu] [t910821628] GLES:   framebuffer changes: 4389 to render targets (3131 more keeping their depth/stencil, loaded and stored at each change on vitaGL), 5749 to resolve targets, 300 to the display; game draws first after a change 7013, their GL draw calls 0 ms (part of GL draw calls)
+[1965-07-20 03:50:57.473] [info] [gpu] [t910821628] GLES:   GXM calls (all threads): BeginScene 13569 calls 26 ms (max 0.1 ms), EndScene 13569 calls 834 ms (max 89.4 ms), Draw 48582 calls 50 ms (max 0.2 ms); EndScene by scene: render target 4389 (43 us each), render target with depth kept 3131 (18 us each), resolve 5749 (106 us each), display/other 300 (18 us each)
+[1965-07-20 03:50:57.475] [info] [gpu] [t910821628] GLES:   surface copies of textures: 253 made since the last report, 12.3 MiB kept
+[1965-07-20 03:50:57.475] [info] [gpu] [t910821628] GLES:   depth: fills held after a depth copy 1522, dropped for a restore 254, applied as a clear 507
+[1965-07-20 03:50:57.475] [info] [gpu] [t910821628] GLES memory (MiB): render targets 10.8 (3), resolve targets 25.5 (8), textures 3.7 (8), scratch 0.0, framebuffers 6 + 4 for resolves -> depth/stencil 4.5 (vitaGL estimate); total 44.5
+[1965-07-20 03:50:57.476] [info] [gpu] [t910821628] GLES:   vitaGL pools free (probed, MiB, largest block): VRAM 14.1 (8.0) of 100, RAM 7.4 (4.0) of 24, PHYCONT 15.9 (8.0) of 16
+[1965-07-20 03:50:57.476] [info] [gpu] [t910821628] GLES: surface copy of a 1024x3152 texture (key 6278FFF60FEE9000) at swap 600
+[1965-07-20 03:50:58.143] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:58.157] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:58.494] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:58.508] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:59.407] [info] [krnl] [t1476103283] sync stats: 28387 calls in 10 s (118 keys)
+[1965-07-20 03:50:59.409] [info] [krnl] [t1476103283]           Delay thread F80000DC callers 823F66A8 <- 8264CD94 object FFFFB1E0: 3933 calls, 3933 blocked, 2498.6 us avg
+[1965-07-20 03:50:59.409] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 8267C16C <- 8264CD94 object FFFFD8F0: 2851 calls, 2851 blocked, 1601.3 us avg
+[1965-07-20 03:50:59.409] [info] [krnl] [t1476103283]            Wait thread F8000068 callers 825D2A3C <- 825CE554 object F8000060: 2511 calls, 10 blocked, 15.9 us avg
+[1965-07-20 03:50:59.409] [info] [krnl] [t1476103283]           Delay thread F80000E8 callers 825F751C <- 826978F4 object FFFF3CB0: 1721 calls, 1721 blocked, 5753.3 us avg
+[1965-07-20 03:50:59.410] [info] [krnl] [t1476103283]           Delay thread F80000E0 callers 825F7408 <- 826978F4 object FFFF3CB0: 1717 calls, 1717 blocked, 5752.0 us avg
+[1965-07-20 03:50:59.410] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 82663844 <- 826564D8 object FFFFD8F0: 1167 calls, 1167 blocked, 1612.0 us avg
+[1965-07-20 03:50:59.410] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D031C <- 825D0448 object F8000054: 810 calls, 2 blocked, 7.4 us avg
+[1965-07-20 03:50:59.410] [info] [krnl] [t1476103283]            Wait thread F80000A8 callers 8269FFA0 <- 8269E684 object F800009C: 745 calls, 654 blocked, 14521.5 us avg
+[1965-07-20 03:50:59.410] [info] [krnl] [t1476103283]        SetEvent thread F8000094 callers 8269EB88 <- 826A27AC object F800009C: 733 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:59.411] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D039C <- 825D0470 object F8000054: 638 calls, 0 blocked, 9.3 us avg
+[1965-07-20 03:50:59.411] [info] [krnl] [t1476103283]            Wait thread F800005C callers 825D01A4 <- 825CE554 object F8000050: 601 calls, 601 blocked, 16538.9 us avg
+[1965-07-20 03:50:59.412] [info] [krnl] [t1476103283]        SetEvent thread F800001C callers 826AE5B0 <- 826A5A24 object F8000050: 601 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:59.412] [info] [krnl] [t1476103283]            Wait thread F800005C callers 825D5AD0 <- 825D015C object F8000054: 601 calls, 1 blocked, 11.0 us avg
+[1965-07-20 03:50:59.412] [info] [krnl] [t1476103283]        SetEvent thread F800005C callers 825D5AE4 <- 825D015C object F8000058: 601 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:59.412] [info] [krnl] [t1476103283]        SetEvent thread F80000A8 callers 8269E684 <- 00000000 object F80001EC: 564 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:59.413] [info] [krnl] [t1476103283]        SetEvent thread F80000A8 callers 8269FF60 <- 8269E684 object F80001E4: 560 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:59.413] [info] [krnl] [t1476103283]            Wait thread F8000094 callers 826A27AC <- 825634C8 object F80001EC: 560 calls, 560 blocked, 2217.6 us avg
+[1965-07-20 03:50:59.414] [info] [krnl] [t1476103283]   SignalAndWait thread F8000028 callers 825D0350 <- 825D0448 object F8000058: 510 calls, 253 blocked, 2491.8 us avg
+[1965-07-20 03:50:59.414] [info] [krnl] [t1476103283]            Wait thread F8000094 callers 825CE9FC <- 825CE554 object F8000090: 484 calls, 484 blocked, 21659.3 us avg
+[1965-07-20 03:50:59.414] [info] [krnl] [t1476103283]           Delay thread F8000134 callers 8267C42C <- 8264CD94 object FFFFD8F0: 461 calls, 461 blocked, 1935.1 us avg
+[1965-07-20 03:50:59.414] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D0424 <- 82620BC4 object F8000060: 368 calls, 11 blocked, 18.6 us avg
+[1965-07-20 03:50:59.414] [info] [krnl] [t1476103283]   SignalAndWait thread F8000028 callers 825D03D0 <- 825D0470 object F8000058: 338 calls, 296 blocked, 13615.6 us avg
+[1965-07-20 03:50:59.414] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 8266384C <- 826564D8 object FFFFD8F0: 328 calls, 328 blocked, 1702.3 us avg
+[1965-07-20 03:50:59.414] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 82663844 <- 8266BEF0 object FFFFD8F0: 312 calls, 312 blocked, 1582.3 us avg
+[1965-07-20 03:50:59.415] [info] [krnl] [t1476103283]            Wait thread F8000068 callers 825D5AD0 <- 825D2A30 object F8000060: 301 calls, 5 blocked, 21.3 us avg
+[1965-07-20 03:50:59.415] [info] [krnl] [t1476103283]        SetEvent thread F8000068 callers 825D5AE4 <- 825D2A30 object F8000064: 301 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:59.415] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D5AD0 <- 825D04B8 object F8000054: 300 calls, 0 blocked, 4.2 us avg
+[1965-07-20 03:50:59.415] [info] [krnl] [t1476103283]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04B8 object F8000058: 300 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:59.415] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D5AD0 <- 825D04C8 object F8000060: 300 calls, 0 blocked, 4.2 us avg
+[1965-07-20 03:50:59.415] [info] [krnl] [t1476103283]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04C8 object F8000064: 300 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:59.415] [info] [krnl] [t1476103283]            Wait thread F8000134 callers 825CB628 <- 826737B4 object F80001F4: 280 calls, 280 blocked, 4812.0 us avg
+[1965-07-20 03:50:59.415] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 82663844 <- 8261AC7C object FFFFD8F0: 202 calls, 202 blocked, 1689.8 us avg
+[1965-07-20 03:50:59.415] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 8266384C <- 8261CF40 object FFFFD8F0: 192 calls, 192 blocked, 1824.7 us avg
+[1965-07-20 03:50:59.416] [info] [krnl] [t1476103283]        SetEvent thread F80000A8 callers 8269E684 <- 00000000 object F80001F4: 174 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:59.416] [info] [krnl] [t1476103283]            Wait thread F8000094 callers 826A27AC <- 825634C8 object F80001F4: 172 calls, 172 blocked, 1405.5 us avg
+[1965-07-20 03:50:59.416] [info] [krnl] [t1476103283]        SetEvent thread F80000A8 callers 8269FF60 <- 8269E684 object F80001EC: 172 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:59.416] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 82663844 <- 826302F0 object FFFFD8F0: 156 calls, 156 blocked, 1619.7 us avg
+[1965-07-20 03:50:59.416] [info] [krnl] [t1476103283]            Wait thread F8000074 callers 825D63C8 <- 825CE554 object F800006C: 126 calls, 126 blocked, 80852.2 us avg
+[1965-07-20 03:50:59.416] [info] [krnl] [t1476103283]        SetEvent thread F8000074 callers 825D64CC <- 825CE554 object F8000070: 126 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:50:59.416] [info] [krnl] [t1476103283]           Delay thread F8000134 callers 8267C378 <- 8264CD94 object FFFFD8F0: 108 calls, 108 blocked, 1682.5 us avg
+[1965-07-20 03:50:59.441] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:59.454] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:50:59.469] [info] [gpu] [t910821628] GLES: freed 1 textures and 0 resolve targets (0.1 MiB) unused for 300 swaps
+[1965-07-20 03:51:00.381] [info] [gpu] [t910821628] GLES: texture 11092000 1280x720 k_4_4_4_4 (1800 KiB on the host) at swap 678
+[1965-07-20 03:51:04.844] [info] [gpu] [t910821628] GLES: texture 10EC6000 1280x720 k_4_4_4_4 (1800 KiB on the host) at swap 799
+[1965-07-20 03:51:06.281] [info] [gpu] [t910821628] GLES: freed 5 textures and 2 resolve targets (22.2 MiB) unused for 300 swaps
+[1965-07-20 03:51:08.280] [info] [gpu] [t910821628] GLES: swap 900: 4222 draws, 21600 skipped, 4500 resolves since the last report; 7 render targets, 6 resolve targets, 4 textures, 17 programs; frontbuffer 0B000000 resolved; skipped: no target 21600, shader 0, link 0, vertices 0
+[1965-07-20 03:51:08.280] [info] [gpu] [t910821628] GLES: time since the last report 10808 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 295 ms; longest frame 333 ms
+[1965-07-20 03:51:08.280] [info] [gpu] [t910821628] GLES: GPU thread: idle (waiting for the game) 8833 ms, draws 1176 ms (textures 0, constants 0, vertices 0, GL draw calls 0; parts off: gles_detailed_timers), resolves 199 ms, present 295 ms, other 305 ms
+[1965-07-20 03:51:08.280] [info] [gpu] [t910821628] GLES:   WAIT_REG_MEM: 3783 sleeps, 4996 ms slept for 3783 ms asked (part of idle)
+[1965-07-20 03:51:08.280] [info] [gpu] [t910821628] GLES:   vertices: glBufferData 0 ms for 0.3 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 0.2 MiB; cache hits/misses: vertex ranges 2086/114, index sets 2020/2; kept: 25 vertex buffers 0.0 MiB, 2 index buffers 0.0 MiB
+[1965-07-20 03:51:08.281] [info] [gpu] [t910821628] GLES:   vertex stream ring: 0.0 MiB written, 14 ranges moved to own buffers, 0 did not fit; 0 checks of static ranges by sample
+[1965-07-20 03:51:08.281] [info] [gpu] [t910821628] GLES:   textures: hashing 0 ms for 71.5 MiB
+[1965-07-20 03:51:08.281] [info] [gpu] [t910821628] GLES:   vertex ranges checked again in the same swap: 0 (0.0 MiB)
+[1965-07-20 03:51:08.281] [info] [gpu] [t910821628] GLES:   GL calls: program switches 3622, uniform uploads 602 (unchanged, not sent: 32608), state groups sent 25010 (unchanged: 8766), blend changes on a program (vitaGL fragment re-patch) 0
+[1965-07-20 03:51:08.281] [info] [gpu] [t910821628] GLES:   framebuffer changes: 1678 to render targets (2800 more keeping their depth/stencil, loaded and stored at each change on vitaGL), 3840 to resolve targets, 300 to the display; game draws first after a change 4100, their GL draw calls 0 ms (part of GL draw calls)
+[1965-07-20 03:51:08.281] [info] [gpu] [t910821628] GLES:   GXM calls (all threads): BeginScene 8618 calls 16 ms (max 0.1 ms), EndScene 8618 calls 356 ms (max 165.5 ms), Draw 17802 calls 20 ms (max 0.3 ms); EndScene by scene: render target 1678 (14 us each), render target with depth kept 2800 (46 us each), resolve 3840 (56 us each), display/other 300 (20 us each)
+[1965-07-20 03:51:08.281] [info] [gpu] [t910821628] GLES:   surface copies of textures: 240 made since the last report, 0.0 MiB kept
+[1965-07-20 03:51:08.282] [info] [gpu] [t910821628] GLES:   depth: fills held after a depth copy 1578, dropped for a restore 300, applied as a clear 600
+[1965-07-20 03:51:08.282] [info] [gpu] [t910821628] GLES memory (MiB): render targets 10.8 (3), resolve targets 19.2 (6), textures 3.5 (4), scratch 0.0, framebuffers 6 + 4 for resolves -> depth/stencil 4.5 (vitaGL estimate); total 38.0
+[1965-07-20 03:51:08.282] [info] [gpu] [t910821628] GLES:   vitaGL pools free (probed, MiB, largest block): VRAM 21.4 (8.0) of 100, RAM 7.4 (4.0) of 24, PHYCONT 15.9 (8.0) of 16
+[1965-07-20 03:51:08.948] [info] [core] [t1294523948] Storm 2: movie 0 (logo_cc2) skipped (storm2_skip_movies)
+[1965-07-20 03:51:09.414] [info] [krnl] [t3553566673] sync stats: 24770 calls in 10 s (72 keys)
+[1965-07-20 03:51:09.435] [info] [krnl] [t3553566673]           Delay thread F80000AC callers 8267C16C <- 8264CD94 object FFFFD8F0: 6049 calls, 6049 blocked, 1516.9 us avg
+[1965-07-20 03:51:09.436] [info] [krnl] [t3553566673]           Delay thread F80000DC callers 823F66A8 <- 8264CD94 object FFFFB1E0: 4037 calls, 4037 blocked, 2443.1 us avg
+[1965-07-20 03:51:09.436] [info] [krnl] [t3553566673]            Wait thread F8000068 callers 825D2A3C <- 825CE554 object F8000060: 2896 calls, 9 blocked, 15.8 us avg
+[1965-07-20 03:51:09.436] [info] [krnl] [t3553566673]           Delay thread F80000E8 callers 825F751C <- 826978F4 object FFFF3CB0: 1734 calls, 1734 blocked, 5727.1 us avg
+[1965-07-20 03:51:09.436] [info] [krnl] [t3553566673]           Delay thread F80000E0 callers 825F7408 <- 826978F4 object FFFF3CB0: 1733 calls, 1733 blocked, 5718.9 us avg
+[1965-07-20 03:51:09.437] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D031C <- 825D0448 object F8000054: 802 calls, 1 blocked, 7.5 us avg
+[1965-07-20 03:51:09.437] [info] [krnl] [t3553566673]            Wait thread F800005C callers 825D01A4 <- 825CE554 object F8000050: 600 calls, 600 blocked, 16550.5 us avg
+[1965-07-20 03:51:09.438] [info] [krnl] [t3553566673]        SetEvent thread F800005C callers 825D5AE4 <- 825D015C object F8000058: 600 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:09.439] [info] [krnl] [t3553566673]            Wait thread F800005C callers 825D5AD0 <- 825D015C object F8000054: 600 calls, 1 blocked, 11.4 us avg
+[1965-07-20 03:51:09.439] [info] [krnl] [t3553566673]        SetEvent thread F800001C callers 826AE5B0 <- 826A5A24 object F8000050: 600 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:09.440] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D0424 <- 82620BC4 object F8000060: 586 calls, 8 blocked, 23.6 us avg
+[1965-07-20 03:51:09.440] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D039C <- 825D0470 object F8000054: 554 calls, 0 blocked, 9.8 us avg
+[1965-07-20 03:51:09.440] [info] [krnl] [t3553566673]   SignalAndWait thread F8000028 callers 825D0350 <- 825D0448 object F8000058: 526 calls, 265 blocked, 4787.8 us avg
+[1965-07-20 03:51:09.440] [info] [krnl] [t3553566673]   SignalAndWait thread F8000028 callers 825D03D0 <- 825D0470 object F8000058: 278 calls, 270 blocked, 15446.2 us avg
+[1965-07-20 03:51:09.441] [info] [krnl] [t3553566673]        SetEvent thread F8000068 callers 825D5AE4 <- 825D2A30 object F8000064: 275 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:09.441] [info] [krnl] [t3553566673]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04C8 object F8000064: 275 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:09.441] [info] [krnl] [t3553566673]            Wait thread F8000068 callers 825D5AD0 <- 825D2A30 object F8000060: 275 calls, 2 blocked, 15.2 us avg
+[1965-07-20 03:51:09.441] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D5AD0 <- 825D04C8 object F8000060: 275 calls, 0 blocked, 4.3 us avg
+[1965-07-20 03:51:09.441] [info] [krnl] [t3553566673]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04B8 object F8000058: 275 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:09.441] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D5AD0 <- 825D04B8 object F8000054: 275 calls, 0 blocked, 4.3 us avg
+[1965-07-20 03:51:09.441] [info] [krnl] [t3553566673]            Wait thread F8000074 callers 825D63C8 <- 825CE554 object F800006C: 115 calls, 115 blocked, 85189.0 us avg
+[1965-07-20 03:51:09.441] [info] [krnl] [t3553566673]        SetEvent thread F8000074 callers 825D64CC <- 825CE554 object F8000070: 115 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:09.442] [info] [krnl] [t3553566673]           Delay thread F8000110 callers 8253025C <- 8264CD94 object FFF0BDC0: 100 calls, 100 blocked, 100668.5 us avg
+[1965-07-20 03:51:09.442] [info] [krnl] [t3553566673]           Delay thread F800010C callers 82531AF0 <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100640.4 us avg
+[1965-07-20 03:51:09.442] [info] [krnl] [t3553566673]            Wait thread F8000078 callers 825D63C8 <- 825CE554 object F800006C: 82 calls, 82 blocked, 121994.3 us avg
+[1965-07-20 03:51:09.442] [info] [krnl] [t3553566673]        SetEvent thread F8000078 callers 825D64CC <- 825CE554 object F8000070: 82 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:09.442] [info] [krnl] [t3553566673]            Wait thread F80000A8 callers 8269FFA0 <- 8269E684 object F800009C: 81 calls, 74 blocked, 5239.1 us avg
+[1965-07-20 03:51:09.442] [info] [krnl] [t3553566673]        SetEvent thread F80000A8 callers 8269E684 <- 00000000 object F80001F4: 81 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:09.442] [info] [krnl] [t3553566673]        SetEvent thread F8000094 callers 8269EB88 <- 826A27AC object F800009C: 79 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:09.442] [info] [krnl] [t3553566673]        SetEvent thread F80000A8 callers 8269FF60 <- 8269E684 object F80001EC: 79 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:09.442] [info] [krnl] [t3553566673]            Wait thread F8000094 callers 826A27AC <- 825634C8 object F80001F4: 79 calls, 79 blocked, 2062.7 us avg
+[1965-07-20 03:51:09.443] [info] [krnl] [t3553566673]        SetEvent thread F800007C callers 825D64CC <- 825CE554 object F8000070: 79 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:09.443] [info] [krnl] [t3553566673]            Wait thread F800007C callers 825D63C8 <- 825CE554 object F800006C: 79 calls, 79 blocked, 128605.5 us avg
+[1965-07-20 03:51:09.443] [info] [krnl] [t3553566673]           Delay thread F80000AC callers 8266384C <- 8261CF40 object FFFFD8F0: 63 calls, 63 blocked, 1747.3 us avg
+[1965-07-20 03:51:09.443] [info] [krnl] [t3553566673]           Delay thread F80000AC callers 82663844 <- 826302F0 object FFFFD8F0: 50 calls, 50 blocked, 1563.0 us avg
+[1965-07-20 03:51:09.443] [info] [krnl] [t3553566673]            Wait thread F8000094 callers 825CE9FC <- 825CE554 object F8000090: 45 calls, 45 blocked, 9113.8 us avg
+[1965-07-20 03:51:09.443] [info] [krnl] [t3553566673]            Wait thread F8000134 callers 825CB628 <- 826737B4 object F8000200: 40 calls, 40 blocked, 4499.4 us avg
+[1965-07-20 03:51:09.443] [info] [krnl] [t3553566673]           Delay thread F8000134 callers 8267C42C <- 8264CD94 object FFFFD8F0: 40 calls, 40 blocked, 1910.8 us avg
+[1965-07-20 03:51:09.443] [info] [krnl] [t3553566673]           Delay thread F80000AC callers 82663844 <- 8261AC7C object FFFFD8F0: 36 calls, 36 blocked, 1591.3 us avg
+[1965-07-20 03:51:09.444] [info] [krnl] [t3553566673]           Delay thread F80000AC callers 8266384C <- 826302F0 object FFFFD8F0: 27 calls, 27 blocked, 1725.8 us avg
+[1965-07-20 03:51:09.595] [info] [core] [t1294523948] Storm 2: movie 1 (Dolby) skipped (storm2_skip_movies)
+[1965-07-20 03:51:09.795] [info] [core] [t1294523948] Storm 2: movie 2 (opening) skipped (storm2_skip_movies)
+[1965-07-20 03:51:09.801] [info] [gpu] [t910821628] GLES: resolve target 0E562000 1280x640
+[1965-07-20 03:51:09.804] [info] [gpu] [t910821628] GLES: compiled VS 818B92470F80833E (modification 1, 5222 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:09.805] [info] [gpu] [t910821628] GLES: compiled PS 1C5B744F4C81F9EB (modification 1, 5980 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:09.807] [info] [gpu] [t910821628] GLES: linked program VS 818B92470F80833E + PS 1C5B744F4C81F9EB in 1.6 ms (shader cache)
+[1965-07-20 03:51:09.808] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051555744 (7 kept) pc 2051659704 (4 kept) vte 2051555728 ndc 2051555712/2051555696 atest 2051659592, 0 bools, 0 loops, 3 textures; 16 active uniforms
+[1965-07-20 03:51:09.809] [info] [gpu] [t910821628] GLES: resolve target 0E242000 1280x640
+[1965-07-20 03:51:11.241] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:51:11.344] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:51:11.367] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:51:11.396] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:51:11.413] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:51:14.911] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:51:14.927] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:51:15.100] [info] [gpu] [t910821628] GLES: compiled VS 46BCED343281907B (modification 1F, 18512 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:15.100] [info] [gpu] [t910821628] GLES: compiled PS A1EB7A303E163A5A (modification 1F, 5496 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:15.103] [info] [gpu] [t910821628] GLES: linked program VS 46BCED343281907B + PS A1EB7A303E163A5A in 1.9 ms (shader cache)
+[1965-07-20 03:51:15.103] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051427792 (29 kept) pc 2051970120 (1 kept) vte 2051427776 ndc 2051427760/2051427744 atest 2051970040, 0 bools, 0 loops, 2 textures; 13 active uniforms
+[1965-07-20 03:51:15.126] [info] [gpu] [t910821628] GLES: texture 11A2E000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1060
+[1965-07-20 03:51:15.151] [info] [gpu] [t910821628] GLES: texture 11683000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1060
+[1965-07-20 03:51:15.154] [info] [gpu] [t910821628] GLES: primitive reset index FFFF in a 1209-index draw (primitive type 6) - split into a list of 1461 indices
+[1965-07-20 03:51:15.267] [info] [gpu] [t910821628] GLES: texture 11ADE000 2048x2048 k_DXT1 (2048 KiB on the host) at swap 1060
+[1965-07-20 03:51:15.293] [info] [gpu] [t910821628] GLES: texture 11E50000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1060
+[1965-07-20 03:51:15.316] [info] [gpu] [t910821628] GLES: texture 119AE000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1060
+[1965-07-20 03:51:15.345] [info] [gpu] [t910821628] GLES: texture 11ED0000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1060
+[1965-07-20 03:51:15.369] [info] [gpu] [t910821628] GLES: texture 115D3000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1060
+[1965-07-20 03:51:15.397] [info] [gpu] [t910821628] GLES: texture 118AE000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1060
+[1965-07-20 03:51:15.420] [info] [gpu] [t910821628] GLES: texture 113C3000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1060
+[1965-07-20 03:51:15.434] [info] [gpu] [t910821628] GLES: compiled VS 662F7EAB15275319 (modification 1FF, 21687 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:15.436] [warning] [gpu] [t910821628] GLSL translator: texture operation getWeights2D not supported, returns 0
+[1965-07-20 03:51:15.438] [info] [gpu] [t910821628] GLES: compiled PS 75EFC7EC033C4CA6 (modification 1FF, 9580 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:15.440] [info] [gpu] [t910821628] GLES: linked program VS 662F7EAB15275319 + PS 75EFC7EC033C4CA6 in 1.5 ms (shader cache)
+[1965-07-20 03:51:15.440] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2047047808 (39 kept) pc 2046812136 (1 kept) vte 2047047792 ndc 2047047776/2047047760 atest 2046812008, 0 bools, 0 loops, 3 textures; 17 active uniforms
+[1965-07-20 03:51:15.463] [info] [gpu] [t910821628] GLES: texture 11313000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1060
+[1965-07-20 03:51:15.472] [warning] [gpu] [t910821628] GLES: texture format k_24_8 not supported (black)
+[1965-07-20 03:51:15.476] [info] [gpu] [t910821628] GLES: linked program VS 2E015B8427EBD8C5 + PS E8EAE3AA51F7921E in 2.3 ms (shader cache)
+[1965-07-20 03:51:15.476] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051245272 (10 kept) pc 2051245360 (1 kept) vte 2051245256 ndc 2051245240/2051245224 atest 2051245312, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:51:15.487] [info] [gpu] [t910821628] GLES: compiled VS 18B3A07010A2286C (modification 7FF, 21402 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:15.493] [info] [gpu] [t910821628] GLES: compiled PS 2F9D9F5A86C9B34F (modification 7FF, 22583 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:15.498] [info] [gpu] [t910821628] GLES: linked program VS 18B3A07010A2286C + PS 2F9D9F5A86C9B34F in 1.8 ms (shader cache)
+[1965-07-20 03:51:15.498] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051245184 (31 kept) pc 2052485640 (3 kept) vte 2051245168 ndc 2051245152/2051245136 atest 2052485496, 0 bools, 0 loops, 4 textures; 19 active uniforms
+[1965-07-20 03:51:15.509] [info] [gpu] [t910821628] GLES: linked program VS 46BCED343281907B + PS A1EB7A303E163A5A in 1.5 ms (shader cache)
+[1965-07-20 03:51:15.510] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052416232 (29 kept) pc 2053154696 (1 kept) vte 2052416216 ndc 2052416200/2052416184 atest 2053154616, 0 bools, 0 loops, 2 textures; 13 active uniforms
+[1965-07-20 03:51:15.514] [info] [gpu] [t910821628] GLES: compiled VS 9F5E5B1732286B04 (modification 1F, 18143 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:15.515] [info] [gpu] [t910821628] GLES: linked program VS 9F5E5B1732286B04 + PS E8EAE3AA51F7921E in 1.1 ms (shader cache)
+[1965-07-20 03:51:15.516] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052252248 (29 kept) pc 2051262328 (1 kept) vte 2052252232 ndc 2052252216/2052252200 atest 2051262280, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:51:15.544] [info] [gpu] [t910821628] GLES: linked program VS 9F5E5B1732286B04 + PS E8EAE3AA51F7921E in 1.1 ms (shader cache)
+[1965-07-20 03:51:15.544] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051163536 (29 kept) pc 2051163624 (1 kept) vte 2051163520 ndc 2051163504/2051163488 atest 2051163576, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:51:16.067] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:51:16.080] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:51:16.241] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:51:16.254] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:51:16.833] [info] [gpu] [t910821628] GLES: compiled PS 583DB46E8980998C (modification 1, 4480 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:16.835] [info] [gpu] [t910821628] GLES: linked program VS 2A53964AA9F4D66E + PS 583DB46E8980998C in 1.6 ms (shader cache)
+[1965-07-20 03:51:16.836] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2050495344 (5 kept) pc 2051442872 (3 kept) vte 2050495328 ndc 2050495312/2050495296 atest 2051442824, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:51:16.838] [info] [gpu] [t910821628] GLES: compiled VS 07FE57A39423E2A6 (modification 3, 5906 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:16.839] [info] [gpu] [t910821628] GLES: compiled PS 478E5FA9684547B1 (modification 3, 6724 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:16.840] [info] [gpu] [t910821628] GLES: linked program VS 07FE57A39423E2A6 + PS 478E5FA9684547B1 in 1.1 ms (shader cache)
+[1965-07-20 03:51:16.841] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051443432 (9 kept) pc 2053115264 (4 kept) vte 2051443416 ndc 2051443400/2051443384 atest 2053115120, 0 bools, 0 loops, 4 textures; 19 active uniforms
+[1965-07-20 03:51:16.843] [info] [gpu] [t910821628] GLES: compiled VS 9FD0BFCB0A6E13AF (modification 1, 4096 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:16.844] [info] [gpu] [t910821628] GLES: compiled PS AB3DCCCDF0FBC907 (modification 1, 3076 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:16.846] [info] [gpu] [t910821628] GLES: linked program VS 9FD0BFCB0A6E13AF + PS AB3DCCCDF0FBC907 in 1.2 ms (shader cache)
+[1965-07-20 03:51:16.846] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2053114896 (5 kept) pc -1 (-1 kept) vte 2053114880 ndc 2053114864/2053114848 atest 2051013760, 0 bools, 0 loops, 1 textures; 9 active uniforms
+[1965-07-20 03:51:16.849] [info] [gpu] [t910821628] GLES: compiled VS 59CD00A489248613 (modification 1, 5221 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:16.851] [info] [gpu] [t910821628] GLES: compiled PS A7D09ABBCE821773 (modification 1, 8590 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:16.852] [info] [gpu] [t910821628] GLES: linked program VS 59CD00A489248613 + PS A7D09ABBCE821773 in 1.1 ms (shader cache)
+[1965-07-20 03:51:16.853] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052276712 (6 kept) pc 2052550408 (4 kept) vte 2052276696 ndc 2052276680/2052276664 atest 2052550360, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:51:16.854] [info] [gpu] [t910821628] GLES: compiled VS 28138B1C7C13DFE8 (modification 3, 3880 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:16.856] [info] [gpu] [t910821628] GLES: compiled PS 66E05C9B4FB31681 (modification 30003, 4833 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:16.858] [info] [gpu] [t910821628] GLES: linked program VS 28138B1C7C13DFE8 + PS 66E05C9B4FB31681 in 1.9 ms (shader cache)
+[1965-07-20 03:51:16.859] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052550624 (5 kept) pc 2052925056 (6 kept) vte 2052550608 ndc 2052550592/2052550576 atest 2052925008, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:51:16.861] [info] [gpu] [t910821628] GLES: compiled VS BDA457248E1F30D6 (modification 1, 4176 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:16.862] [info] [gpu] [t910821628] GLES: compiled PS 471B749FBB897F7E (modification 1, 4752 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:16.864] [info] [gpu] [t910821628] GLES: linked program VS BDA457248E1F30D6 + PS 471B749FBB897F7E in 1.5 ms (shader cache)
+[1965-07-20 03:51:16.864] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052548848 (4 kept) pc 2051605200 (6 kept) vte 2052548832 ndc 2052548816/2052548800 atest 2051605184, 0 bools, 0 loops, 0 textures; 7 active uniforms
+[1965-07-20 03:51:16.880] [info] [gpu] [t910821628] GLES: texture 11272000 1024x512 k_DXT4_5 (512 KiB on the host) at swap 1060
+[1965-07-20 03:51:17.443] [info] [gpu] [t910821628] GLES: linked program VS 2E015B8427EBD8C5 + PS E8EAE3AA51F7921E in 1.4 ms (shader cache)
+[1965-07-20 03:51:17.444] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052677312 (10 kept) pc 2052465608 (1 kept) vte 2052677296 ndc 2052677280/2052677264 atest 2052465560, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:51:17.549] [info] [gpu] [t910821628] GLES: compiled VS 8B1102365E49ED2F (modification FF, 12125 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:17.550] [info] [gpu] [t910821628] GLES: compiled PS 93C37984FFE46C47 (modification FF, 6668 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:17.552] [info] [gpu] [t910821628] GLES: linked program VS 8B1102365E49ED2F + PS 93C37984FFE46C47 in 1.2 ms (shader cache)
+[1965-07-20 03:51:17.553] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052866584 (26 kept) pc 2053188336 (1 kept) vte 2052866568 ndc 2052866552/2052866536 atest 2053188256, 0 bools, 0 loops, 2 textures; 13 active uniforms
+[1965-07-20 03:51:19.408] [info] [krnl] [t3553566673] sync stats: 25658 calls in 10 s (93 keys)
+[1965-07-20 03:51:19.409] [info] [krnl] [t3553566673]           Delay thread F80000DC callers 823F66A8 <- 8264CD94 object FFFFB1E0: 3755 calls, 3755 blocked, 2548.6 us avg
+[1965-07-20 03:51:19.409] [info] [krnl] [t3553566673]           Delay thread F80000AC callers 8267C16C <- 8264CD94 object FFFFD8F0: 3373 calls, 3373 blocked, 1578.5 us avg
+[1965-07-20 03:51:19.409] [info] [krnl] [t3553566673]            Wait thread F8000068 callers 825D2A3C <- 825CE554 object F8000060: 1803 calls, 7 blocked, 16.1 us avg
+[1965-07-20 03:51:19.410] [info] [krnl] [t3553566673]           Delay thread F80000E8 callers 825F751C <- 826978F4 object FFFF3CB0: 1721 calls, 1721 blocked, 5752.1 us avg
+[1965-07-20 03:51:19.410] [info] [krnl] [t3553566673]           Delay thread F80000E0 callers 825F7408 <- 826978F4 object FFFF3CB0: 1719 calls, 1719 blocked, 5742.8 us avg
+[1965-07-20 03:51:19.411] [info] [krnl] [t3553566673]           Delay thread F80000AC callers 82663844 <- 826564D8 object FFFFD8F0: 1526 calls, 1526 blocked, 1721.2 us avg
+[1965-07-20 03:51:19.411] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D0424 <- 82620BC4 object F8000060: 912 calls, 6 blocked, 17.7 us avg
+[1965-07-20 03:51:19.412] [info] [krnl] [t3553566673]            Wait thread F80000A8 callers 8269FFA0 <- 8269E684 object F800009C: 686 calls, 647 blocked, 26021.5 us avg
+[1965-07-20 03:51:19.412] [info] [krnl] [t3553566673]        SetEvent thread F8000094 callers 8269EB88 <- 826A27AC object F800009C: 675 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:19.413] [info] [krnl] [t3553566673]        SetEvent thread F800001C callers 826AE5B0 <- 826A5A24 object F8000050: 601 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:19.413] [info] [krnl] [t3553566673]            Wait thread F800005C callers 825D5AD0 <- 825D015C object F8000054: 600 calls, 2 blocked, 12.0 us avg
+[1965-07-20 03:51:19.413] [info] [krnl] [t3553566673]        SetEvent thread F800005C callers 825D5AE4 <- 825D015C object F8000058: 600 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:19.413] [info] [krnl] [t3553566673]            Wait thread F800005C callers 825D01A4 <- 825CE554 object F8000050: 600 calls, 600 blocked, 16538.2 us avg
+[1965-07-20 03:51:19.413] [info] [krnl] [t3553566673]        SetEvent thread F80000A8 callers 8269E684 <- 00000000 object F8000208: 520 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:19.413] [info] [krnl] [t3553566673]        SetEvent thread F80000A8 callers 8269FF60 <- 8269E684 object F8000200: 518 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:19.413] [info] [krnl] [t3553566673]            Wait thread F8000094 callers 826A27AC <- 825634C8 object F8000208: 518 calls, 518 blocked, 2716.6 us avg
+[1965-07-20 03:51:19.413] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D039C <- 825D0470 object F8000054: 433 calls, 0 blocked, 9.1 us avg
+[1965-07-20 03:51:19.414] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D031C <- 825D0448 object F8000054: 394 calls, 0 blocked, 6.8 us avg
+[1965-07-20 03:51:19.414] [info] [krnl] [t3553566673]            Wait thread F8000094 callers 825CE9FC <- 825CE554 object F8000090: 365 calls, 364 blocked, 47913.9 us avg
+[1965-07-20 03:51:19.414] [info] [krnl] [t3553566673]           Delay thread F8000180 callers 8267C42C <- 8264CD94 object FFFFD8F0: 339 calls, 339 blocked, 1921.4 us avg
+[1965-07-20 03:51:19.414] [info] [krnl] [t3553566673]           Delay thread F80000AC callers 8266384C <- 826564D8 object FFFFD8F0: 331 calls, 331 blocked, 1852.1 us avg
+[1965-07-20 03:51:19.414] [info] [krnl] [t3553566673]            Wait thread F8000180 callers 825CB628 <- 826737B4 object F8000210: 259 calls, 259 blocked, 5902.2 us avg
+[1965-07-20 03:51:19.414] [info] [krnl] [t3553566673]   SignalAndWait thread F8000028 callers 825D03D0 <- 825D0470 object F8000058: 245 calls, 175 blocked, 9399.5 us avg
+[1965-07-20 03:51:19.414] [info] [krnl] [t3553566673]   SignalAndWait thread F8000028 callers 825D0350 <- 825D0448 object F8000058: 206 calls, 103 blocked, 1780.1 us avg
+[1965-07-20 03:51:19.414] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D5AD0 <- 825D04B8 object F8000054: 189 calls, 0 blocked, 4.3 us avg
+[1965-07-20 03:51:19.414] [info] [krnl] [t3553566673]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04B8 object F8000058: 189 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:19.414] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D5AD0 <- 825D04C8 object F8000060: 189 calls, 0 blocked, 4.2 us avg
+[1965-07-20 03:51:19.415] [info] [krnl] [t3553566673]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04C8 object F8000064: 189 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:19.415] [info] [krnl] [t3553566673]           Delay thread F8000180 callers 8267C378 <- 8264CD94 object FFFFD8F0: 188 calls, 188 blocked, 1563.6 us avg
+[1965-07-20 03:51:19.415] [info] [krnl] [t3553566673]        SetEvent thread F8000068 callers 825D5AE4 <- 825D2A30 object F8000064: 188 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:19.415] [info] [krnl] [t3553566673]            Wait thread F8000068 callers 825D5AD0 <- 825D2A30 object F8000060: 188 calls, 0 blocked, 13.7 us avg
+[1965-07-20 03:51:19.415] [info] [krnl] [t3553566673]           Delay thread F80000AC callers 8266384C <- 8261CF40 object FFFFD8F0: 171 calls, 171 blocked, 1864.1 us avg
+[1965-07-20 03:51:19.415] [info] [krnl] [t3553566673]        SetEvent thread F80000A8 callers 8269E684 <- 00000000 object F8000200: 161 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:19.415] [info] [krnl] [t3553566673]            Wait thread F8000094 callers 826A27AC <- 825634C8 object F8000200: 157 calls, 157 blocked, 1647.5 us avg
+[1965-07-20 03:51:19.415] [info] [krnl] [t3553566673]        SetEvent thread F80000A8 callers 8269FF60 <- 8269E684 object F80001F4: 157 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:19.416] [info] [krnl] [t3553566673]           Delay thread F80000AC callers 82663844 <- 8261AC7C object FFFFD8F0: 102 calls, 102 blocked, 1713.0 us avg
+[1965-07-20 03:51:19.416] [info] [krnl] [t3553566673]           Delay thread F8000110 callers 8253025C <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100730.8 us avg
+[1965-07-20 03:51:19.416] [info] [krnl] [t3553566673]           Delay thread F800010C callers 82531AF0 <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100728.8 us avg
+[1965-07-20 03:51:19.416] [info] [krnl] [t3553566673]            Wait thread F8000180 callers 825CB628 <- 826737B4 object F8000208: 79 calls, 79 blocked, 3624.0 us avg
+[1965-07-20 03:51:19.416] [info] [krnl] [t3553566673]        SetEvent thread F800007C callers 825D64CC <- 825CE554 object F8000070: 73 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:20.003] [info] [gpu] [t910821628] GLES: freed 1 textures and 0 resolve targets (1.8 MiB) unused for 300 swaps
+[1965-07-20 03:51:21.334] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:51:21.351] [error] [krnl] [t545414302] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:51:22.147] [info] [sys] [t1294523948] Software MMU: frame 1200: 489 virtual + 24 physical blocks, 377.5 MiB backed (peak 377.7 MiB), 0 released-page writes
+[1965-07-20 03:51:22.147] [info] [sys] [t1294523948] Software MMU:   physical region AB000000: 272.0 MiB, 184.0 MiB backed
+[1965-07-20 03:51:22.147] [info] [sys] [t1294523948] Software MMU:   virtual  region 40F40000: 70.1 MiB, 70.1 MiB backed
+[1965-07-20 03:51:22.148] [info] [sys] [t1294523948] Software MMU:   physical region DC000000: 48.0 MiB, 48.0 MiB backed
+[1965-07-20 03:51:22.148] [info] [sys] [t1294523948] Software MMU:   physical region C0000000: 16.0 MiB, 16.0 MiB backed
+[1965-07-20 03:51:22.148] [info] [sys] [t1294523948] Software MMU:   virtual  region 82000000: 11.2 MiB, 11.2 MiB backed
+[1965-07-20 03:51:22.148] [info] [sys] [t1294523948] Software MMU:   virtual  region 40220000: 8.1 MiB, 8.1 MiB backed
+[1965-07-20 03:51:22.148] [info] [sys] [t1294523948] Software MMU:   virtual  region 45BA0000: 8.0 MiB, 8.0 MiB backed
+[1965-07-20 03:51:22.148] [info] [sys] [t1294523948] Software MMU:   virtual  region 45550000: 4.0 MiB, 4.0 MiB backed
+[1965-07-20 03:51:22.156] [info] [gpu] [t910821628] GLES: swap 1200: 22600 draws, 21600 skipped, 9865 resolves since the last report; 7 render targets, 8 resolve targets, 39 textures, 33 programs; frontbuffer 0B000000 resolved; skipped: no target 21600, shader 0, link 0, vertices 0
+[1965-07-20 03:51:22.157] [info] [gpu] [t910821628] GLES: time since the last report 13877 ms: translate 34 ms, compile 0 ms (22 shaders), link 24 ms (16 programs, 16 from the shader cache), present+swap 39 ms; longest frame 1802 ms
+[1965-07-20 03:51:22.157] [info] [gpu] [t910821628] GLES: GPU thread: idle (waiting for the game) 7840 ms, draws 4040 ms (textures 0, constants 0, vertices 0, GL draw calls 0; parts off: gles_detailed_timers), resolves 1396 ms, present 39 ms, other 561 ms
+[1965-07-20 03:51:22.157] [info] [gpu] [t910821628] GLES:   WAIT_REG_MEM: 2952 sleeps, 3960 ms slept for 2952 ms asked (part of idle)
+[1965-07-20 03:51:22.157] [info] [gpu] [t910821628] GLES:   vertices: glBufferData 0 ms for 2.2 MiB of vertices and 0.1 MiB of indices, hashing 0 ms for 93.9 MiB; cache hits/misses: vertex ranges 16955/265, index sets 16973/81; kept: 159 vertex buffers 1.1 MiB, 64 index buffers 0.1 MiB
+[1965-07-20 03:51:22.158] [info] [gpu] [t910821628] GLES:   vertex stream ring: 3.3 MiB written, 182 ranges moved to own buffers, 0 did not fit; 2087 checks of static ranges by sample
+[1965-07-20 03:51:22.158] [info] [gpu] [t910821628] GLES:   textures: hashing 0 ms for 234.4 MiB
+[1965-07-20 03:51:22.158] [info] [gpu] [t910821628] GLES:   vertex ranges checked again in the same swap: 112 (0.1 MiB)
+[1965-07-20 03:51:22.158] [info] [gpu] [t910821628] GLES:   GL calls: program switches 13874, uniform uploads 9763 (unchanged, not sent: 212660), state groups sent 76059 (unchanged: 104741), blend changes on a program (vitaGL fragment re-patch) 0
+[1965-07-20 03:51:22.158] [info] [gpu] [t910821628] GLES:   framebuffer changes: 7376 to render targets (4035 more keeping their depth/stencil, loaded and stored at each change on vitaGL), 8685 to resolve targets, 300 to the display; game draws first after a change 11051, their GL draw calls 0 ms (part of GL draw calls)
+[1965-07-20 03:51:22.158] [info] [gpu] [t910821628] GLES:   GXM calls (all threads): BeginScene 20396 calls 39 ms (max 0.3 ms), EndScene 20396 calls 2999 ms (max 1270.1 ms), Draw 52821 calls 68 ms (max 0.2 ms); EndScene by scene: render target 7376 (326 us each), render target with depth kept 4035 (33 us each), resolve 8685 (57 us each), display/other 300 (18 us each)
+[1965-07-20 03:51:22.159] [info] [gpu] [t910821628] GLES:   depth: fills held after a depth copy 1560, dropped for a restore 300, applied as a clear 600
+[1965-07-20 03:51:22.159] [info] [gpu] [t910821628] GLES memory (MiB): render targets 10.8 (3), resolve targets 25.5 (8), textures 11.4 (39), scratch 0.0, framebuffers 6 + 4 for resolves -> depth/stencil 4.5 (vitaGL estimate); total 52.2
+[1965-07-20 03:51:22.159] [info] [gpu] [t910821628] GLES:   vitaGL pools free (probed, MiB, largest block): VRAM 5.4 (2.0) of 100, RAM 7.4 (4.0) of 24, PHYCONT 15.9 (8.0) of 16
+[1965-07-20 03:51:22.842] [info] [gpu] [t910821628] GLES: texture 0FEE9000 1024x3152 k_DXT4_5 (3152 KiB on the host) at swap 1218
+[1965-07-20 03:51:22.844] [info] [gpu] [t910821628] GLES: resolve framebuffer 1024x3152 #1
+[1965-07-20 03:51:22.847] [info] [gpu] [t910821628] GLES: surface copy of a 1024x3152 texture (key 6278FFF60FEE9000) at swap 1218
+[1965-07-20 03:51:24.202] [info] [gpu] [t910821628] GLES: freed 1 textures and 0 resolve targets (1.8 MiB) unused for 300 swaps
+[1965-07-20 03:51:26.559] [error] [krnl] [t2825869386] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 03:51:28.221] [info] [gpu] [t910821628] GLES: freed 1 textures and 0 resolve targets (0.1 MiB) unused for 300 swaps
+[1965-07-20 03:51:29.408] [info] [krnl] [t1476103283] sync stats: 23247 calls in 10 s (78 keys)
+[1965-07-20 03:51:29.409] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 8267C16C <- 8264CD94 object FFFFD8F0: 4275 calls, 4275 blocked, 1760.9 us avg
+[1965-07-20 03:51:29.410] [info] [krnl] [t1476103283]           Delay thread F80000DC callers 823F66A8 <- 8264CD94 object FFFFB1E0: 3740 calls, 3740 blocked, 2626.5 us avg
+[1965-07-20 03:51:29.411] [info] [krnl] [t1476103283]           Delay thread F80000E8 callers 825F751C <- 826978F4 object FFFF3CB0: 1713 calls, 1713 blocked, 5785.4 us avg
+[1965-07-20 03:51:29.411] [info] [krnl] [t1476103283]           Delay thread F80000E0 callers 825F7408 <- 826978F4 object FFFF3CB0: 1708 calls, 1708 blocked, 5786.0 us avg
+[1965-07-20 03:51:29.411] [info] [krnl] [t1476103283]            Wait thread F8000068 callers 825D2A3C <- 825CE554 object F8000060: 1659 calls, 3 blocked, 14.3 us avg
+[1965-07-20 03:51:29.412] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D039C <- 825D0470 object F8000054: 755 calls, 1 blocked, 9.1 us avg
+[1965-07-20 03:51:29.413] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 82663844 <- 826564D8 object FFFFD8F0: 754 calls, 754 blocked, 1714.4 us avg
+[1965-07-20 03:51:29.413] [info] [krnl] [t1476103283]        SetEvent thread F800005C callers 825D5AE4 <- 825D015C object F8000058: 602 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:29.413] [info] [krnl] [t1476103283]            Wait thread F800005C callers 825D5AD0 <- 825D015C object F8000054: 602 calls, 4 blocked, 13.4 us avg
+[1965-07-20 03:51:29.413] [info] [krnl] [t1476103283]            Wait thread F800005C callers 825D01A4 <- 825CE554 object F8000050: 602 calls, 602 blocked, 16483.7 us avg
+[1965-07-20 03:51:29.414] [info] [krnl] [t1476103283]        SetEvent thread F800001C callers 826AE5B0 <- 826A5A24 object F8000050: 602 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:29.414] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D0424 <- 82620BC4 object F8000060: 486 calls, 6 blocked, 18.5 us avg
+[1965-07-20 03:51:29.414] [info] [krnl] [t1476103283]   SignalAndWait thread F8000028 callers 825D03D0 <- 825D0470 object F8000058: 462 calls, 230 blocked, 3888.4 us avg
+[1965-07-20 03:51:29.414] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D5AD0 <- 825D04B8 object F8000054: 293 calls, 0 blocked, 4.4 us avg
+[1965-07-20 03:51:29.414] [info] [krnl] [t1476103283]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04B8 object F8000058: 293 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:29.414] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D5AD0 <- 825D04C8 object F8000060: 293 calls, 0 blocked, 4.5 us avg
+[1965-07-20 03:51:29.414] [info] [krnl] [t1476103283]        SetEvent thread F8000068 callers 825D5AE4 <- 825D2A30 object F8000064: 293 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:29.415] [info] [krnl] [t1476103283]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04C8 object F8000064: 293 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:29.415] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D031C <- 825D0448 object F8000054: 293 calls, 0 blocked, 5.3 us avg
+[1965-07-20 03:51:29.415] [info] [krnl] [t1476103283]            Wait thread F8000068 callers 825D5AD0 <- 825D2A30 object F8000060: 293 calls, 2 blocked, 16.3 us avg
+[1965-07-20 03:51:29.415] [info] [krnl] [t1476103283]            Wait thread F80000A8 callers 8269FFA0 <- 8269E684 object F800009C: 287 calls, 263 blocked, 22446.3 us avg
+[1965-07-20 03:51:29.415] [info] [krnl] [t1476103283]        SetEvent thread F80000A8 callers 8269E684 <- 00000000 object F8000208: 287 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:29.415] [info] [krnl] [t1476103283]        SetEvent thread F80000A8 callers 8269FF60 <- 8269E684 object F8000200: 284 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:29.415] [info] [krnl] [t1476103283]            Wait thread F8000094 callers 826A27AC <- 825634C8 object F8000208: 284 calls, 284 blocked, 2690.8 us avg
+[1965-07-20 03:51:29.415] [info] [krnl] [t1476103283]        SetEvent thread F8000094 callers 8269EB88 <- 826A27AC object F800009C: 284 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:29.415] [info] [krnl] [t1476103283]            Wait thread F8000094 callers 825CE9FC <- 825CE554 object F8000090: 168 calls, 168 blocked, 8196.3 us avg
+[1965-07-20 03:51:29.416] [info] [krnl] [t1476103283]           Delay thread F8000180 callers 8267C42C <- 8264CD94 object FFFFD8F0: 164 calls, 164 blocked, 1932.4 us avg
+[1965-07-20 03:51:29.416] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 8266384C <- 826564D8 object FFFFD8F0: 162 calls, 162 blocked, 1864.0 us avg
+[1965-07-20 03:51:29.416] [info] [krnl] [t1476103283]            Wait thread F8000180 callers 825CB628 <- 826737B4 object F8000210: 128 calls, 128 blocked, 6009.6 us avg
+[1965-07-20 03:51:29.416] [info] [krnl] [t1476103283]           Delay thread F8000180 callers 8267C378 <- 8264CD94 object FFFFD8F0: 128 calls, 128 blocked, 1823.2 us avg
+[1965-07-20 03:51:29.416] [info] [krnl] [t1476103283]        SetEvent thread F8000074 callers 825D64CC <- 825CE554 object F8000070: 103 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:29.416] [info] [krnl] [t1476103283]            Wait thread F8000074 callers 825D63C8 <- 825CE554 object F800006C: 103 calls, 103 blocked, 97057.5 us avg
+[1965-07-20 03:51:29.417] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 8266384C <- 8261CF40 object FFFFD8F0: 102 calls, 102 blocked, 1940.9 us avg
+[1965-07-20 03:51:29.417] [info] [krnl] [t1476103283]            Wait thread F800007C callers 825D63C8 <- 825CE554 object F800006C: 100 calls, 100 blocked, 100099.8 us avg
+[1965-07-20 03:51:29.417] [info] [krnl] [t1476103283]        SetEvent thread F800007C callers 825D64CC <- 825CE554 object F8000070: 100 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:29.417] [info] [krnl] [t1476103283]           Delay thread F800010C callers 82531AF0 <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100788.3 us avg
+[1965-07-20 03:51:29.417] [info] [krnl] [t1476103283]           Delay thread F8000110 callers 8253025C <- 8264CD94 object FFF0BDC0: 97 calls, 97 blocked, 100707.0 us avg
+[1965-07-20 03:51:29.417] [info] [krnl] [t1476103283]            Wait thread F8000078 callers 825D63C8 <- 825CE554 object F800006C: 91 calls, 91 blocked, 111384.0 us avg
+[1965-07-20 03:51:29.417] [info] [krnl] [t1476103283]        SetEvent thread F8000078 callers 825D64CC <- 825CE554 object F8000070: 91 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:29.417] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 82663844 <- 8261AC7C object FFFFD8F0: 36 calls, 36 blocked, 1863.4 us avg
+[1965-07-20 03:51:32.210] [info] [gpu] [t910821628] GLES: swap 1500: 59085 draws, 21600 skipped, 12300 resolves since the last report; 7 render targets, 8 resolve targets, 40 textures, 33 programs; frontbuffer 0B000000 resolved; skipped: no target 21600, shader 0, link 0, vertices 0
+[1965-07-20 03:51:32.210] [info] [gpu] [t910821628] GLES: time since the last report 10054 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 43 ms; longest frame 100 ms
+[1965-07-20 03:51:32.211] [info] [gpu] [t910821628] GLES: GPU thread: idle (waiting for the game) 5064 ms, draws 3282 ms (textures 0, constants 0, vertices 0, GL draw calls 0; parts off: gles_detailed_timers), resolves 901 ms, present 43 ms, other 764 ms
+[1965-07-20 03:51:32.211] [info] [gpu] [t910821628] GLES:   WAIT_REG_MEM: 2075 sleeps, 2829 ms slept for 2075 ms asked (part of idle)
+[1965-07-20 03:51:32.211] [info] [gpu] [t910821628] GLES:   vertices: glBufferData 0 ms for 1.3 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 74.2 MiB; cache hits/misses: vertex ranges 51917/868, index sets 50215/5; kept: 239 vertex buffers 1.1 MiB, 62 index buffers 0.1 MiB
+[1965-07-20 03:51:32.211] [info] [gpu] [t910821628] GLES:   vertex stream ring: 0.1 MiB written, 476 ranges moved to own buffers, 0 did not fit; 8007 checks of static ranges by sample
+[1965-07-20 03:51:32.212] [info] [gpu] [t910821628] GLES:   textures: hashing 0 ms for 452.2 MiB
+[1965-07-20 03:51:32.212] [info] [gpu] [t910821628] GLES:   vertex ranges checked again in the same swap: 234 (0.3 MiB)
+[1965-07-20 03:51:32.212] [info] [gpu] [t910821628] GLES:   GL calls: program switches 20103, uniform uploads 34082 (unchanged, not sent: 547930), state groups sent 100111 (unchanged: 372569), blend changes on a program (vitaGL fragment re-patch) 0
+[1965-07-20 03:51:32.212] [info] [gpu] [t910821628] GLES:   framebuffer changes: 9586 to render targets (4500 more keeping their depth/stencil, loaded and stored at each change on vitaGL), 11082 to resolve targets, 300 to the display; game draws first after a change 13786, their GL draw calls 0 ms (part of GL draw calls)
+[1965-07-20 03:51:32.212] [info] [gpu] [t910821628] GLES:   GXM calls (all threads): BeginScene 25468 calls 52 ms (max 0.2 ms), EndScene 25468 calls 734 ms (max 4.9 ms), Draw 96835 calls 125 ms (max 0.4 ms); EndScene by scene: render target 9586 (41 us each), render target with depth kept 4500 (17 us each), resolve 11082 (28 us each), display/other 300 (18 us each)
+[1965-07-20 03:51:32.213] [info] [gpu] [t910821628] GLES:   surface copies of textures: 282 made since the last report, 12.3 MiB kept
+[1965-07-20 03:51:32.213] [info] [gpu] [t910821628] GLES:   depth: fills held after a depth copy 1500, dropped for a restore 300, applied as a clear 600
+[1965-07-20 03:51:32.213] [info] [gpu] [t910821628] GLES memory (MiB): render targets 10.8 (3), resolve targets 25.5 (8), textures 12.7 (40), scratch 0.0, framebuffers 6 + 5 for resolves -> depth/stencil 4.5 (vitaGL estimate); total 53.5
+[1965-07-20 03:51:32.213] [info] [gpu] [t910821628] GLES:   vitaGL pools free (probed, MiB, largest block): VRAM 7.1 (2.0) of 100, RAM 3.4 (2.0) of 24, PHYCONT 3.6 (2.0) of 16
+[1965-07-20 03:51:32.213] [info] [gpu] [t910821628] GLES: surface copy of a 1024x3152 texture (key 6278FFF60FEE9000) at swap 1500
+[1965-07-20 03:51:33.417] [info] [gpu] [t910821628] GLES: linked program VS 2E015B8427EBD8C5 + PS E8EAE3AA51F7921E in 1.6 ms (shader cache)
+[1965-07-20 03:51:33.418] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052936016 (10 kept) pc 2051010272 (1 kept) vte 2052936000 ndc 2052935984/2052935968 atest 2051010224, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:51:33.666] [info] [gpu] [t910821628] GLES: texture 11473000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1543
+[1965-07-20 03:51:34.205] [info] [gpu] [t910821628] GLES: freed 1 textures and 0 resolve targets (0.1 MiB) unused for 300 swaps
+[1965-07-20 03:51:34.970] [info] [gpu] [t910821628] GLES: texture 12268000 1536x768 k_DXT4_5 (1152 KiB on the host) at swap 1582
+[1965-07-20 03:51:35.841] [info] [gpu] [t910821628] GLES: compiled VS D83A3F8DA0C5BCB8 (modification 0, 3498 bytes of GLSL) in 0.1 ms
+[1965-07-20 03:51:35.843] [info] [gpu] [t910821628] GLES: linked program VS D83A3F8DA0C5BCB8 + PS 0000000000000000 in 1.9 ms (shader cache)
+[1965-07-20 03:51:35.844] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051371352 (4 kept) pc -1 (-1 kept) vte 2051371336 ndc 2051371320/2051371304 atest -1, 0 bools, 0 loops, 0 textures; 5 active uniforms
+[1965-07-20 03:51:35.845] [info] [gpu] [t910821628] GLES: compiled VS 9F5A6C253EA745D9 (modification 0, 3498 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:35.847] [info] [gpu] [t910821628] GLES: linked program VS 9F5A6C253EA745D9 + PS 0000000000000000 in 1.2 ms (shader cache)
+[1965-07-20 03:51:35.848] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2047198544 (4 kept) pc -1 (-1 kept) vte 2047198528 ndc 2047198512/2047198496 atest -1, 0 bools, 0 loops, 0 textures; 5 active uniforms
+[1965-07-20 03:51:35.862] [info] [gpu] [t910821628] GLES: compiled VS 82F4ACEFC5E4D8A0 (modification FF, 12125 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:35.865] [info] [gpu] [t910821628] GLES: compiled PS B958D20D3E6FDD3D (modification FF, 12498 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:35.867] [info] [gpu] [t910821628] GLES: linked program VS 82F4ACEFC5E4D8A0 + PS B958D20D3E6FDD3D in 1.3 ms (shader cache)
+[1965-07-20 03:51:35.868] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051563776 (26 kept) pc 2051066840 (2 kept) vte 2051563760 ndc 2051563744/2051563728 atest 2051066760, 0 bools, 0 loops, 2 textures; 13 active uniforms
+[1965-07-20 03:51:35.960] [info] [gpu] [t910821628] GLES: texture 1244D000 512x512 k_5_6_5 (512 KiB on the host) at swap 1602
+[1965-07-20 03:51:35.962] [info] [gpu] [t910821628] GLES: compiled VS 74C32F087A311BBA (modification 1F, 8728 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:35.963] [info] [gpu] [t910821628] GLES: compiled PS 74E790B19DC618A3 (modification 1F, 4559 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:35.965] [info] [gpu] [t910821628] GLES: linked program VS 74C32F087A311BBA + PS 74E790B19DC618A3 in 1.8 ms (shader cache)
+[1965-07-20 03:51:35.966] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2044853928 (10 kept) pc 2050494936 (1 kept) vte 2044853912 ndc 2044853896/2044853880 atest 2050494888, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:51:35.968] [info] [gpu] [t910821628] GLES: linked program VS 8B1102365E49ED2F + PS B958D20D3E6FDD3D in 1.5 ms (shader cache)
+[1965-07-20 03:51:35.969] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2052940488 (26 kept) pc 2046978536 (2 kept) vte 2052940472 ndc 2052940456/2052940440 atest 2046978456, 0 bools, 0 loops, 2 textures; 13 active uniforms
+[1965-07-20 03:51:35.971] [info] [gpu] [t910821628] GLES: compiled VS C93F38275EB913CC (modification 1F, 8728 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:35.973] [info] [gpu] [t910821628] GLES: linked program VS C93F38275EB913CC + PS 74E790B19DC618A3 in 1.8 ms (shader cache)
+[1965-07-20 03:51:35.974] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051073288 (10 kept) pc 2052367184 (1 kept) vte 2051073272 ndc 2051073256/2051073240 atest 2052367136, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 03:51:35.977] [info] [gpu] [t910821628] GLES: compiled VS 234F9F4626D49E32 (modification 1FF, 12826 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:35.984] [info] [gpu] [t910821628] GLES: compiled PS 0476F2C52B5B460A (modification 1FF, 14586 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:35.988] [info] [gpu] [t910821628] GLES: linked program VS 234F9F4626D49E32 + PS 0476F2C52B5B460A in 4.2 ms (shader cache)
+[1965-07-20 03:51:35.989] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051144848 (29 kept) pc 2051181512 (2 kept) vte 2051144832 ndc 2051144816/2051144800 atest 2051181400, 0 bools, 0 loops, 3 textures; 16 active uniforms
+[1965-07-20 03:51:36.083] [info] [gpu] [t910821628] GLES: texture 125BD000 512x512 k_5_6_5 (512 KiB on the host) at swap 1602
+[1965-07-20 03:51:36.085] [info] [gpu] [t910821628] GLES: compiled VS A65B3A1A291B01BF (modification 0, 2375 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:36.085] [info] [gpu] [t910821628] GLES: compiled PS BF93DD49CA93B852 (modification 0, 2878 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:36.087] [info] [gpu] [t910821628] GLES: linked program VS A65B3A1A291B01BF + PS BF93DD49CA93B852 in 1.1 ms (shader cache)
+[1965-07-20 03:51:36.087] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2041913128 (1 kept) pc -1 (-1 kept) vte 2041913112 ndc 2041913096/2041913080 atest 2047230312, 0 bools, 0 loops, 0 textures; 6 active uniforms
+[1965-07-20 03:51:36.095] [info] [gpu] [t910821628] GLES: compiled VS 0F628CC3AD4EED18 (modification 1, 17931 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:36.096] [info] [gpu] [t910821628] GLES: linked program VS 0F628CC3AD4EED18 + PS A4A965C189287B99 in 1.2 ms (shader cache)
+[1965-07-20 03:51:36.097] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051152096 (19 kept) pc -1 (-1 kept) vte 2051152080 ndc 2051152064/2051152048 atest 2053009176, 0 bools, 0 loops, 0 textures; 6 active uniforms
+[1965-07-20 03:51:36.101] [info] [gpu] [t910821628] GLES: compiled VS 3FF1898E1D84151E (modification 1, 17786 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:36.102] [info] [gpu] [t910821628] GLES: linked program VS 3FF1898E1D84151E + PS A4A965C189287B99 in 1.1 ms (shader cache)
+[1965-07-20 03:51:36.103] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2045184656 (19 kept) pc -1 (-1 kept) vte 2045184640 ndc 2045184624/2045184608 atest 2051114136, 0 bools, 0 loops, 0 textures; 6 active uniforms
+[1965-07-20 03:51:36.107] [info] [gpu] [t910821628] GLES: compiled VS FACBF5B594765BF9 (modification 1, 17786 bytes of GLSL) in 0.0 ms
+[1965-07-20 03:51:36.109] [info] [gpu] [t910821628] GLES: linked program VS FACBF5B594765BF9 + PS A4A965C189287B99 in 1.5 ms (shader cache)
+[1965-07-20 03:51:36.110] [info] [gpu] [t910821628] GLES: program uniforms (-1 = absent): vc 2051144144 (19 kept) pc -1 (-1 kept) vte 2051144128 ndc 2051144112/2051144096 atest 2046860168, 0 bools, 0 loops, 0 textures; 6 active uniforms
+[1965-07-20 03:51:37.268] [info] [gpu] [t910821628] GLES: texture 10249000 512x256 k_8_8_8_8 (512 KiB on the host) at swap 1603
+[1965-07-20 03:51:39.421] [info] [krnl] [t1478937719] sync stats: 22281 calls in 10 s (39 keys)
+[1965-07-20 03:51:39.440] [info] [krnl] [t1478937719]           Delay thread F80000AC callers 8267C16C <- 8264CD94 object FFFFD8F0: 5574 calls, 5574 blocked, 1737.1 us avg
+[1965-07-20 03:51:39.440] [info] [krnl] [t1478937719]           Delay thread F80000DC callers 823F66A8 <- 8264CD94 object FFFFB1E0: 3735 calls, 3735 blocked, 2622.2 us avg
+[1965-07-20 03:51:39.440] [info] [krnl] [t1478937719]           Delay thread F80000E8 callers 825F751C <- 826978F4 object FFFF3CB0: 1708 calls, 1708 blocked, 5793.6 us avg
+[1965-07-20 03:51:39.441] [info] [krnl] [t1478937719]           Delay thread F80000E0 callers 825F7408 <- 826978F4 object FFFF3CB0: 1700 calls, 1700 blocked, 5807.2 us avg
+[1965-07-20 03:51:39.441] [info] [krnl] [t1478937719]            Wait thread F8000068 callers 825D2A3C <- 825CE554 object F8000060: 1613 calls, 8 blocked, 15.9 us avg
+[1965-07-20 03:51:39.441] [info] [krnl] [t1478937719]            Wait thread F8000028 callers 825D0424 <- 82620BC4 object F8000060: 642 calls, 4 blocked, 18.4 us avg
+[1965-07-20 03:51:39.442] [info] [krnl] [t1478937719]        SetEvent thread F800001C callers 826AE5B0 <- 826A5A24 object F8000050: 602 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.442] [info] [krnl] [t1478937719]            Wait thread F800005C callers 825D01A4 <- 825CE554 object F8000050: 602 calls, 602 blocked, 16487.4 us avg
+[1965-07-20 03:51:39.442] [info] [krnl] [t1478937719]            Wait thread F800005C callers 825D5AD0 <- 825D015C object F8000054: 602 calls, 3 blocked, 15.9 us avg
+[1965-07-20 03:51:39.442] [info] [krnl] [t1478937719]        SetEvent thread F800005C callers 825D5AE4 <- 825D015C object F8000058: 602 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.442] [info] [krnl] [t1478937719]            Wait thread F8000028 callers 825D039C <- 825D0470 object F8000054: 587 calls, 0 blocked, 8.9 us avg
+[1965-07-20 03:51:39.443] [info] [krnl] [t1478937719]            Wait thread F8000074 callers 825D63C8 <- 825CE554 object F800006C: 377 calls, 158 blocked, 24209.8 us avg
+[1965-07-20 03:51:39.443] [info] [krnl] [t1478937719]        SetEvent thread F8000074 callers 825D64CC <- 825CE554 object F8000070: 376 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.445] [info] [krnl] [t1478937719]   SignalAndWait thread F8000028 callers 825D03D0 <- 825D0470 object F8000058: 359 calls, 180 blocked, 4860.7 us avg
+[1965-07-20 03:51:39.445] [info] [krnl] [t1478937719]            Wait thread F8000078 callers 825D63C8 <- 825CE554 object F800006C: 314 calls, 128 blocked, 29184.7 us avg
+[1965-07-20 03:51:39.445] [info] [krnl] [t1478937719]        SetEvent thread F8000078 callers 825D64CC <- 825CE554 object F8000070: 313 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.445] [info] [krnl] [t1478937719]            Wait thread F800007C callers 825D63C8 <- 825CE554 object F800006C: 296 calls, 133 blocked, 30807.6 us avg
+[1965-07-20 03:51:39.446] [info] [krnl] [t1478937719]        SetEvent thread F800007C callers 825D64CC <- 825CE554 object F8000070: 295 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.446] [info] [krnl] [t1478937719]            Wait thread F8000028 callers 825D031C <- 825D0448 object F8000054: 230 calls, 0 blocked, 5.9 us avg
+[1965-07-20 03:51:39.446] [info] [krnl] [t1478937719]            Wait thread F8000068 callers 825D5AD0 <- 825D2A30 object F8000060: 229 calls, 5 blocked, 28.4 us avg
+[1965-07-20 03:51:39.446] [info] [krnl] [t1478937719]        SetEvent thread F8000068 callers 825D5AE4 <- 825D2A30 object F8000064: 228 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.446] [info] [krnl] [t1478937719]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04C8 object F8000064: 228 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.446] [info] [krnl] [t1478937719]            Wait thread F8000028 callers 825D5AD0 <- 825D04C8 object F8000060: 228 calls, 0 blocked, 4.5 us avg
+[1965-07-20 03:51:39.446] [info] [krnl] [t1478937719]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04B8 object F8000058: 228 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.446] [info] [krnl] [t1478937719]            Wait thread F8000028 callers 825D5AD0 <- 825D04B8 object F8000054: 228 calls, 0 blocked, 4.6 us avg
+[1965-07-20 03:51:39.447] [info] [krnl] [t1478937719]           Delay thread F8000110 callers 8253025C <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100724.0 us avg
+[1965-07-20 03:51:39.447] [info] [krnl] [t1478937719]           Delay thread F800010C callers 82531AF0 <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100734.0 us avg
+[1965-07-20 03:51:39.447] [info] [krnl] [t1478937719]   TryEnterCS fail thread F8000028 callers 825D6528 <- 827C2A8C object 8294B598: 38 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.447] [info] [krnl] [t1478937719]   TryEnterCS fail thread F8000028 callers 825D65C0 <- 827C2B8C object 8294B598: 21 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.447] [info] [krnl] [t1478937719]   TryEnterCS fail thread F8000074 callers 825D63D0 <- 825CE554 object 8294B598: 19 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.447] [info] [krnl] [t1478937719]   TryEnterCS fail thread F8000078 callers 825D63D0 <- 825CE554 object 8294B598: 17 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.447] [info] [krnl] [t1478937719]   TryEnterCS fail thread F8000074 callers 825D6470 <- 825CE554 object 8294B598: 17 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.448] [info] [krnl] [t1478937719]   TryEnterCS fail thread F8000078 callers 825D640C <- 825CE554 object 8294B598: 17 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.448] [info] [krnl] [t1478937719]   TryEnterCS fail thread F8000074 callers 825D640C <- 825CE554 object 8294B598: 15 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.448] [info] [krnl] [t1478937719]   TryEnterCS fail thread F800007C callers 825D63D0 <- 825CE554 object 8294B598: 14 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.448] [info] [krnl] [t1478937719]   TryEnterCS fail thread F800007C callers 825D640C <- 825CE554 object 8294B598: 10 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.448] [info] [krnl] [t1478937719]   TryEnterCS fail thread F8000078 callers 825D6470 <- 825CE554 object 8294B598: 9 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.448] [info] [krnl] [t1478937719]   TryEnterCS fail thread F800007C callers 825D6470 <- 825CE554 object 8294B598: 8 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:39.448] [info] [krnl] [t1478937719]   SignalAndWait thread F8000028 callers 825D0350 <- 825D0448 object F8000058: 2 calls, 0 blocked, 41.0 us avg
+[1965-07-20 03:51:48.096] [info] [sys] [t1294523948] Software MMU: frame 1800: 489 virtual + 25 physical blocks, 377.5 MiB backed (peak 377.7 MiB), 0 released-page writes
+[1965-07-20 03:51:48.097] [info] [sys] [t1294523948] Software MMU:   physical region AB000000: 272.0 MiB, 184.0 MiB backed
+[1965-07-20 03:51:48.097] [info] [sys] [t1294523948] Software MMU:   virtual  region 40F40000: 70.1 MiB, 70.1 MiB backed
+[1965-07-20 03:51:48.097] [info] [sys] [t1294523948] Software MMU:   physical region DC000000: 48.0 MiB, 48.0 MiB backed
+[1965-07-20 03:51:48.097] [info] [sys] [t1294523948] Software MMU:   physical region C0000000: 16.0 MiB, 16.0 MiB backed
+[1965-07-20 03:51:48.097] [info] [sys] [t1294523948] Software MMU:   virtual  region 82000000: 11.2 MiB, 11.2 MiB backed
+[1965-07-20 03:51:48.097] [info] [sys] [t1294523948] Software MMU:   virtual  region 40220000: 8.1 MiB, 8.1 MiB backed
+[1965-07-20 03:51:48.098] [info] [sys] [t1294523948] Software MMU:   virtual  region 45BA0000: 8.0 MiB, 8.0 MiB backed
+[1965-07-20 03:51:48.098] [info] [sys] [t1294523948] Software MMU:   virtual  region 45550000: 4.0 MiB, 4.0 MiB backed
+[1965-07-20 03:51:48.100] [info] [gpu] [t910821628] GLES: freed 2 textures and 0 resolve targets (0.0 MiB) unused for 300 swaps
+[1965-07-20 03:51:48.101] [info] [gpu] [t910821628] GLES: swap 1800: 73746 draws, 23382 skipped, 12300 resolves since the last report; 7 render targets, 8 resolve targets, 51 textures, 45 programs; frontbuffer 0B000000 resolved; skipped: no target 21600, shader 0, link 0, vertices 0
+[1965-07-20 03:51:48.101] [info] [gpu] [t910821628] GLES: time since the last report 15891 ms: translate 25 ms, compile 0 ms (14 shaders), link 20 ms (12 programs, 12 from the shader cache), present+swap 42 ms; longest frame 1334 ms
+[1965-07-20 03:51:48.101] [info] [gpu] [t910821628] GLES: GPU thread: idle (waiting for the game) 7725 ms, draws 5954 ms (textures 0, constants 0, vertices 0, GL draw calls 0; parts off: gles_detailed_timers), resolves 1280 ms, present 42 ms, other 891 ms
+[1965-07-20 03:51:48.101] [info] [gpu] [t910821628] GLES:   WAIT_REG_MEM: 2126 sleeps, 2902 ms slept for 2126 ms asked (part of idle)
+[1965-07-20 03:51:48.101] [info] [gpu] [t910821628] GLES:   vertices: glBufferData 0 ms for 1.7 MiB of vertices and 0.1 MiB of indices, hashing 0 ms for 588.8 MiB; cache hits/misses: vertex ranges 65115/5698, index sets 66414/48; kept: 635 vertex buffers 1.2 MiB, 87 index buffers 0.2 MiB
+[1965-07-20 03:51:48.101] [info] [gpu] [t910821628] GLES:   vertex stream ring: 266.1 MiB written, 1638 ranges moved to own buffers, 0 did not fit; 9894 checks of static ranges by sample
+[1965-07-20 03:51:48.102] [info] [gpu] [t910821628] GLES:   textures: hashing 0 ms for 478.6 MiB
+[1965-07-20 03:51:48.102] [info] [gpu] [t910821628] GLES:   vertex ranges checked again in the same swap: 5769 (167.3 MiB)
+[1965-07-20 03:51:48.102] [info] [gpu] [t910821628] GLES:   GL calls: program switches 25635, uniform uploads 48327 (unchanged, not sent: 673564), state groups sent 105459 (unchanged: 484509), blend changes on a program (vitaGL fragment re-patch) 0
+[1965-07-20 03:51:48.102] [info] [gpu] [t910821628] GLES:   framebuffer changes: 9497 to render targets (4895 more keeping their depth/stencil, loaded and stored at each change on vitaGL), 11100 to resolve targets, 300 to the display; game draws first after a change 14289, their GL draw calls 0 ms (part of GL draw calls)
+[1965-07-20 03:51:48.102] [info] [gpu] [t910821628] GLES:   GXM calls (all threads): BeginScene 25792 calls 54 ms (max 0.2 ms), EndScene 25792 calls 1815 ms (max 602.8 ms), Draw 112035 calls 155 ms (max 0.6 ms); EndScene by scene: render target 9497 (83 us each), render target with depth kept 4895 (23 us each), resolve 11100 (87 us each), display/other 300 (18 us each)
+[1965-07-20 03:51:48.102] [info] [gpu] [t910821628] GLES:   surface copies of textures: 300 made since the last report, 12.3 MiB kept
+[1965-07-20 03:51:48.102] [info] [gpu] [t910821628] GLES:   depth: fills held after a depth copy 1501, dropped for a restore 300, applied as a clear 600
+[1965-07-20 03:51:48.103] [info] [gpu] [t910821628] GLES memory (MiB): render targets 10.8 (3), resolve targets 25.5 (8), textures 16.6 (51), scratch 0.0, framebuffers 6 + 5 for resolves -> depth/stencil 4.5 (vitaGL estimate); total 57.4
+[1965-07-20 03:51:48.103] [info] [gpu] [t910821628] GLES:   vitaGL pools free (probed, MiB, largest block): VRAM 1.9 (1.0) of 100, RAM 3.4 (2.0) of 24, PHYCONT 3.6 (2.0) of 16
+[1965-07-20 03:51:48.103] [info] [gpu] [t910821628] GLES: surface copy of a 1024x3152 texture (key 6278FFF60FEE9000) at swap 1800
+[1965-07-20 03:51:49.409] [info] [krnl] [t3553566673] sync stats: 25161 calls in 10 s (49 keys)
+[1965-07-20 03:51:49.410] [info] [krnl] [t3553566673]           Delay thread F80000AC callers 8267C16C <- 8264CD94 object FFFFD8F0: 4879 calls, 4879 blocked, 1958.7 us avg
+[1965-07-20 03:51:49.410] [info] [krnl] [t3553566673]           Delay thread F80000DC callers 823F66A8 <- 8264CD94 object FFFFB1E0: 3445 calls, 3445 blocked, 2810.2 us avg
+[1965-07-20 03:51:49.410] [info] [krnl] [t3553566673]           Delay thread F80000E8 callers 825F751C <- 826978F4 object FFFF3CB0: 1666 calls, 1666 blocked, 5899.4 us avg
+[1965-07-20 03:51:49.411] [info] [krnl] [t3553566673]           Delay thread F80000E0 callers 825F7408 <- 826978F4 object FFFF3CB0: 1660 calls, 1660 blocked, 5891.6 us avg
+[1965-07-20 03:51:49.411] [info] [krnl] [t3553566673]            Wait thread F8000068 callers 825D2A3C <- 825CE554 object F8000060: 1333 calls, 6 blocked, 16.2 us avg
+[1965-07-20 03:51:49.412] [info] [krnl] [t3553566673]        SetEvent thread F800007C callers 825D64CC <- 825CE554 object F8000070: 1182 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.412] [info] [krnl] [t3553566673]            Wait thread F800007C callers 825D63C8 <- 825CE554 object F800006C: 1181 calls, 347 blocked, 5240.0 us avg
+[1965-07-20 03:51:49.413] [info] [krnl] [t3553566673]        SetEvent thread F8000078 callers 825D64CC <- 825CE554 object F8000070: 1136 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.413] [info] [krnl] [t3553566673]            Wait thread F8000078 callers 825D63C8 <- 825CE554 object F800006C: 1135 calls, 332 blocked, 5464.6 us avg
+[1965-07-20 03:51:49.414] [info] [krnl] [t3553566673]        SetEvent thread F8000074 callers 825D64CC <- 825CE554 object F8000070: 1120 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.414] [info] [krnl] [t3553566673]            Wait thread F8000074 callers 825D63C8 <- 825CE554 object F800006C: 1119 calls, 320 blocked, 5547.8 us avg
+[1965-07-20 03:51:49.414] [info] [krnl] [t3553566673]            Wait thread F800005C callers 825D01A4 <- 825CE554 object F8000050: 604 calls, 604 blocked, 16358.4 us avg
+[1965-07-20 03:51:49.414] [info] [krnl] [t3553566673]            Wait thread F800005C callers 825D5AD0 <- 825D015C object F8000054: 604 calls, 14 blocked, 27.6 us avg
+[1965-07-20 03:51:49.414] [info] [krnl] [t3553566673]        SetEvent thread F800001C callers 826AE5B0 <- 826A5A24 object F8000050: 604 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.414] [info] [krnl] [t3553566673]        SetEvent thread F800005C callers 825D5AE4 <- 825D015C object F8000058: 604 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.414] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D5AD0 <- 825D04B8 object F8000054: 181 calls, 0 blocked, 6.3 us avg
+[1965-07-20 03:51:49.415] [info] [krnl] [t3553566673]        SetEvent thread F8000068 callers 825D5AE4 <- 825D2A30 object F8000064: 181 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.415] [info] [krnl] [t3553566673]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04C8 object F8000064: 181 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.415] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D5AD0 <- 825D04C8 object F8000060: 181 calls, 0 blocked, 5.8 us avg
+[1965-07-20 03:51:49.415] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D0424 <- 82620BC4 object F8000060: 181 calls, 3 blocked, 17.7 us avg
+[1965-07-20 03:51:49.415] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D031C <- 825D0448 object F8000054: 181 calls, 0 blocked, 5.3 us avg
+[1965-07-20 03:51:49.415] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D039C <- 825D0470 object F8000054: 181 calls, 0 blocked, 8.2 us avg
+[1965-07-20 03:51:49.415] [info] [krnl] [t3553566673]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04B8 object F8000058: 181 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.416] [info] [krnl] [t3553566673]            Wait thread F8000068 callers 825D5AD0 <- 825D2A30 object F8000060: 180 calls, 0 blocked, 14.6 us avg
+[1965-07-20 03:51:49.416] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000028 callers 825D6528 <- 827C2A8C object 8294B598: 178 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.417] [info] [krnl] [t3553566673]   TryEnterCS fail thread F800007C callers 825D63D0 <- 825CE554 object 8294B598: 132 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.417] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000028 callers 825D65C0 <- 827C2B8C object 8294B598: 130 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.417] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000078 callers 825D63D0 <- 825CE554 object 8294B598: 103 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.418] [info] [krnl] [t3553566673]   TryEnterCS fail thread F800007C callers 825D640C <- 825CE554 object 8294B598: 100 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.418] [info] [krnl] [t3553566673]           Delay thread F8000110 callers 8253025C <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100934.7 us avg
+[1965-07-20 03:51:49.418] [info] [krnl] [t3553566673]           Delay thread F800010C callers 82531AF0 <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100820.2 us avg
+[1965-07-20 03:51:49.418] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000078 callers 825D640C <- 825CE554 object 8294B598: 98 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.418] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000074 callers 825D63D0 <- 825CE554 object 8294B598: 79 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.418] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000074 callers 825D640C <- 825CE554 object 8294B598: 74 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.419] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000078 callers 825D6470 <- 825CE554 object 8294B598: 50 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.419] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000074 callers 825D6470 <- 825CE554 object 8294B598: 42 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.419] [info] [krnl] [t3553566673]   TryEnterCS fail thread F800007C callers 825D6470 <- 825CE554 object 8294B598: 35 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.420] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000028 callers 825D2E6C <- 8263F978 object 8298FF84: 10 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.421] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000028 callers 825D3014 <- 8263FBB0 object 8298FF84: 9 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:49.421] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000028 callers 825D2E6C <- 8263FBD4 object 8298FF84: 9 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:51.368] [info] [gpu] [t910821628] GLES: freed 4 textures and 0 resolve targets (1.0 MiB) unused for 300 swaps
+[1965-07-20 03:51:54.694] [info] [gpu] [t910821628] GLES: freed 1 textures and 0 resolve targets (0.0 MiB) unused for 300 swaps
+[1965-07-20 03:51:59.410] [info] [krnl] [t3553566673] sync stats: 25468 calls in 10 s (38 keys)
+[1965-07-20 03:51:59.411] [info] [krnl] [t3553566673]           Delay thread F80000AC callers 8267C16C <- 8264CD94 object FFFFD8F0: 4899 calls, 4899 blocked, 1962.0 us avg
+[1965-07-20 03:51:59.412] [info] [krnl] [t3553566673]           Delay thread F80000DC callers 823F66A8 <- 8264CD94 object FFFFB1E0: 3482 calls, 3482 blocked, 2793.7 us avg
+[1965-07-20 03:51:59.413] [info] [krnl] [t3553566673]           Delay thread F80000E0 callers 825F7408 <- 826978F4 object FFFF3CB0: 1675 calls, 1675 blocked, 5868.4 us avg
+[1965-07-20 03:51:59.413] [info] [krnl] [t3553566673]           Delay thread F80000E8 callers 825F751C <- 826978F4 object FFFF3CB0: 1665 calls, 1665 blocked, 5920.8 us avg
+[1965-07-20 03:51:59.414] [info] [krnl] [t3553566673]            Wait thread F8000068 callers 825D2A3C <- 825CE554 object F8000060: 1354 calls, 5 blocked, 16.3 us avg
+[1965-07-20 03:51:59.415] [info] [krnl] [t3553566673]            Wait thread F800007C callers 825D63C8 <- 825CE554 object F800006C: 1347 calls, 329 blocked, 4675.3 us avg
+[1965-07-20 03:51:59.415] [info] [krnl] [t3553566673]        SetEvent thread F800007C callers 825D64CC <- 825CE554 object F8000070: 1346 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.415] [info] [krnl] [t3553566673]            Wait thread F8000074 callers 825D63C8 <- 825CE554 object F800006C: 1138 calls, 351 blocked, 5444.2 us avg
+[1965-07-20 03:51:59.415] [info] [krnl] [t3553566673]        SetEvent thread F8000074 callers 825D64CC <- 825CE554 object F8000070: 1137 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.415] [info] [krnl] [t3553566673]            Wait thread F8000078 callers 825D63C8 <- 825CE554 object F800006C: 1034 calls, 328 blocked, 6006.5 us avg
+[1965-07-20 03:51:59.416] [info] [krnl] [t3553566673]        SetEvent thread F8000078 callers 825D64CC <- 825CE554 object F8000070: 1033 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.416] [info] [krnl] [t3553566673]        SetEvent thread F800005C callers 825D5AE4 <- 825D015C object F8000058: 603 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.416] [info] [krnl] [t3553566673]            Wait thread F800005C callers 825D5AD0 <- 825D015C object F8000054: 603 calls, 20 blocked, 25.5 us avg
+[1965-07-20 03:51:59.416] [info] [krnl] [t3553566673]            Wait thread F800005C callers 825D01A4 <- 825CE554 object F8000050: 603 calls, 603 blocked, 16370.7 us avg
+[1965-07-20 03:51:59.416] [info] [krnl] [t3553566673]        SetEvent thread F800001C callers 826AE5B0 <- 826A5A24 object F8000050: 603 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.416] [info] [krnl] [t3553566673]            Wait thread F8000068 callers 825D5AD0 <- 825D2A30 object F8000060: 186 calls, 0 blocked, 13.6 us avg
+[1965-07-20 03:51:59.416] [info] [krnl] [t3553566673]        SetEvent thread F8000068 callers 825D5AE4 <- 825D2A30 object F8000064: 186 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.416] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D5AD0 <- 825D04B8 object F8000054: 185 calls, 0 blocked, 5.4 us avg
+[1965-07-20 03:51:59.416] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D5AD0 <- 825D04C8 object F8000060: 185 calls, 0 blocked, 6.1 us avg
+[1965-07-20 03:51:59.416] [info] [krnl] [t3553566673]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04C8 object F8000064: 185 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.416] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D0424 <- 82620BC4 object F8000060: 185 calls, 4 blocked, 17.7 us avg
+[1965-07-20 03:51:59.417] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D031C <- 825D0448 object F8000054: 185 calls, 0 blocked, 5.4 us avg
+[1965-07-20 03:51:59.417] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D039C <- 825D0470 object F8000054: 185 calls, 0 blocked, 8.0 us avg
+[1965-07-20 03:51:59.417] [info] [krnl] [t3553566673]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04B8 object F8000058: 185 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.417] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000028 callers 825D6528 <- 827C2A8C object 8294B598: 177 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.417] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000028 callers 825D65C0 <- 827C2B8C object 8294B598: 142 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.417] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000074 callers 825D63D0 <- 825CE554 object 8294B598: 133 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.417] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000074 callers 825D640C <- 825CE554 object 8294B598: 112 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.417] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000078 callers 825D640C <- 825CE554 object 8294B598: 100 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.417] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000078 callers 825D63D0 <- 825CE554 object 8294B598: 99 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.417] [info] [krnl] [t3553566673]           Delay thread F800010C callers 82531AF0 <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100986.1 us avg
+[1965-07-20 03:51:59.417] [info] [krnl] [t3553566673]           Delay thread F8000110 callers 8253025C <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100991.9 us avg
+[1965-07-20 03:51:59.418] [info] [krnl] [t3553566673]   TryEnterCS fail thread F800007C callers 825D63D0 <- 825CE554 object 8294B598: 98 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.418] [info] [krnl] [t3553566673]   TryEnterCS fail thread F800007C callers 825D640C <- 825CE554 object 8294B598: 92 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.418] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000078 callers 825D6470 <- 825CE554 object 8294B598: 46 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.418] [info] [krnl] [t3553566673]   TryEnterCS fail thread F800007C callers 825D6470 <- 825CE554 object 8294B598: 42 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.418] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000074 callers 825D6470 <- 825CE554 object 8294B598: 39 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:51:59.419] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000028 callers 825D259C <- 825D9708 object 82956930: 1 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:04.236] [info] [gpu] [t910821628] GLES: swap 2100: 93744 draws, 24300 skipped, 12300 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 45 programs; frontbuffer 0B000000 resolved; skipped: no target 21600, shader 0, link 0, vertices 0
+[1965-07-20 03:52:04.237] [info] [gpu] [t910821628] GLES: time since the last report 16136 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 41 ms; longest frame 68 ms
+[1965-07-20 03:52:04.237] [info] [gpu] [t910821628] GLES: GPU thread: idle (waiting for the game) 8337 ms, draws 5947 ms (textures 0, constants 0, vertices 0, GL draw calls 0; parts off: gles_detailed_timers), resolves 813 ms, present 41 ms, other 998 ms
+[1965-07-20 03:52:04.237] [info] [gpu] [t910821628] GLES:   WAIT_REG_MEM: 1757 sleeps, 2391 ms slept for 1757 ms asked (part of idle)
+[1965-07-20 03:52:04.237] [info] [gpu] [t910821628] GLES:   vertices: glBufferData 0 ms for 1.4 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 817.8 MiB; cache hits/misses: vertex ranges 84788/7756, index sets 85944/0; kept: 633 vertex buffers 1.2 MiB, 87 index buffers 0.2 MiB
+[1965-07-20 03:52:04.237] [info] [gpu] [t910821628] GLES:   vertex stream ring: 403.0 MiB written, 1762 ranges moved to own buffers, 0 did not fit; 13050 checks of static ranges by sample
+[1965-07-20 03:52:04.237] [info] [gpu] [t910821628] GLES:   textures: hashing 0 ms for 515.2 MiB
+[1965-07-20 03:52:04.237] [info] [gpu] [t910821628] GLES:   vertex ranges checked again in the same swap: 8700 (252.1 MiB)
+[1965-07-20 03:52:04.237] [info] [gpu] [t910821628] GLES:   GL calls: program switches 28800, uniform uploads 65984 (unchanged, not sent: 836212), state groups sent 110100 (unchanged: 639852), blend changes on a program (vitaGL fragment re-patch) 0
+[1965-07-20 03:52:04.238] [info] [gpu] [t910821628] GLES:   framebuffer changes: 9600 to render targets (5100 more keeping their depth/stencil, loaded and stored at each change on vitaGL), 11100 to resolve targets, 300 to the display; game draws first after a change 14700, their GL draw calls 0 ms (part of GL draw calls)
+[1965-07-20 03:52:04.238] [info] [gpu] [t910821628] GLES:   GXM calls (all threads): BeginScene 26100 calls 55 ms (max 0.1 ms), EndScene 26100 calls 786 ms (max 5.4 ms), Draw 132444 calls 179 ms (max 0.9 ms); EndScene by scene: render target 9600 (34 us each), render target with depth kept 5100 (25 us each), resolve 11100 (34 us each), display/other 300 (17 us each)
+[1965-07-20 03:52:04.238] [info] [gpu] [t910821628] GLES:   surface copies of textures: 300 made since the last report, 12.3 MiB kept
+[1965-07-20 03:52:04.239] [info] [gpu] [t910821628] GLES:   depth: fills held after a depth copy 1500, dropped for a restore 300, applied as a clear 600
+[1965-07-20 03:52:04.239] [info] [gpu] [t910821628] GLES memory (MiB): render targets 10.8 (3), resolve targets 25.5 (8), textures 15.6 (46), scratch 0.0, framebuffers 6 + 5 for resolves -> depth/stencil 4.5 (vitaGL estimate); total 56.3
+[1965-07-20 03:52:04.239] [info] [gpu] [t910821628] GLES:   vitaGL pools free (probed, MiB, largest block): VRAM 3.0 (1.0) of 100, RAM 3.3 (2.0) of 24, PHYCONT 3.6 (2.0) of 16
+[1965-07-20 03:52:04.240] [info] [gpu] [t910821628] GLES: surface copy of a 1024x3152 texture (key 6278FFF60FEE9000) at swap 2100
+[1965-07-20 03:52:09.411] [info] [krnl] [t3553566673] sync stats: 25796 calls in 10 s (44 keys)
+[1965-07-20 03:52:09.411] [info] [krnl] [t3553566673]           Delay thread F80000AC callers 8267C16C <- 8264CD94 object FFFFD8F0: 4899 calls, 4899 blocked, 1958.6 us avg
+[1965-07-20 03:52:09.412] [info] [krnl] [t3553566673]           Delay thread F80000DC callers 823F66A8 <- 8264CD94 object FFFFB1E0: 3479 calls, 3479 blocked, 2804.6 us avg
+[1965-07-20 03:52:09.413] [info] [krnl] [t3553566673]           Delay thread F80000E0 callers 825F7408 <- 826978F4 object FFFF3CB0: 1671 calls, 1671 blocked, 5868.9 us avg
+[1965-07-20 03:52:09.413] [info] [krnl] [t3553566673]           Delay thread F80000E8 callers 825F751C <- 826978F4 object FFFF3CB0: 1656 calls, 1656 blocked, 5948.7 us avg
+[1965-07-20 03:52:09.414] [info] [krnl] [t3553566673]            Wait thread F8000068 callers 825D2A3C <- 825CE554 object F8000060: 1394 calls, 5 blocked, 14.6 us avg
+[1965-07-20 03:52:09.414] [info] [krnl] [t3553566673]        SetEvent thread F800007C callers 825D64CC <- 825CE554 object F8000070: 1276 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.414] [info] [krnl] [t3553566673]            Wait thread F800007C callers 825D63C8 <- 825CE554 object F800006C: 1276 calls, 323 blocked, 4880.8 us avg
+[1965-07-20 03:52:09.415] [info] [krnl] [t3553566673]        SetEvent thread F8000078 callers 825D64CC <- 825CE554 object F8000070: 1213 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.415] [info] [krnl] [t3553566673]            Wait thread F8000078 callers 825D63C8 <- 825CE554 object F800006C: 1213 calls, 349 blocked, 5192.0 us avg
+[1965-07-20 03:52:09.415] [info] [krnl] [t3553566673]        SetEvent thread F8000074 callers 825D64CC <- 825CE554 object F8000070: 1140 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.417] [info] [krnl] [t3553566673]            Wait thread F8000074 callers 825D63C8 <- 825CE554 object F800006C: 1140 calls, 356 blocked, 5448.3 us avg
+[1965-07-20 03:52:09.417] [info] [krnl] [t3553566673]        SetEvent thread F800001C callers 826AE5B0 <- 826A5A24 object F8000050: 604 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.417] [info] [krnl] [t3553566673]        SetEvent thread F800005C callers 825D5AE4 <- 825D015C object F8000058: 604 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.417] [info] [krnl] [t3553566673]            Wait thread F800005C callers 825D01A4 <- 825CE554 object F8000050: 604 calls, 604 blocked, 16388.4 us avg
+[1965-07-20 03:52:09.417] [info] [krnl] [t3553566673]            Wait thread F800005C callers 825D5AD0 <- 825D015C object F8000054: 604 calls, 9 blocked, 17.6 us avg
+[1965-07-20 03:52:09.417] [info] [krnl] [t3553566673]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04C8 object F8000064: 191 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.418] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D5AD0 <- 825D04C8 object F8000060: 191 calls, 1 blocked, 7.0 us avg
+[1965-07-20 03:52:09.418] [info] [krnl] [t3553566673]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04B8 object F8000058: 191 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.418] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D5AD0 <- 825D04B8 object F8000054: 191 calls, 0 blocked, 6.1 us avg
+[1965-07-20 03:52:09.418] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D039C <- 825D0470 object F8000054: 191 calls, 0 blocked, 7.3 us avg
+[1965-07-20 03:52:09.418] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D031C <- 825D0448 object F8000054: 191 calls, 2 blocked, 7.1 us avg
+[1965-07-20 03:52:09.418] [info] [krnl] [t3553566673]            Wait thread F8000028 callers 825D0424 <- 82620BC4 object F8000060: 191 calls, 3 blocked, 17.5 us avg
+[1965-07-20 03:52:09.418] [info] [krnl] [t3553566673]            Wait thread F8000068 callers 825D5AD0 <- 825D2A30 object F8000060: 190 calls, 1 blocked, 17.3 us avg
+[1965-07-20 03:52:09.418] [info] [krnl] [t3553566673]        SetEvent thread F8000068 callers 825D5AE4 <- 825D2A30 object F8000064: 190 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.418] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000028 callers 825D6528 <- 827C2A8C object 8294B598: 179 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.419] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000028 callers 825D65C0 <- 827C2B8C object 8294B598: 136 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.419] [info] [krnl] [t3553566673]   TryEnterCS fail thread F800007C callers 825D63D0 <- 825CE554 object 8294B598: 131 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.419] [info] [krnl] [t3553566673]   TryEnterCS fail thread F800007C callers 825D640C <- 825CE554 object 8294B598: 124 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.419] [info] [krnl] [t3553566673]           Delay thread F8000110 callers 8253025C <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100814.9 us avg
+[1965-07-20 03:52:09.420] [info] [krnl] [t3553566673]           Delay thread F800010C callers 82531AF0 <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100936.9 us avg
+[1965-07-20 03:52:09.421] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000074 callers 825D640C <- 825CE554 object 8294B598: 96 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.421] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000078 callers 825D63D0 <- 825CE554 object 8294B598: 93 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.422] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000074 callers 825D63D0 <- 825CE554 object 8294B598: 92 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.423] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000078 callers 825D640C <- 825CE554 object 8294B598: 84 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.423] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000074 callers 825D6470 <- 825CE554 object 8294B598: 60 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.423] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000078 callers 825D6470 <- 825CE554 object 8294B598: 52 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.423] [info] [krnl] [t3553566673]   TryEnterCS fail thread F800007C callers 825D6470 <- 825CE554 object 8294B598: 39 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.424] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000028 callers 825D3014 <- 8263FBB0 object 8298FF84: 7 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.424] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000028 callers 825D2E6C <- 8263FBD4 object 8298FF84: 7 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:09.424] [info] [krnl] [t3553566673]   TryEnterCS fail thread F8000028 callers 825D2E6C <- 8263F978 object 8298FF84: 4 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.412] [info] [krnl] [t1476103283] sync stats: 25524 calls in 10 s (42 keys)
+[1965-07-20 03:52:19.414] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 8267C16C <- 8264CD94 object FFFFD8F0: 4902 calls, 4902 blocked, 1962.8 us avg
+[1965-07-20 03:52:19.414] [info] [krnl] [t1476103283]           Delay thread F80000DC callers 823F66A8 <- 8264CD94 object FFFFB1E0: 3481 calls, 3481 blocked, 2792.0 us avg
+[1965-07-20 03:52:19.414] [info] [krnl] [t1476103283]           Delay thread F80000E0 callers 825F7408 <- 826978F4 object FFFF3CB0: 1668 calls, 1668 blocked, 5896.9 us avg
+[1965-07-20 03:52:19.415] [info] [krnl] [t1476103283]           Delay thread F80000E8 callers 825F751C <- 826978F4 object FFFF3CB0: 1667 calls, 1667 blocked, 5917.0 us avg
+[1965-07-20 03:52:19.415] [info] [krnl] [t1476103283]            Wait thread F8000068 callers 825D2A3C <- 825CE554 object F8000060: 1376 calls, 5 blocked, 14.6 us avg
+[1965-07-20 03:52:19.415] [info] [krnl] [t1476103283]        SetEvent thread F800007C callers 825D64CC <- 825CE554 object F8000070: 1294 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.417] [info] [krnl] [t1476103283]            Wait thread F800007C callers 825D63C8 <- 825CE554 object F800006C: 1293 calls, 354 blocked, 4783.0 us avg
+[1965-07-20 03:52:19.417] [info] [krnl] [t1476103283]        SetEvent thread F8000074 callers 825D64CC <- 825CE554 object F8000070: 1158 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.418] [info] [krnl] [t1476103283]            Wait thread F8000074 callers 825D63C8 <- 825CE554 object F800006C: 1157 calls, 340 blocked, 5389.9 us avg
+[1965-07-20 03:52:19.419] [info] [krnl] [t1476103283]        SetEvent thread F8000078 callers 825D64CC <- 825CE554 object F8000070: 1119 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.420] [info] [krnl] [t1476103283]            Wait thread F8000078 callers 825D63C8 <- 825CE554 object F800006C: 1118 calls, 332 blocked, 5513.2 us avg
+[1965-07-20 03:52:19.420] [info] [krnl] [t1476103283]        SetEvent thread F800001C callers 826AE5B0 <- 826A5A24 object F8000050: 603 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.421] [info] [krnl] [t1476103283]            Wait thread F800005C callers 825D01A4 <- 825CE554 object F8000050: 603 calls, 603 blocked, 16366.3 us avg
+[1965-07-20 03:52:19.421] [info] [krnl] [t1476103283]        SetEvent thread F800005C callers 825D5AE4 <- 825D015C object F8000058: 603 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.422] [info] [krnl] [t1476103283]            Wait thread F800005C callers 825D5AD0 <- 825D015C object F8000054: 603 calls, 15 blocked, 23.4 us avg
+[1965-07-20 03:52:19.422] [info] [krnl] [t1476103283]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04B8 object F8000058: 188 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.422] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D0424 <- 82620BC4 object F8000060: 188 calls, 1 blocked, 15.7 us avg
+[1965-07-20 03:52:19.423] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D031C <- 825D0448 object F8000054: 188 calls, 1 blocked, 6.1 us avg
+[1965-07-20 03:52:19.423] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D039C <- 825D0470 object F8000054: 188 calls, 0 blocked, 7.9 us avg
+[1965-07-20 03:52:19.423] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D5AD0 <- 825D04B8 object F8000054: 188 calls, 0 blocked, 5.0 us avg
+[1965-07-20 03:52:19.423] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D5AD0 <- 825D04C8 object F8000060: 188 calls, 0 blocked, 6.7 us avg
+[1965-07-20 03:52:19.424] [info] [krnl] [t1476103283]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04C8 object F8000064: 188 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.424] [info] [krnl] [t1476103283]        SetEvent thread F8000068 callers 825D5AE4 <- 825D2A30 object F8000064: 188 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.424] [info] [krnl] [t1476103283]            Wait thread F8000068 callers 825D5AD0 <- 825D2A30 object F8000060: 188 calls, 5 blocked, 43.0 us avg
+[1965-07-20 03:52:19.424] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000028 callers 825D6528 <- 827C2A8C object 8294B598: 170 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.424] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000028 callers 825D65C0 <- 827C2B8C object 8294B598: 135 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.425] [info] [krnl] [t1476103283]   TryEnterCS fail thread F800007C callers 825D63D0 <- 825CE554 object 8294B598: 115 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.425] [info] [krnl] [t1476103283]   TryEnterCS fail thread F800007C callers 825D640C <- 825CE554 object 8294B598: 103 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.425] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000078 callers 825D63D0 <- 825CE554 object 8294B598: 103 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.425] [info] [krnl] [t1476103283]           Delay thread F8000110 callers 8253025C <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100895.3 us avg
+[1965-07-20 03:52:19.425] [info] [krnl] [t1476103283]           Delay thread F800010C callers 82531AF0 <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100892.1 us avg
+[1965-07-20 03:52:19.425] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000078 callers 825D640C <- 825CE554 object 8294B598: 93 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.425] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000074 callers 825D63D0 <- 825CE554 object 8294B598: 79 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.425] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000074 callers 825D640C <- 825CE554 object 8294B598: 59 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.426] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000078 callers 825D6470 <- 825CE554 object 8294B598: 50 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.426] [info] [krnl] [t1476103283]   TryEnterCS fail thread F800007C callers 825D6470 <- 825CE554 object 8294B598: 46 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.426] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000074 callers 825D6470 <- 825CE554 object 8294B598: 29 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.426] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000028 callers 825D2E6C <- 8263F978 object 8298FF84: 3 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.426] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000028 callers 825D2E6C <- 8263FB84 object 8298FF84: 1 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:19.426] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000028 callers 825D259C <- 825D9708 object 82956930: 1 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:20.109] [info] [sys] [t1294523948] Software MMU: frame 2400: 489 virtual + 25 physical blocks, 377.5 MiB backed (peak 377.7 MiB), 0 released-page writes
+[1965-07-20 03:52:20.118] [info] [gpu] [t910821628] GLES: swap 2400: 93788 draws, 24300 skipped, 12300 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 45 programs; frontbuffer 0B000000 resolved; skipped: no target 21600, shader 0, link 0, vertices 0
+[1965-07-20 03:52:20.118] [info] [gpu] [t910821628] GLES: time since the last report 15882 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 41 ms; longest frame 70 ms
+[1965-07-20 03:52:20.118] [info] [gpu] [t910821628] GLES: GPU thread: idle (waiting for the game) 8286 ms, draws 5755 ms (textures 0, constants 0, vertices 0, GL draw calls 0; parts off: gles_detailed_timers), resolves 824 ms, present 41 ms, other 976 ms
+[1965-07-20 03:52:20.119] [info] [gpu] [t910821628] GLES:   WAIT_REG_MEM: 1619 sleeps, 2240 ms slept for 1619 ms asked (part of idle)
+[1965-07-20 03:52:20.119] [info] [gpu] [t910821628] GLES:   vertices: glBufferData 0 ms for 1.4 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 817.8 MiB; cache hits/misses: vertex ranges 84812/7776, index sets 85988/0; kept: 635 vertex buffers 1.2 MiB, 87 index buffers 0.2 MiB
+[1965-07-20 03:52:20.119] [info] [gpu] [t910821628] GLES:   vertex stream ring: 403.0 MiB written, 1846 ranges moved to own buffers, 0 did not fit; 13050 checks of static ranges by sample
+[1965-07-20 03:52:20.119] [info] [gpu] [t910821628] GLES:   textures: hashing 0 ms for 515.2 MiB
+[1965-07-20 03:52:20.120] [info] [gpu] [t910821628] GLES:   vertex ranges checked again in the same swap: 8700 (252.1 MiB)
+[1965-07-20 03:52:20.120] [info] [gpu] [t910821628] GLES:   GL calls: program switches 28800, uniform uploads 66026 (unchanged, not sent: 836566), state groups sent 110100 (unchanged: 640204), blend changes on a program (vitaGL fragment re-patch) 0
+[1965-07-20 03:52:20.120] [info] [gpu] [t910821628] GLES:   framebuffer changes: 9600 to render targets (5100 more keeping their depth/stencil, loaded and stored at each change on vitaGL), 11100 to resolve targets, 300 to the display; game draws first after a change 14700, their GL draw calls 0 ms (part of GL draw calls)
+[1965-07-20 03:52:20.120] [info] [gpu] [t910821628] GLES:   GXM calls (all threads): BeginScene 26100 calls 55 ms (max 0.1 ms), EndScene 26100 calls 787 ms (max 5.0 ms), Draw 132488 calls 174 ms (max 0.1 ms); EndScene by scene: render target 9600 (34 us each), render target with depth kept 5100 (26 us each), resolve 11100 (33 us each), display/other 300 (20 us each)
+[1965-07-20 03:52:20.120] [info] [gpu] [t910821628] GLES:   surface copies of textures: 300 made since the last report, 12.3 MiB kept
+[1965-07-20 03:52:20.121] [info] [gpu] [t910821628] GLES:   depth: fills held after a depth copy 1500, dropped for a restore 300, applied as a clear 600
+[1965-07-20 03:52:20.121] [info] [gpu] [t910821628] GLES memory (MiB): render targets 10.8 (3), resolve targets 25.5 (8), textures 15.6 (46), scratch 0.0, framebuffers 6 + 5 for resolves -> depth/stencil 4.5 (vitaGL estimate); total 56.3
+[1965-07-20 03:52:20.121] [info] [gpu] [t910821628] GLES:   vitaGL pools free (probed, MiB, largest block): VRAM 3.0 (1.0) of 100, RAM 3.4 (2.0) of 24, PHYCONT 3.6 (2.0) of 16
+[1965-07-20 03:52:20.122] [info] [gpu] [t910821628] GLES: surface copy of a 1024x3152 texture (key 6278FFF60FEE9000) at swap 2400
+[1965-07-20 03:52:29.413] [info] [krnl] [t1476103283] sync stats: 25426 calls in 10 s (46 keys)
+[1965-07-20 03:52:29.417] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 8267C16C <- 8264CD94 object FFFFD8F0: 4864 calls, 4864 blocked, 1969.2 us avg
+[1965-07-20 03:52:29.418] [info] [krnl] [t1476103283]           Delay thread F80000DC callers 823F66A8 <- 8264CD94 object FFFFB1E0: 3470 calls, 3470 blocked, 2802.7 us avg
+[1965-07-20 03:52:29.418] [info] [krnl] [t1476103283]           Delay thread F80000E0 callers 825F7408 <- 826978F4 object FFFF3CB0: 1669 calls, 1669 blocked, 5875.6 us avg
+[1965-07-20 03:52:29.419] [info] [krnl] [t1476103283]           Delay thread F80000E8 callers 825F751C <- 826978F4 object FFFF3CB0: 1665 calls, 1665 blocked, 5917.9 us avg
+[1965-07-20 03:52:29.421] [info] [krnl] [t1476103283]            Wait thread F8000068 callers 825D2A3C <- 825CE554 object F8000060: 1326 calls, 6 blocked, 15.6 us avg
+[1965-07-20 03:52:29.421] [info] [krnl] [t1476103283]            Wait thread F8000078 callers 825D63C8 <- 825CE554 object F800006C: 1264 calls, 356 blocked, 4915.8 us avg
+[1965-07-20 03:52:29.423] [info] [krnl] [t1476103283]        SetEvent thread F8000078 callers 825D64CC <- 825CE554 object F8000070: 1263 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.424] [info] [krnl] [t1476103283]            Wait thread F8000074 callers 825D63C8 <- 825CE554 object F800006C: 1198 calls, 346 blocked, 5163.3 us avg
+[1965-07-20 03:52:29.424] [info] [krnl] [t1476103283]        SetEvent thread F8000074 callers 825D64CC <- 825CE554 object F8000070: 1197 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.424] [info] [krnl] [t1476103283]            Wait thread F800007C callers 825D63C8 <- 825CE554 object F800006C: 1095 calls, 317 blocked, 5588.0 us avg
+[1965-07-20 03:52:29.424] [info] [krnl] [t1476103283]        SetEvent thread F800007C callers 825D64CC <- 825CE554 object F8000070: 1094 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.424] [info] [krnl] [t1476103283]            Wait thread F800005C callers 825D5AD0 <- 825D015C object F8000054: 604 calls, 14 blocked, 25.2 us avg
+[1965-07-20 03:52:29.425] [info] [krnl] [t1476103283]        SetEvent thread F800005C callers 825D5AE4 <- 825D015C object F8000058: 604 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.425] [info] [krnl] [t1476103283]            Wait thread F800005C callers 825D01A4 <- 825CE554 object F8000050: 604 calls, 604 blocked, 16363.0 us avg
+[1965-07-20 03:52:29.425] [info] [krnl] [t1476103283]        SetEvent thread F800001C callers 826AE5B0 <- 826A5A24 object F8000050: 604 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.425] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D031C <- 825D0448 object F8000054: 187 calls, 1 blocked, 7.1 us avg
+[1965-07-20 03:52:29.425] [info] [krnl] [t1476103283]            Wait thread F8000068 callers 825D5AD0 <- 825D2A30 object F8000060: 187 calls, 1 blocked, 15.7 us avg
+[1965-07-20 03:52:29.425] [info] [krnl] [t1476103283]        SetEvent thread F8000068 callers 825D5AE4 <- 825D2A30 object F8000064: 187 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.425] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D0424 <- 82620BC4 object F8000060: 187 calls, 3 blocked, 17.7 us avg
+[1965-07-20 03:52:29.425] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D039C <- 825D0470 object F8000054: 187 calls, 0 blocked, 7.5 us avg
+[1965-07-20 03:52:29.426] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D5AD0 <- 825D04B8 object F8000054: 187 calls, 0 blocked, 5.0 us avg
+[1965-07-20 03:52:29.426] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D5AD0 <- 825D04C8 object F8000060: 187 calls, 0 blocked, 5.7 us avg
+[1965-07-20 03:52:29.428] [info] [krnl] [t1476103283]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04C8 object F8000064: 187 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.428] [info] [krnl] [t1476103283]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04B8 object F8000058: 187 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.428] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000028 callers 825D6528 <- 827C2A8C object 8294B598: 175 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.428] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000028 callers 825D65C0 <- 827C2B8C object 8294B598: 141 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.428] [info] [krnl] [t1476103283]   TryEnterCS fail thread F800007C callers 825D63D0 <- 825CE554 object 8294B598: 107 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.428] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000078 callers 825D63D0 <- 825CE554 object 8294B598: 105 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.429] [info] [krnl] [t1476103283]   TryEnterCS fail thread F800007C callers 825D640C <- 825CE554 object 8294B598: 99 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.429] [info] [krnl] [t1476103283]           Delay thread F8000110 callers 8253025C <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100847.6 us avg
+[1965-07-20 03:52:29.429] [info] [krnl] [t1476103283]           Delay thread F800010C callers 82531AF0 <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100860.0 us avg
+[1965-07-20 03:52:29.429] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000078 callers 825D640C <- 825CE554 object 8294B598: 97 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.429] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000074 callers 825D63D0 <- 825CE554 object 8294B598: 87 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.429] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000074 callers 825D640C <- 825CE554 object 8294B598: 68 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.429] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000078 callers 825D6470 <- 825CE554 object 8294B598: 43 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.430] [info] [krnl] [t1476103283]   TryEnterCS fail thread F800007C callers 825D6470 <- 825CE554 object 8294B598: 40 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.430] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000074 callers 825D6470 <- 825CE554 object 8294B598: 31 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.430] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000028 callers 825D2E6C <- 8263F978 object 8298FF84: 8 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.430] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000028 callers 825D3014 <- 8263FBB0 object 8298FF84: 7 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:29.431] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000028 callers 825D2E6C <- 8263FBD4 object 8298FF84: 7 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:35.906] [info] [gpu] [t910821628] GLES: swap 2700: 93762 draws, 24300 skipped, 12300 resolves since the last report; 7 render targets, 8 resolve targets, 46 textures, 45 programs; frontbuffer 0B000000 resolved; skipped: no target 21600, shader 0, link 0, vertices 0
+[1965-07-20 03:52:35.906] [info] [gpu] [t910821628] GLES: time since the last report 15788 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 40 ms; longest frame 69 ms
+[1965-07-20 03:52:35.906] [info] [gpu] [t910821628] GLES: GPU thread: idle (waiting for the game) 8204 ms, draws 5751 ms (textures 0, constants 0, vertices 0, GL draw calls 0; parts off: gles_detailed_timers), resolves 812 ms, present 40 ms, other 981 ms
+[1965-07-20 03:52:35.907] [info] [gpu] [t910821628] GLES:   WAIT_REG_MEM: 1690 sleeps, 2346 ms slept for 1690 ms asked (part of idle)
+[1965-07-20 03:52:35.907] [info] [gpu] [t910821628] GLES:   vertices: glBufferData 0 ms for 1.4 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 817.8 MiB; cache hits/misses: vertex ranges 84883/7679, index sets 85962/0; kept: 646 vertex buffers 1.2 MiB, 87 index buffers 0.2 MiB
+[1965-07-20 03:52:35.907] [info] [gpu] [t910821628] GLES:   vertex stream ring: 403.0 MiB written, 1807 ranges moved to own buffers, 0 did not fit; 13050 checks of static ranges by sample
+[1965-07-20 03:52:35.907] [info] [gpu] [t910821628] GLES:   textures: hashing 0 ms for 515.2 MiB
+[1965-07-20 03:52:35.907] [info] [gpu] [t910821628] GLES:   vertex ranges checked again in the same swap: 8700 (252.1 MiB)
+[1965-07-20 03:52:35.907] [info] [gpu] [t910821628] GLES:   GL calls: program switches 28800, uniform uploads 65998 (unchanged, not sent: 836360), state groups sent 110100 (unchanged: 639996), blend changes on a program (vitaGL fragment re-patch) 0
+[1965-07-20 03:52:35.907] [info] [gpu] [t910821628] GLES:   framebuffer changes: 9600 to render targets (5100 more keeping their depth/stencil, loaded and stored at each change on vitaGL), 11100 to resolve targets, 300 to the display; game draws first after a change 14700, their GL draw calls 0 ms (part of GL draw calls)
+[1965-07-20 03:52:35.908] [info] [gpu] [t910821628] GLES:   GXM calls (all threads): BeginScene 26100 calls 54 ms (max 0.3 ms), EndScene 26100 calls 780 ms (max 4.7 ms), Draw 132462 calls 175 ms (max 0.7 ms); EndScene by scene: render target 9600 (34 us each), render target with depth kept 5100 (25 us each), resolve 11100 (33 us each), display/other 300 (16 us each)
+[1965-07-20 03:52:35.908] [info] [gpu] [t910821628] GLES:   surface copies of textures: 300 made since the last report, 12.3 MiB kept
+[1965-07-20 03:52:35.908] [info] [gpu] [t910821628] GLES:   depth: fills held after a depth copy 1500, dropped for a restore 300, applied as a clear 600
+[1965-07-20 03:52:35.908] [info] [gpu] [t910821628] GLES memory (MiB): render targets 10.8 (3), resolve targets 25.5 (8), textures 15.6 (46), scratch 0.0, framebuffers 6 + 5 for resolves -> depth/stencil 4.5 (vitaGL estimate); total 56.3
+[1965-07-20 03:52:35.908] [info] [gpu] [t910821628] GLES:   vitaGL pools free (probed, MiB, largest block): VRAM 3.0 (1.0) of 100, RAM 3.4 (2.0) of 24, PHYCONT 3.6 (2.0) of 16
+[1965-07-20 03:52:35.908] [info] [gpu] [t910821628] GLES: surface copy of a 1024x3152 texture (key 6278FFF60FEE9000) at swap 2700
+[1965-07-20 03:52:39.414] [info] [krnl] [t1476103283] sync stats: 25443 calls in 10 s (40 keys)
+[1965-07-20 03:52:39.417] [info] [krnl] [t1476103283]           Delay thread F80000AC callers 8267C16C <- 8264CD94 object FFFFD8F0: 4850 calls, 4850 blocked, 1979.1 us avg
+[1965-07-20 03:52:39.417] [info] [krnl] [t1476103283]           Delay thread F80000DC callers 823F66A8 <- 8264CD94 object FFFFB1E0: 3465 calls, 3465 blocked, 2806.4 us avg
+[1965-07-20 03:52:39.418] [info] [krnl] [t1476103283]           Delay thread F80000E0 callers 825F7408 <- 826978F4 object FFFF3CB0: 1675 calls, 1675 blocked, 5867.0 us avg
+[1965-07-20 03:52:39.419] [info] [krnl] [t1476103283]           Delay thread F80000E8 callers 825F751C <- 826978F4 object FFFF3CB0: 1664 calls, 1664 blocked, 5918.8 us avg
+[1965-07-20 03:52:39.420] [info] [krnl] [t1476103283]            Wait thread F8000068 callers 825D2A3C <- 825CE554 object F8000060: 1373 calls, 7 blocked, 17.4 us avg
+[1965-07-20 03:52:39.421] [info] [krnl] [t1476103283]        SetEvent thread F8000078 callers 825D64CC <- 825CE554 object F8000070: 1270 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.421] [info] [krnl] [t1476103283]            Wait thread F8000078 callers 825D63C8 <- 825CE554 object F800006C: 1270 calls, 329 blocked, 4912.1 us avg
+[1965-07-20 03:52:39.422] [info] [krnl] [t1476103283]        SetEvent thread F800007C callers 825D64CC <- 825CE554 object F8000070: 1188 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.422] [info] [krnl] [t1476103283]            Wait thread F800007C callers 825D63C8 <- 825CE554 object F800006C: 1188 calls, 361 blocked, 5234.5 us avg
+[1965-07-20 03:52:39.423] [info] [krnl] [t1476103283]        SetEvent thread F8000074 callers 825D64CC <- 825CE554 object F8000070: 1152 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.423] [info] [krnl] [t1476103283]            Wait thread F8000074 callers 825D63C8 <- 825CE554 object F800006C: 1151 calls, 352 blocked, 5398.2 us avg
+[1965-07-20 03:52:39.424] [info] [krnl] [t1476103283]        SetEvent thread F800005C callers 825D5AE4 <- 825D015C object F8000058: 604 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.424] [info] [krnl] [t1476103283]        SetEvent thread F800001C callers 826AE5B0 <- 826A5A24 object F8000050: 604 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.425] [info] [krnl] [t1476103283]            Wait thread F800005C callers 825D01A4 <- 825CE554 object F8000050: 604 calls, 604 blocked, 16363.2 us avg
+[1965-07-20 03:52:39.425] [info] [krnl] [t1476103283]            Wait thread F800005C callers 825D5AD0 <- 825D015C object F8000054: 604 calls, 19 blocked, 30.3 us avg
+[1965-07-20 03:52:39.425] [info] [krnl] [t1476103283]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04B8 object F8000058: 190 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.426] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D5AD0 <- 825D04B8 object F8000054: 190 calls, 0 blocked, 5.6 us avg
+[1965-07-20 03:52:39.426] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D039C <- 825D0470 object F8000054: 190 calls, 0 blocked, 7.5 us avg
+[1965-07-20 03:52:39.426] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D031C <- 825D0448 object F8000054: 190 calls, 1 blocked, 5.9 us avg
+[1965-07-20 03:52:39.428] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D0424 <- 82620BC4 object F8000060: 190 calls, 1 blocked, 16.6 us avg
+[1965-07-20 03:52:39.428] [info] [krnl] [t1476103283]        SetEvent thread F8000068 callers 825D5AE4 <- 825D2A30 object F8000064: 190 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.428] [info] [krnl] [t1476103283]            Wait thread F8000068 callers 825D5AD0 <- 825D2A30 object F8000060: 190 calls, 2 blocked, 25.1 us avg
+[1965-07-20 03:52:39.428] [info] [krnl] [t1476103283]            Wait thread F8000028 callers 825D5AD0 <- 825D04C8 object F8000060: 190 calls, 0 blocked, 6.0 us avg
+[1965-07-20 03:52:39.428] [info] [krnl] [t1476103283]        SetEvent thread F8000028 callers 825D5AE4 <- 825D04C8 object F8000064: 190 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.429] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000028 callers 825D6528 <- 827C2A8C object 8294B598: 136 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.429] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000074 callers 825D63D0 <- 825CE554 object 8294B598: 115 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.429] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000028 callers 825D65C0 <- 827C2B8C object 8294B598: 99 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.429] [info] [krnl] [t1476103283]           Delay thread F800010C callers 82531AF0 <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 101033.5 us avg
+[1965-07-20 03:52:39.430] [info] [krnl] [t1476103283]           Delay thread F8000110 callers 8253025C <- 8264CD94 object FFF0BDC0: 99 calls, 99 blocked, 100844.0 us avg
+[1965-07-20 03:52:39.430] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000074 callers 825D640C <- 825CE554 object 8294B598: 94 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.431] [info] [krnl] [t1476103283]   TryEnterCS fail thread F800007C callers 825D63D0 <- 825CE554 object 8294B598: 85 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.432] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000078 callers 825D63D0 <- 825CE554 object 8294B598: 85 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.432] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000078 callers 825D640C <- 825CE554 object 8294B598: 72 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.432] [info] [krnl] [t1476103283]   TryEnterCS fail thread F800007C callers 825D640C <- 825CE554 object 8294B598: 68 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.433] [info] [krnl] [t1476103283]   TryEnterCS fail thread F800007C callers 825D6470 <- 825CE554 object 8294B598: 46 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.433] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000074 callers 825D6470 <- 825CE554 object 8294B598: 37 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.433] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000078 callers 825D6470 <- 825CE554 object 8294B598: 32 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.433] [info] [krnl] [t1476103283]   TryEnterCS fail thread F8000028 callers 825D2E6C <- 8263F978 object 8298FF84: 2 calls, 0 blocked, 0.0 us avg
+[1965-07-20 03:52:39.433] [info] [krnl] [t1476103283]   TryEnterCS fail thread F800005C callers 825D2EDC <- 8263E908 object 8298FF84: 1 calls, 0 blocked, 0.0 us avg

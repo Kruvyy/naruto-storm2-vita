@@ -1,0 +1,77 @@
+ReXGlue runtime tests (PS Vita platform layer)
+  free memory at start: user 229376 KiB, CDRAM 112640 KiB, phycont 26624 KiB
+> clock
+  sleep 20 ms took 22315 us
+clock                            ok (24 ms)
+> host_memory
+  reservation address 0x00100000
+host_memory                      ok (22 ms)
+> thread_join
+thread_join                      ok (24 ms)
+> thread_create_suspended
+thread_create_suspended          ok (60 ms)
+> events
+events                           ok (74 ms)
+> semaphore
+semaphore                        ok (5 ms)
+> mutant
+mutant                           ok (57 ms)
+> wait_multiple
+wait_multiple                    ok (24 ms)
+> wait_multiple_wake
+  WaitAny woken after 39965 us (set at ~30 ms)
+wait_multiple_wake               ok (145 ms)
+> alertable_sleep_callback
+  alertable sleep woken after 37310 us (callback at ~30 ms)
+alertable_sleep_callback         ok (64 ms)
+> timer
+  20 ms timer fired after 22019 us
+timer                            ok (26 ms)
+> tls
+tls                              ok (18 ms)
+> thread_id_priority_affinity
+thread_id_priority_affinity      ok (19 ms)
+> alertable_callback
+alertable_callback               ok (67 ms)
+> deferred_suspend
+  counter while suspended: 44 -> 44
+deferred_suspend                 ok (262 ms)
+> self_suspend
+self_suspend                     ok (79 ms)
+> deferred_terminate
+deferred_terminate               ok (54 ms)
+> fibers
+  fiber order: 01234
+fibers                           ok (47 ms)
+> files
+  FAIL files (line 550): info.type == rex::filesystem::FileInfo::Type::kFile && info.total_size == 500
+  FAIL files (line 562): map->size() == 500
+files                            FAILED (24 ms)
+> std_filesystem
+  create_directories: Success
+std_filesystem                   ok (21 ms)
+> soft_mmu_init
+  host backed after init: 17108992 bytes
+soft_mmu_init                    ok (57 ms)
+> soft_mmu_virtual
+soft_mmu_virtual                 ok (3 ms)
+> soft_mmu_views
+soft_mmu_views                   ok (2 ms)
+> soft_mmu_alias_protect_release
+soft_mmu_alias_protect_release   ok (1 ms)
+> soft_mmu_reserve_cap
+soft_mmu_reserve_cap             ok (46 ms)
+> soft_mmu_large_region
+  free memory before: user 208060 KiB, CDRAM 112640 KiB, phycont 26624 KiB
+  allocating the 272 MiB region...
+  272 MiB physical region capped at 184 MiB: ok, 184 MiB backed, 41 ms
+  free memory with the region: user 19640 KiB, CDRAM 112640 KiB, phycont 26624 KiB
+  released
+soft_mmu_large_region            ok (78 ms)
+> soft_mmu_function_table
+soft_mmu_function_table          ok (1 ms)
+> logging
+logging                          ok (2 ms)
+  free memory at the end: user 208060 KiB, CDRAM 112640 KiB, phycont 26624 KiB
+result: 28 tests, 1 failed
+TRIANGLE = no-access probe (the app should close with an error); other button = exit

@@ -315,6 +315,58 @@ void TestWaitMultiple() {
   CHECK(rex::thread::WaitAll(handles, 2, false, 100ms) == WaitResult::kSuccess);
 }
 
+// Multi-object waits block on the thread's waker: a signal from another
+// thread must wake them (they used to poll every millisecond).
+void TestWaitMultipleWake() {
+  using rex::thread::WaitResult;
+  auto e1 = rex::thread::Event::CreateAutoResetEvent(false);
+  auto e2 = rex::thread::Event::CreateAutoResetEvent(false);
+  rex::thread::WaitHandle* handles[] = {e1.get(), e2.get()};
+  std::atomic<int> index{-1};
+  std::atomic<uint64_t> waited{0};
+  auto t = Spawn([&] {
+    const uint64_t t0 = NowUs();
+    auto r = rex::thread::WaitAny(handles, 2, false, 2000ms);
+    waited = NowUs() - t0;
+    index = r.first == WaitResult::kSuccess ? int(r.second) : -2;
+  });
+  rex::thread::Sleep(30ms);
+  e2->Set();
+  CHECK(Join(t.get()));
+  Log("  WaitAny woken after %llu us (set at ~30 ms)\n", (unsigned long long)waited.load());
+  CHECK(index == 1);
+  CHECK(waited < 1000000);
+  CHECK(rex::thread::Wait(e2.get(), false, 0ms) == WaitResult::kTimeout);  // consumed
+  std::atomic<int> all{-1};
+  auto t2 = Spawn([&] { all = int(rex::thread::WaitAll(handles, 2, false, 2000ms)); });
+  rex::thread::Sleep(20ms);
+  e1->Set();
+  rex::thread::Sleep(20ms);
+  e2->Set();
+  CHECK(Join(t2.get()));
+  CHECK(all == int(WaitResult::kSuccess));
+}
+
+// An alertable sleep is woken by a queued user callback.
+void TestAlertableSleepCallback() {
+  std::atomic<int> result{-1};
+  std::atomic<bool> ran{false};
+  std::atomic<uint64_t> slept{0};
+  auto t = Spawn([&] {
+    const uint64_t t0 = NowUs();
+    result = int(rex::thread::AlertableSleep(2000ms));
+    slept = NowUs() - t0;
+  });
+  rex::thread::Sleep(30ms);
+  t->QueueUserCallback([&] { ran = true; });
+  CHECK(Join(t.get()));
+  Log("  alertable sleep woken after %llu us (callback at ~30 ms)\n",
+      (unsigned long long)slept.load());
+  CHECK(result == int(rex::thread::SleepResult::kAlerted));
+  CHECK(ran);
+  CHECK(slept < 1000000);
+}
+
 void TestTimer() {
   using rex::thread::WaitResult;
   auto timer = rex::thread::Timer::CreateManualResetTimer();
@@ -702,6 +754,8 @@ const TestEntry kTests[] = {
     {"semaphore", TestSemaphore},
     {"mutant", TestMutant},
     {"wait_multiple", TestWaitMultiple},
+    {"wait_multiple_wake", TestWaitMultipleWake},
+    {"alertable_sleep_callback", TestAlertableSleepCallback},
     {"timer", TestTimer},
     {"tls", TestTls},
     {"thread_id_priority_affinity", TestThreadIdPriorityAffinity},

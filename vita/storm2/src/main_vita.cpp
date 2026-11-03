@@ -59,6 +59,10 @@
 // Generated with the recompiled code (storm2_init.cpp).
 extern const rex::PPCImageInfo PPCImageConfig;
 
+namespace rex::thread {
+void VitaPollWakeups(uint64_t out[3]);  // core/threading_vita.cpp
+}
+
 // newlib's malloc heap is one block taken at start-up; the guest memory comes
 // from memory blocks, so keep this moderate.
 extern "C" {
@@ -465,6 +469,16 @@ int main() {
           free_mem.size_user / 1024, free_mem.size_cdram / 1024, free_mem.size_phycont / 1024,
           double(heap.uordblks) / 1048576.0, double(heap.fordblks) / 1048576.0,
           double(heap.arena) / 1048576.0);
+    {
+      // Multi-object and alertable waits that blocked, per second.
+      static uint64_t last_polls[3] = {};
+      uint64_t polls[3];
+      rex::thread::VitaPollWakeups(polls);
+      const double seconds = double(now_us - last_us) / 1e6;
+      Stats("  multi-object/alertable waits that blocked: %.0f/s\n",
+            double(polls[0] - last_polls[0]) / seconds);
+      std::copy(std::begin(polls), std::end(polls), std::begin(last_polls));
+    }
     last_us = now_us;
     last_frame = frame;
     last_audio_frames = audio_frames;

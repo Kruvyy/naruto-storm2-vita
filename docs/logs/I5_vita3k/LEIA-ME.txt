@@ -1,0 +1,22 @@
+I5 no Vita3K-Plus do usuário (cópia privada, config dele, sistema de arquivos isolado), menu de
+modos com entrada reproduzida, perfil do I4 (gpu_thread_priority_boost = 1,
+gles_surface_texture_min_kib = 3000, gles_surface_texture_refresh_swaps = 1). Emulador, não o
+console. Linhas "GUEST-SCHED 10s" = relatório do escalonador do Vita3K-Plus (ele imita os
+núcleos do Vita): acquires, wait_total_ms (soma da espera por núcleo de todas as threads),
+held_total_ms (tempo com núcleo), yields, block.
+
+0_antes_escalonador.txt   antes do I5 (execução 8_perfil_recomendado do I4): wait_total
+                          16–37 s e held_total ~24 s a cada 10 s; 19,1 quadros/s.
+1_kernel_sync_stats.log   kernel_sync_stats=10: ~2500 chamadas de sincronização do jogo por
+                          segundo; as 4 threads de espera em laço (F80000AC 1 ms, F80000DC 2 ms,
+                          F80000E0/E8 5 ms) acordam ~1200 vezes por segundo.
+2_contagem_polling_stats.log  esperas da camada de threads que acordavam a cada 1 ms: ~180/s
+                          em esperas alertáveis e ~1100/s em esperas de vários objetos.
+3_waker*                  com o ThreadWaker (sem polling) e gpu_idle_spin_yields = 0 no Vita:
+                          ~520 esperas/s que de fato bloqueiam; wait_total 8–13 s e
+                          held_total ~8 s a cada 10 s; 19,4 quadros/s (19,3–19,9).
+4_gpu_nula*               sem GPU: 22,9 quadros/s (20,5–23,4); quadros de 40–48 ms (não presos
+                          a múltiplos de vblank): a thread principal do jogo é o limite.
+5_runtime_tests.log       testes do runtime no Vita3K-Plus: 27/28 (falta files: o Vita3K não tem
+                          sceIoChstatByFd); novos: wait_multiple_wake, alertable_sleep_callback;
+                          self_suspend passou depois da correção.
