@@ -79,6 +79,10 @@ target_include_directories(storm2_vita PRIVATE ${STORM2_NATIVE_DIR})
 # "Cannot allocate N bytes for SCE data at end of segment" and then crashes
 # (0xC0000374) on its unchecked error path. See docs/bugs.md.
 target_link_options(storm2_vita PRIVATE -Wl,--gc-sections -Wl,--defsym,__sce_headroom=0x4000)
+# Times of the GXM calls vitaGL makes (GxmCallReport in the GLES report).
+target_link_options(storm2_vita PRIVATE
+  -Wl,--wrap=sceGxmBeginScene -Wl,--wrap=sceGxmEndScene -Wl,--wrap=sceGxmDraw
+  -Wl,--wrap=sceGxmNotificationWait -Wl,--wrap=sceGxmFinish -Wl,--wrap=sceGxmMidSceneFlush)
 target_link_libraries(storm2_vita PRIVATE
   storm2_code rexgpu_gles_vita rexgpu_null_vita rexaudio_vita rexinput_vita rexruntime_vita
   rexcore_vita ${REX_VITA_GLES_LIBS} ${REX_VITA_SYSTEM_LIBS})

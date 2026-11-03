@@ -1,0 +1,31 @@
+I4 no Vita3K (emulador, não o console). Todas as execuções no Vita3K-Plus v1.3.3 do usuário
+(cópia privada) com o config.yml dele (OpenGL, resolução 0,5, surface sync ligado,
+memory-mapping external-host), num sistema de arquivos isolado. Menu de modos com a entrada
+reproduzida (menu_start_repeat.txt). Host: Ryzen 5 4500. Ruído entre execuções: ±1–2 quadros/s.
+
+1_prioridade_*      gpu_thread_priority_boost 0/1/2: mediana 15,3 / 16,2 / 15,2 quadros/s. Com
+                    prioridade maior o trabalho próprio da thread da GPU acelera 35–50%, mas o
+                    tempo do primeiro desenho depois de trocar de framebuffer sobe.
+2_endscene_por_cena sceGxmEndScene (via --wrap do linker) por tipo de cena: render target
+                    ~30 us, render target com profundidade mantida ~16 us, resolve ~850 us
+                    (36 por quadro: ~30 ms por quadro).
+3_custo_gpu_por_desenho  gles_debug_finish_draws=2450 (glFinish antes e depois de cada desenho):
+                    66% do tempo da GPU emulada em desenhos que amostram a textura 1024x3152
+                    DXT5 do menu (atlas de glifos, ~130 por quadro, ~374 us cada).
+3_cpu_por_modulo_vita3k.txt  amostragem do RIP das threads do Vita3K-Plus: a thread de
+                    renderização do emulador fica em ~83% de um núcleo, 72% no código do
+                    próprio Vita3K, 5% no driver de GL.
+4_bench_*           gles_draw_bench: uma textura comum custa à GPU emulada ~85 us por MiB em cada
+                    desenho que a usa (RGBA8 512x512 ~45 us, DXT5 1024x3152 ~260 us), igual com
+                    hashless-texture-cache, com a textura em RAM, com conteúdo zero, em
+                    double-buffer/disabled/Vulkan; sem texture-cache, 8x pior. Texturas que são
+                    render targets (resolves, ping-pong) custam ~8–19 us.
+5_gpu_nula*         sem GPU no Vita3K-Plus: mediana 22,5 quadros/s (o escalonador do emulador
+                    reporta ~47 s de espera por núcleo a cada 10 s; 5_gpu_nula_escalonador.txt).
+6_copia_atlas_*     gles_surface_texture_min_kib=3000: o atlas copiado uma vez para um render
+                    target. ~19 quadros/s, mas os glifos acentuados (ó, í) somem; igual sem
+                    despejo de texturas e com resolução 1.
+7_copia_atlas_refeita  + gles_surface_texture_refresh_swaps=1: acentos de volta, 19,1 quadros/s.
+8_perfil_recomendado   gpu_thread_priority_boost=1, gles_surface_texture_min_kib=3000,
+                    gles_surface_texture_refresh_swaps=1, pools padrão do vitaGL: mediana 19,1
+                    (18,8–19,1), imagem certa, sem falta de memória (a cópia usa 12,3 MiB).

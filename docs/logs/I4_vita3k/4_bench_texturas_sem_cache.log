@@ -1,0 +1,69 @@
+[1965-07-20 04:45:04.657] [info] [core] [t3987738935] sceKernelDelayThread: 0 us -> 1 us, 100 us -> 1049 us, 1000 us -> 1096 us
+[1965-07-20 04:45:04.669] [info] [core] [t3987738935] Storm 2 (PS Vita, headless): game in ux0:data/storm2port/game, xex 9875456 bytes
+[1965-07-20 04:45:04.672] [info] [core] [t3987738935] GPU: GLES renderer (vitaGL) (vita_gpu=auto, ur0:data/external/libshacccg.suprx present)
+[1965-07-20 04:45:04.674] [info] [gpu] [t3987738935] GLES GPU backend (OpenGL ES 2 subset)
+[1965-07-20 04:45:04.677] [info] [core] [t3987738935] PS Vita: hardware exceptions cannot be caught; a guest fault ends the program
+[1965-07-20 04:45:04.693] [info] [sys] [t3987738935] Guest memory: software MMU (4 KiB page table at 0x0000000080800000, 4.5 MiB of tables); each guest region gets its own host block
+[1965-07-20 04:45:04.728] [warning] [core] [t3987738935] PS Vita: host faults are not delivered to the app; exception handlers are kept but never called (a fault ends the program with a crash dump)
+[1965-07-20 04:45:04.959] [info] [apu] [t3987738935] PS Vita audio: guest audio runs at real time (256 samples at 48 kHz, XMA decoded), output is discarded (no sound yet)
+[1965-07-20 04:45:13.498] [info] [gpu] [t1079088687] GLES backend on vitaGL: RAM pool 24 MiB, CDRAM pool 100 MiB, phycont pool 16 MiB
+[1965-07-20 04:45:15.763] [info] [gpu] [t1079088687] GLES draw bench: draw only (1 vec4 uniform per stage)                     2.45 us per draw (+0.00),     4.48 until done
+[1965-07-20 04:45:15.779] [info] [gpu] [t1079088687] GLES draw bench: + glUniform4fv vertex vec4 (same value)                  3.01 us per draw (+0.56),     4.50 until done
+[1965-07-20 04:45:15.783] [info] [gpu] [t1079088687] GLES draw bench: + glUniform4fv fragment vec4 (same value)                2.99 us per draw (+0.54),     4.33 until done
+[1965-07-20 04:45:15.788] [info] [gpu] [t1079088687] GLES draw bench: + glUniform4fv both stages                               3.90 us per draw (+1.45),     5.29 until done
+[1965-07-20 04:45:15.796] [info] [gpu] [t1079088687] GLES draw bench: vertex vec4[256]: draw only                              2.35 us per draw (-0.10),     3.82 until done
+[1965-07-20 04:45:15.801] [info] [gpu] [t1079088687] GLES draw bench: vertex vec4[256]: + glUniform4fv 1 element               3.36 us per draw (+0.91),     4.91 until done
+[1965-07-20 04:45:15.805] [info] [gpu] [t1079088687] GLES draw bench: vertex vec4[256]: + glUniform4fv 256 elements            3.70 us per draw (+1.25),     5.46 until done
+[1965-07-20 04:45:15.813] [info] [gpu] [t1079088687] GLES draw bench: glUseProgram alternating 2 programs                      3.23 us per draw (+0.78),     4.70 until done
+[1965-07-20 04:45:15.824] [info] [gpu] [t1079088687] GLES draw bench: texture: draw only                                       2.60 us per draw (+0.15),     5.46 until done
+[1965-07-20 04:45:15.828] [info] [gpu] [t1079088687] GLES draw bench: texture: + ActiveTexture/BindTexture (same)              2.81 us per draw (+0.35),     6.21 until done
+[1965-07-20 04:45:15.833] [info] [gpu] [t1079088687] GLES draw bench: texture: + BindTexture alternating 2 textures            3.21 us per draw (+0.76),     5.96 until done
+[1965-07-20 04:45:15.838] [info] [gpu] [t1079088687] GLES draw bench: texture: + 4 TexParameteri (same values)                 3.10 us per draw (+0.65),     6.18 until done
+[1965-07-20 04:45:15.841] [info] [gpu] [t1079088687] GLES draw bench: + Enable/VertexAttribPointer/Disable (same)              2.37 us per draw (-0.08),     3.69 until done
+[1965-07-20 04:45:15.844] [info] [gpu] [t1079088687] GLES draw bench: + VertexAttribPointer at a new offset                    2.54 us per draw (+0.09),     3.95 until done
+[1965-07-20 04:45:15.848] [info] [gpu] [t1079088687] GLES draw bench: + map/unmap 64 bytes of a stream buffer                  2.57 us per draw (+0.12),     3.96 until done
+[1965-07-20 04:45:15.858] [info] [gpu] [t1079088687] GLES draw bench: 4 attributes from one buffer: draw only                  3.12 us per draw (+0.67),     4.88 until done
+[1965-07-20 04:45:15.863] [info] [gpu] [t1079088687] GLES draw bench: DrawElements 6 indices (element buffer)                  2.67 us per draw (+0.22),     4.00 until done
+[1965-07-20 04:45:15.867] [info] [gpu] [t1079088687] GLES draw bench: DrawElements 600 indices (element buffer)                2.46 us per draw (+0.01),     3.81 until done
+[1965-07-20 04:45:15.870] [info] [gpu] [t1079088687] GLES draw bench: + DepthFunc alternating                                  2.92 us per draw (+0.47),     4.24 until done
+[1965-07-20 04:45:15.874] [info] [gpu] [t1079088687] GLES draw bench: + Enable/Disable GL_DEPTH_TEST alternating               3.10 us per draw (+0.65),     4.58 until done
+[1965-07-20 04:45:15.880] [info] [gpu] [t1079088687] GLES draw bench: fbo 64x64: all draws into one                            2.53 us per draw (+0.08),     4.17 until done
+[1965-07-20 04:45:15.883] [info] [gpu] [t1079088687] GLES draw bench: fbo 64x64: 2 alternating, change every 8 draws           3.77 us per draw (+1.32),     4.00 until done
+[1965-07-20 04:45:15.891] [info] [gpu] [t1079088687] GLES draw bench: fbo 64x64 and the display, change every draw            10.87 us per draw (+8.41),    10.96 until done
+[1965-07-20 04:45:15.944] [info] [gpu] [t1079088687] GLES draw bench: fbo 1280x736 CPU-zeroed ping-pong: sample the previous, full    11.77 us per draw (+9.32),    11.89 until done
+[1965-07-20 04:45:15.948] [info] [gpu] [t1079088687] GLES draw bench: fbo 1280x736 CPU-zeroed: draws sampling one of them, one scene     2.81 us per draw (+0.35),     4.71 until done
+[1965-07-20 04:45:16.707] [info] [gpu] [t1079088687] GLES draw bench: fbo 1280x736: draws sampling one of them, one scene      3.50 us per draw (+1.05),   895.08 until done
+[1965-07-20 04:45:16.720] [info] [gpu] [t1079088687] GLES draw bench: fbo 64x64 ping-pong: sample the previous scene, 8x8     15.10 us per draw (+12.64),    15.19 until done
+[1965-07-20 04:45:16.730] [info] [gpu] [t1079088687] GLES draw bench: fbo 64x64 ping-pong: sample the previous scene, full    14.48 us per draw (+12.03),    14.62 until done
+[1965-07-20 04:45:16.742] [info] [gpu] [t1079088687] GLES draw bench: fbo 1280x736 ping-pong: sample the previous scene, 8x8    13.33 us per draw (+10.88),    13.41 until done
+[1965-07-20 04:45:16.753] [info] [gpu] [t1079088687] GLES draw bench: fbo 1280x736 ping-pong: sample the previous scene, full    16.25 us per draw (+13.80),    16.75 until done
+[1965-07-20 04:45:17.534] [info] [gpu] [t1079088687] GLES draw bench: texture RGBA8 512x512: the same                          3.81 us per draw (+1.35),  1032.81 until done
+[1965-07-20 04:45:18.487] [info] [gpu] [t1079088687] GLES draw bench: texture RGBA8 512x512: 2 alternating                     3.54 us per draw (+1.09),  1398.96 until done
+[1965-07-20 04:45:18.547] [info] [gpu] [t1079088687] GLES draw bench: texture DXT5 512x512: the same                           3.46 us per draw (+1.01),    96.27 until done
+[1965-07-20 04:45:18.607] [info] [gpu] [t1079088687] GLES draw bench: texture DXT5 512x512: 2 alternating                      2.72 us per draw (+0.27),    95.19 until done
+[1965-07-20 04:45:18.667] [info] [gpu] [t1079088687] GLES draw bench: texture RGB565 512x512: the same                         2.67 us per draw (+0.22),    92.09 until done
+[1965-07-20 04:45:18.737] [info] [gpu] [t1079088687] GLES draw bench: texture RGB565 512x512: 2 alternating                    2.85 us per draw (+0.40),    99.89 until done
+[1965-07-20 04:45:19.033] [info] [gpu] [t1079088687] GLES draw bench: texture RGBA8 512x512 zeros: the same                    2.87 us per draw (+0.42),   177.04 until done
+[1965-07-20 04:45:19.178] [info] [gpu] [t1079088687] GLES draw bench: texture RGBA8 512x512 zeros: the same, small draws       3.21 us per draw (+0.76),   214.84 until done
+[1965-07-20 04:45:19.419] [info] [gpu] [t1079088687] GLES draw bench: texture RGBA8 640x512 (not power of 2): the same         3.21 us per draw (+0.75),   250.70 until done
+[1965-07-20 04:45:19.591] [info] [gpu] [t1079088687] GLES draw bench: texture RGBA8 640x512 (not power of 2): the same, small draws     3.36 us per draw (+0.91),   256.73 until done
+[1965-07-20 04:45:19.963] [info] [gpu] [t1079088687] GLES draw bench: texture DXT5 1024x1024: the same                         2.72 us per draw (+0.27),   410.69 until done
+[1965-07-20 04:45:20.221] [info] [gpu] [t1079088687] GLES draw bench: texture DXT5 1024x1024: the same, small draws            2.65 us per draw (+0.20),   421.70 until done
+[1965-07-20 04:45:21.623] [info] [gpu] [t1079088687] GLES draw bench: texture DXT5 1024x3152 (as the menu atlas): the same     3.71 us per draw (+1.26),  2048.38 until done
+[1965-07-20 04:45:22.864] [info] [gpu] [t1079088687] GLES draw bench: texture DXT5 1024x3152 (as the menu atlas): the same, small draws     2.55 us per draw (+0.10),  2009.12 until done
+[1965-07-20 04:45:24.276] [info] [gpu] [t1079088687] GLES draw bench: texture DXT5 1024x3152 zeros: the same                   2.76 us per draw (+0.31),  2094.08 until done
+[1965-07-20 04:45:25.527] [info] [gpu] [t1079088687] GLES draw bench: texture DXT5 1024x3152 zeros: the same, small draws      2.83 us per draw (+0.38),  2040.80 until done
+[1965-07-20 04:45:25.657] [info] [gpu] [t1079088687] GLES draw bench: resolve pattern, 1 draws per scene, 1 target            12.84 us per draw (+10.39),    13.06 until done
+[1965-07-20 04:45:25.658] [info] [gpu] [t1079088687] GLES draw bench:   GXM: BeginScene 603 calls 1 ms (max 0.0 ms), EndScene 603 calls 1 ms (max 0.0 ms), Draw 1199 calls 1 ms (max 0.0 ms), Finish 6 calls 0 ms (max 0.0 ms); EndScene by scene: render target 297 (2 us each), resolve 304 (2 us each), display/other 2 (36 us each)
+[1965-07-20 04:45:25.662] [info] [gpu] [t1079088687] GLES draw bench: resolve pattern, 20 draws per scene, 1 target            3.69 us per draw (+1.24),     3.98 until done
+[1965-07-20 04:45:25.662] [info] [gpu] [t1079088687] GLES draw bench:   GXM: BeginScene 57 calls 0 ms (max 0.0 ms), EndScene 57 calls 0 ms (max 0.0 ms), Draw 621 calls 0 ms (max 0.0 ms), Finish 6 calls 0 ms (max 0.1 ms); EndScene by scene: render target 24 (3 us each), resolve 33 (3 us each)
+[1965-07-20 04:45:25.672] [info] [gpu] [t1079088687] GLES draw bench: resolve pattern, 1 draws per scene, 2 targets           12.25 us per draw (+9.80),    12.31 until done
+[1965-07-20 04:45:25.672] [info] [gpu] [t1079088687] GLES draw bench:   GXM: BeginScene 603 calls 0 ms (max 0.0 ms), EndScene 603 calls 1 ms (max 0.0 ms), Draw 1200 calls 1 ms (max 0.0 ms), Finish 6 calls 0 ms (max 0.0 ms); EndScene by scene: render target 297 (2 us each), resolve 306 (2 us each)
+[1965-07-20 04:45:25.675] [info] [gpu] [t1079088687] GLES draw bench: resolve pattern, 20 draws per scene, 2 targets           3.62 us per draw (+1.17),     3.86 until done
+[1965-07-20 04:45:25.675] [info] [gpu] [t1079088687] GLES draw bench:   GXM: BeginScene 57 calls 0 ms (max 0.0 ms), EndScene 57 calls 0 ms (max 0.0 ms), Draw 621 calls 0 ms (max 0.0 ms), Finish 6 calls 0 ms (max 0.1 ms); EndScene by scene: render target 24 (3 us each), resolve 33 (2 us each)
+[1965-07-20 04:45:25.685] [info] [gpu] [t1079088687] GLES draw bench: fbo 64x64: 2 alternating, change every draw             12.34 us per draw (+9.89),    12.55 until done
+[1965-07-20 04:45:25.695] [info] [gpu] [t1079088687] GLES draw bench: fbo 640x368: 2 alternating, change every draw           13.79 us per draw (+11.34),    13.86 until done
+[1965-07-20 04:45:25.705] [info] [gpu] [t1079088687] GLES draw bench: fbo 1280x736: 2 alternating, change every draw          11.11 us per draw (+8.66),    11.22 until done
+[1965-07-20 04:45:25.715] [info] [gpu] [t1079088687] GLES draw bench: fbo 64x64 + kept depth: 2 alternating, every draw       11.74 us per draw (+9.29),    11.94 until done
+[1965-07-20 04:45:25.725] [info] [gpu] [t1079088687] GLES draw bench: fbo 640x368 + kept depth: 2 alternating, every draw     13.93 us per draw (+11.48),    14.07 until done
+[1965-07-20 04:45:25.734] [info] [gpu] [t1079088687] GLES draw bench: fbo 1280x736 + kept depth: 2 alternating, every draw    11.52 us per draw (+9.07),    11.59 until done

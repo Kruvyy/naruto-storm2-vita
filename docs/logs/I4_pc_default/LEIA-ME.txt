@@ -1,0 +1,12 @@
+I4 no PC (GLES, menu com docs/logs/G1k_pc_menu/menu_start.txt, filmes pulados).
+
+I4_pc_bench     --gles_draw_bench=500: confere só que o bench roda (tempos de GL de desktop não
+                dizem nada do Vita).
+I4_pc_surface   --gles_surface_texture_min_kib=256: imagens iguais às da execução anterior sem
+                cópias (as mesmas diferenças contra a referência p1_pc_menu, que são de tempo);
+                33,5 ms por quadro; 79–85 MiB de cópias (por isso o limiar de 3000 KiB).
+I4_pc_surface2  --gles_surface_texture_min_kib=3000: o atlas 0FEE9000 1024x3152 é enviado e
+                copiado no quadro 131 e de novo no 1018 (depois de um despejo); os dados do
+                convidado não mudam depois do envio.
+I4_pc_default   opções padrão (sem cópias; vsync_sleep_until_vblank ligado e a correção de
+                prioridade de xthread.cpp): diferenças dentro do ruído, 33,5 ms por quadro.

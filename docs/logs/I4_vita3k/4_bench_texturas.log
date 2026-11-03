@@ -1,0 +1,196 @@
+[1965-07-20 04:44:32.705] [info] [core] [t3987738935] sceKernelDelayThread: 0 us -> 1 us, 100 us -> 1038 us, 1000 us -> 1032 us
+[1965-07-20 04:44:32.717] [info] [core] [t3987738935] Storm 2 (PS Vita, headless): game in ux0:data/storm2port/game, xex 9875456 bytes
+[1965-07-20 04:44:32.720] [info] [core] [t3987738935] GPU: GLES renderer (vitaGL) (vita_gpu=auto, ur0:data/external/libshacccg.suprx present)
+[1965-07-20 04:44:32.722] [info] [gpu] [t3987738935] GLES GPU backend (OpenGL ES 2 subset)
+[1965-07-20 04:44:32.726] [info] [core] [t3987738935] PS Vita: hardware exceptions cannot be caught; a guest fault ends the program
+[1965-07-20 04:44:32.741] [info] [sys] [t3987738935] Guest memory: software MMU (4 KiB page table at 0x0000000080800000, 4.5 MiB of tables); each guest region gets its own host block
+[1965-07-20 04:44:32.776] [warning] [core] [t3987738935] PS Vita: host faults are not delivered to the app; exception handlers are kept but never called (a fault ends the program with a crash dump)
+[1965-07-20 04:44:33.006] [info] [apu] [t3987738935] PS Vita audio: guest audio runs at real time (256 samples at 48 kHz, XMA decoded), output is discarded (no sound yet)
+[1965-07-20 04:44:40.767] [info] [core] [t3987738935] Function table initialized for module: code=821C0000-82836294, image=82000000-82B30000
+[1965-07-20 04:44:41.121] [info] [core] [t3987738935] Game started
+[1965-07-20 04:44:41.721] [warning] [sys] [t1848845601] GetProcAddressByOrdinal: function XamPartyGetUserList (0AFF) in xam - no native implementation
+[1965-07-20 04:44:41.738] [warning] [krnl] [t1848845601] ERROR: XexGetProcedureAddress ordinal 2815 (0xAFF) in 'xam' not found!
+[1965-07-20 04:44:41.740] [warning] [sys] [t1848845601] GetProcAddressByOrdinal: function XamPartySendGameInvites (0B00) in xam - no native implementation
+[1965-07-20 04:44:41.740] [warning] [krnl] [t1848845601] ERROR: XexGetProcedureAddress ordinal 2816 (0xB00) in 'xam' not found!
+[1965-07-20 04:44:41.740] [warning] [sys] [t1848845601] GetProcAddressByOrdinal: function XamPartySetCustomData (0B0B) in xam - no native implementation
+[1965-07-20 04:44:41.740] [warning] [krnl] [t1848845601] ERROR: XexGetProcedureAddress ordinal 2827 (0xB0B) in 'xam' not found!
+[1965-07-20 04:44:41.741] [warning] [sys] [t1848845601] GetProcAddressByOrdinal: function XamPartyGetBandwidth (0B10) in xam - no native implementation
+[1965-07-20 04:44:41.741] [warning] [krnl] [t1848845601] ERROR: XexGetProcedureAddress ordinal 2832 (0xB10) in 'xam' not found!
+[1965-07-20 04:44:41.871] [info] [gpu] [t2152765578] GLES backend on vitaGL: RAM pool 24 MiB, CDRAM pool 100 MiB, phycont pool 16 MiB
+[1965-07-20 04:44:42.129] [warning] [sys] [t1848845601] Software MMU: physical memory at physical address 0B000000 (272.0 MiB) limited to 184.0 MiB of real memory
+[1965-07-20 04:44:42.385] [info] [gpu] [t1848845601] SetInterruptCallback(826A5998, 40005080)
+[1965-07-20 04:44:44.670] [info] [gpu] [t2152765578] GLES draw bench: draw only (1 vec4 uniform per stage)                     2.77 us per draw (+0.00),     4.63 until done
+[1965-07-20 04:44:44.688] [info] [gpu] [t2152765578] GLES draw bench: + glUniform4fv vertex vec4 (same value)                  3.18 us per draw (+0.41),     4.56 until done
+[1965-07-20 04:44:44.692] [info] [gpu] [t2152765578] GLES draw bench: + glUniform4fv fragment vec4 (same value)                3.04 us per draw (+0.27),     4.47 until done
+[1965-07-20 04:44:44.697] [info] [gpu] [t2152765578] GLES draw bench: + glUniform4fv both stages                               3.73 us per draw (+0.96),     5.29 until done
+[1965-07-20 04:44:44.706] [info] [gpu] [t2152765578] GLES draw bench: vertex vec4[256]: draw only                              2.46 us per draw (-0.31),     4.17 until done
+[1965-07-20 04:44:44.711] [info] [gpu] [t2152765578] GLES draw bench: vertex vec4[256]: + glUniform4fv 1 element               3.31 us per draw (+0.54),     5.65 until done
+[1965-07-20 04:44:44.715] [info] [gpu] [t2152765578] GLES draw bench: vertex vec4[256]: + glUniform4fv 256 elements            3.50 us per draw (+0.73),     5.46 until done
+[1965-07-20 04:44:44.724] [info] [gpu] [t2152765578] GLES draw bench: glUseProgram alternating 2 programs                      3.17 us per draw (+0.40),     4.92 until done
+[1965-07-20 04:44:44.733] [info] [gpu] [t2152765578] GLES draw bench: texture: draw only                                       2.48 us per draw (-0.29),     4.41 until done
+[1965-07-20 04:44:44.738] [info] [gpu] [t2152765578] GLES draw bench: texture: + ActiveTexture/BindTexture (same)              2.88 us per draw (+0.11),     5.07 until done
+[1965-07-20 04:44:44.741] [info] [gpu] [t2152765578] GLES draw bench: texture: + BindTexture alternating 2 textures            2.56 us per draw (-0.21),     4.37 until done
+[1965-07-20 04:44:44.746] [info] [gpu] [t2152765578] GLES draw bench: texture: + 4 TexParameteri (same values)                 2.78 us per draw (+0.01),     4.62 until done
+[1965-07-20 04:44:44.749] [info] [gpu] [t2152765578] GLES draw bench: + Enable/VertexAttribPointer/Disable (same)              2.35 us per draw (-0.42),     3.75 until done
+[1965-07-20 04:44:44.752] [info] [gpu] [t2152765578] GLES draw bench: + VertexAttribPointer at a new offset                    2.35 us per draw (-0.42),     3.85 until done
+[1965-07-20 04:44:44.756] [info] [gpu] [t2152765578] GLES draw bench: + map/unmap 64 bytes of a stream buffer                  2.31 us per draw (-0.46),     3.73 until done
+[1965-07-20 04:44:44.767] [info] [gpu] [t2152765578] GLES draw bench: 4 attributes from one buffer: draw only                  3.12 us per draw (+0.35),     5.29 until done
+[1965-07-20 04:44:44.772] [info] [gpu] [t2152765578] GLES draw bench: DrawElements 6 indices (element buffer)                  2.46 us per draw (-0.31),     4.00 until done
+[1965-07-20 04:44:44.775] [info] [gpu] [t2152765578] GLES draw bench: DrawElements 600 indices (element buffer)                2.46 us per draw (-0.31),     3.90 until done
+[1965-07-20 04:44:44.780] [info] [gpu] [t2152765578] GLES draw bench: + DepthFunc alternating                                  3.42 us per draw (+0.65),     5.50 until done
+[1965-07-20 04:44:44.784] [info] [gpu] [t2152765578] GLES draw bench: + Enable/Disable GL_DEPTH_TEST alternating               3.11 us per draw (+0.34),     4.84 until done
+[1965-07-20 04:44:44.789] [info] [gpu] [t2152765578] GLES draw bench: fbo 64x64: all draws into one                            2.32 us per draw (-0.45),     3.84 until done
+[1965-07-20 04:44:44.793] [info] [gpu] [t2152765578] GLES draw bench: fbo 64x64: 2 alternating, change every 8 draws           4.21 us per draw (+1.44),     4.44 until done
+[1965-07-20 04:44:44.803] [info] [gpu] [t2152765578] GLES draw bench: fbo 64x64 and the display, change every draw            12.46 us per draw (+9.70),    12.52 until done
+[1965-07-20 04:44:44.870] [info] [gpu] [t2152765578] GLES draw bench: fbo 1280x736 CPU-zeroed ping-pong: sample the previous, full    13.16 us per draw (+10.39),    13.22 until done
+[1965-07-20 04:44:44.874] [info] [gpu] [t2152765578] GLES draw bench: fbo 1280x736 CPU-zeroed: draws sampling one of them, one scene     2.48 us per draw (-0.29),     4.32 until done
+[1965-07-20 04:44:45.018] [info] [gpu] [t2152765578] GLES draw bench: fbo 1280x736: draws sampling one of them, one scene      2.62 us per draw (-0.15),   219.45 until done
+[1965-07-20 04:44:45.028] [info] [gpu] [t2152765578] GLES draw bench: fbo 64x64 ping-pong: sample the previous scene, 8x8     12.71 us per draw (+9.94),    12.90 until done
+[1965-07-20 04:44:45.038] [info] [gpu] [t2152765578] GLES draw bench: fbo 64x64 ping-pong: sample the previous scene, full    13.06 us per draw (+10.29),    13.18 until done
+[1965-07-20 04:44:45.049] [info] [gpu] [t2152765578] GLES draw bench: fbo 1280x736 ping-pong: sample the previous scene, 8x8    13.11 us per draw (+10.34),    13.31 until done
+[1965-07-20 04:44:45.058] [info] [gpu] [t2152765578] GLES draw bench: fbo 1280x736 ping-pong: sample the previous scene, full    12.43 us per draw (+9.66),    12.47 until done
+[1965-07-20 04:44:45.151] [info] [gpu] [t2152765578] GLES draw bench: texture RGBA8 512x512: the same                          2.81 us per draw (+0.04),    44.36 until done
+[1965-07-20 04:44:45.186] [info] [gpu] [t2152765578] GLES draw bench: texture RGBA8 512x512: 2 alternating                     3.21 us per draw (+0.44),    50.83 until done
+[1965-07-20 04:44:45.197] [info] [gpu] [t2152765578] GLES draw bench: texture DXT5 512x512: the same                           3.75 us per draw (+0.98),    15.36 until done
+[1965-07-20 04:44:45.208] [info] [gpu] [t2152765578] GLES draw bench: texture DXT5 512x512: 2 alternating                      3.21 us per draw (+0.44),    16.03 until done
+[1965-07-20 04:44:45.224] [info] [gpu] [t2152765578] GLES draw bench: texture RGB565 512x512: the same                         2.94 us per draw (+0.17),    25.34 until done
+[1965-07-20 04:44:45.241] [info] [gpu] [t2152765578] GLES draw bench: texture RGB565 512x512: 2 alternating                    4.07 us per draw (+1.30),    26.88 until done
+[1965-07-20 04:44:45.309] [info] [gpu] [t2152765578] GLES draw bench: texture RGBA8 512x512 zeros: the same                    2.90 us per draw (+0.13),    44.41 until done
+[1965-07-20 04:44:45.340] [info] [gpu] [t2152765578] GLES draw bench: texture RGBA8 512x512 zeros: the same, small draws       3.98 us per draw (+1.21),    46.52 until done
+[1965-07-20 04:44:45.392] [info] [gpu] [t2152765578] GLES draw bench: texture RGBA8 640x512 (not power of 2): the same         3.94 us per draw (+1.17),    58.78 until done
+[1965-07-20 04:44:45.427] [info] [gpu] [t2152765578] GLES draw bench: texture RGBA8 640x512 (not power of 2): the same, small draws     2.90 us per draw (+0.13),    55.91 until done
+[1965-07-20 04:44:45.475] [info] [gpu] [t2152765578] GLES draw bench: texture DXT5 1024x1024: the same                         4.21 us per draw (+1.44),    46.12 until done
+[1965-07-20 04:44:45.505] [info] [gpu] [t2152765578] GLES draw bench: texture DXT5 1024x1024: the same, small draws            3.81 us per draw (+1.04),    48.77 until done
+[1965-07-20 04:44:45.687] [info] [gpu] [t2152765578] GLES draw bench: texture DXT5 1024x3152 (as the menu atlas): the same     3.25 us per draw (+0.48),   263.46 until done
+[1965-07-20 04:44:45.845] [info] [gpu] [t2152765578] GLES draw bench: texture DXT5 1024x3152 (as the menu atlas): the same, small draws     2.76 us per draw (-0.01),   260.08 until done
+[1965-07-20 04:44:46.013] [info] [gpu] [t2152765578] GLES draw bench: texture DXT5 1024x3152 zeros: the same                   2.69 us per draw (-0.08),   267.08 until done
+[1965-07-20 04:44:46.163] [info] [gpu] [t2152765578] GLES draw bench: texture DXT5 1024x3152 zeros: the same, small draws      2.62 us per draw (-0.15),   243.46 until done
+[1965-07-20 04:44:46.200] [info] [gpu] [t2152765578] GLES draw bench: resolve pattern, 1 draws per scene, 1 target            16.53 us per draw (+13.76),    16.70 until done
+[1965-07-20 04:44:46.203] [info] [gpu] [t2152765578] GLES draw bench:   GXM: BeginScene 603 calls 0 ms (max 0.0 ms), EndScene 603 calls 1 ms (max 0.2 ms), Draw 1199 calls 1 ms (max 0.0 ms), Finish 6 calls 0 ms (max 0.0 ms); EndScene by scene: render target 297 (4 us each), resolve 304 (4 us each), display/other 2 (12 us each)
+[1965-07-20 04:44:46.209] [info] [gpu] [t2152765578] GLES draw bench: resolve pattern, 20 draws per scene, 1 target            6.17 us per draw (+3.40),     6.44 until done
+[1965-07-20 04:44:46.209] [info] [gpu] [t2152765578] GLES draw bench:   GXM: BeginScene 57 calls 0 ms (max 0.0 ms), EndScene 57 calls 1 ms (max 0.2 ms), Draw 621 calls 0 ms (max 0.0 ms), Finish 6 calls 1 ms (max 0.5 ms); EndScene by scene: render target 24 (24 us each), resolve 33 (22 us each)
+[1965-07-20 04:44:46.225] [info] [gpu] [t2152765578] GLES draw bench: resolve pattern, 1 draws per scene, 2 targets           21.20 us per draw (+18.43),    21.41 until done
+[1965-07-20 04:44:46.226] [info] [gpu] [t2152765578] GLES draw bench:   GXM: BeginScene 603 calls 1 ms (max 0.0 ms), EndScene 603 calls 2 ms (max 0.2 ms), Draw 1200 calls 1 ms (max 0.0 ms), Finish 6 calls 0 ms (max 0.4 ms); EndScene by scene: render target 297 (7 us each), resolve 306 (6 us each)
+[1965-07-20 04:44:46.229] [info] [gpu] [t2152765578] GLES draw bench: resolve pattern, 20 draws per scene, 2 targets           4.30 us per draw (+1.53),     4.53 until done
+[1965-07-20 04:44:46.229] [info] [gpu] [t2152765578] GLES draw bench:   GXM: BeginScene 57 calls 0 ms (max 0.0 ms), EndScene 57 calls 0 ms (max 0.1 ms), Draw 621 calls 0 ms (max 0.0 ms), Finish 6 calls 0 ms (max 0.0 ms); EndScene by scene: render target 24 (6 us each), resolve 33 (3 us each)
+[1965-07-20 04:44:46.243] [info] [gpu] [t2152765578] GLES draw bench: fbo 64x64: 2 alternating, change every draw             18.80 us per draw (+16.04),    19.05 until done
+[1965-07-20 04:44:46.256] [info] [gpu] [t2152765578] GLES draw bench: fbo 640x368: 2 alternating, change every draw           19.82 us per draw (+17.05),    19.93 until done
+[1965-07-20 04:44:46.270] [info] [gpu] [t2152765578] GLES draw bench: fbo 1280x736: 2 alternating, change every draw          19.25 us per draw (+16.48),    19.55 until done
+[1965-07-20 04:44:46.284] [info] [gpu] [t2152765578] GLES draw bench: fbo 64x64 + kept depth: 2 alternating, every draw       17.15 us per draw (+14.38),    17.30 until done
+[1965-07-20 04:44:46.297] [info] [gpu] [t2152765578] GLES draw bench: fbo 640x368 + kept depth: 2 alternating, every draw     19.89 us per draw (+17.12),    19.97 until done
+[1965-07-20 04:44:46.311] [info] [gpu] [t2152765578] GLES draw bench: fbo 1280x736 + kept depth: 2 alternating, every draw    20.45 us per draw (+17.68),    20.56 until done
+[1965-07-20 04:44:46.313] [info] [gpu] [t2152765578] GLES draw bench: done (200 draws per case)
+[1965-07-20 04:44:46.881] [info] [gpu] [t2152765578] GLES: render target depth base 0 pitch 640 format 0 msaa 2: 1280x736
+[1965-07-20 04:44:46.883] [error] [gpu] [t2152765578] GLES: GL_INVALID_ENUM after creating a render target (swap 0); vitaGL free/total MiB: VRAM 2139.5/100.0, RAM 2139.5/24.0, PHYCONT 2139.5/16.0, newlib 0.0/48.0
+[1965-07-20 04:44:46.886] [info] [gpu] [t2152765578] GLES: scratch color attachment 16x16 for depth-only passes
+[1965-07-20 04:44:46.887] [info] [gpu] [t2152765578] GLES: framebuffer 16x16 with depth/stencil (1 render target framebuffers)
+[1965-07-20 04:44:46.928] [info] [gpu] [t2152765578] GLES: compiled VS 1E6883FCCDE1F688 (modification 0, 3001 bytes of GLSL) in 0.3 ms
+[1965-07-20 04:44:46.954] [info] [gpu] [t2152765578] GLES: linked program VS 1E6883FCCDE1F688 + PS 0000000000000000 in 10.8 ms (shader cache)
+[1965-07-20 04:44:46.958] [info] [gpu] [t2152765578] GLES: program uniforms (-1 = absent): vc -1 (-1 kept) pc -1 (-1 kept) vte 2051513336 ndc 2051513320/2051513304 atest -1, 0 bools, 0 loops, 0 textures; 4 active uniforms
+[1965-07-20 04:44:46.994] [info] [gpu] [t2152765578] GLES: render target color base 0 pitch 1280 format 0 msaa 0: 1280x736
+[1965-07-20 04:44:46.997] [info] [gpu] [t2152765578] GLES: resolve target 0B000000 1280x736
+[1965-07-20 04:44:46.999] [info] [gpu] [t2152765578] GLES: resolve framebuffer 1280x736 #0
+[1965-07-20 04:44:47.026] [info] [gpu] [t2152765578] GLES: framebuffer 16x16 keeps its depth/stencil between scenes
+[1965-07-20 04:44:47.028] [info] [gpu] [t2152765578] GLES: render target depth base 640 pitch 640 format 0 msaa 2: 1280x736
+[1965-07-20 04:44:47.028] [info] [gpu] [t2152765578] GLES: framebuffer 16x16 with depth/stencil (2 render target framebuffers)
+[1965-07-20 04:44:47.075] [info] [gpu] [t2152765578] GLES: framebuffer 16x16 keeps its depth/stencil between scenes
+[1965-07-20 04:44:47.290] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:47.395] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:47.782] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:47.802] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:48.029] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:49.887] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:50.013] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:50.024] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:50.214] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:50.598] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:50.741] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:50.966] [info] [gpu] [t2152765578] GLES: resolve target 0CB9A000 1280x640
+[1965-07-20 04:44:50.967] [info] [gpu] [t2152765578] GLES: resolve framebuffer 1280x640 #0
+[1965-07-20 04:44:50.969] [info] [gpu] [t2152765578] GLES: render target color base 640 pitch 1280 format 0 msaa 0: 1280x736
+[1965-07-20 04:44:50.971] [info] [gpu] [t2152765578] GLES: resolve target 0CEBA000 1280x640
+[1965-07-20 04:44:50.971] [info] [gpu] [t2152765578] GLES: resolve framebuffer 1280x640 #1
+[1965-07-20 04:44:50.983] [info] [gpu] [t2152765578] GLES: framebuffer 1280x736 (3 render target framebuffers)
+[1965-07-20 04:44:50.987] [info] [gpu] [t2152765578] GLES: compiled VS 4666C5A9092B03DD (modification 3, 4346 bytes of GLSL) in 0.0 ms
+[1965-07-20 04:44:50.993] [info] [gpu] [t2152765578] GLES: compiled PS 7ABDFEFBCADB4BF9 (modification 3, 2946 bytes of GLSL) in 0.0 ms
+[1965-07-20 04:44:50.995] [info] [gpu] [t2152765578] GLES: linked program VS 4666C5A9092B03DD + PS 7ABDFEFBCADB4BF9 in 1.5 ms (shader cache)
+[1965-07-20 04:44:50.997] [info] [gpu] [t2152765578] GLES: program uniforms (-1 = absent): vc 2051816432 (5 kept) pc -1 (-1 kept) vte 2051816416 ndc 2051816400/2051816384 atest 2051891040, 0 bools, 0 loops, 1 textures; 9 active uniforms
+[1965-07-20 04:44:51.009] [info] [gpu] [t2152765578] GLES: vertex stream ring 4 x 4 MiB
+[1965-07-20 04:44:51.050] [info] [gpu] [t2152765578] GLES: render target depth base 1280 pitch 640 format 0 msaa 2: 1280x736
+[1965-07-20 04:44:51.051] [info] [gpu] [t2152765578] GLES: framebuffer 1280x736 with depth/stencil (4 render target framebuffers)
+[1965-07-20 04:44:51.052] [info] [gpu] [t2152765578] GLES: compiled VS 1E6883FCCDE1F688 (modification 1, 3026 bytes of GLSL) in 0.0 ms
+[1965-07-20 04:44:51.052] [info] [gpu] [t2152765578] GLES: compiled PS A4A965C189287B99 (modification 1, 2628 bytes of GLSL) in 0.0 ms
+[1965-07-20 04:44:51.054] [info] [gpu] [t2152765578] GLES: linked program VS 1E6883FCCDE1F688 + PS A4A965C189287B99 in 1.5 ms (shader cache)
+[1965-07-20 04:44:51.055] [info] [gpu] [t2152765578] GLES: program uniforms (-1 = absent): vc -1 (-1 kept) pc -1 (-1 kept) vte 2051777144 ndc 2051777128/2051777112 atest 2051778712, 0 bools, 0 loops, 0 textures; 5 active uniforms
+[1965-07-20 04:44:51.103] [info] [gpu] [t2152765578] GLES: framebuffer 1280x736 keeps its depth/stencil between scenes
+[1965-07-20 04:44:51.748] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:51.761] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:52.387] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:52.401] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:52.553] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:52.564] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:53.177] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:53.189] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:53.462] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:53.473] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:53.597] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:53.608] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:53.717] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:53.728] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:54.714] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:54.726] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:54.900] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:54.910] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:55.104] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:55.115] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:55.663] [info] [gpu] [t2152765578] GLES: compiled VS 13B01BEA94678566 (modification 3, 4893 bytes of GLSL) in 0.0 ms
+[1965-07-20 04:44:55.664] [info] [gpu] [t2152765578] GLES: linked program VS 13B01BEA94678566 + PS 7ABDFEFBCADB4BF9 in 1.3 ms (shader cache)
+[1965-07-20 04:44:55.665] [info] [gpu] [t2152765578] GLES: program uniforms (-1 = absent): vc 2051630384 (5 kept) pc -1 (-1 kept) vte 2051630368 ndc 2051630352/2051630336 atest 2051884744, 0 bools, 0 loops, 1 textures; 9 active uniforms
+[1965-07-20 04:44:55.677] [info] [gpu] [t2152765578] GLES: compiled VS 2E015B8427EBD8C5 (modification 1F, 6369 bytes of GLSL) in 0.0 ms
+[1965-07-20 04:44:55.680] [info] [gpu] [t2152765578] GLES: compiled PS E8EAE3AA51F7921E (modification 1F, 4921 bytes of GLSL) in 0.0 ms
+[1965-07-20 04:44:55.681] [info] [gpu] [t2152765578] GLES: linked program VS 2E015B8427EBD8C5 + PS E8EAE3AA51F7921E in 1.3 ms (shader cache)
+[1965-07-20 04:44:55.682] [info] [gpu] [t2152765578] GLES: program uniforms (-1 = absent): vc 2051495888 (10 kept) pc 2051749928 (1 kept) vte 2051495872 ndc 2051495856/2051495840 atest 2051749880, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[1965-07-20 04:44:57.145] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:57.158] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:57.813] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:57.824] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:58.083] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:58.094] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:58.218] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:58.229] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:58.344] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:58.355] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:58.466] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:58.481] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:58.602] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:58.613] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:58.764] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:58.775] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:58.886] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:58.901] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:59.243] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:59.254] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:59.385] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:59.398] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:59.513] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:59.525] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:59.676] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:59.688] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:59.799] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:59.811] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:59.927] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:44:59.937] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:45:00.059] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:45:00.070] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:45:00.181] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:45:00.195] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:45:00.312] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:45:00.324] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:45:00.441] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:45:00.454] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:45:00.574] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:45:00.585] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:45:00.700] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:45:00.711] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:45:00.849] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:45:00.861] [error] [krnl] [t3633261294] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
