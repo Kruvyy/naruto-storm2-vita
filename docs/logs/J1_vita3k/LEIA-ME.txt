@@ -1,0 +1,36 @@
+J1 no Vita3K-Plus do usuário (cópia privada, config dele: OpenGL, resolução 0,5, accurate-thread-scheduling
+true, guest-cores 3; sistema de arquivos isolado). Emulador, não o console. Menu de modos com entrada
+reproduzida (menu_start_repeat.txt). Quadros/s: mediana das linhas a partir do quadro 1800 (GPU nula) ou
+2400 (GLES). O ruído entre execuções em horários diferentes chega a ~15% (o PC roda Chrome, Discord e o
+overlay da Epic); compare execuções vizinhas.
+
+GPU nula:
+1_base               build do I5: 21,8 quadros/s; a thread principal ocupa 78,6% de um núcleo do host
+                     (64% código emulado, 21% esperando, 10% no Vita3K).
+2_fast_tls           TLS pelo TPIDRURO (compat/fast_tls.c): ~350 mil consultas/s, 138 ns -> 8 ns cada;
+                     linha "system calls/s": sceKernelDelayThread ~200 mil/s.
+3_sem_polling        gpu_coarse_sleep_polling = false: DelayThread cai para ~550/s; quadros/s igual.
+4_vblank_display     vblank pelo display + WAIT_REG_MEM bloqueando no sinal de escrita da GPU: 24,2.
+                     storm2.log: "vblanks: 52-60/s, intervalos de até 62 ms" (a thread do vblank espera
+                     núcleo) e o relatório do WAIT_REG_MEM (memória 1FC9B004 == 0, a espera do vblank antes
+                     de apresentar, ~1 por quadro, 12-16 ms cada).
+5_vblank_prioridade  + thread do vblank na prioridade mais alta e vblanks perdidos contados pelo vcount:
+                     23,7; 60 vblanks/s, 1 acordar por espera do WAIT_REG_MEM; quadros de 38-46 ms.
+6_sem_escalonamento_preciso  accurate-thread-scheduling false (só comparação): 29,6 quadros/s, thread
+                     principal 94% ocupada.
+7_afinidade_do_jogo  ignore_thread_affinities = false (cada thread no núcleo do seu hardware thread / 2):
+                     21,7 (16,9-29,3); o portão do escalonador fica ocioso.
+escalonador_*.txt    linhas GUEST-SCHED do Vita3K-Plus. Ele avisa no início: "default-affinity guest
+                     threads run one at a time, by priority": com ignore_thread_affinities = true (padrão
+                     do Xenia) todas as threads do port ficam na afinidade padrão e rodam uma de cada vez.
+
+GLES (perfil do I4: gpu_thread_priority_boost = 1, gles_surface_texture_min_kib = 3000,
+gles_surface_texture_refresh_swaps = 1):
+8_gles_padrao(_b)    padrão novo (afinidade padrão): 17,9 e 17,6 quadros/s.
+9_gles_afinidade_do_jogo     16,7; áudio 84/s (a thread da GPU, dois workers e o worker de áudio no núcleo 1).
+10_gles_todos_os_nucleos     vita_threads_all_cores = true: 12,1; desenhos da thread da GPU 13,9 s contra 8,1 s
+                     por relatório (as threads em paralelo disputam o próprio Vita3K).
+11_gles_layout_trava         vita_hw_thread_cores = "0,2,2,2,2,2" + vita_thread_cores = "GPU Commands=1,GPU
+                     VSync=1": trava no boot (0 quadros) nas duas tentativas; o hang dump do Vita3K-Plus mostra
+                     todas as threads esperando.
+12_gles_sem_escalonamento_preciso   accurate-thread-scheduling false (só comparação): 25,3 (17,7-26,6).

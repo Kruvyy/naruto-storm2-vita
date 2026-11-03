@@ -36,7 +36,20 @@ add_subdirectory(${TP}/fmt fmt EXCLUDE_FROM_ALL)
 target_compile_options(fmt PRIVATE -w)
 # flockfile/funlockfile, declared but missing in the SDK's newlib; fmt uses
 # them, so they are linked after it.
-add_library(vita_compat STATIC ${CMAKE_CURRENT_LIST_DIR}/compat/stdio_lock.c)
+add_library(vita_compat STATIC ${CMAKE_CURRENT_LIST_DIR}/compat/stdio_lock.c
+  ${CMAKE_CURRENT_LIST_DIR}/compat/fast_tls.c)
+target_include_directories(vita_compat PUBLIC ${CMAKE_CURRENT_LIST_DIR}/compat)
+# newlib and emutls (thread_local) look up TLS through sceKernelGetTLSAddr;
+# compat/fast_tls.c answers from TPIDRURO once a start-up probe has checked it.
+# The other wrappers there only count calls (the app's stats).
+target_link_options(vita_compat INTERFACE -Wl,--wrap=sceKernelGetTLSAddr
+  -Wl,--undefined=__wrap_sceKernelGetTLSAddr
+  -Wl,--wrap=sceKernelGetProcessTimeWide -Wl,--wrap=sceKernelGetProcessTimeLow
+  -Wl,--wrap=sceKernelGetThreadId -Wl,--wrap=sceKernelLockLwMutex
+  -Wl,--wrap=sceKernelTryLockLwMutex -Wl,--wrap=sceKernelUnlockLwMutex
+  -Wl,--wrap=sceKernelWaitSema -Wl,--wrap=sceKernelSignalSema
+  -Wl,--wrap=sceKernelPollEventFlag -Wl,--wrap=sceKernelDelayThread
+  -Wl,--wrap=sceKernelLibcGettimeofday)
 target_link_libraries(fmt PUBLIC vita_compat)
 
 set(SPDLOG_FMT_EXTERNAL ON CACHE BOOL "" FORCE)

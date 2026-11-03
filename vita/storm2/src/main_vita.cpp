@@ -59,6 +59,8 @@
 // Generated with the recompiled code (storm2_init.cpp).
 extern const rex::PPCImageInfo PPCImageConfig;
 
+#include <fast_tls.h>  // vita/runtime/compat
+
 namespace rex::thread {
 void VitaPollWakeups(uint64_t out[3]);  // core/threading_vita.cpp
 }
@@ -74,6 +76,13 @@ REXCVAR_DEFINE_STRING(vita_game_root, "ux0:data/storm2port/game", "Vita",
 REXCVAR_DEFINE_STRING(vita_gpu, "auto", "Vita",
                       "GPU backend: gles (renderer, needs ur0:data/external/libshacccg.suprx), "
                       "null (no rendering), auto (gles if the shader compiler is installed)");
+REXCVAR_DEFINE_BOOL(vita_fast_tls, true, "Vita",
+                    "Answer sceKernelGetTLSAddr (newlib, thread_local) from the TPIDRURO "
+                    "register when a start-up probe confirms the layout (Vita3K emulates "
+                    "every real call on the host)");
+REXCVAR_DEFINE_INT32(vita_fast_tls_check, 0, "Vita",
+                     "Compare every Nth fast TLS lookup with the real call and turn the fast "
+                     "path off on a mismatch (0 = never)");
 
 namespace {
 constexpr const char* kShaderCompilerPath = "ur0:data/external/libshacccg.suprx";
@@ -357,6 +366,19 @@ int main() {
     Stats("sceKernelDelayThread: 0 us -> %llu us, 100 us -> %llu us, 1000 us -> %llu us\n",
           (unsigned long long)d0, (unsigned long long)d100, (unsigned long long)d1000);
   }
+  {
+    VitaFastTlsReport tls{};
+    vita_fast_tls_probe(REXCVAR_GET(vita_fast_tls) ? 1 : 0, &tls);
+    vita_fast_tls_set_check(uint32_t(std::max(0, REXCVAR_GET(vita_fast_tls_check))));
+    REXLOG_INFO("TLS lookups: TPIDRURO {:08X}/{:08X}, slot 0 at {:+d}, same layout on two threads: "
+                "{}, one call {} ns, through TPIDRURO {} ns; fast path {}",
+                uint32_t(tls.tp_main), uint32_t(tls.tp_other), int(tls.delta),
+                tls.consistent ? "yes" : "no", tls.real_ns, tls.fast_ns,
+                tls.enabled ? "on" : "off");
+    Stats("tls: layout %s, call %u ns, fast %u ns, fast path %s\n",
+          tls.consistent ? "same on two threads" : "differs", tls.real_ns, tls.fast_ns,
+          tls.enabled ? "on" : "off");
+  }
 
   const std::filesystem::path game_root = std::string(REXCVAR_GET(vita_game_root));
   const std::string xex_host = game_root.string() + "/default.xex";
@@ -478,6 +500,24 @@ int main() {
       Stats("  multi-object/alertable waits that blocked: %.0f/s\n",
             double(polls[0] - last_polls[0]) / seconds);
       std::copy(std::begin(polls), std::end(polls), std::begin(last_polls));
+      static uint64_t last_tls_calls = 0;
+      VitaFastTlsStats tls{};
+      vita_fast_tls_stats(&tls);
+      Stats("  TLS lookups: %.0f/s (fast path %s, %u mismatches)\n",
+            double(tls.calls - last_tls_calls) / seconds, tls.enabled ? "on" : "off",
+            tls.mismatches);
+      last_tls_calls = tls.calls;
+      // Other frequent system calls, per second.
+      static uint64_t last_calls[VITA_SYSCALL_COUNTERS_MAX] = {};
+      uint64_t calls[VITA_SYSCALL_COUNTERS_MAX];
+      const char* const* names = nullptr;
+      const int n = vita_syscall_counts(calls, &names);
+      std::string line = "  system calls/s:";
+      for (int i = 0; i < n; ++i) {
+        line += fmt::format(" {} {:.0f}", names[i], double(calls[i] - last_calls[i]) / seconds);
+        last_calls[i] = calls[i];
+      }
+      Stats("%s\n", line.c_str());
     }
     last_us = now_us;
     last_frame = frame;

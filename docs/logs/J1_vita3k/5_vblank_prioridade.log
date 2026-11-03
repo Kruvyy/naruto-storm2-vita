@@ -1,0 +1,229 @@
+[1965-07-20 04:16:21.816] [info] [core] [t3987738935] sceKernelDelayThread: 0 us -> 1 us, 100 us -> 1001 us, 1000 us -> 1239 us
+[1965-07-20 04:16:21.844] [info] [core] [t3987738935] TLS lookups: TPIDRURO 80440800/80457800, slot 0 at -2048, same layout on two threads: yes, one call 133 ns, through TPIDRURO 3 ns; fast path on
+[1965-07-20 04:16:21.849] [info] [core] [t3987738935] Storm 2 (PS Vita, headless): game in ux0:data/storm2port/game, xex 9875456 bytes
+[1965-07-20 04:16:21.851] [info] [core] [t3987738935] GPU: null (vita_gpu=null, ur0:data/external/libshacccg.suprx present)
+[1965-07-20 04:16:21.855] [info] [gpu] [t3987738935] null GPU backend: guest command stream runs, nothing is rendered
+[1965-07-20 04:16:21.858] [info] [core] [t3987738935] PS Vita: hardware exceptions cannot be caught; a guest fault ends the program
+[1965-07-20 04:16:21.876] [info] [sys] [t3987738935] Guest memory: software MMU (4 KiB page table at 0x0000000080800000, 4.5 MiB of tables); each guest region gets its own host block
+[1965-07-20 04:16:21.913] [warning] [core] [t3987738935] PS Vita: host faults are not delivered to the app; exception handlers are kept but never called (a fault ends the program with a crash dump)
+[1965-07-20 04:16:22.166] [info] [apu] [t3987738935] PS Vita audio: guest audio runs at real time (256 samples at 48 kHz, XMA decoded), output is discarded (no sound yet)
+[1965-07-20 04:16:29.814] [info] [gpu] [t3987738935] GPU: command processor thread priority above normal
+[1965-07-20 04:16:29.836] [info] [gpu] [t3987738935] GPU: vblank thread priority highest
+[1965-07-20 04:16:29.839] [info] [core] [t3987738935] Function table initialized for module: code=821C0000-82836294, image=82000000-82B30000
+[1965-07-20 04:16:29.846] [info] [gpu] [t3372492396] GPU: guest vblank follows the display (sceDisplayWaitVblankStart)
+[1965-07-20 04:16:30.229] [info] [core] [t3987738935] Game started
+[1965-07-20 04:16:30.831] [warning] [sys] [t659726207] GetProcAddressByOrdinal: function XamPartyGetUserList (0AFF) in xam - no native implementation
+[1965-07-20 04:16:30.847] [warning] [krnl] [t659726207] ERROR: XexGetProcedureAddress ordinal 2815 (0xAFF) in 'xam' not found!
+[1965-07-20 04:16:30.849] [warning] [sys] [t659726207] GetProcAddressByOrdinal: function XamPartySendGameInvites (0B00) in xam - no native implementation
+[1965-07-20 04:16:30.849] [warning] [krnl] [t659726207] ERROR: XexGetProcedureAddress ordinal 2816 (0xB00) in 'xam' not found!
+[1965-07-20 04:16:30.849] [warning] [sys] [t659726207] GetProcAddressByOrdinal: function XamPartySetCustomData (0B0B) in xam - no native implementation
+[1965-07-20 04:16:30.850] [warning] [krnl] [t659726207] ERROR: XexGetProcedureAddress ordinal 2827 (0xB0B) in 'xam' not found!
+[1965-07-20 04:16:30.850] [warning] [sys] [t659726207] GetProcAddressByOrdinal: function XamPartyGetBandwidth (0B10) in xam - no native implementation
+[1965-07-20 04:16:30.850] [warning] [krnl] [t659726207] ERROR: XexGetProcedureAddress ordinal 2832 (0xB10) in 'xam' not found!
+[1965-07-20 04:16:31.183] [warning] [sys] [t659726207] Software MMU: physical memory at physical address 0B000000 (272.0 MiB) limited to 184.0 MiB of real memory
+[1965-07-20 04:16:31.368] [info] [gpu] [t659726207] SetInterruptCallback(826A5998, 40005080)
+[1965-07-20 04:16:31.552] [info] [gpu] [t1607317424] WAIT_REG_MEM report (10 s): 0 waits that did not match at once, 0.0 ms waiting per second
+[1965-07-20 04:16:32.501] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:32.613] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:33.020] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:33.046] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:33.279] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:34.857] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:34.981] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:34.991] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:35.170] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:35.555] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:35.697] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:35.870] [info] [core] [t659726207] input replay: 42 events for 1 user(s) from ux0:data/storm2port/menu_start_repeat.txt (stretch 1)
+[1965-07-20 04:16:36.795] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:36.812] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:37.477] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:37.491] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:37.666] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:37.679] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:38.332] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:38.345] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:38.645] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:38.659] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:38.801] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:38.815] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:38.945] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:38.959] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:39.878] [info] [gpu] [t3372492396] vblanks: 60.0/s, gaps over 20 ms 0, over 25 ms 0, under 12 ms 0, longest 18.5 ms
+[1965-07-20 04:16:40.025] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:40.039] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:40.246] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:40.258] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:40.447] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:40.459] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:41.558] [info] [gpu] [t1607317424] WAIT_REG_MEM report (10 s): 161 waits that did not match at once, 266.0 ms waiting per second
+[1965-07-20 04:16:41.564] [info] [gpu] [t1607317424]   memory 1FC9B006 func 3 ref 00000000 mask FFFFFFFF wait 100: 161 waits, 2662.7 ms (max 26.8), 12 polls each, last value 00000000
+[1965-07-20 04:16:42.397] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:42.410] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:43.050] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:43.064] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:43.339] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:43.356] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:43.490] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:43.504] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:43.622] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:43.634] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:43.750] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:43.764] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:43.887] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:43.900] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:44.060] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:44.075] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:44.213] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:44.239] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:44.642] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:44.656] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:44.798] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:44.813] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:44.942] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:44.955] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:45.076] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:45.090] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:45.213] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:45.227] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:45.350] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:45.364] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:45.476] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:45.490] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:45.607] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:45.619] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:45.734] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:45.746] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:45.865] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:45.879] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:46.003] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:46.014] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:46.132] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:46.146] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:46.285] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:46.298] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:46.419] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:46.433] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:46.549] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:46.563] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:46.734] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:46.746] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:46.902] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:46.918] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:47.346] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:47.362] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:47.374] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:47.384] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:47.396] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:47.403] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:47.648] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:47.661] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:47.773] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:47.785] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:47.899] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:47.914] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:49.089] [info] [apu] [t659726207] XMA: 1 contexts have an FFmpeg decoder
+[1965-07-20 04:16:49.870] [info] [gpu] [t3372492396] vblanks: 60.0/s, gaps over 20 ms 0, over 25 ms 0, under 12 ms 0, longest 18.6 ms
+[1965-07-20 04:16:51.571] [info] [gpu] [t1607317424] WAIT_REG_MEM report (10 s): 273 waits that did not match at once, 453.8 ms waiting per second
+[1965-07-20 04:16:51.571] [info] [gpu] [t1607317424]   memory 1FC9B006 func 3 ref 00000000 mask FFFFFFFF wait 100: 273 waits, 4544.5 ms (max 26.5), 12 polls each, last value 00000000
+[1965-07-20 04:16:54.306] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:54.324] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:54.873] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:54.885] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:55.026] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:55.040] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:55.176] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:55.188] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:57.080] [info] [sys] [t659726207] Software MMU: frame 600: 461 virtual + 21 physical blocks, 373.7 MiB backed (peak 373.7 MiB), 0 released-page writes
+[1965-07-20 04:16:57.084] [info] [sys] [t659726207] Software MMU:   physical region AB000000: 272.0 MiB, 184.0 MiB backed
+[1965-07-20 04:16:57.084] [info] [sys] [t659726207] Software MMU:   virtual  region 40F40000: 70.1 MiB, 70.1 MiB backed
+[1965-07-20 04:16:57.085] [info] [sys] [t659726207] Software MMU:   physical region DC000000: 48.0 MiB, 48.0 MiB backed
+[1965-07-20 04:16:57.085] [info] [sys] [t659726207] Software MMU:   physical region C0000000: 16.0 MiB, 16.0 MiB backed
+[1965-07-20 04:16:57.085] [info] [sys] [t659726207] Software MMU:   virtual  region 82000000: 11.2 MiB, 11.2 MiB backed
+[1965-07-20 04:16:57.085] [info] [sys] [t659726207] Software MMU:   virtual  region 40220000: 8.1 MiB, 8.1 MiB backed
+[1965-07-20 04:16:57.085] [info] [sys] [t659726207] Software MMU:   virtual  region 45BA0000: 8.0 MiB, 8.0 MiB backed
+[1965-07-20 04:16:57.085] [info] [sys] [t659726207] Software MMU:   virtual  region 45550000: 4.0 MiB, 4.0 MiB backed
+[1965-07-20 04:16:57.089] [info] [gpu] [t1607317424] null-gpu: swap 600: 58794 draws and 6888 resolves since the last report (frontbuffer 0B000000 1280x720, not rendered)
+[1965-07-20 04:16:58.299] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:58.315] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:58.658] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:58.672] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:59.573] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:59.583] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:16:59.870] [info] [gpu] [t3372492396] vblanks: 60.0/s, gaps over 20 ms 0, over 25 ms 0, under 12 ms 0, longest 18.4 ms
+[1965-07-20 04:17:01.588] [info] [gpu] [t1607317424] WAIT_REG_MEM report (10 s): 300 waits that did not match at once, 502.7 ms waiting per second
+[1965-07-20 04:17:01.588] [info] [gpu] [t1607317424]   memory 1FC9B006 func 3 ref 00000000 mask FFFFFFFF wait 100: 300 waits, 5035.2 ms (max 24.0), 12 polls each, last value 00000000
+[1965-07-20 04:17:08.256] [info] [core] [t659726207] Storm 2: movie 0 (logo_cc2) skipped (storm2_skip_movies)
+[1965-07-20 04:17:08.887] [info] [core] [t659726207] Storm 2: movie 1 (Dolby) skipped (storm2_skip_movies)
+[1965-07-20 04:17:09.087] [info] [core] [t659726207] Storm 2: movie 2 (opening) skipped (storm2_skip_movies)
+[1965-07-20 04:17:09.885] [info] [gpu] [t3372492396] vblanks: 60.0/s, gaps over 20 ms 0, over 25 ms 0, under 12 ms 0, longest 18.8 ms
+[1965-07-20 04:17:10.350] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:17:10.450] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:17:10.468] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:17:10.496] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:17:10.510] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:17:11.603] [info] [gpu] [t1607317424] WAIT_REG_MEM report (10 s): 299 waits that did not match at once, 508.9 ms waiting per second
+[1965-07-20 04:17:11.604] [info] [gpu] [t1607317424]   memory 1FC9B006 func 3 ref 00000000 mask FFFFFFFF wait 100: 299 waits, 5096.4 ms (max 20.2), 12 polls each, last value 00000000
+[1965-07-20 04:17:13.983] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:17:13.998] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:17:15.195] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:17:15.215] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:17:15.399] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:17:15.414] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:17:18.365] [info] [sys] [t659726207] Software MMU: frame 1200: 491 virtual + 24 physical blocks, 377.7 MiB backed (peak 377.7 MiB), 0 released-page writes
+[1965-07-20 04:17:18.366] [info] [sys] [t659726207] Software MMU:   physical region AB000000: 272.0 MiB, 184.0 MiB backed
+[1965-07-20 04:17:18.366] [info] [sys] [t659726207] Software MMU:   virtual  region 40F40000: 70.1 MiB, 70.1 MiB backed
+[1965-07-20 04:17:18.366] [info] [sys] [t659726207] Software MMU:   physical region DC000000: 48.0 MiB, 48.0 MiB backed
+[1965-07-20 04:17:18.366] [info] [sys] [t659726207] Software MMU:   physical region C0000000: 16.0 MiB, 16.0 MiB backed
+[1965-07-20 04:17:18.366] [info] [sys] [t659726207] Software MMU:   virtual  region 82000000: 11.2 MiB, 11.2 MiB backed
+[1965-07-20 04:17:18.367] [info] [sys] [t659726207] Software MMU:   virtual  region 40220000: 8.1 MiB, 8.1 MiB backed
+[1965-07-20 04:17:18.367] [info] [sys] [t659726207] Software MMU:   virtual  region 45BA0000: 8.0 MiB, 8.0 MiB backed
+[1965-07-20 04:17:18.367] [info] [sys] [t659726207] Software MMU:   virtual  region 45550000: 4.0 MiB, 4.0 MiB backed
+[1965-07-20 04:17:18.371] [info] [gpu] [t1607317424] null-gpu: swap 1200: 71633 draws and 13975 resolves since the last report (frontbuffer 0B000000 1280x720, not rendered)
+[1965-07-20 04:17:19.886] [info] [gpu] [t3372492396] vblanks: 60.0/s, gaps over 20 ms 0, over 25 ms 0, under 12 ms 0, longest 18.5 ms
+[1965-07-20 04:17:20.462] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:17:20.478] [error] [krnl] [t2820934797] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:17:21.606] [info] [gpu] [t1607317424] WAIT_REG_MEM report (10 s): 262 waits that did not match at once, 314.8 ms waiting per second
+[1965-07-20 04:17:21.607] [info] [gpu] [t1607317424]   memory 1FC9B006 func 3 ref 00000000 mask FFFFFFFF wait 100: 262 waits, 3149.4 ms (max 21.3), 8 polls each, last value 00000000
+[1965-07-20 04:17:22.734] [error] [krnl] [t2592446333] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[1965-07-20 04:17:29.902] [info] [gpu] [t3372492396] vblanks: 60.0/s, gaps over 20 ms 0, over 25 ms 0, under 12 ms 0, longest 18.4 ms
+[1965-07-20 04:17:31.620] [info] [gpu] [t1607317424] WAIT_REG_MEM report (10 s): 301 waits that did not match at once, 427.6 ms waiting per second
+[1965-07-20 04:17:31.621] [info] [gpu] [t1607317424]   memory 1FC9B006 func 3 ref 00000000 mask FFFFFFFF wait 100: 301 waits, 4282.0 ms (max 18.9), 10 polls each, last value 00000000
+[1965-07-20 04:17:39.902] [info] [gpu] [t3372492396] vblanks: 60.0/s, gaps over 20 ms 0, over 25 ms 0, under 12 ms 0, longest 18.5 ms
+[1965-07-20 04:17:41.643] [info] [gpu] [t1607317424] WAIT_REG_MEM report (10 s): 188 waits that did not match at once, 182.5 ms waiting per second
+[1965-07-20 04:17:41.644] [info] [gpu] [t1607317424]   memory 1FC9B006 func 3 ref 00000000 mask FFFFFFFF wait 100: 188 waits, 1828.9 ms (max 19.1), 6 polls each, last value 00000000
+[1965-07-20 04:17:42.393] [info] [sys] [t659726207] Software MMU: frame 1800: 490 virtual + 25 physical blocks, 378.5 MiB backed (peak 378.7 MiB), 0 released-page writes
+[1965-07-20 04:17:42.393] [info] [sys] [t659726207] Software MMU:   physical region AB000000: 272.0 MiB, 184.0 MiB backed
+[1965-07-20 04:17:42.394] [info] [sys] [t659726207] Software MMU:   virtual  region 40F40000: 70.1 MiB, 70.1 MiB backed
+[1965-07-20 04:17:42.394] [info] [sys] [t659726207] Software MMU:   physical region DC000000: 48.0 MiB, 48.0 MiB backed
+[1965-07-20 04:17:42.394] [info] [sys] [t659726207] Software MMU:   physical region C0000000: 16.0 MiB, 16.0 MiB backed
+[1965-07-20 04:17:42.394] [info] [sys] [t659726207] Software MMU:   virtual  region 82000000: 11.2 MiB, 11.2 MiB backed
+[1965-07-20 04:17:42.394] [info] [sys] [t659726207] Software MMU:   virtual  region 40220000: 8.1 MiB, 8.1 MiB backed
+[1965-07-20 04:17:42.394] [info] [sys] [t659726207] Software MMU:   virtual  region 45BA0000: 8.0 MiB, 8.0 MiB backed
+[1965-07-20 04:17:42.394] [info] [sys] [t659726207] Software MMU:   virtual  region 45550000: 4.0 MiB, 4.0 MiB backed
+[1965-07-20 04:17:42.403] [info] [gpu] [t1607317424] null-gpu: swap 1800: 180798 draws and 24600 resolves since the last report (frontbuffer 0B000000 1280x720, not rendered)
+[1965-07-20 04:17:43.278] [info] [gpu] [t1607317424] GPU: 8 sleeps in a row took over twice the time asked (last: 15.6 ms for 1 ms): WAIT_REG_MEM now polls with yields (gpu_coarse_sleep_polling)
+[1965-07-20 04:17:49.918] [info] [gpu] [t3372492396] vblanks: 59.9/s, gaps over 20 ms 35, over 25 ms 33, under 12 ms 1, longest 32.0 ms
+[1965-07-20 04:17:51.651] [info] [gpu] [t1607317424] WAIT_REG_MEM report (10 s): 218 waits that did not match at once, 193.7 ms waiting per second
+[1965-07-20 04:17:51.651] [info] [gpu] [t1607317424]   memory 1FC9B006 func 3 ref 00000000 mask FFFFFFFF wait 100: 218 waits, 1938.9 ms (max 28.0), 2 polls each, last value 00000000
+[1965-07-20 04:17:59.932] [info] [gpu] [t3372492396] vblanks: 59.8/s, gaps over 20 ms 24, over 25 ms 23, under 12 ms 2, longest 32.9 ms
+[1965-07-20 04:18:01.679] [info] [gpu] [t1607317424] WAIT_REG_MEM report (10 s): 214 waits that did not match at once, 184.7 ms waiting per second
+[1965-07-20 04:18:01.680] [info] [gpu] [t1607317424]   memory 1FC9B006 func 3 ref 00000000 mask FFFFFFFF wait 100: 214 waits, 1852.4 ms (max 29.7), 3 polls each, last value 00000000
+[1965-07-20 04:18:09.201] [info] [sys] [t659726207] Software MMU: frame 2400: 490 virtual + 25 physical blocks, 378.5 MiB backed (peak 378.7 MiB), 0 released-page writes
+[1965-07-20 04:18:09.203] [info] [gpu] [t1607317424] null-gpu: swap 2400: 239132 draws and 24600 resolves since the last report (frontbuffer 0B000000 1280x720, not rendered)
+[1965-07-20 04:18:09.948] [info] [gpu] [t3372492396] vblanks: 60.0/s, gaps over 20 ms 45, over 25 ms 45, under 12 ms 0, longest 32.3 ms
+[1965-07-20 04:18:11.689] [info] [gpu] [t1607317424] WAIT_REG_MEM report (10 s): 243 waits that did not match at once, 208.4 ms waiting per second
+[1965-07-20 04:18:11.689] [info] [gpu] [t1607317424]   memory 1FC9B006 func 3 ref 00000000 mask FFFFFFFF wait 100: 243 waits, 2086.0 ms (max 29.8), 1 polls each, last value 00000000
+[1965-07-20 04:18:19.956] [info] [gpu] [t3372492396] vblanks: 60.0/s, gaps over 20 ms 45, over 25 ms 45, under 12 ms 0, longest 31.8 ms
+[1965-07-20 04:18:21.702] [info] [gpu] [t1607317424] WAIT_REG_MEM report (10 s): 240 waits that did not match at once, 213.9 ms waiting per second
+[1965-07-20 04:18:21.703] [info] [gpu] [t1607317424]   memory 1FC9B006 func 3 ref 00000000 mask FFFFFFFF wait 100: 240 waits, 2142.1 ms (max 32.4), 1 polls each, last value 00000000
+[1965-07-20 04:18:29.961] [info] [gpu] [t3372492396] vblanks: 59.7/s, gaps over 20 ms 48, over 25 ms 48, under 12 ms 0, longest 32.3 ms
+[1965-07-20 04:18:31.726] [info] [gpu] [t1607317424] WAIT_REG_MEM report (10 s): 226 waits that did not match at once, 204.0 ms waiting per second
+[1965-07-20 04:18:31.727] [info] [gpu] [t1607317424]   memory 1FC9B006 func 3 ref 00000000 mask FFFFFFFF wait 100: 226 waits, 2044.6 ms (max 30.3), 1 polls each, last value 00000000
+[1965-07-20 04:18:34.835] [info] [sys] [t659726207] Software MMU: frame 3000: 490 virtual + 25 physical blocks, 378.5 MiB backed (peak 378.7 MiB), 0 released-page writes
+[1965-07-20 04:18:34.842] [info] [gpu] [t1607317424] null-gpu: swap 3000: 239112 draws and 24600 resolves since the last report (frontbuffer 0B000000 1280x720, not rendered)
+[1965-07-20 04:18:39.981] [info] [gpu] [t3372492396] vblanks: 59.5/s, gaps over 20 ms 50, over 25 ms 49, under 12 ms 0, longest 32.5 ms
+[1965-07-20 04:18:41.740] [info] [gpu] [t1607317424] WAIT_REG_MEM report (10 s): 236 waits that did not match at once, 194.3 ms waiting per second
+[1965-07-20 04:18:41.740] [info] [gpu] [t1607317424]   memory 1FC9B006 func 3 ref 00000000 mask FFFFFFFF wait 100: 236 waits, 1946.0 ms (max 29.5), 1 polls each, last value 00000000
+[1965-07-20 04:18:49.989] [info] [gpu] [t3372492396] vblanks: 60.0/s, gaps over 20 ms 45, over 25 ms 45, under 12 ms 0, longest 32.2 ms
+[1965-07-20 04:18:51.751] [info] [gpu] [t1607317424] WAIT_REG_MEM report (10 s): 244 waits that did not match at once, 209.1 ms waiting per second

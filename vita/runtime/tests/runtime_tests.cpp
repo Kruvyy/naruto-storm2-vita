@@ -14,6 +14,7 @@
 
 #include <algorithm>
 #include <atomic>
+#include <cerrno>
 #include <chrono>
 #include <cstdarg>
 #include <cstdint>
@@ -41,6 +42,10 @@
 #include <rex/system/xmemory.h>
 #include <rex/thread.h>
 #include <rex/thread/fiber.h>
+
+#include <fast_tls.h>  // vita/runtime/compat
+
+extern "C" void* __real_sceKernelGetTLSAddr(int key);
 
 using namespace std::chrono_literals;
 
@@ -390,10 +395,60 @@ void TestTls() {
   CHECK(rex::thread::FreeTlsHandle(h));
 }
 
+// compat/fast_tls.c: after the probe, sceKernelGetTLSAddr (the wrapper) answers
+// from TPIDRURO; it must give the same slot as the real call on any thread,
+// and thread_local / errno must keep working.
+void TestFastTls() {
+  VitaFastTlsReport report{};
+  vita_fast_tls_probe(1, &report);
+  CHECK(report.consistent);
+  CHECK(report.enabled);
+  auto same_slots = [] {
+    for (const int key : {0, 1, 0x20, 0x89, 0xFF}) {
+      if (sceKernelGetTLSAddr(key) != __real_sceKernelGetTLSAddr(key)) {
+        return false;
+      }
+    }
+    return true;
+  };
+  CHECK(same_slots());
+  static thread_local int local_value = 0;
+  local_value = 7;
+  std::atomic<bool> other_slots{false};
+  std::atomic<int> other_local{-1};
+  std::atomic<int> other_errno{0};
+  auto t = Spawn([&] {
+    other_slots = same_slots();
+    other_local = local_value;  // a new thread sees its own (zero) copy
+    errno = ENOENT;
+    other_errno = errno;
+  });
+  CHECK(Join(t.get()));
+  CHECK(other_slots);
+  CHECK(other_local == 0);
+  CHECK(other_errno == ENOENT);
+  CHECK(local_value == 7);
+  VitaFastTlsStats stats{};
+  vita_fast_tls_stats(&stats);
+  CHECK(stats.mismatches == 0);
+}
+
 void TestThreadIdPriorityAffinity() {
   std::atomic<bool> ids_match{false};
   std::atomic<int> priority{-100};
-  std::atomic<uint64_t> affinity{0};
+  std::atomic<uint64_t> affinity{0}, all_cores_affinity{0};
+  // vita_threads_all_cores: every thread may run on all three cores and guest
+  // affinity requests leave it there.
+  REQUIRE(rex::cvar::SetFlagByName("vita_threads_all_cores", "true"));
+  auto all = Spawn([&] {
+    auto* self = rex::thread::Thread::GetCurrentThread();
+    self->set_affinity_mask(0b000100);
+    all_cores_affinity = self->affinity_mask();
+  });
+  CHECK(Join(all.get()));
+  REQUIRE(rex::cvar::SetFlagByName("vita_threads_all_cores", "false"));
+  CHECK(all_cores_affinity == 0b111111);
+  // Default: hardware thread N runs on core N / 2 (vita_hw_thread_cores).
   auto t = Spawn([&] {
     auto* self = rex::thread::Thread::GetCurrentThread();
     ids_match = self->system_id() == rex::thread::current_thread_system_id();
@@ -758,6 +813,7 @@ const TestEntry kTests[] = {
     {"alertable_sleep_callback", TestAlertableSleepCallback},
     {"timer", TestTimer},
     {"tls", TestTls},
+    {"fast_tls", TestFastTls},
     {"thread_id_priority_affinity", TestThreadIdPriorityAffinity},
     {"alertable_callback", TestAlertableCallback},
     {"deferred_suspend", TestDeferredSuspend},
