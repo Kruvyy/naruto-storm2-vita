@@ -34,6 +34,8 @@ set(STORM2_SOURCES
     src/main.cpp
     src/storm2_movies.cpp
     src/storm2_audio_native.cpp
+    src/storm2_counter_wait.cpp
+    src/storm2_fence_wait.cpp
     ${STORM2_NATIVE_INCS}
 )
 

@@ -1,0 +1,23 @@
+I3 no PC (GLES, menu com docs/logs/G1k_pc_menu/menu_start.txt, filmes pulados). Execuções no PC, não no Vita.
+
+I3_pc_sync   antes da correção, com --kernel_sync_stats=10: ~24 milhões de chamadas de
+             sincronização a cada 10 s, quase todas da thread de render do jogo (F8000068)
+             esperando o contador do quadro (sub_825D5B00 acordando a si mesma pelo evento).
+I3_pc_wait   com storm2_blocking_counter_wait (storm2/src/storm2_counter_wait.cpp): imagens
+             comparadas com as de antes (diferença igual ao ruído entre duas execuções antigas),
+             33,5 ms por quadro nos últimos 600 quadros.
+I3_pc_sync2  a mesma correção com --kernel_sync_stats=10: ~28–34 mil chamadas a cada 10 s.
+I3_pc_wrm    com gpu_coarse_sleep_polling e a contagem de WAIT_REG_MEM no relatório da GLES:
+             no PC as pausas de 1 ms também passam do dobro às vezes ("8 sleeps in a row took
+             over twice the time asked ... polls with yields" a 19:39:53), então a troca acontece
+             aqui também; 34,1 ms por quadro (30 quadros/s); diferenças de imagem só de tempo
+             (comparadas lado a lado).
+
+I3_pc_fence  com storm2_blocking_fence_wait (storm2/src/storm2_fence_wait.cpp),
+             --storm2_fence_wait_report=10 e --kernel_sync_stats=10: ~240 bloqueios por
+             segundo na espera da cerca, 3-4% terminam no limite de 2 ms; imagens dentro do
+             ruído; 33,5 ms por quadro; CPU do processo 63% de um núcleo (20 s no menu).
+I3_pc_fence_off  a mesma execução com --storm2_blocking_fence_wait=false: 70% de um
+             núcleo, 33,3 ms por quadro.
+
+frame_stats.csv: frame_us é o tempo de cada quadro do jogo; 33 333 = 30 quadros/s.

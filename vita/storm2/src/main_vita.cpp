@@ -333,6 +333,26 @@ int main() {
   }
   rex::cvar::FinalizeInit();
   LogMemory("start");
+  {
+    // How long short sleeps really take (median of 5). In Vita3K on Windows
+    // they are close at startup (~1.1 ms for 1 ms) but take 4-15 ms once the
+    // game runs (bug 67); not measured on the console yet.
+    auto measure = [](SceUInt us) {
+      uint64_t t[5];
+      for (uint64_t& v : t) {
+        const uint64_t start = sceKernelGetProcessTimeWide();
+        sceKernelDelayThread(us);
+        v = sceKernelGetProcessTimeWide() - start;
+      }
+      std::sort(std::begin(t), std::end(t));
+      return t[2];
+    };
+    const uint64_t d0 = measure(0), d100 = measure(100), d1000 = measure(1000);
+    REXLOG_INFO("sceKernelDelayThread: 0 us -> {} us, 100 us -> {} us, 1000 us -> {} us", d0, d100,
+                d1000);
+    Stats("sceKernelDelayThread: 0 us -> %llu us, 100 us -> %llu us, 1000 us -> %llu us\n",
+          (unsigned long long)d0, (unsigned long long)d100, (unsigned long long)d1000);
+  }
 
   const std::filesystem::path game_root = std::string(REXCVAR_GET(vita_game_root));
   const std::string xex_host = game_root.string() + "/default.xex";

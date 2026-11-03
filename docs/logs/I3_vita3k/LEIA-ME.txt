@@ -1,0 +1,34 @@
+I3 no Vita3K (emulador, não o console). Menu de modos com a entrada reproduzida
+ux0:data/storm2port/menu_start_repeat.txt, filmes pulados. Sistema de arquivos isolado
+(cópia do app, saves e storm2.toml; dados do jogo e firmware ligados por junção).
+Host: AMD Ryzen 5 4500 (6 núcleos / 12 threads). Ruído entre execuções: ±2 quadros/s.
+
+Emulador de teste: Vita3K windows-latest (cópia privada), Vulkan, high-accuracy off,
+disable-surface-sync on, memory-mapping double-buffer.
+Emulador do usuário: Vita3K-Plus v1.3.3 (cópia privada) com o config.yml dele (OpenGL,
+resolução 0,5, disable-surface-sync off, memory-mapping external-host), só com o
+pref-path trocado para o sistema de arquivos isolado.
+
+Quadros/s no menu, a partir do quadro 2400 (*_stats.log, coluna fps):
+  arquivo                     emulador   GPU    mudanças                      mín  mediana  máx
+  0_antes_stats.log           teste      GLES   antes do I3                   8,3   9,7    17,3
+  0_gpu_nula_stats.log        teste      nula   antes do I3                  19,5  24,0    26,9
+  1_contador*.log             teste      GLES   + bug 66                     10,3  12,2    14,2
+  2_sync_stats.log            teste      GLES   + bug 66, kernel_sync_stats    (contagens; Delay de 1-5 ms = ~15,4 ms)
+  3_wait_reg_mem.log          teste      GLES   + contagem do WAIT_REG_MEM     (931 pausas, 5960 ms para 931 ms pedidos)
+  4_polling*.log              teste      GLES   + bug 67                      8,9  10,7    13,1
+  4_polling_timers*.log       teste      GLES   + bug 67, gles_detailed_timers 9,4  10,4    11,0
+  4_gpu_nula*.log             teste      nula   + bugs 66, 67                24,5  29,7    29,9
+  5_fence*.log                teste      GLES   + bugs 66, 67, 68            11,8  13,2    14,3
+  6_plus*.log                 usuário    GLES   + bugs 66, 67, 68            14,0  16,4    16,8
+
+*_cpu.txt: tempo de CPU por thread do processo do Vita3K em 25 s no menu (o Vita3K não
+dá nome às threads). Total: 770% de um núcleo (4_polling_timers), 504% (5_fence),
+324% (4_gpu_nula), 285% (6_plus).
+
+Thread da GPU por 300 quadros (relatório "GPU thread" da GLES, gles_detailed_timers):
+  4_polling_timers (teste): desenhos ~22 s (chamadas GL 12,3-13,6; vértices 4,0-5,0;
+                            texturas 2,0-2,3; constantes 0,4-0,5), resolves ~1 s
+  6_plus (usuário):         desenhos ~13,3 s (chamadas GL 8,5-9,4; vértices 2,2-2,3;
+                            texturas 1,1-1,2; constantes 0,3), resolves ~1,1 s, outros ~1,8 s
+O menu tem ~312 desenhos e ~41 resolves por quadro.

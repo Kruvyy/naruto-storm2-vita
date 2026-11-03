@@ -217,7 +217,7 @@ set(REXSYSTEM_VITA_SOURCES
   xam/app_manager.cpp xam/content_manager.cpp xam/user_profile.cpp
   ppc_types.cpp elf_module.cpp entry_table.cpp export_resolver.cpp lzx.cpp mmio_handler.cpp
   map_parser.cpp module.cpp function_dispatcher.cpp guest_frame_stats.cpp gpu_plugin_loader.cpp
-  thread.cpp thread_state.cpp xex_module.cpp)
+  gpu_write_signal.cpp thread.cpp thread_state.cpp xex_module.cpp)
 list(TRANSFORM REXSYSTEM_VITA_SOURCES PREPEND "${SRC}/system/")
 
 set(REXKERNEL_VITA_SOURCES

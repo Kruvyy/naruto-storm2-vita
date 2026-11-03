@@ -1,0 +1,49 @@
+wall 25010 ms, threads 52, total 769% of one core
+
+   id  pct name
+   --  --- ----
+ 4248 65,5     
+21240 56,3     
+20752 55,7     
+19344 49,6     
+ 6020 47,2     
+13536 34,7     
+19824 33,7     
+14920 33,3     
+17572 31,9     
+23956 29,6     
+  364 29,1     
+ 2012 27,5     
+ 3852 26,3     
+ 2468 26,1     
+ 7440   26     
+ 2420 25,7     
+16628 25,2     
+18028   25     
+11536 24,7     
+23520 22,9     
+19092 17,7     
+24388 11,4     
+17296 10,6     
+ 1544  8,4     
+ 9368  6,4     
+20400  4,2     
+10024  3,1     
+ 2520  2,7     
+17696  1,7     
+ 4388  1,6     
+
+
+
+reached frame 2913 after 248 s
+0 : t=246s frames=3173 fps=9.41 audio=113.0/s backed
+GLES: GPU thread: idle (waiting for the game) 3403 ms, draws 22579 ms (textures 2011, constants 547, vertices 4027, GL draw calls 13562), resolves 1085 ms, present 35 ms, other 2612 ms
+GLES:   GL calls: program switches 28800, uniform uploads 65957 (unchanged, not sent: 835852), state groups sent 110100 (unchanged: 639508), blend changes on a program (vitaGL fragment re-patch) 0
+GLES: time since the last report 29209 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 30 ms; longest frame 204 ms
+GLES: GPU thread: idle (waiting for the game) 3593 ms, draws 22255 ms (textures 2262, constants 455, vertices 5023, GL draw calls 12705), resolves 977 ms, present 30 ms, other 2353 ms
+GLES:   GL calls: program switches 28800, uniform uploads 66006 (unchanged, not sent: 836388), state groups sent 110100 (unchanged: 640028), blend changes on a program (vitaGL fragment re-patch) 0
+GLES: time since the last report 28800 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 36 ms; longest frame 250 ms
+GLES: GPU thread: idle (waiting for the game) 3614 ms, draws 21197 ms (textures 2062, constants 407, vertices 4397, GL draw calls 12331), resolves 1293 ms, present 36 ms, other 2661 ms
+GLES:   GL calls: program switches 28800, uniform uploads 65995 (unchanged, not sent: 836300), state groups sent 110100 (unchanged: 639940), blend changes on a program (vitaGL fragment re-patch) 0
+
+[exited with code 0]

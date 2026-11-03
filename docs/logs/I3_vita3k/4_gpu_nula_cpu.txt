@@ -1,0 +1,56 @@
+wall 25002 ms, threads 49, total 324% of one core
+
+   id  pct name
+   --  --- ----
+20960   89     
+21812 36,2     
+ 6196 35,5     
+16084 34,9     
+ 5836 34,5     
+ 3792 32,4     
+ 9212 13,4     
+ 4872  3,7     
+11388  3,7     
+ 9000  3,4     
+ 1968  2,7     
+12336  2,6     
+ 1944  2,4     
+15936  2,3     
+ 8536  2,2     
+19132  2,2     
+22924  2,2     
+24392  2,1     
+21476  2,1     
+18744  2,1     
+24164  2,1     
+16296    2     
+17864  1,7     
+21512  1,7     
+22812  1,2     
+ 8760  0,8     
+ 5388  0,8     
+20492  0,7     
+ 3524  0,6     
+20708  0,4     
+
+
+
+reached frame 3087 after 191 s
+0 : t=188s frames=3888 fps=29.79 audio=34.4/s backed
+GPU: 8 sleeps in a row took over twice the time asked (last: 15.3 ms for 1 ms): WAIT_REG_MEM now polls with yields (gpu_coarse_sleep_polling)
+f=2037 fps=19.02 audio=149.1
+f=2146 fps=20.37 audio=160.2
+f=2246 fps=18.39 audio=141.6
+f=2325 fps=14.65 audio=115.2
+f=2457 fps=24.51 audio=80.0
+f=2603 fps=26.61 audio=45.0
+f=2763 fps=29.52 audio=35.1
+f=2925 fps=29.86 audio=35.6
+f=3087 fps=29.72 audio=33.8
+f=3249 fps=29.75 audio=34.3
+f=3411 fps=29.77 audio=34.5
+f=3572 fps=29.58 audio=34.5
+f=3726 fps=28.34 audio=36.2
+f=3888 fps=29.79 audio=34.4
+
+[exited with code 0]
