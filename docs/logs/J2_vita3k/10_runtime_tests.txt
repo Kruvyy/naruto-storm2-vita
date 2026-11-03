@@ -1,0 +1,41 @@
+﻿clock                            ok (24 ms)
+host_memory                      ok (23 ms)
+thread_join                      ok (25 ms)
+thread_create_suspended          ok (62 ms)
+events                           ok (77 ms)
+semaphore                        ok (7 ms)
+mutant                           ok (57 ms)
+wait_multiple                    ok (24 ms)
+wait_multiple_wake               ok (150 ms)
+alertable_sleep_callback         ok (66 ms)
+timer                            ok (27 ms)
+tls                              ok (20 ms)
+fast_tls                         ok (36 ms)
+thread_id_priority_affinity      ok (52 ms)
+alertable_callback               ok (66 ms)
+deferred_suspend                 ok (265 ms)
+self_suspend                     ok (79 ms)
+deferred_terminate               ok (55 ms)
+fibers                           ok (64 ms)
+  FAIL files (line 605): info.type == rex::filesystem::FileInfo::Type::kFile && info.total_size == 500
+  FAIL files (line 617): map->size() == 500
+files                            FAILED (34 ms)
+std_filesystem                   ok (25 ms)
+soft_mmu_init                    ok (60 ms)
+soft_mmu_virtual                 ok (3 ms)
+soft_mmu_views                   ok (1 ms)
+soft_mmu_alias_protect_release   ok (1 ms)
+soft_mmu_reserve_cap             ok (46 ms)
+soft_mmu_large_region            ok (89 ms)
+soft_mmu_function_table          ok (1 ms)
+logging                          ok (2 ms)
+  compute: [1 thread, core 1] 44.3 ms; [3 threads, default mask] 45.5 ms; [3 threads, cores 0/1/2] 49.0 ms; [3 threads, all cores] 45.2 ms; [2 threads, both core 1] 85.2 ms;
+  atomic (own line): [1 thread, core 1] 401.9 ms; [3 threads, default mask] 3327.6 ms; [3 threads, cores 0/1/2] 3338.4 ms; [3 threads, all cores] 3507.1 ms; [2 threads, both core 1] 795.1 ms;
+  atomic (shared): [1 thread, core 1] 396.7 ms; [3 threads, default mask] 4886.9 ms; [3 threads, cores 0/1/2] 5197.0 ms; [3 threads, all cores] 5204.4 ms; [2 threads, both core 1] 801.3 ms;
+  system call: [1 thread, core 1] 85.8 ms; [3 threads, default mask] 544.3 ms; [3 threads, cores 0/1/2] 595.9 ms; [3 threads, all cores] 622.4 ms; [2 threads, both core 1] 170.9 ms;
+  spinner on core 1: the other thread ran after 298.9 ms
+  spinner on the default mask: the other thread ran after 0.4 ms
+  spinner with DelayThread(0) on core 1: the other thread ran after 298.6 ms
+  spinner with DelayThread(0) on the default mask: the other thread ran after 0.4 ms
+sched_bench                      ok (31369 ms)
+result: 30 tests, 1 failed

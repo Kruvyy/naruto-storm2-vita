@@ -1,0 +1,158 @@
+start: free user 324608 KiB, cdram 112640 KiB, phycont 26624 KiB
+sceKernelDelayThread: 0 us -> 2 us, 100 us -> 15310 us, 1000 us -> 15974 us
+tls: layout same on two threads, call 143 ns, fast 6 ns, fast path on
+gpu: gles, shader compiler present
+runtime ready: free user 277524 KiB, cdram 10240 KiB, phycont 10240 KiB
+xex loaded: free user 265776 KiB, cdram 10240 KiB, phycont 10240 KiB
+t=20s frames=41 fps=7.50 audio=0.0/s backed=268.4MiB guest_committed=355.4MiB free_user=20608KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=26.0MiB heap_free=9.3MiB heap_arena=35.3MiB
+  multi-object/alertable waits that blocked: 46/s
+  TLS lookups: 163016/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3680 GetProcessTimeLow 1134 GetThreadId 8 LockLwMutex 109139 TryLockLwMutex 0 UnlockLwMutex 109187 WaitSema 2204 SignalSema 652 PollEventFlag 1945 DelayThread 469 LibcGettimeofday 17786 pthread_mutex_lock 25438 malloc 60781 free 47875 global lock 1547
+t=26s frames=53 fps=2.20 audio=80.2/s backed=358.6MiB guest_committed=446.0MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=26.1MiB heap_free=9.2MiB heap_arena=35.3MiB
+  multi-object/alertable waits that blocked: 245/s
+  TLS lookups: 134189/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 1487 GetProcessTimeLow 706 GetThreadId 4 LockLwMutex 4948 TryLockLwMutex 0 UnlockLwMutex 4975 WaitSema 1623 SignalSema 1212 PollEventFlag 1242 DelayThread 289 LibcGettimeofday 4693 pthread_mutex_lock 10956 malloc 2446 free 2388 global lock 4973
+t=31s frames=187 fps=24.67 audio=181.9/s backed=362.6MiB guest_committed=446.4MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=26.1MiB heap_free=9.2MiB heap_arena=35.3MiB
+  multi-object/alertable waits that blocked: 508/s
+  TLS lookups: 63157/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 2523 GetProcessTimeLow 1244 GetThreadId 1 LockLwMutex 7822 TryLockLwMutex 0 UnlockLwMutex 7883 WaitSema 2796 SignalSema 3163 PollEventFlag 1916 DelayThread 488 LibcGettimeofday 7217 pthread_mutex_lock 22626 malloc 3814 free 3916 global lock 9761
+t=37s frames=311 fps=22.80 audio=175.2/s backed=362.7MiB guest_committed=446.6MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=26.1MiB heap_free=9.1MiB heap_arena=35.3MiB
+  multi-object/alertable waits that blocked: 479/s
+  TLS lookups: 61196/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 2447 GetProcessTimeLow 1207 GetThreadId 2 LockLwMutex 7823 TryLockLwMutex 0 UnlockLwMutex 7880 WaitSema 2759 SignalSema 3074 PollEventFlag 1862 DelayThread 483 LibcGettimeofday 7003 pthread_mutex_lock 21779 malloc 3779 free 3897 global lock 9298
+t=42s frames=421 fps=20.25 audio=173.5/s backed=362.7MiB guest_committed=448.9MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=26.3MiB heap_free=9.0MiB heap_arena=35.3MiB
+  multi-object/alertable waits that blocked: 461/s
+  TLS lookups: 63709/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 2369 GetProcessTimeLow 1170 GetThreadId 2 LockLwMutex 7784 TryLockLwMutex 0 UnlockLwMutex 7829 WaitSema 2761 SignalSema 3095 PollEventFlag 1833 DelayThread 480 LibcGettimeofday 6848 pthread_mutex_lock 21823 malloc 3790 free 3862 global lock 9784
+t=48s frames=581 fps=29.52 audio=187.5/s backed=362.7MiB guest_committed=449.0MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=26.3MiB heap_free=9.0MiB heap_arena=35.3MiB
+  multi-object/alertable waits that blocked: 572/s
+  TLS lookups: 86486/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 2661 GetProcessTimeLow 1328 GetThreadId 0 LockLwMutex 7476 TryLockLwMutex 0 UnlockLwMutex 7521 WaitSema 2816 SignalSema 3205 PollEventFlag 1991 DelayThread 503 LibcGettimeofday 8497 pthread_mutex_lock 23673 malloc 3738 free 3753 global lock 9742
+  sites of GetProcessTimeWide (since start): 82F0AC3D x46540 82F0B009 x31461 82DF3861 x4562 810250FF x15
+  sites of LockLwMutex (since start): 8306594F x397318 83063221 x358780 830658E1 x34874 8306752B x1058
+  sites of WaitSema (since start): 82FAEB8B x42489 82FAEAE9 x21409 82FAEB57 x16939 82F6E31D x583
+  sites of DelayThread (since start): 82F4EFFD x9065 83070B1D x4043 82F4EE0D x719 82FADD5F x664
+  sites of LibcGettimeofday (since start): 8306FA6D x283834
+  sites of pthread_mutex_lock (since start): 82E2676D x49705 82F3F837 x46490 82FAE007 x42382 82FADE0F x42050
+  sites of malloc (since start): 81026EBB x358514 82F7E09B x63202 81026F19 x5467 8306204F x265
+  sites of free (since start): 83931A1D x63007 82F3F799 x46491 82F212F9 x21254 82F2130B x19162
+  sites of global lock (since start): 82E26793 x49716 82E26767 x49714 82E25979 x33113 82E26841 x17944
+t=53s frames=738 fps=28.72 audio=182.2/s backed=362.8MiB guest_committed=449.2MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=26.3MiB heap_free=9.0MiB heap_arena=35.3MiB
+  multi-object/alertable waits that blocked: 541/s
+  TLS lookups: 73866/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 2630 GetProcessTimeLow 1266 GetThreadId 1 LockLwMutex 7490 TryLockLwMutex 0 UnlockLwMutex 7523 WaitSema 2673 SignalSema 2997 PollEventFlag 1914 DelayThread 496 LibcGettimeofday 8365 pthread_mutex_lock 22998 malloc 3724 free 3735 global lock 9843
+t=58s frames=869 fps=24.13 audio=157.3/s backed=365.2MiB guest_committed=451.9MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=26.3MiB heap_free=9.0MiB heap_arena=35.3MiB
+  multi-object/alertable waits that blocked: 438/s
+  TLS lookups: 62889/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 2438 GetProcessTimeLow 1100 GetThreadId 4 LockLwMutex 7438 TryLockLwMutex 0 UnlockLwMutex 7478 WaitSema 2522 SignalSema 2717 PollEventFlag 1737 DelayThread 461 LibcGettimeofday 7557 pthread_mutex_lock 20154 malloc 3613 free 3680 global lock 8539
+t=64s frames=991 fps=22.44 audio=139.6/s backed=365.3MiB guest_committed=452.1MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=26.4MiB heap_free=8.9MiB heap_arena=35.3MiB
+  multi-object/alertable waits that blocked: 368/s
+  TLS lookups: 60389/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 2326 GetProcessTimeLow 1021 GetThreadId 6 LockLwMutex 7243 TryLockLwMutex 0 UnlockLwMutex 7273 WaitSema 2464 SignalSema 2544 PollEventFlag 1658 DelayThread 455 LibcGettimeofday 7306 pthread_mutex_lock 18402 malloc 3465 free 3551 global lock 7669
+t=69s frames=1106 fps=21.23 audio=153.4/s backed=373.4MiB guest_committed=454.3MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=26.4MiB heap_free=8.8MiB heap_arena=35.3MiB
+  multi-object/alertable waits that blocked: 434/s
+  TLS lookups: 68072/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 2363 GetProcessTimeLow 1068 GetThreadId 5 LockLwMutex 7412 TryLockLwMutex 0 UnlockLwMutex 7451 WaitSema 2432 SignalSema 2558 PollEventFlag 1714 DelayThread 459 LibcGettimeofday 7209 pthread_mutex_lock 19292 malloc 3602 free 3655 global lock 8070
+t=75s frames=1182 fps=13.57 audio=169.1/s backed=373.5MiB guest_committed=453.6MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=30.7MiB heap_free=7.7MiB heap_arena=38.4MiB
+  multi-object/alertable waits that blocked: 414/s
+  TLS lookups: 92317/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 2773 GetProcessTimeLow 1064 GetThreadId 0 LockLwMutex 10072 TryLockLwMutex 0 UnlockLwMutex 10115 WaitSema 2184 SignalSema 2476 PollEventFlag 1663 DelayThread 423 LibcGettimeofday 11684 pthread_mutex_lock 18942 malloc 4342 free 4712 global lock 7794
+t=80s frames=1319 fps=25.06 audio=166.8/s backed=373.7MiB guest_committed=453.8MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=30.7MiB heap_free=7.7MiB heap_arena=38.4MiB
+  multi-object/alertable waits that blocked: 412/s
+  TLS lookups: 121692/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3728 GetProcessTimeLow 1130 GetThreadId 0 LockLwMutex 7826 TryLockLwMutex 0 UnlockLwMutex 7871 WaitSema 2544 SignalSema 2824 PollEventFlag 1763 DelayThread 459 LibcGettimeofday 16763 pthread_mutex_lock 20100 malloc 3766 free 3991 global lock 8295
+  sites of GetProcessTimeWide (since start): 82F0B009 x81410 82F0AC3D x79507 82DF3861 x10718 810250FF x15
+  sites of LockLwMutex (since start): 83063221 x487877 8306594F x484681 830658E1 x76611 830657E9 x2046
+  sites of WaitSema (since start): 82FAEB8B x85425 82FAEAE9 x43745 82FAEB57 x31639 82F6E31D x1321
+  sites of DelayThread (since start): 82F4EFFD x20471 83070B1D x6075 82F4EE0D x1486 82FADD5F x1244
+  sites of LibcGettimeofday (since start): 8306FA6D x607087
+  sites of pthread_mutex_lock (since start): 82E2676D x105418 82FAE007 x90396 82FADE0F x89774 82F3F837 x79309
+  sites of malloc (since start): 81026EBB x480430 82F7E09B x64034 81026F19 x5579 8306204F x482
+  sites of free (since start): 82F3F799 x79309 83931A1D x63007 82F51E09 x28931 82F520AB x28931
+  sites of global lock (since start): 82E26793 x105417 82E26767 x105415 82E25979 x71614 82E26841 x36904
+t=86s frames=1449 fps=24.05 audio=174.5/s backed=373.7MiB guest_committed=453.9MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=30.7MiB heap_free=7.7MiB heap_arena=38.4MiB
+  multi-object/alertable waits that blocked: 463/s
+  TLS lookups: 96191/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3602 GetProcessTimeLow 1750 GetThreadId 2 LockLwMutex 8278 TryLockLwMutex 0 UnlockLwMutex 8322 WaitSema 4847 SignalSema 3551 PollEventFlag 3702 DelayThread 759 LibcGettimeofday 12168 pthread_mutex_lock 23981 malloc 3932 free 4127 global lock 10099
+t=91s frames=1568 fps=21.88 audio=184.8/s backed=373.7MiB guest_committed=454.0MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=30.7MiB heap_free=7.7MiB heap_arena=38.4MiB
+  multi-object/alertable waits that blocked: 470/s
+  TLS lookups: 87078/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3517 GetProcessTimeLow 1191 GetThreadId 0 LockLwMutex 8001 TryLockLwMutex 0 UnlockLwMutex 8050 WaitSema 2750 SignalSema 3139 PollEventFlag 1855 DelayThread 498 LibcGettimeofday 10136 pthread_mutex_lock 22025 malloc 3866 free 4001 global lock 9604
+t=97s frames=1692 fps=22.86 audio=173.8/s backed=373.8MiB guest_committed=457.0MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=30.7MiB heap_free=7.7MiB heap_arena=38.4MiB
+  multi-object/alertable waits that blocked: 441/s
+  TLS lookups: 87680/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3524 GetProcessTimeLow 1137 GetThreadId 1 LockLwMutex 7762 TryLockLwMutex 0 UnlockLwMutex 7807 WaitSema 2676 SignalSema 2985 PollEventFlag 1790 DelayThread 488 LibcGettimeofday 10195 pthread_mutex_lock 21168 malloc 3755 free 3879 global lock 9398
+t=102s frames=1808 fps=21.41 audio=182.2/s backed=373.6MiB guest_committed=459.6MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=30.7MiB heap_free=7.7MiB heap_arena=38.4MiB
+  multi-object/alertable waits that blocked: 467/s
+  TLS lookups: 89043/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3469 GetProcessTimeLow 1159 GetThreadId 1 LockLwMutex 7952 TryLockLwMutex 0 UnlockLwMutex 7999 WaitSema 2749 SignalSema 3174 PollEventFlag 1807 DelayThread 492 LibcGettimeofday 9953 pthread_mutex_lock 21872 malloc 3826 free 3969 global lock 9766
+t=107s frames=1956 fps=27.18 audio=187.3/s backed=373.6MiB guest_committed=459.6MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=30.7MiB heap_free=7.7MiB heap_arena=38.4MiB
+  multi-object/alertable waits that blocked: 561/s
+  TLS lookups: 91954/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3903 GetProcessTimeLow 1265 GetThreadId 0 LockLwMutex 7556 TryLockLwMutex 0 UnlockLwMutex 7601 WaitSema 2691 SignalSema 3016 PollEventFlag 1910 DelayThread 440 LibcGettimeofday 11684 pthread_mutex_lock 22472 malloc 3789 free 3788 global lock 9293
+t=113s frames=2106 fps=27.50 audio=177.1/s backed=377.4MiB guest_committed=464.7MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=30.7MiB heap_free=7.6MiB heap_arena=38.4MiB
+  multi-object/alertable waits that blocked: 512/s
+  TLS lookups: 108503/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3906 GetProcessTimeLow 1209 GetThreadId 0 LockLwMutex 8086 TryLockLwMutex 0 UnlockLwMutex 8123 WaitSema 2633 SignalSema 2928 PollEventFlag 1856 DelayThread 435 LibcGettimeofday 13030 pthread_mutex_lock 21823 malloc 4028 free 4011 global lock 9075
+  sites of GetProcessTimeWide (since start): 82F0B009 x161907 82F0AC3D x112110 82DF3861 x16826 81003A61 x18
+  sites of LockLwMutex (since start): 83063221 x617419 8306594F x568919 830658E1 x122493 830657E9 x2052
+  sites of WaitSema (since start): 82FAEB8B x139528 82FAEAE9 x71463 82FAEB57 x48595 82F6E31D x2108
+  sites of DelayThread (since start): 82F4EFFD x32987 83070B1D x8431 82F4EE0D x2258 82FADD5F x2242
+  sites of LibcGettimeofday (since start): 8306FA6D x972525
+  sites of pthread_mutex_lock (since start): 82E2676D x168797 82FAE007 x144803 82FADE0F x143682 82FAE3E1 x126874
+  sites of malloc (since start): 81026EBB x606337 82F7E09B x64180 81026F19 x5587 8306204F x524
+  sites of free (since start): 82F3F799 x111866 83931A1D x63007 82F51E09 x46518 82F520AB x46518
+  sites of global lock (since start): 82E26793 x168797 82E26767 x168793 82E25979 x114427 82E26841 x59814
+t=118s frames=2155 fps=8.96 audio=156.0/s backed=377.6MiB guest_committed=464.0MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=33.3MiB heap_free=5.0MiB heap_arena=38.4MiB
+  multi-object/alertable waits that blocked: 366/s
+  TLS lookups: 94544/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 2464 GetProcessTimeLow 1194 GetThreadId 0 LockLwMutex 16086 TryLockLwMutex 0 UnlockLwMutex 16140 WaitSema 2415 SignalSema 2956 PollEventFlag 1805 DelayThread 470 LibcGettimeofday 8232 pthread_mutex_lock 21475 malloc 4634 free 7174 global lock 8381
+t=124s frames=2276 fps=22.20 audio=129.0/s backed=377.7MiB guest_committed=464.5MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=34.8MiB heap_free=3.5MiB heap_arena=38.4MiB
+  multi-object/alertable waits that blocked: 293/s
+  TLS lookups: 164150/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3505 GetProcessTimeLow 1502 GetThreadId 1 LockLwMutex 21018 TryLockLwMutex 0 UnlockLwMutex 21087 WaitSema 2939 SignalSema 4134 PollEventFlag 2126 DelayThread 484 LibcGettimeofday 18619 pthread_mutex_lock 29246 malloc 3747 free 9162 global lock 11466
+t=129s frames=2382 fps=19.36 audio=109.4/s backed=377.7MiB guest_committed=464.7MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=34.8MiB heap_free=3.5MiB heap_arena=38.4MiB
+  multi-object/alertable waits that blocked: 231/s
+  TLS lookups: 149719/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3183 GetProcessTimeLow 1349 GetThreadId 0 LockLwMutex 17726 TryLockLwMutex 0 UnlockLwMutex 17783 WaitSema 2820 SignalSema 3794 PollEventFlag 1975 DelayThread 488 LibcGettimeofday 18280 pthread_mutex_lock 25235 malloc 3365 free 7838 global lock 9375
+t=135s frames=2482 fps=18.32 audio=95.3/s backed=377.7MiB guest_committed=464.6MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=34.8MiB heap_free=3.6MiB heap_arena=38.4MiB
+  multi-object/alertable waits that blocked: 202/s
+  TLS lookups: 134723/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3083 GetProcessTimeLow 1214 GetThreadId 0 LockLwMutex 15339 TryLockLwMutex 0 UnlockLwMutex 15383 WaitSema 2571 SignalSema 3321 PollEventFlag 1847 DelayThread 488 LibcGettimeofday 16393 pthread_mutex_lock 22483 malloc 3129 free 6853 global lock 8430
+t=140s frames=2588 fps=19.44 audio=101.3/s backed=377.7MiB guest_committed=464.6MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=34.8MiB heap_free=3.6MiB heap_arena=38.4MiB
+  multi-object/alertable waits that blocked: 211/s
+  TLS lookups: 129479/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3191 GetProcessTimeLow 1264 GetThreadId 0 LockLwMutex 15861 TryLockLwMutex 0 UnlockLwMutex 15915 WaitSema 2695 SignalSema 3494 PollEventFlag 1897 DelayThread 492 LibcGettimeofday 14665 pthread_mutex_lock 23268 malloc 3266 free 7004 global lock 8721
+t=146s frames=2634 fps=8.35 audio=129.1/s backed=377.5MiB guest_committed=464.5MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=37.0MiB heap_free=2.7MiB heap_arena=39.7MiB
+  multi-object/alertable waits that blocked: 273/s
+  TLS lookups: 107241/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 2383 GetProcessTimeLow 1335 GetThreadId 1 LockLwMutex 20917 TryLockLwMutex 0 UnlockLwMutex 20977 WaitSema 2511 SignalSema 3474 PollEventFlag 1908 DelayThread 455 LibcGettimeofday 10883 pthread_mutex_lock 26183 malloc 4171 free 8994 global lock 9788
+  sites of GetProcessTimeWide (since start): 82F0B009 x220384 82F0AC3D x144929 82DF3861 x22987 81003A61 x24
+  sites of LockLwMutex (since start): 83063221 x917708 8306594F x732570 830658E1 x167982 830657E9 x78310
+  sites of WaitSema (since start): 82FAEB8B x190386 82FAEAE9 x94461 82FAEB57 x61349 82F6E31D x2636
+  sites of DelayThread (since start): 82F4EFFD x44798 83070B1D x10314 82FADD5F x3288 82F4EE0D x2989
+  sites of LibcGettimeofday (since start): 8306FA6D x1449435
+  sites of pthread_mutex_lock (since start): 82E2676D x211652 82FAE007 x210692 82FADE0F x209048 82FAE3E1 x177810
+  sites of malloc (since start): 81026EBB x725902 82F7E09B x66250 81026F19 x5635 8306204F x554
+  sites of free (since start): 82F3F799 x144682 83931A1D x63007 82F51E09 x58364 82F520AB x58364
+  sites of global lock (since start): 82E26793 x211736 82E26767 x211732 82E25979 x144429 82E26841 x79660
+t=151s frames=2716 fps=14.60 audio=175.8/s backed=377.5MiB guest_committed=464.5MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=37.0MiB heap_free=2.7MiB heap_arena=39.7MiB
+  multi-object/alertable waits that blocked: 363/s
+  TLS lookups: 153917/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3099 GetProcessTimeLow 1504 GetThreadId 0 LockLwMutex 21622 TryLockLwMutex 0 UnlockLwMutex 21703 WaitSema 2635 SignalSema 3879 PollEventFlag 2044 DelayThread 397 LibcGettimeofday 17309 pthread_mutex_lock 30112 malloc 3920 free 9486 global lock 11793
+t=157s frames=2802 fps=15.72 audio=184.6/s backed=377.5MiB guest_committed=464.5MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=37.0MiB heap_free=2.7MiB heap_arena=39.7MiB
+  multi-object/alertable waits that blocked: 385/s
+  TLS lookups: 162892/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3229 GetProcessTimeLow 1599 GetThreadId 0 LockLwMutex 22574 TryLockLwMutex 0 UnlockLwMutex 22659 WaitSema 2748 SignalSema 4101 PollEventFlag 2136 DelayThread 400 LibcGettimeofday 18297 pthread_mutex_lock 31851 malloc 4145 free 9960 global lock 12463
+t=162s frames=2879 fps=13.92 audio=161.4/s backed=377.5MiB guest_committed=464.5MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=37.0MiB heap_free=2.7MiB heap_arena=39.7MiB
+  multi-object/alertable waits that blocked: 335/s
+  TLS lookups: 145651/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3005 GetProcessTimeLow 1431 GetThreadId 0 LockLwMutex 20082 TryLockLwMutex 0 UnlockLwMutex 20154 WaitSema 2519 SignalSema 3627 PollEventFlag 1974 DelayThread 399 LibcGettimeofday 16485 pthread_mutex_lock 28306 malloc 3784 free 8854 global lock 11114
+t=168s frames=2956 fps=13.97 audio=170.3/s backed=377.5MiB guest_committed=464.5MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=37.0MiB heap_free=2.7MiB heap_arena=39.7MiB
+  multi-object/alertable waits that blocked: 353/s
+  TLS lookups: 148345/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3027 GetProcessTimeLow 1484 GetThreadId 0 LockLwMutex 20433 TryLockLwMutex 0 UnlockLwMutex 20505 WaitSema 2597 SignalSema 3797 PollEventFlag 2030 DelayThread 400 LibcGettimeofday 16738 pthread_mutex_lock 29473 malloc 3750 free 9111 global lock 11519
+t=173s frames=3037 fps=14.67 audio=178.1/s backed=377.5MiB guest_committed=464.5MiB free_user=0KiB free_cdram=10240KiB free_phycont=10240KiB heap_used=37.0MiB heap_free=2.7MiB heap_arena=39.7MiB
+  multi-object/alertable waits that blocked: 375/s
+  TLS lookups: 155248/s (fast path on, 0 mismatches)
+  system calls/s: GetProcessTimeWide 3115 GetProcessTimeLow 1545 GetThreadId 0 LockLwMutex 21500 TryLockLwMutex 0 UnlockLwMutex 21578 WaitSema 2725 SignalSema 3959 PollEventFlag 2095 DelayThread 403 LibcGettimeofday 17495 pthread_mutex_lock 30689 malloc 3933 free 9546 global lock 11963

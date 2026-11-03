@@ -35,6 +35,9 @@ void vita_fast_tls_stats(VitaFastTlsStats* out);
  * for at least 16) and *names, returns how many there are. */
 #define VITA_SYSCALL_COUNTERS_MAX 16
 int vita_syscall_counts(uint64_t* out, const char* const** names);
+/* The most frequent return addresses of counter `kind` (index into the names),
+ * counted since start; returns how many were written (up to max). */
+int vita_syscall_top_sites(int kind, uintptr_t* addrs, uint32_t* counts, int max);
 
 #ifdef __cplusplus
 }

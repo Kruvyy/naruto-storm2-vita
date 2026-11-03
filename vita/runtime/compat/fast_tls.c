@@ -16,6 +16,8 @@
 #include <psp2/kernel/processmgr.h>
 #include <psp2/kernel/threadmgr.h>
 #include <psp2/kernel/threadmgr/lw_mutex.h>
+#include <pthread.h>
+#include <stddef.h>
 #include <stdint.h>
 #include <string.h>
 
@@ -155,17 +157,85 @@ enum {
   kPollEventFlag,
   kDelayThread,
   kGettimeofday,
+  kMutexLock,
+  kMalloc,
+  kFree,
+  kGlobalLock,
   kSyscallCount
 };
 static const char* const kSyscallNames[kSyscallCount] = {
-    "GetProcessTimeWide", "GetProcessTimeLow", "GetThreadId", "LockLwMutex",
-    "TryLockLwMutex",     "UnlockLwMutex",     "WaitSema",    "SignalSema",
-    "PollEventFlag",      "DelayThread",       "LibcGettimeofday"};
+    "GetProcessTimeWide", "GetProcessTimeLow", "GetThreadId",       "LockLwMutex",
+    "TryLockLwMutex",     "UnlockLwMutex",     "WaitSema",          "SignalSema",
+    "PollEventFlag",      "DelayThread",       "LibcGettimeofday",  "pthread_mutex_lock",
+    "malloc",             "free",              "global lock"};
 static uint64_t g_syscalls[kSyscallCount];
+
+/* Call sites (return addresses) per counter: a small lossy table. */
+#define kSites 256
+typedef struct {
+  uintptr_t addr;
+  uint32_t count;
+} Site;
+static Site g_sites[kSyscallCount][kSites];
+
+static void CountSite(int kind, uintptr_t ra) {
+  const uint32_t h = (uint32_t)(ra * 2654435761u) >> 24;
+  for (uint32_t i = 0; i < 16; ++i) {  /* a full table drops new sites */
+    Site* s = &g_sites[kind][(h + i) & (kSites - 1)];
+    uintptr_t a = __atomic_load_n(&s->addr, __ATOMIC_RELAXED);
+    if (a == 0) {
+      uintptr_t expected = 0;
+      if (__atomic_compare_exchange_n(&s->addr, &expected, ra, 0, __ATOMIC_RELAXED,
+                                      __ATOMIC_RELAXED)) {
+        a = ra;
+      } else {
+        a = expected;
+      }
+    }
+    if (a == ra) {
+      __atomic_store_n(&s->count, __atomic_load_n(&s->count, __ATOMIC_RELAXED) + 1,
+                       __ATOMIC_RELAXED);
+      return;
+    }
+  }
+}
+
+#define COUNT_SITE(kind)            \
+  do {                              \
+    Count(&g_syscalls[kind]);       \
+    CountSite(kind, (uintptr_t)__builtin_return_address(0)); \
+  } while (0)
+
+int vita_syscall_top_sites(int kind, uintptr_t* addrs, uint32_t* counts, int max) {
+  if (kind < 0 || kind >= kSyscallCount) {
+    return 0;
+  }
+  Site copy[kSites];
+  for (int i = 0; i < kSites; ++i) {
+    copy[i].addr = __atomic_load_n(&g_sites[kind][i].addr, __ATOMIC_RELAXED);
+    copy[i].count = __atomic_load_n(&g_sites[kind][i].count, __ATOMIC_RELAXED);
+  }
+  int n = 0;
+  for (; n < max; ++n) {
+    int best = -1;
+    for (int i = 0; i < kSites; ++i) {
+      if (copy[i].addr && (best < 0 || copy[i].count > copy[best].count)) {
+        best = i;
+      }
+    }
+    if (best < 0) {
+      break;
+    }
+    addrs[n] = copy[best].addr;
+    counts[n] = copy[best].count;
+    copy[best].addr = 0;
+  }
+  return n;
+}
 
 SceUInt64 __real_sceKernelGetProcessTimeWide(void);
 SceUInt64 __wrap_sceKernelGetProcessTimeWide(void) {
-  Count(&g_syscalls[kTimeWide]);
+  COUNT_SITE(kTimeWide);
   return __real_sceKernelGetProcessTimeWide();
 }
 SceUInt32 __real_sceKernelGetProcessTimeLow(void);
@@ -180,7 +250,7 @@ int __wrap_sceKernelGetThreadId(void) {
 }
 int __real_sceKernelLockLwMutex(SceKernelLwMutexWork* work, int count, unsigned int* timeout);
 int __wrap_sceKernelLockLwMutex(SceKernelLwMutexWork* work, int count, unsigned int* timeout) {
-  Count(&g_syscalls[kLockLw]);
+  COUNT_SITE(kLockLw);
   return __real_sceKernelLockLwMutex(work, count, timeout);
 }
 int __real_sceKernelTryLockLwMutex(SceKernelLwMutexWork* work, int count);
@@ -195,7 +265,7 @@ int __wrap_sceKernelUnlockLwMutex(SceKernelLwMutexWork* work, int count) {
 }
 int __real_sceKernelWaitSema(SceUID sema, int signal, SceUInt* timeout);
 int __wrap_sceKernelWaitSema(SceUID sema, int signal, SceUInt* timeout) {
-  Count(&g_syscalls[kWaitSema]);
+  COUNT_SITE(kWaitSema);
   return __real_sceKernelWaitSema(sema, signal, timeout);
 }
 int __real_sceKernelSignalSema(SceUID sema, int signal);
@@ -212,13 +282,28 @@ int __wrap_sceKernelPollEventFlag(int evid, unsigned int bits, unsigned int wait
 }
 int __real_sceKernelDelayThread(SceUInt delay);
 int __wrap_sceKernelDelayThread(SceUInt delay) {
-  Count(&g_syscalls[kDelayThread]);
+  COUNT_SITE(kDelayThread);
   return __real_sceKernelDelayThread(delay);
 }
 int __real_sceKernelLibcGettimeofday(SceKernelTimeval* tv, SceKernelTimezone* tz);
 int __wrap_sceKernelLibcGettimeofday(SceKernelTimeval* tv, SceKernelTimezone* tz) {
-  Count(&g_syscalls[kGettimeofday]);
+  COUNT_SITE(kGettimeofday);
   return __real_sceKernelLibcGettimeofday(tv, tz);
+}
+int __real_pthread_mutex_lock(pthread_mutex_t* mutex);
+int __wrap_pthread_mutex_lock(pthread_mutex_t* mutex) {
+  COUNT_SITE(kMutexLock);
+  return __real_pthread_mutex_lock(mutex);
+}
+void* __real_malloc(size_t size);
+void* __wrap_malloc(size_t size) {
+  COUNT_SITE(kMalloc);
+  return __real_malloc(size);
+}
+void __real_free(void* ptr);
+void __wrap_free(void* ptr) {
+  COUNT_SITE(kFree);
+  __real_free(ptr);
 }
 
 int vita_syscall_counts(uint64_t* out, const char* const** names) {
@@ -227,4 +312,10 @@ int vita_syscall_counts(uint64_t* out, const char* const** names) {
   }
   *names = kSyscallNames;
   return kSyscallCount;
+}
+
+/* Called by rex::thread::global_critical_region::mutex() (core/mutex.cpp). */
+void vita_count_global_lock(uintptr_t return_address) {
+  Count(&g_syscalls[kGlobalLock]);
+  CountSite(kGlobalLock, return_address);
 }

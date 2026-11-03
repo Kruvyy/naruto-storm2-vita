@@ -1,0 +1,29 @@
+J2 no Vita3K-Plus do usuário (cópia privada, config dele com accurate-thread-scheduling true e guest-cores
+3, sistema de arquivos isolado). Emulador, não o console. Menu de modos com entrada reproduzida
+(menu_start_repeat.txt), perfil do I4 (gpu_thread_priority_boost = 1, gles_surface_texture_min_kib = 3000,
+gles_surface_texture_refresh_swaps = 1). Quadros/s: mediana a partir do quadro 2400; as linhas fps/audio
+dos *_stats.log vão de 5 em 5 s. Execuções em horários diferentes variam até ~15%: compare as vizinhas.
+
+1/2 sched_bench      teste novo do runtime (vita/runtime/tests): 1 a 3 threads com máscaras diferentes fazendo
+                     conta pura, operações atômicas (ldrex/strex) e chamadas de sistema. Com núcleos explícitos
+                     a conta pura roda em paralelo; uma operação atômica custa ~200 ns e fica 6-7x mais cara
+                     com três threads ao mesmo tempo; uma chamada de sistema ~420 ns e 5x mais cara em
+                     paralelo; isso também sem o escalonamento preciso (2), então vem do próprio Vita3K. Uma
+                     thread girando num núcleo fixo não deixa outra da mesma prioridade rodar nesse núcleo
+                     (300 ms, mesmo com sceKernelDelayThread(0)). A linha "3 threads, default mask" saiu em
+                     série numa execução (1) e em paralelo em outra (10): não confie só nela.
+3_sites / 4_global_lock  contadores de chamadas de sistema por local de chamada (endereços no storm2_vita;
+                     arm-vita-eabi-addr2line): lock do malloc do newlib ~20 mil/s, pthread_mutex_lock ~30 mil/s
+                     (semáforos do pthread e o lock global), gettimeofday ~17 mil/s (tempo de cada desenho na
+                     GPU), lock global ~12 mil usos/s (busca de handles do kernel). 4 usa o build de
+                     diagnóstico REX_VITA_COUNT_GLOBAL_LOCK=ON.
+5_*                  thread de comandos da GPU sozinha no núcleo 1 (vita_thread_cores = "GPU Commands=1"):
+                     15,9 e 16,7 quadros/s contra 15,4 e 13,6 no padrão; áudio sem quedas.
+6_*                  + thread principal do jogo no núcleo 0: 19,7 contra 15,9.
+7_*                  build novo (contador de imports e contador do lock global sem operação atômica, sem
+                     relógio por desenho): principal 0 + GPU 1: 25,9; + áudio (F80000B0) no 2: 26,1;
+                     + thread de render (F8000068) no 2: 27,5; principal no 2 em vez do 0: 26,9.
+8_*                  build novo, vizinhas: sem disposição 18,0, com principal 0 + GPU 1 + render 2: 25,7.
+9_padrao_final       só as três linhas do usuário: a disposição padrão do app (main_vita.cpp) entra sozinha
+                     (threads.log: máscaras 03 / 0C / 30) e o menu fica em 25,7 (23,3-26,5), áudio ~185/s.
+10_runtime_tests     29/30 no Vita3K-Plus (files: falta sceIoChstatByFd no Vita3K).

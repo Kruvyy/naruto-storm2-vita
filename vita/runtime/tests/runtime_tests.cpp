@@ -795,6 +795,165 @@ void TestLogging() {
   CHECK(sceIoGetstat(path.c_str(), &st) >= 0 && st.st_size > 0);
 }
 
+// ---------------------------------------------------------------------------
+// Scheduling benchmark (always passes; prints numbers). How the system (or the
+// emulator) runs threads given a core mask: parallel speed-up, the cost of
+// atomics and system calls when threads run at the same time, and whether a
+// thread that spins starves another of the same priority on its core.
+// ---------------------------------------------------------------------------
+namespace sched_bench {
+
+enum Kind { kCompute, kAtomicOwn, kAtomicShared, kSyscall, kKinds };
+const char* const kKindNames[kKinds] = {"compute", "atomic (own line)", "atomic (shared)",
+                                        "system call"};
+const uint32_t kIterations[kKinds] = {20000000, 2000000, 2000000, 200000};
+
+struct alignas(64) Slot {
+  std::atomic<uint32_t> value{0};
+};
+Slot g_slots[4];
+volatile uint32_t g_sink;
+
+struct Job {
+  Kind kind;
+  int index;
+  uint64_t elapsed_us;
+};
+
+int Worker(SceSize, void* argp) {
+  Job* job = *static_cast<Job**>(argp);
+  const uint32_t n = kIterations[job->kind];
+  const uint64_t start = sceKernelGetProcessTimeWide();
+  switch (job->kind) {
+    case kCompute: {
+      uint32_t x = 1 + job->index;
+      for (uint32_t i = 0; i < n; ++i) {
+        x = x * 1664525u + 1013904223u;
+      }
+      g_sink = x;
+      break;
+    }
+    case kAtomicOwn:
+      for (uint32_t i = 0; i < n; ++i) {
+        g_slots[job->index].value.fetch_add(1, std::memory_order_relaxed);
+      }
+      break;
+    case kAtomicShared:
+      for (uint32_t i = 0; i < n; ++i) {
+        g_slots[3].value.fetch_add(1, std::memory_order_relaxed);
+      }
+      break;
+    default:
+      for (uint32_t i = 0; i < n; ++i) {
+        g_sink = uint32_t(sceKernelGetProcessTimeWide());
+      }
+      break;
+  }
+  job->elapsed_us = sceKernelGetProcessTimeWide() - start;
+  return 0;
+}
+
+// Runs one job per mask at the same time; returns the wall time in us.
+uint64_t Run(Kind kind, const std::vector<int>& masks) {
+  std::vector<Job> jobs(masks.size());
+  std::vector<SceUID> ids;
+  for (size_t i = 0; i < masks.size(); ++i) {
+    jobs[i] = Job{kind, int(i), 0};
+    const SceUID id = sceKernelCreateThread("sched_bench", Worker, 0x10000100, 0x4000, 0,
+                                            masks[i], nullptr);
+    if (id < 0) {
+      return 0;
+    }
+    ids.push_back(id);
+  }
+  const uint64_t start = sceKernelGetProcessTimeWide();
+  for (size_t i = 0; i < ids.size(); ++i) {
+    Job* ptr = &jobs[i];
+    sceKernelStartThread(ids[i], sizeof(ptr), &ptr);
+  }
+  for (SceUID id : ids) {
+    sceKernelWaitThreadEnd(id, nullptr, nullptr);
+    sceKernelDeleteThread(id);
+  }
+  return sceKernelGetProcessTimeWide() - start;
+}
+
+// Thread A spins on a flag that thread B sets, both on the same core with the
+// same priority. Returns how long B took to run (us), capped at the spin limit.
+std::atomic<bool> g_flag{false};
+std::atomic<uint64_t> g_b_ran_at{0};
+int SpinnerA(SceSize, void* argp) {
+  const bool yield = *static_cast<bool*>(argp);
+  const uint64_t start = sceKernelGetProcessTimeWide();
+  while (!g_flag.load(std::memory_order_acquire) &&
+         sceKernelGetProcessTimeWide() - start < 300000) {
+    if (yield) {
+      sceKernelDelayThread(0);
+    }
+  }
+  return 0;
+}
+int SetterB(SceSize, void*) {
+  g_b_ran_at = sceKernelGetProcessTimeWide();
+  g_flag.store(true, std::memory_order_release);
+  return 0;
+}
+uint64_t Starvation(int mask, bool yield) {
+  g_flag = false;
+  g_b_ran_at = 0;
+  const SceUID a = sceKernelCreateThread("spin_a", SpinnerA, 0x10000100, 0x4000, 0, mask, nullptr);
+  const SceUID b = sceKernelCreateThread("set_b", SetterB, 0x10000100, 0x4000, 0, mask, nullptr);
+  if (a < 0 || b < 0) {
+    return 0;
+  }
+  sceKernelStartThread(a, sizeof(yield), &yield);
+  sceKernelDelayThread(2000);  // A is spinning now
+  const uint64_t start = sceKernelGetProcessTimeWide();
+  sceKernelStartThread(b, 0, nullptr);
+  sceKernelWaitThreadEnd(a, nullptr, nullptr);
+  sceKernelWaitThreadEnd(b, nullptr, nullptr);
+  sceKernelDeleteThread(a);
+  sceKernelDeleteThread(b);
+  return g_b_ran_at ? g_b_ran_at - start : 0;
+}
+
+}  // namespace sched_bench
+
+void TestSchedBench() {
+  using namespace sched_bench;
+  constexpr int kDefault = 0, kAll = SCE_KERNEL_CPU_MASK_USER_ALL;
+  constexpr int k0 = SCE_KERNEL_CPU_MASK_USER_0, k1 = SCE_KERNEL_CPU_MASK_USER_1,
+                k2 = SCE_KERNEL_CPU_MASK_USER_2;
+  struct Layout {
+    const char* name;
+    std::vector<int> masks;
+  };
+  const Layout layouts[] = {
+      {"1 thread, core 1", {k1}},
+      {"3 threads, default mask", {kDefault, kDefault, kDefault}},
+      {"3 threads, cores 0/1/2", {k0, k1, k2}},
+      {"3 threads, all cores", {kAll, kAll, kAll}},
+      {"2 threads, both core 1", {k1, k1}},
+  };
+  for (int kind = 0; kind < kKinds; ++kind) {
+    std::string line = std::string("  ") + kKindNames[kind] + ":";
+    for (const Layout& layout : layouts) {
+      const uint64_t us = Run(Kind(kind), layout.masks);
+      line += fmt::format(" [{}] {:.1f} ms;", layout.name, double(us) / 1000.0);
+    }
+    Log("%s\n", line.c_str());
+  }
+  for (const bool yield : {false, true}) {
+    for (const int mask : {k1, kDefault}) {
+      const uint64_t us = Starvation(mask, yield);
+      Log("  spinner%s on %s: the other thread ran after %s\n", yield ? " with DelayThread(0)" : "",
+          mask ? "core 1" : "the default mask",
+          us ? fmt::format("{:.1f} ms", double(us) / 1000.0).c_str() : "the spinner gave up (300 ms)");
+    }
+  }
+  CHECK(true);
+}
+
 struct TestEntry {
   const char* name;
   void (*fn)();
@@ -830,6 +989,7 @@ const TestEntry kTests[] = {
     {"soft_mmu_large_region", TestSoftMmuLargeRegion},
     {"soft_mmu_function_table", TestSoftMmuFunctionTable},
     {"logging", TestLogging},
+    {"sched_bench", TestSchedBench},
 };
 
 }  // namespace

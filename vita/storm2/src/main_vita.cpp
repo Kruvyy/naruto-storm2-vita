@@ -317,25 +317,39 @@ int main() {
   sceIoRemove(kImportStatsPath);
   Screen(kYellow);
 
-  // cvars: defaults for the Vita, then the optional storm2.toml.
+  // cvars: the optional storm2.toml, then the Vita defaults below for every
+  // cvar the file does not set (SetFlagByName outranks the file, so setting
+  // them first would ignore the file's values).
   char arg0[] = "storm2";
   char* argv[] = {arg0, nullptr};
   rex::cvar::Init(1, argv);
-  rex::cvar::SetFlagByName("perf_frame_stats", "true");
-  rex::cvar::SetFlagByName("perf_frame_stats_file", kFrameStatsPath);
-  rex::cvar::SetFlagByName("perf_import_stats_file", kImportStatsPath);
+  rex::cvar::LoadConfig(std::string(kDataDir) + "/storm2.toml");
+  auto app_default = [](const char* name, const char* value) {
+    if (rex::cvar::GetFlagSource(name) == rex::cvar::Source::kDefault) {
+      rex::cvar::SetFlagByName(name, value);
+    }
+  };
+  app_default("perf_frame_stats", "true");
+  app_default("perf_frame_stats_file", kFrameStatsPath);
+  app_default("perf_import_stats_file", kImportStatsPath);
   // The physical pool at 0xAB000000 reserves 272 MiB and the game fills it from
   // the start; 184 MiB ran the title screen on the PC (docs/logs/E13d). A write
   // past the limit stops the game with a message naming the cvar.
-  rex::cvar::SetFlagByName("soft_mmu_caps", "0xAB000000=184");
+  app_default("soft_mmu_caps", "0xAB000000=184");
   // Compiled shaders of the game, made on this device by the runtime compiler
   // on first use (the files derive from the game's shaders: never distribute).
-  rex::cvar::SetFlagByName("gles_shader_cache_dir", "ux0:data/storm2port/shader_cache");
+  app_default("gles_shader_cache_dir", "ux0:data/storm2port/shader_cache");
   // The movies are decoded by the game's own code: ~0.2-0.3 frames/s in
   // Vita3K. Skipped by default (storm2_skip_movies = false in storm2.toml
   // plays them).
-  rex::cvar::SetFlagByName("storm2_skip_movies", "true");
-  rex::cvar::LoadConfig(std::string(kDataDir) + "/storm2.toml");
+  app_default("storm2_skip_movies", "true");
+  // Threads left on the default affinity share one core (Vita3K-Plus with
+  // accurate scheduling runs them one at a time). The game's main thread, the
+  // GPU command thread and the game's render thread (guest handle F8000068)
+  // each get a core of their own; the rest stay on the default affinity.
+  // Only one thread per core: two threads of the same priority on one core
+  // can starve each other (docs/bugs.md, bug 79).
+  app_default("vita_thread_cores", "Main XThread=0,GPU Commands=1,F8000068=2");
 
   {
     rex::LogConfig log_config;
@@ -523,6 +537,24 @@ int main() {
     last_frame = frame;
     last_audio_frames = audio_frames;
     if (now_us - last_threads_us >= 30 * 1000000ull) {
+      // Where the frequent system calls come from (return addresses in this
+      // executable; arm-vita-eabi-addr2line -f -e storm2_vita <address>).
+      uint64_t unused[VITA_SYSCALL_COUNTERS_MAX];
+      const char* const* names = nullptr;
+      const int kinds = vita_syscall_counts(unused, &names);
+      for (int kind = 0; kind < kinds; ++kind) {
+        uintptr_t addrs[4];
+        uint32_t counts[4];
+        const int n = vita_syscall_top_sites(kind, addrs, counts, 4);
+        if (n == 0) {
+          continue;
+        }
+        std::string line = fmt::format("  sites of {} (since start):", names[kind]);
+        for (int i = 0; i < n; ++i) {
+          line += fmt::format(" {:08X} x{}", uint32_t(addrs[i]), counts[i]);
+        }
+        Stats("%s\n", line.c_str());
+      }
       ThreadReport(runtime.get(), now_us, now_us - last_threads_us, last_thread_run);
       last_threads_us = now_us;
     }

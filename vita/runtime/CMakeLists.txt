@@ -49,7 +49,8 @@ target_link_options(vita_compat INTERFACE -Wl,--wrap=sceKernelGetTLSAddr
   -Wl,--wrap=sceKernelTryLockLwMutex -Wl,--wrap=sceKernelUnlockLwMutex
   -Wl,--wrap=sceKernelWaitSema -Wl,--wrap=sceKernelSignalSema
   -Wl,--wrap=sceKernelPollEventFlag -Wl,--wrap=sceKernelDelayThread
-  -Wl,--wrap=sceKernelLibcGettimeofday)
+  -Wl,--wrap=sceKernelLibcGettimeofday -Wl,--wrap=pthread_mutex_lock -Wl,--wrap=malloc
+  -Wl,--wrap=free)
 target_link_libraries(fmt PUBLIC vita_compat)
 
 set(SPDLOG_FMT_EXTERNAL ON CACHE BOOL "" FORCE)
@@ -214,6 +215,12 @@ list(APPEND REXCORE_VITA_SOURCES
   ${SRC}/graphics/pipeline/texture/conversion.cpp)
 
 add_library(rexcore_vita STATIC ${REXCORE_VITA_SOURCES})
+# Diagnostics: count the uses of the global critical region by call site
+# (compat/fast_tls.c, printed in the app's stats).
+option(REX_VITA_COUNT_GLOBAL_LOCK "Count global lock uses by call site" OFF)
+if(REX_VITA_COUNT_GLOBAL_LOCK)
+  target_compile_definitions(rexcore_vita PRIVATE REX_VITA_COUNT_GLOBAL_LOCK)
+endif()
 target_include_directories(rexcore_vita PRIVATE ${REXGLUE_DIR} ${TP}/cli11/include)
 target_link_libraries(rexcore_vita PUBLIC rex_vita_settings
   PRIVATE disruptorplus utf8cpp xxHash::xxhash)
