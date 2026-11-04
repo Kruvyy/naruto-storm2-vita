@@ -1,0 +1,658 @@
+[2026-11-04 13:09:21.827] [info] [gpu] [t7084] GLES GPU backend (OpenGL ES 2 subset)
+[2026-11-04 13:09:21.868] [info] [sys] [t7084] Guest memory arena mapped: virtual base 0x0000000100000000, physical base 0x0000000200000000
+[2026-11-04 13:09:21.930] [info] [gpu] [t7084] GLES GPU backend (OpenGL ES 2 subset)
+[2026-11-04 13:09:21.936] [info] [core] [t7084] Function table initialized for module: code=821C0000-82836294, image=82000000-82B30000
+[2026-11-04 13:09:22.028] [info] [gpu] [t19728] GLES backend on desktop OpenGL (offscreen): ATI Technologies Inc. / AMD Radeon RX 6600 / 4.6.0 Compatibility Profile Context 26.10.1.261008, S3TC true
+[2026-11-04 13:09:22.165] [warning] [core] [t7084] SDL GameControllerDB: file 'gamecontrollerdb.txt' does not exist.
+[2026-11-04 13:09:22.165] [info] [core] [t7084] SDL input driver initialized successfully
+[2026-11-04 13:09:22.216] [info] [core] [t7084] Initializing shader storage for title 4E4D0819...
+[2026-11-04 13:09:22.226] [info] [gpu] [t24400] SetInterruptCallback(826A5998, 40005080)
+[2026-11-04 13:09:22.233] [info] [gpu] [t19728] GLES: render target depth base 0 pitch 640 format 0 msaa 2: 1280x736
+[2026-11-04 13:09:22.233] [info] [gpu] [t19728] GLES: scratch color attachment 1280x736 for depth-only passes
+[2026-11-04 13:09:22.233] [info] [gpu] [t19728] GLES: framebuffer 1280x736 with depth/stencil (1 render target framebuffers)
+[2026-11-04 13:09:22.235] [info] [gpu] [t19728] GLES: compiled VS 1E6883FCCDE1F688 (modification 0, 2978 bytes of GLSL) in 2.4 ms
+[2026-11-04 13:09:22.237] [info] [gpu] [t19728] GLES: linked program VS 1E6883FCCDE1F688 + PS 0000000000000000 in 1.2 ms
+[2026-11-04 13:09:22.237] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc -1 (-1 kept) pc -1 (-1 kept) vte 3 ndc 1/0 atest -1, 0 bools, 0 loops, 0 textures; 4 active uniforms
+[2026-11-04 13:09:22.238] [info] [gpu] [t19728] GLES: render target color base 0 pitch 1280 format 0 msaa 0: 1280x736
+[2026-11-04 13:09:22.238] [info] [gpu] [t19728] GLES: resolve target 0B000000 1280x736
+[2026-11-04 13:09:22.239] [info] [gpu] [t19728] GLES: resolve framebuffer 1280x736 #0
+[2026-11-04 13:09:22.248] [info] [gpu] [t19728] GLES: render target depth base 640 pitch 640 format 0 msaa 2: 1280x736
+[2026-11-04 13:09:22.248] [info] [gpu] [t19728] GLES: framebuffer 1280x736 with depth/stencil (2 render target framebuffers)
+[2026-11-04 13:09:22.315] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:22.316] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:22.348] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:22.349] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:22.415] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:22.605] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:22.620] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:22.620] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:22.629] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:22.718] [info] [apu] [t24400] audio endpoint 'Realtek HD Audio 2nd output (Realtek(R) Audio)': 2 ch, 48000 Hz, format 0x8120; submitting 2 ch
+[2026-11-04 13:09:22.720] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:22.722] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:22.728] [info] [core] [t24400] input replay: 166 events for 1 user(s) from C:\Users\minoo\Downloads\PORT NARUTO STORM 2 PS VITA\docs\logs\I1_inputs\free_battle_slow.txt (stretch 1)
+[2026-11-04 13:09:22.733] [info] [gpu] [t19728] GLES: resolve target 0CB9A000 1280x640
+[2026-11-04 13:09:22.734] [info] [gpu] [t19728] GLES: resolve framebuffer 1280x640 #0
+[2026-11-04 13:09:22.734] [info] [gpu] [t19728] GLES: render target color base 640 pitch 1280 format 0 msaa 0: 1280x736
+[2026-11-04 13:09:22.735] [info] [gpu] [t19728] GLES: resolve target 0CEBA000 1280x640
+[2026-11-04 13:09:22.735] [info] [gpu] [t19728] GLES: resolve framebuffer 1280x640 #1
+[2026-11-04 13:09:22.735] [info] [gpu] [t19728] GLES: framebuffer 1280x736 (3 render target framebuffers)
+[2026-11-04 13:09:22.738] [info] [gpu] [t19728] GLES: compiled VS 4666C5A9092B03DD (modification 3, 4323 bytes of GLSL) in 2.2 ms
+[2026-11-04 13:09:22.739] [info] [gpu] [t19728] GLES: compiled PS 7ABDFEFBCADB4BF9 (modification 3, 2923 bytes of GLSL) in 1.4 ms
+[2026-11-04 13:09:22.740] [info] [gpu] [t19728] GLES: linked program VS 4666C5A9092B03DD + PS 7ABDFEFBCADB4BF9 in 0.3 ms
+[2026-11-04 13:09:22.740] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 10 (5 kept) pc -1 (-1 kept) vte 15 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 9 active uniforms
+[2026-11-04 13:09:22.740] [info] [gpu] [t19728] GLES: vertex stream ring 4 x 4 MiB
+[2026-11-04 13:09:22.750] [info] [gpu] [t19728] GLES: render target depth base 1280 pitch 640 format 0 msaa 2: 1280x736
+[2026-11-04 13:09:22.751] [info] [gpu] [t19728] GLES: framebuffer 1280x736 with depth/stencil (4 render target framebuffers)
+[2026-11-04 13:09:22.752] [info] [gpu] [t19728] GLES: compiled VS 1E6883FCCDE1F688 (modification 1, 3003 bytes of GLSL) in 1.3 ms
+[2026-11-04 13:09:22.753] [info] [gpu] [t19728] GLES: compiled PS A4A965C189287B99 (modification 1, 2605 bytes of GLSL) in 1.2 ms
+[2026-11-04 13:09:22.753] [info] [gpu] [t19728] GLES: linked program VS 1E6883FCCDE1F688 + PS A4A965C189287B99 in 0.2 ms
+[2026-11-04 13:09:22.753] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc -1 (-1 kept) pc -1 (-1 kept) vte 4 ndc 2/1 atest 0, 0 bools, 0 loops, 0 textures; 5 active uniforms
+[2026-11-04 13:09:22.805] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:22.806] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:22.815] [info] [gpu] [t19728] GLES: framebuffer 1280x736 with depth/stencil (5 render target framebuffers)
+[2026-11-04 13:09:23.038] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.039] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.074] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.075] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.202] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.203] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.289] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.290] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.308] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.309] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.320] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.320] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.563] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.564] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.596] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.597] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.627] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.627] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:23.685] [info] [gpu] [t19728] GLES: compiled VS 13B01BEA94678566 (modification 3, 4870 bytes of GLSL) in 2.5 ms
+[2026-11-04 13:09:23.686] [info] [gpu] [t19728] GLES: linked program VS 13B01BEA94678566 + PS 7ABDFEFBCADB4BF9 in 0.3 ms
+[2026-11-04 13:09:23.686] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 10 (5 kept) pc -1 (-1 kept) vte 15 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 9 active uniforms
+[2026-11-04 13:09:23.689] [info] [gpu] [t19728] GLES: compiled VS 2E015B8427EBD8C5 (modification 1F, 6346 bytes of GLSL) in 2.6 ms
+[2026-11-04 13:09:23.691] [info] [gpu] [t19728] GLES: compiled PS E8EAE3AA51F7921E (modification 1F, 4898 bytes of GLSL) in 2.6 ms
+[2026-11-04 13:09:23.692] [info] [gpu] [t19728] GLES: linked program VS 2E015B8427EBD8C5 + PS E8EAE3AA51F7921E in 0.3 ms
+[2026-11-04 13:09:23.692] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 11 (10 kept) pc 3 (1 kept) vte 21 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-11-04 13:09:24.763] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:24.764] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.157] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.157] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.303] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.304] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.321] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.321] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.334] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.335] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.344] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.344] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.362] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.362] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.377] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.378] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.389] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.390] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.472] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.473] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.497] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.498] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.508] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.508] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.520] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.520] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.531] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.532] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.544] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.545] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.554] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.555] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.567] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.568] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.579] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.579] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.591] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.592] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.601] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.602] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.613] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.614] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.627] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.627] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.637] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.638] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.649] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.651] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.721] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.721] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.730] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.730] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.773] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.773] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.774] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.775] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.776] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.777] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.891] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.892] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.901] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.902] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.910] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:25.911] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:26.915] [info] [gpu] [t19728] GLES: render target depth base 0 pitch 1040 format 0 msaa 0: 1040x736
+[2026-11-04 13:09:26.915] [info] [gpu] [t19728] GLES: scratch color attachment 1040x736 for depth-only passes
+[2026-11-04 13:09:26.915] [info] [gpu] [t19728] GLES: framebuffer 1040x736 with depth/stencil (6 render target framebuffers)
+[2026-11-04 13:09:26.915] [info] [apu] [t24400] XMA: 1 contexts have an FFmpeg decoder
+[2026-11-04 13:09:26.917] [info] [gpu] [t19728] GLES: compiled VS 2443876AABAE04D9 (modification 3, 4273 bytes of GLSL) in 2.0 ms
+[2026-11-04 13:09:26.925] [info] [gpu] [t19728] GLES: compiled PS 6D868915601F3596 (modification 3, 23649 bytes of GLSL) in 7.7 ms
+[2026-11-04 13:09:26.926] [info] [gpu] [t19728] GLES: linked program VS 2443876AABAE04D9 + PS 6D868915601F3596 in 0.8 ms
+[2026-11-04 13:09:26.926] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 23 (4 kept) pc 3 (1 kept) vte 27 ndc 2/1 atest 0, 0 bools, 0 loops, 3 textures; 16 active uniforms
+[2026-11-04 13:09:26.927] [warning] [gpu] [t19728] GLES: texture format k_24_8 not supported (black)
+[2026-11-04 13:09:26.929] [info] [gpu] [t19728] GLES: compiled VS 2A53964AA9F4D66E (modification 1, 4317 bytes of GLSL) in 1.7 ms
+[2026-11-04 13:09:26.932] [info] [gpu] [t19728] GLES: compiled PS A2147ED6ACF52DBF (modification 20001, 9499 bytes of GLSL) in 3.3 ms
+[2026-11-04 13:09:26.933] [info] [gpu] [t19728] GLES: linked program VS 2A53964AA9F4D66E + PS A2147ED6ACF52DBF in 0.4 ms
+[2026-11-04 13:09:26.933] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 22 (5 kept) pc 3 (12 kept) vte 27 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-11-04 13:09:26.933] [info] [gpu] [t19728] GLES: resolve target 0D4FA000 1280x640
+[2026-11-04 13:09:26.935] [info] [gpu] [t19728] GLES: compiled VS 5C3A02159BE6E884 (modification 3, 5036 bytes of GLSL) in 1.9 ms
+[2026-11-04 13:09:26.937] [info] [gpu] [t19728] GLES: compiled PS 15741DBDE0A6290A (modification 3, 3082 bytes of GLSL) in 1.5 ms
+[2026-11-04 13:09:26.937] [info] [gpu] [t19728] GLES: linked program VS 5C3A02159BE6E884 + PS 15741DBDE0A6290A in 0.2 ms
+[2026-11-04 13:09:26.937] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 16 (6 kept) pc -1 (-1 kept) vte 22 ndc 2/1 atest 0, 0 bools, 0 loops, 2 textures; 12 active uniforms
+[2026-11-04 13:09:26.938] [info] [gpu] [t19728] GLES: resolve target 0DC02000 1280x640
+[2026-11-04 13:09:26.940] [info] [gpu] [t19728] GLES: compiled VS 3DDE552C3BDAE2BF (modification 3, 4930 bytes of GLSL) in 2.2 ms
+[2026-11-04 13:09:26.942] [info] [gpu] [t19728] GLES: compiled PS BCC460762FDFFFFC (modification 3, 6529 bytes of GLSL) in 2.1 ms
+[2026-11-04 13:09:26.943] [info] [gpu] [t19728] GLES: linked program VS 3DDE552C3BDAE2BF + PS BCC460762FDFFFFC in 0.3 ms
+[2026-11-04 13:09:26.943] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 18 (6 kept) pc 4 (1 kept) vte 24 ndc 3/2 atest 0, 0 bools, 1 loops, 2 textures; 14 active uniforms
+[2026-11-04 13:09:26.943] [info] [gpu] [t19728] GLES: resolve target 0DF22000 1280x640
+[2026-11-04 13:09:26.946] [info] [gpu] [t19728] GLES: compiled VS 4124792F35086E42 (modification F, 6374 bytes of GLSL) in 2.2 ms
+[2026-11-04 13:09:26.947] [info] [gpu] [t19728] GLES: compiled PS 083B01342061346A (modification F, 4352 bytes of GLSL) in 1.8 ms
+[2026-11-04 13:09:26.948] [info] [gpu] [t19728] GLES: linked program VS 4124792F35086E42 + PS 083B01342061346A in 0.3 ms
+[2026-11-04 13:09:26.948] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 11 (6 kept) pc 3 (1 kept) vte 17 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-11-04 13:09:26.950] [info] [gpu] [t19728] GLES: compiled PS ECFA8AFC82759BAD (modification 3, 4561 bytes of GLSL) in 1.7 ms
+[2026-11-04 13:09:26.950] [info] [gpu] [t19728] GLES: linked program VS 3DDE552C3BDAE2BF + PS ECFA8AFC82759BAD in 0.3 ms
+[2026-11-04 13:09:26.950] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 12 (6 kept) pc 3 (2 kept) vte 18 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-11-04 13:09:26.952] [info] [gpu] [t19728] GLES: compiled VS F97B3D21465FD604 (modification 3, 4736 bytes of GLSL) in 1.9 ms
+[2026-11-04 13:09:26.955] [info] [gpu] [t19728] GLES: compiled PS 389831C73DE85D45 (modification 3, 7270 bytes of GLSL) in 2.7 ms
+[2026-11-04 13:09:26.955] [info] [gpu] [t19728] GLES: linked program VS F97B3D21465FD604 + PS 389831C73DE85D45 in 0.4 ms
+[2026-11-04 13:09:26.955] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 13 (6 kept) pc 3 (3 kept) vte 19 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-11-04 13:09:26.956] [info] [gpu] [t19728] GLES: render target color base 0 pitch 640 format 7 msaa 2: 1280x736
+[2026-11-04 13:09:26.957] [info] [gpu] [t19728] GLES: framebuffer 1280x736 (7 render target framebuffers)
+[2026-11-04 13:09:26.957] [info] [gpu] [t19728] GLES: resolve target 0E562000 1280x640
+[2026-11-04 13:09:26.960] [info] [gpu] [t19728] GLES: compiled VS CF0D3867629B648A (modification F, 6165 bytes of GLSL) in 2.5 ms
+[2026-11-04 13:09:26.962] [info] [gpu] [t19728] GLES: compiled PS B62A1667D0BA6F26 (modification F, 4536 bytes of GLSL) in 1.8 ms
+[2026-11-04 13:09:26.962] [info] [gpu] [t19728] GLES: linked program VS CF0D3867629B648A + PS B62A1667D0BA6F26 in 0.3 ms
+[2026-11-04 13:09:26.962] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 29 (8 kept) pc 3 (1 kept) vte 37 ndc 2/1 atest 0, 0 bools, 0 loops, 4 textures; 19 active uniforms
+[2026-11-04 13:09:26.964] [info] [gpu] [t19728] GLES: compiled PS D5019343FF423CC8 (modification 3, 4859 bytes of GLSL) in 1.9 ms
+[2026-11-04 13:09:26.965] [info] [gpu] [t19728] GLES: linked program VS F97B3D21465FD604 + PS D5019343FF423CC8 in 0.3 ms
+[2026-11-04 13:09:26.965] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 11 (6 kept) pc 3 (1 kept) vte 17 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-11-04 13:09:26.967] [info] [gpu] [t19728] GLES: compiled VS DD881E5FDA628D88 (modification 3, 5496 bytes of GLSL) in 1.8 ms
+[2026-11-04 13:09:26.968] [info] [gpu] [t19728] GLES: compiled PS 46AA46E4EB44BFF6 (modification 3, 3493 bytes of GLSL) in 1.3 ms
+[2026-11-04 13:09:26.968] [info] [gpu] [t19728] GLES: linked program VS DD881E5FDA628D88 + PS 46AA46E4EB44BFF6 in 0.2 ms
+[2026-11-04 13:09:26.968] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 16 (8 kept) pc -1 (-1 kept) vte 24 ndc 2/1 atest 0, 0 bools, 0 loops, 2 textures; 12 active uniforms
+[2026-11-04 13:09:26.969] [info] [gpu] [t19728] GLES: resolve target 0E242000 1280x640
+[2026-11-04 13:09:26.971] [info] [gpu] [t19728] GLES: compiled PS C60F811D2CD5F211 (modification 3, 3206 bytes of GLSL) in 2.0 ms
+[2026-11-04 13:09:26.971] [info] [gpu] [t19728] GLES: linked program VS 3DDE552C3BDAE2BF + PS C60F811D2CD5F211 in 0.3 ms
+[2026-11-04 13:09:26.971] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 16 (6 kept) pc -1 (-1 kept) vte 22 ndc 2/1 atest 0, 0 bools, 0 loops, 2 textures; 12 active uniforms
+[2026-11-04 13:09:26.984] [info] [gpu] [t19728] GLES: texture 10249000 512x256 k_8_8_8_8 (512 KiB on the host) at swap 135
+[2026-11-04 13:09:26.988] [info] [gpu] [t19728] GLES: texture 0FEE9000 1024x3152 k_DXT4_5 (3152 KiB on the host) at swap 135
+[2026-11-04 13:09:32.032] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:32.032] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:32.180] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:32.180] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:32.207] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:32.208] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:32.228] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:32.228] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:33.066] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:33.067] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:33.158] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:33.159] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:33.363] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:33.363] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:33.674] [info] [gpu] [t19728] GLES: texture 11092000 1280x720 k_4_4_4_4 (1800 KiB on the host) at swap 336
+[2026-11-04 13:09:37.741] [info] [gpu] [t19728] GLES: texture 10EC6000 1280x720 k_4_4_4_4 (1800 KiB on the host) at swap 457
+[2026-11-04 13:09:38.499] [info] [gpu] [t19728] GLES: freed 1 textures and 0 resolve targets (0.1 MiB) unused for 300 swaps
+[2026-11-04 13:09:41.768] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:41.832] [error] [krnl] [t8992] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:41.898] [info] [gpu] [t19728] GLES: resolve target 126EF000 1280x736
+[2026-11-04 13:09:41.899] [info] [gpu] [t19728] GLES: resolve framebuffer 1280x736 #1
+[2026-11-04 13:09:41.934] [info] [gpu] [t19728] GLES: compiled VS D5E12A97B3A84881 (modification 1, 2889 bytes of GLSL) in 1.7 ms
+[2026-11-04 13:09:41.936] [info] [gpu] [t19728] GLES: compiled PS A0B5089C468B8CE8 (modification 1, 4448 bytes of GLSL) in 1.7 ms
+[2026-11-04 13:09:41.936] [info] [gpu] [t19728] GLES: linked program VS D5E12A97B3A84881 + PS A0B5089C468B8CE8 in 0.2 ms
+[2026-11-04 13:09:41.936] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc -1 (-1 kept) pc 3 (3 kept) vte 25 ndc 2/1 atest 0, 0 bools, 0 loops, 3 textures; 15 active uniforms
+[2026-11-04 13:09:41.941] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host) at swap 583
+[2026-11-04 13:09:41.971] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host) at swap 584
+[2026-11-04 13:09:42.005] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host) at swap 585
+[2026-11-04 13:09:42.037] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 586
+[2026-11-04 13:09:42.070] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 587
+[2026-11-04 13:09:42.103] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 588
+[2026-11-04 13:09:42.137] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 589
+[2026-11-04 13:09:42.170] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 590
+[2026-11-04 13:09:42.204] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 591
+[2026-11-04 13:09:42.237] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 592
+[2026-11-04 13:09:42.271] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 593
+[2026-11-04 13:09:42.303] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 594
+[2026-11-04 13:09:42.337] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 595
+[2026-11-04 13:09:42.371] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 596
+[2026-11-04 13:09:42.404] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 597
+[2026-11-04 13:09:42.437] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 598
+[2026-11-04 13:09:42.471] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 599
+[2026-11-04 13:09:42.572] [info] [gpu] [t19728] GLES: freed 5 textures and 2 resolve targets (9.9 MiB) unused for 300 swaps
+[2026-11-04 13:09:42.572] [info] [gpu] [t19728] GLES: swap 600: 32539 draws, 36744 skipped, 9704 resolves since the last report; 7 render targets, 8 resolve targets, 13 textures, 17 programs; frontbuffer FFFFF000 resolved; skipped: no target 36744, shader 0, link 0, vertices 0
+[2026-11-04 13:09:42.572] [info] [gpu] [t19728] GLES: time since the last report 20333 ms: translate 1 ms, compile 64 ms (29 shaders), link 6 ms (17 programs, 0 from the shader cache), present+swap 1 ms; longest frame 217 ms
+[2026-11-04 13:09:42.572] [info] [gpu] [t19728] GLES: GPU thread: idle (waiting for the game) 19566 ms, resolves 51 ms, present 1 ms, draws and other 715 ms (draws not timed: gles_time_draws)
+[2026-11-04 13:09:42.572] [info] [gpu] [t19728] GLES:   WAIT_REG_MEM: 6965 sleeps, 10494 ms slept for 6965 ms asked (part of idle)
+[2026-11-04 13:09:42.572] [info] [gpu] [t19728] GLES:   vertices: glBufferData 0 ms for 1.0 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 2.0 MiB; cache hits/misses: vertex ranges 26383/753, index sets 24804/21; kept: 26 vertex buffers 0.0 MiB, 2 index buffers 0.0 MiB
+[2026-11-04 13:09:42.572] [info] [gpu] [t19728] GLES:   vertex stream ring: 0.1 MiB written, 537 ranges moved to own buffers, 0 did not fit; 0 checks of static ranges by sample
+[2026-11-04 13:09:42.572] [info] [gpu] [t19728] GLES:   textures: hashing 0 ms for 175.6 MiB
+[2026-11-04 13:09:42.572] [info] [gpu] [t19728] GLES:   vertex ranges checked again in the same swap: 55 (0.0 MiB)
+[2026-11-04 13:09:42.572] [info] [gpu] [t19728] GLES:   GL calls: program switches 10980, uniform uploads 23666 (unchanged, not sent: 257242), state groups sent 65633 (unchanged: 194679), blend changes on a program (vitaGL fragment re-patch) 921
+[2026-11-04 13:09:42.572] [info] [gpu] [t19728] GLES:   framebuffer changes: 11587 to render targets (0 more keeping their depth/stencil, loaded and stored at each change on vitaGL), 8772 to resolve targets, 4 to the display; game draws first after a change 10656, their GL draw calls 0 ms (part of GL draw calls)
+[2026-11-04 13:09:42.572] [info] [gpu] [t19728] GLES:   depth: fills held after a depth copy 2551, dropped for a restore 466, applied as a clear 931; depth state sent again at a scene start 0
+[2026-11-04 13:09:42.572] [info] [gpu] [t19728] GLES memory (MiB): render targets 14.4 (3), resolve targets 22.8 (8), textures 7.5 (13), texture surface copies 0.0 (0), scratch 6.5, framebuffers 7 + 4 for resolves -> depth/stencil 21.7 (vitaGL estimate), vertex cache 0.0 (26 buffers), index cache 0.0 (2), vertex stream ring 16.0; total 88.9
+[2026-11-04 13:09:42.578] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 600
+[2026-11-04 13:09:42.604] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 601
+[2026-11-04 13:09:42.620] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 602
+[2026-11-04 13:09:42.654] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 603
+[2026-11-04 13:09:42.686] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 604
+[2026-11-04 13:09:42.720] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 605
+[2026-11-04 13:09:42.754] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 606
+[2026-11-04 13:09:42.787] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 607
+[2026-11-04 13:09:42.820] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 608
+[2026-11-04 13:09:42.853] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 609
+[2026-11-04 13:09:42.887] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 610
+[2026-11-04 13:09:42.920] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 611
+[2026-11-04 13:09:42.953] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 612
+[2026-11-04 13:09:42.988] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 613
+[2026-11-04 13:09:43.020] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 614
+[2026-11-04 13:09:43.120] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 617
+[2026-11-04 13:09:43.154] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 618
+[2026-11-04 13:09:43.187] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 619
+[2026-11-04 13:09:44.286] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 652
+[2026-11-04 13:09:44.320] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 653
+[2026-11-04 13:09:44.354] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 654
+[2026-11-04 13:09:44.387] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 655
+[2026-11-04 13:09:44.420] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 656
+[2026-11-04 13:09:44.454] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 657
+[2026-11-04 13:09:44.487] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 658
+[2026-11-04 13:09:44.521] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 659
+[2026-11-04 13:09:44.555] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 660
+[2026-11-04 13:09:44.587] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 661
+[2026-11-04 13:09:44.620] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 662
+[2026-11-04 13:09:44.655] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 663
+[2026-11-04 13:09:44.687] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 664
+[2026-11-04 13:09:44.721] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 665
+[2026-11-04 13:09:44.753] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 666
+[2026-11-04 13:09:44.787] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 667
+[2026-11-04 13:09:44.821] [info] [gpu] [t19728] GLES: texture 1F3AF000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 668
+[2026-11-04 13:09:44.855] [info] [gpu] [t19728] GLES: texture 1F246000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 669
+[2026-11-04 13:09:44.887] [info] [gpu] [t19728] GLES: texture 1F518000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 670
+[2026-11-04 13:09:45.582] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:45.648] [error] [krnl] [t8992] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:45.720] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host) at swap 695
+[2026-11-04 13:09:45.753] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host) at swap 696
+[2026-11-04 13:09:45.789] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host) at swap 697
+[2026-11-04 13:09:45.820] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 698
+[2026-11-04 13:09:46.387] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 715
+[2026-11-04 13:09:46.421] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 716
+[2026-11-04 13:09:46.454] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 717
+[2026-11-04 13:09:46.487] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 718
+[2026-11-04 13:09:46.521] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 719
+[2026-11-04 13:09:46.553] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 720
+[2026-11-04 13:09:46.587] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 721
+[2026-11-04 13:09:46.620] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 722
+[2026-11-04 13:09:46.653] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 723
+[2026-11-04 13:09:46.687] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 724
+[2026-11-04 13:09:46.721] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 725
+[2026-11-04 13:09:46.753] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 726
+[2026-11-04 13:09:46.788] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 727
+[2026-11-04 13:09:46.822] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 728
+[2026-11-04 13:09:46.854] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 729
+[2026-11-04 13:09:46.887] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 730
+[2026-11-04 13:09:46.921] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 731
+[2026-11-04 13:09:46.954] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 732
+[2026-11-04 13:09:46.987] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 733
+[2026-11-04 13:09:47.020] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 734
+[2026-11-04 13:09:47.053] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 735
+[2026-11-04 13:09:47.087] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 736
+[2026-11-04 13:09:47.120] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 737
+[2026-11-04 13:09:47.155] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 738
+[2026-11-04 13:09:47.187] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 739
+[2026-11-04 13:09:47.221] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 740
+[2026-11-04 13:09:47.253] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 741
+[2026-11-04 13:09:47.287] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 742
+[2026-11-04 13:09:47.320] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 743
+[2026-11-04 13:09:47.354] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 744
+[2026-11-04 13:09:47.388] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 745
+[2026-11-04 13:09:47.421] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 746
+[2026-11-04 13:09:47.454] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 747
+[2026-11-04 13:09:47.487] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 748
+[2026-11-04 13:09:47.520] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 749
+[2026-11-04 13:09:47.645] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 750
+[2026-11-04 13:09:47.669] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 751
+[2026-11-04 13:09:47.687] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 752
+[2026-11-04 13:09:47.720] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 753
+[2026-11-04 13:09:47.754] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 754
+[2026-11-04 13:09:47.787] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 755
+[2026-11-04 13:09:47.820] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 756
+[2026-11-04 13:09:47.854] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 757
+[2026-11-04 13:09:47.887] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 758
+[2026-11-04 13:09:47.920] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 759
+[2026-11-04 13:09:48.154] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 766
+[2026-11-04 13:09:48.187] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 767
+[2026-11-04 13:09:48.220] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 768
+[2026-11-04 13:09:48.615] [info] [gpu] [t19728] GLES: freed 1 textures and 0 resolve targets (1.8 MiB) unused for 300 swaps
+[2026-11-04 13:09:49.053] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 793
+[2026-11-04 13:09:49.087] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 794
+[2026-11-04 13:09:49.120] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 795
+[2026-11-04 13:09:49.155] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 796
+[2026-11-04 13:09:49.186] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 797
+[2026-11-04 13:09:49.220] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 798
+[2026-11-04 13:09:49.253] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 799
+[2026-11-04 13:09:49.287] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 800
+[2026-11-04 13:09:49.320] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 801
+[2026-11-04 13:09:49.353] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 802
+[2026-11-04 13:09:49.387] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 803
+[2026-11-04 13:09:49.420] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 804
+[2026-11-04 13:09:49.453] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 805
+[2026-11-04 13:09:49.486] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 806
+[2026-11-04 13:09:49.521] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 807
+[2026-11-04 13:09:49.553] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 808
+[2026-11-04 13:09:49.588] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 809
+[2026-11-04 13:09:49.621] [info] [gpu] [t19728] GLES: texture 1F374000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 810
+[2026-11-04 13:09:49.653] [info] [gpu] [t19728] GLES: texture 1F20B000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 811
+[2026-11-04 13:09:49.687] [info] [gpu] [t19728] GLES: texture 1F4DD000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 812
+[2026-11-04 13:09:49.950] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:49.950] [info] [gpu] [t19728] GLES: resolve target 0E562000 1280x640
+[2026-11-04 13:09:49.953] [info] [gpu] [t19728] GLES: compiled VS 818B92470F80833E (modification 1, 5199 bytes of GLSL) in 3.1 ms
+[2026-11-04 13:09:49.956] [info] [gpu] [t19728] GLES: compiled PS 1C5B744F4C81F9EB (modification 1, 5957 bytes of GLSL) in 2.9 ms
+[2026-11-04 13:09:49.957] [info] [gpu] [t19728] GLES: linked program VS 818B92470F80833E + PS 1C5B744F4C81F9EB in 0.3 ms
+[2026-11-04 13:09:49.957] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 26 (7 kept) pc 3 (4 kept) vte 33 ndc 2/1 atest 0, 0 bools, 0 loops, 3 textures; 16 active uniforms
+[2026-11-04 13:09:49.957] [info] [gpu] [t19728] GLES: resolve target 0E242000 1280x640
+[2026-11-04 13:09:50.015] [error] [krnl] [t8992] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:50.088] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host) at swap 824
+[2026-11-04 13:09:50.120] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host) at swap 825
+[2026-11-04 13:09:50.154] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host) at swap 826
+[2026-11-04 13:09:50.187] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 827
+[2026-11-04 13:09:50.221] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 828
+[2026-11-04 13:09:52.355] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 892
+[2026-11-04 13:09:52.387] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 893
+[2026-11-04 13:09:52.421] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 894
+[2026-11-04 13:09:52.453] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 895
+[2026-11-04 13:09:52.488] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 896
+[2026-11-04 13:09:52.521] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 897
+[2026-11-04 13:09:52.554] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 898
+[2026-11-04 13:09:52.588] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 899
+[2026-11-04 13:09:52.660] [info] [gpu] [t19728] GLES: freed 1 textures and 0 resolve targets (1.8 MiB) unused for 300 swaps
+[2026-11-04 13:09:52.666] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 900
+[2026-11-04 13:09:52.688] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 901
+[2026-11-04 13:09:52.706] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 902
+[2026-11-04 13:09:52.736] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 903
+[2026-11-04 13:09:52.771] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 904
+[2026-11-04 13:09:52.803] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 905
+[2026-11-04 13:09:52.836] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 906
+[2026-11-04 13:09:52.870] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 907
+[2026-11-04 13:09:52.905] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 908
+[2026-11-04 13:09:52.936] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 909
+[2026-11-04 13:09:52.971] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 910
+[2026-11-04 13:09:53.003] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 911
+[2026-11-04 13:09:53.038] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 912
+[2026-11-04 13:09:53.070] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 913
+[2026-11-04 13:09:53.104] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 914
+[2026-11-04 13:09:53.136] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 915
+[2026-11-04 13:09:53.170] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 916
+[2026-11-04 13:09:53.205] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 917
+[2026-11-04 13:09:53.236] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 918
+[2026-11-04 13:09:53.271] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 919
+[2026-11-04 13:09:53.305] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 920
+[2026-11-04 13:09:53.337] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 921
+[2026-11-04 13:09:53.371] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 922
+[2026-11-04 13:09:53.405] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 923
+[2026-11-04 13:09:53.437] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 924
+[2026-11-04 13:09:53.471] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 925
+[2026-11-04 13:09:53.505] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 926
+[2026-11-04 13:09:53.536] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 927
+[2026-11-04 13:09:53.570] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 928
+[2026-11-04 13:09:53.604] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 929
+[2026-11-04 13:09:53.637] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 930
+[2026-11-04 13:09:53.670] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 931
+[2026-11-04 13:09:53.705] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 932
+[2026-11-04 13:09:53.737] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 933
+[2026-11-04 13:09:53.771] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 934
+[2026-11-04 13:09:53.804] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 935
+[2026-11-04 13:09:53.836] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 936
+[2026-11-04 13:09:53.870] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 937
+[2026-11-04 13:09:53.904] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 938
+[2026-11-04 13:09:53.937] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 939
+[2026-11-04 13:09:53.970] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 940
+[2026-11-04 13:09:54.004] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 941
+[2026-11-04 13:09:54.037] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 942
+[2026-11-04 13:09:54.070] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 943
+[2026-11-04 13:09:54.104] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 944
+[2026-11-04 13:09:54.137] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 945
+[2026-11-04 13:09:54.170] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 946
+[2026-11-04 13:09:54.205] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 947
+[2026-11-04 13:09:54.238] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 948
+[2026-11-04 13:09:54.271] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 949
+[2026-11-04 13:09:54.305] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 950
+[2026-11-04 13:09:54.338] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 951
+[2026-11-04 13:09:54.370] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 952
+[2026-11-04 13:09:54.403] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 953
+[2026-11-04 13:09:54.437] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 954
+[2026-11-04 13:09:54.470] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 955
+[2026-11-04 13:09:54.504] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 956
+[2026-11-04 13:09:54.537] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 957
+[2026-11-04 13:09:54.570] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 958
+[2026-11-04 13:09:54.604] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 959
+[2026-11-04 13:09:54.638] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 960
+[2026-11-04 13:09:54.670] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 961
+[2026-11-04 13:09:54.706] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 962
+[2026-11-04 13:09:54.740] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 963
+[2026-11-04 13:09:54.770] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 964
+[2026-11-04 13:09:54.804] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 965
+[2026-11-04 13:09:54.837] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 966
+[2026-11-04 13:09:54.870] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 967
+[2026-11-04 13:09:54.903] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 968
+[2026-11-04 13:09:54.938] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 969
+[2026-11-04 13:09:54.970] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 970
+[2026-11-04 13:09:55.003] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 971
+[2026-11-04 13:09:55.039] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 972
+[2026-11-04 13:09:55.071] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 973
+[2026-11-04 13:09:55.103] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 974
+[2026-11-04 13:09:55.137] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 975
+[2026-11-04 13:09:55.170] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 976
+[2026-11-04 13:09:55.203] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 977
+[2026-11-04 13:09:55.237] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 978
+[2026-11-04 13:09:55.270] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 979
+[2026-11-04 13:09:55.304] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 980
+[2026-11-04 13:09:55.337] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 981
+[2026-11-04 13:09:55.371] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 982
+[2026-11-04 13:09:55.403] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 983
+[2026-11-04 13:09:55.437] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 984
+[2026-11-04 13:09:55.470] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 985
+[2026-11-04 13:09:55.503] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 986
+[2026-11-04 13:09:55.537] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 987
+[2026-11-04 13:09:55.570] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 988
+[2026-11-04 13:09:55.603] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 989
+[2026-11-04 13:09:55.637] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 990
+[2026-11-04 13:09:55.670] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 991
+[2026-11-04 13:09:55.703] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 992
+[2026-11-04 13:09:55.736] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 993
+[2026-11-04 13:09:55.771] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 994
+[2026-11-04 13:09:55.804] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 995
+[2026-11-04 13:09:55.837] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 996
+[2026-11-04 13:09:55.870] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 997
+[2026-11-04 13:09:55.905] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 998
+[2026-11-04 13:09:55.938] [info] [gpu] [t19728] GLES: texture 1F18F000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 999
+[2026-11-04 13:09:55.971] [info] [gpu] [t19728] GLES: texture 1F026000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 1000
+[2026-11-04 13:09:56.005] [info] [gpu] [t19728] GLES: texture 1F2F8000 1280x720 k_8 (900 KiB on the host), guest data changed at swap 1001
+[2026-11-04 13:09:56.193] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:56.196] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:56.197] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:56.198] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:56.199] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:56.683] [info] [gpu] [t19728] GLES: freed 9 textures and 0 resolve targets (4.0 MiB) unused for 300 swaps
+[2026-11-04 13:09:58.951] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:58.951] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:58.972] [info] [gpu] [t19728] GLES: compiled VS 46BCED343281907B (modification 1F, 18489 bytes of GLSL) in 6.1 ms
+[2026-11-04 13:09:58.975] [info] [gpu] [t19728] GLES: compiled PS A1EB7A303E163A5A (modification 1F, 5473 bytes of GLSL) in 2.7 ms
+[2026-11-04 13:09:58.976] [info] [gpu] [t19728] GLES: linked program VS 46BCED343281907B + PS A1EB7A303E163A5A in 0.7 ms
+[2026-11-04 13:09:58.976] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 17 (29 kept) pc 3 (1 kept) vte 46 ndc 2/1 atest 0, 0 bools, 0 loops, 2 textures; 13 active uniforms
+[2026-11-04 13:09:58.977] [info] [gpu] [t19728] GLES: texture 11A2E000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1086
+[2026-11-04 13:09:58.978] [info] [gpu] [t19728] GLES: texture 11683000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1086
+[2026-11-04 13:09:58.978] [info] [gpu] [t19728] GLES: primitive reset index FFFF in a 1209-index draw (primitive type 6) - split into a list of 1461 indices
+[2026-11-04 13:09:58.982] [info] [gpu] [t19728] GLES: texture 11ADE000 2048x2048 k_DXT1 (2048 KiB on the host) at swap 1086
+[2026-11-04 13:09:58.983] [info] [gpu] [t19728] GLES: texture 11E50000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1086
+[2026-11-04 13:09:58.985] [info] [gpu] [t19728] GLES: texture 119AE000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1086
+[2026-11-04 13:09:58.986] [info] [gpu] [t19728] GLES: texture 11ED0000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1086
+[2026-11-04 13:09:58.987] [info] [gpu] [t19728] GLES: texture 115D3000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1086
+[2026-11-04 13:09:58.988] [info] [gpu] [t19728] GLES: texture 118AE000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1086
+[2026-11-04 13:09:58.989] [info] [gpu] [t19728] GLES: texture 113C3000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1086
+[2026-11-04 13:09:58.997] [info] [gpu] [t19728] GLES: compiled VS 662F7EAB15275319 (modification 1FF, 21664 bytes of GLSL) in 7.3 ms
+[2026-11-04 13:09:58.997] [warning] [gpu] [t19728] GLSL translator: texture operation getWeights2D not supported, returns 0
+[2026-11-04 13:09:59.001] [info] [gpu] [t19728] GLES: compiled PS 75EFC7EC033C4CA6 (modification 1FF, 9557 bytes of GLSL) in 4.2 ms
+[2026-11-04 13:09:59.002] [info] [gpu] [t19728] GLES: linked program VS 662F7EAB15275319 + PS 75EFC7EC033C4CA6 in 0.8 ms
+[2026-11-04 13:09:59.002] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 24 (39 kept) pc 3 (1 kept) vte 63 ndc 2/1 atest 0, 0 bools, 0 loops, 3 textures; 17 active uniforms
+[2026-11-04 13:09:59.003] [info] [gpu] [t19728] GLES: texture 11313000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1086
+[2026-11-04 13:09:59.006] [warning] [gpu] [t19728] GLES: texture format k_24_8 not supported (black)
+[2026-11-04 13:09:59.015] [info] [gpu] [t19728] GLES: compiled VS 18B3A07010A2286C (modification 7FF, 21379 bytes of GLSL) in 7.9 ms
+[2026-11-04 13:09:59.023] [info] [gpu] [t19728] GLES: compiled PS 2F9D9F5A86C9B34F (modification 7FF, 22560 bytes of GLSL) in 7.3 ms
+[2026-11-04 13:09:59.024] [info] [gpu] [t19728] GLES: linked program VS 18B3A07010A2286C + PS 2F9D9F5A86C9B34F in 1.1 ms
+[2026-11-04 13:09:59.024] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 31 (31 kept) pc 3 (3 kept) vte 62 ndc 2/1 atest 0, 0 bools, 0 loops, 4 textures; 19 active uniforms
+[2026-11-04 13:09:59.030] [info] [gpu] [t19728] GLES: compiled VS 9F5E5B1732286B04 (modification 1F, 18120 bytes of GLSL) in 5.2 ms
+[2026-11-04 13:09:59.031] [info] [gpu] [t19728] GLES: linked program VS 9F5E5B1732286B04 + PS E8EAE3AA51F7921E in 0.6 ms
+[2026-11-04 13:09:59.031] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 11 (29 kept) pc 3 (1 kept) vte 40 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-11-04 13:09:59.035] [info] [gpu] [t19728] GLES: compiled PS 583DB46E8980998C (modification 1, 4457 bytes of GLSL) in 1.8 ms
+[2026-11-04 13:09:59.036] [info] [gpu] [t19728] GLES: linked program VS 2A53964AA9F4D66E + PS 583DB46E8980998C in 0.3 ms
+[2026-11-04 13:09:59.036] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 13 (5 kept) pc 3 (3 kept) vte 18 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-11-04 13:09:59.038] [info] [gpu] [t19728] GLES: compiled VS 07FE57A39423E2A6 (modification 3, 5883 bytes of GLSL) in 2.3 ms
+[2026-11-04 13:09:59.041] [info] [gpu] [t19728] GLES: compiled PS 478E5FA9684547B1 (modification 3, 6701 bytes of GLSL) in 2.8 ms
+[2026-11-04 13:09:59.042] [info] [gpu] [t19728] GLES: linked program VS 07FE57A39423E2A6 + PS 478E5FA9684547B1 in 0.4 ms
+[2026-11-04 13:09:59.042] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 32 (9 kept) pc 3 (4 kept) vte 41 ndc 2/1 atest 0, 0 bools, 0 loops, 4 textures; 19 active uniforms
+[2026-11-04 13:09:59.044] [info] [gpu] [t19728] GLES: compiled VS 9FD0BFCB0A6E13AF (modification 1, 4073 bytes of GLSL) in 1.8 ms
+[2026-11-04 13:09:59.045] [info] [gpu] [t19728] GLES: compiled PS AB3DCCCDF0FBC907 (modification 1, 3053 bytes of GLSL) in 1.3 ms
+[2026-11-04 13:09:59.045] [info] [gpu] [t19728] GLES: linked program VS 9FD0BFCB0A6E13AF + PS AB3DCCCDF0FBC907 in 0.2 ms
+[2026-11-04 13:09:59.045] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 10 (5 kept) pc -1 (-1 kept) vte 15 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 9 active uniforms
+[2026-11-04 13:09:59.047] [info] [gpu] [t19728] GLES: compiled VS 59CD00A489248613 (modification 1, 5198 bytes of GLSL) in 2.0 ms
+[2026-11-04 13:09:59.050] [info] [gpu] [t19728] GLES: compiled PS A7D09ABBCE821773 (modification 1, 8567 bytes of GLSL) in 2.6 ms
+[2026-11-04 13:09:59.050] [info] [gpu] [t19728] GLES: linked program VS 59CD00A489248613 + PS A7D09ABBCE821773 in 0.4 ms
+[2026-11-04 13:09:59.050] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 14 (6 kept) pc 3 (4 kept) vte 20 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-11-04 13:09:59.052] [info] [gpu] [t19728] GLES: compiled VS 28138B1C7C13DFE8 (modification 3, 3857 bytes of GLSL) in 1.4 ms
+[2026-11-04 13:09:59.054] [info] [gpu] [t19728] GLES: compiled PS 66E05C9B4FB31681 (modification 30003, 4810 bytes of GLSL) in 2.1 ms
+[2026-11-04 13:09:59.055] [info] [gpu] [t19728] GLES: linked program VS 28138B1C7C13DFE8 + PS 66E05C9B4FB31681 in 0.4 ms
+[2026-11-04 13:09:59.055] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 16 (5 kept) pc 3 (6 kept) vte 21 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-11-04 13:09:59.057] [info] [gpu] [t19728] GLES: compiled VS BDA457248E1F30D6 (modification 1, 4153 bytes of GLSL) in 1.8 ms
+[2026-11-04 13:09:59.059] [info] [gpu] [t19728] GLES: compiled PS 471B749FBB897F7E (modification 1, 4729 bytes of GLSL) in 2.1 ms
+[2026-11-04 13:09:59.059] [info] [gpu] [t19728] GLES: linked program VS BDA457248E1F30D6 + PS 471B749FBB897F7E in 0.3 ms
+[2026-11-04 13:09:59.059] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 10 (4 kept) pc 3 (6 kept) vte 14 ndc 2/1 atest 0, 0 bools, 0 loops, 0 textures; 7 active uniforms
+[2026-11-04 13:09:59.060] [info] [gpu] [t19728] GLES: texture 11272000 1024x512 k_DXT4_5 (512 KiB on the host) at swap 1086
+[2026-11-04 13:09:59.357] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:59.358] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:59.387] [info] [gpu] [t19728] GLES: compiled VS 8B1102365E49ED2F (modification FF, 12102 bytes of GLSL) in 4.6 ms
+[2026-11-04 13:09:59.389] [info] [gpu] [t19728] GLES: compiled PS 93C37984FFE46C47 (modification FF, 6645 bytes of GLSL) in 2.2 ms
+[2026-11-04 13:09:59.390] [info] [gpu] [t19728] GLES: linked program VS 8B1102365E49ED2F + PS 93C37984FFE46C47 in 0.6 ms
+[2026-11-04 13:09:59.390] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 17 (26 kept) pc 3 (1 kept) vte 43 ndc 2/1 atest 0, 0 bools, 0 loops, 2 textures; 13 active uniforms
+[2026-11-04 13:09:59.396] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:09:59.396] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:10:00.554] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:10:00.555] [error] [krnl] [t25208] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:10:00.815] [info] [gpu] [t19728] GLES: freed 9 textures and 0 resolve targets (4.0 MiB) unused for 300 swaps
+[2026-11-04 13:10:02.866] [info] [gpu] [t19728] GLES: swap 1200: 28494 draws, 43152 skipped, 16298 resolves since the last report; 7 render targets, 10 resolve targets, 47 textures, 29 programs; frontbuffer FFFFF000 resolved; skipped: no target 43152, shader 0, link 0, vertices 0
+[2026-11-04 13:10:02.866] [info] [gpu] [t19728] GLES: time since the last report 20294 ms: translate 2 ms, compile 76 ms (22 shaders), link 6 ms (12 programs, 0 from the shader cache), present+swap 1 ms; longest frame 126 ms
+[2026-11-04 13:10:02.866] [info] [gpu] [t19728] GLES: GPU thread: idle (waiting for the game) 17941 ms, resolves 63 ms, present 1 ms, draws and other 2290 ms (draws not timed: gles_time_draws)
+[2026-11-04 13:10:02.866] [info] [gpu] [t19728] GLES:   WAIT_REG_MEM: 7028 sleeps, 10534 ms slept for 7028 ms asked (part of idle)
+[2026-11-04 13:10:02.866] [info] [gpu] [t19728] GLES:   vertices: glBufferData 0 ms for 2.8 MiB of vertices and 0.1 MiB of indices, hashing 0 ms for 88.3 MiB; cache hits/misses: vertex ranges 19700/228, index sets 18997/81; kept: 159 vertex buffers 1.1 MiB, 64 index buffers 0.1 MiB
+[2026-11-04 13:10:02.866] [info] [gpu] [t19728] GLES:   vertex stream ring: 3.2 MiB written, 194 ranges moved to own buffers, 0 did not fit; 1409 checks of static ranges by sample
+[2026-11-04 13:10:02.866] [info] [gpu] [t19728] GLES:   textures: hashing 0 ms for 569.4 MiB
+[2026-11-04 13:10:02.866] [info] [gpu] [t19728] GLES:   vertex ranges checked again in the same swap: 112 (0.1 MiB)
+[2026-11-04 13:10:02.866] [info] [gpu] [t19728] GLES:   GL calls: program switches 19687, uniform uploads 11688 (unchanged, not sent: 254796), state groups sent 116985 (unchanged: 110967), blend changes on a program (vitaGL fragment re-patch) 2529
+[2026-11-04 13:10:02.866] [info] [gpu] [t19728] GLES:   framebuffer changes: 19217 to render targets (0 more keeping their depth/stencil, loaded and stored at each change on vitaGL), 14872 to resolve targets, 4 to the display; game draws first after a change 18019, their GL draw calls 0 ms (part of GL draw calls)
+[2026-11-04 13:10:02.866] [info] [gpu] [t19728] GLES:   depth: fills held after a depth copy 3401, dropped for a restore 599, applied as a clear 1198; depth state sent again at a scene start 0
+[2026-11-04 13:10:02.866] [info] [gpu] [t19728] GLES memory (MiB): render targets 14.4 (3), resolve targets 29.1 (10), textures 13.6 (47), texture surface copies 0.0 (0), scratch 6.5, framebuffers 7 + 4 for resolves -> depth/stencil 21.7 (vitaGL estimate), vertex cache 1.1 (159 buffers), index cache 0.1 (64), vertex stream ring 16.0; total 102.4
+[2026-11-04 13:10:02.869] [info] [core] [t24400] SDL OnControllerDeviceAdded: "DualSense Wireless Controller", JoystickType(1), GameControllerType(6), VendorID(0x054C), ProductID(0x0CE6)
+[2026-11-04 13:10:02.869] [info] [core] [t24400] SDL OnControllerDeviceAdded: connection order 0, device 1.
+[2026-11-04 13:10:03.437] [info] [gpu] [t19728] GLES: texture 0FEE9000 1024x3152 k_DXT4_5 (3152 KiB on the host) at swap 1218
+[2026-11-04 13:10:06.831] [info] [gpu] [t19728] GLES: freed 9 textures and 1 resolve targets (7.5 MiB) unused for 300 swaps
+[2026-11-04 13:10:07.090] [error] [krnl] [t16556] NtQueryInformationFile(XFileXctdCompressionInformation) unimplemented
+[2026-11-04 13:10:10.848] [info] [gpu] [t19728] GLES: freed 1 textures and 0 resolve targets (0.1 MiB) unused for 300 swaps
+[2026-11-04 13:10:14.300] [info] [gpu] [t19728] GLES: texture 11473000 1024x1024 k_DXT1 (512 KiB on the host) at swap 1543
+[2026-11-04 13:10:14.865] [info] [gpu] [t19728] GLES: freed 1 textures and 0 resolve targets (0.1 MiB) unused for 300 swaps
+[2026-11-04 13:10:15.567] [info] [gpu] [t19728] GLES: texture 12268000 1536x768 k_DXT4_5 (1152 KiB on the host) at swap 1581
+[2026-11-04 13:10:16.267] [info] [gpu] [t19728] GLES: compiled VS D83A3F8DA0C5BCB8 (modification 0, 3475 bytes of GLSL) in 2.1 ms
+[2026-11-04 13:10:16.267] [info] [gpu] [t19728] GLES: linked program VS D83A3F8DA0C5BCB8 + PS 0000000000000000 in 0.2 ms
+[2026-11-04 13:10:16.267] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 3 (4 kept) pc -1 (-1 kept) vte 7 ndc 1/0 atest -1, 0 bools, 0 loops, 0 textures; 5 active uniforms
+[2026-11-04 13:10:16.270] [info] [gpu] [t19728] GLES: compiled VS 9F5A6C253EA745D9 (modification 0, 3475 bytes of GLSL) in 2.2 ms
+[2026-11-04 13:10:16.270] [info] [gpu] [t19728] GLES: linked program VS 9F5A6C253EA745D9 + PS 0000000000000000 in 0.2 ms
+[2026-11-04 13:10:16.270] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 3 (4 kept) pc -1 (-1 kept) vte 7 ndc 1/0 atest -1, 0 bools, 0 loops, 0 textures; 5 active uniforms
+[2026-11-04 13:10:16.277] [info] [gpu] [t19728] GLES: compiled VS 82F4ACEFC5E4D8A0 (modification FF, 12102 bytes of GLSL) in 5.4 ms
+[2026-11-04 13:10:16.281] [info] [gpu] [t19728] GLES: compiled PS B958D20D3E6FDD3D (modification FF, 12475 bytes of GLSL) in 4.1 ms
+[2026-11-04 13:10:16.282] [info] [gpu] [t19728] GLES: linked program VS 82F4ACEFC5E4D8A0 + PS B958D20D3E6FDD3D in 0.7 ms
+[2026-11-04 13:10:16.282] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 18 (26 kept) pc 3 (2 kept) vte 44 ndc 2/1 atest 0, 0 bools, 0 loops, 2 textures; 13 active uniforms
+[2026-11-04 13:10:16.284] [info] [gpu] [t19728] GLES: texture 1244D000 512x512 k_5_6_5 (512 KiB on the host) at swap 1602
+[2026-11-04 13:10:16.288] [info] [gpu] [t19728] GLES: compiled VS 74C32F087A311BBA (modification 1F, 8705 bytes of GLSL) in 3.3 ms
+[2026-11-04 13:10:16.290] [info] [gpu] [t19728] GLES: compiled PS 74E790B19DC618A3 (modification 1F, 4536 bytes of GLSL) in 2.2 ms
+[2026-11-04 13:10:16.291] [info] [gpu] [t19728] GLES: linked program VS 74C32F087A311BBA + PS 74E790B19DC618A3 in 0.4 ms
+[2026-11-04 13:10:16.291] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 11 (10 kept) pc 3 (1 kept) vte 21 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-11-04 13:10:16.291] [info] [gpu] [t19728] GLES: linked program VS 8B1102365E49ED2F + PS B958D20D3E6FDD3D in 0.7 ms
+[2026-11-04 13:10:16.291] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 18 (26 kept) pc 3 (2 kept) vte 44 ndc 2/1 atest 0, 0 bools, 0 loops, 2 textures; 13 active uniforms
+[2026-11-04 13:10:16.295] [info] [gpu] [t19728] GLES: compiled VS C93F38275EB913CC (modification 1F, 8705 bytes of GLSL) in 3.0 ms
+[2026-11-04 13:10:16.295] [info] [gpu] [t19728] GLES: linked program VS C93F38275EB913CC + PS 74E790B19DC618A3 in 0.4 ms
+[2026-11-04 13:10:16.295] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 11 (10 kept) pc 3 (1 kept) vte 21 ndc 2/1 atest 0, 0 bools, 0 loops, 1 textures; 10 active uniforms
+[2026-11-04 13:10:16.299] [info] [gpu] [t19728] GLES: compiled VS 234F9F4626D49E32 (modification 1FF, 12803 bytes of GLSL) in 4.0 ms
+[2026-11-04 13:10:16.304] [info] [gpu] [t19728] GLES: compiled PS 0476F2C52B5B460A (modification 1FF, 14563 bytes of GLSL) in 4.4 ms
+[2026-11-04 13:10:16.305] [info] [gpu] [t19728] GLES: linked program VS 234F9F4626D49E32 + PS 0476F2C52B5B460A in 0.7 ms
+[2026-11-04 13:10:16.305] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 24 (29 kept) pc 3 (2 kept) vte 53 ndc 2/1 atest 0, 0 bools, 0 loops, 3 textures; 16 active uniforms
+[2026-11-04 13:10:16.308] [info] [gpu] [t19728] GLES: texture 125BD000 512x512 k_5_6_5 (512 KiB on the host) at swap 1602
+[2026-11-04 13:10:16.309] [info] [gpu] [t19728] GLES: compiled VS A65B3A1A291B01BF (modification 0, 2352 bytes of GLSL) in 1.2 ms
+[2026-11-04 13:10:16.311] [info] [gpu] [t19728] GLES: compiled PS BF93DD49CA93B852 (modification 0, 2855 bytes of GLSL) in 1.6 ms
+[2026-11-04 13:10:16.311] [info] [gpu] [t19728] GLES: linked program VS A65B3A1A291B01BF + PS BF93DD49CA93B852 in 0.2 ms
+[2026-11-04 13:10:16.311] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 4 (1 kept) pc -1 (-1 kept) vte 5 ndc 2/1 atest 0, 0 bools, 0 loops, 0 textures; 6 active uniforms
+[2026-11-04 13:10:16.317] [info] [gpu] [t19728] GLES: compiled VS 0F628CC3AD4EED18 (modification 1, 17952 bytes of GLSL) in 4.9 ms
+[2026-11-04 13:10:16.451] [info] [gpu] [t19728] GLES: linked program VS 0F628CC3AD4EED18 + PS A4A965C189287B99 in 133.7 ms
+[2026-11-04 13:10:16.451] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 4 (19 kept) pc -1 (-1 kept) vte 23 ndc 2/1 atest 0, 0 bools, 0 loops, 0 textures; 6 active uniforms
+[2026-11-04 13:10:16.457] [info] [gpu] [t19728] GLES: compiled VS 3FF1898E1D84151E (modification 1, 17763 bytes of GLSL) in 5.6 ms
+[2026-11-04 13:10:16.457] [info] [gpu] [t19728] GLES: linked program VS 3FF1898E1D84151E + PS A4A965C189287B99 in 0.6 ms
+[2026-11-04 13:10:16.457] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 4 (19 kept) pc -1 (-1 kept) vte 23 ndc 2/1 atest 0, 0 bools, 0 loops, 0 textures; 6 active uniforms
+[2026-11-04 13:10:16.464] [info] [gpu] [t19728] GLES: compiled VS FACBF5B594765BF9 (modification 1, 17763 bytes of GLSL) in 6.2 ms
+[2026-11-04 13:10:16.464] [info] [gpu] [t19728] GLES: linked program VS FACBF5B594765BF9 + PS A4A965C189287B99 in 0.5 ms
+[2026-11-04 13:10:16.464] [info] [gpu] [t19728] GLES: program uniforms (-1 = absent): vc 4 (19 kept) pc -1 (-1 kept) vte 23 ndc 2/1 atest 0, 0 bools, 0 loops, 0 textures; 6 active uniforms
+[2026-11-04 13:10:16.485] [info] [gpu] [t19728] GLES: texture 10249000 512x256 k_8_8_8_8 (512 KiB on the host) at swap 1603
+[2026-11-04 13:10:23.072] [info] [gpu] [t19728] GLES: freed 2 textures and 0 resolve targets (0.0 MiB) unused for 300 swaps
+[2026-11-04 13:10:23.072] [info] [gpu] [t19728] GLES: swap 1800: 132792 draws, 44982 skipped, 24600 resolves since the last report; 7 render targets, 9 resolve targets, 51 textures, 40 programs; frontbuffer FFFFF000 resolved; skipped: no target 43200, shader 0, link 0, vertices 0
+[2026-11-04 13:10:23.072] [info] [gpu] [t19728] GLES: time since the last report 20206 ms: translate 1 ms, compile 50 ms (14 shaders), link 138 ms (11 programs, 0 from the shader cache), present+swap 1 ms; longest frame 216 ms
+[2026-11-04 13:10:23.072] [info] [gpu] [t19728] GLES: GPU thread: idle (waiting for the game) 18907 ms, resolves 70 ms, present 1 ms, draws and other 1228 ms (draws not timed: gles_time_draws)
+[2026-11-04 13:10:23.072] [info] [gpu] [t19728] GLES:   WAIT_REG_MEM: 7545 sleeps, 10502 ms slept for 7545 ms asked (part of idle)
+[2026-11-04 13:10:23.072] [info] [gpu] [t19728] GLES:   vertices: glBufferData 0 ms for 3.0 MiB of vertices and 0.1 MiB of indices, hashing 0 ms for 662.9 MiB; cache hits/misses: vertex ranges 116993/6566, index sets 116590/53; kept: 635 vertex buffers 1.2 MiB, 87 index buffers 0.2 MiB
+[2026-11-04 13:10:23.072] [info] [gpu] [t19728] GLES:   vertex stream ring: 266.2 MiB written, 2114 ranges moved to own buffers, 0 did not fit; 17901 checks of static ranges by sample
+[2026-11-04 13:10:23.072] [info] [gpu] [t19728] GLES:   textures: hashing 0 ms for 930.8 MiB
+[2026-11-04 13:10:23.072] [info] [gpu] [t19728] GLES:   vertex ranges checked again in the same swap: 5966 (167.5 MiB)
+[2026-11-04 13:10:23.072] [info] [gpu] [t19728] GLES:   GL calls: program switches 43813, uniform uploads 82111 (unchanged, not sent: 1221282), state groups sent 205556 (unchanged: 856780), blend changes on a program (vitaGL fragment re-patch) 8193
+[2026-11-04 13:10:23.072] [info] [gpu] [t19728] GLES:   framebuffer changes: 30321 to render targets (0 more keeping their depth/stencil, loaded and stored at each change on vitaGL), 22200 to resolve targets, 4 to the display; game draws first after a change 29319, their GL draw calls 0 ms (part of GL draw calls)
+[2026-11-04 13:10:23.073] [info] [gpu] [t19728] GLES:   depth: fills held after a depth copy 3001, dropped for a restore 600, applied as a clear 1200; depth state sent again at a scene start 0
+[2026-11-04 13:10:23.073] [info] [gpu] [t19728] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (9), textures 16.6 (51), texture surface copies 0.0 (0), scratch 6.5, framebuffers 7 + 4 for resolves -> depth/stencil 21.7 (vitaGL estimate), vertex cache 1.2 (555 buffers), index cache 0.2 (87), vertex stream ring 16.0; total 102.1
+[2026-11-04 13:10:25.033] [info] [gpu] [t19728] GLES: freed 4 textures and 0 resolve targets (1.0 MiB) unused for 300 swaps
+[2026-11-04 13:10:27.031] [info] [gpu] [t19728] GLES: freed 1 textures and 0 resolve targets (0.0 MiB) unused for 300 swaps
+[2026-11-04 13:10:43.096] [info] [gpu] [t19728] GLES: swap 2400: 187532 draws, 48600 skipped, 24600 resolves since the last report; 7 render targets, 9 resolve targets, 46 textures, 40 programs; frontbuffer FFFFF000 resolved; skipped: no target 43200, shader 0, link 0, vertices 0
+[2026-11-04 13:10:43.097] [info] [gpu] [t19728] GLES: time since the last report 20024 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 1 ms; longest frame 82 ms
+[2026-11-04 13:10:43.097] [info] [gpu] [t19728] GLES: GPU thread: idle (waiting for the game) 18615 ms, resolves 73 ms, present 1 ms, draws and other 1336 ms (draws not timed: gles_time_draws)
+[2026-11-04 13:10:43.097] [info] [gpu] [t19728] GLES:   WAIT_REG_MEM: 7525 sleeps, 10487 ms slept for 7525 ms asked (part of idle)
+[2026-11-04 13:10:43.097] [info] [gpu] [t19728] GLES:   vertices: glBufferData 0 ms for 2.7 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 1635.5 MiB; cache hits/misses: vertex ranges 169600/15532, index sets 171932/0; kept: 635 vertex buffers 1.2 MiB, 87 index buffers 0.2 MiB
+[2026-11-04 13:10:43.097] [info] [gpu] [t19728] GLES:   vertex stream ring: 806.0 MiB written, 3608 ranges moved to own buffers, 0 did not fit; 26100 checks of static ranges by sample
+[2026-11-04 13:10:43.097] [info] [gpu] [t19728] GLES:   textures: hashing 0 ms for 1030.4 MiB
+[2026-11-04 13:10:43.097] [info] [gpu] [t19728] GLES:   vertex ranges checked again in the same swap: 17400 (504.1 MiB)
+[2026-11-04 13:10:43.097] [info] [gpu] [t19728] GLES:   GL calls: program switches 55800, uniform uploads 131271 (unchanged, not sent: 1673517), state groups sent 220200 (unchanged: 1280056), blend changes on a program (vitaGL fragment re-patch) 8400
+[2026-11-04 13:10:43.097] [info] [gpu] [t19728] GLES:   framebuffer changes: 30600 to render targets (0 more keeping their depth/stencil, loaded and stored at each change on vitaGL), 22200 to resolve targets, 4 to the display; game draws first after a change 30000, their GL draw calls 0 ms (part of GL draw calls)
+[2026-11-04 13:10:43.097] [info] [gpu] [t19728] GLES:   depth: fills held after a depth copy 3000, dropped for a restore 600, applied as a clear 1200; depth state sent again at a scene start 0
+[2026-11-04 13:10:43.097] [info] [gpu] [t19728] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (9), textures 15.6 (46), texture surface copies 0.0 (0), scratch 6.5, framebuffers 7 + 4 for resolves -> depth/stencil 21.7 (vitaGL estimate), vertex cache 1.2 (531 buffers), index cache 0.2 (87), vertex stream ring 16.0; total 101.1
+[2026-11-04 13:11:03.155] [info] [gpu] [t19728] GLES: swap 3000: 187512 draws, 48600 skipped, 24600 resolves since the last report; 7 render targets, 9 resolve targets, 46 textures, 40 programs; frontbuffer FFFFF000 resolved; skipped: no target 43200, shader 0, link 0, vertices 0
+[2026-11-04 13:11:03.155] [info] [gpu] [t19728] GLES: time since the last report 20058 ms: translate 0 ms, compile 0 ms (0 shaders), link 0 ms (0 programs, 0 from the shader cache), present+swap 1 ms; longest frame 85 ms
+[2026-11-04 13:11:03.155] [info] [gpu] [t19728] GLES: GPU thread: idle (waiting for the game) 18566 ms, resolves 78 ms, present 1 ms, draws and other 1414 ms (draws not timed: gles_time_draws)
+[2026-11-04 13:11:03.155] [info] [gpu] [t19728] GLES:   WAIT_REG_MEM: 7510 sleeps, 10535 ms slept for 7510 ms asked (part of idle)
+[2026-11-04 13:11:03.155] [info] [gpu] [t19728] GLES:   vertices: glBufferData 0 ms for 2.7 MiB of vertices and 0.0 MiB of indices, hashing 0 ms for 1635.5 MiB; cache hits/misses: vertex ranges 169556/15556, index sets 171912/0; kept: 650 vertex buffers 1.2 MiB, 87 index buffers 0.2 MiB
+[2026-11-04 13:11:03.155] [info] [gpu] [t19728] GLES:   vertex stream ring: 806.0 MiB written, 3561 ranges moved to own buffers, 0 did not fit; 26100 checks of static ranges by sample
+[2026-11-04 13:11:03.155] [info] [gpu] [t19728] GLES:   textures: hashing 0 ms for 1030.4 MiB
+[2026-11-04 13:11:03.155] [info] [gpu] [t19728] GLES:   vertex ranges checked again in the same swap: 17400 (504.1 MiB)
+[2026-11-04 13:11:03.155] [info] [gpu] [t19728] GLES:   GL calls: program switches 55800, uniform uploads 131249 (unchanged, not sent: 1673359), state groups sent 220200 (unchanged: 1279896), blend changes on a program (vitaGL fragment re-patch) 8400
+[2026-11-04 13:11:03.155] [info] [gpu] [t19728] GLES:   framebuffer changes: 30600 to render targets (0 more keeping their depth/stencil, loaded and stored at each change on vitaGL), 22200 to resolve targets, 4 to the display; game draws first after a change 30000, their GL draw calls 0 ms (part of GL draw calls)
+[2026-11-04 13:11:03.155] [info] [gpu] [t19728] GLES:   depth: fills held after a depth copy 3000, dropped for a restore 600, applied as a clear 1200; depth state sent again at a scene start 0
+[2026-11-04 13:11:03.155] [info] [gpu] [t19728] GLES memory (MiB): render targets 14.4 (3), resolve targets 25.5 (9), textures 15.6 (46), texture surface copies 0.0 (0), scratch 6.5, framebuffers 7 + 4 for resolves -> depth/stencil 21.7 (vitaGL estimate), vertex cache 1.2 (511 buffers), index cache 0.2 (87), vertex stream ring 16.0; total 101.1

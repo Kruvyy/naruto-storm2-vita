@@ -355,6 +355,11 @@ int main() {
   // allocation, bug 64). Vita3K does not limit memory; on the console the main
   // RAM is the scarce one (docs/RELATORIO_VIABILIDADE.md).
   app_default("gles_vita_ram_pool_mib", "64");
+  // The vertex shaders of the motion blur velocity pass (PS A4A965): with the
+  // Shader Model 3 multiplication their velocities came out as garbage in
+  // Vita3K (characters smeared, colored shapes in battle; bug 89). Plain
+  // multiplication gives the PC's result there.
+  app_default("gles_mul_plain_filter", "0F628CC3,3FF1898E,FACBF5B5");
 
   {
     rex::LogConfig log_config;
