@@ -350,6 +350,11 @@ int main() {
   // Only one thread per core: two threads of the same priority on one core
   // can starve each other (docs/bugs.md, bug 79).
   app_default("vita_thread_cores", "Main XThread=0,GPU Commands=1,F8000068=2");
+  // vitaGL pools: the first battle needs ~158 MiB of them (VRAM 100 + RAM 24 +
+  // phycont 16 = 140 ran out: the texture upload wrote through a failed
+  // allocation, bug 64). Vita3K does not limit memory; on the console the main
+  // RAM is the scarce one (docs/RELATORIO_VIABILIDADE.md).
+  app_default("gles_vita_ram_pool_mib", "64");
 
   {
     rex::LogConfig log_config;
