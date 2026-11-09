@@ -59,16 +59,19 @@
 // Generated with the recompiled code (storm2_init.cpp).
 extern const rex::PPCImageInfo PPCImageConfig;
 
-#include <fast_tls.h>  // vita/runtime/compat
+#include <fast_tls.h>    // vita/runtime/compat
+#include <heap_trace.h>  // vita/runtime/compat
 
 namespace rex::thread {
 void VitaPollWakeups(uint64_t out[3]);  // core/threading_vita.cpp
 }
 
 // newlib's malloc heap is one block taken at start-up; the guest memory comes
-// from memory blocks, so keep this moderate.
+// from memory blocks. 48 MiB ran out in battle in Vita3K (GLES vertex staging
+// buffers, XMA decoders; bug 90); the target is Vita3K now (the game does not
+// fit the console's memory, docs/bugs.md), where ~320 MiB are free at start.
 extern "C" {
-unsigned int _newlib_heap_size_user = 48 * 1024 * 1024;
+unsigned int _newlib_heap_size_user = 96 * 1024 * 1024;
 }
 
 REXCVAR_DEFINE_STRING(vita_game_root, "ux0:data/storm2port/game", "Vita",
@@ -83,6 +86,10 @@ REXCVAR_DEFINE_BOOL(vita_fast_tls, true, "Vita",
 REXCVAR_DEFINE_INT32(vita_fast_tls_check, 0, "Vita",
                      "Compare every Nth fast TLS lookup with the real call and turn the fast "
                      "path off on a mismatch (0 = never)");
+REXCVAR_DEFINE_INT32(vita_heap_trace, 0, "Vita",
+                     "Record the call paths of newlib heap allocations of at least this many "
+                     "bytes and write the biggest holders every 30 s to storm2_heap.log "
+                     "(0 = off; diagnostic)");
 
 namespace {
 constexpr const char* kShaderCompilerPath = "ur0:data/external/libshacccg.suprx";
@@ -95,6 +102,7 @@ constexpr const char* kDataDir = "ux0:data/storm2port";
 constexpr const char* kStatsPath = "ux0:data/storm2port/storm2_stats.log";
 constexpr const char* kFrameStatsPath = "ux0:data/storm2port/frame_stats.csv";
 constexpr const char* kImportStatsPath = "ux0:data/storm2port/import_stats.csv";
+constexpr const char* kHeapTracePath = "ux0:data/storm2port/storm2_heap.log";
 
 void Stats(const char* fmt, ...) __attribute__((format(printf, 1, 2)));
 void Stats(const char* fmt, ...) {
@@ -192,6 +200,7 @@ std::atomic<bool> g_out_of_memory{false};
   for (int i = 0; i < bt.count; ++i) {
     snprintf(trace + i * 9, 10, " %08X", unsigned(bt.pc[i]));
   }
+  vita_heap_trace_dump(kHeapTracePath, "allocation failed");
   const struct mallinfo heap = mallinfo();
   // Integers only: no heap use while reporting.
   Stats("ERROR: host allocation of %u bytes failed: newlib heap %u KiB in use, %u KiB free, "
@@ -354,7 +363,16 @@ int main() {
   // phycont 16 = 140 ran out: the texture upload wrote through a failed
   // allocation, bug 64). Vita3K does not limit memory; on the console the main
   // RAM is the scarce one (docs/RELATORIO_VIABILIDADE.md).
-  app_default("gles_vita_ram_pool_mib", "64");
+  // 128 MiB in Vita3K (no memory limit there; the console target was dropped):
+  // the battle filled 64 with the vertex ring and own vertex buffers.
+  app_default("gles_vita_ram_pool_mib", "128");
+  // Vertex stream ring: busy battle frames (chakra attacks) want up to ~6.7
+  // MiB. Created as GL_DYNAMIC_DRAW, vitaGL puts it in the RAM pool; as
+  // GL_STATIC_DRAW it took 48 MiB of the 100 MiB VRAM pool, which then ran
+  // empty in battle and the fighters vanished. (A 106 MiB VRAM pool stopped
+  // the start-up: vitaGL's display buffers need the rest of the CDRAM.)
+  app_default("gles_vertex_stream_mib", "6");
+  app_default("gles_vertex_stream_usage", "1");
   // The vertex shaders of the motion blur velocity pass (PS A4A965): with the
   // Shader Model 3 multiplication their velocities came out as garbage in
   // Vita3K (characters smeared, colored shapes in battle; bug 89). Plain
@@ -369,6 +387,25 @@ int main() {
     rex::InitLogging(log_config);
   }
   rex::cvar::FinalizeInit();
+  // An uncaught C++ exception (on the console, a filesystem_error from a
+  // "ux0:" path ended the program with only a core dump): write its message
+  // to storm2_stats.log and the log before stopping.
+  std::set_terminate([] {
+    std::string what = "unknown exception";
+    if (auto e = std::current_exception()) {
+      try {
+        std::rethrow_exception(e);
+      } catch (const std::exception& ex) {
+        what = ex.what();
+      } catch (...) {
+      }
+    }
+    Fail("Uncaught C++ exception: " + what);
+  });
+  if (REXCVAR_GET(vita_heap_trace) > 0) {
+    sceIoRemove(kHeapTracePath);
+    vita_heap_trace_enable(uint32_t(REXCVAR_GET(vita_heap_trace)));
+  }
   LogMemory("start");
   {
     // How long short sleeps really take (median of 5). In Vita3K on Windows
@@ -471,8 +508,10 @@ int main() {
   }
   REXLOG_INFO("Game started");
 
-  // Statistics every 5 s; START + SELECT held for 2 s quits.
-  sceCtrlSetSamplingMode(SCE_CTRL_MODE_DIGITAL);
+  // Statistics every 5 s; START + SELECT held for 2 s quits. The sampling
+  // mode stays analog: the input driver (vita_input_driver.cpp) reads the
+  // sticks, and digital mode would leave them centered.
+  sceCtrlSetSamplingMode(SCE_CTRL_MODE_ANALOG_WIDE);
   uint64_t last_us = sceKernelGetProcessTimeWide();
   uint32_t last_frame = rex::perf::CurrentGuestFrame();
   uint64_t last_threads_us = last_us;
@@ -567,6 +606,12 @@ int main() {
       }
       ThreadReport(runtime.get(), now_us, now_us - last_threads_us, last_thread_run);
       last_threads_us = now_us;
+      if (vita_heap_trace_on()) {
+        char title[64];
+        snprintf(title, sizeof(title), "t=%llus frame %u", (unsigned long long)(now_us / 1000000),
+                 frame);
+        vita_heap_trace_dump(kHeapTracePath, title);
+      }
     }
   }
 

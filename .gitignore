@@ -3,6 +3,8 @@
 
 # Proprietary game data and everything derived from it: never commit.
 /storm2/game/
+/storm2/game_half/
+/tools/xfbin/build/
 /storm2/generated/
 /storm2/generated_prev/
 /storm2/image_dump/
@@ -28,3 +30,4 @@ __pycache__/
 /storm2/shader_dump/
 # Frames rendered by the GLES backend on the PC (derived from the game).
 /storm2/gles_frames/
+/vita3k_test/

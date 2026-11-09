@@ -37,8 +37,10 @@ target_compile_options(fmt PRIVATE -w)
 # flockfile/funlockfile, declared but missing in the SDK's newlib; fmt uses
 # them, so they are linked after it.
 add_library(vita_compat STATIC ${CMAKE_CURRENT_LIST_DIR}/compat/stdio_lock.c
-  ${CMAKE_CURRENT_LIST_DIR}/compat/fast_tls.c)
+  ${CMAKE_CURRENT_LIST_DIR}/compat/fast_tls.c ${CMAKE_CURRENT_LIST_DIR}/compat/heap_trace.c)
 target_include_directories(vita_compat PUBLIC ${CMAKE_CURRENT_LIST_DIR}/compat)
+# Unwind tables for the heap trace's call paths (compat/heap_trace.c).
+target_compile_options(vita_compat PRIVATE -funwind-tables)
 # newlib and emutls (thread_local) look up TLS through sceKernelGetTLSAddr;
 # compat/fast_tls.c answers from TPIDRURO once a start-up probe has checked it.
 # The other wrappers there only count calls (the app's stats).
@@ -50,7 +52,7 @@ target_link_options(vita_compat INTERFACE -Wl,--wrap=sceKernelGetTLSAddr
   -Wl,--wrap=sceKernelWaitSema -Wl,--wrap=sceKernelSignalSema
   -Wl,--wrap=sceKernelPollEventFlag -Wl,--wrap=sceKernelDelayThread
   -Wl,--wrap=sceKernelLibcGettimeofday -Wl,--wrap=pthread_mutex_lock -Wl,--wrap=malloc
-  -Wl,--wrap=free)
+  -Wl,--wrap=free -Wl,--wrap=calloc -Wl,--wrap=realloc -Wl,--wrap=memalign)
 target_link_libraries(fmt PUBLIC vita_compat)
 
 set(SPDLOG_FMT_EXTERNAL ON CACHE BOOL "" FORCE)
@@ -129,13 +131,15 @@ set(LIBAVCODEC_VITA_SOURCES
   dirac.c dv_profile.c encode.c imgconvert.c jni.c mathtables.c mediacodec.c mpeg12framerate.c
   options.c parser.c parsers.c profiles.c qsv_api.c raw.c utils.c vorbis_parser.c xiph.c
   faandct.c faanidct.c fdctdsp.c jfdctfst.c jfdctint.c idctdsp.c simple_idct.c jrevdct.c
-  mdct_float.c mdct_fixed_32.c sinewin.c wma_freqs.c wmaprodec.c wmadec.c wma.c wma_common.c
+  mdct_float.c mdct_fixed_32.c sinewin.c wma_freqs.c wmadec.c wma.c wma_common.c
   mpegaudio.c mpegaudiodata.c mpegaudiodecheader.c mpegaudiodec_common.c mpegaudiodec_float.c
   mpegaudiodec_fixed.c mpegaudiodsp.c mpegaudiodsp_data.c mpegaudiodsp_float.c
   mpegaudiodsp_fixed.c mpegaudio_parser.c dct.c dct32_float.c dct32_fixed.c rdft.c aactab.c
   null_bsf.c pthread.c pthread_slice.c pthread_frame.c avfft.c fft_float.c fft_fixed_32.c
   fft_init_table.c file_open.c)
 list(TRANSFORM LIBAVCODEC_VITA_SOURCES PREPEND "${FFMPEG_DIR}/libavcodec/")
+# wmaprodec.c with an in-place reset of the XMA frame decoder (rex_xmaframes_reset).
+list(APPEND LIBAVCODEC_VITA_SOURCES "${TP}/ffmpeg-overlay/wmaprodec_rex.c")
 
 add_library(libavutil STATIC ${LIBAVUTIL_VITA_SOURCES})
 add_library(libavcodec STATIC ${LIBAVCODEC_VITA_SOURCES})
@@ -153,6 +157,8 @@ foreach(lib libavutil libavcodec)
 endforeach()
 target_include_directories(libavcodec BEFORE PRIVATE ${FFMPEG_OVERLAY_BUILD_DIR})
 target_link_libraries(libavcodec PUBLIC libavutil)
+# av_malloc's caller in the heap trace's call paths (compat/heap_trace.c).
+target_compile_options(libavutil PRIVATE -funwind-tables)
 
 #=============================================================================
 # Settings shared by the runtime libraries

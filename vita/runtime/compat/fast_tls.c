@@ -22,6 +22,7 @@
 #include <string.h>
 
 #include "fast_tls.h"
+#include "heap_trace.h"
 
 void* __real_sceKernelGetTLSAddr(int key);
 
@@ -298,11 +299,14 @@ int __wrap_pthread_mutex_lock(pthread_mutex_t* mutex) {
 void* __real_malloc(size_t size);
 void* __wrap_malloc(size_t size) {
   COUNT_SITE(kMalloc);
-  return __real_malloc(size);
+  void* p = __real_malloc(size);
+  vita_heap_trace_alloc(p, size);
+  return p;
 }
 void __real_free(void* ptr);
 void __wrap_free(void* ptr) {
   COUNT_SITE(kFree);
+  vita_heap_trace_free(ptr);
   __real_free(ptr);
 }
 

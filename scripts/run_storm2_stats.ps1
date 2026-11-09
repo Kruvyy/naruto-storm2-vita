@@ -12,7 +12,8 @@ param(
   [Parameter(Mandatory)] [string] $Nome,
   [int] $Segundos = 240,
   [string[]] $Extra = @(),
-  [ValidateSet('release', 'softmmu')] [string] $Build = 'release'
+  [ValidateSet('release', 'softmmu')] [string] $Build = 'release',
+  [string] $Jogo = 'storm2\game'   # pasta dos dados (ex.: storm2\game_half, texturas reduzidas)
 )
 $root = Split-Path -Parent $PSScriptRoot
 $bd = Join-Path $root "storm2\out\build\win-amd64-$Build"
@@ -22,7 +23,7 @@ $sdkbin = Join-Path $root "rexglue\out\install\$sdk\bin"
 Copy-Item (Join-Path $sdkbin 'rexruntime.dll'), (Join-Path $sdkbin 'rexgpu-xenos.dll') $bd -Force
 $run = (New-Item -ItemType Directory -Force (Join-Path $root "docs\logs\$Nome")).FullName
 $exe = Join-Path $bd 'storm2.exe'
-$game = Join-Path $root 'storm2\game'   # copia dos dados; o original nunca e usado
+$game = Join-Path $root $Jogo   # copia dos dados; o original nunca e usado
 $a = @("--game_data_root=`"$game`"", '--gpu_plugin=xenos', '--perf_frame_stats=true',
        "--perf_frame_stats_file=`"$run\frame_stats.csv`"",
        "--perf_import_stats_file=`"$run\import_stats.csv`"",
