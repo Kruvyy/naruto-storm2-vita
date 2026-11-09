@@ -5,7 +5,8 @@
 # progress.
 #   .\scripts\v3k_test.ps1 -Name t1 -Toml @('soft_mmu_caps = "0xAB000000=120"')
 param([Parameter(Mandatory)] [string] $Name, [string[]] $Toml = @(), [int] $Frames = 8200,
-      [int] $Timeout = 1100, [int] $Stall = 150, [switch] $NoReplay)
+      [int] $Timeout = 1100, [int] $Stall = 150, [switch] $NoReplay,
+      [int[]] $Shots = @())   # extra captures when the game passes these frames
 $root = Split-Path -Parent $PSScriptRoot
 $t = Join-Path $root 'vita3k_test'
 $exe = Join-Path $t 'bin\Vita3K.exe'
@@ -25,6 +26,11 @@ while ($true) {
   $line = Get-Content "$data\storm2_stats.log" -Tail 6 -ErrorAction SilentlyContinue | Where-Object { $_ -match 'frames=' } | Select-Object -Last 1
   if ($line -match 'frames=(\d+)') { $cur = [int]$Matches[1] }
   if ($cur -ne $last) { $last = $cur; $lastChange = Get-Date }
+  foreach ($s in @($Shots | Where-Object { $_ -le $cur })) {
+    & "$root\scripts\capture_vita3k.ps1" -Saida "$root\storm2\captures\vita3k\${Name}_f$cur.png" -Exe $exe | Out-Null
+    $Shots = @($Shots | Where-Object { $_ -gt $cur })
+    break
+  }
   if ($cur -ge $Frames) { break }
   if (((Get-Date) - $start).TotalSeconds -gt $Timeout) { "timeout at frame $cur"; break }
   if ($cur -gt 0 -and ((Get-Date) - $lastChange).TotalSeconds -gt $Stall) { "stalled at frame $cur"; break }

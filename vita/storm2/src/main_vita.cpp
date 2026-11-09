@@ -373,6 +373,9 @@ int main() {
   // the start-up: vitaGL's display buffers need the rest of the CDRAM.)
   app_default("gles_vertex_stream_mib", "6");
   app_default("gles_vertex_stream_usage", "1");
+  // Same for the cached vertex/index buffers: as static they grew to ~14 MiB of
+  // VRAM late in battle, which ran empty again (fighters vanished at frame ~9100).
+  app_default("gles_vertex_buffer_usage", "1");
   // The vertex shaders of the motion blur velocity pass (PS A4A965): with the
   // Shader Model 3 multiplication their velocities came out as garbage in
   // Vita3K (characters smeared, colored shapes in battle; bug 89). Plain
