@@ -21,6 +21,8 @@
 
 #include <algorithm>
 #include <atomic>
+#include <mutex>
+#include <unordered_map>
 #include <chrono>
 #include <cstdarg>
 #include <cstdio>
@@ -100,6 +102,10 @@ REXCVAR_DEFINE_BOOL(vita_fast_tls, true, "Vita",
 REXCVAR_DEFINE_INT32(vita_fast_tls_check, 0, "Vita",
                      "Compare every Nth fast TLS lookup with the real call and turn the fast "
                      "path off on a mismatch (0 = never)");
+REXCVAR_DEFINE_STRING(vita_sample_thread, "", "Vita",
+                      "Diagnostic: sample the link register of the guest thread whose name "
+                      "contains this text (e.g. 'Main XThread') every ~1 ms and write the most "
+                      "frequent call sites to storm2_samples.log every 30 s (empty = off)");
 REXCVAR_DEFINE_STRING(vita_memory_budgets_mib, "", "Vita",
                       "Diagnostic: 'MAIN,PHYCONT,CDRAM' MiB the runtime's memory blocks (the "
                       "game's memory) may take from each kind of memory; past one it is "
@@ -254,6 +260,62 @@ void* operator new[](std::size_t size, const std::nothrow_t&) noexcept {
 }
 
 namespace {
+
+// Guest call-site sampler (vita_sample_thread): a host thread reads the link
+// register the generated code keeps in the guest thread's PPCContext (set at
+// every call) about every millisecond; the most frequent values, written to
+// storm2_samples.log every 30 s, show where that thread spends its time on a
+// console, which has no profiler for applications. Map an address to its
+// function with the generated function table (largest start below it).
+constexpr const char* kSamplesPath = "ux0:data/storm2port/storm2_samples.log";
+struct Sampler {
+  std::atomic<const uint64_t*> lr{nullptr};
+  std::mutex mutex;
+  std::unordered_map<uint32_t, uint32_t> counts;
+  uint64_t total = 0;
+};
+Sampler g_sampler;
+
+int SamplerThread(SceSize, void*) {
+  for (;;) {
+    sceKernelDelayThread(1000);
+    const uint64_t* lr = g_sampler.lr.load(std::memory_order_relaxed);
+    if (!lr) {
+      continue;
+    }
+    const uint32_t value = uint32_t(*reinterpret_cast<const volatile uint64_t*>(lr));
+    std::lock_guard<std::mutex> lock(g_sampler.mutex);
+    ++g_sampler.counts[value];
+    ++g_sampler.total;
+  }
+  return 0;
+}
+
+void WriteSamples(uint64_t now_us) {
+  std::vector<std::pair<uint32_t, uint32_t>> top;
+  uint64_t total;
+  {
+    std::lock_guard<std::mutex> lock(g_sampler.mutex);
+    top.assign(g_sampler.counts.begin(), g_sampler.counts.end());
+    total = g_sampler.total;
+    g_sampler.counts.clear();
+    g_sampler.total = 0;
+  }
+  if (!total) {
+    return;
+  }
+  std::sort(top.begin(), top.end(), [](const auto& a, const auto& b) { return a.second > b.second; });
+  std::string text = fmt::format("t={}s {} samples of the guest link register\n",
+                                 now_us / 1000000, total);
+  for (size_t i = 0; i < top.size() && i < 30; ++i) {
+    text += fmt::format("  {:5.1f}%  {:08X}\n", 100.0 * top[i].second / double(total), top[i].first);
+  }
+  SceUID fd = sceIoOpen(kSamplesPath, SCE_O_WRONLY | SCE_O_CREAT | SCE_O_APPEND, 0666);
+  if (fd >= 0) {
+    sceIoWrite(fd, text.data(), text.size());
+    sceIoClose(fd);
+  }
+}
 
 // CPU time per thread: guest threads and the runtime's host threads (XMA
 // decoder, GPU command processor...), from the kernel's run time of each
@@ -412,6 +474,8 @@ int main() {
   // waited for it: the reverb alone (native) used 88% of a core at 500 MHz.
   // The sound output is discarded on the Vita for now, so it is not run.
   app_default("storm2_skip_reverb", "true");
+  // Where the game's main thread spends its time (storm2_samples.log).
+  app_default("vita_sample_thread", "Main XThread");
   app_default("storm2_native_audio_stats", "10");
 #endif
   // The physical pool at 0xAB000000 reserves 272 MiB and the game fills it from
@@ -642,9 +706,31 @@ int main() {
   uint64_t last_audio_frames = rex::audio::vita::VitaSilentAudioDriver::total_frames_submitted();
   std::map<SceUID, uint64_t> last_thread_run;
   ThreadReport(runtime.get(), last_us, 1, last_thread_run);  // baseline
+  const std::string sample_name = REXCVAR_GET(vita_sample_thread);
+  if (!sample_name.empty()) {
+    sceIoRemove(kSamplesPath);
+    const SceUID sampler = sceKernelCreateThread("storm2_sampler", SamplerThread, 0x40, 0x4000, 0,
+                                                 0, nullptr);
+    if (sampler >= 0) {
+      sceKernelStartThread(sampler, 0, nullptr);
+    }
+  }
   int quit_ticks = 0;
   int tick = 0;
   while (!finished) {
+    if (!sample_name.empty() && !g_sampler.lr.load()) {
+      // The guest thread to sample, once it exists.
+      for (auto& xthread : runtime->kernel_state()->object_table()
+                               ->GetObjectsByType<rex::system::XThread>()) {
+        rex::thread::Thread* thread = xthread->thread();
+        if (thread && thread->name().find(sample_name) != std::string::npos &&
+            xthread->thread_state()) {
+          g_sampler.lr.store(&xthread->thread_state()->context()->lr);
+          REXLOG_INFO("Sampling the link register of guest thread '{}'", thread->name());
+          break;
+        }
+      }
+    }
     sceKernelDelayThread(100 * 1000);
     SceCtrlData pad{};
     sceCtrlPeekBufferPositive(0, &pad, 1);
@@ -737,6 +823,7 @@ int main() {
       }
       ThreadReport(runtime.get(), now_us, now_us - last_threads_us, last_thread_run);
       last_threads_us = now_us;
+      WriteSamples(now_us);
       if (vita_heap_trace_on()) {
         char title[64];
         snprintf(title, sizeof(title), "t=%llus frame %u", (unsigned long long)(now_us / 1000000),
