@@ -66,13 +66,25 @@ namespace rex::thread {
 void VitaPollWakeups(uint64_t out[3]);  // core/threading_vita.cpp
 uint64_t VitaThreadBlockedUs(uint32_t system_id);  // core/threading_vita.cpp
 }
+namespace rex::memory {
+void VitaSetPoolBudgets(size_t main_bytes, size_t phycont_bytes, size_t cdram_bytes);
+void VitaPoolUsage(size_t out[3]);  // core/memory_vita.cpp
+void VitaSetSmallBlocksFirstInCdram(size_t max_bytes);
+}
 
 // newlib's malloc heap is one block taken at start-up; the guest memory comes
 // from memory blocks. 48 MiB ran out in battle in Vita3K (GLES vertex staging
 // buffers, XMA decoders; bug 90); the target is Vita3K now (the game does not
 // fit the console's memory, docs/bugs.md), where ~320 MiB are free at start.
+// The console build (STORM2_CONSOLE) keeps it small: there the main RAM
+// (~237 MiB free at start with ATTRIBUTE2=12) is what the game's memory needs.
 extern "C" {
+#if STORM2_CONSOLE
+// 40 ran out on the title screen (a 3 MiB allocation, heap in pieces).
+unsigned int _newlib_heap_size_user = 48 * 1024 * 1024;
+#else
 unsigned int _newlib_heap_size_user = 96 * 1024 * 1024;
+#endif
 }
 
 REXCVAR_DEFINE_STRING(vita_game_root, "ux0:data/storm2port/game", "Vita",
@@ -87,6 +99,14 @@ REXCVAR_DEFINE_BOOL(vita_fast_tls, true, "Vita",
 REXCVAR_DEFINE_INT32(vita_fast_tls_check, 0, "Vita",
                      "Compare every Nth fast TLS lookup with the real call and turn the fast "
                      "path off on a mismatch (0 = never)");
+REXCVAR_DEFINE_STRING(vita_memory_budgets_mib, "", "Vita",
+                      "Diagnostic: 'MAIN,PHYCONT,CDRAM' MiB the runtime's memory blocks (the "
+                      "game's memory) may take from each kind of memory; past one it is "
+                      "skipped as if full. Vita3K never refuses memory: this makes a run "
+                      "there meet the console's limits (empty = no budgets)");
+REXCVAR_DEFINE_INT32(vita_memory_ballast_mib, 0, "Vita",
+                     "Hold this many MiB of main RAM from the start (Vita3K: about 80 makes "
+                     "its free memory match the console's; diagnostic)");
 REXCVAR_DEFINE_INT32(vita_heap_trace, 0, "Vita",
                      "Record the call paths of newlib heap allocations of at least this many "
                      "bytes and write the biggest holders every 30 s to storm2_heap.log "
@@ -354,6 +374,40 @@ int main() {
   app_default("perf_frame_stats", "true");
   app_default("perf_frame_stats_file", kFrameStatsPath);
   app_default("perf_import_stats_file", kImportStatsPath);
+#if STORM2_CONSOLE
+  // Console build: the game's memory gets the main RAM. These come first (the
+  // first app_default for a cvar wins) and are a starting point, measured with
+  // vita_memory_ballast_mib in Vita3K (docs/bugs.md, bug 94).
+  // Game data with textures at half size (tools/xfbin), a quarter of the memory.
+  app_default("vita_game_root", "ux0:data/storm2port/game_half");
+  // Real memory only for the ranges of the big guest regions the game uses
+  // (MiB, from the usage maps of soft_mmu_report_interval, with 1 MiB of
+  // margin). A write elsewhere stops the game with a message naming the region.
+  // These cover the title and the menus (133 MiB instead of 302); a battle
+  // needs 0xAB000000=...|76-166, 0x40F40000=0-40|67-71 and
+  // 0xDC000000=0-4|6-12|14-32|38-46 (188 MiB), more than the console has left
+  // (docs/bugs.md, bug 94).
+  app_default("soft_mmu_caps",
+              "0xAB000000=2-6|10-14|18-22|26-29|42-46|66-69|76-143,"
+              "0x40F40000=0-9|67-71,0xDC000000=0-4|6-12|14-22|38-46,0xC0000000=0-1");
+  // vitaGL pools: CDRAM for textures and render targets, a small RAM pool for
+  // the vertex stream ring (1 MiB segments, two copies: 8 MiB; what does not
+  // fit gets its own buffers); most of the physically contiguous RAM is left
+  // to the game's memory.
+  // Render, resolve and depth targets at 75%: 960x540, the screen's size
+  // (~56% of their ~42 MiB at full size, which filled a 56 MiB pool).
+  app_default("gles_render_scale_percent", "75");
+  app_default("gles_vita_cdram_pool_mib", "56");
+  // vitaGL keeps ~8 MiB of its own in the RAM pool (with a 6 MiB per-frame
+  // pool); with 12 the ring did not fit and went to the CDRAM pool.
+  app_default("gles_vita_ram_pool_mib", "16");
+  app_default("gles_vita_circular_pool_mib", "6");
+  app_default("gles_vita_phycont_pool_mib", "8");
+  app_default("gles_vertex_stream_mib", "1");
+  app_default("gles_vertex_stream_usage", "1");
+  // Cached vertex/index buffers in the CDRAM pool, not the main RAM.
+  app_default("gles_vertex_buffer_usage", "0");
+#endif
   // The physical pool at 0xAB000000 reserves 272 MiB and the game fills it from
   // the start; 184 MiB ran the title screen on the PC (docs/logs/E13d). A write
   // past the limit stops the game with a message naming the cvar.
@@ -436,6 +490,28 @@ int main() {
     vita_heap_trace_enable(uint32_t(REXCVAR_GET(vita_heap_trace)));
   }
   LogMemory("start");
+  if (const int32_t ballast = REXCVAR_GET(vita_memory_ballast_mib); ballast > 0) {
+    // Vita3K has ~80 MiB more main RAM than the console: hold it so a run there
+    // meets the console's limits (never freed).
+    const SceUID block = sceKernelAllocMemBlock(
+        "storm2_ballast", SCE_KERNEL_MEMBLOCK_TYPE_USER_RW, SceSize(ballast) << 20, nullptr);
+    Stats("memory ballast of %d MiB: %s\n", ballast, block >= 0 ? "held" : "FAILED");
+    LogMemory("after the ballast");
+  }
+#if STORM2_CONSOLE
+  // The game's big ranges need tens of MiB of main RAM in one piece: its many
+  // small blocks go to CDRAM first.
+  rex::memory::VitaSetSmallBlocksFirstInCdram(size_t(16) << 20);
+#endif
+  if (const std::string& spec = REXCVAR_GET(vita_memory_budgets_mib); !spec.empty()) {
+    unsigned main_mib = 0, phycont_mib = 0, cdram_mib = 0;
+    if (std::sscanf(spec.c_str(), "%u,%u,%u", &main_mib, &phycont_mib, &cdram_mib) == 3) {
+      rex::memory::VitaSetPoolBudgets(size_t(main_mib) << 20, size_t(phycont_mib) << 20,
+                                      size_t(cdram_mib) << 20);
+      Stats("memory budgets for the runtime's blocks: main %u, phycont %u, CDRAM %u MiB\n",
+            main_mib, phycont_mib, cdram_mib);
+    }
+  }
   {
     // How long short sleeps really take (median of 5). In Vita3K on Windows
     // they are close at startup (~1.1 ms for 1 ms) but take 4-15 ms once the
@@ -583,6 +659,13 @@ int main() {
           free_mem.size_user / 1024, free_mem.size_cdram / 1024, free_mem.size_phycont / 1024,
           double(heap.uordblks) / 1048576.0, double(heap.fordblks) / 1048576.0,
           double(heap.arena) / 1048576.0);
+    {
+      size_t pools[3];
+      rex::memory::VitaPoolUsage(pools);
+      Stats("  runtime blocks: main %.1f MiB, phycont %.1f MiB, CDRAM %.1f MiB\n",
+            double(pools[0]) / 1048576.0, double(pools[1]) / 1048576.0,
+            double(pools[2]) / 1048576.0);
+    }
     {
       // Multi-object and alertable waits that blocked, per second.
       static uint64_t last_polls[3] = {};

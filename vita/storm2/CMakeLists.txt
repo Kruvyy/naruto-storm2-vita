@@ -87,8 +87,21 @@ target_link_libraries(storm2_vita PRIVATE
   storm2_code rexgpu_gles_vita rexgpu_null_vita rexaudio_vita rexinput_vita rexruntime_vita
   rexcore_vita ${REX_VITA_GLES_LIBS} ${REX_VITA_SYSTEM_LIBS})
 
+# STORM2_CONSOLE: build for the real PS Vita (smaller newlib heap and app
+# defaults that leave the main RAM to the game; see main_vita.cpp). Same title
+# id and data folder; its own VPK name.
+option(STORM2_CONSOLE "Build for the PS Vita console instead of Vita3K" OFF)
+if(STORM2_CONSOLE)
+  target_compile_definitions(storm2_vita PRIVATE STORM2_CONSOLE=1)
+  set(STORM2_VPK storm2_console.vpk)
+  set(STORM2_VPK_NAME "Storm 2 (console)")
+else()
+  set(STORM2_VPK storm2_vita.vpk)
+  set(STORM2_VPK_NAME "Storm 2 (headless)")
+endif()
+
 vita_create_self(eboot.bin storm2_vita)
 set(VITA_MKSFOEX_FLAGS "-d ATTRIBUTE2=12")
-vita_create_vpk(storm2_vita.vpk RXGT00006 eboot.bin
+vita_create_vpk(${STORM2_VPK} RXGT00006 eboot.bin
   VERSION "01.00"
-  NAME "Storm 2 (headless)")
+  NAME "${STORM2_VPK_NAME}")

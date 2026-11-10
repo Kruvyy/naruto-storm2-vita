@@ -9,14 +9,15 @@ param([Parameter(Mandatory)] [string] $Name, [string[]] $Toml = @(), [int] $Fram
       [int[]] $Shots = @(),   # extra captures when the game passes these frames
       [string] $Config = 'config.yml',  # in vita3k_test\ (e.g. config_res1.yml)
       [switch] $NoSurface,  # without the gles_surface_texture_* Vita3K settings
-      [string] $Bin = 'bin')  # emulator folder in vita3k_test\ (bin = Vita3K-Plus, bin_vanilla)
+      [string] $Bin = 'bin',  # emulator folder in vita3k_test\ (bin = Vita3K-Plus, bin_vanilla)
+      [string] $Build = 'build-vita')  # vita\storm2\<Build>\eboot.bin (build-vita-console)
 $root = Split-Path -Parent $PSScriptRoot
 $t = Join-Path $root 'vita3k_test'
 $exe = Join-Path $t "$Bin\Vita3K.exe"
 $data = Join-Path $t 'fs\ux0\data\storm2port'
 Get-Process Vita3K -ErrorAction SilentlyContinue | Where-Object { $_.Path -ieq $exe } | Stop-Process -Force
 Start-Sleep 2
-Copy-Item (Join-Path $root 'vita\storm2\build-vita\eboot.bin') (Join-Path $t 'fs\ux0\app\RXGT00006\eboot.bin') -Force
+Copy-Item (Join-Path $root "vita\storm2\$Build\eboot.bin") (Join-Path $t 'fs\ux0\app\RXGT00006\eboot.bin') -Force
 Remove-Item "$data\storm2_stats.log" -ErrorAction SilentlyContinue
 $lines = @('# Vita3K test run (emulator only)', 'log_flush_interval = 1', 'gpu_thread_priority_boost = 1')
 if (-not $NoSurface) { $lines += @('gles_surface_texture_min_kib = 3000', 'gles_surface_texture_refresh_swaps = 1') }
