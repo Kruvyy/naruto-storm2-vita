@@ -397,7 +397,7 @@ int main() {
   // Render, resolve and depth targets at 75%: 960x540, the screen's size
   // (~56% of their ~42 MiB at full size, which filled a 56 MiB pool).
   app_default("gles_render_scale_percent", "75");
-  app_default("gles_vita_cdram_pool_mib", "56");
+  app_default("gles_vita_cdram_pool_mib", "64");
   // vitaGL keeps ~8 MiB of its own in the RAM pool (with a 6 MiB per-frame
   // pool); with 12 the ring did not fit and went to the CDRAM pool.
   app_default("gles_vita_ram_pool_mib", "16");
@@ -499,9 +499,12 @@ int main() {
     LogMemory("after the ballast");
   }
 #if STORM2_CONSOLE
-  // The game's big ranges need tens of MiB of main RAM in one piece: its many
-  // small blocks go to CDRAM first.
-  rex::memory::VitaSetSmallBlocksFirstInCdram(size_t(16) << 20);
+  // On the console the game's memory fits the main RAM (241 MiB free after
+  // the executable loaded, ~190 needed on the menus): CDRAM is left to vitaGL,
+  // the game may take at most 24 MiB of it once the main RAM is full. (Small
+  // blocks first in CDRAM, as tried in the Vita3K simulation, took all of it
+  // there and the first console run hung or crashed without GPU memory.)
+  rex::memory::VitaSetPoolBudgets(SIZE_MAX, SIZE_MAX, size_t(24) << 20);
 #endif
   if (const std::string& spec = REXCVAR_GET(vita_memory_budgets_mib); !spec.empty()) {
     unsigned main_mib = 0, phycont_mib = 0, cdram_mib = 0;
