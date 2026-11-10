@@ -41,6 +41,7 @@
 #include <psp2/kernel/processmgr.h>
 #include <psp2/kernel/sysmem.h>
 #include <psp2/kernel/threadmgr.h>
+#include <psp2/power.h>
 
 #include <rex/audio/vita/vita_audio_system.h>
 #include <rex/cvar.h>
@@ -394,9 +395,9 @@ int main() {
   // the vertex stream ring (1 MiB segments, two copies: 8 MiB; what does not
   // fit gets its own buffers); most of the physically contiguous RAM is left
   // to the game's memory.
-  // Render, resolve and depth targets at 75%: 960x540, the screen's size
-  // (~56% of their ~42 MiB at full size, which filled a 56 MiB pool).
-  app_default("gles_render_scale_percent", "75");
+  // Render, resolve and depth targets at 56.25%: 720x405 (the user's choice;
+  // their ~42 MiB at full size filled a 56 MiB pool, and the GPU draws less).
+  app_default("gles_render_scale_percent", "56.25");
   app_default("gles_vita_cdram_pool_mib", "64");
   // vitaGL keeps ~8 MiB of its own in the RAM pool (with a 6 MiB per-frame
   // pool); with 12 the ring did not fit and went to the CDRAM pool.
@@ -407,6 +408,9 @@ int main() {
   app_default("gles_vertex_stream_usage", "1");
   // Cached vertex/index buffers in the CDRAM pool, not the main RAM.
   app_default("gles_vertex_buffer_usage", "0");
+  // The game's audio thread took a whole core on the loading screen: log the
+  // time in the native audio functions every 10 s.
+  app_default("storm2_native_audio_stats", "10");
 #endif
   // The physical pool at 0xAB000000 reserves 272 MiB and the game fills it from
   // the start; 184 MiB ran the title screen on the PC (docs/logs/E13d). A write
@@ -490,6 +494,16 @@ int main() {
     vita_heap_trace_enable(uint32_t(REXCVAR_GET(vita_heap_trace)));
   }
   LogMemory("start");
+  // Highest clocks an application may ask for (the default leaves the CPU at
+  // 333 MHz): on the console the game's audio thread used a whole core and
+  // the loading screen waited for it.
+  scePowerSetArmClockFrequency(444);
+  scePowerSetBusClockFrequency(222);
+  scePowerSetGpuClockFrequency(222);
+  scePowerSetGpuXbarClockFrequency(166);
+  Stats("clocks: CPU %d MHz, bus %d MHz, GPU %d MHz, GPU crossbar %d MHz\n",
+        scePowerGetArmClockFrequency(), scePowerGetBusClockFrequency(),
+        scePowerGetGpuClockFrequency(), scePowerGetGpuXbarClockFrequency());
   if (const int32_t ballast = REXCVAR_GET(vita_memory_ballast_mib); ballast > 0) {
     // Vita3K has ~80 MiB more main RAM than the console: hold it so a run there
     // meets the console's limits (never freed).

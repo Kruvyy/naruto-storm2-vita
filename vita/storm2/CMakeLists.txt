@@ -85,7 +85,7 @@ target_link_options(storm2_vita PRIVATE
   -Wl,--wrap=sceGxmNotificationWait -Wl,--wrap=sceGxmFinish -Wl,--wrap=sceGxmMidSceneFlush)
 target_link_libraries(storm2_vita PRIVATE
   storm2_code rexgpu_gles_vita rexgpu_null_vita rexaudio_vita rexinput_vita rexruntime_vita
-  rexcore_vita ${REX_VITA_GLES_LIBS} ${REX_VITA_SYSTEM_LIBS})
+  rexcore_vita ${REX_VITA_GLES_LIBS} ${REX_VITA_SYSTEM_LIBS} ScePower_stub)
 
 # STORM2_CONSOLE: build for the real PS Vita (smaller newlib heap and app
 # defaults that leave the main RAM to the game; see main_vita.cpp). Same title
