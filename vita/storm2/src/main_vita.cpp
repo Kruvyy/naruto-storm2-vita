@@ -812,7 +812,8 @@ int main() {
     last_us = now_us;
     last_frame = frame;
     last_audio_frames = audio_frames;
-    if (now_us - last_threads_us >= 30 * 1000000ull) {
+    // Every 10 s (a hang on the console is often closed within a minute).
+    if (now_us - last_threads_us >= 10 * 1000000ull) {
       // Where the frequent system calls come from (return addresses in this
       // executable; arm-vita-eabi-addr2line -f -e storm2_vita <address>).
       uint64_t unused[VITA_SYSCALL_COUNTERS_MAX];
