@@ -461,6 +461,16 @@ int main() {
   // their ~42 MiB at full size filled a 56 MiB pool, and the GPU draws less).
   app_default("gles_render_scale_percent", "56.25");
   app_default("gles_vita_cdram_pool_mib", "64");
+  // Depth-only passes draw into a framebuffer whose depth buffer vitaGL sizes
+  // like its color attachment: a 16x16 scratch color left a 16x16 depth buffer
+  // that the console's GPU wrote far past (heap corruption, a crash in free()
+  // as the loading screen ended; Vita3K does not show it). Same size as the
+  // depth target instead.
+  app_default("gles_depth_only_target_size", "0");
+  // A smaller arena for the runtime shader compiler (~20 MiB of main RAM are
+  // left on the menus); shaders are compiled on the device only when missing
+  // from the shader cache.
+  app_default("gles_vita_compiler_arena_mib", "12");
   // vitaGL keeps ~8 MiB of its own in the RAM pool (with a 6 MiB per-frame
   // pool); with 12 the ring did not fit and went to the CDRAM pool.
   app_default("gles_vita_ram_pool_mib", "16");
