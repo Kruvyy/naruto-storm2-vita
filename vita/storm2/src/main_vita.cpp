@@ -376,6 +376,9 @@ int main() {
   // Same for the cached vertex/index buffers: as static they grew to ~14 MiB of
   // VRAM late in battle, which ran empty again (fighters vanished at frame ~9100).
   app_default("gles_vertex_buffer_usage", "1");
+  // (gles_ps_output_override "478E5FA9=texture2D(xe_s0, xe_i0.xy)" cleaned the
+  // menu's doubled image but showed a stale scene without the fighters in
+  // battle, where that shader blends differently: not a default; bug 95.)
   // The vertex shaders of the motion blur velocity pass (PS A4A965): with the
   // Shader Model 3 multiplication their velocities came out as garbage in
   // Vita3K (characters smeared, colored shapes in battle; bug 89). Plain
