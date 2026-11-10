@@ -408,8 +408,10 @@ int main() {
   app_default("gles_vertex_stream_usage", "1");
   // Cached vertex/index buffers in the CDRAM pool, not the main RAM.
   app_default("gles_vertex_buffer_usage", "0");
-  // The game's audio thread took a whole core on the loading screen: log the
-  // time in the native audio functions every 10 s.
+  // The game's audio thread took a whole core on the loading screen, which
+  // waited for it: the reverb alone (native) used 88% of a core at 500 MHz.
+  // The sound output is discarded on the Vita for now, so it is not run.
+  app_default("storm2_skip_reverb", "true");
   app_default("storm2_native_audio_stats", "10");
 #endif
   // The physical pool at 0xAB000000 reserves 272 MiB and the game fills it from

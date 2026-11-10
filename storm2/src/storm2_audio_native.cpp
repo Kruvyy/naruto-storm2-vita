@@ -44,6 +44,11 @@ REXCVAR_DEFINE_BOOL(storm2_native_audio_check, false, "Storm 2",
 REXCVAR_DEFINE_BOOL(storm2_native_audio_check_self, false, "Storm 2",
                     "With storm2_native_audio_check: compare the native version with itself "
                     "(differences then come from other threads writing the same memory)");
+REXCVAR_DEFINE_BOOL(storm2_skip_reverb, false, "Storm 2",
+                    "Do not run the audio engine's per-sample effect (sub_82599010, a reverb): "
+                    "its buffer passes through unchanged. On the PS Vita console the native "
+                    "version alone took 88% of a core at 500 MHz and the loading screen waited "
+                    "for the audio thread; the Vita's sound output is discarded anyway");
 REXCVAR_DEFINE_INT32(storm2_native_audio_stats, 0, "Storm 2",
                      "Log the time spent in the hooked audio functions every N seconds (0 = off)");
 
@@ -268,6 +273,9 @@ Stats g_reverb_stats;
 REX_EXTERN(__imp__sub_82599010);
 
 REX_HOOK_RAW(sub_82599010) {
+  if (REXCVAR_GET(storm2_skip_reverb)) {
+    return;  // the in/out buffer keeps the dry signal
+  }
   const bool native = REXCVAR_GET(storm2_native_audio);
   const uint32_t samples = ctx.r7.u32;
   const bool timed = REXCVAR_GET(storm2_native_audio_stats) > 0;
