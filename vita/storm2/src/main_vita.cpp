@@ -64,6 +64,7 @@ extern const rex::PPCImageInfo PPCImageConfig;
 
 namespace rex::thread {
 void VitaPollWakeups(uint64_t out[3]);  // core/threading_vita.cpp
+uint64_t VitaThreadBlockedUs(uint32_t system_id);  // core/threading_vita.cpp
 }
 
 // newlib's malloc heap is one block taken at start-up; the guest memory comes
@@ -252,6 +253,7 @@ void ThreadReport(rex::Runtime* runtime, uint64_t now_us, uint64_t interval_us,
   };
   std::vector<Row> rows;
   std::map<SceUID, uint64_t> run;
+  bool no_kernel_run_time = false;
   auto threads =
       runtime->kernel_state()->object_table()->GetObjectsByType<rex::system::XThread>();
   for (auto& xthread : threads) {
@@ -265,7 +267,14 @@ void ThreadReport(rex::Runtime* runtime, uint64_t now_us, uint64_t interval_us,
     if (sceKernelGetThreadInfo(uid, &info) < 0) {
       continue;
     }
-    const uint64_t run_us = info.runClocks;
+    uint64_t run_us = info.runClocks;
+    if (run_us == 0) {
+      // Vita3K reports no run time: time not blocked in a wait or sleep instead
+      // (the thread ran, or wanted to run); only its change between reports
+      // is used.
+      run_us = now_us - std::min(now_us, rex::thread::VitaThreadBlockedUs(uint32_t(uid)));
+      no_kernel_run_time = true;
+    }
     run[uid] = run_us;
     auto it = last_run.find(uid);
     const uint64_t delta = it != last_run.end() && run_us >= it->second ? run_us - it->second : 0;
@@ -290,8 +299,12 @@ void ThreadReport(rex::Runtime* runtime, uint64_t now_us, uint64_t interval_us,
       fmt::format("t={}s threads={} total={:.0f}% of one core (run time since start {:.1f}s)\n",
                   now_us / 1000000, rows.size(), total * 100, double(total_run_us) / 1e6);
   // Vita3K reports no run time: then every thread is listed, for the guest
-  // hardware thread and the affinity mask (which Vita core it is held to).
-  const bool no_run_time = total_run_us == 0;
+  // hardware thread and the affinity mask (which Vita core it is held to),
+  // with its share of time not blocked (ran or waited for a core).
+  const bool no_run_time = no_kernel_run_time;
+  if (no_run_time) {
+    text += "  (Vita3K: share = time not blocked in a wait or sleep)\n";
+  }
   for (const Row& row : rows) {
     if (row.share < 0.005 && !no_run_time) {
       continue;
