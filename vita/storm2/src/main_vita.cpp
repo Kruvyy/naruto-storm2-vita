@@ -555,6 +555,9 @@ int main() {
   app_default("gles_render_scale_percent", "56.25");
   // Exactly 720x408 (the user's choice; 56.25% alone gives 720x405).
   app_default("gles_render_size", "720x408");
+  // Half precision pixel shaders: on the console the menu's GPU time is the
+  // pixel shaders' (~296 ms a frame with them, ~7 ms with solid-color ones).
+  app_default("gles_ps_precision", "mediump");
   app_default("gles_vita_cdram_pool_mib", "64");
   // Depth-only passes draw into a framebuffer whose depth buffer vitaGL sizes
   // like its color attachment: a 16x16 scratch color left a 16x16 depth buffer
