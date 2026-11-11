@@ -31,6 +31,8 @@
 #include <mutex>
 #include <unordered_map>
 
+#include "storm2_probe.h"
+
 #include <rex/cvar.h>
 #include <rex/hook.h>
 #include <rex/platform.h>
@@ -144,6 +146,7 @@ REX_HOOK_RAW(sub_825D5AA8) {
 }
 
 REX_HOOK_RAW(sub_825D5B00) {
+  storm2_probe::Scope probe(storm2_probe::kCounterWait);
   if (!REXCVAR_GET(storm2_blocking_counter_wait)) {
     __imp__sub_825D5B00(ctx, base);
     return;
