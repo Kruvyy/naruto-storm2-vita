@@ -37,6 +37,7 @@ set(STORM2_SOURCES
     src/storm2_counter_wait.cpp
     src/storm2_fence_wait.cpp
     src/storm2_frame_probe.cpp
+    src/storm2_native_crt.cpp
     ${STORM2_NATIVE_INCS}
 )
 

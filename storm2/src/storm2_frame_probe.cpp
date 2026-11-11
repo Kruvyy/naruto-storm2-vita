@@ -74,6 +74,10 @@ void CollectTaskTimes(uint8_t* base, uint32_t manager, uint32_t lo, uint32_t hi)
 }
 }  // namespace storm2_probe
 
+namespace storm2_native_crt {
+extern std::atomic<uint64_t> g_memcpy_calls, g_memcpy_bytes;
+}
+
 REXCVAR_DEFINE_INT32(storm2_frame_probe, 0, "Storm 2",
                      "Seconds between log lines with the wall and CPU time per frame of the "
                      "main loop's parts (frame sync, counter wait, game update...; 0 = off)")
@@ -146,6 +150,9 @@ void MaybeReport() {
                           double(wall) / 1000.0 / frames, double(cpu) / 1000.0 / frames);
     }
   }
+  text += fmt::format("; memcpy {:.0f} calls {:.1f} KiB per frame",
+                      double(storm2_native_crt::g_memcpy_calls.exchange(0)) / frames,
+                      double(storm2_native_crt::g_memcpy_bytes.exchange(0)) / 1024.0 / frames);
   text += "; update by r4^(r5<<16):";
   for (int i = 0; i < 4; ++i) {
     const uint32_t r3 = g_update_r3[i].load();
