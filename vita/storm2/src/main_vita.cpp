@@ -441,8 +441,15 @@ int main() {
   // Console build: the game's memory gets the main RAM. These come first (the
   // first app_default for a cvar wins) and are a starting point, measured with
   // vita_memory_ballast_mib in Vita3K (docs/bugs.md, bug 94).
-  // Game data with textures at half size (tools/xfbin), a quarter of the memory.
-  app_default("vita_game_root", "ux0:data/storm2port/game_half");
+  // Game data with textures at a quarter of their size (tools/xfbin run twice;
+  // changed files stored uncompressed, which the game then does not inflate).
+  app_default("vita_game_root", "ux0:data/storm2port/game_quarter");
+  // Passes whose result is not used: the motion blur's velocity pass (PS
+  // A4A965 with its vertex shaders: it draws the whole scene again) and the
+  // camera velocity pass (A2147ED6); the motion blur output is the plain
+  // scene (gles_ps_output_override).
+  app_default("gles_skip_ps",
+              "A4A965C1/0F628CC3,A4A965C1/3FF1898E,A4A965C1/FACBF5B5,A2147ED6");
   // Real memory only for the ranges of the big guest regions the game uses
   // (MiB, from the usage maps of soft_mmu_report_interval, with 1 MiB of
   // margin). A write elsewhere stops the game with a message naming the region.
