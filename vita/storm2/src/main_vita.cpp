@@ -561,6 +561,10 @@ int main() {
   // Post-processing targets (color without depth) at half the render scale:
   // ~80% of the menu's GPU time on the console went to their scenes.
   app_default("gles_vita_post_target_divisor", "2");
+  // Plain products in every pixel shader except the characters' toon shader:
+  // the menu's GPU time on the console went from ~278 to ~148 ms a frame.
+  app_default("gles_mul_plain_filter", "*");
+  app_default("gles_mul_zero_rule_filter", "B958D20D");
   app_default("gles_vita_cdram_pool_mib", "64");
   // Depth-only passes draw into a framebuffer whose depth buffer vitaGL sizes
   // like its color attachment: a 16x16 scratch color left a 16x16 depth buffer
