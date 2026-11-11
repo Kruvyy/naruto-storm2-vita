@@ -562,9 +562,8 @@ int main() {
   // waited for it: the reverb alone (native) used 88% of a core at 500 MHz.
   // The sound output is discarded on the Vita for now, so it is not run.
   app_default("storm2_skip_reverb", "true");
-  // Where the game's main thread spends its time (storm2_samples.log).
-  app_default("vita_sample_thread", "Main XThread");
-  app_default("storm2_native_audio_stats", "10");
+  // Diagnostics stay off (they cost CPU); storm2.toml turns them on, for
+  // example vita_sample_thread = "*" and kernel_sync_stats = 10.
 #endif
   // The physical pool at 0xAB000000 reserves 272 MiB and the game fills it from
   // the start; 184 MiB ran the title screen on the PC (docs/logs/E13d). A write
