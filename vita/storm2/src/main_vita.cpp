@@ -567,6 +567,9 @@ int main() {
   app_default("gles_mul_zero_rule_filter", "B958D20D");
   // Texture fetches without the swizzle matrix when it is the identity.
   app_default("gles_identity_swizzle_variants", "true");
+  // Core 0 left to the game's main thread (vita_thread_cores names it there):
+  // in the menu it is the limit, and the audio thread ran on its core.
+  app_default("vita_reserved_core", "0");
   app_default("gles_vita_cdram_pool_mib", "64");
   // Depth-only passes draw into a framebuffer whose depth buffer vitaGL sizes
   // like its color attachment: a 16x16 scratch color left a 16x16 depth buffer
