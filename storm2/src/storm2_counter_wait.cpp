@@ -24,6 +24,7 @@
 // (it stays signalled; no other code waits on it in the runs measured). A
 // 2 ms timeout re-checks the counter in case other code changes it.
 
+#include <algorithm>
 #include <chrono>
 #include <condition_variable>
 #include <cstdint>
@@ -32,7 +33,13 @@
 
 #include <rex/cvar.h>
 #include <rex/hook.h>
+#include <rex/platform.h>
 #include <rex/system/xmemory.h>
+
+#if REX_PLATFORM_VITA
+#include <atomic>
+#include <psp2/kernel/threadmgr.h>
+#endif
 
 REXCVAR_DEFINE_BOOL(storm2_blocking_counter_wait, true, "Storm 2",
                     "Block in the game's counter wait (sub_825D5B00, the hand-off between the "
@@ -54,11 +61,62 @@ uint64_t LoadBe64(uint8_t* base, uint32_t address) {
 }
 
 // One per guest object (a handful in the game; never freed).
+#if REX_PLATFORM_VITA
+// On a kernel semaphore: std::condition_variable is pthread-embedded's there,
+// whose timed waits returned at once on a console (threading_vita.cpp,
+// VitaCond), so this wait spun (~125 thousand mutex locks a second) on the
+// main thread and the render thread, which the menu's CPU time then showed.
+// notify signals as many times as threads may be blocked; a wake that finds
+// nothing changed re-checks and blocks again.
+struct HostWait {
+  std::atomic<uint64_t> generation{0};
+  std::atomic<uint32_t> waiters{0};
+  SceUID sema = sceKernelCreateSema("storm2_counter", 0, 0, 64, nullptr);
+  void Notify() {
+    generation.fetch_add(1, std::memory_order_seq_cst);
+    const uint32_t n = waiters.load(std::memory_order_seq_cst);
+    if (n && sema >= 0) {
+      sceKernelSignalSema(sema, int(std::min<uint32_t>(n, 64)));
+    }
+  }
+  uint64_t Generation() const { return generation.load(std::memory_order_seq_cst); }
+  // Blocks until the generation moves past `seen` or `timeout_us` passes.
+  void WaitChange(uint64_t seen, uint32_t timeout_us) {
+    waiters.fetch_add(1, std::memory_order_seq_cst);
+    if (generation.load(std::memory_order_seq_cst) == seen) {
+      if (sema >= 0) {
+        SceUInt t = timeout_us;
+        sceKernelWaitSema(sema, 1, &t);
+      } else {
+        sceKernelDelayThread(timeout_us);
+      }
+    }
+    waiters.fetch_sub(1, std::memory_order_seq_cst);
+  }
+};
+#else
 struct HostWait {
   std::mutex mutex;
   std::condition_variable changed;
   uint64_t generation = 0;  // bumped by every sub_825D5AA8 on the object
+  void Notify() {
+    {
+      std::lock_guard<std::mutex> lock(mutex);
+      ++generation;
+    }
+    changed.notify_all();
+  }
+  uint64_t Generation() {
+    std::lock_guard<std::mutex> lock(mutex);
+    return generation;
+  }
+  void WaitChange(uint64_t seen, uint32_t timeout_us) {
+    std::unique_lock<std::mutex> lock(mutex);
+    changed.wait_for(lock, std::chrono::microseconds(timeout_us),
+                     [&] { return generation != seen; });
+  }
 };
+#endif
 
 std::mutex g_waits_mutex;
 std::unordered_map<uint32_t, HostWait*> g_waits;
@@ -82,12 +140,7 @@ REX_EXTERN(sub_826938D8);  // ReleaseMutex(r3 = handle)
 REX_HOOK_RAW(sub_825D5AA8) {
   const uint32_t object = ctx.r3.u32;
   __imp__sub_825D5AA8(ctx, base);
-  HostWait& w = WaitFor(object);
-  {
-    std::lock_guard<std::mutex> lock(w.mutex);
-    ++w.generation;
-  }
-  w.changed.notify_all();
+  WaitFor(object).Notify();
 }
 
 REX_HOOK_RAW(sub_825D5B00) {
@@ -102,11 +155,7 @@ REX_HOOK_RAW(sub_825D5B00) {
   for (;;) {
     // Read before the check, so a set between the check and the wait below
     // is seen as a changed generation.
-    uint64_t generation;
-    {
-      std::lock_guard<std::mutex> lock(w.mutex);
-      generation = w.generation;
-    }
+    const uint64_t generation = w.Generation();
     ctx.r3.u64 = guest_mutex;
     ctx.r4.s64 = -1;  // INFINITE, as the original
     sub_82563E00(ctx, base);
@@ -116,8 +165,6 @@ REX_HOOK_RAW(sub_825D5B00) {
     if (reached) {
       return;
     }
-    std::unique_lock<std::mutex> lock(w.mutex);
-    w.changed.wait_for(lock, std::chrono::milliseconds(2),
-                       [&] { return w.generation != generation; });
+    w.WaitChange(generation, 2000);
   }
 }
