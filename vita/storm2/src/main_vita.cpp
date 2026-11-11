@@ -20,6 +20,7 @@
 // Hold START + SELECT for 2 s to quit.
 
 #include <algorithm>
+#include <array>
 #include <atomic>
 #include <mutex>
 #include <unordered_map>
@@ -268,33 +269,72 @@ namespace {
 // console, which has no profiler for applications. Map an address to its
 // function with the generated function table (largest start below it).
 constexpr const char* kSamplesPath = "ux0:data/storm2port/storm2_samples.log";
-// vita_sample_thread may name several threads, comma-separated (up to 4).
-constexpr size_t kMaxSampled = 4;
+// vita_sample_thread names threads, comma-separated, or "*" for every guest
+// thread (up to kMaxSampled). Each sample is the link register plus up to three
+// return addresses read up the guest stack (back chain at 0(r1), the caller's
+// LR saved at -8 of each frame), so threads that all wait in one helper are
+// told apart by who called it.
+constexpr size_t kMaxSampled = 32;
+constexpr size_t kChain = 4;
+using SampleKey = std::array<uint32_t, kChain>;
+struct SampleKeyHash {
+  size_t operator()(const SampleKey& k) const {
+    size_t h = 0;
+    for (uint32_t v : k) {
+      h = h * 1000003u ^ v;
+    }
+    return h;
+  }
+};
 struct SampledThread {
-  std::atomic<const uint64_t*> lr{nullptr};
+  std::atomic<PPCContext*> ctx{nullptr};
   std::string name;
-  std::unordered_map<uint32_t, uint32_t> counts;
+  std::unordered_map<SampleKey, uint32_t, SampleKeyHash> counts;
   uint64_t total = 0;
 };
 struct Sampler {
   std::mutex mutex;
   SampledThread threads[kMaxSampled];
-  size_t count = 0;
+  std::atomic<size_t> count{0};
+  bool all = false;
+  const rex::memory::Memory* memory = nullptr;
 };
 Sampler g_sampler;
+
+uint32_t SampleLoad32(uint32_t guest_address) {
+  // Soft MMU: an unmapped page translates to a guard page, so an aligned read
+  // is always safe.
+  const uint8_t* p = g_sampler.memory->TranslateVirtual<const uint8_t*>(guest_address);
+  const uint32_t v = *reinterpret_cast<const volatile uint32_t*>(p);
+  return __builtin_bswap32(v);
+}
 
 int SamplerThread(SceSize, void*) {
   for (;;) {
     sceKernelDelayThread(1000);
-    for (size_t i = 0; i < g_sampler.count; ++i) {
+    const size_t count = g_sampler.count.load(std::memory_order_acquire);
+    for (size_t i = 0; i < count; ++i) {
       SampledThread& t = g_sampler.threads[i];
-      const uint64_t* lr = t.lr.load(std::memory_order_relaxed);
-      if (!lr) {
+      PPCContext* ctx = t.ctx.load(std::memory_order_relaxed);
+      if (!ctx) {
         continue;
       }
-      const uint32_t value = uint32_t(*reinterpret_cast<const volatile uint64_t*>(lr));
+      SampleKey key{};
+      key[0] = uint32_t(*reinterpret_cast<volatile uint64_t*>(&ctx->lr));
+      uint32_t sp = uint32_t(*reinterpret_cast<volatile uint64_t*>(&ctx->r1.u64));
+      for (size_t k = 1; k < kChain && g_sampler.memory; ++k) {
+        if (sp & 3) {
+          break;
+        }
+        const uint32_t next = SampleLoad32(sp);
+        if (next <= sp || next - sp > 0x40000 || (next & 3)) {
+          break;
+        }
+        key[k] = SampleLoad32(next - 8);
+        sp = next;
+      }
       std::lock_guard<std::mutex> lock(g_sampler.mutex);
-      ++t.counts[value];
+      ++t.counts[key];
       ++t.total;
     }
   }
@@ -303,9 +343,10 @@ int SamplerThread(SceSize, void*) {
 
 void WriteSamples(uint64_t now_us) {
   std::string text;
-  for (size_t n = 0; n < g_sampler.count; ++n) {
+  const size_t count = g_sampler.count.load(std::memory_order_acquire);
+  for (size_t n = 0; n < count; ++n) {
     SampledThread& t = g_sampler.threads[n];
-    std::vector<std::pair<uint32_t, uint32_t>> top;
+    std::vector<std::pair<SampleKey, uint32_t>> top;
     uint64_t total;
     {
       std::lock_guard<std::mutex> lock(g_sampler.mutex);
@@ -321,9 +362,10 @@ void WriteSamples(uint64_t now_us) {
               [](const auto& a, const auto& b) { return a.second > b.second; });
     text += fmt::format("t={}s {} samples of the guest link register of '{}'\n",
                         now_us / 1000000, total, t.name);
-    for (size_t i = 0; i < top.size() && i < 20; ++i) {
-      text += fmt::format("  {:5.1f}%  {:08X}\n", 100.0 * top[i].second / double(total),
-                          top[i].first);
+    for (size_t i = 0; i < top.size() && i < (g_sampler.all ? 6 : 20); ++i) {
+      text += fmt::format("  {:5.1f}%  {:08X} < {:08X} < {:08X} < {:08X}\n",
+                          100.0 * top[i].second / double(total), top[i].first[0],
+                          top[i].first[1], top[i].first[2], top[i].first[3]);
     }
   }
   if (text.empty()) {
@@ -744,17 +786,21 @@ int main() {
   ThreadReport(runtime.get(), last_us, 1, last_thread_run);  // baseline
   const std::string sample_name = REXCVAR_GET(vita_sample_thread);
   if (!sample_name.empty()) {
+    g_sampler.memory = runtime->memory();
+    g_sampler.all = sample_name == "*";
     size_t start = 0;
-    while (start <= sample_name.size() && g_sampler.count < kMaxSampled) {
+    size_t named = 0;
+    while (!g_sampler.all && start <= sample_name.size() && named < kMaxSampled) {
       size_t end = sample_name.find(',', start);
       if (end == std::string::npos) {
         end = sample_name.size();
       }
       if (end > start) {
-        g_sampler.threads[g_sampler.count++].name = sample_name.substr(start, end - start);
+        g_sampler.threads[named++].name = sample_name.substr(start, end - start);
       }
       start = end + 1;
     }
+    g_sampler.count.store(named, std::memory_order_release);
     sceIoRemove(kSamplesPath);
     const SceUID sampler = sceKernelCreateThread("storm2_sampler", SamplerThread, 0x40, 0x4000, 0,
                                                  0, nullptr);
@@ -765,9 +811,30 @@ int main() {
   int quit_ticks = 0;
   int tick = 0;
   while (!finished) {
-    for (size_t n = 0; n < g_sampler.count; ++n) {
+    if (g_sampler.all && tick % 10 == 0) {
+      // Every guest thread, as threads appear (checked once a second).
+      for (auto& xthread : runtime->kernel_state()->object_table()
+                               ->GetObjectsByType<rex::system::XThread>()) {
+        rex::thread::Thread* thread = xthread->thread();
+        if (!thread || !xthread->thread_state()) {
+          continue;
+        }
+        PPCContext* ctx = xthread->thread_state()->context();
+        const size_t count = g_sampler.count.load(std::memory_order_relaxed);
+        bool known = false;
+        for (size_t n = 0; n < count; ++n) {
+          known = known || g_sampler.threads[n].ctx.load() == ctx;
+        }
+        if (!known && count < kMaxSampled) {
+          g_sampler.threads[count].name = thread->name();
+          g_sampler.threads[count].ctx.store(ctx);
+          g_sampler.count.store(count + 1, std::memory_order_release);
+        }
+      }
+    }
+    for (size_t n = 0; !g_sampler.all && n < g_sampler.count.load(); ++n) {
       SampledThread& t = g_sampler.threads[n];
-      if (t.lr.load()) {
+      if (t.ctx.load()) {
         continue;
       }
       // The guest thread to sample, once it exists.
@@ -776,7 +843,7 @@ int main() {
         rex::thread::Thread* thread = xthread->thread();
         if (thread && thread->name().find(t.name) != std::string::npos &&
             xthread->thread_state()) {
-          t.lr.store(&xthread->thread_state()->context()->lr);
+          t.ctx.store(xthread->thread_state()->context());
           REXLOG_INFO("Sampling the link register of guest thread '{}'", thread->name());
           break;
         }
