@@ -560,8 +560,10 @@ int main() {
   // Render, resolve and depth targets at 56.25%: 720x405 (the user's choice;
   // their ~42 MiB at full size filled a 56 MiB pool, and the GPU draws less).
   app_default("gles_render_scale_percent", "56.25");
-  // Exactly 720x408 (the user's choice; 56.25% alone gives 720x405).
-  app_default("gles_render_size", "720x408");
+  // 480x272 (the user's choice for speed): the menu's GPU time on the console
+  // scaled with the pixel count (480x272 instead of 720x408: -55%), while the
+  // game logic alone caps the menu near 6.7 frames/s.
+  app_default("gles_render_size", "480x272");
   // Half precision pixel shaders: on the console the menu's GPU time is the
   // pixel shaders' (~296 ms a frame with them, ~7 ms with solid-color ones).
   app_default("gles_ps_precision", "mediump");
