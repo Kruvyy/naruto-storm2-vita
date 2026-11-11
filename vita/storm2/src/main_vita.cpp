@@ -306,7 +306,16 @@ Sampler g_sampler;
 // 0 for an unmapped page: the soft MMU's page table has a null entry there
 // (a thread's stack page before it is touched), so the translated pointer is
 // below 4 KiB; reading it faulted the sampler on a console.
+// The page must also be committed: a thread that exits frees its guest stack
+// (XThread::Exit) while the sampler may still walk it (that faulted too).
 uint32_t SampleLoad32(uint32_t guest_address) {
+  auto* memory = const_cast<rex::memory::Memory*>(g_sampler.memory);
+  auto* heap = memory->LookupHeap(guest_address);
+  uint32_t protect = 0;
+  if (!heap || !heap->QueryProtect(guest_address, &protect) ||
+      !(protect & rex::memory::kMemoryProtectRead)) {
+    return 0;
+  }
   const uint8_t* p = g_sampler.memory->TranslateVirtual<const uint8_t*>(guest_address);
   if (reinterpret_cast<uintptr_t>(p) < 0x10000) {
     return 0;
