@@ -528,8 +528,14 @@ int main() {
   // A4A965 with its vertex shaders: it draws the whole scene again) and the
   // camera velocity pass (A2147ED6); the motion blur output is the plain
   // scene (gles_ps_output_override).
+  // Light mode: two full-screen passes (one draw a frame each) whose absence
+  // left the mode select unchanged in Vita3K; the console's frame rate rose
+  // 16% and 5% with each skipped (gles_profile_ps_seconds). The other costly
+  // pixel shaders draw the menus' own frames and text (skipping them broke
+  // the title screen).
   app_default("gles_skip_ps",
-              "A4A965C1/0F628CC3,A4A965C1/3FF1898E,A4A965C1/FACBF5B5,A2147ED6");
+              "A4A965C1/0F628CC3,A4A965C1/3FF1898E,A4A965C1/FACBF5B5,A2147ED6,"
+              "6D868915,66E05C9B");
   // Real memory only for the ranges of the big guest regions the game uses
   // (MiB, from the usage maps of soft_mmu_report_interval, with 1 MiB of
   // margin). A write elsewhere stops the game with a message naming the region.
