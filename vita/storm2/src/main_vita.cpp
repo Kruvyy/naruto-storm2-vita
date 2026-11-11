@@ -301,10 +301,14 @@ struct Sampler {
 };
 Sampler g_sampler;
 
+// 0 for an unmapped page: the soft MMU's page table has a null entry there
+// (a thread's stack page before it is touched), so the translated pointer is
+// below 4 KiB; reading it faulted the sampler on a console.
 uint32_t SampleLoad32(uint32_t guest_address) {
-  // Soft MMU: an unmapped page translates to a guard page, so an aligned read
-  // is always safe.
   const uint8_t* p = g_sampler.memory->TranslateVirtual<const uint8_t*>(guest_address);
+  if (reinterpret_cast<uintptr_t>(p) < 0x10000) {
+    return 0;
+  }
   const uint32_t v = *reinterpret_cast<const volatile uint32_t*>(p);
   return __builtin_bswap32(v);
 }
