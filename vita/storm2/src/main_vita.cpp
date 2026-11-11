@@ -547,6 +547,8 @@ int main() {
   // Render, resolve and depth targets at 56.25%: 720x405 (the user's choice;
   // their ~42 MiB at full size filled a 56 MiB pool, and the GPU draws less).
   app_default("gles_render_scale_percent", "56.25");
+  // Exactly 720x408 (the user's choice; 56.25% alone gives 720x405).
+  app_default("gles_render_size", "720x408");
   app_default("gles_vita_cdram_pool_mib", "64");
   // Depth-only passes draw into a framebuffer whose depth buffer vitaGL sizes
   // like its color attachment: a 16x16 scratch color left a 16x16 depth buffer
