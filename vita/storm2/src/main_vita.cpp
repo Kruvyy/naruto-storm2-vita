@@ -268,47 +268,66 @@ namespace {
 // console, which has no profiler for applications. Map an address to its
 // function with the generated function table (largest start below it).
 constexpr const char* kSamplesPath = "ux0:data/storm2port/storm2_samples.log";
-struct Sampler {
+// vita_sample_thread may name several threads, comma-separated (up to 4).
+constexpr size_t kMaxSampled = 4;
+struct SampledThread {
   std::atomic<const uint64_t*> lr{nullptr};
-  std::mutex mutex;
+  std::string name;
   std::unordered_map<uint32_t, uint32_t> counts;
   uint64_t total = 0;
+};
+struct Sampler {
+  std::mutex mutex;
+  SampledThread threads[kMaxSampled];
+  size_t count = 0;
 };
 Sampler g_sampler;
 
 int SamplerThread(SceSize, void*) {
   for (;;) {
     sceKernelDelayThread(1000);
-    const uint64_t* lr = g_sampler.lr.load(std::memory_order_relaxed);
-    if (!lr) {
-      continue;
+    for (size_t i = 0; i < g_sampler.count; ++i) {
+      SampledThread& t = g_sampler.threads[i];
+      const uint64_t* lr = t.lr.load(std::memory_order_relaxed);
+      if (!lr) {
+        continue;
+      }
+      const uint32_t value = uint32_t(*reinterpret_cast<const volatile uint64_t*>(lr));
+      std::lock_guard<std::mutex> lock(g_sampler.mutex);
+      ++t.counts[value];
+      ++t.total;
     }
-    const uint32_t value = uint32_t(*reinterpret_cast<const volatile uint64_t*>(lr));
-    std::lock_guard<std::mutex> lock(g_sampler.mutex);
-    ++g_sampler.counts[value];
-    ++g_sampler.total;
   }
   return 0;
 }
 
 void WriteSamples(uint64_t now_us) {
-  std::vector<std::pair<uint32_t, uint32_t>> top;
-  uint64_t total;
-  {
-    std::lock_guard<std::mutex> lock(g_sampler.mutex);
-    top.assign(g_sampler.counts.begin(), g_sampler.counts.end());
-    total = g_sampler.total;
-    g_sampler.counts.clear();
-    g_sampler.total = 0;
+  std::string text;
+  for (size_t n = 0; n < g_sampler.count; ++n) {
+    SampledThread& t = g_sampler.threads[n];
+    std::vector<std::pair<uint32_t, uint32_t>> top;
+    uint64_t total;
+    {
+      std::lock_guard<std::mutex> lock(g_sampler.mutex);
+      top.assign(t.counts.begin(), t.counts.end());
+      total = t.total;
+      t.counts.clear();
+      t.total = 0;
+    }
+    if (!total) {
+      continue;
+    }
+    std::sort(top.begin(), top.end(),
+              [](const auto& a, const auto& b) { return a.second > b.second; });
+    text += fmt::format("t={}s {} samples of the guest link register of '{}'\n",
+                        now_us / 1000000, total, t.name);
+    for (size_t i = 0; i < top.size() && i < 20; ++i) {
+      text += fmt::format("  {:5.1f}%  {:08X}\n", 100.0 * top[i].second / double(total),
+                          top[i].first);
+    }
   }
-  if (!total) {
+  if (text.empty()) {
     return;
-  }
-  std::sort(top.begin(), top.end(), [](const auto& a, const auto& b) { return a.second > b.second; });
-  std::string text = fmt::format("t={}s {} samples of the guest link register\n",
-                                 now_us / 1000000, total);
-  for (size_t i = 0; i < top.size() && i < 30; ++i) {
-    text += fmt::format("  {:5.1f}%  {:08X}\n", 100.0 * top[i].second / double(total), top[i].first);
   }
   SceUID fd = sceIoOpen(kSamplesPath, SCE_O_WRONLY | SCE_O_CREAT | SCE_O_APPEND, 0666);
   if (fd >= 0) {
@@ -725,6 +744,17 @@ int main() {
   ThreadReport(runtime.get(), last_us, 1, last_thread_run);  // baseline
   const std::string sample_name = REXCVAR_GET(vita_sample_thread);
   if (!sample_name.empty()) {
+    size_t start = 0;
+    while (start <= sample_name.size() && g_sampler.count < kMaxSampled) {
+      size_t end = sample_name.find(',', start);
+      if (end == std::string::npos) {
+        end = sample_name.size();
+      }
+      if (end > start) {
+        g_sampler.threads[g_sampler.count++].name = sample_name.substr(start, end - start);
+      }
+      start = end + 1;
+    }
     sceIoRemove(kSamplesPath);
     const SceUID sampler = sceKernelCreateThread("storm2_sampler", SamplerThread, 0x40, 0x4000, 0,
                                                  0, nullptr);
@@ -735,14 +765,18 @@ int main() {
   int quit_ticks = 0;
   int tick = 0;
   while (!finished) {
-    if (!sample_name.empty() && !g_sampler.lr.load()) {
+    for (size_t n = 0; n < g_sampler.count; ++n) {
+      SampledThread& t = g_sampler.threads[n];
+      if (t.lr.load()) {
+        continue;
+      }
       // The guest thread to sample, once it exists.
       for (auto& xthread : runtime->kernel_state()->object_table()
                                ->GetObjectsByType<rex::system::XThread>()) {
         rex::thread::Thread* thread = xthread->thread();
-        if (thread && thread->name().find(sample_name) != std::string::npos &&
+        if (thread && thread->name().find(t.name) != std::string::npos &&
             xthread->thread_state()) {
-          g_sampler.lr.store(&xthread->thread_state()->context()->lr);
+          t.lr.store(&xthread->thread_state()->context()->lr);
           REXLOG_INFO("Sampling the link register of guest thread '{}'", thread->name());
           break;
         }
