@@ -110,6 +110,16 @@ REXCVAR_DEFINE_STRING(vita_sample_thread, "", "Vita",
 REXCVAR_DEFINE_INT32(vita_sample_top, 20, "Vita",
                      "Diagnostic: how many of the most frequent call chains vita_sample_thread "
                      "writes per thread and interval");
+REXCVAR_DEFINE_INT32(vita_ab_seconds, 0, "Vita",
+                     "Diagnostic: switch to the next state of vita_ab_cycle every N seconds "
+                     "(0 = off); each switch is logged, so one run on one screen compares them");
+REXCVAR_DEFINE_INT32(vita_ab_start_seconds, 0, "Vita",
+                     "Diagnostic: seconds after the start before vita_ab_cycle begins (its first "
+                     "state is applied then)");
+REXCVAR_DEFINE_STRING(vita_ab_cycle, "", "Vita",
+                      "Diagnostic: states separated by '|', each 'cvar=value;cvar=value' on top "
+                      "of the values at start (an empty state = those values). Only cvars read "
+                      "while running, e.g. \"|storm2_job_wait_sleep_us=100\"");
 REXCVAR_DEFINE_STRING(vita_memory_budgets_mib, "", "Vita",
                       "Diagnostic: 'MAIN,PHYCONT,CDRAM' MiB the runtime's memory blocks (the "
                       "game's memory) may take from each kind of memory; past one it is "
@@ -603,6 +613,12 @@ int main() {
   // waited for it: the reverb alone (native) used 88% of a core at 500 MHz.
   // The sound output is discarded on the Vita for now, so it is not run.
   app_default("storm2_skip_reverb", "true");
+  // The software MMU's usage report scans all backed guest memory for non-zero
+  // pages: 0.7-1.05 s on the console's main thread (inside VdSwap) every 600
+  // frames, a freeze every ~1.5 min on the menus. The per-frame CSV is written
+  // to the memory card by the main thread too. Both are diagnostics.
+  app_default("soft_mmu_report_interval", "0");
+  app_default("perf_frame_stats", "false");
   // Diagnostics stay off (they cost CPU); storm2.toml turns them on, for
   // example vita_sample_thread = "*" and kernel_sync_stats = 10.
 #endif
@@ -860,7 +876,73 @@ int main() {
   }
   int quit_ticks = 0;
   int tick = 0;
+  // vita_ab_cycle: states of "cvar=value" settings, each on top of the values
+  // at start, switched every vita_ab_seconds.
+  std::vector<std::vector<std::pair<std::string, std::string>>> ab_states;
+  std::vector<std::pair<std::string, std::string>> ab_base;
+  {
+    const std::string cycle = REXCVAR_GET(vita_ab_cycle);
+    size_t pos = 0;
+    while (REXCVAR_GET(vita_ab_seconds) > 0 && pos <= cycle.size()) {
+      const size_t bar = std::min(cycle.find('|', pos), cycle.size());
+      std::vector<std::pair<std::string, std::string>> state;
+      const std::string text = cycle.substr(pos, bar - pos);
+      size_t p = 0;
+      while (p < text.size()) {
+        const size_t semi = std::min(text.find(';', p), text.size());
+        const std::string item = text.substr(p, semi - p);
+        const size_t eq = item.find('=');
+        if (eq != std::string::npos && eq > 0) {
+          const std::string name = item.substr(0, eq);
+          state.emplace_back(name, item.substr(eq + 1));
+          bool known = false;
+          for (const auto& b : ab_base) {
+            known = known || b.first == name;
+          }
+          if (!known) {
+            ab_base.emplace_back(name, rex::cvar::GetFlagByName(name));
+          }
+        }
+        p = semi + 1;
+      }
+      ab_states.push_back(std::move(state));
+      pos = bar + 1;
+    }
+  }
+  size_t ab_index = 0;
+  const uint64_t ab_begin_us =
+      sceKernelGetProcessTimeWide() + uint64_t(std::max(0, REXCVAR_GET(vita_ab_start_seconds))) * 1000000ull;
+  bool ab_started = false;
+  uint64_t ab_switch_us = ab_begin_us;
+  auto ab_apply = [&](size_t index) {
+    std::string text;
+    for (const auto& [name, value] : ab_base) {
+      rex::cvar::SetFlagByName(name, value);
+    }
+    for (const auto& [name, value] : ab_states[index]) {
+      rex::cvar::SetFlagByName(name, value);
+      text += name + "=" + value + " ";
+    }
+    REXLOG_INFO("A/B: state {} of {}: {}", index, ab_states.size(),
+                text.empty() ? std::string("(values at start)") : text);
+    Stats("A/B: state %u of %u: %s\n", unsigned(index), unsigned(ab_states.size()),
+          text.empty() ? "(values at start)" : text.c_str());
+  };
   while (!finished) {
+    if (ab_states.size() > 1) {
+      const uint64_t now_us = sceKernelGetProcessTimeWide();
+      if (!ab_started) {
+        if (now_us >= ab_begin_us) {
+          ab_started = true;
+          ab_switch_us = now_us;
+          ab_apply(0);
+        }
+      } else if (now_us - ab_switch_us >= uint64_t(REXCVAR_GET(vita_ab_seconds)) * 1000000ull) {
+        ab_switch_us = now_us;
+        ab_index = (ab_index + 1) % ab_states.size();
+        ab_apply(ab_index);
+      }
+    }
     if (g_sampler.all && tick % 10 == 0) {
       // Every guest thread, as threads appear (checked once a second).
       for (auto& xthread : runtime->kernel_state()->object_table()

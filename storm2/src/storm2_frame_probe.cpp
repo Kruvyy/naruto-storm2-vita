@@ -273,7 +273,7 @@ REX_HOOK_RAW(sub_822344F8) {
   }
 
 STORM2_PROBE_HOOK(sub_825D03F0, kFrameSync)
-STORM2_PROBE_HOOK(sub_825D6630, kJobWait)
+// sub_825D6630 (kJobWait): timed in storm2_job_wait.cpp, which hooks it.
 STORM2_PROBE_HOOK(sub_82551BE8, kUpdateA)
 STORM2_PROBE_HOOK(sub_8262F350, kUpdateA1)
 STORM2_PROBE_HOOK(sub_82462AC8, kUpdateB)

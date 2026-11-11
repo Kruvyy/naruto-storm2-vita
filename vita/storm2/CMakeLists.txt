@@ -76,6 +76,7 @@ add_executable(storm2_vita src/main_vita.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_counter_wait.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_fence_wait.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_frame_probe.cpp
+  ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_job_wait.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_native_crt.cpp
   ${STORM2_NATIVE_INCS}
   ${CMAKE_CURRENT_LIST_DIR}/../common/vita_math_compat.c)
