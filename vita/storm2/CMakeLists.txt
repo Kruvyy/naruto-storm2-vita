@@ -39,6 +39,12 @@ message(STATUS "Storm 2 generated sources: ${STORM2_SOURCE_COUNT}")
 
 add_library(storm2_code STATIC ${STORM2_SOURCES})
 target_include_directories(storm2_code PRIVATE ${STORM2_GEN_DIR})
+# Plain guest loads/stores without volatile (MMIO-checked ones keep it): the
+# compiler may then keep values in registers and drop repeated accesses.
+option(STORM2_MEM_NONVOLATILE "Generated code: plain guest memory accesses not volatile" OFF)
+if(STORM2_MEM_NONVOLATILE)
+  target_compile_definitions(storm2_code PRIVATE REX_MEM_VOLATILE=)
+endif()
 # rex_vita_settings brings REXGLUE_SOFT_MMU, REX_GUEST_SOFT_MMU,
 # REX_GUEST_SPLIT_U64 and the runtime headers.
 target_link_libraries(storm2_code PRIVATE rex_vita_settings)
