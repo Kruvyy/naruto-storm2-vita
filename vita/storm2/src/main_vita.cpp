@@ -558,6 +558,9 @@ int main() {
   // Half precision pixel shaders: on the console the menu's GPU time is the
   // pixel shaders' (~296 ms a frame with them, ~7 ms with solid-color ones).
   app_default("gles_ps_precision", "mediump");
+  // Post-processing targets (color without depth) at half the render scale:
+  // ~80% of the menu's GPU time on the console went to their scenes.
+  app_default("gles_vita_post_target_divisor", "2");
   app_default("gles_vita_cdram_pool_mib", "64");
   // Depth-only passes draw into a framebuffer whose depth buffer vitaGL sizes
   // like its color attachment: a 16x16 scratch color left a 16x16 depth buffer
