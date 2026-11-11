@@ -288,6 +288,8 @@ struct SampleKeyHash {
 };
 struct SampledThread {
   std::atomic<PPCContext*> ctx{nullptr};
+  uint32_t stack_low = 0;   // the stack walk reads only [stack_low, stack_high)
+  uint32_t stack_high = 0;
   std::string name;
   std::unordered_map<SampleKey, uint32_t, SampleKeyHash> counts;
   uint64_t total = 0;
@@ -326,12 +328,16 @@ int SamplerThread(SceSize, void*) {
       SampleKey key{};
       key[0] = uint32_t(*reinterpret_cast<volatile uint64_t*>(&ctx->lr));
       uint32_t sp = uint32_t(*reinterpret_cast<volatile uint64_t*>(&ctx->r1.u64));
+      // Only inside the thread's own stack: a thread that has not run yet has
+      // r1 at the stack top, and the page above it is not backed (reading it
+      // faulted on a console).
+      auto in_stack = [&](uint32_t a) { return a >= t.stack_low && a + 4 <= t.stack_high; };
       for (size_t k = 1; k < kChain && g_sampler.memory; ++k) {
-        if (sp & 3) {
+        if ((sp & 3) || !in_stack(sp)) {
           break;
         }
         const uint32_t next = SampleLoad32(sp);
-        if (next <= sp || next - sp > 0x40000 || (next & 3)) {
+        if (next <= sp || (next & 3) || !in_stack(next - 8)) {
           break;
         }
         key[k] = SampleLoad32(next - 8);
@@ -831,6 +837,8 @@ int main() {
         }
         if (!known && count < kMaxSampled) {
           g_sampler.threads[count].name = thread->name();
+          g_sampler.threads[count].stack_low = xthread->stack_limit();
+          g_sampler.threads[count].stack_high = xthread->stack_base();
           g_sampler.threads[count].ctx.store(ctx);
           g_sampler.count.store(count + 1, std::memory_order_release);
         }
@@ -847,6 +855,8 @@ int main() {
         rex::thread::Thread* thread = xthread->thread();
         if (thread && thread->name().find(t.name) != std::string::npos &&
             xthread->thread_state()) {
+          t.stack_low = xthread->stack_limit();
+          t.stack_high = xthread->stack_base();
           t.ctx.store(xthread->thread_state()->context());
           REXLOG_INFO("Sampling the link register of guest thread '{}'", thread->name());
           break;
