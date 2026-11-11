@@ -107,6 +107,9 @@ REXCVAR_DEFINE_STRING(vita_sample_thread, "", "Vita",
                       "Diagnostic: sample the link register of the guest thread whose name "
                       "contains this text (e.g. 'Main XThread') every ~1 ms and write the most "
                       "frequent call sites to storm2_samples.log every 30 s (empty = off)");
+REXCVAR_DEFINE_INT32(vita_sample_top, 20, "Vita",
+                     "Diagnostic: how many of the most frequent call chains vita_sample_thread "
+                     "writes per thread and interval");
 REXCVAR_DEFINE_STRING(vita_memory_budgets_mib, "", "Vita",
                       "Diagnostic: 'MAIN,PHYCONT,CDRAM' MiB the runtime's memory blocks (the "
                       "game's memory) may take from each kind of memory; past one it is "
@@ -275,7 +278,7 @@ constexpr const char* kSamplesPath = "ux0:data/storm2port/storm2_samples.log";
 // LR saved at -8 of each frame), so threads that all wait in one helper are
 // told apart by who called it.
 constexpr size_t kMaxSampled = 32;
-constexpr size_t kChain = 4;
+constexpr size_t kChain = 8;
 using SampleKey = std::array<uint32_t, kChain>;
 struct SampleKeyHash {
   size_t operator()(const SampleKey& k) const {
@@ -381,10 +384,14 @@ void WriteSamples(uint64_t now_us) {
               [](const auto& a, const auto& b) { return a.second > b.second; });
     text += fmt::format("t={}s {} samples of the guest link register of '{}'\n",
                         now_us / 1000000, total, t.name);
-    for (size_t i = 0; i < top.size() && i < (g_sampler.all ? 6 : 20); ++i) {
-      text += fmt::format("  {:5.1f}%  {:08X} < {:08X} < {:08X} < {:08X}\n",
-                          100.0 * top[i].second / double(total), top[i].first[0],
-                          top[i].first[1], top[i].first[2], top[i].first[3]);
+    const size_t keep = g_sampler.all ? 6 : size_t(std::max(1, REXCVAR_GET(vita_sample_top)));
+    for (size_t i = 0; i < top.size() && i < keep; ++i) {
+      text += fmt::format("  {:5.1f}%  {:08X}", 100.0 * top[i].second / double(total),
+                          top[i].first[0]);
+      for (size_t k = 1; k < kChain; ++k) {
+        text += fmt::format(" < {:08X}", top[i].first[k]);
+      }
+      text += fmt::format("  ({})\n", top[i].second);
     }
   }
   if (text.empty()) {
