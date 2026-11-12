@@ -550,19 +550,32 @@ int main() {
   // 16% and 5% with each skipped (gles_profile_ps_seconds). The other costly
   // pixel shaders draw the menus' own frames and text (skipping them broke
   // the title screen).
-  app_default("gles_skip_ps",
-              "A4A965C1/0F628CC3,A4A965C1/3FF1898E,A4A965C1/FACBF5B5,A2147ED6,"
-              "6D868915,66E05C9B");
+  // The whole velocity pass (A4A965C1 with every vertex shader) and the motion
+  // blur pass BCC46076 (which gles_ps_output_override turns into a copy of the
+  // scene into the target that already holds it): the console's Press Start
+  // went from ~11.2 to ~14.8 frames/s (A/B in one run), Vita3K captures equal.
+  // With only BCC46076 skipped the battle showed the velocity buffer (a bluish
+  // band) that the copy used to cover.
+  app_default("gles_skip_ps", "A4A965C1,A2147ED6,6D868915,66E05C9B,BCC46076");
+  // A resolve that repeats the last copy into its target from an unchanged
+  // source is not made again (Press Start: 7 of ~35 copies a frame, among them
+  // the second color target, only written through MRT, copied 6 times;
+  // Vita3K captures equal).
+  app_default("gles_skip_repeated_resolves", "true");
   // Real memory only for the ranges of the big guest regions the game uses
   // (MiB, from the usage maps of soft_mmu_report_interval, with 1 MiB of
   // margin). A write elsewhere stops the game with a message naming the region.
-  // These cover the title and the menus (133 MiB instead of 302); a battle
-  // needs 0xAB000000=...|76-166, 0x40F40000=0-40|67-71 and
-  // 0xDC000000=0-4|6-12|14-32|38-46 (188 MiB), more than the console has left
-  // (docs/bugs.md, bug 94).
+  // These cover the title, the menus and the character select (156 MiB instead
+  // of 302): the character select loads the fighters into 0xAB000000 up to MiB
+  // 162 (Vita3K usage maps; with 76-143 the console stopped there, "wrote past
+  // the limit of physical region AB000000"). A battle also needs
+  // 0x40F40000=0-40|67-71 and 0xDC000000=0-4|6-12|14-32|38-46 (docs/bugs.md,
+  // bug 94). vsize:16: a 16 MiB virtual region whose address changes from run
+  // to run, of which only the first MiB is written.
   app_default("soft_mmu_caps",
-              "0xAB000000=2-6|10-14|18-22|26-29|42-46|66-69|76-143,"
-              "0x40F40000=0-9|67-71,0xDC000000=0-4|6-12|14-22|38-46,0xC0000000=0-1");
+              "0xAB000000=2-6|10-14|18-22|26-29|42-46|66-69|76-166,"
+              "0x40F40000=0-9|67-71,0xDC000000=0-4|6-12|14-22|38-46,0xC0000000=0-1,"
+              "vsize:16=0-2");
   // vitaGL pools: CDRAM for textures and render targets, a small RAM pool for
   // the vertex stream ring (1 MiB segments, two copies: 8 MiB; what does not
   // fit gets its own buffers); most of the physically contiguous RAM is left
@@ -589,7 +602,9 @@ int main() {
   // Core 0 left to the game's main thread (vita_thread_cores names it there):
   // in the menu it is the limit, and the audio thread ran on its core.
   app_default("vita_reserved_core", "0");
-  app_default("gles_vita_cdram_pool_mib", "64");
+  // 48 MiB: the console's character select left 32.8 MiB of 64 free (pool
+  // probe), and the game's blocks need the CDRAM beyond it there.
+  app_default("gles_vita_cdram_pool_mib", "48");
   // Depth-only passes draw into a framebuffer whose depth buffer vitaGL sizes
   // like its color attachment: a 16x16 scratch color left a 16x16 depth buffer
   // that the console's GPU wrote far past (heap corruption, a crash in free()
@@ -728,7 +743,15 @@ int main() {
   // the game may take at most 24 MiB of it once the main RAM is full. (Small
   // blocks first in CDRAM, as tried in the Vita3K simulation, took all of it
   // there and the first console run hung or crashed without GPU memory.)
-  rex::memory::VitaSetPoolBudgets(SIZE_MAX, SIZE_MAX, size_t(24) << 20);
+  // The game's blocks take at most 192 MiB of the main RAM (what the menus
+  // used on the console with ~10 MiB left): past that they go to the
+  // physically contiguous RAM and CDRAM instead of taking the last of the main
+  // RAM, which thread stacks and the shader compiler's block need later.
+  // CDRAM: up to 40 MiB (the vitaGL pool is 48 MiB on the console, see
+  // gles_vita_cdram_pool_mib): loading the character select takes a large
+  // temporary block on top of ~220 MiB of blocks; with 24 MiB the allocations
+  // after it failed (Vita3K with the console's limits).
+  rex::memory::VitaSetPoolBudgets(size_t(192) << 20, SIZE_MAX, size_t(40) << 20);
 #endif
   if (const std::string& spec = REXCVAR_GET(vita_memory_budgets_mib); !spec.empty()) {
     unsigned main_mib = 0, phycont_mib = 0, cdram_mib = 0;
