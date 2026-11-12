@@ -79,6 +79,7 @@ void VitaPollWakeups(uint64_t out[3]);  // core/threading_vita.cpp
 uint64_t VitaThreadBlockedUs(uint32_t system_id);  // core/threading_vita.cpp
 void VitaReapplyThreadPlacement();  // core/threading_vita.cpp
 size_t VitaLiveThreadObjects();     // core/threading_vita.cpp
+bool VitaCore3Available();         // core/threading_vita.cpp
 }
 namespace rex::memory {
 void VitaSetPoolBudgets(size_t main_bytes, size_t phycont_bytes, size_t cdram_bytes);
@@ -823,6 +824,8 @@ int main() {
     vita_heap_trace_enable(uint32_t(REXCVAR_GET(vita_heap_trace)));
   }
   LogMemory("start");
+  // Core 3 (CapUnlocker) before any thread placement reads the core settings.
+  rex::thread::VitaCore3Available();
   if (const int32_t probe = REXCVAR_GET(vita_kernel_object_probe); probe > 0) {
     // How many kernel objects the process may still make: the console refused
     // new semaphores (0x8002450D, SCE_KERNEL_ERROR_UID_RL_OVERFLOW) while the
