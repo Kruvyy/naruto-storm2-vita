@@ -14,14 +14,20 @@ include(generated/rexglue.cmake)
 # the generated code at build time into the build directory (derived from the
 # game: never committed). Used by src/storm2_audio_native.cpp.
 find_package(Python3 COMPONENTS Interpreter REQUIRED)
-set(STORM2_NATIVE_FUNCS sub_82599010 sub_827C3850)
+set(STORM2_NATIVE_FUNCS sub_82599010 sub_827C3850 sub_82654128)
+# sub_82654128 (bone matrices and per-vertex transforms on the main thread,
+# storm2_native_mesh.cpp): its small vector leaves inlined, the stack frame in
+# guest memory, registers kept in step with PPCContext (virtual calls).
+set(STORM2_NATIVE_ARGS_sub_82654128
+    --inline sub_825CA318,sub_825CA820,sub_827B2400,sub_825CA2F8,sub_825C9A38,sub_825CA768
+    --guest-stack --ctx-regs --track-stores)
 set(STORM2_NATIVE_DIR ${CMAKE_CURRENT_BINARY_DIR}/generated_native)
 set(STORM2_NATIVE_INCS)
 foreach(func ${STORM2_NATIVE_FUNCS})
     add_custom_command(
         OUTPUT ${STORM2_NATIVE_DIR}/${func}.inc
         COMMAND ${Python3_EXECUTABLE} -I ${CMAKE_CURRENT_LIST_DIR}/../scripts/ppc_to_native.py
-                --gen-dir ${CMAKE_CURRENT_LIST_DIR}/generated/default --func ${func}
+                --gen-dir ${CMAKE_CURRENT_LIST_DIR}/generated/default --func ${func} ${STORM2_NATIVE_ARGS_${func}}
                 --out ${STORM2_NATIVE_DIR}/${func}.inc
         DEPENDS ${CMAKE_CURRENT_LIST_DIR}/../scripts/ppc_to_native.py
                 ${CMAKE_CURRENT_LIST_DIR}/generated/default/storm2_init.cpp
@@ -35,6 +41,7 @@ set(STORM2_SOURCES
     src/storm2_movies.cpp
     src/storm2_audio_native.cpp
     src/storm2_native_skin.cpp
+    src/storm2_native_mesh.cpp
     src/storm2_counter_wait.cpp
     src/storm2_fence_wait.cpp
     src/storm2_frame_probe.cpp
@@ -50,5 +57,6 @@ else()
     add_executable(storm2 ${STORM2_SOURCES})
 endif()
 
-target_include_directories(storm2 PRIVATE ${STORM2_NATIVE_DIR})
+# storm2_native_mesh.cpp includes the generated storm2_pch.h (indirect calls).
+target_include_directories(storm2 PRIVATE ${STORM2_NATIVE_DIR} ${CMAKE_CURRENT_LIST_DIR}/generated/default)
 rexglue_setup_target(storm2)
