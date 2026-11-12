@@ -430,7 +430,9 @@ void ThreadReport(rex::Runtime* runtime, uint64_t now_us, uint64_t interval_us,
     uint64_t run_us;
     int guest_cpu;      // guest hardware thread (0-5) the game asked for
     uint64_t mask;      // affinity mask in guest hardware threads (two per Vita core)
+    uint32_t stack_used_kib = 0, stack_kib = 0;  // vita_thread_stack_paint
   };
+  static const bool stack_paint = rex::cvar::GetFlagByName("vita_thread_stack_paint") == "true";
   std::vector<Row> rows;
   std::map<SceUID, uint64_t> run;
   bool no_kernel_run_time = false;
@@ -466,6 +468,19 @@ void ThreadReport(rex::Runtime* runtime, uint64_t now_us, uint64_t interval_us,
                     xthread->thread_id(), double(delta) / double(interval_us), info.lastExecutedCpuId,
                     info.currentPriority, run_us, int(xthread->active_cpu()),
                     thread->affinity_mask()});
+    if (stack_paint && info.stack && info.stackSize) {
+      // Deepest use: from the bottom, the first word no longer the pattern
+      // that vita_thread_stack_paint wrote at the thread's start.
+      const uint32_t* p = static_cast<const uint32_t*>(info.stack);
+      const uint32_t* end = p + info.stackSize / 4;
+      while (p < end && *p == 0xA5C3A5C3u) {
+        ++p;
+      }
+      const size_t used = size_t(reinterpret_cast<const uint8_t*>(end) -
+                                 reinterpret_cast<const uint8_t*>(p));
+      rows.back().stack_used_kib = uint32_t(used / 1024);
+      rows.back().stack_kib = uint32_t(info.stackSize / 1024);
+    }
   }
   last_run = std::move(run);
   std::sort(rows.begin(), rows.end(), [](const Row& a, const Row& b) { return a.share > b.share; });
@@ -489,9 +504,12 @@ void ThreadReport(rex::Runtime* runtime, uint64_t now_us, uint64_t interval_us,
     if (row.share < 0.005 && !no_run_time) {
       continue;
     }
-    text += fmt::format("  {:5.1f}%  core {}  prio {:3}  hw {} mask {:02X}  {:08X}  {}\n",
+    text += fmt::format("  {:5.1f}%  core {}  prio {:3}  hw {} mask {:02X}  {:08X}  {}{}\n",
                         row.share * 100, row.core, row.priority, row.guest_cpu,
-                        unsigned(row.mask), row.guest_id, row.name);
+                        unsigned(row.mask), row.guest_id, row.name,
+                        row.stack_kib ? fmt::format("  stack {}/{} KiB", row.stack_used_kib,
+                                                    row.stack_kib)
+                                      : std::string());
   }
   SceUID fd = sceIoOpen(kThreadsPath, SCE_O_WRONLY | SCE_O_CREAT | SCE_O_APPEND, 0666);
   if (fd >= 0) {
@@ -634,6 +652,12 @@ int main() {
   // to the memory card by the main thread too. Both are diagnostics.
   app_default("soft_mmu_report_interval", "0");
   app_default("perf_frame_stats", "false");
+  // Host stacks of the game's threads: 512 KiB instead of 2 MiB (~18 threads,
+  // ~27 MiB of main RAM). Measured with vita_thread_stack_paint through the
+  // menus into a battle: the deepest guest thread used 16 KiB (the runtime's
+  // own threads, e.g. the GPU command thread that runs the shader compiler,
+  // keep 2 MiB).
+  app_default("guest_thread_host_stack_kib", "512");
   // Diagnostics stay off (they cost CPU); storm2.toml turns them on, for
   // example vita_sample_thread = "*" and kernel_sync_stats = 10.
 #endif
