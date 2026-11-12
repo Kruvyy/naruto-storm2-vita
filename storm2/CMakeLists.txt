@@ -39,6 +39,7 @@ set(STORM2_SOURCES
     src/storm2_frame_probe.cpp
     src/storm2_job_wait.cpp
     src/storm2_native_crt.cpp
+    src/storm2_texture_lookup.cpp
     ${STORM2_NATIVE_INCS}
 )
 

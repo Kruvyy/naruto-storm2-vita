@@ -84,8 +84,10 @@ void VitaSetSmallBlocksFirstInCdram(size_t max_bytes);
 // (~237 MiB free at start with ATTRIBUTE2=12) is what the game's memory needs.
 extern "C" {
 #if STORM2_CONSOLE
-// 40 ran out on the title screen (a 3 MiB allocation, heap in pieces).
-unsigned int _newlib_heap_size_user = 48 * 1024 * 1024;
+// 40 ran out on the title screen (a 3 MiB allocation, heap in pieces), before
+// the XMA decoders were made smaller; 42 leaves ~4 MiB over the battle's use
+// in Vita3K (heap arena ~38.6 MiB) and gives 6 MiB of main RAM to the battle.
+unsigned int _newlib_heap_size_user = 42 * 1024 * 1024;
 #else
 unsigned int _newlib_heap_size_user = 96 * 1024 * 1024;
 #endif
@@ -583,17 +585,22 @@ int main() {
   // Real memory only for the ranges of the big guest regions the game uses
   // (MiB, from the usage maps of soft_mmu_report_interval, with 1 MiB of
   // margin). A write elsewhere stops the game with a message naming the region.
-  // These cover the title, the menus and the character select (156 MiB instead
-  // of 302): the character select loads the fighters into 0xAB000000 up to MiB
-  // 162 (Vita3K usage maps; with 76-143 the console stopped there, "wrote past
-  // the limit of physical region AB000000"). A battle also needs
-  // 0x40F40000=0-40|67-71 and 0xDC000000=0-4|6-12|14-32|38-46 (docs/bugs.md,
-  // bug 94). vsize:16: a 16 MiB virtual region whose address changes from run
-  // to run, of which only the first MiB is written.
+  // These cover the title, the menus, the character select and a battle
+  // (~265 MiB of blocks instead of 302): the character select loads the
+  // fighters into 0xAB000000 up to MiB 162 (with 76-143 the console stopped
+  // there, "wrote past the limit of physical region AB000000"), the battle
+  // writes 0x40F40000 up to MiB 38 and 0xDC000000 up to 30 (Vita3K usage maps
+  // with 1 MiB of margin; docs/bugs.md, bug 94). vsize:16: a 16 MiB virtual
+  // region whose address changes from run to run, of which only the first MiB
+  // is written. All of it is backed from the start.
   app_default("soft_mmu_caps",
-              "0xAB000000=2-6|10-14|18-22|26-29|42-46|66-69|76-166,"
-              "0x40F40000=0-9|67-71,0xDC000000=0-4|6-12|14-22|38-46,0xC0000000=0-1,"
+              "0xAB000000=2-7|10-15|18-23|26-29|42-46|66-69|76-166,"
+              "0x40F40000=0-40|67-71,0xDC000000=0-12|14-32|38-46,0xC0000000=0-1,"
               "vsize:16=0-2");
+  // The guest's physical memory from the physically contiguous RAM and CDRAM
+  // first: the main RAM is kept for the virtual heaps' big blocks (0x40F40000
+  // needs 40 MiB in one piece, which found no room after the physical regions).
+  app_default("soft_mmu_physical_other_pools", "true");
   // vitaGL pools: CDRAM for textures and render targets, a small RAM pool for
   // the vertex stream ring (1 MiB segments, two copies: 8 MiB; what does not
   // fit gets its own buffers); most of the physically contiguous RAM is left
@@ -634,11 +641,25 @@ int main() {
   // from the shader cache.
   app_default("gles_vita_compiler_arena_mib", "12");
   // vitaGL keeps ~8 MiB of its own in the RAM pool (with a 6 MiB per-frame
-  // pool); with 12 the ring did not fit and went to the CDRAM pool.
-  app_default("gles_vita_ram_pool_mib", "16");
+  // pool); with 12 the ring did not fit and went to the CDRAM pool. The ring:
+  // 1.5 MiB segments (two copies, 3 segments: 9 MiB; vitaGL holds ~10.6 MiB
+  // of the RAM pool before it, so 21). With 1 MiB the battle (up to ~2.7 MiB
+  // of new vertices a frame) put the rest in buffers of their own, which grew
+  // to ~13 MiB of the VRAM pool and filled it. 3 segments instead of 4 (3 MiB
+  // of main RAM for the battle): with two display buffers the GPU is at most
+  // two swaps behind, and vitaGL itself frees replaced buffers 3 swaps later.
+  app_default("gles_vita_ram_pool_mib", "21");
   app_default("gles_vita_circular_pool_mib", "6");
   app_default("gles_vita_phycont_pool_mib", "8");
   app_default("gles_vertex_stream_mib", "1");
+  app_default("gles_vertex_stream_kib", "1536");
+  app_default("gles_vertex_stream_segments", "3");
+  // sceGxm's parameter buffer (outside the pools, in CDRAM: vitaGL takes 82
+  // MiB of the console's CDRAM with a 64 MiB pool) at 8 MiB instead of 16 for
+  // 480x272 scenes, and two display buffers instead of three (2 MiB each of
+  // the VRAM pool): memory the battle needs.
+  app_default("gles_vita_param_buffer_mib", "8");
+  app_default("gles_vita_display_buffers", "2");
   app_default("gles_vertex_stream_usage", "1");
   // Cached vertex/index buffers in the CDRAM pool, not the main RAM.
   app_default("gles_vertex_buffer_usage", "0");
@@ -652,12 +673,15 @@ int main() {
   // to the memory card by the main thread too. Both are diagnostics.
   app_default("soft_mmu_report_interval", "0");
   app_default("perf_frame_stats", "false");
-  // Host stacks of the game's threads: 512 KiB instead of 2 MiB (~18 threads,
-  // ~27 MiB of main RAM). Measured with vita_thread_stack_paint through the
-  // menus into a battle: the deepest guest thread used 16 KiB (the runtime's
-  // own threads, e.g. the GPU command thread that runs the shader compiler,
-  // keep 2 MiB).
-  app_default("guest_thread_host_stack_kib", "512");
+  // Host stacks of the game's threads: 128 KiB instead of 2 MiB (~18 threads,
+  // ~34 MiB of main RAM). Measured with vita_thread_stack_paint through the
+  // menus into a battle: the deepest guest thread used 16 KiB.
+  app_default("guest_thread_host_stack_kib", "128");
+  // The runtime's own threads (audio, XMA, vsync, dispatch) used at most 19
+  // KiB: 256 KiB each instead of 2 MiB. The GPU command thread keeps 1 MiB: it
+  // runs the shader compiler when a shader is missing from the cache.
+  app_default("host_thread_host_stack_kib", "256");
+  app_default("thread_host_stack_overrides", "GPU Commands=1024");
   // Diagnostics stay off (they cost CPU); storm2.toml turns them on, for
   // example vita_sample_thread = "*" and kernel_sync_stats = 10.
 #endif
@@ -771,11 +795,12 @@ int main() {
   // used on the console with ~10 MiB left): past that they go to the
   // physically contiguous RAM and CDRAM instead of taking the last of the main
   // RAM, which thread stacks and the shader compiler's block need later.
-  // CDRAM: up to 40 MiB (the vitaGL pool is 48 MiB on the console, see
-  // gles_vita_cdram_pool_mib): loading the character select takes a large
-  // temporary block on top of ~220 MiB of blocks; with 24 MiB the allocations
-  // after it failed (Vita3K with the console's limits).
-  rex::memory::VitaSetPoolBudgets(size_t(192) << 20, SIZE_MAX, size_t(40) << 20);
+  // Main RAM: up to 205 MiB for the game's blocks (with the battle's ranges
+  // and a 42 MiB heap; the thread stacks and the rest take what is left);
+  // CDRAM: up to 50 MiB (vitaGL pool 48 MiB, parameter buffer 8): ~265 MiB of
+  // blocks in all, which the battle fills (Vita3K with the console's limits;
+  // the vitaGL pools then run out, docs/bugs.md item 110).
+  rex::memory::VitaSetPoolBudgets(size_t(205) << 20, SIZE_MAX, size_t(50) << 20);
 #endif
   if (const std::string& spec = REXCVAR_GET(vita_memory_budgets_mib); !spec.empty()) {
     unsigned main_mib = 0, phycont_mib = 0, cdram_mib = 0;

@@ -28,13 +28,19 @@ p.add_argument("game")
 p.add_argument("out")
 p.add_argument("exe")
 p.add_argument("scratch")
+# Halved stage textures make the battle's loading faster, and with it a race
+# in the game shows up (a model drawn before one of its textures is
+# registered: storm2/src/storm2_texture_lookup.cpp), whatever the minimum.
 p.add_argument("--min-size", type=int, default=64,
                help="keep textures whose smaller side would drop below this")
 p.add_argument("--only", default="", help="limit to data/<this> (others copied unchanged)")
 p.add_argument("--unpack-only", action="store_true",
                help="write the files uncompressed without changing textures (test)")
+p.add_argument("--keep-layout", action="store_true",
+               help="test: pad each changed NUT to its old length so no chunk moves")
 p.add_argument("--bisect-file", default="", help="test: halve only in this file name")
-p.add_argument("--bisect-range", default="", help="test: only textures a:b (index in the file)")
+p.add_argument("--bisect-range", default="",
+               help="test: only textures a:b[,c:d...] (index in the file)")
 args = p.parse_args()
 
 
@@ -105,12 +111,14 @@ def halve_file(data):
         index = texture_index[0]
         texture_index[0] += 1
         if args.bisect_range:
-            a, b = (int(x) for x in args.bisect_range.split(":"))
-            if not a <= index < b:
+            ranges = [tuple(int(x) for x in r.split(":")) for r in args.bisect_range.split(",")]
+            if not any(a <= index < b for a, b in ranges):
                 continue
         new = halve_nut(nut)
         if new is None:
             continue
+        if args.keep_layout:
+            new += bytes(len(nut) - len(new))  # the NUT's texture count ends the parse
         out += data[last:i - 24]
         # Chunk data prefix: u16 0x64, u16 width, u16 height, u16 ?, u32 nut size.
         prefix = bytearray(data[i - 12:i])
