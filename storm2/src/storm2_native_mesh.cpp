@@ -222,8 +222,24 @@ REX_HOOK_RAW(sub_82654128) {
     PPCContext native_ctx = entry;
     Native_sub_82654128(native_ctx, base);
     CopyRanges(base, ranges, after_native, false);
-    // Leave the recompiled code's result.
-    CopyRanges(base, ranges, after_original, true);
+    // Leave the recompiled code's result in the output (at or above r4). Not
+    // below it: those are the temporary arrays, already freed, and writing
+    // the old bytes back there overwrote the heap's free-list links (the next
+    // free spun forever in sub_82566DF8, Vita3K 2026-11-12).
+    {
+      Ranges output;
+      std::vector<uint8_t> output_bytes;
+      size_t at = 0;
+      for (const auto& [start, end] : ranges) {
+        if (start >= entry.r4.u32) {
+          output.emplace_back(start, end);
+          output_bytes.insert(output_bytes.end(), after_original.begin() + at,
+                              after_original.begin() + at + (end - start));
+        }
+        at += end - start;
+      }
+      CopyRanges(base, output, output_bytes, true);
+    }
     ctx = original_ctx;
     uint64_t differing = 0, differing_output = 0;
     std::string blocks;  // the first differing bytes: address original/native

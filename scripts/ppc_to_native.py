@@ -163,6 +163,10 @@ class Translator:
         self.inline_count = 0
         self.fwritten = set()             # FPRs the function writes (ctx_regs)
         self.restores_lr = False          # returns through __restgprlr_N
+        # VMX registers known to hold one value in every element (written by
+        # vspltw in the current straight-line code): vrefp then needs one
+        # division and stvewx no element select. Cleared at labels and calls.
+        self.splat = set()
         self.out = []
         self.frame = None          # stack frame size once stwu ran
         self.stack_access = set()  # (offset, width)
@@ -182,9 +186,17 @@ class Translator:
             self.vregs.add(n)  # loaded from PPCContext at entry and after calls
         return f'v{n}'
 
-    def vwrite(self, n):
+    def vwrite(self, n, splat=False):
         self.vregs.add(n)
+        if splat:
+            self.splat.add(n)
+        else:
+            self.splat.discard(n)
         return f'v{n}'
+
+    def check_cpp(self, cpp, needle, text):
+        if not any(needle in l for l in cpp):
+            raise TranslationError(f'recompiled form not as expected ({needle!r}): {text}')
 
     def emit(self, text):
         self.out.append('  ' + text)
@@ -241,6 +253,7 @@ class Translator:
         if self.ctx_regs:
             self.emit('@VSYNC_IN@')
             self.emit('@FLUSH@')
+        self.splat.clear()
 
     def fwrite(self, n):
         if self.ctx_regs:
@@ -479,6 +492,23 @@ class Translator:
             rd, ra, rb = gpr(a[0]), gpr(a[1]), gpr(a[2])
             e(f'r[{rd}] = r[{ra}] + r[{rb}];')
             return
+        if op == 'sth':
+            reg, (d, ra) = gpr(a[0]), mem(a[1])
+            if ra == 1 and not self.guest_stack:
+                raise TranslationError(f'16-bit stack access: {text}')
+            addr = self.ea(d, ra)
+            self.store(f'Store16(base, {addr}, r[{reg}]);', addr, 2)
+            return
+        if op in ('addic', 'addic.'):
+            # The carry stays in the recompiled function's local XER; nothing
+            # here reads it (adde etc. are not supported).
+            rd, ra, v = gpr(a[0]), gpr(a[1]), imm(a[2])
+            e(f'r[{rd}] = r[{ra}] + {v & 0xFFFFFFFF}u;')
+            if op == 'addic.':
+                self.cr_used.add(0)
+                e(f'cr0_lt = int32_t(r[{rd}]) < 0; cr0_gt = int32_t(r[{rd}]) > 0; '
+                  f'cr0_eq = r[{rd}] == 0u;')
+            return
         if op == 'ori':
             ra, rs, v = gpr(a[0]), gpr(a[1]), imm(a[2])
             e(f'r[{ra}] = r[{rs}] | {v & 0xFFFF}u;')
@@ -533,13 +563,14 @@ class Translator:
                 self.store(f'StoreV(base, {addr}, {src});', f'({addr} & ~15u)', 16)
             else:
                 src = self.vread(v)
-                self.store(f'StoreElementV(base, {addr}, {src});', f'({addr} & ~3u)', 4)
+                fn = 'StoreLane0V' if v in self.splat else 'StoreElementV'
+                self.store(f'{fn}(base, {addr}, {src});', f'({addr} & ~3u)', 4)
             return
         if op in ('vor', 'vor128'):
             vd, va, vb = vreg(a[0]), vreg(a[1]), vreg(a[2])
             x, y = self.vread(va), self.vread(vb)
             if va == vb:
-                e(f'{self.vwrite(vd)} = {x};')
+                e(f'{self.vwrite(vd, splat=va in self.splat)} = {x};')
             else:
                 e(f'{self.vwrite(vd)} = OrV({x}, {y});')
             return
@@ -555,14 +586,90 @@ class Translator:
                 raise TranslationError(f'vrefp not as rex_vrefp: {text}')
             self.vfloat = True
             x = self.vread(vb)
-            e(f'{self.vwrite(vd)} = RefpV({x});')
+            if vb in self.splat:
+                e(f'{self.vwrite(vd, splat=True)} = RefpSplatV({x});')
+            else:
+                e(f'{self.vwrite(vd)} = RefpV({x});')
+            return
+        if op == 'vspltisw':
+            vd, v = vreg(a[0]), imm(a[1])
+            e(f'{self.vwrite(vd, splat=True)} = SplatIntV({v & 0xFFFFFFFF}u);')
+            return
+        if op == 'vpermwi128':
+            vd, vb, v = vreg(a[0]), vreg(a[1]), imm(a[2])
+            sel = [(v >> (6 - 2 * i)) & 3 for i in range(4)]  # element i <- vB[sel[i]]
+            control = sum((3 - ((v >> (2 * j)) & 3)) << (2 * j) for j in range(4))
+            self.check_cpp(cpp, f'shuffle_epi32(simde_mm_load_si128((simde__m128i*)ctx.v{vb}.u32), '
+                                f'0x{control:X})', text)
+            x = self.vread(vb)
+            e(f'{self.vwrite(vd)} = PermV<{sel[0]}, {sel[1]}, {sel[2]}, {sel[3]}>({x});')
+            return
+        if op == 'vsldoi':
+            vd, va, vb, sh = vreg(a[0]), vreg(a[1]), vreg(a[2]), imm(a[3])
+            if sh % 4 or not 0 < sh < 16:
+                raise TranslationError(f'vsldoi by a shift that is not whole elements: {text}')
+            self.check_cpp(cpp, f'alignr_epi8(simde_mm_load_si128((simde__m128i*)ctx.v{va}.u8), '
+                                f'simde_mm_load_si128((simde__m128i*)ctx.v{vb}.u8), {16 - sh})', text)
+            x, y = self.vread(va), self.vread(vb)
+            e(f'{self.vwrite(vd)} = ExtV<{sh // 4}>({x}, {y});')
+            return
+        if op == 'vcfsx':
+            vd, vb, v = vreg(a[0]), vreg(a[1]), imm(a[2])
+            if v != 0:
+                raise TranslationError(f'vcfsx with a scale: {text}')
+            self.check_cpp(cpp, 'simde_mm_cvtepi32_ps(', text)
+            self.vfloat = True
+            x = self.vread(vb)
+            e(f'{self.vwrite(vd, splat=vb in self.splat)} = CvtIntV({x});')
+            return
+        if op in ('vslw', 'vsrw'):
+            vd, va, vb = vreg(a[0]), vreg(a[1]), vreg(a[2])
+            x, y = self.vread(va), self.vread(vb)
+            fn = 'ShlV' if op == 'vslw' else 'ShrV'
+            e(f'{self.vwrite(vd)} = {fn}({x}, {y});')
+            return
+        if op in ('vnmsubfp', 'vnmsubfp128'):
+            vd, va, vc, vb = vreg(a[0]), vreg(a[1]), vreg(a[2]), vreg(a[3])
+            self.check_cpp(cpp, f'simde_mm_xor_ps(simde_mm_sub_ps(simde_mm_mul_ps(simde_mm_load_ps('
+                                f'ctx.v{va}.f32), simde_mm_load_ps(ctx.v{vc}.f32)), '
+                                f'simde_mm_load_ps(ctx.v{vb}.f32))', text)
+            self.vfloat = True
+            x, c, y = self.vread(va), self.vread(vc), self.vread(vb)
+            e(f'{self.vwrite(vd)} = NmsubV({x}, {c}, {y});')
+            return
+        if op == 'vmsum3fp128':
+            vd, va, vb = vreg(a[0]), vreg(a[1]), vreg(a[2])
+            self.check_cpp(cpp, f'simde_mm_dp_ps(simde_mm_load_ps(ctx.v{va}.f32), '
+                                f'simde_mm_load_ps(ctx.v{vb}.f32), 0xEF)', text)
+            self.vfloat = True
+            x, y = self.vread(va), self.vread(vb)
+            e(f'{self.vwrite(vd, splat=True)} = Msum3V({x}, {y});')
+            return
+        if op == 'vsel':
+            vd, va, vb, vc = vreg(a[0]), vreg(a[1]), vreg(a[2]), vreg(a[3])
+            x, y, c = self.vread(va), self.vread(vb), self.vread(vc)
+            e(f'{self.vwrite(vd)} = SelV({x}, {y}, {c});')
+            return
+        if op in ('vcmpeqfp', 'vcmpgtfp'):
+            vd, va, vb = vreg(a[0]), vreg(a[1]), vreg(a[2])
+            fn = {'vcmpeqfp': 'cmpeq', 'vcmpgtfp': 'cmpgt'}[op]
+            self.check_cpp(cpp, f'simde_mm_{fn}_ps(simde_mm_load_ps(ctx.v{va}.f32), '
+                                f'simde_mm_load_ps(ctx.v{vb}.f32))', text)
+            self.vfloat = True
+            x, y = self.vread(va), self.vread(vb)
+            e(f'{self.vwrite(vd)} = {"CmpEqV" if op == "vcmpeqfp" else "CmpGtV"}({x}, {y});')
+            return
+        if op == 'vand':
+            vd, va, vb = vreg(a[0]), vreg(a[1]), vreg(a[2])
+            x, y = self.vread(va), self.vread(vb)
+            e(f'{self.vwrite(vd)} = AndV({x}, {y});')
             return
         if op in ('vspltw', 'vspltw128'):
             vd, vb, i = vreg(a[0]), vreg(a[1]), imm(a[2])
             if not 0 <= i <= 3:
                 raise TranslationError(f'bad element: {text}')
             src = self.vread(vb)
-            e(f'{self.vwrite(vd)} = SplatV<{i}>({src});')
+            e(f'{self.vwrite(vd, splat=True)} = SplatV<{i}>({src});')
             return
         if op in ('vmulfp128',):
             vd, va, vb = vreg(a[0]), vreg(a[1]), vreg(a[2])
@@ -609,6 +716,7 @@ class Translator:
     def translate_items(self, items):
         for item in items:
             if item[0] == 'label':
+                self.splat.clear()
                 label = 'L_' + self.prefix + item[1]
                 self.labels.add(label)
                 self.out.append(f'{label}:;')

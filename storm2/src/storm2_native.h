@@ -95,6 +95,79 @@ inline V4 RefpV(V4 a) {
   return simde_vld1q_f32(v);
 }
 
+// vrefp of a vector with one value in every element: one division, the same
+// one rex_vrefp does per element.
+inline V4 RefpSplatV(V4 a) {
+#if defined(__arm__) || defined(_M_ARM)
+  const float x = simde_vgetq_lane_f32(a, 0);
+  return simde_vdupq_n_f32(rex::ppc::rex_flush_denormal_(1.0f / rex::ppc::rex_flush_denormal_(x)));
+#else
+  return RefpV(a);
+#endif
+}
+
+inline V4 FromU32(simde_uint32x4_t v) { return simde_vreinterpretq_f32_u32(v); }
+inline simde_uint32x4_t U32(V4 v) { return simde_vreinterpretq_u32_f32(v); }
+// vspltisw: the sign-extended immediate in every element.
+inline V4 SplatIntV(uint32_t v) { return FromU32(simde_vdupq_n_u32(v)); }
+// vpermwi128: element i <- vB[ei].
+template <int e0, int e1, int e2, int e3>
+inline V4 PermV(V4 v) {
+  alignas(16) float t[4];
+  simde_vst1q_f32(t, v);
+  alignas(16) const float r[4] = {t[e0], t[e1], t[e2], t[e3]};
+  return simde_vld1q_f32(r);
+}
+// vsldoi by k whole elements: elements k.. of vA, then the first ones of vB.
+template <int k>
+inline V4 ExtV(V4 a, V4 b) {
+  return simde_vextq_f32(a, b, k);
+}
+// vcfsx with scale 0 (the recompiled code's cvtepi32_ps: NEON vcvt.f32.s32).
+inline V4 CvtIntV(V4 v) { return simde_vcvtq_f32_s32(simde_vreinterpretq_s32_f32(v)); }
+// vslw / vsrw: each element shifted by the low 5 bits of the same element of vB.
+inline V4 ShlV(V4 a, V4 b) {
+  const simde_int32x4_t n =
+      simde_vreinterpretq_s32_u32(simde_vandq_u32(U32(b), simde_vdupq_n_u32(31)));
+  return FromU32(simde_vshlq_u32(U32(a), n));
+}
+inline V4 ShrV(V4 a, V4 b) {
+  const simde_int32x4_t n =
+      simde_vreinterpretq_s32_u32(simde_vandq_u32(U32(b), simde_vdupq_n_u32(31)));
+  return FromU32(simde_vshlq_u32(U32(a), simde_vnegq_s32(n)));
+}
+// vnmsubfp vD,vA,vC,vB = -(vA*vC - vB), the sign flipped by XOR as the
+// recompiled code does it (also for NaN).
+inline V4 NmsubV(V4 a, V4 c, V4 b) {
+  const V4 d = simde_vsubq_f32(simde_vmulq_f32(a, c), b);
+  return FromU32(simde_veorq_u32(U32(d), simde_vdupq_n_u32(0x80000000u)));
+}
+// vmsum3fp128: the dot product of elements 0-2 in every element, through the
+// recompiled code's own simde_mm_dp_ps (same additions in the same order) on
+// its lane order (guest element i in lane 3 - i).
+inline V4 Msum3V(V4 a, V4 b) {
+  alignas(16) float x[4], y[4], ra[4], rb[4];
+  simde_vst1q_f32(x, a);
+  simde_vst1q_f32(y, b);
+  for (int i = 0; i < 4; ++i) {
+    ra[3 - i] = x[i];
+    rb[3 - i] = y[i];
+  }
+  alignas(16) float r[4];
+  simde_mm_store_ps(r, simde_mm_dp_ps(simde_mm_load_ps(ra), simde_mm_load_ps(rb), 0xEF));
+  return simde_vdupq_n_f32(r[0]);
+}
+// vsel vD,vA,vB,vC = (vA & ~vC) | (vB & vC).
+inline V4 SelV(V4 a, V4 b, V4 c) { return FromU32(simde_vbslq_u32(U32(c), U32(b), U32(a))); }
+inline V4 CmpEqV(V4 a, V4 b) { return FromU32(simde_vceqq_f32(a, b)); }
+inline V4 CmpGtV(V4 a, V4 b) { return FromU32(simde_vcgtq_f32(a, b)); }
+inline V4 AndV(V4 a, V4 b) { return FromU32(simde_vandq_u32(U32(a), U32(b))); }
+
+inline void Store16(uint8_t* base, uint32_t address, uint32_t value) {
+  const uint16_t v = __builtin_bswap16(uint16_t(value));
+  std::memcpy(Host(base, address), &v, 2);
+}
+
 inline uint32_t Load8(uint8_t* base, uint32_t address) { return *Host(base, address); }
 inline void Store8(uint8_t* base, uint32_t address, uint32_t value) {
   *Host(base, address) = uint8_t(value);
@@ -132,6 +205,10 @@ inline void StoreElementV(uint8_t* base, uint32_t address, V4 v) {
   alignas(16) uint32_t w[4];
   simde_vst1q_u32(w, simde_vreinterpretq_u32_f32(v));
   Store32(base, address & ~3u, w[(address & 15u) >> 2]);
+}
+// stvewx of a vector with one value in every element.
+inline void StoreLane0V(uint8_t* base, uint32_t address, V4 v) {
+  Store32(base, address & ~3u, simde_vgetq_lane_u32(simde_vreinterpretq_u32_f32(v), 0));
 }
 
 // PPCContext keeps a vector register with guest element i in lane 3 - i (the
