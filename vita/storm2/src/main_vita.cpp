@@ -55,6 +55,7 @@
 #include <rex/kernel/init.h>
 #include <rex/logging.h>
 #include <rex/perf/guest_frame_stats.h>
+#include <rex/ppc/intrinsics.h>
 #include <rex/runtime.h>
 #include <rex/system/kernel_state.h>
 #include <rex/system/xmemory.h>
@@ -843,6 +844,25 @@ int main() {
     Stats("tls: layout %s, call %u ns, fast %u ns, fast path %s\n",
           tls.consistent ? "same on two threads" : "differs", tls.real_ns, tls.fast_ns,
           tls.enabled ? "on" : "off");
+  }
+  {
+    // The generated code reads these tables with aligned 16-byte loads; on the
+    // console a misaligned one faults at boot (rex/ppc/intrinsics.h).
+    const struct {
+      const char* name;
+      const void* table;
+    } tables[] = {{"VectorMaskL", rex::ppc::VectorMaskL},
+                  {"VectorMaskR", rex::ppc::VectorMaskR},
+                  {"VectorShiftTableL", rex::ppc::VectorShiftTableL},
+                  {"VectorShiftTableR", rex::ppc::VectorShiftTableR}};
+    for (const auto& t : tables) {
+      const uintptr_t address = reinterpret_cast<uintptr_t>(t.table);
+      if (address & 15) {
+        REXLOG_ERROR("{} at {:08X} is not 16-byte aligned: aligned vector loads fault there",
+                     t.name, uint32_t(address));
+        Stats("ERROR: %s at %08X is not 16-byte aligned\n", t.name, unsigned(address));
+      }
+    }
   }
 
   const std::filesystem::path game_root = std::string(REXCVAR_GET(vita_game_root));
