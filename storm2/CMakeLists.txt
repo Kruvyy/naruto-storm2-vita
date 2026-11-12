@@ -14,7 +14,7 @@ include(generated/rexglue.cmake)
 # the generated code at build time into the build directory (derived from the
 # game: never committed). Used by src/storm2_audio_native.cpp.
 find_package(Python3 COMPONENTS Interpreter REQUIRED)
-set(STORM2_NATIVE_FUNCS sub_82599010)
+set(STORM2_NATIVE_FUNCS sub_82599010 sub_827C3850)
 set(STORM2_NATIVE_DIR ${CMAKE_CURRENT_BINARY_DIR}/generated_native)
 set(STORM2_NATIVE_INCS)
 foreach(func ${STORM2_NATIVE_FUNCS})
@@ -34,6 +34,7 @@ set(STORM2_SOURCES
     src/main.cpp
     src/storm2_movies.cpp
     src/storm2_audio_native.cpp
+    src/storm2_native_skin.cpp
     src/storm2_counter_wait.cpp
     src/storm2_fence_wait.cpp
     src/storm2_frame_probe.cpp

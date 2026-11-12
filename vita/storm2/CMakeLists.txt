@@ -55,9 +55,10 @@ target_compile_options(storm2_code PRIVATE
 
 # Native versions of hot guest functions (scripts/ppc_to_native.py), made from
 # the generated code at build time into the build directory (derived from the
-# game: never committed). Used by storm2/src/storm2_audio_native.cpp.
+# game: never committed). Used by storm2/src/storm2_audio_native.cpp and
+# storm2_native_skin.cpp.
 find_package(Python3 COMPONENTS Interpreter REQUIRED)
-set(STORM2_NATIVE_FUNCS sub_82599010)
+set(STORM2_NATIVE_FUNCS sub_82599010 sub_827C3850)
 set(STORM2_NATIVE_DIR ${CMAKE_CURRENT_BINARY_DIR}/generated_native)
 set(STORM2_NATIVE_INCS)
 foreach(func ${STORM2_NATIVE_FUNCS})
@@ -73,6 +74,7 @@ endforeach()
 add_executable(storm2_vita src/main_vita.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_movies.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_audio_native.cpp
+  ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_native_skin.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_counter_wait.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_fence_wait.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_frame_probe.cpp

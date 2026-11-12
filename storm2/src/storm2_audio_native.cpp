@@ -52,45 +52,7 @@ REXCVAR_DEFINE_BOOL(storm2_skip_reverb, false, "Storm 2",
 REXCVAR_DEFINE_INT32(storm2_native_audio_stats, 0, "Storm 2",
                      "Log the time spent in the hooked audio functions every N seconds (0 = off)");
 
-namespace storm2_native {
-
-inline uint8_t* Host(uint8_t* base, uint32_t address) {
-  return rex::memory::GuestPtr<uint8_t*>(base, address);
-}
-inline uint32_t Load32(uint8_t* base, uint32_t address) {
-  uint32_t v;
-  std::memcpy(&v, Host(base, address), 4);
-  return __builtin_bswap32(v);
-}
-inline void Store32(uint8_t* base, uint32_t address, uint32_t value) {
-  value = __builtin_bswap32(value);
-  std::memcpy(Host(base, address), &value, 4);
-}
-inline float LoadF(uint8_t* base, uint32_t address) {
-  return std::bit_cast<float>(Load32(base, address));
-}
-inline void StoreF(uint8_t* base, uint32_t address, float value) {
-  Store32(base, address, std::bit_cast<uint32_t>(value));
-}
-// The function's own stack frame (host byte order: nothing else reads it).
-inline uint32_t StackLoad32(const uint8_t* stack, uint32_t offset) {
-  uint32_t v;
-  std::memcpy(&v, stack + offset, 4);
-  return v;
-}
-inline void StackStore32(uint8_t* stack, uint32_t offset, uint32_t value) {
-  std::memcpy(stack + offset, &value, 4);
-}
-inline uint64_t StackLoad64(const uint8_t* stack, uint32_t offset) {
-  uint64_t v;
-  std::memcpy(&v, stack + offset, 8);
-  return v;
-}
-inline void StackStore64(uint8_t* stack, uint32_t offset, uint64_t value) {
-  std::memcpy(stack + offset, &value, 8);
-}
-
-}  // namespace storm2_native
+#include "storm2_native.h"
 
 #include "sub_82599010.inc"
 

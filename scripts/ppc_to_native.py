@@ -20,7 +20,12 @@ for speed on the PS Vita (ARMv7, software MMU):
     rounds to a single-precision tie;
   - the save/restore helpers (__savegprlr_N, __savefpr_N, ...) are dropped:
     the native function never writes the caller's non-volatile registers;
-  - guest instruction counting is dropped.
+  - guest instruction counting is dropped;
+  - VMX registers (lvx128/stvx128/vspltw/vmulfp128/vmaddfp) are V4 locals in
+    guest element order (storm2_native.h): one 32-bit byte swap per lane at
+    a load or store instead of the recompiled code's 16-byte table shuffle,
+    and no store of every result to PPCContext. vmaddfp keeps the separate
+    multiply and add of the recompiled code (same results).
 Calls to other guest functions go through PPCContext as usual (volatile
 registers written before the call and read back after it).
 
@@ -95,6 +100,13 @@ def fpr(tok):
     return int(m.group(1))
 
 
+def vreg(tok):
+    m = re.fullmatch(r'v(\d+)', tok)
+    if not m or int(m.group(1)) > 127:
+        raise TranslationError(f'expected a VMX register, got {tok}')
+    return int(m.group(1))
+
+
 def crf(tok):
     m = re.fullmatch(r'cr(\d)', tok)
     if not m:
@@ -142,6 +154,18 @@ class Translator:
         self.labels = set()
         self.targets = set()
         self.insn_count = 0
+        self.vregs = set()         # VMX registers used (each a V4 local)
+        self.vfloat = False        # vector float arithmetic used
+        self.sfloat = False        # scalar float arithmetic used
+
+    def vread(self, n):
+        if n not in self.vregs:
+            raise TranslationError(f'v{n} is read before it is written in the function')
+        return f'v{n}'
+
+    def vwrite(self, n):
+        self.vregs.add(n)
+        return f'v{n}'
 
     def emit(self, text):
         self.out.append('  ' + text)
@@ -307,6 +331,8 @@ class Translator:
         if op == 'fmr':
             e(f'f[{fpr(a[0])}] = f[{fpr(a[1])}];')
             return
+        if op in ('fadds', 'fsubs', 'fmuls', 'fmadds', 'fcmpu'):
+            self.sfloat = True
         if op in ('fadds', 'fsubs', 'fmuls'):
             fd, fa, fb = fpr(a[0]), fpr(a[1]), fpr(a[2])
             sym = {'fadds': '+', 'fsubs': '-', 'fmuls': '*'}[op]
@@ -315,6 +341,64 @@ class Translator:
         if op == 'fmadds':
             fd, fa, fc, fb = fpr(a[0]), fpr(a[1]), fpr(a[2]), fpr(a[3])
             e(f'f[{fd}] = float(double(f[{fa}]) * double(f[{fc}]) + double(f[{fb}]));')
+            return
+        if op == 'li':
+            e(f'r[{gpr(a[0])}] = {imm(a[1]) & 0xFFFFFFFF}u;')
+            return
+        if op == 'add':
+            rd, ra, rb = gpr(a[0]), gpr(a[1]), gpr(a[2])
+            e(f'r[{rd}] = r[{ra}] + r[{rb}];')
+            return
+        if op == 'rotlwi':
+            rd, rs, n = gpr(a[0]), gpr(a[1]), imm(a[2])
+            e(f'r[{rd}] = std::rotl(r[{rs}], {n});')
+            return
+        if op == 'cmpwi':
+            if len(a) == 2:
+                field, ra, v = 0, gpr(a[0]), imm(a[1])
+            else:
+                field, ra, v = crf(a[0]), gpr(a[1]), imm(a[2])
+            self.cr_used.add(field)
+            c = f'cr{field}'
+            e(f'{c}_lt = int32_t(r[{ra}]) < {v}; {c}_gt = int32_t(r[{ra}]) > {v}; '
+              f'{c}_eq = int32_t(r[{ra}]) == {v};')
+            return
+        if op == 'lhz':
+            rd, (d, ra) = gpr(a[0]), mem(a[1])
+            if ra == 1:
+                raise TranslationError(f'16-bit stack access: {text}')
+            e(f'r[{rd}] = Load16(base, {self.ea(d, ra)});')
+            return
+        if op in ('lvx', 'lvx128', 'stvx', 'stvx128'):
+            v, ra, rb = vreg(a[0]), gpr(a[1]), gpr(a[2])
+            if ra == 1 or rb == 1:
+                raise TranslationError(f'vector stack access: {text}')
+            addr = f'(r[{ra}] + r[{rb}])' if ra else f'r[{rb}]'
+            if op.startswith('lvx'):
+                e(f'{self.vwrite(v)} = LoadV(base, {addr});')
+            else:
+                e(f'StoreV(base, {addr}, {self.vread(v)});')
+            return
+        if op in ('vspltw', 'vspltw128'):
+            vd, vb, i = vreg(a[0]), vreg(a[1]), imm(a[2])
+            if not 0 <= i <= 3:
+                raise TranslationError(f'bad element: {text}')
+            src = self.vread(vb)
+            e(f'{self.vwrite(vd)} = SplatV<{i}>({src});')
+            return
+        if op in ('vmulfp128',):
+            vd, va, vb = vreg(a[0]), vreg(a[1]), vreg(a[2])
+            self.vfloat = True
+            x, y = self.vread(va), self.vread(vb)
+            e(f'{self.vwrite(vd)} = MulV({x}, {y});')
+            return
+        if op in ('vmaddfp', 'vmaddfp128'):
+            vd, va, vc, vb = vreg(a[0]), vreg(a[1]), vreg(a[2]), vreg(a[3])
+            if op == 'vmaddfp128' and not any('add_ps(simde_mm_mul_ps' in l for l in cpp):
+                raise TranslationError(f'vmaddfp128 operand order not checked: {text}')
+            self.vfloat = True
+            x, c, y = self.vread(va), self.vread(vc), self.vread(vb)
+            e(f'{self.vwrite(vd)} = MaddV({x}, {c}, {y});')
             return
         if op == 'mtctr':
             e(f'ctr = r[{gpr(a[0])}];')
@@ -381,6 +465,8 @@ class Translator:
         ]
         for field in sorted(self.cr_used):
             head.append(f'  bool cr{field}_lt = false, cr{field}_gt = false, cr{field}_eq = false;')
+        for n in sorted(self.vregs):
+            head.append(f'  V4 v{n} = simde_vdupq_n_f32(0.0f);')
         head += [
             f'  alignas(8) uint8_t stack[{stack_size}];',
             '  const uint64_t entry_r1 = ctx.r1.u64;',
@@ -391,7 +477,12 @@ class Translator:
             head.append(f'  r[{n}] = ctx.r{n}.u32;')
         for n in range(1, 9):
             head.append(f'  f[{n}] = float(ctx.f{n}.f64);')
-        head.append('  ctx.fpscr.disableFlushMode();')
+        if self.vfloat and self.sfloat:
+            raise TranslationError('vector and scalar float in one function (two flush modes)')
+        # VMX arithmetic flushes denormals (the recompiled code enables the
+        # flush mode before it); scalar FPU arithmetic does not.
+        head.append('  ctx.fpscr.enableFlushMode();' if self.vfloat
+                    else '  ctx.fpscr.disableFlushMode();')
         tail = [
             'epilogue:',
             '  ctx.r1.u64 = entry_r1;',
