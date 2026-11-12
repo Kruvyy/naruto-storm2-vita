@@ -60,6 +60,7 @@
 #include <rex/system/kernel_state.h>
 #include <rex/system/xmemory.h>
 #include <rex/system/xthread.h>
+#include <spdlog/sinks/base_sink.h>
 
 // Generated with the recompiled code (storm2_init.cpp).
 extern const rex::PPCImageInfo PPCImageConfig;
@@ -74,6 +75,7 @@ uint64_t VitaThreadBlockedUs(uint32_t system_id);  // core/threading_vita.cpp
 namespace rex::memory {
 void VitaSetPoolBudgets(size_t main_bytes, size_t phycont_bytes, size_t cdram_bytes);
 void VitaPoolUsage(size_t out[3]);  // core/memory_vita.cpp
+void VitaBlockCounts(size_t* blocks, size_t* arenas);  // core/memory_vita.cpp
 void VitaSetSmallBlocksFirstInCdram(size_t max_bytes);
 }
 
@@ -86,9 +88,10 @@ void VitaSetSmallBlocksFirstInCdram(size_t max_bytes);
 extern "C" {
 #if STORM2_CONSOLE
 // 40 ran out on the title screen (a 3 MiB allocation, heap in pieces), before
-// the XMA decoders were made smaller; 42 leaves ~4 MiB over the battle's use
-// in Vita3K (heap arena ~38.6 MiB) and gives 6 MiB of main RAM to the battle.
-unsigned int _newlib_heap_size_user = 42 * 1024 * 1024;
+// the XMA decoders were made smaller. With 42 a battle that kept running
+// failed a 232 KiB allocation with 5.5 MiB free in pieces (Vita3K with the
+// console's limits, ~frame 6650): 48 leaves room for that fragmentation.
+unsigned int _newlib_heap_size_user = 48 * 1024 * 1024;
 #else
 unsigned int _newlib_heap_size_user = 96 * 1024 * 1024;
 #endif
@@ -165,6 +168,24 @@ void Stats(const char* fmt, ...) {
     sceIoClose(fd);
   }
 }
+
+// Critical log messages (REX_FATAL: a software MMU limit, a call to an invalid
+// guest address...) also go to storm2_stats.log, opened and closed for each
+// one: the program aborts right after them, and Vita3K writes storm2.log (kept
+// open) only up to an earlier point, so the message itself was lost.
+class StatsCriticalSink : public spdlog::sinks::base_sink<std::mutex> {
+ protected:
+  void sink_it_(const spdlog::details::log_msg& msg) override {
+    spdlog::memory_buf_t formatted;
+    formatter_->format(msg, formatted);
+    SceUID fd = sceIoOpen(kStatsPath, SCE_O_WRONLY | SCE_O_CREAT | SCE_O_APPEND, 0666);
+    if (fd >= 0) {
+      sceIoWrite(fd, formatted.data(), formatted.size());
+      sceIoClose(fd);
+    }
+  }
+  void flush_() override {}
+};
 
 uint32_t* g_fb = nullptr;
 void Screen(uint32_t color) {
@@ -593,9 +614,13 @@ int main() {
   // writes 0x40F40000 up to MiB 38 and 0xDC000000 up to 30 (Vita3K usage maps
   // with 1 MiB of margin; docs/bugs.md, bug 94). vsize:16: a 16 MiB virtual
   // region whose address changes from run to run, of which only the first MiB
-  // is written. All of it is backed from the start.
+  // is written. All of it is backed from the start. 0xAB000000 2-34 whole: the
+  // game fills chunks starting every 8 MiB there (MiB 3, 11, 19, 27 in the
+  // usage maps) a little more as a battle goes on (soft_mmu_guard_per_mib in
+  // Vita3K: MiB 23 written past frame 7800 with 18-23, then MiB 8 past frame
+  // 8200 with 2-8); the other ranges end 1 MiB past the usage maps.
   app_default("soft_mmu_caps",
-              "0xAB000000=2-7|10-15|18-23|26-29|42-46|66-69|76-166,"
+              "0xAB000000=2-34|42-47|66-70|76-167,"
               "0x40F40000=0-40|67-71,0xDC000000=0-12|14-32|38-46,0xC0000000=0-1,"
               "vsize:16=0-2");
   // The guest's physical memory from the physically contiguous RAM and CDRAM
@@ -628,9 +653,13 @@ int main() {
   // Core 0 left to the game's main thread (vita_thread_cores names it there):
   // in the menu it is the limit, and the audio thread ran on its core.
   app_default("vita_reserved_core", "0");
-  // 48 MiB: the console's character select left 32.8 MiB of 64 free (pool
-  // probe), and the game's blocks need the CDRAM beyond it there.
-  app_default("gles_vita_cdram_pool_mib", "48");
+  // 60 MiB: the battle ran out of a 48 MiB pool while it loaded (Vita3K with
+  // the console's limits: VRAM 4 MiB free, uploads waiting for vitaGL's
+  // garbage collector); with 72 it used up to ~46 MiB. The console's menus
+  // left 46 MiB of main RAM free and 4 MiB of CDRAM: the game's blocks now
+  // take less CDRAM (budgets below) and the pool gets it. 52: a battle run
+  // with 60 left at least 16.3 MiB of it free.
+  app_default("gles_vita_cdram_pool_mib", "52");
   // Depth-only passes draw into a framebuffer whose depth buffer vitaGL sizes
   // like its color attachment: a 16x16 scratch color left a 16x16 depth buffer
   // that the console's GPU wrote far past (heap corruption, a crash in free()
@@ -643,17 +672,24 @@ int main() {
   app_default("gles_vita_compiler_arena_mib", "12");
   // vitaGL keeps ~8 MiB of its own in the RAM pool (with a 6 MiB per-frame
   // pool); with 12 the ring did not fit and went to the CDRAM pool. The ring:
-  // 1.5 MiB segments (two copies, 3 segments: 9 MiB; vitaGL holds ~10.6 MiB
-  // of the RAM pool before it, so 21). With 1 MiB the battle (up to ~2.7 MiB
-  // of new vertices a frame) put the rest in buffers of their own, which grew
-  // to ~13 MiB of the VRAM pool and filled it. 3 segments instead of 4 (3 MiB
-  // of main RAM for the battle): with two display buffers the GPU is at most
-  // two swaps behind, and vitaGL itself frees replaced buffers 3 swaps later.
-  app_default("gles_vita_ram_pool_mib", "21");
+  // 2 MiB segments (two copies, 3 segments: 12 MiB; vitaGL holds ~10.6 MiB
+  // of the RAM pool before it, so 24). With 1.5 MiB the battle (up to ~6.2
+  // MiB of new vertices in a frame while it loads, up to ~2.5 once it runs)
+  // put the rest in buffers of their own (12599 in 300 frames), which filled
+  // the VRAM pool of 48 MiB. 3 segments instead of 4: with two display buffers
+  // the GPU is at most two swaps behind, and vitaGL itself frees replaced
+  // buffers 3 swaps later.
+  app_default("gles_vita_ram_pool_mib", "24");
   app_default("gles_vita_circular_pool_mib", "6");
   app_default("gles_vita_phycont_pool_mib", "8");
+  // The common dialog memory (8984 KiB, a budget of its own that the port's
+  // dialog-free program leaves unused) as a fourth vitaGL pool: the battle
+  // filled the other three while it loaded (Vita3K, 2026-11-12: VRAM 27.6 MiB
+  // free in 52 with an 8 MiB largest block, RAM 1.4 of 24, phycont 7.9 of 8,
+  // then a vertex buffer found no room and the GPU thread waited ~4 s per try).
+  app_default("gles_vita_cdlg_pool_kib", "8984");
   app_default("gles_vertex_stream_mib", "1");
-  app_default("gles_vertex_stream_kib", "1536");
+  app_default("gles_vertex_stream_kib", "2048");
   app_default("gles_vertex_stream_segments", "3");
   // sceGxm's parameter buffer (outside the pools, in CDRAM: vitaGL takes 82
   // MiB of the console's CDRAM with a 64 MiB pool) at 8 MiB instead of 16 for
@@ -745,6 +781,9 @@ int main() {
     const std::string log_path = std::string(kDataDir) + "/storm2.log";
     sceIoRemove(log_path.c_str());
     log_config.log_file = log_path.c_str();
+    auto critical_sink = std::make_shared<StatsCriticalSink>();
+    critical_sink->set_level(spdlog::level::critical);
+    log_config.extra_sinks.push_back(critical_sink);
     rex::InitLogging(log_config);
   }
   rex::cvar::FinalizeInit();
@@ -796,12 +835,14 @@ int main() {
   // used on the console with ~10 MiB left): past that they go to the
   // physically contiguous RAM and CDRAM instead of taking the last of the main
   // RAM, which thread stacks and the shader compiler's block need later.
-  // Main RAM: up to 205 MiB for the game's blocks (with the battle's ranges
-  // and a 42 MiB heap; the thread stacks and the rest take what is left);
-  // CDRAM: up to 50 MiB (vitaGL pool 48 MiB, parameter buffer 8): ~265 MiB of
-  // blocks in all, which the battle fills (Vita3K with the console's limits;
-  // the vitaGL pools then run out, docs/bugs.md item 110).
-  rex::memory::VitaSetPoolBudgets(size_t(205) << 20, SIZE_MAX, size_t(50) << 20);
+  // Main RAM: up to 228 MiB for the game's blocks; CDRAM: up to 46 MiB (the
+  // vitaGL pool takes 52 MiB and ~8 more outside it). Measured on the console
+  // (2026-11-12, menus, small blocks of their own then): 46 MiB of main RAM
+  // free with 198 MiB of blocks there and 49.5 MiB of blocks in CDRAM (4 MiB
+  // of CDRAM free). A battle needs ~289 MiB of blocks with these caps; ~26
+  // more MiB of blocks in the main RAM (cached, faster for the game), 3 MiB
+  // more for the RAM pool and 6 for the heap leave ~10 MiB of it free there.
+  rex::memory::VitaSetPoolBudgets(size_t(228) << 20, SIZE_MAX, size_t(46) << 20);
 #endif
   if (const std::string& spec = REXCVAR_GET(vita_memory_budgets_mib); !spec.empty()) {
     unsigned main_mib = 0, phycont_mib = 0, cdram_mib = 0;
@@ -1113,9 +1154,14 @@ int main() {
     {
       size_t pools[3];
       rex::memory::VitaPoolUsage(pools);
-      Stats("  runtime blocks: main %.1f MiB, phycont %.1f MiB, CDRAM %.1f MiB\n",
+      // Kernel memory blocks: each is a kernel object, and the console limits
+      // how many a process holds (SCE_KERNEL_ERROR_UID_RL_OVERFLOW).
+      size_t kernel_blocks = 0, arenas = 0;
+      rex::memory::VitaBlockCounts(&kernel_blocks, &arenas);
+      Stats("  runtime blocks: main %.1f MiB, phycont %.1f MiB, CDRAM %.1f MiB; %u kernel memory "
+            "blocks (%u arenas of small blocks)\n",
             double(pools[0]) / 1048576.0, double(pools[1]) / 1048576.0,
-            double(pools[2]) / 1048576.0);
+            double(pools[2]) / 1048576.0, unsigned(kernel_blocks), unsigned(arenas));
     }
     {
       // Multi-object and alertable waits that blocked, per second.
