@@ -162,13 +162,16 @@ enum {
   kMalloc,
   kFree,
   kGlobalLock,
+  kMutexInit,
+  kStaticMutexFirstLock,
   kSyscallCount
 };
 static const char* const kSyscallNames[kSyscallCount] = {
     "GetProcessTimeWide", "GetProcessTimeLow", "GetThreadId",       "LockLwMutex",
     "TryLockLwMutex",     "UnlockLwMutex",     "WaitSema",          "SignalSema",
     "PollEventFlag",      "DelayThread",       "LibcGettimeofday",  "pthread_mutex_lock",
-    "malloc",             "free",              "global lock"};
+    "malloc",             "free",              "global lock",       "pthread_mutex_init",
+    "static mutex first lock"};
 static uint64_t g_syscalls[kSyscallCount];
 
 /* Call sites (return addresses) per counter: a small lossy table. */
@@ -294,7 +297,21 @@ int __wrap_sceKernelLibcGettimeofday(SceKernelTimeval* tv, SceKernelTimezone* tz
 int __real_pthread_mutex_lock(pthread_mutex_t* mutex);
 int __wrap_pthread_mutex_lock(pthread_mutex_t* mutex) {
   COUNT_SITE(kMutexLock);
+  /* A statically initialized mutex (PTHREAD_*_MUTEX_INITIALIZER, also every
+   * std::recursive_mutex on this SDK) gets its semaphore at this first lock,
+   * and std::recursive_mutex never destroys it: count who. */
+  if (mutex && (uintptr_t)*mutex >= (uintptr_t)PTHREAD_ERRORCHECK_MUTEX_INITIALIZER) {
+    COUNT_SITE(kStaticMutexFirstLock);
+  }
   return __real_pthread_mutex_lock(mutex);
+}
+
+/* pthread_mutex_init by caller (compat/kernel_objects.c calls it): on this
+ * SDK every std::mutex runs it in its constructor and gets a kernel semaphore
+ * there, so the sites name the classes that hold semaphores. */
+void vita_count_mutex_init(uintptr_t return_address) {
+  Count(&g_syscalls[kMutexInit]);
+  CountSite(kMutexInit, return_address);
 }
 void* __real_malloc(size_t size);
 void* __wrap_malloc(size_t size) {

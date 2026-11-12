@@ -37,7 +37,8 @@ target_compile_options(fmt PRIVATE -w)
 # flockfile/funlockfile, declared but missing in the SDK's newlib; fmt uses
 # them, so they are linked after it.
 add_library(vita_compat STATIC ${CMAKE_CURRENT_LIST_DIR}/compat/stdio_lock.c
-  ${CMAKE_CURRENT_LIST_DIR}/compat/fast_tls.c ${CMAKE_CURRENT_LIST_DIR}/compat/heap_trace.c)
+  ${CMAKE_CURRENT_LIST_DIR}/compat/fast_tls.c ${CMAKE_CURRENT_LIST_DIR}/compat/heap_trace.c
+  ${CMAKE_CURRENT_LIST_DIR}/compat/kernel_objects.c)
 target_include_directories(vita_compat PUBLIC ${CMAKE_CURRENT_LIST_DIR}/compat)
 # Unwind tables for the heap trace's call paths (compat/heap_trace.c).
 target_compile_options(vita_compat PRIVATE -funwind-tables)
@@ -53,6 +54,20 @@ target_link_options(vita_compat INTERFACE -Wl,--wrap=sceKernelGetTLSAddr
   -Wl,--wrap=sceKernelPollEventFlag -Wl,--wrap=sceKernelDelayThread
   -Wl,--wrap=sceKernelLibcGettimeofday -Wl,--wrap=pthread_mutex_lock -Wl,--wrap=malloc
   -Wl,--wrap=free -Wl,--wrap=calloc -Wl,--wrap=realloc -Wl,--wrap=memalign)
+# compat/kernel_objects.c: live kernel objects by kind (the console limits how
+# many a process holds; Vita3K does not).
+target_link_options(vita_compat INTERFACE -Wl,--undefined=__wrap_sceKernelCreateSema
+  -Wl,--wrap=sceKernelCreateSema -Wl,--wrap=sceKernelDeleteSema
+  -Wl,--wrap=sceKernelCreateMutex -Wl,--wrap=sceKernelDeleteMutex
+  -Wl,--wrap=sceKernelCreateEventFlag -Wl,--wrap=sceKernelDeleteEventFlag
+  -Wl,--wrap=sceKernelCreateLwMutex -Wl,--wrap=sceKernelDeleteLwMutex
+  -Wl,--wrap=sceKernelCreateLwCond -Wl,--wrap=sceKernelDeleteLwCond
+  -Wl,--wrap=sceKernelCreateCond -Wl,--wrap=sceKernelDeleteCond
+  -Wl,--wrap=sceKernelCreateThread -Wl,--wrap=sceKernelDeleteThread
+  -Wl,--wrap=sceKernelExitDeleteThread -Wl,--wrap=sceIoOpen -Wl,--wrap=sceIoClose
+  -Wl,--wrap=sceIoDopen -Wl,--wrap=sceIoDclose
+  -Wl,--wrap=sceKernelAllocMemBlock -Wl,--wrap=sceKernelFreeMemBlock
+  -Wl,--wrap=pthread_mutex_init -Wl,--wrap=pthread_mutex_destroy)
 target_link_libraries(fmt PUBLIC vita_compat)
 
 set(SPDLOG_FMT_EXTERNAL ON CACHE BOOL "" FORCE)

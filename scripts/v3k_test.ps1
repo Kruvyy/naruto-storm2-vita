@@ -27,7 +27,8 @@ Start-Process $exe -ArgumentList '-c', "`"$t\$Config`"", '-w', '-r', 'RXGT00006'
 $start = Get-Date; $last = -1; $lastChange = Get-Date; $cur = 0
 while ($true) {
   Start-Sleep 5
-  $line = Get-Content "$data\storm2_stats.log" -Tail 6 -ErrorAction SilentlyContinue | Where-Object { $_ -match 'frames=' } | Select-Object -Last 1
+  # The stats write ~25 lines per interval (object counts, call sites): look further back.
+  $line = Get-Content "$data\storm2_stats.log" -Tail 120 -ErrorAction SilentlyContinue | Where-Object { $_ -match '^t=\d+s frames=' } | Select-Object -Last 1
   if ($line -match 'frames=(\d+)') { $cur = [int]$Matches[1] }
   if ($cur -ne $last) { $last = $cur; $lastChange = Get-Date }
   foreach ($s in @($Shots | Where-Object { $_ -le $cur })) {
@@ -37,7 +38,8 @@ while ($true) {
   }
   if ($cur -ge $Frames) { break }
   if (((Get-Date) - $start).TotalSeconds -gt $Timeout) { "timeout at frame $cur"; break }
-  if ($cur -gt 0 -and ((Get-Date) - $lastChange).TotalSeconds -gt $Stall) { "stalled at frame $cur"; break }
+  # Also at frame 0: a hang during boot left the game at 0 frames until the timeout.
+  if (((Get-Date) - $lastChange).TotalSeconds -gt $Stall) { "stalled at frame $cur"; break }
   if (-not (Get-Process Vita3K -ErrorAction SilentlyContinue | Where-Object { $_.Path -ieq $exe })) { "Vita3K exited at frame $cur"; break }
 }
 "reached frame $cur after $([int]((Get-Date) - $start).TotalSeconds) s"

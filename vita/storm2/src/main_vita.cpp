@@ -65,12 +65,20 @@
 // Generated with the recompiled code (storm2_init.cpp).
 extern const rex::PPCImageInfo PPCImageConfig;
 
-#include <fast_tls.h>    // vita/runtime/compat
-#include <heap_trace.h>  // vita/runtime/compat
+#include <fast_tls.h>        // vita/runtime/compat
+#include <heap_trace.h>      // vita/runtime/compat
+#include <kernel_objects.h>  // vita/runtime/compat
+
+// The real calls behind compat/kernel_objects.c's counting wrappers (--wrap).
+extern "C" SceUID __real_sceKernelCreateSema(const char* name, SceUInt attr, int init, int max,
+                                             SceKernelSemaOptParam* option);
+extern "C" int __real_sceKernelDeleteSema(SceUID id);
 
 namespace rex::thread {
 void VitaPollWakeups(uint64_t out[3]);  // core/threading_vita.cpp
 uint64_t VitaThreadBlockedUs(uint32_t system_id);  // core/threading_vita.cpp
+void VitaReapplyThreadPlacement();  // core/threading_vita.cpp
+size_t VitaLiveThreadObjects();     // core/threading_vita.cpp
 }
 namespace rex::memory {
 void VitaSetPoolBudgets(size_t main_bytes, size_t phycont_bytes, size_t cdram_bytes);
@@ -109,6 +117,11 @@ REXCVAR_DEFINE_BOOL(vita_fast_tls, true, "Vita",
 REXCVAR_DEFINE_INT32(vita_fast_tls_check, 0, "Vita",
                      "Compare every Nth fast TLS lookup with the real call and turn the fast "
                      "path off on a mismatch (0 = never)");
+REXCVAR_DEFINE_INT32(vita_kernel_object_probe, 20000, "Vita",
+                     "At start, before any other thread: make up to this many semaphores until "
+                     "the kernel refuses, delete them, and write the count to storm2_stats.log "
+                     "(the console's limit of kernel objects per process; 0 = off)")
+    .range(0, 100000);
 REXCVAR_DEFINE_STRING(vita_sample_thread, "", "Vita",
                       "Diagnostic: sample the link register of the guest thread whose name "
                       "contains this text (e.g. 'Main XThread') every ~1 ms and write the most "
@@ -122,6 +135,9 @@ REXCVAR_DEFINE_INT32(vita_ab_seconds, 0, "Vita",
 REXCVAR_DEFINE_INT32(vita_ab_start_seconds, 0, "Vita",
                      "Diagnostic: seconds after the start before vita_ab_cycle begins (its first "
                      "state is applied then)");
+REXCVAR_DEFINE_INT32(vita_ab_stop_seconds, 0, "Vita",
+                     "Diagnostic: seconds after the start when vita_ab_cycle stops at its first "
+                     "state for the rest of the run (0 = never)");
 REXCVAR_DEFINE_STRING(vita_ab_cycle, "", "Vita",
                       "Diagnostic: states separated by '|', each 'cvar=value;cvar=value' on top "
                       "of the values at start (an empty state = those values). Only cvars read "
@@ -807,6 +823,35 @@ int main() {
     vita_heap_trace_enable(uint32_t(REXCVAR_GET(vita_heap_trace)));
   }
   LogMemory("start");
+  if (const int32_t probe = REXCVAR_GET(vita_kernel_object_probe); probe > 0) {
+    // How many kernel objects the process may still make: the console refused
+    // new semaphores (0x8002450D, SCE_KERNEL_ERROR_UID_RL_OVERFLOW) while the
+    // battle loaded (bugs 112, 114), and the limit is not documented. Done
+    // before the runtime starts any thread, so nothing else is refused while
+    // the probe holds them.
+    // (The unwrapped calls: these are not counted in "kernel objects live".)
+    std::vector<SceUID> made;
+    made.reserve(size_t(probe));
+    int error = 0;
+    while (made.size() < size_t(probe)) {
+      const SceUID sema = __real_sceKernelCreateSema("uid_probe", 0, 0, 1, nullptr);
+      if (sema < 0) {
+        error = sema;
+        break;
+      }
+      made.push_back(sema);
+    }
+    for (SceUID sema : made) {
+      __real_sceKernelDeleteSema(sema);
+    }
+    if (error) {
+      Stats("kernel objects: %u more semaphores could be made at start, then 0x%08X\n",
+            unsigned(made.size()), unsigned(error));
+    } else {
+      Stats("kernel objects: %u more semaphores made at start without a refusal (probe limit)\n",
+            unsigned(made.size()));
+    }
+  }
   // Highest clocks an application may ask for (the default leaves the CPU at
   // 333 MHz): on the console the game's audio thread used a whole core and
   // the loading screen waited for it.
@@ -1056,15 +1101,33 @@ int main() {
       rex::cvar::SetFlagByName(name, value);
       text += name + "=" + value + " ";
     }
+    // Thread cores and priorities are set when a thread starts or asks for
+    // them: apply a state's vita_thread_cores, vita_thread_priorities,
+    // vita_reserved_core or vita_hw_thread_cores to the running threads too.
+    rex::thread::VitaReapplyThreadPlacement();
     REXLOG_INFO("A/B: state {} of {}: {}", index, ab_states.size(),
                 text.empty() ? std::string("(values at start)") : text);
     Stats("A/B: state %u of %u: %s\n", unsigned(index), unsigned(ab_states.size()),
           text.empty() ? "(values at start)" : text.c_str());
   };
+  const int32_t ab_stop_seconds = REXCVAR_GET(vita_ab_stop_seconds);
+  const uint64_t ab_stop_us =
+      ab_stop_seconds > 0 ? ab_begin_us - uint64_t(std::max(0, REXCVAR_GET(vita_ab_start_seconds))) * 1000000ull +
+                                uint64_t(ab_stop_seconds) * 1000000ull
+                          : UINT64_MAX;
   while (!finished) {
     if (ab_states.size() > 1) {
       const uint64_t now_us = sceKernelGetProcessTimeWide();
-      if (!ab_started) {
+      if (now_us >= ab_stop_us) {
+        // Back to the first state for the rest of the run.
+        if (ab_started && ab_index != 0) {
+          ab_index = 0;
+          ab_apply(0);
+        }
+        REXLOG_INFO("A/B: stopped at state 0 after {} s", ab_stop_seconds);
+        Stats("A/B: stopped at state 0\n");
+        ab_states.clear();
+      } else if (!ab_started) {
         if (now_us >= ab_begin_us) {
           ab_started = true;
           ab_switch_us = now_us;
@@ -1164,6 +1227,68 @@ int main() {
             double(pools[2]) / 1048576.0, unsigned(kernel_blocks), unsigned(arenas));
     }
     {
+      // Live kernel objects by kind (compat/kernel_objects.c). A kind whose
+      // count only grows is a leak that ends at the console's limit (bug 114).
+      VitaKernelObjectCount kinds[16];
+      const int n = std::min(vita_kernel_object_counts(kinds, 16), 16);
+      std::string line = "  kernel objects live (made):";
+      uint32_t failed = 0;
+      int32_t last_error = 0;
+      for (int i = 0; i < n; ++i) {
+        line += fmt::format(" {} {} ({})", kinds[i].name, kinds[i].live, kinds[i].made);
+        if (kinds[i].failed) {
+          failed += kinds[i].failed;
+          last_error = kinds[i].last_error;
+        }
+      }
+      uint32_t mutexes_made = 0, mutexes_destroyed = 0;
+      vita_pthread_mutex_counts(&mutexes_made, &mutexes_destroyed);
+      line += fmt::format("; pthread mutexes {} made, {} destroyed; host thread objects {}",
+                          mutexes_made, mutexes_destroyed,
+                          unsigned(rex::thread::VitaLiveThreadObjects()));
+      if (failed) {
+        line += fmt::format("; {} creations FAILED (last {:08X})", failed, uint32_t(last_error));
+      }
+      VitaMutexDoubleDestroy doubles[8];
+      if (const int n_doubles = vita_mutex_double_destroys(doubles, 8); n_doubles > 0) {
+        // A mutex destroyed twice: its owner was destroyed twice or after it
+        // was freed (arm-vita-eabi-addr2line -f -e storm2_vita <caller>).
+        line += fmt::format("; {} mutexes destroyed again:", n_doubles);
+        for (int i = 0; i < std::min(n_doubles, 8); ++i) {
+          line += fmt::format(" [{:08X} by {:08X}, first by {:08X}]", uint32_t(doubles[i].mutex),
+                              uint32_t(doubles[i].caller), uint32_t(doubles[i].first_caller));
+        }
+      }
+      Stats("%s\n", line.c_str());
+    }
+    {
+      // Guest kernel objects by type. One the game uses through a structure
+      // of its own (KeSetEvent on a KEVENT it initialized inline) gets a host
+      // object at first use with no guest handle that closes it: counted in
+      // parentheses (no guest object of its own). Each host event, semaphore or
+      // thread holds kernel semaphores (bug 114).
+      static const char* const kTypeNames[] = {
+          "undefined", "enumerator", "event",   "file",    "io completion",
+          "module",    "mutant",     "notify",  "semaphore", "session",
+          "socket",    "symlink",    "thread",  "timer"};
+      constexpr uint32_t kTypes = sizeof(kTypeNames) / sizeof(kTypeNames[0]);
+      uint32_t total[kTypes] = {}, native[kTypes] = {};
+      for (auto& object : runtime->kernel_state()->object_table()->GetAllObjects()) {
+        const uint32_t type = uint32_t(object->type());
+        if (type < kTypes) {
+          ++total[type];
+          native[type] += object->guest_object() ? 0 : 1;
+        }
+      }
+      std::string line = "  guest objects (without a guest object of their own):";
+      for (uint32_t type = 0; type < kTypes; ++type) {
+        if (total[type]) {
+          line += fmt::format(" {} {} ({})", kTypeNames[type], total[type], native[type]);
+        }
+      }
+      Stats("%s\n", line.c_str());
+    }
+    {
       // Multi-object and alertable waits that blocked, per second.
       static uint64_t last_polls[3] = {};
       uint64_t polls[3];
@@ -1202,9 +1327,9 @@ int main() {
       const char* const* names = nullptr;
       const int kinds = vita_syscall_counts(unused, &names);
       for (int kind = 0; kind < kinds; ++kind) {
-        uintptr_t addrs[4];
-        uint32_t counts[4];
-        const int n = vita_syscall_top_sites(kind, addrs, counts, 4);
+        uintptr_t addrs[8];
+        uint32_t counts[8];
+        const int n = vita_syscall_top_sites(kind, addrs, counts, 8);
         if (n == 0) {
           continue;
         }

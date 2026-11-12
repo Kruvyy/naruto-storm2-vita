@@ -32,12 +32,14 @@ void vita_fast_tls_set_check(uint32_t every);
 void vita_fast_tls_stats(VitaFastTlsStats* out);
 
 /* Counts of other frequent system calls since start (lossy). Fills out[] (room
- * for at least 16) and *names, returns how many there are. */
-#define VITA_SYSCALL_COUNTERS_MAX 16
+ * for VITA_SYSCALL_COUNTERS_MAX) and *names, returns how many there are. */
+#define VITA_SYSCALL_COUNTERS_MAX 20
 int vita_syscall_counts(uint64_t* out, const char* const** names);
 /* The most frequent return addresses of counter `kind` (index into the names),
  * counted since start; returns how many were written (up to max). */
 int vita_syscall_top_sites(int kind, uintptr_t* addrs, uint32_t* counts, int max);
+/* Counts a pthread_mutex_init and its caller (kind "pthread_mutex_init"). */
+void vita_count_mutex_init(uintptr_t return_address);
 
 #ifdef __cplusplus
 }
