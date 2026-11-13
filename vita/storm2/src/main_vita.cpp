@@ -718,6 +718,9 @@ int main() {
   // first: the main RAM is kept for the virtual heaps' big blocks (0x40F40000
   // needs 40 MiB in one piece, which found no room after the physical regions).
   app_default("soft_mmu_physical_other_pools", "true");
+  // The guard pages read every frame cost ~4.5% of the battle's main thread
+  // on the console (in VdSwap): every 30 frames.
+  app_default("soft_mmu_guard_check_interval", "30");
   // vitaGL pools: CDRAM for textures and render targets, a small RAM pool for
   // the vertex stream ring (1 MiB segments, two copies: 8 MiB; what does not
   // fit gets its own buffers); most of the physically contiguous RAM is left

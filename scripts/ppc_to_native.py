@@ -121,10 +121,10 @@ def imm(tok):
 
 
 def mem(tok):
-    m = re.fullmatch(r'(-?(?:0x)?[0-9A-Fa-f]+)\((r\d+)\)', tok)
+    m = re.fullmatch(r'(-?(?:0x)?[0-9A-Fa-f]+)\((r\d+|0)\)', tok)
     if not m:
         raise TranslationError(f'expected d(rA), got {tok}')
-    return int(m.group(1), 0), gpr(m.group(2))
+    return int(m.group(1), 0), gpr(m.group(2))  # d(0): an absolute address
 
 
 def mask32(mb, me):
@@ -206,7 +206,7 @@ class Translator:
 
     def store(self, text, addr, size):
         if self.track_stores:
-            self.emit(f'if constexpr (kTrack) TrackStore({addr}, {size});')
+            self.emit(f'if constexpr (kTrack) TrackStore(base, {addr}, {size});')
         self.emit(text)
 
     def label(self, tok):
@@ -604,7 +604,7 @@ class Translator:
             x = self.vread(vb)
             e(f'{self.vwrite(vd)} = PermV<{sel[0]}, {sel[1]}, {sel[2]}, {sel[3]}>({x});')
             return
-        if op == 'vsldoi':
+        if op in ('vsldoi', 'vsldoi128'):
             vd, va, vb, sh = vreg(a[0]), vreg(a[1]), vreg(a[2]), imm(a[3])
             if sh % 4 or not 0 < sh < 16:
                 raise TranslationError(f'vsldoi by a shift that is not whole elements: {text}')

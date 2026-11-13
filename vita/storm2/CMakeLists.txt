@@ -58,7 +58,7 @@ target_compile_options(storm2_code PRIVATE
 # game: never committed). Used by storm2/src/storm2_audio_native.cpp and
 # storm2_native_skin.cpp.
 find_package(Python3 COMPONENTS Interpreter REQUIRED)
-set(STORM2_NATIVE_FUNCS sub_82599010 sub_827C3850 sub_82654128 sub_825DD778)
+set(STORM2_NATIVE_FUNCS sub_82599010 sub_827C3850 sub_82654128 sub_825DD778 sub_82638CB8)
 # sub_82654128 (bone matrices and per-vertex transforms on the main thread,
 # storm2_native_mesh.cpp): its small vector leaves inlined, the stack frame in
 # guest memory, registers kept in step with PPCContext (virtual calls).
@@ -68,6 +68,10 @@ set(STORM2_NATIVE_ARGS_sub_82654128
 # sub_825DD778 (bone matrices and their inverses, storm2_native_inverse.cpp):
 # the 3x3 inverse sub_825C9F20 inlined.
 set(STORM2_NATIVE_ARGS_sub_825DD778 --inline sub_825C9F20 --guest-stack --ctx-regs)
+# sub_82638CB8 (scene node world matrices, storm2_native_scene.cpp).
+set(STORM2_NATIVE_ARGS_sub_82638CB8
+  --inline sub_825C9A38,sub_825CA2F8,sub_825CA318,sub_825C9A10
+  --guest-stack --ctx-regs --track-stores)
 set(STORM2_NATIVE_DIR ${CMAKE_CURRENT_BINARY_DIR}/generated_native)
 set(STORM2_NATIVE_INCS)
 foreach(func ${STORM2_NATIVE_FUNCS})
@@ -86,6 +90,7 @@ add_executable(storm2_vita src/main_vita.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_native_skin.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_native_mesh.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_native_inverse.cpp
+  ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_native_scene.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_counter_wait.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_fence_wait.cpp
   ${CMAKE_CURRENT_LIST_DIR}/../../storm2/src/storm2_frame_probe.cpp

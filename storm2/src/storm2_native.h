@@ -239,14 +239,81 @@ inline double WidenExact(float x) {
 struct StoreTrack {
   uint32_t exclude_lo = 0, exclude_hi = 0;
   std::vector<std::pair<uint32_t, uint32_t>> stores;
+  // With keep_old: the bytes each store replaced (in store order), so the
+  // memory the function wrote can be put back as it was (Undo).
+  bool keep_old = false;
+  std::vector<uint8_t> old_bytes;
 };
 inline thread_local StoreTrack* tls_store_track = nullptr;
-inline void TrackStore(uint32_t address, uint32_t size) {
+inline void TrackStore(uint8_t* base, uint32_t address, uint32_t size) {
   StoreTrack* t = tls_store_track;
   if (!t || (address >= t->exclude_lo && address < t->exclude_hi)) {
     return;
   }
   t->stores.emplace_back(address, size);
+  if (t->keep_old) {
+    // Stores are at most 16 bytes and aligned to their size: one guest page.
+    const uint8_t* p = Host(base, address);
+    t->old_bytes.insert(t->old_bytes.end(), p, p + size);
+  }
+}
+// Puts back the bytes the tracked stores replaced, last store first.
+inline void UndoStores(uint8_t* base, const StoreTrack& t) {
+  size_t at = t.old_bytes.size();
+  for (size_t i = t.stores.size(); i-- > 0;) {
+    const auto& [address, size] = t.stores[i];
+    at -= size;
+    std::memcpy(Host(base, address), &t.old_bytes[at], size);
+  }
+}
+
+// Byte ranges a tracked native function wrote, for a diagnostic comparison.
+using Ranges = std::vector<std::pair<uint32_t, uint32_t>>;  // [start, end)
+
+// The tracked stores as sorted, merged byte ranges.
+inline Ranges MergeStores(std::vector<std::pair<uint32_t, uint32_t>> stores) {
+  std::sort(stores.begin(), stores.end());
+  Ranges out;
+  for (const auto& [address, size] : stores) {
+    const uint32_t end = address + size;
+    if (!out.empty() && address <= out.back().second) {
+      out.back().second = std::max(out.back().second, end);
+    } else {
+      out.emplace_back(address, end);
+    }
+  }
+  return out;
+}
+
+// Copies the bytes of the ranges out of (to_guest = false) or into guest
+// memory, one guest page at a time (the software MMU maps each page alone).
+inline void CopyRanges(uint8_t* base, const Ranges& ranges, std::vector<uint8_t>& bytes, bool to_guest) {
+  size_t total = 0;
+  for (const auto& r : ranges) total += r.second - r.first;
+  if (!to_guest) bytes.resize(total);
+  size_t at = 0;
+  for (const auto& [start, end] : ranges) {
+    for (uint32_t a = start; a < end;) {
+      const uint32_t chunk = std::min(end - a, 0x1000u - (a & 0xFFFu));
+      uint8_t* host = storm2_native::Host(base, a);
+      if (to_guest) {
+        std::memcpy(host, &bytes[at], chunk);
+      } else {
+        std::memcpy(&bytes[at], host, chunk);
+      }
+      a += chunk;
+      at += chunk;
+    }
+  }
+}
+
+// Guest address of byte `index` of the concatenated ranges.
+inline uint32_t RangeAddress(const Ranges& ranges, size_t index) {
+  for (const auto& [start, end] : ranges) {
+    if (index < end - start) return start + uint32_t(index);
+    index -= end - start;
+  }
+  return 0;
 }
 
 }  // namespace storm2_native

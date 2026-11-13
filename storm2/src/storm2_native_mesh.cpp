@@ -96,54 +96,6 @@ void MaybeLog() {
   }
 }
 
-using Ranges = std::vector<std::pair<uint32_t, uint32_t>>;  // [start, end)
-
-// The tracked stores as sorted, merged byte ranges.
-Ranges MergeStores(std::vector<std::pair<uint32_t, uint32_t>> stores) {
-  std::sort(stores.begin(), stores.end());
-  Ranges out;
-  for (const auto& [address, size] : stores) {
-    const uint32_t end = address + size;
-    if (!out.empty() && address <= out.back().second) {
-      out.back().second = std::max(out.back().second, end);
-    } else {
-      out.emplace_back(address, end);
-    }
-  }
-  return out;
-}
-
-// Copies the bytes of the ranges out of (to_guest = false) or into guest
-// memory, one guest page at a time (the software MMU maps each page alone).
-void CopyRanges(uint8_t* base, const Ranges& ranges, std::vector<uint8_t>& bytes, bool to_guest) {
-  size_t total = 0;
-  for (const auto& r : ranges) total += r.second - r.first;
-  if (!to_guest) bytes.resize(total);
-  size_t at = 0;
-  for (const auto& [start, end] : ranges) {
-    for (uint32_t a = start; a < end;) {
-      const uint32_t chunk = std::min(end - a, 0x1000u - (a & 0xFFFu));
-      uint8_t* host = storm2_native::Host(base, a);
-      if (to_guest) {
-        std::memcpy(host, &bytes[at], chunk);
-      } else {
-        std::memcpy(&bytes[at], host, chunk);
-      }
-      a += chunk;
-      at += chunk;
-    }
-  }
-}
-
-// Guest address of byte `index` of the concatenated ranges.
-uint32_t RangeAddress(const Ranges& ranges, size_t index) {
-  for (const auto& [start, end] : ranges) {
-    if (index < end - start) return start + uint32_t(index);
-    index -= end - start;
-  }
-  return 0;
-}
-
 // Registers the two versions leave: GPRs (low 32 bits; the native function
 // keeps 32-bit values), FPRs and VMX registers. `names` gets the first ones.
 uint64_t DifferingRegisters(const PPCContext& a, const PPCContext& b, std::string* names) {
@@ -191,6 +143,11 @@ uint64_t DifferingRegisters(const PPCContext& a, const PPCContext& b, std::strin
 }
 
 }  // namespace
+
+using storm2_native::CopyRanges;
+using storm2_native::MergeStores;
+using storm2_native::RangeAddress;
+using storm2_native::Ranges;
 
 REX_EXTERN(__imp__sub_82654128);
 
