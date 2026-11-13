@@ -33,7 +33,8 @@ REXCVAR_DEFINE_BOOL(storm2_native_scene_check, false, "Storm 2",
                     "Diagnostic: run sub_82638CB8 recompiled and native from the same memory and "
                     "registers and log how many bytes it writes and registers it leaves differ");
 REXCVAR_DEFINE_INT32(storm2_native_scene_stats, 0, "Storm 2",
-                     "Log calls and time per call of sub_82638CB8 every N seconds (0 = off)");
+                     "Log calls and time per call of sub_82638CB8 every N seconds (0 = off; "
+                     "times one call in 64)");
 
 #include "sub_82638CB8.inc"
 
@@ -45,8 +46,14 @@ using storm2_native::MergeStores;
 using storm2_native::RangeAddress;
 using storm2_native::Ranges;
 
+// The function runs ~3000 times per battle frame and a steady_clock read is
+// not free on the console: console benchmark 9 timed every call and the
+// fighters' task took about twice as long as in benchmark 8b. One call in
+// kTimeEvery is timed; every call is counted.
+constexpr uint32_t kTimeEvery = 64;
+
 struct ModeStats {
-  std::atomic<uint64_t> calls{0}, ns{0};
+  std::atomic<uint64_t> calls{0}, timed{0}, ns{0};
 };
 ModeStats g_stats[2];  // [0] recompiled, [1] native
 std::atomic<uint64_t> g_checked{0}, g_checked_bytes{0}, g_differing_calls{0},
@@ -76,12 +83,14 @@ void MaybeLog() {
   const double seconds = double(now - last) / 1e9;
   for (int mode = 0; mode < 2; ++mode) {
     const uint64_t calls = g_stats[mode].calls.exchange(0);
+    const uint64_t timed = g_stats[mode].timed.exchange(0);
     const uint64_t ns = g_stats[mode].ns.exchange(0);
-    if (calls) {
-      REXLOG_INFO("Storm 2 scene matrices sub_82638CB8 ({}): {} calls in {:.1f} s; {:.1f} ms per "
-                  "s, {:.2f} us per call",
-                  mode ? "native" : "recompiled", calls, seconds, double(ns) / 1e6 / seconds,
-                  double(ns) / 1e3 / double(calls));
+    if (calls && timed) {
+      const double us_per_call = double(ns) / 1e3 / double(timed);
+      REXLOG_INFO("Storm 2 scene matrices sub_82638CB8 ({}): {} calls in {:.1f} s ({} timed); "
+                  "{:.2f} us per call, ~{:.1f} ms per s",
+                  mode ? "native" : "recompiled", calls, seconds, timed, us_per_call,
+                  us_per_call * double(calls) / 1e3 / seconds);
     }
   }
   if (const uint64_t checked = g_checked.exchange(0)) {
@@ -174,16 +183,26 @@ REX_HOOK_RAW(sub_82638CB8) {
     return;
   }
 
-  const int64_t start = stats ? NowNs() : 0;
+  if (!stats) {
+    if (native) {
+      Native_sub_82638CB8(ctx, base);
+    } else {
+      __imp__sub_82638CB8(ctx, base);
+    }
+    return;
+  }
+  ModeStats& s = g_stats[native ? 1 : 0];
+  const uint64_t n = s.calls.fetch_add(1, std::memory_order_relaxed);
+  const bool timed = n % kTimeEvery == 0;
+  const int64_t start = timed ? NowNs() : 0;
   if (native) {
     Native_sub_82638CB8(ctx, base);
   } else {
     __imp__sub_82638CB8(ctx, base);
   }
-  if (stats) {
-    ModeStats& s = g_stats[native ? 1 : 0];
-    s.calls.fetch_add(1, std::memory_order_relaxed);
+  if (timed) {
     s.ns.fetch_add(uint64_t(NowNs() - start), std::memory_order_relaxed);
+    s.timed.fetch_add(1, std::memory_order_relaxed);
     MaybeLog();
   }
 }

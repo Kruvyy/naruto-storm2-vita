@@ -108,6 +108,10 @@ unsigned int _newlib_heap_size_user = 96 * 1024 * 1024;
 #endif
 }
 
+// Defined in rexglue (input_system.cpp): a replay drives the game with no
+// button presses, so the console's auto standby would suspend it.
+REXCVAR_DECLARE(std::string, input_replay);
+
 REXCVAR_DEFINE_STRING(vita_game_root, "ux0:data/storm2port/game", "Vita",
                       "Folder with default.xex and the game data");
 REXCVAR_DEFINE_STRING(vita_gpu, "auto", "Vita",
@@ -1002,6 +1006,25 @@ int main() {
           (unsigned long long)d0, (unsigned long long)d100, (unsigned long long)d1000);
   }
   {
+    // What a timestamp costs: the diagnostics that time every call of a hot
+    // function (storm2_native_*_stats) use std::chrono::steady_clock.
+    constexpr int kReads = 2000;
+    volatile int64_t sink = 0;
+    uint64_t start = sceKernelGetProcessTimeWide();
+    for (int i = 0; i < kReads; ++i) {
+      sink = std::chrono::steady_clock::now().time_since_epoch().count();
+    }
+    const uint64_t steady_us = sceKernelGetProcessTimeWide() - start;
+    start = sceKernelGetProcessTimeWide();
+    for (int i = 0; i < kReads; ++i) {
+      sink = int64_t(sceKernelGetProcessTimeWide());
+    }
+    const uint64_t process_us = sceKernelGetProcessTimeWide() - start;
+    (void)sink;
+    Stats("timestamp cost: steady_clock::now %.2f us, sceKernelGetProcessTimeWide %.2f us\n",
+          double(steady_us) / kReads, double(process_us) / kReads);
+  }
+  {
     VitaFastTlsReport tls{};
     vita_fast_tls_probe(REXCVAR_GET(vita_fast_tls) ? 1 : 0, &tls);
     vita_fast_tls_set_check(uint32_t(std::max(0, REXCVAR_GET(vita_fast_tls_check))));
@@ -1279,6 +1302,11 @@ int main() {
     }
     const uint64_t now_us = sceKernelGetProcessTimeWide();
     const uint32_t frame = rex::perf::CurrentGuestFrame();
+    if (!REXCVAR_GET(input_replay).empty()) {
+      // Console benchmark 9 (2026-11-13): with a replay and nobody touching
+      // the buttons the console suspended itself after ~9 minutes.
+      sceKernelPowerTick(SCE_KERNEL_POWER_TICK_DISABLE_AUTO_SUSPEND);
+    }
     rex::memory::GuestMemoryStats mem{};
     runtime->memory()->GetGuestMemoryStats(mem);
     SceKernelFreeMemorySizeInfo free_mem{};
