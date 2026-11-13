@@ -17,6 +17,7 @@
 
 #include <rex/cvar.h>
 #include <rex/hook.h>
+#include <rex/system/kernel_state.h>
 #include <rex/logging.h>
 #include <rex/perf/guest_frame_stats.h>
 #include <rex/platform.h>
@@ -231,6 +232,81 @@ void Record(Id id, uint64_t wall_us, uint64_t cpu_us) {
 
 }  // namespace storm2_probe
 
+// Tasks left out (storm2_skip_tasks): the task manager calls each task's
+// update through its vtable (an indirect call through the dispatch table);
+// the table entry of a listed update function points at a function that
+// returns at once, and is put back when the function leaves the list. The
+// manager does not use what an update returns (sub_822344F8 overwrites r3
+// with its timer right after the call). Only indirect calls are affected.
+// What a task does is not known from its address: its effect is seen by
+// leaving it out (it may also stop the game).
+REXCVAR_DEFINE_STRING(storm2_skip_tasks, "", "Storm 2",
+                      "Diagnostic / speed: comma-separated update functions of game tasks "
+                      "(hex addresses as in the 'Storm 2 tasks' report, e.g. \"8252B0D8\") "
+                      "that are not run; read at every task manager pass, so an A/B can switch "
+                      "it (software MMU builds only)");
+
+namespace storm2_probe {
+namespace {
+void SkippedTask(PPCContext&, uint8_t*) {}
+
+std::mutex g_skip_mutex;
+std::string g_skip_list;  // the list applied
+std::unordered_map<uint32_t, PPCFunc*> g_skip_original;
+
+void ApplySkipList() {
+  const std::string list = REXCVAR_GET(storm2_skip_tasks);
+  std::lock_guard<std::mutex> lock(g_skip_mutex);
+  if (list == g_skip_list) {
+    return;
+  }
+  g_skip_list = list;
+#if REXGLUE_SOFT_MMU
+  // REX_CODE_BASE of the generated code (storm2_pch.h).
+  constexpr uint32_t kCodeBase = 0x821C0000;
+  auto* memory = rex::system::kernel_state()->memory();
+  PPCFunc* const* table = memory->soft_function_table();
+  if (!table) {
+    return;
+  }
+  std::unordered_map<uint32_t, bool> wanted;
+  size_t pos = 0;
+  while (pos < list.size()) {
+    const size_t end = std::min(list.find(',', pos), list.size());
+    const uint32_t address = uint32_t(std::strtoul(list.substr(pos, end - pos).c_str(), nullptr, 16));
+    if (address >= kCodeBase && (address & 3) == 0) {
+      wanted[address] = true;
+    }
+    pos = end + 1;
+  }
+  // Put back those no longer listed.
+  for (auto it = g_skip_original.begin(); it != g_skip_original.end();) {
+    if (!wanted.count(it->first)) {
+      memory->SetFunction(it->first, it->second);
+      it = g_skip_original.erase(it);
+    } else {
+      ++it;
+    }
+  }
+  std::string applied;
+  for (const auto& [address, unused] : wanted) {
+    if (!g_skip_original.count(address)) {
+      PPCFunc* original = table[(address - kCodeBase) >> 2];
+      if (!original || !memory->SetFunction(address, &SkippedTask)) {
+        continue;
+      }
+      g_skip_original[address] = original;
+    }
+    applied += fmt::format(" {:08X}", address);
+  }
+  REXLOG_INFO("Storm 2 tasks left out:{}", applied.empty() ? std::string(" none") : applied);
+#else
+  REXLOG_WARN("storm2_skip_tasks needs the software MMU build");
+#endif
+}
+}  // namespace
+}  // namespace storm2_probe
+
 // sub_822344F8 runs 3 times a frame: its time kept apart by its r3 (up to 4).
 namespace storm2_probe {
 std::atomic<uint32_t> g_update_r3[4];
@@ -242,6 +318,7 @@ REX_EXTERN(__imp__sub_822344F8);
 REX_HOOK_RAW(sub_822344F8) {
   const uint32_t manager = ctx.r3.u32, lo = ctx.r4.u32, hi = ctx.r5.u32;
   const uint32_t r3 = ctx.r4.u32 ^ (ctx.r5.u32 << 16);  // keyed by r4/r5 (r3 is the same)
+  storm2_probe::ApplySkipList();
   const uint64_t wall0 = storm2_probe::On() ? storm2_probe::WallUs() : 0;
   {
     storm2_probe::Scope scope(storm2_probe::kUpdate);
