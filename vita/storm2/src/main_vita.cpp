@@ -43,6 +43,8 @@
 #include <psp2/io/stat.h>
 #include <psp2/kernel/processmgr.h>
 #include <psp2/kernel/sysmem.h>
+
+#include <arm_neon.h>
 #include <psp2/kernel/threadmgr.h>
 #include <psp2/power.h>
 
@@ -118,6 +120,10 @@ REXCVAR_DEFINE_BOOL(vita_fast_tls, true, "Vita",
 REXCVAR_DEFINE_INT32(vita_fast_tls_check, 0, "Vita",
                      "Compare every Nth fast TLS lookup with the real call and turn the fast "
                      "path off on a mismatch (0 = never)");
+REXCVAR_DEFINE_BOOL(vita_memory_bench, false, "Vita",
+                    "Diagnostic: at start, time reading, writing and copying 4 MiB in each kind "
+                    "of memory the guest's blocks come from (main RAM, physically contiguous, "
+                    "CDRAM with and without L1 cache) and log it to storm2_stats.log");
 REXCVAR_DEFINE_INT32(vita_kernel_object_probe, 20000, "Vita",
                      "At start, before any other thread: make up to this many semaphores until "
                      "the kernel refuses, delete them, and write the count to storm2_stats.log "
@@ -568,6 +574,72 @@ void LogMemory(const char* when) {
   }
 }
 
+// How fast the CPU reads, writes and copies each kind of memory the guest's
+// blocks come from. Storm 2's battle fills the main RAM and gets ~35 MiB of
+// guest blocks from CDRAM (L1 cached only), where the GPU thread hashes and
+// copies vertex data at ~100 MiB/s (console benchmark 5).
+void VitaMemoryBench() {
+  struct Kind {
+    SceKernelMemBlockType type;
+    const char* name;
+  };
+  const Kind kinds[] = {
+      {SCE_KERNEL_MEMBLOCK_TYPE_USER_RW, "main RAM (cached)"},
+      {SCE_KERNEL_MEMBLOCK_TYPE_USER_MAIN_PHYCONT_RW, "physically contiguous (cached)"},
+      {SCE_KERNEL_MEMBLOCK_TYPE_USER_CDRAM_L1WBWA_RW, "CDRAM (L1 cached)"},
+      {SCE_KERNEL_MEMBLOCK_TYPE_USER_CDRAM_RW, "CDRAM (uncached)"},
+  };
+  constexpr size_t kBytes = 4 << 20;
+  // Source of the copies: a main RAM block.
+  const SceUID src_id = sceKernelAllocMemBlock("rex_bench_src", SCE_KERNEL_MEMBLOCK_TYPE_USER_RW,
+                                               kBytes, nullptr);
+  void* src = nullptr;
+  if (src_id < 0 || sceKernelGetMemBlockBase(src_id, &src) < 0) {
+    Stats("memory bench: no 4 MiB main RAM block (0x%08X)\n", uint32_t(src_id));
+    return;
+  }
+  std::memset(src, 0x5A, kBytes);
+  for (const Kind& k : kinds) {
+    const SceUID id = sceKernelAllocMemBlock("rex_bench", k.type, kBytes, nullptr);
+    void* p = nullptr;
+    if (id < 0 || sceKernelGetMemBlockBase(id, &p) < 0) {
+      Stats("memory bench: %s: no 4 MiB block (0x%08X)\n", k.name, uint32_t(id));
+      continue;
+    }
+    auto mib_s = [](uint64_t us, int passes) {
+      return us ? double(kBytes) * passes / 1048576.0 / (double(us) / 1e6) : 0.0;
+    };
+    constexpr int kPasses = 4;
+    uint64_t t = sceKernelGetProcessTimeWide();
+    for (int i = 0; i < kPasses; ++i) std::memset(p, i, kBytes);
+    const uint64_t write_us = sceKernelGetProcessTimeWide() - t;
+    t = sceKernelGetProcessTimeWide();
+    uint32x4_t acc = vdupq_n_u32(0);
+    for (int i = 0; i < kPasses; ++i) {
+      const uint32_t* w = static_cast<const uint32_t*>(p);
+      for (size_t j = 0; j < kBytes / 4; j += 16) {
+        acc = vaddq_u32(acc, vld1q_u32(w + j));
+        acc = vaddq_u32(acc, vld1q_u32(w + j + 4));
+        acc = vaddq_u32(acc, vld1q_u32(w + j + 8));
+        acc = vaddq_u32(acc, vld1q_u32(w + j + 12));
+      }
+    }
+    const uint64_t read_us = sceKernelGetProcessTimeWide() - t;
+    t = sceKernelGetProcessTimeWide();
+    for (int i = 0; i < kPasses; ++i) std::memcpy(p, src, kBytes);
+    const uint64_t copy_in_us = sceKernelGetProcessTimeWide() - t;
+    t = sceKernelGetProcessTimeWide();
+    for (int i = 0; i < kPasses; ++i) std::memcpy(src, p, kBytes);
+    const uint64_t copy_out_us = sceKernelGetProcessTimeWide() - t;
+    Stats("memory bench: %-31s read %6.0f MiB/s, write %6.0f, copy in from main RAM %6.0f, "
+          "copy out to main RAM %6.0f (checksum %08X)\n",
+          k.name, mib_s(read_us, kPasses), mib_s(write_us, kPasses), mib_s(copy_in_us, kPasses),
+          mib_s(copy_out_us, kPasses), vgetq_lane_u32(acc, 0) ^ vgetq_lane_u32(acc, 3));
+    sceKernelFreeMemBlock(id);
+  }
+  sceKernelFreeMemBlock(src_id);
+}
+
 }  // namespace
 
 int main() {
@@ -824,6 +896,9 @@ int main() {
     vita_heap_trace_enable(uint32_t(REXCVAR_GET(vita_heap_trace)));
   }
   LogMemory("start");
+  if (REXCVAR_GET(vita_memory_bench)) {
+    VitaMemoryBench();
+  }
   // Core 3 (CapUnlocker) before any thread placement reads the core settings.
   rex::thread::VitaCore3Available();
   if (const int32_t probe = REXCVAR_GET(vita_kernel_object_probe); probe > 0) {
