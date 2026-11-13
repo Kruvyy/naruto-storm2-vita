@@ -246,16 +246,50 @@ REXCVAR_DEFINE_STRING(storm2_skip_tasks, "", "Storm 2",
                       "that are not run; read at every task manager pass, so an A/B can switch "
                       "it (software MMU builds only)");
 
+// Console benchmark 8 (2026-11-13): with the list applied from the start the
+// game stopped after the character select (a task of the list is needed while
+// the battle loads); the battle sweeps had left the tasks out in battle only.
+REXCVAR_DEFINE_BOOL(storm2_skip_tasks_battle_only, true, "Storm 2",
+                    "Leave the storm2_skip_tasks tasks out only while a battle runs (the "
+                    "fighters' task 821D1540 is in the task list)");
+
 namespace storm2_probe {
 namespace {
 void SkippedTask(PPCContext&, uint8_t*) {}
+
+// The update function of a task node (delegates resolved), as the report names it.
+uint32_t TaskFunction(uint8_t* base, uint32_t node) {
+  const uint32_t task = Be32(base, node + 268);
+  const uint32_t vtable = task ? Be32(base, task) : 0;
+  uint32_t fn = vtable ? Be32(base, vtable + 4) : 0;
+  if (fn == 0x82237A28 && task) {
+    fn = Be32(base, task + 8);
+  }
+  return fn;
+}
+
+bool BattleRunning(uint8_t* base, uint32_t manager) {
+  const uint32_t sentinel = manager + 304;
+  uint32_t node = Be32(base, manager + 288);
+  for (int guard = 0; node && node != sentinel && guard < 4096; ++guard) {
+    if (Be32(base, node + 264) == 1 && TaskFunction(base, node) == 0x821D1540) {
+      return true;
+    }
+    node = Be32(base, node + 272);
+  }
+  return false;
+}
 
 std::mutex g_skip_mutex;
 std::string g_skip_list;  // the list applied
 std::unordered_map<uint32_t, PPCFunc*> g_skip_original;
 
-void ApplySkipList() {
-  const std::string list = REXCVAR_GET(storm2_skip_tasks);
+void ApplySkipList(uint8_t* base, uint32_t manager) {
+  std::string list = REXCVAR_GET(storm2_skip_tasks);
+  if (!list.empty() && REXCVAR_GET(storm2_skip_tasks_battle_only) &&
+      !BattleRunning(base, manager)) {
+    list.clear();
+  }
   std::lock_guard<std::mutex> lock(g_skip_mutex);
   if (list == g_skip_list) {
     return;
@@ -318,7 +352,7 @@ REX_EXTERN(__imp__sub_822344F8);
 REX_HOOK_RAW(sub_822344F8) {
   const uint32_t manager = ctx.r3.u32, lo = ctx.r4.u32, hi = ctx.r5.u32;
   const uint32_t r3 = ctx.r4.u32 ^ (ctx.r5.u32 << 16);  // keyed by r4/r5 (r3 is the same)
-  storm2_probe::ApplySkipList();
+  storm2_probe::ApplySkipList(base, manager);
   const uint64_t wall0 = storm2_probe::On() ? storm2_probe::WallUs() : 0;
   {
     storm2_probe::Scope scope(storm2_probe::kUpdate);
