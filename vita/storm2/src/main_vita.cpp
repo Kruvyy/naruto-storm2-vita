@@ -335,7 +335,9 @@ constexpr const char* kSamplesPath = "ux0:data/storm2port/storm2_samples.log";
 // LR saved at -8 of each frame), so threads that all wait in one helper are
 // told apart by who called it.
 constexpr size_t kMaxSampled = 32;
-constexpr size_t kChain = 8;
+// 16: the battle's scene drawing (task 8255A910) is more than 8 virtual
+// calls deep, so 8 return addresses never reached the task.
+constexpr size_t kChain = 16;
 using SampleKey = std::array<uint32_t, kChain>;
 struct SampleKeyHash {
   size_t operator()(const SampleKey& k) const {
